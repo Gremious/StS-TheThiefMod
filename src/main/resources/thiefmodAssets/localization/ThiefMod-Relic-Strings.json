@@ -1,0 +1,7 @@
+{
+"theThief: ThievesMask": {
+        "NAME": "ThievesMask",
+	    "FLAVOR": "Pretty sly for a masked guy.",
+        "DESCRIPTIONS": ["On the first turn of each combat, NL gain 3 gold whenever you deal damage."]
+	}
+}

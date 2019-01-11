@@ -1,0 +1,9 @@
+{
+  "modid": "ThiefMod",
+  "name": "Thief Mod",
+  "author_list": ["Gremious"],
+  "description": "A thief mod.",
+  "version": "0.1",
+  "sts_version": "10-18-2018",
+  "mts_version": "3.4.0"
+}
