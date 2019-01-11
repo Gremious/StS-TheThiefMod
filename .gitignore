@@ -4,6 +4,7 @@
 .idea/
 out/
 *.iml
+project/
 
 # Eclipse
 .classpath
@@ -77,3 +78,6 @@ $RECYCLE.BIN/
 
 # Spriter files
 *.autosave.scml
+
+#This Project
+*.psd
