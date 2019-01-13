@@ -113,8 +113,7 @@ public class TheThief extends CustomPlayer {
     @Override
     public CharSelectInfo getLoadout() {
         return new CharSelectInfo("The Thief",
-                "A mysterious figure with a beguiling mask, and "
-                + "NL an expertise in a a particular, underhanded, set of skill",
+                "A mysterious figure with a beguiling mask, and NL an expertise in a a particular, underhanded, set of skill",
                 CURRENT_HP, MAX_HP, ORB_SLOTS, STARTING_GOLD, CARD_DRAW, this, getStartingRelics(),
                 getStartingDeck(), false);
 
@@ -126,7 +125,7 @@ public class TheThief extends CustomPlayer {
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> retVal = new ArrayList<>();
 
-        logger.info("Begind loading started Deck strings");
+        logger.info("Begin loading started Deck strings");
 /*
         retVal.add(StrikeThief.ID);
         retVal.add(StrikeThief.ID);

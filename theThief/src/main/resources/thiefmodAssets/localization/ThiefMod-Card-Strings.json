@@ -202,6 +202,49 @@
     "DESCRIPTION": "Deal !D! damage. Add a copy of this card to your deck. NL Exhaust. NL Soulbound.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage. Add a copy of this card to your deck. NL Exhaust. NL Soulbound."
   },
+  "theThief:SerratedDagger": {
+    "NAME": "Serrated Dagger",
+    "DESCRIPTION": "Enemy loses !D! HP.",
+    "UPGRADE_DESCRIPTION": "Enemy loses !D! HP."
+  },
+  "theThief:Exploit": {
+    "NAME": "Exploit",
+    "DESCRIPTION": "Deal !D! damage. If the enemy has any debuff, gain 1 [R] and draw !M! cards next turn.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. If the enemy has any debuff, gain 1 [R] and draw !M! cards next turn."
+  },
+  "theThief:Follow-up": {
+    "NAME": "Follow-up",
+    "DESCRIPTION": "Deal !D! damage to an enemy, next turn, to all enemies.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage to an enemy, next turn, to all enemies."
+  },
+  "theThief:OneStepAhead ": {
+    "NAME": "One Step Ahead ",
+    "DESCRIPTION": "If an enemy intends to attack, Shadowstep !M! time. If it intends to block, deal !D! damage !BkStMgc! times instead.",
+    "UPGRADE_DESCRIPTION": "If an enemy intends to attack, Shadowstep !M! times. If it intends to block, deal !D! damage !BkStMgc! times instead."
+  },
+  "theThief:CripplingStrike": {
+    "NAME": "Crippling Strike",
+    "DESCRIPTION": "Deal !D! damage and apply !M! Weak. Backstab: Apply !M! Vulnerable instead.",
+    "UPGRADE_DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "NL Backstab: Apply !M! Vulnerable instead.",
+      "NL Backstab: [#fa5555]Apply[] !M! [#fa5555]Vulnerable[] [#fa5555]instead.[]"
+    ]
+  },
+  "theThief:StickyFingers": {
+    "NAME": "Sticky Fingers",
+    "DESCRIPTION": "Draw !M! cards. Backstab: Steal !BkStMgc! card instead.",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards. Backstab: Steal !BkStMgc! cards instead.",
+    "EXTENDED_DESCRIPTION": [
+      "NL Backstab: Steal !BkStMgc! cards instead.",
+      "NL Backstab: [#fa5555]Steal[] !BkStMgc! [#fa5555]cards[] [#fa5555]instead.[]"
+    ]
+  },
+  "theThief:Sidestep": {
+    "NAME": "Sidestep",
+    "DESCRIPTION": "Next turn, gain !B! block and [R].",
+    "UPGRADE_DESCRIPTION": "Next turn, gain !B! block and [R] [R]."
+  },
   "theThief:EmptyCard": {
     "NAME": "Empty Card",
     "DESCRIPTION": "Gain !M! [R]. NL Exhaust.",

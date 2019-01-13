@@ -1,6 +1,7 @@
 package thiefmod.cards;
 
 import basemod.helpers.BaseModCardTags;
+import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -11,6 +12,9 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import basemod.abstracts.CustomCard;
 import thiefmod.ThiefMod;
 import thiefmod.patches.AbstractCardEnum;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DefendThief
 extends CustomCard {
@@ -62,7 +66,14 @@ extends CustomCard {
 				.addToBottom(new com.megacrit.cardcrawl.actions.common.GainBlockAction(p, p, this.block));
 		this.tags.add(BaseModCardTags.BASIC_DEFEND);
 	}
-	
+
+	@Override
+	public List<TooltipInfo> getCustomTooltips() {
+		List<TooltipInfo> tips = new ArrayList<>();
+		tips.add(new TooltipInfo("Flavor Text", "As fundamental as it gets."));
+		return tips;
+	}
+
 	// Which card to return when making a copy of this card.
     @Override
     public AbstractCard makeCopy() {

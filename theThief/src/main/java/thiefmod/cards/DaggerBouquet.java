@@ -1,5 +1,6 @@
 package thiefmod.cards;
 
+import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -11,6 +12,9 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
 import thiefmod.patches.AbstractCardEnum;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DaggerBouquet extends AbstractBackstabCard {
 
@@ -61,6 +65,12 @@ public class DaggerBouquet extends AbstractBackstabCard {
         }
     }
 
+    @Override
+    public List<TooltipInfo> getCustomTooltips() {
+        List<TooltipInfo> tips = new ArrayList<>();
+        tips.add(new TooltipInfo("Flavor Text", "An odd number of flowers signifies a death. NL So do daggers."));
+        return tips;
+    }
 
     // Which card to return when making a copy of this card.
     @Override

@@ -72,7 +72,7 @@ public class StrikeThief extends CustomCard {
 	@Override
 	public List<TooltipInfo> getCustomTooltips() {
 		List<TooltipInfo> tips = new ArrayList<>();
-		tips.add(new TooltipInfo("Flavour Text", "As fundamental as it gets."));
+		tips.add(new TooltipInfo("Flavor Text", "As fundamental as it gets."));
 		return tips;
 	}
 
