@@ -30,7 +30,7 @@ public class Lie extends AbstractBackstabCard {
     // STAT DECLARATION
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     private static final CardRarity RARITY = CardRarity.COMMON;
-    private static final CardTarget TARGET = CardTarget.SELF_AND_ENEMY;
+    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
     private static final CardType TYPE = CardType.SKILL;
 
     private static final int COST = 1;
@@ -56,8 +56,7 @@ public class Lie extends AbstractBackstabCard {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(
                 p, p, this.block));
 
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
-                AbstractDungeon.player, AbstractDungeon.player, new VulnerablePower(
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(
                         m, this.magicNumber, false), this.magicNumber));
     }
 

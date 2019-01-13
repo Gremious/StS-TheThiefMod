@@ -18,10 +18,9 @@ import thiefmod.Variables.BackstabBlock;
 import thiefmod.Variables.BackstabDamage;
 import thiefmod.Variables.BackstabMagicNumber;
 import thiefmod.cards.*;
-import thiefmod.characters.TheThief;
-import thiefmod.patches.AbstractCardEnum;
-import thiefmod.patches.TheThiefEnum;
-import thiefmod.relics.ThievesMask;
+import thiefmod.characters.*;
+import thiefmod.patches.*;
+import thiefmod.relics.*;
 
 @SpireInitializer
 public class    ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, EditKeywordsSubscriber, EditCharactersSubscriber, PostInitializeSubscriber {

@@ -162,8 +162,8 @@
   },
   "theThief:ShadowForm": {
     "NAME": "Shadow Form",
-    "DESCRIPTION": "At the start of your turn, play a random card from any color. NL Ethereal.",
-    "UPGRADE_DESCRIPTION": "At the start of your turn, play a random card from any color.",
+    "DESCRIPTION": "At the start of your turn, play a random card from any color. NL Backstab: Play !BkStMgc! instead NL Ethereal.",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, play a random card from any color. NL Backstab: Play !BkStMgc! instead.",
     "EXTENDED_DESCRIPTION": [
       " NL Backstab: Play !BkStMgc! instead",
       " NL Backstab: [#fa5555]Play[] !BkStMgc! [#fa5555]instead.[]"
@@ -171,7 +171,7 @@
   },
   "theThief:Stab": {
     "NAME": "Stab",
-    "DESCRIPTION": "Deal !D! Damage. ",
+    "DESCRIPTION": "Deal !D! Damage. NL Backstab: Deal !BkStDmg! instead. ",
     "UPGRADE_DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
       "NL Backstab: Deal !BkStDmg! instead",
@@ -180,11 +180,11 @@
   },
   "theThief:CloakAndDaggerThief": {
     "NAME": "Cloak and Dagger",
-    "DESCRIPTION": "Gain !B! block ",
+    "DESCRIPTION": "Gain !B! block NL Backstab: Deal !D! Damage instead.",
     "UPGRADE_DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
       "NL Backstab: Deal !D! Damage instead",
-      "NL Backstab: [#fa5555]Deal[] !D! [#fa5555]Damage instead.[]"
+      "NL Backstab: [#fa5555]Deal[] !D! [#fa5555]Damage[] [#fa5555]instead.[]"
     ]
   },
   "theThief:SwiftTread": {
@@ -199,12 +199,12 @@
   },
   "theThief:BeautifulLies": {
     "NAME": "Beautiful Lies",
-    "DESCRIPTION": "Deal !D! damage. Add a copy of this card to your deck. Exhaust. Soulbound.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. Add a copy of this card to your deck. Exhaust. Soulbound."
+    "DESCRIPTION": "Deal !D! damage. Add a copy of this card to your deck. NL Exhaust. NL Soulbound.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. Add a copy of this card to your deck. NL Exhaust. NL Soulbound."
   },
   "theThief:EmptyCard": {
     "NAME": "Empty Card",
-    "DESCRIPTION": "Gain !M! energy. Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! energy. Exhaust."
+    "DESCRIPTION": "Gain !M! [R]. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !M! [R]. NL Exhaust."
   }
 }
