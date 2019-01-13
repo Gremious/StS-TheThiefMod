@@ -187,6 +187,21 @@
       "NL Backstab: [#fa5555]Deal[] !D! [#fa5555]Damage instead.[]"
     ]
   },
+  "theThief:SwiftTread": {
+    "NAME": "Swift Tread",
+    "DESCRIPTION": "Draw !M! cards. Shuffle 1 Void into your draw pile.",
+    "UPGRADE_DESCRIPTION": ""
+  },
+  "theThief:Murder.": {
+    "NAME": "Murder.",
+    "DESCRIPTION": "Deal !D! damage. Fleeting.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. Fleeting."
+  },
+  "theThief:BeautifulLies": {
+    "NAME": "Beautiful Lies",
+    "DESCRIPTION": "Deal !D! damage. Add a copy of this card to your deck. Exhaust. Soulbound.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. Add a copy of this card to your deck. Exhaust. Soulbound."
+  },
   "theThief:EmptyCard": {
     "NAME": "Empty Card",
     "DESCRIPTION": "Gain !M! energy. Exhaust.",

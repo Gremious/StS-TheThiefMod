@@ -52,7 +52,7 @@ public class DramaticFeignPower extends AbstractPower implements CanUsePower {
 	@Override
 	public void onInitialApplication() {
         AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "Oooh noo! NL You got me!", 2.0f, 3.0f));
-        AbstractDungeon.actionManager.addToBottom(new VFXAction(new GrandFinalEffect(), 1.0f));
+
 		CANPLAY = false;
 	}
 

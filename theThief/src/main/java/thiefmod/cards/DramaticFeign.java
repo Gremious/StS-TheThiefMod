@@ -1,5 +1,7 @@
 package thiefmod.cards;
 
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.vfx.combat.GrandFinalEffect;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -82,6 +84,9 @@ public class DramaticFeign extends CustomCard {
 
 		// Next turn, the first card you play is refunded.
 		// See DramaticFeignPower (it applies powers.RefundCardCost).
+
+		// VFX
+		AbstractDungeon.actionManager.addToBottom(new VFXAction(new GrandFinalEffect(), 1.0f));
 	}
 
 	// Which card to return when making a copy of this card.

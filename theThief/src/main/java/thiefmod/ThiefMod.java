@@ -207,7 +207,11 @@ public class    ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, E
         BaseMod.addCard(new DefendThief());
         logger.info(LogInt++);
 
+
+        BaseMod.addCard(new BeautifulLies());
         BaseMod.addCard(new SimilarSkills());
+        BaseMod.addCard(new Murder());
+        BaseMod.addCard(new SwiftTread());
         BaseMod.addCard(new DramaticFeign());
         BaseMod.addCard(new ShadowForm());
         BaseMod.addCard(new Stab());
@@ -228,6 +232,10 @@ public class    ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, E
         UnlockTracker.unlockCard(DefendThief.ID);
 
         UnlockTracker.unlockCard(SimilarSkills.ID);
+        UnlockTracker.unlockCard(SwiftTread.ID);
+
+        UnlockTracker.unlockCard(BeautifulLies.ID);
+        UnlockTracker.unlockCard(Murder.ID);
         UnlockTracker.unlockCard(DramaticFeign.ID);
         UnlockTracker.unlockCard(ShadowForm.ID);
         UnlockTracker.unlockCard(Stab.ID);
