@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
 import thiefmod.actions.common.StealCardAction;
 import thiefmod.patches.AbstractCardEnum;
-import thiefmod.powers.TheThiefThieveryPower;
+import thiefmod.powers.Unique.TheThiefThieveryPower;
 
 public class EmptyCard extends AbstractBackstabCard {
 
@@ -50,7 +50,7 @@ public class EmptyCard extends AbstractBackstabCard {
 
     private static final int BACKSTAB = 2;
 
-    private static final String ADD_LOCATION = "Hand";
+    private static final String ADD_LOCATION = "Hand"; // If stolen card.
     private static final boolean ADD_RANDOM = true;
     private static final boolean ADD_UPGRADED = false;
 

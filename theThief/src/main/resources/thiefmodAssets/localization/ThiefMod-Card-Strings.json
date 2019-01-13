@@ -1,5 +1,5 @@
 {
-  "theThief: AbstractStolenCard": {
+  "theThief:AbstractStolenCard": {
     "EXTENDED_DESCRIPTION": [
       "Steal a card.",
       "Choose up to ",
@@ -8,115 +8,115 @@
       " stolen cards to add to your discard pile."
     ]
   },
-  "theThief: StrikeThief": {
+  "theThief:StrikeThief": {
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! damage.",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theThief: SwiftSlash": {
+  "theThief:SwiftSlash": {
     "NAME": "Swift Slash",
     "DESCRIPTION": "Deal !D! damage. Draw !M! cards.",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theThief: DaggerBouquet": {
+  "theThief:DaggerBouquet": {
     "NAME": "Dagger Bouquet",
     "DESCRIPTION": "Deal !D! damage to a random enemy !M! times.",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theThief: Lie": {
+  "theThief:Lie": {
     "NAME": "Lie",
     "DESCRIPTION": "Gain !B! Block. Apply !M! vulnerable to all enemies. ",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theThief: Steal": {
+  "theThief:Steal": {
     "NAME": "Steal",
     "DESCRIPTION": "Deal !D! damage. Steal !M! card.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage. Steal !M! cards."
   },
-  "theThief: Pickpocket": {
+  "theThief:Pickpocket": {
     "NAME": "Pickpocket",
     "DESCRIPTION": "Deal !D! damage. Gain !M! gold.",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theThief: SleightOfHand": {
+  "theThief:SleightOfHand": {
     "NAME": "Sleight Of Hand",
     "DESCRIPTION": "Gain !B! block. NL Steal !M! cards.",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theThief: SharpPractice": {
+  "theThief:SharpPractice": {
     "NAME": "Sharp Practice",
     "DESCRIPTION": "At the start of each turn add !M! random stolen card to your hand.",
     "UPGRADE_DESCRIPTION": "Innate. NL At the start of each turn add !M! random stolen card to your hand."
   },
-  "theThief: Ransack": {
+  "theThief:Ransack": {
     "NAME": "Ransack",
     "DESCRIPTION": "Choose 1 out of 3 stolen cards and add !M! copies of it to your hand.",
     "UPGRADE_DESCRIPTION": ""
   },
-  "theThief: IllGottenGains": {
+  "theThief:IllGottenGains": {
     "NAME": "Ill Gotten Gains",
     "DESCRIPTION": "For the rest of this combat, all stolen cards you gain are upgraded.",
     "UPGRADE_DESCRIPTION": "Innate. NL For the rest of this combat, all stolen cards you gain are upgraded."
   },
-  "theThief: DefaultCommonSkill": {
+  "theThief:DefaultCommonSkill": {
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! block.",
     "UPGRADE_DESCRIPTION": "Gain !B! block."
   },
-  "theThief: DefaultCommonPower": {
+  "theThief:DefaultCommonPower": {
     "NAME": "Hold Place",
     "DESCRIPTION": "Gain !M! keyword.",
     "UPGRADE_DESCRIPTION": "Gain !M! keywords."
   },
-  "theThief: DefaultUncommonAttack": {
+  "theThief:DefaultUncommonAttack": {
     "NAME": "Big slap",
     "DESCRIPTION": "Deal !D! damage.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage."
   },
-  "theThief: DefaultUncommonSkill": {
+  "theThief:DefaultUncommonSkill": {
     "NAME": "A better defend",
     "DESCRIPTION": "Gain !B! Plated Armor. Affected by Dexterity.",
     "UPGRADE_DESCRIPTION": "Gain !B! Plated Armor. Affected by Dexterity."
   },
-  "theThief: SimilarSkills": {
+  "theThief:SimilarSkills": {
     "NAME": "Similar Skills",
     "DESCRIPTION": "At the start of your turn, add a random Green card to your deck. It costs 0 this combat.",
     "UPGRADE_DESCRIPTION": "At the start of your turn, add a random Upgraded Green card to your deck. It costs 0 this combat."
   },
-  "theThief: DefaultRareAttack": {
+  "theThief:DefaultRareAttack": {
     "NAME": "TOUCH",
     "DESCRIPTION": "Deal !D! damage."
   },
-  "theThief: DramaticFeign": {
+  "theThief:DramaticFeign": {
     "NAME": "Dramatic Feign",
     "DESCRIPTION": "Stun and apply 2 Vulnerable to all enemies. NL You cannot play cards for the rest of this turn. NL The first card you play next turn is refunded."
   },
-  "theThief: StolenMoves": {
+  "theThief:StolenMoves": {
     "NAME": "Stolen Moves",
     "DESCRIPTION": "Gain !M! energy. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Gain !M! energy. NL Exhaust."
   },
-  "theThief: StolenGold": {
+  "theThief:StolenGold": {
     "NAME": "Stolen Gold",
     "DESCRIPTION": "Gain !M! Gold. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Gain !M! Gold. NL Exhaust."
   },
-  "theThief: StolenMomentum": {
+  "theThief:StolenMomentum": {
     "NAME": "Stolen Momentum",
     "DESCRIPTION": "Draw !M! cards, then choose 1 card to discard. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Draw !M! cards. NL Exhaust."
   },
-  "theThief: StolenArtifice": {
+  "theThief:StolenArtifice": {
     "NAME": "Stolen Artifice",
     "DESCRIPTION": "Gain !M! energy next turn. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Gain !M! energy next turn. NL Exhaust."
   },
-  "theThief: StolenAdvantage": {
+  "theThief:StolenAdvantage": {
     "NAME": "Stolen Advantage",
     "DESCRIPTION": "Draw !M! cards next turn. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Draw !M! cards next turn. NL Exhaust."
   },
-  "theThief: StolenRitual": {
+  "theThief:StolenRitual": {
     "NAME": "Stolen Ritual",
     "DESCRIPTION": "Lose 2 hp, gain !M! gold. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Lose 2 hp, gain !M! gold. NL Exhaust.",
@@ -125,42 +125,42 @@
       "Cough."
     ]
   },
-  "theThief: StolenTechnique": {
+  "theThief:StolenTechnique": {
     "NAME": "Stolen Technique",
     "DESCRIPTION": "Add a random card to your hand from any color. It costs 0 this turn. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Add a random card to your hand from any color. It costs 0 this turn. NL Exhaust."
   },
-  "theThief: StolenChange": {
+  "theThief:StolenChange": {
     "NAME": "Stolen Change",
     "DESCRIPTION": "The next card you play this turn is refunded. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "The next card you play this turn is refunded. NL Exhaust."
   },
-  "theThief: StolenBlades": {
+  "theThief:StolenBlades": {
     "NAME": "Stolen Blades",
     "DESCRIPTION": "Add !M! shivs to your hand.",
     "UPGRADE_DESCRIPTION": "Add !M! shivs to your hand."
   },
-  "theThief: StolenWire": {
+  "theThief:StolenWire": {
     "NAME": "Stolen Wire",
     "DESCRIPTION": "Apply a !M! damage Choke. ",
     "UPGRADE_DESCRIPTION": "Apply a !M! damage Choke."
   },
-  "theThief: StolenTrap": {
+  "theThief:StolenTrap": {
     "NAME": "Stolen Trap",
     "DESCRIPTION": "Place a card in your hand on top of your draw pile. It cost 0 until it is played. ",
     "UPGRADE_DESCRIPTION": "Place a card in your hand on top of your draw pile. It cost 0 until it is played."
   },
-  "theThief: StolenToxins": {
+  "theThief:StolenToxins": {
     "NAME": "Stolen Toxins",
     "DESCRIPTION": "Apply !M! Poison.",
     "UPGRADE_DESCRIPTION": "Apply !M! Poison. "
   },
-  "theThief: Shadowstep": {
+  "theThief:Shadowstep": {
     "NAME": "Shadowstep",
     "DESCRIPTION": "Shadowstep !M! time.",
     "UPGRADE_DESCRIPTION": "Shadowstep !M! times."
   },
-  "theThief: ShadowForm": {
+  "theThief:ShadowForm": {
     "NAME": "Shadow Form",
     "DESCRIPTION": "At the start of your turn, play a random card from any color. NL Ethereal.",
     "UPGRADE_DESCRIPTION": "At the start of your turn, play a random card from any color.",
@@ -169,7 +169,7 @@
       " NL Backstab: [#fa5555]Play[] !BkStMgc! [#fa5555]instead.[]"
     ]
   },
-  "theThief: Stab": {
+  "theThief:Stab": {
     "NAME": "Stab",
     "DESCRIPTION": "Deal !D! Damage. ",
     "UPGRADE_DESCRIPTION": "",
@@ -178,7 +178,7 @@
       "NL Backstab: [#fa5555]Deal[] !BkStDmg! [#fa5555]instead.[]"
     ]
   },
-  "theThief: CloakAndDaggerThief": {
+  "theThief:CloakAndDaggerThief": {
     "NAME": "Cloak and Dagger",
     "DESCRIPTION": "Gain !B! block ",
     "UPGRADE_DESCRIPTION": "",
@@ -187,7 +187,7 @@
       "NL Backstab: [#fa5555]Deal[] !D! [#fa5555]Damage instead.[]"
     ]
   },
-  "theThief: EmptyCard": {
+  "theThief:EmptyCard": {
     "NAME": "Empty Card",
     "DESCRIPTION": "Gain !M! energy. Exhaust.",
     "UPGRADE_DESCRIPTION": "Gain !M! energy. Exhaust."

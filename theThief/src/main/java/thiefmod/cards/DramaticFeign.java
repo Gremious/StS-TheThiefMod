@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.powers.VulnerablePower;
 import basemod.abstracts.CustomCard;
 import thiefmod.ThiefMod;
 import thiefmod.patches.AbstractCardEnum;
-import thiefmod.powers.DramaticFeignPower;
+import thiefmod.powers.Unique.DramaticFeignPower;
 
 public class DramaticFeign extends CustomCard {
 	public static final Logger logger = LogManager.getLogger(ThiefMod.class.getName());

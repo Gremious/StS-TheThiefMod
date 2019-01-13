@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
 import thiefmod.ThiefMod;
-import thiefmod.powers.RefundCardCost;
+import thiefmod.powers.Common.RefundCardCost;
 
 public class StolenChange extends CustomCard {
 	

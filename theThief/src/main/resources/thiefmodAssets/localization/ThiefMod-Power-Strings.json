@@ -1,5 +1,5 @@
 {
-  "theThief: CommonPower": {
+  "theThief:CommonPower": {
     "NAME": "Placeholder Power",
     "DESCRIPTIONS": [
       "You applied ",
@@ -7,7 +7,7 @@
       " keywords."
     ]
   },
-  "theThief: DramaticFeignPower": {
+  "theThief:DramaticFeignPower": {
     "NAME": "You cannot use any cards this turn.",
     "DESCRIPTIONS": [
       "You are feigning death for ",
@@ -15,7 +15,7 @@
       " turns"
     ]
   },
-  "theThief: RefunCostPower": {
+  "theThief:RefunCostPower": {
     "NAME": "Surprise!",
     "DESCRIPTIONS": [
       "Refunds ",
@@ -23,7 +23,7 @@
       " cards you play this turn."
     ]
   },
-  "theThief: SimilarSkillsPower": {
+  "theThief:SimilarSkillsPower": {
     "NAME": "Similar Skills.",
     "DESCRIPTIONS": [
       "You've seen how the Rogues do it. NL At the start of your turn add ",
@@ -31,7 +31,7 @@
       " random, free green card to your hands."
     ]
   },
-  "theThief: SimilarSkillsPowerUpgraded": {
+  "theThief:SimilarSkillsPowerUpgraded": {
     "NAME": "Expert Similar Skills.",
     "DESCRIPTIONS": [
       "You've seen how the Rogues do it. NL At the start of your turn add ",
@@ -39,7 +39,7 @@
       " random, free, upgraded green card to your hands."
     ]
   },
-  "theThief: ShadowFormPower": {
+  "theThief:ShadowFormPower": {
     "NAME": "Shadow Form.",
     "DESCRIPTIONS": [
       "At the start of your turn, play ",
@@ -47,7 +47,7 @@
       " random cards from ANY color."
     ]
   },
-  "theThief: Empty": {
+  "theThief:Empty": {
     "NAME": "Empty base power.",
     "DESCRIPTIONS": [
       "Does nothing for ",
@@ -55,7 +55,7 @@
       " turns."
     ]
   },
-  "theThief: SharpPracticePower": {
+  "theThief:SharpPracticePower": {
     "NAME": "Sharp Practice Power",
     "DESCRIPTIONS": [
       "At the start of each turn, add ",
@@ -63,27 +63,27 @@
       " Stolen cards to your hand."
     ]
   },
-  "theThief: TheThiefThieveryPower": {
+  "theThief:TheThiefThieveryPower": {
     "NAME": "Thievery Power",
     "DESCRIPTIONS": [
       "Every time you deal damage gain ",
       " gold."
     ]
   },
-  "theThief: ShadowstepPower": {
-    "NAME": "Shadowstep",
+  "theThief:ShadowstepPower": {
+    "NAME": "Elusive",
     "DESCRIPTIONS": [
-      "Evade the next ",
-      " time you would take damage."
+      "You are harder to hit! Take ",
+      "0% reduced damage. If you play any card, remove this power."
     ]
   },
-  "theThief: BackstabPower": {
+  "theThief:BackstabPower": {
     "NAME": "Backstab!",
     "DESCRIPTIONS": [
-      "The next Backstab card you play gains it's backstab effect. NL If you play a card, remove this power. "
+      "The next Backstab card you play gains it's Backstab effect. NL If you play any card, remove this power. "
     ]
   },
-  "theThief: IllGottenGainsPower": {
+  "theThief:IllGottenGainsPower": {
     "NAME": "Ill-Gotten Gains",
     "DESCRIPTIONS": [
       "For the rest of this combat, all stolen cards you gain are upgraded."

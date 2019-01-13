@@ -10,7 +10,8 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
 import thiefmod.patches.AbstractCardEnum;
-import thiefmod.powers.BackstabPower;
+import thiefmod.patches.ThiefCardTags;
+import thiefmod.powers.Common.BackstabPower;
 
 public class CloakAndDaggerThief extends AbstractBackstabCard {
 // public class EmptyCard extends AbstractBackstabCard {
@@ -55,6 +56,7 @@ public class CloakAndDaggerThief extends AbstractBackstabCard {
 
         this.baseDamage = DAMAGE;
         this.baseBlock = BLOCK;
+        this.tags.add(ThiefCardTags.BACKSTAB);
     }
 
     // Actions the card should do.

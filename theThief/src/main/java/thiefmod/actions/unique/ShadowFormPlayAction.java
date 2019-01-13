@@ -1,12 +1,8 @@
 package thiefmod.actions.unique;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-import thiefmod.powers.ShadowFormPower;
-
-import java.util.Iterator;
+import thiefmod.powers.Unique.ShadowFormPower;
 
 public class ShadowFormPlayAction extends AbstractGameAction {
 

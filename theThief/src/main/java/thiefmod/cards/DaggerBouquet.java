@@ -1,9 +1,7 @@
 package thiefmod.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -12,9 +10,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
-import thiefmod.actions.common.StealCardAction;
 import thiefmod.patches.AbstractCardEnum;
-import thiefmod.powers.TheThiefThieveryPower;
 
 public class DaggerBouquet extends AbstractBackstabCard {
 
@@ -41,8 +37,8 @@ public class DaggerBouquet extends AbstractBackstabCard {
 
     private static final int DAMAGE = 4;
 
-    private static final int MAGIC = 4;
-    private static final int UPGRADED_PLUS_MAGIC = 6;
+    private static final int MAGIC = 3;
+    private static final int UPGRADED_PLUS_MAGIC = 5;
 
 
 // /STAT DECLARATION/

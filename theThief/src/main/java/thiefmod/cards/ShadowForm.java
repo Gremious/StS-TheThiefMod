@@ -9,8 +9,9 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
 import thiefmod.patches.AbstractCardEnum;
-import thiefmod.powers.BackstabPower;
-import thiefmod.powers.ShadowFormPower;
+import thiefmod.patches.ThiefCardTags;
+import thiefmod.powers.Common.BackstabPower;
+import thiefmod.powers.Unique.ShadowFormPower;
 
 public class ShadowForm extends AbstractBackstabCard {
 
@@ -48,6 +49,7 @@ public class ShadowForm extends AbstractBackstabCard {
         this.isEthereal = this.upgraded;
         this.magicNumber = this.baseMagicNumber = MAGIC;
         this.baseBackstabNumber = this.backstabNumber = BACKSTAB;
+        this.tags.add(ThiefCardTags.BACKSTAB);
     }
 
     @Override

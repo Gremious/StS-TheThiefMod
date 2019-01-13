@@ -24,7 +24,7 @@ import thiefmod.patches.TheThiefEnum;
 import thiefmod.relics.ThievesMask;
 
 @SpireInitializer
-public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, EditKeywordsSubscriber, EditCharactersSubscriber, PostInitializeSubscriber {
+public class    ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, EditKeywordsSubscriber, EditCharactersSubscriber, PostInitializeSubscriber {
     public static final Logger logger = LogManager.getLogger(ThiefMod.class.getName());
     private int LogInt = 0;
 
@@ -127,7 +127,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
 
     @SuppressWarnings("unused")
     public static void initialize() {
-        logger.info("========================= The Thief is sneaking in! Hi. =========================");
+        logger.info("========================= The Thief is sneaking in! =========================");
         ThiefMod defaultmod = new ThiefMod();
         logger.info("========================= /Thief snuk in./ =========================");
     }
@@ -207,10 +207,6 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         BaseMod.addCard(new DefendThief());
         logger.info(LogInt++);
 
-        BaseMod.addCard(new DefaultCommonPower());
-        BaseMod.addCard(new DefaultUncommonSkill());
-        BaseMod.addCard(new DefaultUncommonAttack());
-        BaseMod.addCard(new DefaultRareAttack());
         BaseMod.addCard(new SimilarSkills());
         BaseMod.addCard(new DramaticFeign());
         BaseMod.addCard(new ShadowForm());
@@ -230,11 +226,6 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         // Unlock the cards
         UnlockTracker.unlockCard(StrikeThief.ID);
         UnlockTracker.unlockCard(DefendThief.ID);
-
-        UnlockTracker.unlockCard(DefaultCommonPower.ID);
-        UnlockTracker.unlockCard(DefaultUncommonSkill.ID);
-        UnlockTracker.unlockCard(DefaultUncommonAttack.ID);
-        UnlockTracker.unlockCard(DefaultRareAttack.ID);
 
         UnlockTracker.unlockCard(SimilarSkills.ID);
         UnlockTracker.unlockCard(DramaticFeign.ID);
@@ -284,7 +275,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
     @Override
     public void receiveEditKeywords() {
         final String[] placeholder = {"shadowstep", "Shadowstep"};
-        BaseMod.addKeyword(placeholder, "Become elusive, reducing incoming damage by 50%. " +
+        BaseMod.addKeyword(placeholder, "Become elusive, reducing incoming damage by 10% per stack. " +
                 "NL If you use a BackstabPower card immediately after " +
                 "NL a Shadowstep card, it gains it's backstab effect.");
 
@@ -298,10 +289,10 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
     }
     // ================ /LOAD THE KEYWORDS/ ===================
 
-    // this adds "ModName: " before the ID of any card/relic/power etc.
+    // this adds "ModName:" before the ID of any card/relic/power etc.
     // in order to avoid conflics if any other mod uses the same ID.
     public static String makeID(String idText) {
-        return "theThief: " + idText;
+        return "theThief:" + idText;
     }
 
 }

@@ -3,16 +3,12 @@ package thiefmod.relics;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.PlatedArmorPower;
-import com.megacrit.cardcrawl.powers.ThieveryPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import basemod.abstracts.CustomRelic;
 import thiefmod.ThiefMod;
-import thiefmod.powers.SharpPracticePower;
-import thiefmod.powers.TheThiefThieveryPower;
+import thiefmod.powers.Unique.TheThiefThieveryPower;
 
 public class ThievesMask extends CustomRelic {
     // ID, images, stats.
