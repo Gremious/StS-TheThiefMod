@@ -1,6 +1,7 @@
 package thiefmod.cards;
 
 import basemod.helpers.BaseModCardTags;
+import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -13,6 +14,9 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import basemod.abstracts.CustomCard;
 import thiefmod.ThiefMod;
 import thiefmod.patches.AbstractCardEnum;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class StrikeThief extends CustomCard {
 	
@@ -63,6 +67,14 @@ public class StrikeThief extends CustomCard {
     public AbstractCard makeCopy() {
         return new StrikeThief();
     }
+
+
+	@Override
+	public List<TooltipInfo> getCustomTooltips() {
+		List<TooltipInfo> tips = new ArrayList<>();
+		tips.add(new TooltipInfo("Flavour Text", "As fundamental as it gets."));
+		return tips;
+	}
 
     //Upgraded stats.
     @Override
