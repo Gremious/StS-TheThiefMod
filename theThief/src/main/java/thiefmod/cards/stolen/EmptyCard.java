@@ -15,7 +15,7 @@ public class EmptyCard extends CustomCard {
 	
 // TEXT DECLARATION 
 	
-	public static final String ID = thiefmod.ThiefMod.makeID("EmptyCard");
+	public static final String ID = thiefmod.ThiefMod.makeID("AAAEmptyCard");
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_COMMON_ATTACK);
 

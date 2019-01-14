@@ -83,6 +83,12 @@
       "The next Backstab card you play gains it's Backstab effect. NL If you play any card, remove this power. "
     ]
   },
+  "theThief:DealDamageToAllNextTurnPower": {
+    "NAME": "Deal Damage To All Enemies Next Turn",
+    "DESCRIPTIONS": [
+      "At the start of your next turn, you will deal ", " damage to all enemies."
+    ]
+  },
   "theThief:IllGottenGainsPower": {
     "NAME": "Ill-Gotten Gains",
     "DESCRIPTIONS": [

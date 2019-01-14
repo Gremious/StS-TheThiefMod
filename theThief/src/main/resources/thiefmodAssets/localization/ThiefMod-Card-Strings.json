@@ -214,8 +214,8 @@
   },
   "theThief:Follow-up": {
     "NAME": "Follow-up",
-    "DESCRIPTION": "Deal !D! damage to an enemy, next turn, to all enemies.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage to an enemy, next turn, to all enemies."
+    "DESCRIPTION": "Deal !D! damage to an enemy. Next turn, to all enemies.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage to an enemy. Next turn, to all enemies."
   },
   "theThief:OneStepAhead ": {
     "NAME": "One Step Ahead ",

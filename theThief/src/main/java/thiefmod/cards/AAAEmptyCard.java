@@ -16,12 +16,12 @@ import thiefmod.actions.common.StealCardAction;
 import thiefmod.patches.AbstractCardEnum;
 import thiefmod.powers.Unique.TheThiefThieveryPower;
 
-public class EmptyCard extends AbstractBackstabCard {
+public class AAAEmptyCard extends AbstractBackstabCard {
 
 
 // TEXT DECLARATION 
 
-    public static final String ID = thiefmod.ThiefMod.makeID("EmptyCard");
+    public static final String ID = thiefmod.ThiefMod.makeID("AAAEmptyCard");
     public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_COMMON_ATTACK);
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -56,7 +56,7 @@ public class EmptyCard extends AbstractBackstabCard {
 
 // /STAT DECLARATION/
 
-    public EmptyCard() {
+    public AAAEmptyCard() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
         this.baseDamage = DAMAGE;
@@ -102,7 +102,7 @@ public class EmptyCard extends AbstractBackstabCard {
     // Which card to return when making a copy of this card.
     @Override
     public AbstractCard makeCopy() {
-        return new EmptyCard();
+        return new AAAEmptyCard();
     }
 
     //Upgraded stats.

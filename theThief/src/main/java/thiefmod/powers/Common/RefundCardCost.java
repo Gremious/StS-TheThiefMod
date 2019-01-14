@@ -46,6 +46,7 @@ public class RefundCardCost extends AbstractPower {
 		AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(
 				this.owner, this.source, this.ID));	
 	}
+
 	@Override
     public void atStartOfTurn() {
 	    AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.source, this.ID)) ;
