@@ -36,8 +36,10 @@ public class Stab extends AbstractBackstabCard {
     private static final CardType TYPE = CardType.ATTACK;
 
     private static final int COST = 1;
+
     private static final int DAMAGE = 5;
     private static final int UPGRADED_DAMAGE = 2;
+
     private static final int BACKSTAB = 2;
 
 // /STAT DECLARATION/

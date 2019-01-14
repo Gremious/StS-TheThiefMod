@@ -31,9 +31,12 @@ public class OneStepAheadAction extends AbstractGameAction {
         } else if (this.targetMonster.intent == Intent.ATTACK || this.targetMonster.intent == Intent.ATTACK_BUFF || this.targetMonster.intent == Intent.ATTACK_DEBUFF || this.targetMonster.intent == Intent.ATTACK_DEFEND) {
             {
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(this.targetMonster,
-                        new DamageInfo(AbstractDungeon.player, this.damageNum , this.damageType),
+                        new DamageInfo(AbstractDungeon.player, this.damageNum, this.damageType),
                         AbstractGameAction.AttackEffect.SLASH_VERTICAL));
 
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(this.targetMonster,
+                        new DamageInfo(AbstractDungeon.player, this.damageNum, this.damageType),
+                        AbstractGameAction.AttackEffect.SLASH_VERTICAL));
             }
         } else {
             AbstractDungeon.actionManager.addToTop(new TalkAction(
