@@ -83,7 +83,7 @@ public class Murder extends AbstractBackstabCard {
                 new RoomTintEffect(Color.RED, 0.2f), 1.0f));
 
         AbstractDungeon.actionManager.addToBottom(new VFXAction(
-                new AdditiveSlashImpactEffect(1.0f, 1.0f, Color.RED)));
+                new AdditiveSlashImpactEffect(m.drawX, m.drawY, Color.RED)));
     }
 
     @Override

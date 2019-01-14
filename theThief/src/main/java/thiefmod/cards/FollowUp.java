@@ -35,7 +35,7 @@ public class FollowUp extends AbstractBackstabCard {
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
 
-    private static final int COST = 1;
+    private static final int COST = 2;
 
     private static final int DAMAGE = 6;
     private static final int UPGRADE_PLUS_DAMAGE = 3;

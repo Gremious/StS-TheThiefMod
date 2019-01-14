@@ -1,7 +1,9 @@
 package thiefmod.powers.Common;
 
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -9,8 +11,16 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.vfx.combat.AdditiveSlashImpactEffect;
+import com.megacrit.cardcrawl.vfx.combat.LightningEffect;
+import com.megacrit.cardcrawl.vfx.combat.StrikeEffect;
 import thiefmod.ThiefMod;
+
+import java.util.Iterator;
+
+import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager;
 
 // Empty Base
 
@@ -48,12 +58,24 @@ public class DealDamageToAllNextTurnPower extends AbstractPower {
     public void atStartOfTurn() {
         flash();
 
+        Iterator var3 = AbstractDungeon.getCurrRoom().monsters.monsters.iterator();
+
+        AbstractMonster mo;
+        while(var3.hasNext()) {
+            mo = (AbstractMonster)var3.next();
+            if (!mo.isDeadOrEscaped()) {
+                AbstractDungeon.actionManager.addToBottom(new VFXAction(
+                        new AdditiveSlashImpactEffect(mo.drawX, mo.drawY, Color.GOLD), 0.05F));
+            }
+        }
+
         AbstractDungeon.actionManager.addToBottom(new DamageAction(
                 this.target, new DamageInfo(this.source, this.damageAmount, DamageInfo.DamageType.NORMAL),
                 AbstractGameAction.AttackEffect.SLASH_VERTICAL));
 
-        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(
-                this.owner, this.source, this.ID));
+        if (this.amount <= 0) {
+            actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.source, this.ID));
+        }
     }
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
