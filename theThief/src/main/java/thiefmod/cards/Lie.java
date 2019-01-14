@@ -35,8 +35,7 @@ public class Lie extends AbstractBackstabCard {
 
     private static final int COST = 1;
 
-
-    private static final int BLOCK = 8;
+    private static final int BLOCK = 7;
 
     private static final int MAGIC = 1;
     private static final int UPGRADED_PLUS_MAGIC = 1;
@@ -46,6 +45,7 @@ public class Lie extends AbstractBackstabCard {
 
     public Lie() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+
         this.baseBlock = BLOCK;
         this.magicNumber = this.baseMagicNumber = MAGIC;
     }
@@ -57,7 +57,8 @@ public class Lie extends AbstractBackstabCard {
                 p, p, this.block));
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(
-                        m, this.magicNumber, false), this.magicNumber));
+                m, this.magicNumber, false), this.magicNumber));
+
     }
 
     // Which card to return when making a copy of this card.
