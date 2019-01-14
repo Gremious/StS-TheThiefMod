@@ -1,12 +1,16 @@
    package thiefmod.actions.common;
    
+   import com.megacrit.cardcrawl.actions.utility.ShakeScreenAction;
    import com.megacrit.cardcrawl.characters.AbstractPlayer;
    import com.megacrit.cardcrawl.core.AbstractCreature;
    import com.megacrit.cardcrawl.core.CardCrawlGame;
    import com.megacrit.cardcrawl.core.Settings;
    import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
    import com.megacrit.cardcrawl.localization.UIStrings;
-   
+
+   import static com.megacrit.cardcrawl.helpers.ScreenShake.ShakeDur.MED;
+   import static com.megacrit.cardcrawl.helpers.ScreenShake.ShakeIntensity.HIGH;
+
    public class GainGoldAction extends com.megacrit.cardcrawl.actions.AbstractGameAction
    {	
 		private AbstractPlayer target;
@@ -24,6 +28,7 @@
 		public void update()
 		{
 			com.megacrit.cardcrawl.core.CardCrawlGame.sound.play("GOLD_JINGLE");
+
 			if (this.target.gold < -this.goldAmount) {
 				this.goldAmount = -this.target.gold;
 			}

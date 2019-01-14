@@ -59,7 +59,7 @@ public class StolenRitual extends CustomCard {
 
         CardCrawlGame.sound.playA("VO_CULTIST_1C", 0.3f);
 
-        AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "CA-CAW", 2.0f, 1.0f));
+        AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "CA-CAW", 3.0f, 2.0f));
 
         AbstractDungeon.actionManager.addToBottom(new WaitAction(0.1f));
         AbstractDungeon.actionManager.addToBottom(new WaitAction(0.1f));
