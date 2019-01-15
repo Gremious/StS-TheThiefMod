@@ -171,7 +171,7 @@
   },
   "theThief:Stab": {
     "NAME": "Stab",
-    "DESCRIPTION": "Deal !D! Damage. NL Backstab: Deal !BkStDmg! instead. ",
+    "DESCRIPTION": "Deal !D! Damage. ",
     "UPGRADE_DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
       "NL Backstab: Deal !BkStDmg! instead",
@@ -180,7 +180,7 @@
   },
   "theThief:CloakAndDaggerThief": {
     "NAME": "Cloak and Dagger",
-    "DESCRIPTION": "Gain !B! block NL Backstab: Deal !D! Damage instead.",
+    "DESCRIPTION": "Gain !B! block ",
     "UPGRADE_DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
       "NL Backstab: Deal !D! Damage instead",
@@ -199,8 +199,8 @@
   },
   "theThief:BeautifulLies": {
     "NAME": "Beautiful Lies",
-    "DESCRIPTION": "Deal !D! damage. Add a copy of this card to your deck. NL Exhaust. NL Soulbound.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. Add a copy of this card to your deck. NL Exhaust. NL Soulbound."
+    "DESCRIPTION": "Deal !D! damage. NL Add a copy of this card to your deck. NL Exhaust. NL Soulbound.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Add a copy of this card to your deck. NL Exhaust. NL Soulbound."
   },
   "theThief:SerratedDagger": {
     "NAME": "Serrated Dagger",
@@ -233,8 +233,8 @@
   },
   "theThief:StickyFingers": {
     "NAME": "Sticky Fingers",
-    "DESCRIPTION": "Draw !M! cards. Backstab: Steal !BkStMgc! card instead.",
-    "UPGRADE_DESCRIPTION": "Draw !M! cards. Backstab: Steal !BkStMgc! cards instead.",
+    "DESCRIPTION": "Draw !M! cards. ",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards. ",
     "EXTENDED_DESCRIPTION": [
       "NL Backstab: Steal !BkStMgc! cards instead.",
       "NL Backstab: [#fa5555]Steal[] !BkStMgc! [#fa5555]cards[] [#fa5555]instead.[]"

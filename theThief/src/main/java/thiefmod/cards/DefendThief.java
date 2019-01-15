@@ -57,6 +57,7 @@ extends CustomCard {
 	public DefendThief() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,COLOR,RARITY,TARGET);
 		this.baseBlock = BLOCK;
+		this.tags.add(BaseModCardTags.BASIC_DEFEND);
 	}
 	
 	// Actions the card should do.
@@ -64,7 +65,7 @@ extends CustomCard {
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		AbstractDungeon.actionManager
 				.addToBottom(new com.megacrit.cardcrawl.actions.common.GainBlockAction(p, p, this.block));
-		this.tags.add(BaseModCardTags.BASIC_DEFEND);
+
 	}
 
 	@Override

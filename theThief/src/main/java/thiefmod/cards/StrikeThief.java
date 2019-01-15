@@ -43,13 +43,15 @@ public class StrikeThief extends CustomCard {
 	private static final int COST = 1;	
 	private static final int DAMAGE = 7;
 	private static final int UPGRADE_PLUS_DMG = 2;
-	
+
 	
 // /STAT DECLARATION/
 	
 	public StrikeThief() {
 		super(ID,NAME,IMG,COST,DESCRIPTION,TYPE,COLOR,RARITY,TARGET);
 		this.baseDamage = DAMAGE;
+		this.tags.add(AbstractCard.CardTags.STRIKE);
+		this.tags.add(BaseModCardTags.BASIC_STRIKE);
 	}
 	
 	// Actions the card should do.
@@ -58,8 +60,7 @@ public class StrikeThief extends CustomCard {
 		AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
 				new DamageInfo(p, this.damage, this.damageTypeForTurn),
 				AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-		this.tags.add(AbstractCard.CardTags.STRIKE);
-		this.tags.add(BaseModCardTags.BASIC_STRIKE);
+
 	}
 		
 	// Which card to return when making a copy of this card.
