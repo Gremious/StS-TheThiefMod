@@ -15,7 +15,6 @@ public class powersCanStopPlay {
 	public static boolean Postfix(boolean result, AbstractCard __canPlay_instance, AbstractCard card) {
 		boolean retValue = result;
 
-		
 		for (AbstractPower power : AbstractDungeon.player.powers) {
 			if (power instanceof CanUsePower) {
 				retValue = ((CanUsePower) power).canUse(card);

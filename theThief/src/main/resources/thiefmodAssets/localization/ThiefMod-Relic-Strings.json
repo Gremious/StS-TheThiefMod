@@ -1,7 +1,18 @@
 {
-"theThief:ThievesMask": {
-        "NAME": "ThievesMask",
-	    "FLAVOR": "Pretty sly for a masked guy.",
-        "DESCRIPTIONS": ["On the first turn of each combat gain 3 gold whenever you deal damage."]
-	}
+  "theThief:ThievesMask": {
+    "NAME": "Grinning Mask",
+    "FLAVOR": "A smile twice as wide is twice as scary.",
+    "DESCRIPTIONS": [
+      "On the first turn of each combat gain 3 gold whenever you deal damage. NL #ySynergy: ",
+      "If you have the ",
+      ", the Merchant always has a card on sale."
+    ]
+  },
+  "theThief:ShadowMask": {
+    "NAME": "Shadow Mask",
+    "FLAVOR": "Seems a bit hard to keep on your face, but whatever works.",
+    "DESCRIPTIONS": [
+      "On the first turn of each combat, gain 1 #yIntangible."
+    ]
+  }
 }

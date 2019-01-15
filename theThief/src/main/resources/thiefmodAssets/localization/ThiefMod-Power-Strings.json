@@ -86,7 +86,8 @@
   "theThief:DealDamageToAllNextTurnPower": {
     "NAME": "Deal Damage To All Enemies Next Turn",
     "DESCRIPTIONS": [
-      "At the start of your next turn, you will deal ", " damage to all enemies."
+      "At the start of your next turn, you will deal ",
+      " damage to all enemies."
     ]
   },
   "theThief:IllGottenGainsPower": {

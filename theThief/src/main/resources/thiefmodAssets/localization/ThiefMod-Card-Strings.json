@@ -217,8 +217,8 @@
     "DESCRIPTION": "Deal !D! damage to an enemy. Next turn, to all enemies.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage to an enemy. Next turn, to all enemies."
   },
-  "theThief:OneStepAhead ": {
-    "NAME": "One Step Ahead ",
+  "theThief:OneStepAhead": {
+    "NAME": "One Step Ahead",
     "DESCRIPTION": "If an enemy intends to attack, Shadowstep !M! time. If it intends to block, deal !D! damage !BkStMgc! times instead.",
     "UPGRADE_DESCRIPTION": "If an enemy intends to attack, Shadowstep !M! times. If it intends to block, deal !D! damage !BkStMgc! times instead."
   },
@@ -243,11 +243,11 @@
   "theThief:Sidestep": {
     "NAME": "Sidestep",
     "DESCRIPTION": "Next turn, gain !B! block and [R].",
-    "UPGRADE_DESCRIPTION": "Next turn, gain !B! block and [R] [R]."
+    "UPGRADE_DESCRIPTION": "Next turn, gain !B! block and [E] [E]."
   },
   "theThief:EmptyCard": {
     "NAME": "Empty Card",
-    "DESCRIPTION": "Gain !M! [R]. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! [R]. NL Exhaust."
+    "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust."
   }
 }

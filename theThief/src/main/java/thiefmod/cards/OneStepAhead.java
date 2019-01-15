@@ -22,7 +22,7 @@ public class OneStepAhead extends AbstractBackstabCard {
 
 // TEXT DECLARATION
 
-    public static final String ID = ThiefMod.makeID("One Step Ahead");
+    public static final String ID = ThiefMod.makeID("OneStepAhead");
     public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_COMMON_ATTACK);
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
