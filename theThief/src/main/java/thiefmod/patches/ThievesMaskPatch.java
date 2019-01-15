@@ -9,12 +9,13 @@ import com.megacrit.cardcrawl.shop.ShopScreen;
 import javassist.CtBehavior;
 import thiefmod.relics.*;
 
+/*
 @SpirePatch(
         clz = ShopScreen.class,
         method = "initCards"
 )
 
-/* TODO: Delete this later.
+TODO: Delete this later.
 public class ThievesMaskPatch {
     @SpireInsertPatch(
             rloc=51,
