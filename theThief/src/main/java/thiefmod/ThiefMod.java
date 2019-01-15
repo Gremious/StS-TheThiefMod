@@ -14,9 +14,9 @@ import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import thiefmod.Variables.BackstabBlock;
-import thiefmod.Variables.BackstabDamage;
-import thiefmod.Variables.BackstabMagicNumber;
+import thiefmod.variables.BackstabBlock;
+import thiefmod.variables.BackstabDamage;
+import thiefmod.variables.BackstabMagicNumber;
 import thiefmod.cards.*;
 import thiefmod.characters.*;
 import thiefmod.patches.*;
@@ -189,8 +189,8 @@ public class    ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, E
 
     @Override
     public void receiveEditCards() {
-        logger.info("Add Variables");
-        // Add the Custom Dynamic Variables
+        logger.info("Add variables");
+        // Add the Custom Dynamic variables
         BaseMod.addDynamicVariable(new BackstabDamage());
         BaseMod.addDynamicVariable(new BackstabMagicNumber());
         BaseMod.addDynamicVariable(new BackstabBlock());
