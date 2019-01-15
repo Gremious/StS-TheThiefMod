@@ -199,7 +199,10 @@
   "theThief:Murder.": {
     "NAME": "Murder.",
     "DESCRIPTION": "Deal !D! damage. Fleeting.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. Fleeting."
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. Fleeting.",
+    "EXTENDED_DESCRIPTION": [
+      "[#88888]Die.[]"
+    ]
   },
   "theThief:BeautifulLies": {
     "NAME": "Beautiful Lies",
@@ -235,7 +238,8 @@
     "UPGRADE_DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
       "NL Backstab: Apply !M! Vulnerable instead.",
-      "NL Backstab: [#fa5555]Apply[] !M! [#fa5555]Vulnerable[] [#fa5555]instead.[]"
+      "NL Backstab: [#fa5555]Apply[] !M! [#fa5555]Vulnerable[] [#fa5555]instead.[]",
+      "Flavor Text"
     ]
   },
   "theThief:StickyFingers": {
@@ -244,96 +248,150 @@
     "UPGRADE_DESCRIPTION": "Draw !M! cards. ",
     "EXTENDED_DESCRIPTION": [
       "NL Backstab: Steal !BkStMgc! cards instead.",
-      "NL Backstab: [#fa5555]Steal[] !BkStMgc! [#fa5555]cards[] [#fa5555]instead.[]"
+      "NL Backstab: [#fa5555]Steal[] !BkStMgc! [#fa5555]cards[] [#fa5555]instead.[]",
+      "They make wearing gloves very uncomfortable."
     ]
   },
   "theThief:Sidestep": {
     "NAME": "Sidestep",
     "DESCRIPTION": "Next turn, gain !B! block and [R].",
-    "UPGRADE_DESCRIPTION": "Next turn, gain !B! block and [E] [E]."
+    "UPGRADE_DESCRIPTION": "Next turn, gain !B! block and [E] [E].",
+    "EXTENDED_DESCRIPTION": [
+      "[#88888]Flavor[] [#88888]Text[]"
+    ]
   },
   "theThief:HideInTheShadows": {
     "NAME": "Hide In The Shadows",
     "DESCRIPTION": "Gain !B! Block. Ethereal. Has exhaust if you’ve played an attack this turn.",
-    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust."
+    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "[#88888]Flavor[] [#88888]Text[]"
+    ]
   },
   "theThief:ShadowCloak": {
     "NAME": "Shadow Cloak",
     "DESCRIPTION": "Gain !B! Block. Increase this card's block by !M! for the rest of this combat.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. Increase this card's block by !M! for the rest of this combat."
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. Increase this card's block by !M! for the rest of this combat.",
+    "EXTENDED_DESCRIPTION": [
+      "[#88888]Flavor[] [#88888]Text[]"
+    ]
   },
   "theThief:Patience": {
     "NAME": "Patience",
     "DESCRIPTION": "Gain !B! block. NL Grave.",
-    "UPGRADE_DESCRIPTION": "Gain !B! block. NL Grave."
+    "UPGRADE_DESCRIPTION": "Gain !B! block. NL Grave.",
+    "EXTENDED_DESCRIPTION": [
+      "[#88888]Flavor[] [#88888]Text[]"
+    ]
   },
   "theThief:SleightOfHand": {
     "NAME": "Sleight of Hand",
     "DESCRIPTION": "Gain !B! block. Steal !M! card.",
-    "UPGRADE_DESCRIPTION": "Gain !B! block. Steal !M! cards."
+    "UPGRADE_DESCRIPTION": "Gain !B! block. Steal !M! cards.",
+    "EXTENDED_DESCRIPTION": [
+      "[#88888]Is[] [#88888]*this*[] [#88888]your[] [#88888]watch?[] "
+    ]
   },
   "theThief:QuickThinking": {
     "NAME": "Quick Thinking",
     "DESCRIPTION": "Shadowstep #b1 time and draw !M! cards.",
-    "UPGRADE_DESCRIPTION": "Shadowstep #b1 time and draw !M! cards."
+    "UPGRADE_DESCRIPTION": "Shadowstep #b1 time and draw !M! cards.",
+    "EXTENDED_DESCRIPTION": [
+      "[#88888]Flavor[] [#88888]Text[]"
+    ]
   },
-  "theThief:EmptyCard5": {
-    "NAME": "Empty Card",
-    "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust."
+  "theThief:ShadowEvade": {
+    "NAME": "Shadow Evade",
+    "DESCRIPTION": "Shadowstep !M! time. NL Gain !B! Block.",
+    "UPGRADE_DESCRIPTION": "Shadowstep !M! time. NL Gain !B! Block",
+    "EXTENDED_DESCRIPTION": [
+      "[#88888]Nope![]"
+    ]
   },
-  "theThief:EmptyCard6": {
-    "NAME": "Empty Card",
-    "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust."
+  "theThief:Prep": {
+    "NAME": "Prep",
+    "DESCRIPTION": "Gain !B! Block.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block.",
+    "EXTENDED_DESCRIPTION": [
+      " NL Backstab: Also gain [E].",
+      " NL Backstab: [#fa5555]Also[] [#fa5555]gain[] [E].",
+      "[#88888]Flavor[] [#88888]Text[]"
+    ]
   },
   "theThief:EmptyCard7": {
-    "NAME": "Empty Card",
+    "NAME": "a",
     "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust."
+    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "[#88888]Flavor[] [#88888]Text[]"
+    ]
   },
   "theThief:EmptyCard8": {
-    "NAME": "Empty Card",
+    "NAME": "EmptyCard",
     "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust."
+    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "[#88888]Flavor[] [#88888]Text[]"
+    ]
   },
   "theThief:EmptyCard9": {
-    "NAME": "Empty Card",
+    "NAME": "EmptyCard",
     "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust."
+    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "[#88888]Flavor[] [#88888]Text[]"
+    ]
   },
   "theThief:EmptyCard1": {
-    "NAME": "Empty Card",
+    "NAME": "EmptyCard",
     "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust."
+    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "[#88888]Flavor[] [#88888]Text[]"
+    ]
   },
   "theThief:EmptyCard2": {
-    "NAME": "Empty Card",
+    "NAME": "EmptyCard",
     "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust."
+    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "[#88888]Flavor[] [#88888]Text[]"
+    ]
   },
   "theThief:EmptyCard3": {
-    "NAME": "Empty Card",
+    "NAME": "EmptyCard",
     "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust."
+    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "[#88888]Flavor[] [#88888]Text[]"
+    ]
   },
   "theThief:EmptyCard4": {
-    "NAME": "Empty Card",
+    "NAME": "EmptyCard",
     "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust."
+    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "[#88888]Flavor[] [#88888]Text[]"
+    ]
   },
   "theThief:EmptyCard10": {
-    "NAME": "Empty Card",
+    "NAME": "EmptyCard",
     "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust."
+    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "[#88888]Flavor[] [#88888]Text[]"
+    ]
   },
   "theThief:EmptyCard11": {
-    "NAME": "Empty Card",
+    "NAME": "EmptyCard",
     "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust."
+    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "[#88888]Flavor[] [#88888]Text[]"
+    ]
   },
   "theThief:empty": {
-    "NAME": "Empty Card",
+    "NAME": "EmptyCard",
     "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [

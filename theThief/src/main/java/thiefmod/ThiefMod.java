@@ -212,6 +212,7 @@ public class    ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, E
         logger.info(LogInt++);
 
 
+        BaseMod.addCard(new ShadowEvade());
         BaseMod.addCard(new OneStepAhead());
         BaseMod.addCard(new FollowUp());
         BaseMod.addCard(new Exploit());
@@ -255,7 +256,7 @@ public class    ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, E
         UnlockTracker.unlockCard(StickyFingers.ID);
         UnlockTracker.unlockCard(CloakAndDagger.ID);
         UnlockTracker.unlockCard(CripplingStrike.ID);
-
+        UnlockTracker.unlockCard(ShadowEvade.ID);
         UnlockTracker.unlockCard(QuickThinking.ID);
         UnlockTracker.unlockCard(Patience.ID);
         UnlockTracker.unlockCard(OneStepAhead.ID);
