@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.SmilingMask;
 import com.megacrit.cardcrawl.shop.OnSaleTag;
 import com.megacrit.cardcrawl.shop.ShopScreen;
+import com.sun.xml.internal.bind.v2.TODO;
 import javassist.CtBehavior;
 import thiefmod.relics.ThievesMask;
 
@@ -46,6 +47,7 @@ public class ThievesMaskPatch {
         }
     }
 
+    //TODO: If the player has tag-bag, cards cost go into negative. We should make sure that doesn't happen.
     private static class Locator extends SpireInsertLocator {
         @Override
         public int[] Locate(CtBehavior ctMethodToPatch) throws Exception {
