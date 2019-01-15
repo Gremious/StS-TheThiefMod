@@ -4,23 +4,28 @@ import basemod.BaseMod;
 import basemod.ModLabel;
 import basemod.ModPanel;
 import basemod.interfaces.*;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
+import com.megacrit.cardcrawl.cards.green.CloakAndDagger;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import thiefmod.variables.BackstabBlock;
-import thiefmod.variables.BackstabDamage;
-import thiefmod.variables.BackstabMagicNumber;
+import thiefmod.Variables.*;
 import thiefmod.cards.*;
 import thiefmod.characters.*;
 import thiefmod.patches.*;
 import thiefmod.relics.*;
+
+import java.nio.charset.StandardCharsets;
+
+// Note: #y b r g p
 
 @SpireInitializer
 public class    ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, EditKeywordsSubscriber, EditCharactersSubscriber, PostInitializeSubscriber {
@@ -189,8 +194,8 @@ public class    ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, E
 
     @Override
     public void receiveEditCards() {
-        logger.info("Add variables");
-        // Add the Custom Dynamic variables
+        logger.info("Add Variables");
+        // Add the Custom Dynamic Variables
         BaseMod.addDynamicVariable(new BackstabDamage());
         BaseMod.addDynamicVariable(new BackstabMagicNumber());
         BaseMod.addDynamicVariable(new BackstabBlock());
@@ -224,6 +229,14 @@ public class    ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, E
         BaseMod.addCard(new IllGottenGains());
         BaseMod.addCard(new Pickpocket());
 
+        BaseMod.addCard(new QuickThinking());
+        BaseMod.addCard(new Patience());
+        BaseMod.addCard(new ShadowCloak());
+        BaseMod.addCard(new HideInTheShadows());
+        BaseMod.addCard(new Sidestep());
+        BaseMod.addCard(new StickyFingers());
+        BaseMod.addCard(new CloakAndDagger());
+        BaseMod.addCard(new CripplingStrike());
         BaseMod.addCard(new Lie());
         BaseMod.addCard(new SwiftSlash());
 
@@ -236,6 +249,15 @@ public class    ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, E
         UnlockTracker.unlockCard(SimilarSkills.ID);
         UnlockTracker.unlockCard(SwiftTread.ID);
 
+        UnlockTracker.unlockCard(ShadowCloak.ID);
+        UnlockTracker.unlockCard(HideInTheShadows.ID);
+        UnlockTracker.unlockCard(Sidestep.ID);
+        UnlockTracker.unlockCard(StickyFingers.ID);
+        UnlockTracker.unlockCard(CloakAndDagger.ID);
+        UnlockTracker.unlockCard(CripplingStrike.ID);
+
+        UnlockTracker.unlockCard(QuickThinking.ID);
+        UnlockTracker.unlockCard(Patience.ID);
         UnlockTracker.unlockCard(OneStepAhead.ID);
         UnlockTracker.unlockCard(FollowUp.ID);
         UnlockTracker.unlockCard(Exploit.ID);
@@ -265,6 +287,7 @@ public class    ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, E
     public void receiveEditStrings() {
         logger.info("Begin Editing Strings");
 
+
         // CardStrings
         BaseMod.loadCustomStringsFile(CardStrings.class,
                 "thiefmodAssets/localization/ThiefMod-Card-Strings.json");
@@ -277,7 +300,6 @@ public class    ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, E
         BaseMod.loadCustomStringsFile(RelicStrings.class,
                 "thiefmodAssets/localization/ThiefMod-Relic-Strings.json");
 
-
         logger.info("Done Edtting Strings");
     }
 
@@ -287,9 +309,9 @@ public class    ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, E
 
     @Override
     public void receiveEditKeywords() {
-        final String[] placeholder = {"shadowstep", "Shadowstep"};
-        BaseMod.addKeyword(placeholder, "Become elusive, reducing incoming damage by 10% per stack. " +
-                "NL If you use a BackstabPower card immediately after " +
+        final String[] elusive = {"shadowstep", "Shadowstep"};
+        BaseMod.addKeyword(elusive, "Become elusive, reducing incoming damage by 10% per stack. " +
+                "NL If you use a Backstab card immediately after " +
                 "NL a Shadowstep card, it gains it's backstab effect.");
 
         final String[] steal = {"steal", "Steal, stolen, Stolen"};
@@ -298,7 +320,7 @@ public class    ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, E
                 "NL They are added to your hand unless stated otherwise.");
 
         final String[] backstab = {"BackstabPower", "backstab"};
-        BaseMod.addKeyword(backstab, "If this is the first card you play in a turn, it gains an effect.");
+        BaseMod.addKeyword(backstab, "If this is the first card you play in a turn, it changes its effect.");
     }
     // ================ /LOAD THE KEYWORDS/ ===================
 

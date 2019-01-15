@@ -1,5 +1,6 @@
 package thiefmod.cards;
 
+import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -16,6 +17,9 @@ import thiefmod.actions.common.StealCardAction;
 import thiefmod.patches.AbstractCardEnum;
 import thiefmod.powers.Unique.TheThiefThieveryPower;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class AAAEmptyCard extends AbstractBackstabCard {
 
 
@@ -28,6 +32,7 @@ public class AAAEmptyCard extends AbstractBackstabCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String EXTENDED_DESCRIPTION[] = cardStrings.EXTENDED_DESCRIPTION;
+
 
 // /TEXT DECLARATION/
 
@@ -80,8 +85,8 @@ public class AAAEmptyCard extends AbstractBackstabCard {
         }
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
-                AbstractDungeon.player, AbstractDungeon.player, new TheThiefThieveryPower(
-                        AbstractDungeon.player, AbstractDungeon.player, false, 3), 1));
+                p, p, new TheThiefThieveryPower(
+                        p, p, false, 3), 1));
 
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(
                 p, p, this.block));
@@ -97,6 +102,13 @@ public class AAAEmptyCard extends AbstractBackstabCard {
             this.rawDescription = this.DESCRIPTION + this.EXTENDED_DESCRIPTION[1];
         }
         this.initializeDescription();
+    }
+
+    @Override
+    public List<TooltipInfo> getCustomTooltips() {
+        List<TooltipInfo> tips = new ArrayList<>();
+        tips.add(new TooltipInfo("Flavor Text", EXTENDED_DESCRIPTION[0]));
+        return tips;
     }
 
     // Which card to return when making a copy of this card.

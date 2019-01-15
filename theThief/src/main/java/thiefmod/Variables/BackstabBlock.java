@@ -1,4 +1,4 @@
-    package thiefmod.variables;
+    package thiefmod.Variables;
 
 import basemod.abstracts.DynamicVariable;
 import com.megacrit.cardcrawl.cards.AbstractCard;

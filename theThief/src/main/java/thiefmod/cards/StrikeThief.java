@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
 import thiefmod.ThiefMod;
+import thiefmod.characters.TheThief;
 import thiefmod.patches.AbstractCardEnum;
 
 import java.util.ArrayList;
@@ -25,11 +26,14 @@ public class StrikeThief extends CustomCard {
 	
 	public static final String ID = thiefmod.ThiefMod.makeID("StrikeThief");
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+	private static final CardStrings flavortextStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_COMMON_ATTACK);
 
 	public static final	String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+	public static final String EXTENDED_DESCRIPTION[] = cardStrings.EXTENDED_DESCRIPTION;
 	public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+
 
 // /TEXT DECLARATION/
 
@@ -41,7 +45,7 @@ public class StrikeThief extends CustomCard {
 	public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
 
 	private static final int COST = 1;	
-	private static final int DAMAGE = 7;
+	private static final int DAMAGE = 6;
 	private static final int UPGRADE_PLUS_DMG = 2;
 
 	
@@ -73,7 +77,7 @@ public class StrikeThief extends CustomCard {
 	@Override
 	public List<TooltipInfo> getCustomTooltips() {
 		List<TooltipInfo> tips = new ArrayList<>();
-		tips.add(new TooltipInfo("Flavor Text", "As fundamental as it gets."));
+		tips.add(new TooltipInfo("Flavor Text", EXTENDED_DESCRIPTION[0]));
 		return tips;
 	}
 

@@ -29,12 +29,13 @@ extends CustomCard {
 	
 // TEXT DECLARATION 
 	
-	public static final String ID = thiefmod.ThiefMod.makeID("DefaultCommonSkill");
+	public static final String ID = thiefmod.ThiefMod.makeID("DefendThief");
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_COMMON_SKILL);
 	
 	public static final	String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+	public static final String EXTENDED_DESCRIPTION[] = cardStrings.EXTENDED_DESCRIPTION;
 	public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
 // /TEXT DECLARATION/
@@ -71,7 +72,7 @@ extends CustomCard {
 	@Override
 	public List<TooltipInfo> getCustomTooltips() {
 		List<TooltipInfo> tips = new ArrayList<>();
-		tips.add(new TooltipInfo("Flavor Text", "As fundamental as it gets."));
+		tips.add(new TooltipInfo("Flavor Text", EXTENDED_DESCRIPTION[0]));
 		return tips;
 	}
 

@@ -1,71 +1,66 @@
 package thiefmod.cards;
 
-import basemod.helpers.BaseModCardTags;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
+import thiefmod.actions.common.StealCardAction;
 import thiefmod.patches.AbstractCardEnum;
-import thiefmod.patches.ThiefCardTags;
-import thiefmod.powers.Common.BackstabPower;
-import thiefmod.powers.Unique.ShadowFormPower;
+import thiefmod.powers.Common.ShadowstepPower;
+import thiefmod.powers.Unique.TheThiefThieveryPower;
 
-public class ShadowForm extends AbstractBackstabCard {
+public class QuickThinking extends AbstractBackstabCard {
 
 
-    // TEXT DECLARATION
+// TEXT DECLARATION
 
-    public static final String ID = thiefmod.ThiefMod.makeID("ShadowForm");
-    public static final String IMG = ThiefMod.makePath(ThiefMod.SHADOW_FORM);
+    public static final String ID = ThiefMod.makeID("QuickThinking");
+    public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_COMMON_SKILL);
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String EXTENDED_DESCRIPTION[] = cardStrings.EXTENDED_DESCRIPTION;
 
-    // /TEXT DECLARATION/
+// /TEXT DECLARATION/
 
     // STAT DECLARATION
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardTarget TARGET = CardTarget.SELF;
+    private static final CardType TYPE = CardType.SKILL;
 
-    private static final CardRarity RARITY = CardRarity.RARE;
-    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
-    private static final CardType TYPE = CardType.POWER;
+    private static final int COST = 1;
 
-    private static final int COST = 3;
     private static final int MAGIC = 1;
-    private static final int BACKSTAB = 2;
+    private static final int UPGRADED_PLUS_MAGIC = 1;
 
-    // /STAT DECLARATION/
+// /STAT DECLARATION/
 
-    public ShadowForm() {
+    public QuickThinking() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.rawDescription = this.DESCRIPTION + this.EXTENDED_DESCRIPTION[0];
-        this.initializeDescription();
 
-        this.isEthereal = this.upgraded;
         this.magicNumber = this.baseMagicNumber = MAGIC;
-        this.baseBackstabNumber = this.backstabNumber = BACKSTAB;
-        this.tags.add(ThiefCardTags.BACKSTAB);
-        this.tags.add(BaseModCardTags.FORM);
     }
 
+    // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        final int count = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
 
-        if (count <= 1 || p.hasPower(BackstabPower.POWER_ID)) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
-                new ShadowFormPower(p, this.magicNumber * this.backstabNumber),
-                    this.magicNumber * this.backstabNumber));
-        } else {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
-                new ShadowFormPower(p, this.magicNumber), this.magicNumber));
-        }
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
+                p, p, new ShadowstepPower(p, p, 1), 1));
+
+        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.magicNumber));
+
     }
 
     @Override
@@ -82,7 +77,7 @@ public class ShadowForm extends AbstractBackstabCard {
     // Which card to return when making a copy of this card.
     @Override
     public AbstractCard makeCopy() {
-        return new ShadowForm();
+        return new QuickThinking();
     }
 
     //Upgraded stats.
@@ -90,6 +85,8 @@ public class ShadowForm extends AbstractBackstabCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
+            this.upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
+//          this.rawDescription = UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }
     }

@@ -1,11 +1,11 @@
 package thiefmod.cards;
 
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.FleetingField;
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.GraveField;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.ModifyBlockAction;
-import com.megacrit.cardcrawl.actions.defect.IncreaseMiscAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -18,12 +18,12 @@ import thiefmod.actions.common.StealCardAction;
 import thiefmod.patches.AbstractCardEnum;
 import thiefmod.powers.Unique.TheThiefThieveryPower;
 
-public class ShadowCloak extends AbstractBackstabCard {
+public class Patience extends AbstractBackstabCard {
 
 
 // TEXT DECLARATION
 
-    public static final String ID = ThiefMod.makeID("ShadowCloak");
+    public static final String ID = ThiefMod.makeID("Patience");
     public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_COMMON_SKILL);
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -39,38 +39,35 @@ public class ShadowCloak extends AbstractBackstabCard {
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
 
-    private static final int COST = 1;
+    private static final int COST = 2;
 
-
-
-    private static final int BLOCK = 2;
-    private static final int UPGRADE_PLUS_BLOCK = 1;
-
-    private static final int MAGIC = 2;
-    private static final int UPGRADED_PLUS_MAGIC = 1;
+    private static final int BLOCK = 18;
+    private static final int UPGRADE_PLUS_BLOCK = 4;
 
 
 // /STAT DECLARATION/
 
-    public ShadowCloak() {
+    public Patience() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+
         this.baseBlock = BLOCK;
-        this.magicNumber = this.baseMagicNumber = MAGIC;
+        GraveField.grave.set(this, true);
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
-            AbstractDungeon.actionManager.addToBottom(new ModifyBlockAction(this.uuid, this.magicNumber));
-        }
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(
+                p, p, this.block));
+
+    }
 
 
     // Which card to return when making a copy of this card.
     @Override
     public AbstractCard makeCopy() {
-        return new ShadowCloak();
+        return new Patience();
     }
 
     //Upgraded stats.
@@ -78,7 +75,6 @@ public class ShadowCloak extends AbstractBackstabCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
             this.upgradeBlock(UPGRADE_PLUS_BLOCK);
 //          this.rawDescription = UPGRADE_DESCRIPTION;
             this.initializeDescription();

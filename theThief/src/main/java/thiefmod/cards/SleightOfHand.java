@@ -32,7 +32,6 @@ public class SleightOfHand extends AbstractBackstabCard {
     private static final int COST = 1;
 
     private static final int BLOCK = 6;
-    private static final int UPGRADE_PLUS_BLOCK = 2;
 
     private static final int MAGIC = 1;
     private static final int UPGRADED_PLUS_MAGIC = 1;
@@ -73,7 +72,6 @@ public class SleightOfHand extends AbstractBackstabCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
-            this.upgradeBlock(UPGRADE_PLUS_BLOCK);
             this.initializeDescription();
         }
     }
