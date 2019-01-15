@@ -9,6 +9,25 @@ import com.megacrit.cardcrawl.shop.ShopScreen;
 import javassist.CtBehavior;
 import thiefmod.relics.*;
 
+@SpirePatch(
+        clz = ShopScreen.class,
+        method = "initCards"
+)
+
+/* TODO: Delete this later.
+public class ThievesMaskPatch {
+    @SpireInsertPatch(
+            rloc=51,
+            localvars={"saleCard"}
+    )
+    public static void insert(ShopScreen __instance, @ByRef AbstractCard[] saleCard) {
+        if (AbstractDungeon.player.hasRelic(SmilingMask.ID) && AbstractDungeon.player.hasRelic(ThievesMask.ID)) {
+            saleCard[0].price = 0;
+        }
+    }
+}
+*/
+
 
 @SpirePatch(
         clz = ShopScreen.class,
@@ -18,9 +37,9 @@ import thiefmod.relics.*;
 public class ThievesMaskPatch {
 
     public static void insert(ShopScreen __instance, @ByRef AbstractCard[] saleCard) {
-     //   if (AbstractDungeon.player.hasRelic(SmilingMask.ID) && AbstractDungeon.player.hasRelic(ThievesMask.ID)) {
+    //   if (AbstractDungeon.player.hasRelic(SmilingMask.ID) && AbstractDungeon.player.hasRelic(ThievesMask.ID)) {
             saleCard[0].price = 0;
-        //}
+    //}
     }
 
     private static class Locator extends SpireInsertLocator
@@ -33,3 +52,4 @@ public class ThievesMaskPatch {
         }
     }
 }
+
