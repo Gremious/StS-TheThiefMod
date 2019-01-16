@@ -162,7 +162,7 @@ public class    ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, E
         Texture badgeTexture = new Texture(makePath(BADGE_IMAGE));
 
         ModPanel settingsPanel = new ModPanel();
-        settingsPanel.addUIElement(new ModLabel("DefaultMod doesn't have any settings!", 400.0f, 700.0f, settingsPanel, (me) -> {
+        settingsPanel.addUIElement(new ModLabel("The Thief Mod does not have any settings!", 400.0f, 700.0f, settingsPanel, (me) -> {
         }));
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
 
