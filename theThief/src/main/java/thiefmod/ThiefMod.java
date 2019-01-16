@@ -210,6 +210,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         logger.info(LogInt++);
 
 
+        BaseMod.addCard(new ShadowCalamity());
         BaseMod.addCard(new Ambush());
         BaseMod.addCard(new ViciousAssault());
         BaseMod.addCard(new DirtyDeedsDDC());
@@ -251,6 +252,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
 
+        UnlockTracker.unlockCard(ShadowCalamity.ID);
         UnlockTracker.unlockCard(Ambush.ID);
         UnlockTracker.unlockCard(Mercy.ID);
         UnlockTracker.unlockCard(StrikeThief.ID);

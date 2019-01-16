@@ -1,6 +1,7 @@
 package thiefmod.cards;
 
 import basemod.helpers.TooltipInfo;
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.FleetingField;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -57,7 +58,7 @@ public class AAAEmptyCard extends AbstractBackstabCard {
     private static final int UPGRADED_PLUS_MAGIC = 1;
 
     private static final int BACKSTAB = 2;
-    private static final int UPGRADED_PLUS_BACKSTAB = 1 ;
+    private static final int UPGRADED_PLUS_BACKSTAB = 1;
 
     private static final String ADD_LOCATION = "Hand"; // If stolen card.
     private static final boolean ADD_RANDOM = true;
@@ -68,6 +69,7 @@ public class AAAEmptyCard extends AbstractBackstabCard {
     public AAAEmptyCard() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
+        FleetingField.fleeting.set(this, true);
         this.baseDamage = DAMAGE;
         this.magicNumber = this.baseMagicNumber = MAGIC;
         this.baseBlock = BLOCK;
@@ -80,8 +82,8 @@ public class AAAEmptyCard extends AbstractBackstabCard {
         final int count = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
 
         if (count <= 1) {
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(m,
-                    new DamageInfo(p, this.damage * this.backstabNumber, this.damageTypeForTurn),
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(
+                    m, new DamageInfo(p, this.damage * this.backstabNumber, this.damageTypeForTurn),
                     AbstractGameAction.AttackEffect.SLASH_VERTICAL));
         } else {
             AbstractDungeon.actionManager.addToBottom(new StealCardAction(
@@ -90,14 +92,14 @@ public class AAAEmptyCard extends AbstractBackstabCard {
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
                 p, p, new ShadowstepPower(
-                        p, p, this.magicNumber), 1));
+                p, p, this.magicNumber), 1));
 
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(
                 p, p, this.block));
 
         while (this.backstabNumber-- != 0) {
             AbstractDungeon.actionManager.addToBottom(
-                    new MakeTempCardInDrawPileAction(new VoidCard(), 1,true,true,false));
+                    new MakeTempCardInDrawPileAction(new VoidCard(), 1, true, true, false));
         }
         this.backstabNumber = this.baseBackstabNumber;
     }
