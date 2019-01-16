@@ -166,11 +166,11 @@
   },
   "theThief:ShadowForm": {
     "NAME": "Shadow Form",
-    "DESCRIPTION": "At the start of your turn, play a random card from any color. NL Backstab: Play !BkStMgc! instead NL Ethereal.",
-    "UPGRADE_DESCRIPTION": "At the start of your turn, play a random card from any color. NL Backstab: Play !BkStMgc! instead.",
+    "DESCRIPTION": "At the start of your turn, play a random card from any color. NL Backstab: Play !theThief:BkStMgc! instead NL Ethereal.",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, play a random card from any color. NL Backstab: Play !theThief:BkStMgc! instead.",
     "EXTENDED_DESCRIPTION": [
-      " NL Backstab: Play !BkStMgc! instead",
-      " NL Backstab: [#fa5555]Play[] !BkStMgc! [#fa5555]instead.[]"
+      " NL Backstab: Play !theThief:BkStMgc! instead",
+      " NL Backstab: [#fa5555]Play[] !theThief:BkStMgc! [#fa5555]instead.[]"
     ]
   },
   "theThief:Stab": {
@@ -178,8 +178,8 @@
     "DESCRIPTION": "Deal !D! Damage. ",
     "UPGRADE_DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "NL Backstab: Deal !BkStDmg! instead",
-      "NL Backstab: [#fa5555]Deal[] !BkStDmg! [#fa5555]instead.[]"
+      "NL Backstab: Deal !theThief:BkStDmg! instead",
+      "NL Backstab: [#fa5555]Deal[] !theThief:BkStDmg! [#fa5555]instead.[]"
     ]
   },
   "theThief:CloakAndDaggerThief": {
@@ -229,8 +229,8 @@
   },
   "theThief:OneStepAhead": {
     "NAME": "One Step Ahead",
-    "DESCRIPTION": "If an enemy intends to attack, Shadowstep !M! time. If it intends to block, deal !D! damage !BkStMgc! times instead.",
-    "UPGRADE_DESCRIPTION": "If an enemy intends to attack, Shadowstep !M! times. If it intends to block, deal !D! damage !BkStMgc! times instead."
+    "DESCRIPTION": "If an enemy intends to attack, Shadowstep !M! time. If it intends to block, deal !D! damage !theThief:BkStMgc! times instead.",
+    "UPGRADE_DESCRIPTION": "If an enemy intends to attack, Shadowstep !M! times. If it intends to block, deal !D! damage !theThief:BkStMgc! times instead."
   },
   "theThief:CripplingStrike": {
     "NAME": "Crippling Strike",
@@ -247,8 +247,8 @@
     "DESCRIPTION": "Draw !M! cards. ",
     "UPGRADE_DESCRIPTION": "Draw !M! cards. ",
     "EXTENDED_DESCRIPTION": [
-      "NL Backstab: Steal !BkStMgc! cards instead.",
-      "NL Backstab: [#fa5555]Steal[] !BkStMgc! [#fa5555]cards[] [#fa5555]instead.[]",
+      "NL Backstab: Steal !theThief:BkStMgc! cards instead.",
+      "NL Backstab: [#fa5555]Steal[] !theThief:BkStMgc! [#fa5555]cards[] [#fa5555]instead.[]",
       "They make wearing gloves very uncomfortable."
     ]
   },
@@ -338,18 +338,18 @@
       "(You have not played any skills yet.)"
     ]
   },
-  "theThief:EmptyCard9": {
-    "NAME": "EmptyCard",
-    "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+  "theThief:Mercy": {
+    "NAME": "Mercy",
+    "DESCRIPTION": "Heal an enemy for !M! HP. Then, do !D! damage to it.",
+    "UPGRADE_DESCRIPTION": "Heal an enemy for !M! HP. Then, do !D! damage to it.",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]Flavor[] [#88888]Text[]"
+      "[#88888]Fat [][#88888]chance.[]"
     ]
   },
-  "theThief:EmptyCard1": {
-    "NAME": "EmptyCard",
-    "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+  "theThief:Gut": {
+    "NAME": "Gut",
+    "DESCRIPTION": "Add !theThief:Magic! Voids to your draw pile. Deal !D! damage !M! times.",
+    "UPGRADE_DESCRIPTION": "Add !theThief:Magic! Voids to your draw pile. Deal !D! damage !M! times.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]

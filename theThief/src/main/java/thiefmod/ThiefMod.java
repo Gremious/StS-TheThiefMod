@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import thiefmod.Variables.*;
+import thiefmod.variabls.*;
 import thiefmod.cards.*;
 import thiefmod.characters.*;
 import thiefmod.patches.Character.AbstractCardEnum;
@@ -191,8 +191,8 @@ public class    ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, E
 
     @Override
     public void receiveEditCards() {
-        logger.info("Add Variables");
-        // Add the Custom Dynamic Variables
+        logger.info("Add variabls");
+        // Add the Custom Dynamic variabls
         BaseMod.addDynamicVariable(new BackstabDamage());
         BaseMod.addDynamicVariable(new BackstabMagicNumber());
         BaseMod.addDynamicVariable(new BackstabBlock());
@@ -209,6 +209,7 @@ public class    ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, E
         logger.info(LogInt++);
 
 
+        BaseMod.addCard(new Mercy());
         BaseMod.addCard(new Darts());
         BaseMod.addCard(new DoubleDealing());
         BaseMod.addCard(new Prep());
@@ -229,7 +230,7 @@ public class    ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, E
         BaseMod.addCard(new SharpPractice());
         BaseMod.addCard(new IllGottenGains());
         BaseMod.addCard(new Pickpocket());
-
+        BaseMod.addCard(new Gut());
         BaseMod.addCard(new QuickThinking());
         BaseMod.addCard(new Patience());
         BaseMod.addCard(new ShadowCloak());
@@ -244,12 +245,14 @@ public class    ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, E
 
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
+        UnlockTracker.unlockCard(Mercy.ID);
         UnlockTracker.unlockCard(StrikeThief.ID);
         UnlockTracker.unlockCard(DefendThief.ID);
 
         UnlockTracker.unlockCard(SimilarSkills.ID);
         UnlockTracker.unlockCard(SwiftTread.ID);
 
+        UnlockTracker.unlockCard(Gut.ID);
         UnlockTracker.unlockCard(Darts.ID);
         UnlockTracker.unlockCard(DoubleDealing.ID);
         UnlockTracker.unlockCard(Prep.ID);

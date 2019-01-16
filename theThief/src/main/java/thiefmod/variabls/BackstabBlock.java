@@ -1,4 +1,4 @@
-    package thiefmod.Variables;
+package thiefmod.variabls;
 
 import basemod.abstracts.DynamicVariable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -8,7 +8,7 @@ public class BackstabBlock extends DynamicVariable {
 
     @Override
     public String key() {
-        return "BkStBlk";
+        return "theThief:BkStBlk";
     }
 
     @Override
