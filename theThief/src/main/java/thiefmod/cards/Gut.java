@@ -4,6 +4,7 @@ import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
@@ -45,7 +46,7 @@ public class Gut extends AbstractBackstabCard {
     private static final int DAMAGE = 6;
 
     private static final int MAGIC = 4;
-    private static final int UPGRADED_PLUS_MAGIC = 5;
+    private static final int UPGRADED_PLUS_MAGIC = 1;
 
     private static final int BACKSTAB = 2;
 
@@ -64,7 +65,8 @@ public class Gut extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         while (this.backstabNumber-- != 0) {
-            AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new VoidCard(), 1));
+            AbstractDungeon.actionManager.addToBottom(
+                new MakeTempCardInDrawPileAction(new VoidCard(), 1,true,true,false));
         }
 
         while (this.magicNumber-- != 0) {
@@ -72,7 +74,8 @@ public class Gut extends AbstractBackstabCard {
                     new DamageInfo(p, this.damage, this.damageTypeForTurn),
                     AbstractGameAction.AttackEffect.SLASH_HEAVY));
         }
-
+        this.magicNumber = this.baseMagicNumber;
+        this.backstabNumber = this.baseBackstabNumber;
     }
 
     @Override

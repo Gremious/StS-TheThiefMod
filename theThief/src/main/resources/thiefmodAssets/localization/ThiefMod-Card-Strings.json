@@ -234,11 +234,11 @@
   },
   "theThief:CripplingStrike": {
     "NAME": "Crippling Strike",
-    "DESCRIPTION": "Deal !D! damage and apply !M! Weak. Backstab: Apply !M! Vulnerable instead.",
+    "DESCRIPTION": "Deal !D! damage and apply !M! Weak. ",
     "UPGRADE_DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "NL Backstab: Apply !M! Vulnerable instead.",
-      "NL Backstab: [#fa5555]Apply[] !M! [#fa5555]Vulnerable[] [#fa5555]instead.[]",
+      " NL Backstab: Apply !M! Vulnerable instead.",
+      " NL Backstab: [#fa5555]Apply[] !M! [#fa5555]Vulnerable[] [#fa5555]instead.[]",
       "Flavor Text"
     ]
   },
@@ -249,7 +249,7 @@
     "EXTENDED_DESCRIPTION": [
       "NL Backstab: Steal !theThief:BkStMgc! cards instead.",
       "NL Backstab: [#fa5555]Steal[] !theThief:BkStMgc! [#fa5555]cards[] [#fa5555]instead.[]",
-      "They make wearing gloves very uncomfortable."
+      "[#88888]They[] [#88888]make[] [#88888]wearing[] [#88888]gloves[] [#88888]very[][#88888]uncomfortable.[]"
     ]
   },
   "theThief:Sidestep": {
@@ -265,7 +265,8 @@
     "DESCRIPTION": "Gain !B! Block. Ethereal. Has exhaust if you’ve played an attack this turn.",
     "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]Flavor[] [#88888]Text[]"
+      "[#88888]Flavor[] [#88888]Text[]",
+      " NL Exhaust."
     ]
   },
   "theThief:ShadowCloak": {
@@ -340,8 +341,8 @@
   },
   "theThief:Mercy": {
     "NAME": "Mercy",
-    "DESCRIPTION": "Heal an enemy for !M! HP. Then, do !D! damage to it.",
-    "UPGRADE_DESCRIPTION": "Heal an enemy for !M! HP. Then, do !D! damage to it.",
+    "DESCRIPTION": "Heal an enemy for !M! HP. NL Then, do !D! damage to it.",
+    "UPGRADE_DESCRIPTION": "Heal an enemy for !M! HP. NL Then, do !D! damage to it.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Fat [][#88888]chance.[]"
     ]
@@ -354,12 +355,14 @@
       "[#88888]Flavor[] [#88888]Text[]"
     ]
   },
-  "theThief:EmptyCard2": {
-    "NAME": "EmptyCard",
-    "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+  "theThief:AttackOfOpportunity": {
+    "NAME": "Attack Of Opportunity",
+    "DESCRIPTION": "Deal !D! damage. Add !theThief:Magic! Voids to your discard pile.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. Add !theThief:Magic! Voids to your discard pile.",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]Flavor[] [#88888]Text[]"
+      "[#88888]Flavor[] [#88888]Text[]",
+      " NL Backstab: Draw !theThief:Magic! card.",
+      " NL Backstab: [#fa5555]Draw[] !theThief:Magic! [#fa5555]card.[]"
     ]
   },
   "theThief:EmptyCard3": {

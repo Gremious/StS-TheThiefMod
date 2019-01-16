@@ -196,6 +196,7 @@ public class    ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, E
         BaseMod.addDynamicVariable(new BackstabDamage());
         BaseMod.addDynamicVariable(new BackstabMagicNumber());
         BaseMod.addDynamicVariable(new BackstabBlock());
+        BaseMod.addDynamicVariable(new ThiefSecondMagicNumber());
 
 
         logger.info("Add Cards");
@@ -209,6 +210,7 @@ public class    ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, E
         logger.info(LogInt++);
 
 
+        BaseMod.addCard(new AttackOfOpportunity());
         BaseMod.addCard(new Mercy());
         BaseMod.addCard(new Darts());
         BaseMod.addCard(new DoubleDealing());
@@ -252,6 +254,7 @@ public class    ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, E
         UnlockTracker.unlockCard(SimilarSkills.ID);
         UnlockTracker.unlockCard(SwiftTread.ID);
 
+        UnlockTracker.unlockCard(AttackOfOpportunity.ID);
         UnlockTracker.unlockCard(Gut.ID);
         UnlockTracker.unlockCard(Darts.ID);
         UnlockTracker.unlockCard(DoubleDealing.ID);
