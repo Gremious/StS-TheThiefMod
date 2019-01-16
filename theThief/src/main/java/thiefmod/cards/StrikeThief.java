@@ -56,7 +56,7 @@ public class StrikeThief extends CustomCard {
 		this.tags.add(AbstractCard.CardTags.STRIKE);
 		this.tags.add(BaseModCardTags.BASIC_STRIKE);
 	}
-	
+
 	// Actions the card should do.
 	@Override
 	public void use(AbstractPlayer p, AbstractMonster m) {

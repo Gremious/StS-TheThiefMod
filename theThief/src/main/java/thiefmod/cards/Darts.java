@@ -29,10 +29,11 @@ public class Darts extends AbstractBackstabCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String EXTENDED_DESCRIPTION[] = cardStrings.EXTENDED_DESCRIPTION;
 
-
 // /TEXT DECLARATION/
 
-    // STAT DECLARATION
+
+// STAT DECLARATION
+
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
@@ -42,9 +43,8 @@ public class Darts extends AbstractBackstabCard {
 
     private static final int DAMAGE = 1;
 
-
-
 // /STAT DECLARATION/
+
 
     public Darts() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);

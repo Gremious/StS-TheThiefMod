@@ -25,7 +25,7 @@ import thiefmod.relics.*;
 // Note: #y b r g p
 
 @SpireInitializer
-public class    ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, EditKeywordsSubscriber, EditCharactersSubscriber, PostInitializeSubscriber {
+public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, EditKeywordsSubscriber, EditCharactersSubscriber, PostInitializeSubscriber {
     public static final Logger logger = LogManager.getLogger(ThiefMod.class.getName());
     private int LogInt = 0;
 
@@ -210,6 +210,9 @@ public class    ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, E
         logger.info(LogInt++);
 
 
+        BaseMod.addCard(new Ambush());
+        BaseMod.addCard(new ViciousAssault());
+        BaseMod.addCard(new DirtyDeedsDDC());
         BaseMod.addCard(new AttackOfOpportunity());
         BaseMod.addCard(new Mercy());
         BaseMod.addCard(new Darts());
@@ -247,13 +250,15 @@ public class    ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, E
 
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
+
+        UnlockTracker.unlockCard(Ambush.ID);
         UnlockTracker.unlockCard(Mercy.ID);
         UnlockTracker.unlockCard(StrikeThief.ID);
         UnlockTracker.unlockCard(DefendThief.ID);
-
         UnlockTracker.unlockCard(SimilarSkills.ID);
         UnlockTracker.unlockCard(SwiftTread.ID);
-
+        UnlockTracker.unlockCard(ViciousAssault.ID);
+        UnlockTracker.unlockCard(DirtyDeedsDDC.ID);
         UnlockTracker.unlockCard(AttackOfOpportunity.ID);
         UnlockTracker.unlockCard(Gut.ID);
         UnlockTracker.unlockCard(Darts.ID);

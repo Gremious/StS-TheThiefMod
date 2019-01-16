@@ -365,26 +365,30 @@
       " NL Backstab: [#fa5555]Draw[] !theThief:Magic! [#fa5555]card.[]"
     ]
   },
-  "theThief:EmptyCard3": {
-    "NAME": "EmptyCard",
-    "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+  "theThief:DirtyDeedsDDC": {
+    "NAME": "Dirty Deeds DDC",
+    "DESCRIPTION": "Deal !D! damage. If this kills a non-minion enemy, gain !M! gold.",
     "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]Flavor[] [#88888]Text[]"
+      "[#88888]Filthy[] [#88888]acts[] [#88888]at[] [#88888]a[] [#88888]reasonable[] [#88888]price.[]",
+      " NL Backstab: Gain !theThief:Magic! gold instead",
+      " NL Backstab: [#fa5555]Gain[] !theThief:Magic! [#fa5555]gold[] [#fa5555]instead.[]"
     ]
   },
-  "theThief:EmptyCard4": {
-    "NAME": "EmptyCard",
-    "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+  "theThief:ViciousAssault": {
+    "NAME": "Vicious  Assault",
+    "DESCRIPTION": "Deal !D! damage !M! times.",
     "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]Flavor[] [#88888]Text[]"
+      "[#88888]Flavor[] [#88888]Text[]",
+      " NL Backstab: !theThief:Magic! times instead",
+      " NL Backstab: !theThief:Magic! [#fa5555]times[] [#fa5555]instead.[]"
     ]
   },
-  "theThief:EmptyCard10": {
-    "NAME": "EmptyCard",
-    "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+  "theThief:Ambush": {
+    "NAME": "Ambush",
+    "DESCRIPTION": "Add !M! Voids to your draw pile. NL Deal damage equal to  20% of a monster's current HP. NL ( !D! Damage.)",
+    "UPGRADE_DESCRIPTION": "Add !M! Voids to your draw pile. NL Deal damage equal to  30% of a monster's current HP. NL ( !D! Damage.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]
