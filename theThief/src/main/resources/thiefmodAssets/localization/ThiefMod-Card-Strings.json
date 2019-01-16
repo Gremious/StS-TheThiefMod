@@ -326,12 +326,16 @@
       "[#88888]Full[] [#88888]house![]"
     ]
   },
-  "theThief:EmptyCard8": {
-    "NAME": "EmptyCard",
-    "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+  "theThief:Darts": {
+    "NAME": "Darts",
+    "DESCRIPTION": "Deal !D! damage to a random enemy for each skill played this combat.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage to a random enemy for each skill played this combat.",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]Flavor[] [#88888]Text[]"
+      "[#88888]Tinier[] [#88888]than[] [#88888]flechettes.[] NL[#88888]Still[] [#88888]hurt[] [#88888]a[] [#88888]lot.[]",
+      " NL You have played ",
+      " skill.",
+      " Skills.",
+      "(You have not played any skills yet.)"
     ]
   },
   "theThief:EmptyCard9": {

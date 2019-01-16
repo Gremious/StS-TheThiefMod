@@ -56,8 +56,10 @@ public class Lie extends AbstractBackstabCard {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(
                 p, p, this.block));
 
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(
-                m, this.magicNumber, false), this.magicNumber));
+        for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new VulnerablePower(
+                    mo, this.magicNumber, false), this.magicNumber));
+        }
 
     }
 
