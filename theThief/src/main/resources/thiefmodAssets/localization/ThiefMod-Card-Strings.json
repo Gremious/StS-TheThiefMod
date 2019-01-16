@@ -318,12 +318,12 @@
       "[#88888]Flavor[] [#88888]Text[]"
     ]
   },
-  "theThief:EmptyCard7": {
-    "NAME": "a",
-    "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+  "theThief:DoubleDealing": {
+    "NAME": "DoubleDealing",
+    "DESCRIPTION": "This turn, the next !M! Backstab attack you play deal double damage.",
+    "UPGRADE_DESCRIPTION": "This turn, the next !M! Backstab attacks you play deal double damage",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]Flavor[] [#88888]Text[]"
+      "[#88888]Full[] [#88888]house![]"
     ]
   },
   "theThief:EmptyCard8": {

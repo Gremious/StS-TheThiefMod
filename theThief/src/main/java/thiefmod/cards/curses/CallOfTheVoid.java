@@ -14,7 +14,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
 import thiefmod.actions.common.StealCardAction;
 import thiefmod.cards.AbstractBackstabCard;
-import thiefmod.patches.AbstractCardEnum;
 import thiefmod.powers.Unique.TheThiefThieveryPower;
 
 public class CallOfTheVoid extends AbstractBackstabCard {

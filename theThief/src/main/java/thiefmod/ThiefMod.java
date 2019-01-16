@@ -4,7 +4,6 @@ import basemod.BaseMod;
 import basemod.ModLabel;
 import basemod.ModPanel;
 import basemod.interfaces.*;
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
@@ -13,17 +12,15 @@ import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
-import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import thiefmod.Variables.*;
 import thiefmod.cards.*;
 import thiefmod.characters.*;
-import thiefmod.patches.*;
+import thiefmod.patches.Character.AbstractCardEnum;
+import thiefmod.patches.Character.TheThiefEnum;
 import thiefmod.relics.*;
-
-import java.nio.charset.StandardCharsets;
 
 // Note: #y b r g p
 
@@ -212,6 +209,8 @@ public class    ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, E
         logger.info(LogInt++);
 
 
+        BaseMod.addCard(new DoubleDealing());
+        BaseMod.addCard(new Prep());
         BaseMod.addCard(new ShadowEvade());
         BaseMod.addCard(new OneStepAhead());
         BaseMod.addCard(new FollowUp());
@@ -250,6 +249,8 @@ public class    ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, E
         UnlockTracker.unlockCard(SimilarSkills.ID);
         UnlockTracker.unlockCard(SwiftTread.ID);
 
+        UnlockTracker.unlockCard(DoubleDealing.ID);
+        UnlockTracker.unlockCard(Prep.ID);
         UnlockTracker.unlockCard(ShadowCloak.ID);
         UnlockTracker.unlockCard(HideInTheShadows.ID);
         UnlockTracker.unlockCard(Sidestep.ID);

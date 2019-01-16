@@ -8,7 +8,6 @@ import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.colorless.Trip;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
@@ -21,7 +20,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import thiefmod.ThiefMod;
 import thiefmod.cards.*;
-import thiefmod.patches.AbstractCardEnum;
+import thiefmod.patches.Character.AbstractCardEnum;
 import thiefmod.relics.ThievesMask;
 
 import java.util.ArrayList;

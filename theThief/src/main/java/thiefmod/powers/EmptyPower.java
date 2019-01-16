@@ -1,5 +1,6 @@
 package thiefmod.powers;
 
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.badlogic.gdx.graphics.Texture;
@@ -49,8 +50,17 @@ public class EmptyPower extends AbstractPower {
 	public void atStartOfTurn() {
 
 	}
-    
-  // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
+
+    public void atEndOfRound() {
+        if (this.amount == 0) {
+            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, "Double Damage"));
+        } else {
+            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, "Double Damage", 1));
+        }
+
+    }
+
+    // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() 
     {

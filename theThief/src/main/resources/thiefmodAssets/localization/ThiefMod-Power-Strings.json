@@ -80,7 +80,9 @@
   "theThief:BackstabPower": {
     "NAME": "Backstab!",
     "DESCRIPTIONS": [
-      "The next Backstab card you play gains it's Backstab effect. NL If you play any card, remove this power. "
+      "The next ",
+      " Backstab card you play gains it's Backstab effect. NL If you play any other card, remove this power.",
+      " Backstab cards you play gains their Backstab effect. NL If you play any other card, remove this power."
     ]
   },
   "theThief:DealDamageToAllNextTurnPower": {
@@ -94,6 +96,14 @@
     "NAME": "Ill-Gotten Gains",
     "DESCRIPTIONS": [
       "For the rest of this combat, all stolen cards you gain are upgraded."
+    ]
+  },
+  "theThief:DoubleDealingPower": {
+    "NAME": "Double Dealing",
+    "DESCRIPTIONS": [
+      "This turn, the next ",
+      " Backstab attack you play will deal double damage.",
+      " Backstab attacks you play will deal double damage."
     ]
   }
 }

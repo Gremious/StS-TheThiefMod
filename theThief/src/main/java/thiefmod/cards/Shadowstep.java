@@ -7,10 +7,9 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
 import thiefmod.ThiefMod;
-import thiefmod.patches.AbstractCardEnum;
-import thiefmod.patches.ThiefCardTags;
+import thiefmod.patches.Character.AbstractCardEnum;
+import thiefmod.patches.Unique.ThiefCardTags;
 import thiefmod.powers.Common.ShadowstepPower;
 
 public class Shadowstep extends AbstractBackstabCard {

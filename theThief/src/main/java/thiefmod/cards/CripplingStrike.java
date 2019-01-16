@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import thiefmod.ThiefMod;
-import thiefmod.patches.AbstractCardEnum;
+import thiefmod.patches.Character.AbstractCardEnum;
 
 public class CripplingStrike extends AbstractBackstabCard {
 

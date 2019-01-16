@@ -17,7 +17,7 @@ import com.megacrit.cardcrawl.powers.VulnerablePower;
 
 import basemod.abstracts.CustomCard;
 import thiefmod.ThiefMod;
-import thiefmod.patches.AbstractCardEnum;
+import thiefmod.patches.Character.AbstractCardEnum;
 import thiefmod.powers.Unique.DramaticFeignPower;
 
 public class DramaticFeign extends CustomCard {

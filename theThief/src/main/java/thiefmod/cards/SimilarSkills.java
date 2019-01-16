@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
 import thiefmod.ThiefMod;
-import thiefmod.patches.AbstractCardEnum;
+import thiefmod.patches.Character.AbstractCardEnum;
 import thiefmod.powers.Unique.SimilarSkillsPower;
 import thiefmod.powers.Unique.SimilarSkillsPowerUpgraded;
 

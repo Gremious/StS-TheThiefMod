@@ -54,7 +54,7 @@ public class BackstabPower extends AbstractPower {
     	else if (this.amount > 1) {
     		this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[2];}
     	}
-    
+
 
 }
 

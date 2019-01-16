@@ -1,4 +1,4 @@
-package thiefmod.patches;
+package thiefmod.patches.Common;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;

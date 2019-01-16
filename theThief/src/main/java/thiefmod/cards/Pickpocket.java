@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
-import thiefmod.patches.AbstractCardEnum;
+import thiefmod.patches.Character.AbstractCardEnum;
 
 public class Pickpocket extends CustomCard {
 

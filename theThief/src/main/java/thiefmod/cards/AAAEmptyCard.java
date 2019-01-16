@@ -14,9 +14,8 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
 import thiefmod.actions.common.StealCardAction;
-import thiefmod.patches.AbstractCardEnum;
+import thiefmod.patches.Character.AbstractCardEnum;
 import thiefmod.powers.Common.ShadowstepPower;
-import thiefmod.powers.Unique.TheThiefThieveryPower;
 
 import java.util.ArrayList;
 import java.util.List;

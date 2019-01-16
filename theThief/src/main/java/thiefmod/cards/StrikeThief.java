@@ -13,8 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
 import thiefmod.ThiefMod;
-import thiefmod.characters.TheThief;
-import thiefmod.patches.AbstractCardEnum;
+import thiefmod.patches.Character.AbstractCardEnum;
 
 import java.util.ArrayList;
 import java.util.List;

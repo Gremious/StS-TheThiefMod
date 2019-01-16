@@ -9,8 +9,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
-import thiefmod.patches.AbstractCardEnum;
-import thiefmod.patches.ThiefCardTags;
+import thiefmod.patches.Character.AbstractCardEnum;
+import thiefmod.patches.Unique.ThiefCardTags;
 import thiefmod.powers.Common.BackstabPower;
 import thiefmod.powers.Unique.ShadowFormPower;
 
