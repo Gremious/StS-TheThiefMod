@@ -407,17 +407,17 @@
   "theThief:PaydayLoan": {
     "NAME": "Payday Loan",
     "DESCRIPTION": "The next card you play is refunded. NL Add !M! void to your draw pile. NL Exhaustive !stslib:ex!.",
-    "UPGRADE_DESCRIPTION": "The next card you play is refunded. NL Add !M! void to your draw pile. NL Exhaustive !stslib:ex!).",
+    "UPGRADE_DESCRIPTION": "The next card you play is refunded. NL Add !M! void to your draw pile. NL Exhaustive !stslib:ex!.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]
   },
-  "theThief:empty4": {
+  "theThief:ShadowReserves": {
     "NAME": "Shadow Reserves",
-    "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+    "DESCRIPTION": "Fetch !M! card from your draw pile. NL Exhaustive !stslib:ex!.",
+    "UPGRADE_DESCRIPTION": "Fetch !M! card from your draw, discard, or exhaust pile. NL Exhaustive !stslib:ex!. ",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]Flavor[] [#88888]Text[]"
+        "[#88888]It's[] [#88888]kinda[] [#88888]like[] [#88888]having[] [#88888]a[] [#88888]portable[] [#88888]mini-fridge.[]"
     ]
   },
   "theThief:empty5": {

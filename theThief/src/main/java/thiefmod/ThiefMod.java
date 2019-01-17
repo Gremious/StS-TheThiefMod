@@ -210,6 +210,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         logger.info(LogInt++);
 
 
+        BaseMod.addCard(new ShadowReserves());
         BaseMod.addCard(new PaydayLoan());
         BaseMod.addCard(new HeartBreaker());
         BaseMod.addCard(new PerfectDagger());
@@ -255,6 +256,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
 
+        UnlockTracker.unlockCard(ShadowReserves.ID);
         UnlockTracker.unlockCard(PaydayLoan.ID);
         UnlockTracker.unlockCard(HeartBreaker.ID);
         UnlockTracker.unlockCard(PerfectDagger.ID);

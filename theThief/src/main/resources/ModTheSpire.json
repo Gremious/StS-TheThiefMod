@@ -2,8 +2,8 @@
   "modid": "ThiefMod",
   "name": "Thief Mod",
   "author_list": ["Gremious"],
-  "description": "A thief mod.",
-  "version": "0.1",
-  "sts_version": "10-18-2018",
-  "mts_version": "3.4.0"
+  "description": "A mod that adds The Thief as a playable character, as well as relics and events!",
+  "version": "0.0.1",
+  "sts_version": "01-10-2019",
+  "mts_version": "3.7.5"
 }
