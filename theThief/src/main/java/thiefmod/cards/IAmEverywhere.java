@@ -90,16 +90,6 @@ public class IAmEverywhere extends AbstractBackstabCard {
         this.backstabNumber = this.baseBackstabNumber;
     }
 
-    /*
-
-    @Override // Startup: Add 1 void to your draw pile.
-    public boolean atBattleStartPreDraw() {
-        AbstractDungeon.actionManager.addToBottom(
-                new MakeTempCardInDrawPileAction(new VoidCard(), this.magicNumber, true, true, false));
-        return true;
-    }
-
-    */
 
     @Override
     public void applyPowers() {
