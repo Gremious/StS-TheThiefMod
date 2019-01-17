@@ -214,6 +214,8 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         //    BaseMod.addCard(new GuiltTrip());
 
 
+        BaseMod.addCard(new CorrosivePoison());
+        BaseMod.addCard(new MurderousIntent());
         BaseMod.addCard(new IAmEverywhere());
         BaseMod.addCard(new FindersKeepers());
         BaseMod.addCard(new FeignTrip());
@@ -271,6 +273,8 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         // UnlockTracker.unlockCard(GuiltTrip.ID);
 
 
+        UnlockTracker.unlockCard(CorrosivePoison.ID);
+        UnlockTracker.unlockCard(MurderousIntent.ID);
         UnlockTracker.unlockCard(IAmEverywhere.ID);
         UnlockTracker.unlockCard(FindersKeepers.ID);
         UnlockTracker.unlockCard(FeignTrip.ID);

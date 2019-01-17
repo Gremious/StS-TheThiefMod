@@ -20,6 +20,7 @@ import com.megacrit.cardcrawl.powers.VulnerablePower;
 import thiefmod.ThiefMod;
 import thiefmod.actions.common.StealCardAction;
 import thiefmod.patches.Character.AbstractCardEnum;
+import thiefmod.patches.Unique.ThiefCardTags;
 import thiefmod.powers.Common.ShadowstepPower;
 
 import java.util.ArrayList;
@@ -80,6 +81,9 @@ public class AAAEmptyCard extends AbstractBackstabCard {
         this.baseBlock = BLOCK;
         this.backstabNumber = this.baseBackstabNumber = BACKSTAB;
 
+
+        this.tags.add(ThiefCardTags.BACKSTAB);
+        this.tags.add(ThiefCardTags.SHADOWSTEP);
         /*
             modal = new ModalChoiceBuilder()
                 .setCallback(this) // Sets callback of all the below options to this

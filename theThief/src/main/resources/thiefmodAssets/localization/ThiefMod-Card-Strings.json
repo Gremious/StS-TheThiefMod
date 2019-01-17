@@ -502,18 +502,18 @@
       "[#88888]Flavor[] [#88888]Text[]"
     ]
   },
-  "theThief:empty15": {
-    "NAME": "EmptyCard",
-    "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+  "theThief:MurderousIntent": {
+    "NAME": "Murderous Intent",
+    "DESCRIPTION": "Shadowstep !theThief:Magic! time. NL Gain !M! Strenght. NL At the end of your turn, lose !M! Strenght.",
+    "UPGRADE_DESCRIPTION": "Shadowstep !theThief:Magic! time. NL Gain !M! Strenght. NL At the end of your turn, lose !M! Strenght.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]
   },
-  "theThief:empty16": {
-    "NAME": "EmptyCard",
-    "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+  "theThief:Corrosive Poison": {
+    "NAME": "Corrosive Poison",
+    "DESCRIPTION": "Costs 1 less for each skill played this combat. NL Apply 2 Frail, 1 Vulnerable, and 2 Poison to a random enemy !M! times.",
+    "UPGRADE_DESCRIPTION": "Costs 1 less for each skill played this combat. NL Apply 2 Frail, 1 Vulnerable, and 2 Poison to a random enemy !M! times.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]
