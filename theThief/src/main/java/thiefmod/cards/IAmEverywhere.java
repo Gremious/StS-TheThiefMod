@@ -58,22 +58,8 @@ public class IAmEverywhere extends AbstractBackstabCard {
         ExhaustiveVariable.setBaseValue(this, 2);
 
         FleetingField.fleeting.set(this, true);
-        this.baseDamage = DAMAGE;
-        this.magicNumber = this.baseMagicNumber = MAGIC;
-        this.baseBlock = BLOCK;
-        this.backstabNumber = this.baseBackstabNumber = BACKSTAB;
 
-        /*
-            modal = new ModalChoiceBuilder()
-                .setCallback(this) // Sets callback of all the below options to this
-                .setColor(CardColor.GREEN) // Sets color of any following cards to red
-                .addOption("Fetch a card from your draw pile.", CardTarget.NONE)
-                .setColor(CardColor.COLORLESS) // Sets color of any following cards to green
-                .addOption("Fetch a card from your discard pile.", CardTarget.NONE)
-                .setColor(CardColor.CURSE) // Sets color of any following cards to colorless
-                .addOption("Fetch a card from your exhaust pile.", CardTarget.NONE)
-                .create();
-         */
+
     }
 
     // Actions the card should do.
