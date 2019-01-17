@@ -214,6 +214,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         //    BaseMod.addCard(new GuiltTrip());
 
 
+        BaseMod.addCard(new FindersKeepers());
         BaseMod.addCard(new FeignTrip());
         BaseMod.addCard(new ThousandBallBearings());
         BaseMod.addCard(new LieInWait());
@@ -269,6 +270,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         // UnlockTracker.unlockCard(GuiltTrip.ID);
 
 
+        UnlockTracker.unlockCard(FindersKeepers.ID);
         UnlockTracker.unlockCard(FeignTrip.ID);
         UnlockTracker.unlockCard(ThousandBallBearings.ID);
         UnlockTracker.unlockCard(LieInWait.ID);
@@ -360,12 +362,16 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
                 "NL a Shadowstep card, it gains it's backstab effect.");
 
         final String[] steal = {"steal", "Steal, stolen, Stolen"};
-        BaseMod.addKeyword(steal, "Stolen cards are mostly low energy card with Exhaust." +
+        BaseMod.addKeyword(steal, "Stolen cards are mostly low energy card that Exhaust." +
                 "NL They range from specific effects from any class, to cards unique for the Thief." +
                 "NL They are added to your hand unless stated otherwise.");
 
         final String[] backstab = {"BackstabPower", "backstab"};
         BaseMod.addKeyword(backstab, "If this is the first card you play in a turn, it changes its effect.");
+
+        final String[] discover = {"discover", "Discover"};
+        BaseMod.addKeyword(backstab, "Choose 1 out of 3 cards and add it to your hand.");
+
     }
     // ================ /LOAD THE KEYWORDS/ ===================
 

@@ -108,7 +108,7 @@ public class AAAEmptyCard extends AbstractBackstabCard {
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
                 p, p, new ShadowstepPower(
-                p, p, this.magicNumber), 1));
+                p, p, this.magicNumber), this.magicNumber));
 
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(
                 p, p, this.block));

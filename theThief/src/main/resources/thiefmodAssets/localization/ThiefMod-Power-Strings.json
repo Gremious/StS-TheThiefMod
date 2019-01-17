@@ -105,5 +105,21 @@
       " Backstab attack you play will deal double damage.",
       " Backstab attacks you play will deal double damage."
     ]
+  },
+  "theThief:FindersKeepersPower": {
+    "NAME": "Finders Keepers!",
+    "DESCRIPTIONS": [
+      "Add the next ",
+      " non-gray card you play to your deck.",
+      " non-gray cards you play to your deck."
+    ]
+  },
+  "theThief:CommonPower1": {
+    "NAME": "Placeholder Power",
+    "DESCRIPTIONS": [
+      "You applied ",
+      " keyword.",
+      " keywords."
+    ]
   }
 }

@@ -478,7 +478,7 @@
       "[#88888]Flavor[] [#88888]Text[]"
     ]
   },
-  "theThief:Feign Trip": {
+  "theThief:FeignTrip": {
     "NAME": "Feign Trip",
     "DESCRIPTION": "Gain !B! block and !M! Vulnerable.",
     "UPGRADE_DESCRIPTION": "Gain !B! block and !M! Vulnerable.",
@@ -486,12 +486,12 @@
       "[#88888]In[] [#88888]order[] [#88888]to[] [#88888]feign[] [#88888]falling[] [#88888]down,[] NL [#88888]you[] [#88888]still[] [#88888]need[] [#88888]to[] [#88888]fall[] [#88888]down.[]"
     ]
   },
-  "theThief:empty13": {
-    "NAME": "EmptyCard",
-    "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+  "theThief:FindersKeepers": {
+    "NAME": "Finders Keepers",
+    "DESCRIPTION": "Add the next non-gray card you play to your deck. Fleeting.",
+    "UPGRADE_DESCRIPTION": "Add the next non-gray card you play to your deck. Fleeting.",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]Flavor[] [#88888]Text[]"
+      "[#88888]What's[][#88888]yours[][#88888]is[][#88888]mine.[]"
     ]
   },
   "theThief:empty14": {
