@@ -2,7 +2,6 @@ package thiefmod.cards;
 
 import basemod.helpers.TooltipInfo;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.FetchAction;
-import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.FleetingField;
 import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -11,10 +10,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
-import trash.FetchAlteredCardFromDiscardAction;
 import thiefmod.patches.Character.AbstractCardEnum;
 
-import javax.sql.rowset.Predicate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -65,10 +62,16 @@ public class Reobtain extends AbstractBackstabCard {
         if (count <= 1) {
 
             AbstractDungeon.actionManager.addToBottom(new FetchAction(AbstractDungeon.player.discardPile, this.magicNumber));
-//TODO: Wait for kio's update and make this card refund modifyCostForTurn(-1);
-        } else {
-            AbstractDungeon.actionManager.addToBottom(new FetchAction(AbstractDungeon.player.discardPile, this.magicNumber));
 
+        } else {
+            AbstractDungeon.actionManager.addToBottom(
+                    new FetchAction(AbstractDungeon.player.discardPile, this.magicNumber, fetchedCards -> {
+                        for (AbstractCard card : fetchedCards) {
+                            card.modifyCostForTurn(-1);
+                        }
+                    }
+                    )
+            );
         }
     }
 

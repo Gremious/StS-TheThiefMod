@@ -417,7 +417,7 @@
     "DESCRIPTION": "Fetch !M! card from your draw pile. NL Exhaustive !stslib:ex!.",
     "UPGRADE_DESCRIPTION": "Fetch !M! card from your draw, discard, or exhaust pile. NL Exhaustive !stslib:ex!. ",
     "EXTENDED_DESCRIPTION": [
-        "[#88888]It's[] [#88888]kinda[] [#88888]like[] [#88888]having[] [#88888]a[] [#88888]portable[] [#88888]mini-fridge.[]"
+      "[#88888]It's[] [#88888]kinda[] [#88888]like[] [#88888]having[] [#88888]a[] [#88888]portable[] [#88888]mini-fridge.[]"
     ]
   },
   "theThief:SteakOut": {
@@ -434,102 +434,102 @@
     "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
-    ],
-    "theThief:Gaslight": {
-      "NAME": "Gaslight",
-      "DESCRIPTION": "Enemy loses !M! strenght. You gain !M! strenght. NL Exhaustive !stslib:ex!.",
-      "UPGRADE_DESCRIPTION": "Enemy loses !M! strenght. You gain !M! strenght. NL Exhaustive !stslib:ex!.",
-      "EXTENDED_DESCRIPTION": [
-        "[#88888]Louse,[][#88888]you're[][#88888]just[][#88888]being[][#88888]crazy.[]"
-      ]
-    },
-    "theThief:GuiltTrip": {
-      "NAME": "Guilt Trip",
-      "DESCRIPTION": "If an enemy intends to attack, make them block for that much instead.",
-      "UPGRADE_DESCRIPTION": "If an enemy intends to attack, make them block for that much instead.",
-      "EXTENDED_DESCRIPTION": [
-        "[#88888]Flavor[] [#88888]Text[]"
-      ]
-    },
-    "theThief:empty9": {
-      "NAME": "EmptyCard",
-      "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-      "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-      "EXTENDED_DESCRIPTION": [
-        "[#88888]Flavor[] [#88888]Text[]"
-      ]
-    },
-    "theThief:empty10": {
-      "NAME": "EmptyCard",
-      "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-      "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-      "EXTENDED_DESCRIPTION": [
-        "[#88888]Flavor[] [#88888]Text[]"
-      ]
-    },
-    "theThief:empty11": {
-      "NAME": "EmptyCard",
-      "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-      "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-      "EXTENDED_DESCRIPTION": [
-        "[#88888]Flavor[] [#88888]Text[]"
-      ]
-    },
-    "theThief:empty12": {
-      "NAME": "EmptyCard",
-      "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-      "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-      "EXTENDED_DESCRIPTION": [
-        "[#88888]Flavor[] [#88888]Text[]"
-      ]
-    },
-    "theThief:empty13": {
-      "NAME": "EmptyCard",
-      "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-      "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-      "EXTENDED_DESCRIPTION": [
-        "[#88888]Flavor[] [#88888]Text[]"
-      ]
-    },
-    "theThief:empty14": {
-      "NAME": "EmptyCard",
-      "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-      "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-      "EXTENDED_DESCRIPTION": [
-        "[#88888]Flavor[] [#88888]Text[]"
-      ]
-    },
-    "theThief:empty15": {
-      "NAME": "EmptyCard",
-      "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-      "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-      "EXTENDED_DESCRIPTION": [
-        "[#88888]Flavor[] [#88888]Text[]"
-      ]
-    },
-    "theThief:empty16": {
-      "NAME": "EmptyCard",
-      "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-      "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-      "EXTENDED_DESCRIPTION": [
-        "[#88888]Flavor[] [#88888]Text[]"
-      ]
-    },
-    "theThief:empty17": {
-      "NAME": "EmptyCard",
-      "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-      "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-      "EXTENDED_DESCRIPTION": [
-        "[#88888]Flavor[] [#88888]Text[]"
-      ]
-    },
-    "theThief:empty18": {
-      "NAME": "EmptyCard",
-      "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-      "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-      "EXTENDED_DESCRIPTION": [
-        "[#88888]Flavor[] [#88888]Text[]"
-      ]
-    }
+    ]
+  },
+  "theThief:Gaslight": {
+    "NAME": "Gaslight",
+    "DESCRIPTION": "Enemy loses !M! strenght. You gain !M! strenght. NL Exhaustive !stslib:ex!.",
+    "UPGRADE_DESCRIPTION": "Enemy loses !M! strenght. You gain !M! strenght. NL Exhaustive !stslib:ex!.",
+    "EXTENDED_DESCRIPTION": [
+      "[#88888]Louse,[][#88888]you're[][#88888]just[][#88888]being[][#88888]crazy.[]"
+    ]
+  },
+  "theThief:GuiltTrip": {
+    "NAME": "Guilt Trip",
+    "DESCRIPTION": "If an enemy intends to attack, make them block for that much instead.",
+    "UPGRADE_DESCRIPTION": "If an enemy intends to attack, make them block for that much instead.",
+    "EXTENDED_DESCRIPTION": [
+      "[#88888]Flavor[] [#88888]Text[]"
+    ]
+  },
+  "theThief:empty9": {
+    "NAME": "EmptyCard",
+    "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "[#88888]Flavor[] [#88888]Text[]"
+    ]
+  },
+  "theThief:empty10": {
+    "NAME": "EmptyCard",
+    "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "[#88888]Flavor[] [#88888]Text[]"
+    ]
+  },
+  "theThief:empty11": {
+    "NAME": "EmptyCard",
+    "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "[#88888]Flavor[] [#88888]Text[]"
+    ]
+  },
+  "theThief:empty12": {
+    "NAME": "EmptyCard",
+    "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "[#88888]Flavor[] [#88888]Text[]"
+    ]
+  },
+  "theThief:empty13": {
+    "NAME": "EmptyCard",
+    "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "[#88888]Flavor[] [#88888]Text[]"
+    ]
+  },
+  "theThief:empty14": {
+    "NAME": "EmptyCard",
+    "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "[#88888]Flavor[] [#88888]Text[]"
+    ]
+  },
+  "theThief:empty15": {
+    "NAME": "EmptyCard",
+    "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "[#88888]Flavor[] [#88888]Text[]"
+    ]
+  },
+  "theThief:empty16": {
+    "NAME": "EmptyCard",
+    "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "[#88888]Flavor[] [#88888]Text[]"
+    ]
+  },
+  "theThief:empty17": {
+    "NAME": "EmptyCard",
+    "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "[#88888]Flavor[] [#88888]Text[]"
+    ]
+  },
+  "theThief:empty18": {
+    "NAME": "EmptyCard",
+    "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "[#88888]Flavor[] [#88888]Text[]"
+    ]
   }
 }
