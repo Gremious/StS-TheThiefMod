@@ -494,10 +494,10 @@
       "[#88888]What's[][#88888]yours[][#88888]is[][#88888]mine.[]"
     ]
   },
-  "theThief:empty14": {
-    "NAME": "EmptyCard",
-    "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+  "theThief:IAmEverywhere": {
+    "NAME": "I Am Everywhere",
+    "DESCRIPTION": "Shadowstep X times.",
+    "UPGRADE_DESCRIPTION": "Shadowstep X times for each enemy in combat.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]

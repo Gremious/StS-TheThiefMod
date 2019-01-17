@@ -1,18 +1,16 @@
 package thiefmod.cards;
 
 import basemod.helpers.TooltipInfo;
-import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.FleetingField;
-import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import thiefmod.ThiefMod;
+import thiefmod.actions.unique.IAmEverywhereAction;
 import thiefmod.patches.Character.AbstractCardEnum;
-import thiefmod.powers.Common.ShadowstepPower;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,21 +34,17 @@ public class IAmEverywhere extends AbstractBackstabCard {
 
     // STAT DECLARATION
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
 
-    private static final int COST = 1;
-    private static final int UPGRADE_COST = 0;
+    private static final int COST = -1;
 
 // /STAT DECLARATION/
 
     public IAmEverywhere() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        ExhaustiveVariable.setBaseValue(this, 2);
-
-        FleetingField.fleeting.set(this, true);
 
 
     }
@@ -58,10 +52,12 @@ public class IAmEverywhere extends AbstractBackstabCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        if (this.energyOnUse < EnergyPanel.totalCount) {
+            this.energyOnUse = EnergyPanel.totalCount;
+        }
 
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
-                p, p, new ShadowstepPower(
-                p, p, this.magicNumber), this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new IAmEverywhereAction(p,this.magicNumber,this.freeToPlayOnce, this.energyOnUse, this.upgraded));
+
 
     }
 
@@ -84,7 +80,6 @@ public class IAmEverywhere extends AbstractBackstabCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBaseCost(UPGRADE_COST);
 //          this.rawDescription = UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }

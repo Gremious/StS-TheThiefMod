@@ -214,6 +214,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         //    BaseMod.addCard(new GuiltTrip());
 
 
+        BaseMod.addCard(new IAmEverywhere());
         BaseMod.addCard(new FindersKeepers());
         BaseMod.addCard(new FeignTrip());
         BaseMod.addCard(new ThousandBallBearings());
@@ -270,6 +271,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         // UnlockTracker.unlockCard(GuiltTrip.ID);
 
 
+        UnlockTracker.unlockCard(this.p.drawX, this.p.drawY.ID);
         UnlockTracker.unlockCard(FindersKeepers.ID);
         UnlockTracker.unlockCard(FeignTrip.ID);
         UnlockTracker.unlockCard(ThousandBallBearings.ID);

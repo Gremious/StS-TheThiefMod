@@ -16,6 +16,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
 import thiefmod.ThiefMod;
 import thiefmod.actions.common.StealCardAction;
 import thiefmod.patches.Character.AbstractCardEnum;
@@ -117,6 +118,12 @@ public class AAAEmptyCard extends AbstractBackstabCard {
             AbstractDungeon.actionManager.addToBottom(
                     new MakeTempCardInDrawPileAction(new VoidCard(), this.backstabNumber, true, true, false));
         }
+
+        for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new VulnerablePower(
+                    mo, this.magicNumber, false), this.magicNumber));
+        }
+
         this.backstabNumber = this.baseBackstabNumber;
     }
 
