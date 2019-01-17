@@ -67,21 +67,6 @@
     "DESCRIPTION": "For the rest of this combat, all stolen cards you gain are upgraded.",
     "UPGRADE_DESCRIPTION": "Innate. NL For the rest of this combat, all stolen cards you gain are upgraded."
   },
-  "theThief:DefaultCommonPower": {
-    "NAME": "Hold Place",
-    "DESCRIPTION": "Gain !M! keyword.",
-    "UPGRADE_DESCRIPTION": "Gain !M! keywords."
-  },
-  "theThief:DefaultUncommonAttack": {
-    "NAME": "Big slap",
-    "DESCRIPTION": "Deal !D! damage.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage."
-  },
-  "theThief:DefaultUncommonSkill": {
-    "NAME": "A better defend",
-    "DESCRIPTION": "Gain !B! Plated Armor. Affected by Dexterity.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Plated Armor. Affected by Dexterity."
-  },
   "theThief:SimilarSkills": {
     "NAME": "Similar Skills",
     "DESCRIPTION": "At the start of your turn, add a random Green card to your deck. It costs 0 this combat.",
@@ -401,12 +386,14 @@
       "[#88888]Flavor[] [#88888]Text[]"
     ]
   },
-  "theThief:empty1": {
-    "NAME": "EmptyCard",
-    "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+  "theThief:PerfectDagger": {
+    "NAME": "Perfect Dagger",
+    "DESCRIPTION": "Deal !D! damage.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage.",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]Flavor[] [#88888]Text[]"
+      "#yA #ygreat#yartifact, #yre-forged #yre-lost #yre-found [#88888]and[][#88888]re-stolen[][#88888]time[][#88888]and[][#88888]time[][#88888]again,[][#88888]by[][#88888]clans[][#88888]of[][#88888]silence[][#88888]and[][#88888]burning[][#88888]blood[][#88888]alike[]",
+      " NL Backstab: Also increase this card's damage by !M! permanently.",
+      " NL Backstab: [#fa5555]Also[] [#fa5555]increase[] [#fa5555]this[] [#fa5555]card's[] [#fa5555]damage[] [#fa5555]by[] !M! [#fa5555]permanently.[]"
     ]
   },
   "theThief:empty2": {
