@@ -3,21 +3,14 @@ package thiefmod.cards;
 import basemod.helpers.TooltipInfo;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.FleetingField;
 import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
-import thiefmod.actions.common.StealCardAction;
 import thiefmod.patches.Character.AbstractCardEnum;
 import thiefmod.powers.Common.ShadowstepPower;
 
@@ -65,69 +58,13 @@ public class IAmEverywhere extends AbstractBackstabCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        final int count = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
-
-        if (count <= 1) {
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(
-                    m, new DamageInfo(p, this.damage * this.backstabNumber, this.damageTypeForTurn),
-                    AbstractGameAction.AttackEffect.SLASH_VERTICAL));
-        } else {
-            AbstractDungeon.actionManager.addToBottom(new StealCardAction(
-                    p, this.magicNumber, 1, ADD_RANDOM, true, ADD_LOCATION, ADD_UPGRADED));
-        }
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
                 p, p, new ShadowstepPower(
                 p, p, this.magicNumber), this.magicNumber));
 
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(
-                p, p, this.block));
-
-        while (this.backstabNumber-- != 0) {
-            AbstractDungeon.actionManager.addToBottom(
-                    new MakeTempCardInDrawPileAction(new VoidCard(), this.backstabNumber, true, true, false));
-        }
-        this.backstabNumber = this.baseBackstabNumber;
     }
 
-
-    @Override
-    public void applyPowers() {
-        super.applyPowers();
-
-        if (this.magicNumber >= 2) {
-            this.rawDescription = UPGRADE_DESCRIPTION;
-        } else {
-            this.rawDescription = DESCRIPTION;
-        }
-
-        if (AbstractDungeon.player.cardsPlayedThisTurn == 0) {
-            this.rawDescription += this.EXTENDED_DESCRIPTION[1];
-        } else {
-            this.rawDescription += this.EXTENDED_DESCRIPTION[2];
-        }
-        this.initializeDescription();
-    }
-
-    /*
-        @Override
-    public void optionSelected(AbstractPlayer p, AbstractMonster m, int i)
-    {
-        switch (i) {
-            case 0:
-                 AbstractDungeon.actionManager.addToTop(new FetchAction(AbstractDungeon.player.drawPile, this.magicNumber));
-                break;
-            case 1:
-                AbstractDungeon.actionManager.addToTop(new FetchAction(AbstractDungeon.player.discardPile, this.magicNumber));
-                break;
-            case 2:
-                AbstractDungeon.actionManager.addToTop(new FetchAction(AbstractDungeon.player.exhaustPile, this.magicNumber));
-                break;
-            default:
-                return;
-        }
-    }
-     */
     @Override
     public List<TooltipInfo> getCustomTooltips() {
         List<TooltipInfo> tips = new ArrayList<>();
@@ -148,10 +85,6 @@ public class IAmEverywhere extends AbstractBackstabCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeBaseCost(UPGRADE_COST);
-            this.upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
-            this.upgradeDamage(UPGRADE_PLUS_DAMAGE);
-            this.upgradeBlock(UPGRADE_PLUS_BLOCK);
-            this.upgradeBackstabNumber(UPGRADED_PLUS_BACKSTAB);
 //          this.rawDescription = UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }
