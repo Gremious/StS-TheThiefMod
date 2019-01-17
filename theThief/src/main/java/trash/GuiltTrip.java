@@ -51,7 +51,7 @@ public class GuiltTrip extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        AbstractDungeon.actionManager.addToBottom(new GuiltTripAction(m));
+        AbstractDungeon.actionManager.addToBottom(new MakeMonsterBlockAction(m, p, this.magicNumber));
 
     }
 

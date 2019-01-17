@@ -1,9 +1,12 @@
 package thiefmod.cards;
 
 import basemod.helpers.TooltipInfo;
-import com.evacipated.cardcrawl.mod.stslib.actions.common.FetchAction;
+import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.StartupCard;
 import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -15,12 +18,12 @@ import thiefmod.patches.Character.AbstractCardEnum;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Reobtain extends AbstractBackstabCard {
+public class LieInWait extends AbstractBackstabCard implements StartupCard {
 
 
-// TEXT DECLARATION
+    // TEXT DECLARATION
 
-    public static final String ID = ThiefMod.makeID("Reobtain");
+    public static final String ID = ThiefMod.makeID("LieInWait");
     public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_UNCOMMON_ATTACK);
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -29,7 +32,7 @@ public class Reobtain extends AbstractBackstabCard {
     public static final String EXTENDED_DESCRIPTION[] = cardStrings.EXTENDED_DESCRIPTION;
 
 
-// /TEXT DECLARATION/
+    // /TEXT DECLARATION/
 
     // STAT DECLARATION
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
@@ -38,59 +41,38 @@ public class Reobtain extends AbstractBackstabCard {
     private static final CardType TYPE = CardType.SKILL;
 
     private static final int COST = 1;
-    private static final int UPGRADE_COST = 0;
 
+    private static final int BLOCK = 11;
 
     private static final int MAGIC = 1;
 
+
 // /STAT DECLARATION/
 
-    public Reobtain() {
+    public LieInWait() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
         ExhaustiveVariable.setBaseValue(this, 2);
 
         this.magicNumber = this.baseMagicNumber = MAGIC;
+        this.baseBlock = BLOCK;
     }
 
     // Actions the card should do.
-    @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
-        final int count = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
 
-
-        if (count <= 1) {
-
-            AbstractDungeon.actionManager.addToBottom(new FetchAction(AbstractDungeon.player.discardPile, this.magicNumber));
-
-        } else {
-            AbstractDungeon.actionManager.addToBottom(
-                    new FetchAction(AbstractDungeon.player.discardPile, this.magicNumber, fetchedCards -> {
-                        for (AbstractCard card : fetchedCards) {
-                            card.modifyCostForTurn(-1);
-                        }
-                    }
-                    )
-            );
-        }
+    @Override // Startup: Add 1 void to your draw pile.
+    public boolean atBattleStartPreDraw() {
+        AbstractDungeon.actionManager.addToBottom(
+                new MakeTempCardInDrawPileAction(new VoidCard(), this.magicNumber, true, true, false));
+        return true;
     }
 
     @Override
-    public void applyPowers() {
-        super.applyPowers();
+    public void use(AbstractPlayer p, AbstractMonster m) {
 
-        if (this.magicNumber >= 2) {
-            this.rawDescription = UPGRADE_DESCRIPTION;
-        } else {
-            this.rawDescription = DESCRIPTION;
-        }
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(
+                p, p, this.block));
 
-        if (AbstractDungeon.player.cardsPlayedThisTurn == 0) {
-            this.rawDescription += this.EXTENDED_DESCRIPTION[1];
-        } else {
-            this.rawDescription += this.EXTENDED_DESCRIPTION[2];
-        }
-        this.initializeDescription();
     }
 
     @Override
@@ -103,7 +85,7 @@ public class Reobtain extends AbstractBackstabCard {
     // Which card to return when making a copy of this card.
     @Override
     public AbstractCard makeCopy() {
-        return new Reobtain();
+        return new LieInWait();
     }
 
     //Upgraded stats.
@@ -111,7 +93,6 @@ public class Reobtain extends AbstractBackstabCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBaseCost(UPGRADE_COST);
 //          this.rawDescription = UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }

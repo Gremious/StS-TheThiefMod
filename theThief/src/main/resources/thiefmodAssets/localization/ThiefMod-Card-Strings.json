@@ -430,10 +430,12 @@
   },
   "theThief:Reobtain": {
     "NAME": "Reobtain",
-    "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+    "DESCRIPTION": "Fetch !M! card from your discard pile.",
+    "UPGRADE_DESCRIPTION": "Fetch !M! cards from your discard pile.",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]Flavor[] [#88888]Text[]"
+      "[#88888]Flavor[] [#88888]Text[]",
+      " NL Backstab: It also costs !M! less. NL Exhaustive !stslib:ex!.",
+      " NL Backstab: [#fa5555]It[] [#fa5555]also[] [#fa5555]costs[] !M! [#fa5555]less.[] NL Exhaustive !stslib:ex!."
     ]
   },
   "theThief:Gaslight": {
@@ -452,36 +454,36 @@
       "[#88888]Flavor[] [#88888]Text[]"
     ]
   },
-  "theThief:empty9": {
-    "NAME": "EmptyCard",
-    "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+  "theThief:Multitask": {
+    "NAME": "Multitask",
+    "DESCRIPTION": "Discard !theThief:Magic! cards. Shadowstep 1 time and Steal !M! cards.",
+    "UPGRADE_DESCRIPTION": "Discard !theThief:Magic! cards. Shadowstep 1 time and Steal !M! cards.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]
   },
-  "theThief:empty10": {
-    "NAME": "EmptyCard",
-    "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+  "theThief:LieInWait": {
+    "NAME": "Lie In Wait",
+    "DESCRIPTION": "Startup: Add !M! void to your draw pile. Gain !B! block. NL Exhaustive !stslib:ex!.",
+    "UPGRADE_DESCRIPTION": "Startup: Add !M! void to your draw pile. Gain !B! block. NL Exhaustive !stslib:ex!.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]
   },
-  "theThief:empty11": {
-    "NAME": "EmptyCard",
-    "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+  "theThief:ThousandBallBearings": {
+    "NAME": " Ball Bearings",
+    "DESCRIPTION": "Apply !M! Weak and Vulnerable. NL Can be upgraded any number of times. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Apply !M! Weak and Vulnerable. NL Can be upgraded any number of times.  NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]
   },
-  "theThief:empty12": {
-    "NAME": "EmptyCard",
-    "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+  "theThief:Feign Trip": {
+    "NAME": "Feign Trip",
+    "DESCRIPTION": "Gain !B! block and !M! Vulnerable.",
+    "UPGRADE_DESCRIPTION": "Gain !B! block and !M! Vulnerable.",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]Flavor[] [#88888]Text[]"
+      "[#88888]In[] [#88888]order[] [#88888]to[] [#88888]feign[] [#88888]falling[] [#88888]down,[] NL [#88888]you[] [#88888]still[] [#88888]need[] [#88888]to[] [#88888]fall[] [#88888]down.[]"
     ]
   },
   "theThief:empty13": {

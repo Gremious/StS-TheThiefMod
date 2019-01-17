@@ -15,12 +15,15 @@ import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import thiefmod.variabls.*;
 import thiefmod.cards.*;
-import thiefmod.characters.*;
+import thiefmod.characters.TheThief;
 import thiefmod.patches.Character.AbstractCardEnum;
 import thiefmod.patches.Character.TheThiefEnum;
-import thiefmod.relics.*;
+import thiefmod.relics.ThievesMask;
+import thiefmod.variabls.BackstabBlock;
+import thiefmod.variabls.BackstabDamage;
+import thiefmod.variabls.BackstabMagicNumber;
+import thiefmod.variabls.ThiefSecondMagicNumber;
 
 // Note: #y b r g p
 
@@ -208,9 +211,13 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         logger.info(LogInt++);
         BaseMod.addCard(new DefendThief());
         logger.info(LogInt++);
+        //    BaseMod.addCard(new GuiltTrip());
 
 
-      //  BaseMod.addCard(new GuiltTrip());
+        BaseMod.addCard(new FeignTrip());
+        BaseMod.addCard(new ThousandBallBearings());
+        BaseMod.addCard(new LieInWait());
+        BaseMod.addCard(new Multitask());
         BaseMod.addCard(new Gaslight());
         BaseMod.addCard(new Reobtain());
         BaseMod.addCard(new SteakOut());
@@ -259,8 +266,13 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
 
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
+        // UnlockTracker.unlockCard(GuiltTrip.ID);
 
-       // UnlockTracker.unlockCard(GuiltTrip.ID);
+
+        UnlockTracker.unlockCard(FeignTrip.ID);
+        UnlockTracker.unlockCard(ThousandBallBearings.ID);
+        UnlockTracker.unlockCard(LieInWait.ID);
+        UnlockTracker.unlockCard(Multitask.ID);
         UnlockTracker.unlockCard(Gaslight.ID);
         UnlockTracker.unlockCard(Reobtain.ID);
         UnlockTracker.unlockCard(SteakOut.ID);

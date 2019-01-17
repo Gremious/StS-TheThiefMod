@@ -37,8 +37,8 @@
             <artifactId>stslib</artifactId>
             <version>1.3.0</version>
             <scope>system</scope>
-            <systemPath>C:/My Stuff/Coding/ModdingSlayTheSpire/other_mods/builds/StSLib.jar</systemPath>
-            <!--<systemPath>C:/My Stuff/Games/Steam/steamapps/workshop/content/646570/1609158507/StSLib.jar</systemPath>-->
+            <!--<systemPath>C:/My Stuff/Coding/ModdingSlayTheSpire/other_mods/builds/StSLib.jar</systemPath>-->
+            <systemPath>C:/My Stuff/Games/Steam/steamapps/workshop/content/646570/1609158507/StSLib.jar</systemPath>
         </dependency>
     </dependencies>
 

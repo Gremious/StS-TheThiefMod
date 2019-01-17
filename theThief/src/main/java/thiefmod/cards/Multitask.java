@@ -1,8 +1,10 @@
 package thiefmod.cards;
 
 import basemod.helpers.TooltipInfo;
-import com.evacipated.cardcrawl.mod.stslib.actions.common.FetchAction;
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.FleetingField;
 import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DiscardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -10,17 +12,19 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
+import thiefmod.actions.common.StealCardAction;
 import thiefmod.patches.Character.AbstractCardEnum;
+import thiefmod.powers.Common.ShadowstepPower;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Reobtain extends AbstractBackstabCard {
-
+public class Multitask extends AbstractBackstabCard {
+//TODO: This one needs a p big description change, since it has many parts that can potentially be =/> 1; Make sure it pluralizes correctly.
 
 // TEXT DECLARATION
 
-    public static final String ID = ThiefMod.makeID("Reobtain");
+    public static final String ID = ThiefMod.makeID("Multitask");
     public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_UNCOMMON_ATTACK);
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -40,58 +44,43 @@ public class Reobtain extends AbstractBackstabCard {
     private static final int COST = 1;
     private static final int UPGRADE_COST = 0;
 
-
     private static final int MAGIC = 1;
+    private static final int UPGRADED_PLUS_MAGIC = 1;
+
+    private static final int BACKSTAB = 3;
+    private static final int UPGRADED_PLUS_BACKSTAB = -1;
 
 // /STAT DECLARATION/
 
-    public Reobtain() {
+    public Multitask() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
         ExhaustiveVariable.setBaseValue(this, 2);
+        FleetingField.fleeting.set(this, true);
 
         this.magicNumber = this.baseMagicNumber = MAGIC;
+        this.backstabNumber = this.baseBackstabNumber = BACKSTAB;
     }
+
+    private static final String ADD_LOCATION = "Hand"; // For stolen card.
+    private static final boolean ADD_RANDOM = true;
+    private static final boolean ADD_UPGRADED = false;
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        final int count = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
 
+        AbstractDungeon.actionManager.addToBottom(
+                new DiscardAction(p, p, this.backstabNumber, false));
 
-        if (count <= 1) {
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
+                p, p, new ShadowstepPower(p, p, this.magicNumber), 1));
 
-            AbstractDungeon.actionManager.addToBottom(new FetchAction(AbstractDungeon.player.discardPile, this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new StealCardAction(
+                p, this.magicNumber, 1, ADD_RANDOM, true, ADD_LOCATION, ADD_UPGRADED));
 
-        } else {
-            AbstractDungeon.actionManager.addToBottom(
-                    new FetchAction(AbstractDungeon.player.discardPile, this.magicNumber, fetchedCards -> {
-                        for (AbstractCard card : fetchedCards) {
-                            card.modifyCostForTurn(-1);
-                        }
-                    }
-                    )
-            );
-        }
     }
 
-    @Override
-    public void applyPowers() {
-        super.applyPowers();
-
-        if (this.magicNumber >= 2) {
-            this.rawDescription = UPGRADE_DESCRIPTION;
-        } else {
-            this.rawDescription = DESCRIPTION;
-        }
-
-        if (AbstractDungeon.player.cardsPlayedThisTurn == 0) {
-            this.rawDescription += this.EXTENDED_DESCRIPTION[1];
-        } else {
-            this.rawDescription += this.EXTENDED_DESCRIPTION[2];
-        }
-        this.initializeDescription();
-    }
 
     @Override
     public List<TooltipInfo> getCustomTooltips() {
@@ -103,7 +92,7 @@ public class Reobtain extends AbstractBackstabCard {
     // Which card to return when making a copy of this card.
     @Override
     public AbstractCard makeCopy() {
-        return new Reobtain();
+        return new Multitask();
     }
 
     //Upgraded stats.
@@ -112,6 +101,8 @@ public class Reobtain extends AbstractBackstabCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeBaseCost(UPGRADE_COST);
+            this.upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
+            this.upgradeBackstabNumber(UPGRADED_PLUS_BACKSTAB);
 //          this.rawDescription = UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }
