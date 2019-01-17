@@ -381,7 +381,7 @@
   "theThief:ShadowCalamity": {
     "NAME": "Shadow Calamity",
     "DESCRIPTION": "Startup: Add !M! Void to your draw pile. NL Deal !D! damage to all enemies. NL Grave NL Exhaustive !stslib:ex!.",
-    "UPGRADE_DESCRIPTION": "Startup: Add !M! Void to your draw pile. NL Deal !D! damage to all enemies. NL Grave. NL Exhaustive !stslib:ex!.",
+    "UPGRADE_DESCRIPTION": "Startup: Add !M! Voids to your draw pile. NL Deal !D! damage to all enemies. NL Grave. NL Exhaustive !stslib:ex!.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]
@@ -420,33 +420,33 @@
         "[#88888]It's[] [#88888]kinda[] [#88888]like[] [#88888]having[] [#88888]a[] [#88888]portable[] [#88888]mini-fridge.[]"
     ]
   },
-  "theThief:empty5": {
-    "NAME": "EmptyCard",
-    "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+  "theThief:SteakOut": {
+    "NAME": "Steak Out",
+    "DESCRIPTION": "Startup: Add !theThief:Magic! void to your draw pile and discard piles. Autoplay: Gain !M! energy.",
+    "UPGRADE_DESCRIPTION": "Startup: Add !theThief:Magic! void to your draw pile and discard piles. Autoplay: Gain !M! energy.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]
   },
-  "theThief:empty6": {
-    "NAME": "EmptyCard",
+  "theThief:Reobtain": {
+    "NAME": "Reobtain",
     "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ],
-    "theThief:empty7": {
-      "NAME": "EmptyCard",
-      "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-      "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+    "theThief:Gaslight": {
+      "NAME": "Gaslight",
+      "DESCRIPTION": "Enemy loses !M! strenght. You gain !M! strenght. NL Exhaustive !stslib:ex!.",
+      "UPGRADE_DESCRIPTION": "Enemy loses !M! strenght. You gain !M! strenght. NL Exhaustive !stslib:ex!.",
       "EXTENDED_DESCRIPTION": [
-        "[#88888]Flavor[] [#88888]Text[]"
+        "[#88888]Louse,[][#88888]you're[][#88888]just[][#88888]being[][#88888]crazy.[]"
       ]
     },
-    "theThief:empty8": {
-      "NAME": "EmptyCard",
-      "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-      "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+    "theThief:GuiltTrip": {
+      "NAME": "Guilt Trip",
+      "DESCRIPTION": "If an enemy intends to attack, make them block for that much instead.",
+      "UPGRADE_DESCRIPTION": "If an enemy intends to attack, make them block for that much instead.",
       "EXTENDED_DESCRIPTION": [
         "[#88888]Flavor[] [#88888]Text[]"
       ]

@@ -65,6 +65,7 @@ public class addRandomCardToHandAction extends com.megacrit.cardcrawl.actions.Ab
                 || nextHandCard.type == AbstractCard.CardType.STATUS ||
                 // Servant's Vision cards currently cause a crash when used by a non-Servant
                 // character.
+                //TODO: THIS IS NO LONGER THE CASE. UPDATE THIS.
                 nextHandCard.cardID == "Read" || nextHandCard.cardID == "Deadline"
                 || nextHandCard.cardID == "ReturningBlade" || nextHandCard.cardID == "Snipe"
                 || nextHandCard.cardID == "TimeTheft" || nextHandCard.cardID == "TrueSight");
