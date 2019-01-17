@@ -271,7 +271,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         // UnlockTracker.unlockCard(GuiltTrip.ID);
 
 
-        UnlockTracker.unlockCard(this.p.drawX, this.p.drawY.ID);
+        UnlockTracker.unlockCard(IAmEverywhere.ID);
         UnlockTracker.unlockCard(FindersKeepers.ID);
         UnlockTracker.unlockCard(FeignTrip.ID);
         UnlockTracker.unlockCard(ThousandBallBearings.ID);
