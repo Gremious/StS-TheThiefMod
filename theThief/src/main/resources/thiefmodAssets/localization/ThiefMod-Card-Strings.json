@@ -396,24 +396,24 @@
       " NL Backstab: [#fa5555]Also[] [#fa5555]increase[] [#fa5555]this[] [#fa5555]card's[] [#fa5555]damage[] [#fa5555]by[] !M! [#fa5555]permanently.[]"
     ]
   },
-  "theThief:empty2": {
-    "NAME": "EmptyCard",
-    "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+  "theThief:HeartBreaker": {
+    "NAME": "Heart Breaker",
+    "DESCRIPTION": "Deal !D! damage. If the enemy has Weak and Vulnerable, deals double damage.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. If the enemy has Weak and Vulnerable, deals double damage.",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]Flavor[] [#88888]Text[]"
+      "[#88888]Flavor[][#88888]text[]"
     ]
   },
-  "theThief:empty3": {
-    "NAME": "EmptyCard",
-    "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+  "theThief:PaydayLoan": {
+    "NAME": "Payday Loan",
+    "DESCRIPTION": "The next card you play is refunded. NL Add !M! void to your draw pile. NL Exhaustive !stslib:ex!.",
+    "UPGRADE_DESCRIPTION": "The next card you play is refunded. NL Add !M! void to your draw pile. NL Exhaustive !stslib:ex!).",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]
   },
   "theThief:empty4": {
-    "NAME": "EmptyCard",
+    "NAME": "Shadow Reserves",
     "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [

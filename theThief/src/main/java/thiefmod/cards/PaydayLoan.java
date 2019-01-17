@@ -19,17 +19,18 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
 import thiefmod.actions.common.StealCardAction;
 import thiefmod.patches.Character.AbstractCardEnum;
+import thiefmod.powers.Common.RefundCardCost;
 import thiefmod.powers.Common.ShadowstepPower;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class AAAEmptyCard extends AbstractBackstabCard {
+public class PaydayLoan extends AbstractBackstabCard {
 
 
-// TEXT DECLARATION 
+// TEXT DECLARATION
 
-    public static final String ID = thiefmod.ThiefMod.makeID("AAAEmptyCard");
+    public static final String ID = ThiefMod.makeID("PaydayLoan");
     public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_UNCOMMON_ATTACK);
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -46,77 +47,39 @@ public class AAAEmptyCard extends AbstractBackstabCard {
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
 
-    private static final int COST = 1;
+    private static final int COST = 2;
     private static final int UPGRADE_COST = 0;
 
-    private static final int DAMAGE = 6;
-    private static final int UPGRADE_PLUS_DAMAGE = 3;
+    private static final int MAGIC = 1; // Refund Card Power
 
-    private static final int BLOCK = 6;
-    private static final int UPGRADE_PLUS_BLOCK = 3;
-
-    private static final int MAGIC = 1;
-    private static final int UPGRADED_PLUS_MAGIC = 1;
-
-    private static final int BACKSTAB = 2;
-    private static final int UPGRADED_PLUS_BACKSTAB = 1;
-
-    private static final String ADD_LOCATION = "Hand"; // If stolen card.
-    private static final boolean ADD_RANDOM = true;
-    private static final boolean ADD_UPGRADED = false;
+    private static final int BACKSTAB = 1; // Voids
 
 // /STAT DECLARATION/
 
-    public AAAEmptyCard() {
+    public PaydayLoan() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
         ExhaustiveVariable.setBaseValue(this, 2);
-        FleetingField.fleeting.set(this, true);
 
-        this.baseDamage = DAMAGE;
         this.magicNumber = this.baseMagicNumber = MAGIC;
-        this.baseBlock = BLOCK;
         this.backstabNumber = this.baseBackstabNumber = BACKSTAB;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        final int count = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
-
-        if (count <= 1) {
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(
-                    m, new DamageInfo(p, this.damage * this.backstabNumber, this.damageTypeForTurn),
-                    AbstractGameAction.AttackEffect.SLASH_VERTICAL));
-        } else {
-            AbstractDungeon.actionManager.addToBottom(new StealCardAction(
-                    p, this.magicNumber, 1, ADD_RANDOM, true, ADD_LOCATION, ADD_UPGRADED));
-        }
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
-                p, p, new ShadowstepPower(
+                p, p, new RefundCardCost(
                 p, p, this.magicNumber), 1));
 
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(
-                p, p, this.block));
 
-        while (this.backstabNumber-- != 0) {
             AbstractDungeon.actionManager.addToBottom(
-                    new MakeTempCardInDrawPileAction(new VoidCard(), 1, true, true, false));
-        }
-        this.backstabNumber = this.baseBackstabNumber;
+                    new MakeTempCardInDrawPileAction(
+                            new VoidCard(), this.backstabNumber, true, true, false));
+
     }
 
-    @Override
-    public void applyPowers() {
-        super.applyPowers();
-        if (AbstractDungeon.player.cardsPlayedThisTurn == 0) {
-            this.rawDescription = this.DESCRIPTION + this.EXTENDED_DESCRIPTION[1];
-        } else {
-            this.rawDescription = this.DESCRIPTION + this.EXTENDED_DESCRIPTION[2];
-        }
-        this.initializeDescription();
-    }
 
     @Override
     public List<TooltipInfo> getCustomTooltips() {
@@ -128,7 +91,7 @@ public class AAAEmptyCard extends AbstractBackstabCard {
     // Which card to return when making a copy of this card.
     @Override
     public AbstractCard makeCopy() {
-        return new AAAEmptyCard();
+        return new PaydayLoan();
     }
 
     //Upgraded stats.
@@ -137,10 +100,6 @@ public class AAAEmptyCard extends AbstractBackstabCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeBaseCost(UPGRADE_COST);
-            this.upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
-            this.upgradeDamage(UPGRADE_PLUS_DAMAGE);
-            this.upgradeBlock(UPGRADE_PLUS_BLOCK);
-            this.upgradeBackstabNumber(UPGRADED_PLUS_BACKSTAB);
 //          this.rawDescription = UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }
