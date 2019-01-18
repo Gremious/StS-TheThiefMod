@@ -74,6 +74,7 @@ public class Stab extends AbstractBackstabCard {
     @Override
     public void applyPowers() {
         super.applyPowers();
+
         if (AbstractDungeon.player.cardsPlayedThisTurn == 0) {
             this.rawDescription = this.DESCRIPTION + this.EXTENDED_DESCRIPTION[0];
         } else {

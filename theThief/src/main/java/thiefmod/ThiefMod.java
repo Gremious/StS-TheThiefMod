@@ -194,8 +194,8 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
 
     @Override
     public void receiveEditCards() {
-        logger.info("Add variabls");
-        // Add the Custom Dynamic variabls
+        logger.info("Add variables");
+        // Add the Custom Dynamic variables
         BaseMod.addDynamicVariable(new BackstabDamage());
         BaseMod.addDynamicVariable(new BackstabMagicNumber());
         BaseMod.addDynamicVariable(new BackstabBlock());
@@ -214,6 +214,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         //    BaseMod.addCard(new GuiltTrip());
 
 
+        BaseMod.addCard(new HuntersInstinct());
         BaseMod.addCard(new CorrosivePoison());
         BaseMod.addCard(new MurderousIntent());
         BaseMod.addCard(new IAmEverywhere());
@@ -273,6 +274,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         // UnlockTracker.unlockCard(GuiltTrip.ID);
 
 
+        UnlockTracker.unlockCard(HuntersInstinct.ID);
         UnlockTracker.unlockCard(CorrosivePoison.ID);
         UnlockTracker.unlockCard(MurderousIntent.ID);
         UnlockTracker.unlockCard(IAmEverywhere.ID);
