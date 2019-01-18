@@ -23,7 +23,7 @@ public class HuntersInstinct extends AbstractBackstabCard {
 
 // TEXT DECLARATION
 
-    public static final String ID = ThiefMod.makeID("AAAEmptyCard");
+    public static final String ID = ThiefMod.makeID("HuntersInstinct");
     public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_UNCOMMON_ATTACK);
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -59,17 +59,20 @@ public class HuntersInstinct extends AbstractBackstabCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        int maximumHand = BaseMod.MAX_HAND_SIZE;
+        int currentHand = p.hand.group.size();
 
         AbstractDungeon.actionManager.addToBottom(
-                new MakeTempCardInDrawPileAction(new VoidCard(), this.backstabNumber, true, true, false));
+                new MakeTempCardInDrawPileAction(new VoidCard(), this.magicNumber, true, true, false));
 
-        int handSizeToDraw = BaseMod.MAX_HAND_SIZE;
         do {
-
-            AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 1));
-
+            if (!AbstractDungeon.player.drawPile.isEmpty() || !AbstractDungeon.player.discardPile.isEmpty()) {
+                AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 1));
+                currentHand++;
+            }
+            else return;
         }
-        while (AbstractDungeon.player.gameHandSize < handSizeToDraw);
+        while (currentHand < maximumHand);
 
     }
 
