@@ -114,7 +114,38 @@
       " non-gray cards you play to your deck."
     ]
   },
-  "theThief:CommonPower1": {
+  "theThief:ShadowImageButWaitPower": {
+    "NAME": "Shadow Image",
+    "DESCRIPTIONS": [
+      "You will take ",
+      " damage at the end of the next turn.",
+      " damage at the end of this turn."
+    ]
+  },
+  "theThief:ShadowImagePower": {
+    "NAME": "Shadow Image",
+    "DESCRIPTIONS": [
+      "You will take ",
+      " damage at the end of this turn."
+    ]
+  },
+  "theThief:CommonPower2": {
+    "NAME": "Placeholder Power",
+    "DESCRIPTIONS": [
+      "You applied ",
+      " keyword.",
+      " keywords."
+    ]
+  },
+  "theThief:CommonPower3": {
+    "NAME": "Placeholder Power",
+    "DESCRIPTIONS": [
+      "You applied ",
+      " keyword.",
+      " keywords."
+    ]
+  },
+  "theThief:CommonPower4": {
     "NAME": "Placeholder Power",
     "DESCRIPTIONS": [
       "You applied ",

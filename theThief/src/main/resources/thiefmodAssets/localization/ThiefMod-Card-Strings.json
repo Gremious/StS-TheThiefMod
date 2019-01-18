@@ -534,10 +534,10 @@
       "[#88888]Flavor[] [#88888]Text[]"
     ]
   },
-  "theThief:empty1": {
-    "NAME": "EmptyCard",
-    "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+  "theThief:ShadowImage": {
+    "NAME": "Shadow Image",
+    "DESCRIPTION": "Take all damage you would have taken this turn, at the end of your next turn instead.",
+    "UPGRADE_DESCRIPTION": "Take all damage you would have taken this turn, at the end of your next turn instead.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]

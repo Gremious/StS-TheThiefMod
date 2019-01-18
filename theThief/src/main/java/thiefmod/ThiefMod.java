@@ -214,6 +214,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         //    BaseMod.addCard(new GuiltTrip());
 
 
+        BaseMod.addCard(new ShadowImage());
         BaseMod.addCard(new Bribe());
         BaseMod.addCard(new HuntersInstinct());
         BaseMod.addCard(new CorrosivePoison());
@@ -275,6 +276,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         // UnlockTracker.unlockCard(GuiltTrip.ID);
 
 
+        UnlockTracker.unlockCard(ShadowImage.ID);
         UnlockTracker.unlockCard(Bribe.ID);
         UnlockTracker.unlockCard(HuntersInstinct.ID);
         UnlockTracker.unlockCard(CorrosivePoison.ID);

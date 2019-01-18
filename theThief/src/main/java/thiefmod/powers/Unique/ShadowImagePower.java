@@ -1,8 +1,11 @@
-package thiefmod.powers;
+package thiefmod.powers.Unique;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -12,22 +15,24 @@ import thiefmod.ThiefMod;
 
 // Empty Base
 
-public class EmptyPower extends AbstractPower {
+public class ShadowImagePower extends AbstractPower {
     public AbstractCreature source;
+    private int DamageAmountToTake;
 
-	public static final String POWER_ID = thiefmod.ThiefMod.makeID("Empty");
+	public static final String POWER_ID = ThiefMod.makeID("ShadowImagePower");
 	private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
 	public static final String NAME = powerStrings.NAME;
 	public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 	public static final String IMG = ThiefMod.makePath(ThiefMod.COMMON_POWER);
 
 
-    public EmptyPower(AbstractCreature owner, AbstractCreature source, final int amount) {
+    public ShadowImagePower(AbstractCreature owner, AbstractCreature source, final int amount, final int DamageAmountToTake) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.img = new Texture(IMG);
         this.type = PowerType.BUFF;
         this.isTurnBased = false;
+        this.DamageAmountToTake = DamageAmountToTake;
         
         this.owner = owner;
         this.source = source;
@@ -40,7 +45,15 @@ public class EmptyPower extends AbstractPower {
 	@Override
 	public void atStartOfTurn() {
 
-	}
+        this.updateDescription();
+
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(
+                this.owner, (new DamageInfo(this.owner, this.DamageAmountToTake, DamageInfo.DamageType.THORNS)),
+                AbstractGameAction.AttackEffect.FIRE));
+
+        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
+
+    }
 
     public void atEndOfRound() {
         if (this.amount == 0) {
@@ -55,13 +68,10 @@ public class EmptyPower extends AbstractPower {
     @Override
     public void updateDescription() 
     {
-    	if (this.amount == 1){
-    		this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];}
-    	
-    	else if (this.amount > 1) {
-    		this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[2];}
-    	}
-    
+
+        this.description = DESCRIPTIONS[0] + this.DamageAmountToTake + DESCRIPTIONS[1];}
+
+
 
 }
 
