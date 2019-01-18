@@ -30,7 +30,7 @@ public class ShadowImageButWaitPower extends AbstractPower {
         this.name = NAME;
         this.ID = POWER_ID;
         this.img = new Texture(IMG);
-        this.type = PowerType.BUFF;
+        this.type = PowerType.DEBUFF;
         this.isTurnBased = false;
 
         this.owner = owner;
