@@ -4,10 +4,7 @@ import basemod.helpers.TooltipInfo;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.FleetingField;
 import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
+import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
@@ -52,17 +49,8 @@ public class RiggedBet extends AbstractBackstabCard {
     private static final int COST = 1;
     private static final int UPGRADE_COST = 0;
 
-    private static final int DAMAGE = 6;
-    private static final int UPGRADE_PLUS_DAMAGE = 3;
-
-    private static final int BLOCK = 6;
-    private static final int UPGRADE_PLUS_BLOCK = 3;
-
     private static final int MAGIC = 1;
     private static final int UPGRADED_PLUS_MAGIC = 1;
-
-    private static final int BACKSTAB = 2;
-    private static final int UPGRADED_PLUS_BACKSTAB = 1;
 
     private static final String ADD_LOCATION = "Hand"; // If stolen card.
     private static final boolean ADD_RANDOM = true;
@@ -73,64 +61,16 @@ public class RiggedBet extends AbstractBackstabCard {
     public RiggedBet() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        ExhaustiveVariable.setBaseValue(this, 2);
-
-        FleetingField.fleeting.set(this, true);
-        this.baseDamage = DAMAGE;
         this.magicNumber = this.baseMagicNumber = MAGIC;
-        this.baseBlock = BLOCK;
-        this.backstabNumber = this.baseBackstabNumber = BACKSTAB;
 
-
-        this.tags.add(ThiefCardTags.BACKSTAB);
-        this.tags.add(ThiefCardTags.SHADOWSTEP);
-        this.tags.add(ThiefCardTags.STEAL);
-        this.tags.add(ThiefCardTags.STOLEN);
-        /*
-            modal = new ModalChoiceBuilder()
-                .setCallback(this) // Sets callback of all the below options to this
-                .setColor(CardColor.GREEN) // Sets color of any following cards to red
-                .addOption("Fetch a card from your draw pile.", CardTarget.NONE)
-                .setColor(CardColor.COLORLESS) // Sets color of any following cards to green
-                .addOption("Fetch a card from your discard pile.", CardTarget.NONE)
-                .setColor(CardColor.CURSE) // Sets color of any following cards to colorless
-                .addOption("Fetch a card from your exhaust pile.", CardTarget.NONE)
-                .create();
-         */
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        final int count = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
-
-        if (count <= 1) {
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(
-                    m, new DamageInfo(p, this.damage * this.backstabNumber, this.damageTypeForTurn),
-                    AbstractGameAction.AttackEffect.SLASH_VERTICAL));
-        } else {
-            AbstractDungeon.actionManager.addToBottom(new StealCardAction(
-                    p, this.magicNumber, 1, ADD_RANDOM, true, ADD_LOCATION, ADD_UPGRADED));
-        }
-
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
-                p, p, new ShadowstepPower(
-                p, p, this.magicNumber), this.magicNumber));
-
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(
-                p, p, this.block));
-
-        while (this.backstabNumber-- != 0) {
             AbstractDungeon.actionManager.addToBottom(
-                    new MakeTempCardInDrawPileAction(new VoidCard(), this.backstabNumber, true, true, false));
-        }
+                    new DiscardAction());
 
-        for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new VulnerablePower(
-                    mo, this.magicNumber, false), this.magicNumber));
-        }
-
-        this.backstabNumber = this.baseBackstabNumber;
     }
 
     /*

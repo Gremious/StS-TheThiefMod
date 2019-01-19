@@ -550,12 +550,12 @@
       "[#88888][] [#88888]Text[]"
     ]
   },
-  "theThief:empty3": {
-    "NAME": "EmptyCard",
-    "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+  "theThief:RiggedBet": {
+    "NAME": "Rigged Bet",
+    "DESCRIPTION": "Discard your hand, then, steal that many cards. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Discard your hand, then, steal that many cards. Exhaust.",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]Flavor[] [#88888]Text[]"
+      "[#88888]An[] [#88888]over-calculated[] [#88888]gamble[]"
     ]
   },
   "theThief:empty4": {
