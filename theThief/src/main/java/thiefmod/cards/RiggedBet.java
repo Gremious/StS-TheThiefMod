@@ -1,24 +1,15 @@
 package thiefmod.cards;
 
 import basemod.helpers.TooltipInfo;
-import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.FleetingField;
-import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
 import thiefmod.ThiefMod;
-import thiefmod.actions.common.StealCardAction;
+import thiefmod.actions.unique.RiggedBetAction;
 import thiefmod.patches.Character.AbstractCardEnum;
-import thiefmod.patches.Unique.ThiefCardTags;
-import thiefmod.powers.Common.ShadowstepPower;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -68,59 +59,11 @@ public class RiggedBet extends AbstractBackstabCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-            AbstractDungeon.actionManager.addToBottom(
-                    new DiscardAction());
+        AbstractDungeon.actionManager.addToBottom(new RiggedBetAction(ADD_LOCATION, ADD_RANDOM, ADD_UPGRADED));
 
     }
 
-    /*
 
-    @Override // Startup: Add 1 void to your draw pile.
-    public boolean atBattleStartPreDraw() {
-        AbstractDungeon.actionManager.addToBottom(
-                new MakeTempCardInDrawPileAction(new VoidCard(), this.magicNumber, true, true, false));
-        return true;
-    }
-
-    */
-
-    @Override
-    public void applyPowers() {
-        super.applyPowers();
-
-        if (this.magicNumber >= 2) {
-            this.rawDescription = UPGRADE_DESCRIPTION;
-        } else {
-            this.rawDescription = DESCRIPTION;
-        }
-
-        if (AbstractDungeon.player.cardsPlayedThisTurn == 0) {
-            this.rawDescription += this.EXTENDED_DESCRIPTION[1];
-        } else {
-            this.rawDescription += this.EXTENDED_DESCRIPTION[2];
-        }
-        this.initializeDescription();
-    }
-
-    /*
-        @Override
-    public void optionSelected(AbstractPlayer p, AbstractMonster m, int i)
-    {
-        switch (i) {
-            case 0:
-                 AbstractDungeon.actionManager.addToTop(new FetchAction(AbstractDungeon.player.drawPile, this.magicNumber));
-                break;
-            case 1:
-                AbstractDungeon.actionManager.addToTop(new FetchAction(AbstractDungeon.player.discardPile, this.magicNumber));
-                break;
-            case 2:
-                AbstractDungeon.actionManager.addToTop(new FetchAction(AbstractDungeon.player.exhaustPile, this.magicNumber));
-                break;
-            default:
-                return;
-        }
-    }
-     */
     @Override
     public List<TooltipInfo> getCustomTooltips() {
         List<TooltipInfo> tips = new ArrayList<>();
@@ -142,9 +85,6 @@ public class RiggedBet extends AbstractBackstabCard {
             this.upgradeName();
             this.upgradeBaseCost(UPGRADE_COST);
             this.upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
-            this.upgradeDamage(UPGRADE_PLUS_DAMAGE);
-            this.upgradeBlock(UPGRADE_PLUS_BLOCK);
-            this.upgradeBackstabNumber(UPGRADED_PLUS_BACKSTAB);
 //          this.rawDescription = UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }
