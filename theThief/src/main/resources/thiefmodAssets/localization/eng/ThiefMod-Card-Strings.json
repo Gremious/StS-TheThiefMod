@@ -151,7 +151,7 @@
   },
   "theThief:ShadowForm": {
     "NAME": "Shadow Form",
-    "DESCRIPTION": "At the start of your turn, play a random card from any color. NL Backstab: Play !theThief:BkStMgc! instead NL Ethereal.",
+    "DESCRIPTION": "At the start of your turn, play a random card from any color. NL Backstab: Play !theThief:BkStMgc! instead ",
     "UPGRADE_DESCRIPTION": "At the start of your turn, play a random card from any color. NL Backstab: Play !theThief:BkStMgc! instead.",
     "EXTENDED_DESCRIPTION": [
       " NL Backstab: Play !theThief:BkStMgc! instead",
@@ -542,12 +542,12 @@
       "[#88888]Flavor[] [#88888]Text[]"
     ]
   },
-  "theThief:empty2": {
-    "NAME": "EmptyCard",
-    "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+  "theThief:Cunning": {
+    "NAME": "Cunning",
+    "DESCRIPTION": "The next !M! Stolen card you play this turn are played twice.",
+    "UPGRADE_DESCRIPTION": "The next !M! Stolen cards you play this turn are played twice.",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]Flavor[] [#88888]Text[]"
+      "[#88888][] [#88888]Text[]"
     ]
   },
   "theThief:empty3": {

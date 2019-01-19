@@ -30,7 +30,7 @@ public class BackstabMagicNumber extends DynamicVariable {
 
     @Override
     public boolean upgraded(AbstractCard card) {
-        return card.upgradedMagicNumber     ;
-//      return ((AbstractBackstabCard) card).upgradedBackstabNumber;
+     //   return card.upgradedMagicNumber     ;
+      return ((AbstractBackstabCard) card).upgradedBackstabNumber;
     }
 }

@@ -214,6 +214,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         //    BaseMod.addCard(new GuiltTrip());
 
 
+        BaseMod.addCard(new Cunning());
         BaseMod.addCard(new ShadowImage());
         BaseMod.addCard(new Bribe());
         BaseMod.addCard(new HuntersInstinct());
@@ -276,6 +277,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         // UnlockTracker.unlockCard(GuiltTrip.ID);
 
 
+        UnlockTracker.unlockCard(Cunning.ID);
         UnlockTracker.unlockCard(ShadowImage.ID);
         UnlockTracker.unlockCard(Bribe.ID);
         UnlockTracker.unlockCard(HuntersInstinct.ID);
@@ -349,15 +351,15 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
 
         // CardStrings
         BaseMod.loadCustomStringsFile(CardStrings.class,
-                "thiefmodAssets/localization/ThiefMod-Card-Strings.json");
+                "thiefmodAssets/localization/eng/ThiefMod-Card-Strings.json");
 
         // PowerStrings
         BaseMod.loadCustomStringsFile(PowerStrings.class,
-                "thiefmodAssets/localization/ThiefMod-Power-Strings.json");
+                "thiefmodAssets/localization/eng/ThiefMod-Power-Strings.json");
 
         // RelicStrings
         BaseMod.loadCustomStringsFile(RelicStrings.class,
-                "thiefmodAssets/localization/ThiefMod-Relic-Strings.json");
+                "thiefmodAssets/localization/eng/ThiefMod-Relic-Strings.json");
 
         logger.info("Done Edtting Strings");
     }
