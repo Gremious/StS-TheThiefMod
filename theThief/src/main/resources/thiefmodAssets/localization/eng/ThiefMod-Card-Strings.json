@@ -558,10 +558,10 @@
       "[#88888]An[] [#88888]over-calculated[] [#88888]gamble[]"
     ]
   },
-  "theThief:empty4": {
-    "NAME": "EmptyCard",
-    "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+  "theThief:Hoodlum": {
+    "NAME": "Hoodlum",
+    "DESCRIPTION": "Whenever you trigger a Backstab or steal a card, draw !M! card and discard !M! card.",
+    "UPGRADE_DESCRIPTION": "Innate. Whenever you trigger a Backstab or steal a card, draw !M! card and discard !M! card.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]

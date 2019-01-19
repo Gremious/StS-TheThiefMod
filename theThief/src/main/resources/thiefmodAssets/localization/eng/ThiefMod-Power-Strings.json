@@ -129,12 +129,12 @@
       " damage at the end of this turn."
     ]
   },
-  "theThief:CommonPower2": {
-    "NAME": "Placeholder Power",
+  "theThief:HoodlumPower": {
+    "NAME": "Hoodlum",
     "DESCRIPTIONS": [
-      "You applied ",
-      " keyword.",
-      " keywords."
+      "Whenever you trigger a #bBackstab card or #bSteal a card, draw then discard ",
+      " card.",
+      " cards."
     ]
   },
   "theThief:CommonPower3": {
@@ -145,7 +145,63 @@
       " keywords."
     ]
   },
-  "theThief:CommonPower4": {
+  "theThief:CommonPower123": {
+    "NAME": "Placeholder Power",
+    "DESCRIPTIONS": [
+      "You applied ",
+      " keyword.",
+      " keywords."
+    ]
+  },
+  "theThief:CommonPower21": {
+    "NAME": "Placeholder Power",
+    "DESCRIPTIONS": [
+      "You applied ",
+      " keyword.",
+      " keywords."
+    ]
+  },
+  "theThief:CommonPower42": {
+    "NAME": "Placeholder Power",
+    "DESCRIPTIONS": [
+      "You applied ",
+      " keyword.",
+      " keywords."
+    ]
+  },
+  "theThief:CommonPower41": {
+    "NAME": "Placeholder Power",
+    "DESCRIPTIONS": [
+      "You applied ",
+      " keyword.",
+      " keywords."
+    ]
+  },
+  "theThief:CommonPower45": {
+    "NAME": "Placeholder Power",
+    "DESCRIPTIONS": [
+      "You applied ",
+      " keyword.",
+      " keywords."
+    ]
+  },
+  "theThief:CommonPower2114": {
+    "NAME": "Placeholder Power",
+    "DESCRIPTIONS": [
+      "You applied ",
+      " keyword.",
+      " keywords."
+    ]
+  },
+  "theThief:CommonPower324": {
+    "NAME": "Placeholder Power",
+    "DESCRIPTIONS": [
+      "You applied ",
+      " keyword.",
+      " keywords."
+    ]
+  },
+  "theThief:CommonPower43f": {
     "NAME": "Placeholder Power",
     "DESCRIPTIONS": [
       "You applied ",
