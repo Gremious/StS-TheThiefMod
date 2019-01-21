@@ -574,10 +574,10 @@
       "[#88888]Pants[] [#88888]on[] [#fa9632]fire.[]"
     ]
   },
-  "theThief:empty6": {
-    "NAME": "EmptyCard",
-    "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+  "theThief:ConArtist": {
+    "NAME": "Con Artist",
+    "DESCRIPTION": "Whenever you steal a card, gain !M! #ygold.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you steal a card, gain !M! #ygold.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]

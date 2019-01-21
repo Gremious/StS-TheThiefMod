@@ -1,34 +1,30 @@
-package thiefmod.powers;
+package thiefmod.powers.Unique;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import thiefmod.ThiefMod;
-import thiefmod.actions.common.GainGoldAction;
-import thiefmod.patches.Unique.ThiefCardTags;
 
 // Empty Base
 
-public class EmptyPower extends AbstractPower {
+public class ConArtistPower extends AbstractPower {
     public AbstractCreature source;
-    public AbstractPlayer owner;
 
-	public static final String POWER_ID = thiefmod.ThiefMod.makeID("Empty");
+	public static final String POWER_ID = ThiefMod.makeID("ConArtistPower");
 	private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
 	public static final String NAME = powerStrings.NAME;
 	public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 	public static final String IMG = ThiefMod.makePath(ThiefMod.COMMON_POWER);
 
 
-    public EmptyPower(AbstractPlayer owner, AbstractCreature source, final int amount) {
+    public ConArtistPower(AbstractCreature owner, AbstractCreature source, final int amount) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.img = new Texture(IMG);
@@ -50,10 +46,6 @@ public class EmptyPower extends AbstractPower {
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (card.hasTag(ThiefCardTags.STEALING)){
-            AbstractDungeon.actionManager.addToBottom(new GainGoldAction(this.owner,this.source,this.amount));
-        }
-        else {return;}
     }
 
     public void atEndOfRound() {

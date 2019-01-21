@@ -145,12 +145,12 @@
       " Weak and Vulnerable to a random enemy."
     ]
   },
-  "theThief:CommonPower123": {
-    "NAME": "Placeholder Power",
+  "theThief:ConArtist": {
+    "NAME": "Con Artist",
     "DESCRIPTIONS": [
-      "You applied ",
-      " keyword.",
-      " keywords."
+      "When you steal a card, you will gain #y",
+      " #ygold.",
+      " #ygold."
     ]
   },
   "theThief:CommonPower21": {
