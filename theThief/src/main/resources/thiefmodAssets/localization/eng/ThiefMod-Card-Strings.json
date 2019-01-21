@@ -610,12 +610,16 @@
       " times"
     ]
   },
-  "theThief:empty10": {
-    "NAME": "EmptyCard",
-    "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+  "theThief:PrecisePositioning": {
+    "NAME": "Precise Positioning",
+    "DESCRIPTION": "Shadowstep !M! ",
+    "UPGRADE_DESCRIPTION": ".",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]Flavor[] [#88888]Text[]"
+      "[#88888]It's[] [#88888]a[] [#88888]shame[] [#88888]that[] [#88888]'Phantom'[] [#88888]fellow[] [#88888]isn't[] [#88888]here!...[]",
+      " time. Next turn your attack damage is doubled. NL Refund stslib:refund. NL Ethereal.",
+      " times. Next turn your attack damage is doubled. NL Refund stslib:refund. NL Ethereal.",
+      " time. Next turn your attack damage is doubled. NL Refund stslib:refund.",
+      " times. Next turn your attack damage is doubled. NL Refund stslib:refund."
     ]
   },
   "theThief:empty11": {
