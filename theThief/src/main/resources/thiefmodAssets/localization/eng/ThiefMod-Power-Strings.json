@@ -160,12 +160,12 @@
       " [E]"
     ]
   },
-  "theThief:CommonPower42": {
-    "NAME": "Placeholder Power",
+  "theThief:GhastlyEssencePower": {
+    "NAME": "Ghastly Essence",
     "DESCRIPTIONS": [
-      "You applied ",
-      " keyword.",
-      " keywords."
+      "At the start of your turn, Shadowstep ",
+      " time.",
+      " times."
     ]
   },
   "theThief:CommonPower41": {

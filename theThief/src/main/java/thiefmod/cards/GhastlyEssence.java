@@ -8,22 +8,20 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.DexterityPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
 import thiefmod.ThiefMod;
 import thiefmod.patches.Character.AbstractCardEnum;
-import thiefmod.patches.Unique.ThiefCardTags;
+import thiefmod.powers.Unique.GhastlyEssencePower;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Persuasion extends AbstractBackstabCard {
+public class GhastlyEssence extends AbstractBackstabCard {
 //implements StartupCard
 //implements ModalChoice.Callback
 
 // TEXT DECLARATION
 
-    public static final String ID = ThiefMod.makeID("Persuasion");
+    public static final String ID = ThiefMod.makeID("GhastlyEssencePower");
     public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_UNCOMMON_ATTACK);
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -42,52 +40,27 @@ public class Persuasion extends AbstractBackstabCard {
 
     private static final int COST = 1;
 
+    private static final int POWER = 1;
+
     private static final int MAGIC = 1;
     private static final int UPGRADED_PLUS_MAGIC = 1;
 
 
 // /STAT DECLARATION/
 
-    public Persuasion() {
+    public GhastlyEssence() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
         this.magicNumber = this.baseMagicNumber = MAGIC;
-        this.rawDescription += EXTENDED_DESCRIPTION[1];
-
-        this.tags.add(ThiefCardTags.BACKSTAB);
-
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        final int count = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
 
-        if (count <= 1) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
-                    p, p, new DexterityPower(
-                    p, this.magicNumber), this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
+                p, p, new GhastlyEssencePower(p, p, this.magicNumber), this.magicNumber));
 
-        } else {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
-                    p, p, new StrengthPower(
-                    p, this.magicNumber), this.magicNumber));
-        }
-    }
-
-
-    @Override
-    public void applyPowers() {
-        //todo: Check if this backstab description setting work works
-        this.rawDescription = cardStrings.DESCRIPTION;
-        super.applyPowers();
-
-        if (AbstractDungeon.player.cardsPlayedThisTurn == 0) {
-            this.rawDescription += EXTENDED_DESCRIPTION[1];
-        } else {
-            this.rawDescription += EXTENDED_DESCRIPTION[2];
-        }
-        this.initializeDescription();
     }
 
 
@@ -99,10 +72,22 @@ public class Persuasion extends AbstractBackstabCard {
         return tips;
     }
 
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+
+        if (this.magicNumber >= 2) {
+            this.rawDescription += this.EXTENDED_DESCRIPTION[1];
+        } else {
+            this.rawDescription += this.EXTENDED_DESCRIPTION[2];
+        }
+        this.initializeDescription();
+    }
+
     // Which card to return when making a copy of this card.
     @Override
     public AbstractCard makeCopy() {
-        return new Persuasion();
+        return new GhastlyEssence();
     }
 
     //Upgraded stats.

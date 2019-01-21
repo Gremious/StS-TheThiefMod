@@ -600,12 +600,14 @@
       " NL Backstab: [#fa5555]Gain[] !M! [#fa5555]Strength[] [#fa5555]instead.[]"
     ]
   },
-  "theThief:empty9": {
-    "NAME": "EmptyCard",
-    "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+  "theThief:GhastlyEssence": {
+    "NAME": "Ghastly Essence",
+    "DESCRIPTION": "At the start of your turn, Shadowstep !M! ",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, Shadowstep !M! ",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]Flavor[] [#88888]Text[]"
+      "[#88888]Flavor[] [#88888]Text[]",
+      " time",
+      " times"
     ]
   },
   "theThief:empty10": {
