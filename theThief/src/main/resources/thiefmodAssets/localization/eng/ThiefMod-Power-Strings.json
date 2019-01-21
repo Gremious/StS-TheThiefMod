@@ -153,12 +153,11 @@
       " #ygold."
     ]
   },
-  "theThief:CommonPower21": {
-    "NAME": "Placeholder Power",
+  "theThief:VoidboundPower": {
+    "NAME": "Voidbound",
     "DESCRIPTIONS": [
-      "You applied ",
-      " keyword.",
-      " keywords."
+      "When you draw a void, gain ",
+      " [E]"
     ]
   },
   "theThief:CommonPower42": {

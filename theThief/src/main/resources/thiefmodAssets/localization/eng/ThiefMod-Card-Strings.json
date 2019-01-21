@@ -582,18 +582,18 @@
       "[#88888]Flavor[] [#88888]Text[]"
     ]
   },
-  "theThief:empty7": {
-    "NAME": "EmptyCard",
+  "theThief:Voidbound": {
+    "NAME": "Voidbound",
     "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]
   },
-  "theThief:empty8": {
-    "NAME": "EmptyCard",
-    "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+  "theThief:Persuasion": {
+    "NAME": "Persuasion",
+    "DESCRIPTION": "Gain !M! Dexterity. Backstab: Gain !M! Strength instead.",
+    "UPGRADE_DESCRIPTION": "Gain !M! Dexterity. Backstab: Gain !M! Strength instead.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]
