@@ -568,10 +568,10 @@
   },
   "theThief:Liar": {
     "NAME": "Liar",
-    "DESCRIPTION": "Every time you play a skill, apply !M! Weak to a random enemy",
-    "UPGRADE_DESCRIPTION": "Every time you play a skill, apply !M! and Weak and Vulnerable to a random enemy",
+    "DESCRIPTION": "Every time you play a skill, apply !M! Weak to a random enemy.",
+    "UPGRADE_DESCRIPTION": "Every time you play a skill, apply !M! Weak and Vulnerable to a random enemy.",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]Flavor[] [#88888]Text[]"
+      "[#88888]Pants[] [#88888]on[] [#fa9632]fire.[]"
     ]
   },
   "theThief:empty6": {

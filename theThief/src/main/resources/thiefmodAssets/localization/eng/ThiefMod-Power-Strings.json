@@ -140,9 +140,9 @@
   "theThief:LiarPower": {
     "NAME": "Liar",
     "DESCRIPTIONS": [
-      "You applied ",
-      " keyword.",
-      " keywords."
+      "Every time you play a skill, apply ",
+      " Weak to a random enemy.",
+      " Weak and Vulnerable to a random enemy."
     ]
   },
   "theThief:CommonPower123": {

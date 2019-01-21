@@ -51,22 +51,21 @@ public class LiarPower extends AbstractPower {
     @Override
     public void onPlayCard(AbstractCard card, AbstractMonster m) {
         if (card.type.equals(AbstractCard.CardType.SKILL)) {
-            if (this.upgraded) {
+            if (upgraded) {
                 AbstractDungeon.actionManager.addToBottom(
-                        new ApplyPowerAction(this.target, this.source, new WeakPower(this.target, this.debuffAmount, false), this.debuffAmount));
+                        new ApplyPowerAction(target, source, new WeakPower(target, debuffAmount, false), debuffAmount));
                 AbstractDungeon.actionManager.addToBottom(
-                        new ApplyPowerAction(this.target, this.source, new VulnerablePower(this.target, this.debuffAmount, false), this.debuffAmount));
-            }
-            else{
+                        new ApplyPowerAction(target, source, new VulnerablePower(target, debuffAmount, false), debuffAmount));
+            } else {
                 AbstractDungeon.actionManager.addToBottom(
-                        new ApplyPowerAction(this.target, this.source, new WeakPower(this.target, this.debuffAmount, false), this.debuffAmount));
+                        new ApplyPowerAction(target, source, new WeakPower(target, debuffAmount, false), debuffAmount));
             }
         }
     }
 
 
     public void atEndOfRound() {
-        if (this.amount == 0) {
+        if (upgraded) {
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
         } else {
             AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, this.ID, 1));
