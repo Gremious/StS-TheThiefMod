@@ -592,10 +592,12 @@
   },
   "theThief:Persuasion": {
     "NAME": "Persuasion",
-    "DESCRIPTION": "Gain !M! Dexterity. Backstab: Gain !M! Strength instead.",
-    "UPGRADE_DESCRIPTION": "Gain !M! Dexterity. Backstab: Gain !M! Strength instead.",
+    "DESCRIPTION": "Gain !M! Dexterity. ",
+    "UPGRADE_DESCRIPTION": "Gain !M! Dexterity.",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]Flavor[] [#88888]Text[]"
+      "[#88888]Flavor[] [#88888]Text[]",
+      " NL Backstab: Gain !M! Strength instead.",
+      " NL Backstab: [#fa5555]Gain[] !M! [#fa5555]Strength[] [#fa5555]instead.[]"
     ]
   },
   "theThief:empty9": {
