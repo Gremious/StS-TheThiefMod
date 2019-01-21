@@ -52,7 +52,6 @@ public class ShadowClone extends AbstractBackstabCard {
     public ShadowClone() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.misc = POWER;
         this.magicNumber = this.baseMagicNumber = MAGIC;
     }
 

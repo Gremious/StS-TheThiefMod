@@ -21,7 +21,7 @@ public class GhastlyEssence extends AbstractBackstabCard {
 
 // TEXT DECLARATION
 
-    public static final String ID = ThiefMod.makeID("GhastlyEssencePower");
+    public static final String ID = ThiefMod.makeID("GhastlyEssence");
     public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_UNCOMMON_ATTACK);
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
