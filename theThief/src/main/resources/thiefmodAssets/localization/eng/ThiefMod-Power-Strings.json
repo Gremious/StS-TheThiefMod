@@ -137,8 +137,8 @@
       " cards."
     ]
   },
-  "theThief:CommonPower3": {
-    "NAME": "Placeholder Power",
+  "theThief:LiarPower": {
+    "NAME": "Liar",
     "DESCRIPTIONS": [
       "You applied ",
       " keyword.",

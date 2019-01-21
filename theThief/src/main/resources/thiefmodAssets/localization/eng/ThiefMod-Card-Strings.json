@@ -566,10 +566,10 @@
       "[#88888]Flavor[] [#88888]Text[]"
     ]
   },
-  "theThief:empty5": {
-    "NAME": "EmptyCard",
-    "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+  "theThief:Liar": {
+    "NAME": "Liar",
+    "DESCRIPTION": "Every time you play a skill, apply !M! Weak to a random enemy",
+    "UPGRADE_DESCRIPTION": "Every time you play a skill, apply !M! and Weak and Vulnerable to a random enemy",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]

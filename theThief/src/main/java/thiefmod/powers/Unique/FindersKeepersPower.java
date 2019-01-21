@@ -1,4 +1,4 @@
-package thiefmod.powers;
+package thiefmod.powers.Unique;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
