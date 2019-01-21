@@ -168,12 +168,12 @@
       " times."
     ]
   },
-  "theThief:CommonPower41": {
-    "NAME": "Placeholder Power",
+  "theThief:ShadowClonePower": {
+    "NAME": "Shadow Clone",
     "DESCRIPTIONS": [
-      "You applied ",
-      " keyword.",
-      " keywords."
+      "At the start of your turn, play the last card you've played ",
+      " time.",
+      " times."
     ]
   },
   "theThief:CommonPower45": {

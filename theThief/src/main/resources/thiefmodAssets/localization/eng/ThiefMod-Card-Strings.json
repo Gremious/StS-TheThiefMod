@@ -622,10 +622,10 @@
       " times. Next turn your attack damage is doubled. NL Refund stslib:refund."
     ]
   },
-  "theThief:empty11": {
-    "NAME": "EmptyCard",
-    "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+  "theThief:ShadowClone": {
+    "NAME": "Shadow Clone",
+    "DESCRIPTION": "At the start of each turn, play the last card you've played (Does not re-play Shadow Clone). NL Ethereal.",
+    "UPGRADE_DESCRIPTION": "At the start of each turn, play the last card you've played (Does not re-play Shadow Clone).",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]
