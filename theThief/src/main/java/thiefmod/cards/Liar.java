@@ -1,27 +1,16 @@
 package thiefmod.cards;
 
 import basemod.helpers.TooltipInfo;
-import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.FleetingField;
-import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
 import thiefmod.ThiefMod;
-import thiefmod.actions.common.StealCardAction;
 import thiefmod.patches.Character.AbstractCardEnum;
-import thiefmod.patches.Unique.ThiefCardTags;
-import thiefmod.powers.Common.ShadowstepPower;
+import thiefmod.powers.Common.LiarPower;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,7 +43,6 @@ public class Liar extends AbstractBackstabCard {
     private static final int POWER = 1;
 
     private static final int MAGIC = 1;
-    private static final int UPGRADED_PLUS_MAGIC = 1;
 
 
 // /STAT DECLARATION/
@@ -71,7 +59,7 @@ public class Liar extends AbstractBackstabCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
-                p, p, new ShadowstepPower(), this.misc));
+                p, p, new LiarPower(p, p, m, this.upgraded, this.misc, this.magicNumber), this.misc));
 
     }
 
@@ -95,7 +83,6 @@ public class Liar extends AbstractBackstabCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
             this.isInnate = true;
 //          this.rawDescription = UPGRADE_DESCRIPTION;
             this.initializeDescription();
