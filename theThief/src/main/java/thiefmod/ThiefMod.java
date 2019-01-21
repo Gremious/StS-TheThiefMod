@@ -214,6 +214,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         //    BaseMod.addCard(new GuiltTrip());
 
 
+        BaseMod.addCard(new Liar());
         BaseMod.addCard(new Hoodlum());
         BaseMod.addCard(new RiggedBet());
         BaseMod.addCard(new Cunning());
@@ -279,6 +280,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         // UnlockTracker.unlockCard(GuiltTrip.ID);
 
 
+        UnlockTracker.unlockCard(Liar.ID);
         UnlockTracker.unlockCard(Hoodlum.ID);
         UnlockTracker.unlockCard(RiggedBet.ID);
         UnlockTracker.unlockCard(Cunning.ID);
