@@ -29,7 +29,6 @@ public class RetrievalAction extends AbstractGameAction {
         logger.info("Update start");
         AbstractDungeon.actionManager.addToBottom(new WaitAction(0.1f));
         AbstractDungeon.actionManager.addToBottom(new WaitAction(0.1f));
-        AbstractDungeon.actionManager.addToBottom(new WaitAction(0.1f));
         logger.info("Waited out");
 
         logger.info("cardsToRetun inside the action is " + cardsToReturn);

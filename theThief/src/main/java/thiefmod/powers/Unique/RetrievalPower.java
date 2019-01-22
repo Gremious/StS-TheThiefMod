@@ -76,6 +76,7 @@ public class RetrievalPower extends AbstractPower {
     @Override
     public void atStartOfTurn() {
         lastCardsPlayed.clear();
+        count = 0;
     }
         /*
         logger.info("onAfterCardPlayedStart");
