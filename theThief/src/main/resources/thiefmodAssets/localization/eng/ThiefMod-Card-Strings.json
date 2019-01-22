@@ -638,12 +638,14 @@
       "[#88888]Flavor[] [#88888]Text[]"
     ]
   },
-  "theThief:empty13": {
-    "NAME": "EmptyCard",
-    "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+  "theThief:Retrieval": {
+    "NAME": "Retrieval",
+    "DESCRIPTION": "After playing !M! cards in a turn, return the 3 last played cards to your hand.",
+    "UPGRADE_DESCRIPTION": "After playing !M! cards in a turn, return the 3 last played cards to your hand.",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]Flavor[] [#88888]Text[]"
+      "[#88888]Which[] [#88888]are[] [#88888]YOUR[] [#88888]top[] [#88888]three?[]",
+      "Tip.",
+      "Does not work on cards that purge. NL Does work on cards that Exhaust."
     ]
   },
   "theThief:empty14": {

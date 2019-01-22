@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
 import thiefmod.patches.Character.AbstractCardEnum;
 import thiefmod.powers.Common.ShadowstepPower;
+import thiefmod.powers.Unique.DissoluteSatisfactionPower;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,9 +39,8 @@ public class DissoluteSatisfaction extends AbstractBackstabCard {
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
 
-    private static final int COST = 1;
-
-    private static final int POWER = 1;
+    private static final int COST = 2;
+    private static final int UPGRADED_COST = 1;
 
     private static final int MAGIC = 1;
     private static final int UPGRADED_PLUS_MAGIC = 1;
@@ -51,8 +51,7 @@ public class DissoluteSatisfaction extends AbstractBackstabCard {
     public DissoluteSatisfaction() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.misc = POWER;
-        this.magicNumber = this.baseMagicNumber = MAGIC;
+        magicNumber = baseMagicNumber = MAGIC;
     }
 
     // Actions the card should do.
@@ -60,7 +59,7 @@ public class DissoluteSatisfaction extends AbstractBackstabCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
-                p, p, new ShadowstepPower(p,p,this.misc), this.misc));
+                p, p, new DissoluteSatisfactionPower(p,p,this.magicNumber), this.magicNumber));
 
     }
 
@@ -85,6 +84,7 @@ public class DissoluteSatisfaction extends AbstractBackstabCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
+            this.upgradeBaseCost(UPGRADED_COST);
             this.isInnate = true;
 //          this.rawDescription = UPGRADE_DESCRIPTION;
             this.initializeDescription();

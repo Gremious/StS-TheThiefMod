@@ -15,13 +15,13 @@ import thiefmod.powers.Common.ShadowstepPower;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AAPowerCard extends AbstractBackstabCard {
+public class Retrieval extends AbstractBackstabCard {
 //implements StartupCard
 //implements ModalChoice.Callback
 
 // TEXT DECLARATION
 
-    public static final String ID = ThiefMod.makeID("Liar");
+    public static final String ID = ThiefMod.makeID("Retrieval");
     public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_UNCOMMON_ATTACK);
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -48,7 +48,7 @@ public class AAPowerCard extends AbstractBackstabCard {
 
 // /STAT DECLARATION/
 
-    public AAPowerCard() {
+    public Retrieval() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
         misc = POWER;
@@ -69,6 +69,7 @@ public class AAPowerCard extends AbstractBackstabCard {
     public List<TooltipInfo> getCustomTooltips() {
         List<TooltipInfo> tips = new ArrayList<>();
         tips.add(new TooltipInfo("Flavor Text", EXTENDED_DESCRIPTION[0]));
+        tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[1], EXTENDED_DESCRIPTION[2]));
         // tips.addAll(modal.generateTooltips());
         return tips;
     }
@@ -76,7 +77,7 @@ public class AAPowerCard extends AbstractBackstabCard {
     // Which card to return when making a copy of this card.
     @Override
     public AbstractCard makeCopy() {
-        return new AAPowerCard();
+        return new Retrieval();
     }
 
     //Upgraded stats.

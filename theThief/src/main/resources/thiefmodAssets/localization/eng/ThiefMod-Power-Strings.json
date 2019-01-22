@@ -183,11 +183,11 @@
       " HP."
     ]
   },
-  "theThief:CommonPower2114": {
-    "NAME": "Placeholder Power",
+  "theThief:RetrievalPower": {
+    "NAME": "Retrieval",
     "DESCRIPTIONS": [
-      "You applied ",
-      " keyword.",
+      "After you play ",
+      " more cards, return .",
       " keywords."
     ]
   },
