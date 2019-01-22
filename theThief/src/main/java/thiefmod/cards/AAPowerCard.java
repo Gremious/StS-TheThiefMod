@@ -39,6 +39,7 @@ public class AAPowerCard extends AbstractBackstabCard {
     private static final CardType TYPE = CardType.POWER;
 
     private static final int COST = 1;
+    private static final int UPGRADE_COST = 0;
 
     private static final int POWER = 1;
 

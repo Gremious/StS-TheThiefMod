@@ -186,9 +186,11 @@
   "theThief:RetrievalPower": {
     "NAME": "Retrieval",
     "DESCRIPTIONS": [
-      "After you play ",
-      " more cards, return .",
-      " keywords."
+      "After you play 3 cards this turn return the last ",
+      " played cards to your hand. You have played ",
+      " cards",
+      "After you play 3 cards next turn, return the last ",
+      " played cards to your hand."
     ]
   },
   "theThief:CommonPower324": {

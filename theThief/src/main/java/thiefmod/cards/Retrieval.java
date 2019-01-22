@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
 import thiefmod.patches.Character.AbstractCardEnum;
 import thiefmod.powers.Common.ShadowstepPower;
+import thiefmod.powers.Unique.RetrievalPower;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,20 +40,20 @@ public class Retrieval extends AbstractBackstabCard {
     private static final CardType TYPE = CardType.POWER;
 
     private static final int COST = 1;
-
-    private static final int POWER = 1;
+    private static final int UPGRADE_COST = 0;
 
     private static final int MAGIC = 1;
     private static final int UPGRADED_PLUS_MAGIC = 1;
 
+    private static final int SECOND_MAGIC = 3;
 
 // /STAT DECLARATION/
 
     public Retrieval() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        misc = POWER;
         magicNumber = baseMagicNumber = MAGIC;
+        backstabNumber = baseBackstabNumber = SECOND_MAGIC;
     }
 
     // Actions the card should do.
@@ -60,7 +61,7 @@ public class Retrieval extends AbstractBackstabCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
-                p, p, new ShadowstepPower(p,p,magicNumber), magicNumber));
+                p, p, new RetrievalPower(p,p,magicNumber, backstabNumber), magicNumber));
 
     }
 
