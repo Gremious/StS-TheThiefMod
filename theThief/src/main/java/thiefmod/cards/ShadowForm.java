@@ -44,7 +44,7 @@ public class ShadowForm extends AbstractBackstabCard {
 
     public ShadowForm() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.rawDescription = this.DESCRIPTION + this.EXTENDED_DESCRIPTION[0];
+        rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0];
         this.initializeDescription();
 
         this.isEthereal = this.upgraded;
@@ -60,7 +60,7 @@ public class ShadowForm extends AbstractBackstabCard {
 
         if (count <= 1 || p.hasPower(BackstabPower.POWER_ID)) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
-                new ShadowFormPower(p, this.magicNumber * this.backstabNumber),
+                new ShadowFormPower(p, magicNumber * backstabNumber),
                     this.magicNumber * this.backstabNumber));
         } else {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,

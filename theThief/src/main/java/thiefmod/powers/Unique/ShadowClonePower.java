@@ -50,7 +50,7 @@ public class ShadowClonePower extends AbstractPower {
     }
 
     @Override
-    public void atStartOfTurn() {
+    public void atStartOfTurnPostDraw() {
         playedCards = AbstractDungeon.actionManager.cardsPlayedThisCombat;
 
         Collections.reverse(playedCards);
@@ -61,9 +61,14 @@ public class ShadowClonePower extends AbstractPower {
             } else if (card.cardID.equals(ShadowClone.ID)) {
                 continue;
             } else {
+                AbstractCard copyCard = card.makeStatEquivalentCopy();
+                copyCard.purgeOnUse = true;
+                copyCard.freeToPlayOnce= true;
                 AbstractMonster randomMonster = AbstractDungeon.getCurrRoom().monsters.getRandomMonster((AbstractMonster) null, true, AbstractDungeon.cardRandomRng);
 
-                AbstractDungeon.actionManager.addToTop(new playCardWithRandomTargestAction(randomMonster, false, card));
+                for (int i=0; i<=amount; i++)
+                    AbstractDungeon.actionManager.addToTop(new playCardWithRandomTargestAction(randomMonster, false, copyCard));
+
                 playedCards.clear();
                 break;
             }

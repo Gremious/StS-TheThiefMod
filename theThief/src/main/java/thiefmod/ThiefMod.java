@@ -132,7 +132,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
     @SuppressWarnings("unused")
     public static void initialize() {
         logger.info("========================= The Thief is sneaking in! =========================");
-        ThiefMod defaultmod = new ThiefMod();
+        ThiefMod thiefmod = new ThiefMod();
         logger.info("========================= /Thief snuk in./ =========================");
     }
 
@@ -284,7 +284,6 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
         // UnlockTracker.unlockCard(GuiltTrip.ID);
-
 
         UnlockTracker.unlockCard(ShadowClone.ID);
         UnlockTracker.unlockCard(PrecisePositioning.ID);
