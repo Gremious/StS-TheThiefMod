@@ -18,7 +18,8 @@ import java.util.Collections;
 
 public class RetrievalPower extends AbstractPower {
     private static final Logger logger = LogManager.getLogger(ThiefMod.class.getName());
-    public ArrayList<AbstractCard> lastCardsPlayed;
+
+    private ArrayList<AbstractCard> lastCardsPlayed = new ArrayList<>();
 
     public AbstractCreature source;
     private int returnAmount;
@@ -61,17 +62,21 @@ public class RetrievalPower extends AbstractPower {
         logger.info("Update: the card that was played is still " + cardPlayed +
                 "Count++ is " + count + " and the whole list is " + lastCardsPlayed);
 
-        if (count == 3) ;
-        {logger.info("Count is 3, do your thing.");
+        if (count == 3) {
+            logger.info("Count is 3, do your thing.");
             Collections.reverse(lastCardsPlayed);
             logger.info("lastCardsPlayed reversed is: " + lastCardsPlayed);
             AbstractDungeon.actionManager.addToBottom(new RetrievalAction(lastCardsPlayed));
             logger.info("Action completed.");
-            lastCardsPlayed.clear();
-            logger.info("Cards cleared.");
+
         }
+
     }
 
+    @Override
+    public void atStartOfTurn() {
+        lastCardsPlayed.clear();
+    }
         /*
         logger.info("onAfterCardPlayedStart");
         lastCardsPlayed.add(cardPlayed);

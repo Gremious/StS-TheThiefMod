@@ -14,11 +14,12 @@ import thiefmod.actions.common.ExhaustToHandAction;
 import java.util.ArrayList;
 
 public class RetrievalAction extends AbstractGameAction {
-    private ArrayList<AbstractCard> cardsToReturn;
 
     private static final Logger logger = LogManager.getLogger(ThiefMod.class.getName());
 
-    public RetrievalAction(ArrayList<AbstractCard> cardsToReturn) {
+    private ArrayList<AbstractCard> cardsToReturn;
+
+    public RetrievalAction(final ArrayList<AbstractCard> cardsToReturn) {
         this.cardsToReturn = cardsToReturn;
     }
 
@@ -30,6 +31,8 @@ public class RetrievalAction extends AbstractGameAction {
         AbstractDungeon.actionManager.addToBottom(new WaitAction(0.1f));
         AbstractDungeon.actionManager.addToBottom(new WaitAction(0.1f));
         logger.info("Waited out");
+
+        logger.info("cardsToRetun inside the action is " + cardsToReturn);
 
         for (AbstractCard iterateCard : cardsToReturn) {
             logger.info("For loop started");
@@ -46,6 +49,7 @@ public class RetrievalAction extends AbstractGameAction {
             logger.info("Exhaust to hand added.");
         }
         logger.info("RetrievalAction is done.");
-        this.isDone = true;
+
+        isDone = true;
     }
 }
