@@ -176,12 +176,11 @@
       " times."
     ]
   },
-  "theThief:CommonPower45": {
-    "NAME": "Placeholder Power",
+  "theThief:DissoluteSatisfactionPower": {
+    "NAME": "Dissolute Satisfaction Power",
     "DESCRIPTIONS": [
-      "You applied ",
-      " keyword.",
-      " keywords."
+      "Whenever you deal damage, you will heal for ",
+      " HP."
     ]
   },
   "theThief:CommonPower2114": {

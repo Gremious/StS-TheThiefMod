@@ -6,7 +6,7 @@
     <artifactId>ThiefMod</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
-	
+
     <name>ThiefMod</name>
     <description>A mod for slay the spire that adds the Thief as a playable character!</description>
 

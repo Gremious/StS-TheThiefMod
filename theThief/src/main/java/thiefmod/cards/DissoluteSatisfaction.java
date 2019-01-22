@@ -15,13 +15,13 @@ import thiefmod.powers.Common.ShadowstepPower;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AAPowerCard extends AbstractBackstabCard {
+public class DissoluteSatisfaction extends AbstractBackstabCard {
 //implements StartupCard
 //implements ModalChoice.Callback
 
 // TEXT DECLARATION
 
-    public static final String ID = ThiefMod.makeID("Liar");
+    public static final String ID = ThiefMod.makeID("DissoluteSatisfaction");
     public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_UNCOMMON_ATTACK);
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -48,11 +48,11 @@ public class AAPowerCard extends AbstractBackstabCard {
 
 // /STAT DECLARATION/
 
-    public AAPowerCard() {
+    public DissoluteSatisfaction() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        misc = POWER;
-        magicNumber = baseMagicNumber = MAGIC;
+        this.misc = POWER;
+        this.magicNumber = this.baseMagicNumber = MAGIC;
     }
 
     // Actions the card should do.
@@ -60,7 +60,7 @@ public class AAPowerCard extends AbstractBackstabCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
-                p, p, new ShadowstepPower(p,p,misc), misc));
+                p, p, new ShadowstepPower(p,p,this.misc), this.misc));
 
     }
 
@@ -76,18 +76,18 @@ public class AAPowerCard extends AbstractBackstabCard {
     // Which card to return when making a copy of this card.
     @Override
     public AbstractCard makeCopy() {
-        return new AAPowerCard();
+        return new DissoluteSatisfaction();
     }
 
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!upgraded) {
-            upgradeName();
-            upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
-            isInnate = true;
-//          rawDescription = UPGRADE_DESCRIPTION;
-            initializeDescription();
+        if (!this.upgraded) {
+            this.upgradeName();
+            this.upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
+            this.isInnate = true;
+//          this.rawDescription = UPGRADE_DESCRIPTION;
+            this.initializeDescription();
         }
     }
 }

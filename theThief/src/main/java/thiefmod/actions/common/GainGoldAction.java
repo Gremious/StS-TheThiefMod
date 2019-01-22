@@ -12,12 +12,10 @@
    import static com.megacrit.cardcrawl.helpers.ScreenShake.ShakeIntensity.HIGH;
 
    public class GainGoldAction extends com.megacrit.cardcrawl.actions.AbstractGameAction
-   {	
-		private AbstractPlayer target;
-		private AbstractCreature source;
+   {
 		private int goldAmount;
    
-		public GainGoldAction(AbstractPlayer target, AbstractCreature source, int goldAmount) {
+		public GainGoldAction(AbstractCreature target, AbstractCreature source, int goldAmount) {
 			this.actionType = com.megacrit.cardcrawl.actions.AbstractGameAction.ActionType.SPECIAL;
 			this.duration = Settings.ACTION_DUR_XFAST;
 			this.target = target;

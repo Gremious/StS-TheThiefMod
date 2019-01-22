@@ -19,7 +19,6 @@ import thiefmod.patches.Unique.ThiefCardTags;
 
 public class ConArtistPower extends AbstractPower {
     public AbstractCreature source;
-    public AbstractPlayer owner;
 
     public static final String POWER_ID = ThiefMod.makeID("ConArtistPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
@@ -28,7 +27,7 @@ public class ConArtistPower extends AbstractPower {
     public static final String IMG = ThiefMod.makePath(ThiefMod.COMMON_POWER);
 
 
-    public ConArtistPower(AbstractPlayer owner, AbstractCreature source, final int amount) {
+    public ConArtistPower(AbstractCreature owner, AbstractCreature source, final int amount) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.img = new Texture(IMG);

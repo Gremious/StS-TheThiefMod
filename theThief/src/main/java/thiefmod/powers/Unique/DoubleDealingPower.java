@@ -27,7 +27,7 @@ public class DoubleDealingPower extends AbstractPower {
     public static final String IMG = ThiefMod.makePath(ThiefMod.COMMON_POWER);
 
 
-    public DoubleDealingPower(AbstractPlayer owner, AbstractCreature source, final int amount) {
+    public DoubleDealingPower(AbstractCreature owner, AbstractCreature source, final int amount) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.img = new Texture(IMG);

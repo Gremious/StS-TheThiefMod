@@ -82,10 +82,10 @@ public class AAAEmptyCard extends AbstractBackstabCard {
         this.backstabNumber = this.baseBackstabNumber = BACKSTAB;
 
 
-        this.tags.add(ThiefCardTags.BACKSTAB);
-        this.tags.add(ThiefCardTags.SHADOWSTEP);
-        this.tags.add(ThiefCardTags.STEALING);
-        this.tags.add(ThiefCardTags.STOLEN);
+        tags.add(ThiefCardTags.BACKSTAB);
+        tags.add(ThiefCardTags.SHADOWSTEP);
+        tags.add(ThiefCardTags.STEALING);
+        tags.add(ThiefCardTags.STOLEN);
         /*
             modal = new ModalChoiceBuilder()
                 .setCallback(this) // Sets callback of all the below options to this
@@ -106,31 +106,31 @@ public class AAAEmptyCard extends AbstractBackstabCard {
 
         if (count <= 1) {
             AbstractDungeon.actionManager.addToBottom(new DamageAction(
-                    m, new DamageInfo(p, this.damage * this.backstabNumber, this.damageTypeForTurn),
+                    m, new DamageInfo(p, damage * backstabNumber, damageTypeForTurn),
                     AbstractGameAction.AttackEffect.SLASH_VERTICAL));
         } else {
             AbstractDungeon.actionManager.addToBottom(new StealCardAction(
-                    p, this.magicNumber, 1, ADD_RANDOM, true, ADD_LOCATION, ADD_UPGRADED));
+                    p, magicNumber, 1, ADD_RANDOM, true, ADD_LOCATION, ADD_UPGRADED));
         }
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
                 p, p, new ShadowstepPower(
-                p, p, this.magicNumber), this.magicNumber));
+                p, p, magicNumber), magicNumber));
 
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(
-                p, p, this.block));
+                p, p, block));
 
-        while (this.backstabNumber-- != 0) {
+        while (backstabNumber-- != 0) {
             AbstractDungeon.actionManager.addToBottom(
-                    new MakeTempCardInDrawPileAction(new VoidCard(), this.backstabNumber, true, true, false));
+                    new MakeTempCardInDrawPileAction(new VoidCard(), backstabNumber, true, true, false));
         }
 
         for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new VulnerablePower(
-                    mo, this.magicNumber, false), this.magicNumber));
+                    mo, magicNumber, false), magicNumber));
         }
 
-        this.backstabNumber = this.baseBackstabNumber;
+        backstabNumber = baseBackstabNumber;
     }
 
     /*
@@ -138,7 +138,7 @@ public class AAAEmptyCard extends AbstractBackstabCard {
     @Override // Startup: Add 1 void to your draw pile.
     public boolean atBattleStartPreDraw() {
         AbstractDungeon.actionManager.addToBottom(
-                new MakeTempCardInDrawPileAction(new VoidCard(), this.magicNumber, true, true, false));
+                new MakeTempCardInDrawPileAction(new VoidCard(), magicNumber, true, true, false));
         return true;
     }
 
@@ -148,18 +148,18 @@ public class AAAEmptyCard extends AbstractBackstabCard {
     public void applyPowers() {
         super.applyPowers();
 
-        if (this.magicNumber >= 2) {
-            this.rawDescription = UPGRADE_DESCRIPTION;
+        if (magicNumber >= 2) {
+            rawDescription = UPGRADE_DESCRIPTION;
         } else {
-            this.rawDescription = DESCRIPTION;
+            rawDescription = DESCRIPTION;
         }
 
         if (AbstractDungeon.player.cardsPlayedThisTurn == 0) {
-            this.rawDescription += this.EXTENDED_DESCRIPTION[1];
+            rawDescription += EXTENDED_DESCRIPTION[1];
         } else {
-            this.rawDescription += this.EXTENDED_DESCRIPTION[2];
+            rawDescription += EXTENDED_DESCRIPTION[2];
         }
-        this.initializeDescription();
+        initializeDescription();
     }
 
     /*
@@ -168,13 +168,13 @@ public class AAAEmptyCard extends AbstractBackstabCard {
     {
         switch (i) {
             case 0:
-                 AbstractDungeon.actionManager.addToTop(new FetchAction(AbstractDungeon.player.drawPile, this.magicNumber));
+                 AbstractDungeon.actionManager.addToTop(new FetchAction(AbstractDungeon.player.drawPile, magicNumber));
                 break;
             case 1:
-                AbstractDungeon.actionManager.addToTop(new FetchAction(AbstractDungeon.player.discardPile, this.magicNumber));
+                AbstractDungeon.actionManager.addToTop(new FetchAction(AbstractDungeon.player.discardPile, magicNumber));
                 break;
             case 2:
-                AbstractDungeon.actionManager.addToTop(new FetchAction(AbstractDungeon.player.exhaustPile, this.magicNumber));
+                AbstractDungeon.actionManager.addToTop(new FetchAction(AbstractDungeon.player.exhaustPile, magicNumber));
                 break;
             default:
                 return;
@@ -198,16 +198,16 @@ public class AAAEmptyCard extends AbstractBackstabCard {
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeBaseCost(UPGRADE_COST);
-            this.upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
-            this.upgradeDamage(UPGRADE_PLUS_DAMAGE);
-            this.upgradeBlock(UPGRADE_PLUS_BLOCK);
-            this.upgradeBackstabNumber(UPGRADED_PLUS_BACKSTAB);
-            this.isInnate = true;
-//          this.rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+            upgradeBaseCost(UPGRADE_COST);
+            upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
+            upgradeDamage(UPGRADE_PLUS_DAMAGE);
+            upgradeBlock(UPGRADE_PLUS_BLOCK);
+            upgradeBackstabNumber(UPGRADED_PLUS_BACKSTAB);
+            isInnate = true;
+//          rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }
