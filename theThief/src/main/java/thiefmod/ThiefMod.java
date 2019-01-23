@@ -4,9 +4,11 @@ import basemod.BaseMod;
 import basemod.ModLabel;
 import basemod.ModPanel;
 import basemod.interfaces.*;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
+import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.green.CloakAndDagger;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -16,6 +18,7 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.util.Strings;
 import thiefmod.cards.*;
 import thiefmod.characters.TheThief;
 import thiefmod.patches.Character.AbstractCardEnum;
@@ -26,6 +29,9 @@ import thiefmod.variabls.BackstabDamage;
 import thiefmod.variabls.BackstabMagicNumber;
 import thiefmod.variabls.ThiefSecondMagicNumber;
 
+import java.nio.charset.StandardCharsets;
+
+import com.evacipated.cardcrawl.mod.stslib.Keyword;
 // Note: #y b r g p
 
 @SpireInitializer
@@ -396,29 +402,22 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
     // ================ /LOAD THE TEXT/ ===================
 
     // ================ LOAD THE KEYWORDS ===================
-
     @Override
-    public void receiveEditKeywords() {
-        final String[] shadowstep = {"shadowstep", "Shadowstep", "Shadowstepping"};
-        BaseMod.addKeyword(shadowstep, "Become elusive, reducing incoming damage by 10% per stack. " +
-                "NL If you use a Backstab card immediately after " +
-                "NL a Shadowstep card, it gains it's backstab effect.");
+    public void receiveEditKeywords()
+    {
+        Gson gson = new Gson();
+        String json = Gdx.files.internal("thiefmodAssets/localization/eng/ThiefMod-Keyword-Strings.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        Keyword[] keywords = gson.fromJson(json, Keyword[].class);
 
-        final String[] elusive = {"elusive", "Elusive"};
-        BaseMod.addKeyword(elusive, "Reduces incoming damage by 10% per stack.");
-
-        final String[] steal = {"steal", "Steal, stolen, Stolen"};
-        BaseMod.addKeyword(steal, "Stolen cards are mostly low energy card that Exhaust." +
-                "NL They range from specific effects from any class, to cards unique for the Thief." +
-                "NL They are added to your hand unless stated otherwise.");
-
-        final String[] backstab = {"BackstabPower", "backstab"};
-        BaseMod.addKeyword(backstab, "If this is the first card you play in a turn, it changes its effect.");
-
-        final String[] discover = {"discover", "Discover"};
-        BaseMod.addKeyword(backstab, "Choose 1 out of 3 cards and add it to your hand.");
-
+        if (keywords != null) {
+            for (Keyword keyword : keywords) {
+                BaseMod.addKeyword(keyword.NAMES, keyword.DESCRIPTION);
+            }
+        }
     }
+
+
+
     // ================ /LOAD THE KEYWORDS/ ===================
 
     // this adds "ModName:" before the ID of any card/relic/power etc.
