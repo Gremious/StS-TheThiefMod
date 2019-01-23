@@ -63,7 +63,7 @@ public class StolenTechnique extends CustomCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new addRandomCardToHandAction(this.magicNumber, true));
+        AbstractDungeon.actionManager.addToBottom(new addRandomCardToHandAction(this.magicNumber));
 
     }
 

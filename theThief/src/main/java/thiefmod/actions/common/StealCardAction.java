@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDiscardEffect;
@@ -31,8 +30,7 @@ public class StealCardAction extends AbstractGameAction {
 
     private ArrayList<AbstractCard> cardsToAdd = new ArrayList<>();
 
-
-    public StealCardAction(AbstractCreature source, int amount, int copies, boolean random, String location, boolean upgraded) {
+    public StealCardAction(int amount, int copies, boolean random, String location, boolean upgraded) {
         this.actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
         this.duration = Settings.ACTION_DUR_FAST;
         this.amount = amount;
@@ -40,7 +38,6 @@ public class StealCardAction extends AbstractGameAction {
         this.upgraded = upgraded;
         this.location = location;
         this.copies = copies;
-        this.source = source;
     }
 
 
@@ -112,7 +109,7 @@ public class StealCardAction extends AbstractGameAction {
 
     // CardGroup to be called that decides whether the stolen cards to add are upgraded or not.
     private CardGroup allStolenCards() {
-        if (upgraded || source.hasPower(IllGottenGainsPower.POWER_ID)) {
+        if (upgraded || AbstractDungeon.player.hasPower(IllGottenGainsPower.POWER_ID)) {
             return stolenCardsUpgraded;
         } else {
             return stolenCards;

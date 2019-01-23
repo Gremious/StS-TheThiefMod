@@ -65,7 +65,7 @@ public class StickyFingers extends AbstractBackstabCard {
 
         if (count <= 1) {
             AbstractDungeon.actionManager.addToBottom(new StealCardAction(
-                    p, backstabNumber, 1, ADD_RANDOM, ADD_LOCATION, ADD_UPGRADED));
+                    backstabNumber, 1, ADD_RANDOM, ADD_LOCATION, ADD_UPGRADED));
 
         } else {
             AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.magicNumber));

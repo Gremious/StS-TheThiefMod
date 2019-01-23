@@ -32,7 +32,7 @@ public class RiggedBetAction extends AbstractGameAction {
 
                 AbstractDungeon.actionManager.addToTop(new DrawCardAction(this.target, count));
                 AbstractDungeon.actionManager.addToTop(
-                        new StealCardAction(this.source, count, 0, this.ADD_RANDOM, this.ADD_LOCATION, this.ADD_UPGRADED));
+                        new StealCardAction(count, 0, this.ADD_RANDOM, this.ADD_LOCATION, this.ADD_UPGRADED));
 
 
             this.isDone = true;

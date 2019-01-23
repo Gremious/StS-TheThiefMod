@@ -17,6 +17,12 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 
 public class Utils {
+
+    // I have absolutely no idea how this works. I copied it from the Mad Scientist and it works. So hey it looks cool.
+    // If it breaks I'll probably try and substitute it for modal choice.
+
+    // TODO: Test these bad-boy hardcoded strings in a different language.
+
     public static final Logger logger = LogManager.getLogger(Utils.class.getName());
 
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:StealCardUtil");
@@ -48,7 +54,7 @@ public class Utils {
             method.setAccessible(true);
             method.invoke(crs, (float) Settings.WIDTH / 2.0f, CARD_TARGET_Y);
         } catch (Exception ex) {
-            logger.error("Exception occurred when calling placeCards", ex);
+            logger.error("Exception occurred when calling placeCards ", ex);
         }
         for (AbstractCard c : cards) {
             UnlockTracker.markCardAsSeen(c.cardID);

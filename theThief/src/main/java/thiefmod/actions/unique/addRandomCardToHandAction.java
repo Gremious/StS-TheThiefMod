@@ -1,43 +1,38 @@
 package thiefmod.actions.unique;
 
-import java.util.ArrayList;
-
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import thiefmod.ThiefMod;
-import thiefmod.actions.unique.QueueCardFrontAction;
+
+import java.util.ArrayList;
 
 public class addRandomCardToHandAction extends com.megacrit.cardcrawl.actions.AbstractGameAction {
+    // Blatantly stolen from the Beaked's Crazy rituals. Thank you very much guys!
+
     public static final Logger logger = LogManager.getLogger(ThiefMod.class.getName());
 
-    public static ArrayList<AbstractCard> handCards;
-    public static AbstractCard nextHandCard;
-    private boolean cardOffset;
+    private static ArrayList<AbstractCard> handCards;
+    private static AbstractCard nextHandCard;
 
-    public addRandomCardToHandAction(int amount, boolean cardOffset) {
+    public addRandomCardToHandAction(int amount) {
 
         this.actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
         this.amount = amount;
-        this.cardOffset = cardOffset;
 
     }
 
     @Override
     public void update() {
 
-        if (handCards == null)
+        if (handCards == null) {
             handCards = CardLibrary.getAllCards();
+        }
 
         getCard();
 
@@ -63,12 +58,18 @@ public class addRandomCardToHandAction extends com.megacrit.cardcrawl.actions.Ab
                 || nextHandCard.type == AbstractCard.CardType.CURSE
                 || nextHandCard.rarity == AbstractCard.CardRarity.CURSE
                 || nextHandCard.type == AbstractCard.CardType.STATUS ||
-                // Servant's Vision cards currently cause a crash when used by a non-Servant
-                // character.
-                //TODO: THIS IS NO LONGER THE CASE. UPDATE THIS.
-                nextHandCard.cardID == "Read" || nextHandCard.cardID == "Deadline"
-                || nextHandCard.cardID == "ReturningBlade" || nextHandCard.cardID == "Snipe"
-                || nextHandCard.cardID == "TimeTheft" || nextHandCard.cardID == "TrueSight");
+                // Yohane's summons require a special FriendlyMinions-enabled character, which Beaked is not.
+                nextHandCard.cardID.startsWith("Yohane:Little_Demon_") ||
+                // Mad Scientist's Mechanize apparently doesn't work
+                nextHandCard.cardID == "MadScienceMod:Mechanize" ||
+                // Pickle why is this ID not public, I'm far too lazy to use reflection
+                nextHandCard.cardID == "ReplayTheSpireMod:??????????????????????" ||
+                // blakkmod
+                nextHandCard.cardID == "BlakkBlade" ||
+                // blakkmod
+                nextHandCard.cardID == "LegSlice"
+
+        );
 
         nextHandCard.freeToPlayOnce = true;
 //        AbstractDungeon.player.limbo.addToTop(nextHandCard);

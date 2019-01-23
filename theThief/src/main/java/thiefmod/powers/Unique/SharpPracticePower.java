@@ -48,7 +48,7 @@ public class SharpPracticePower extends AbstractPower {
     @Override
     public void atStartOfTurn() {
         AbstractDungeon.actionManager.addToBottom(new thiefmod.actions.common.StealCardAction(
-                this.source, this.amount, 1, this.ADD_RANDOM, this.ADD_LOCATION, this.ADD_UPGRADED));
+                this.amount, 1, this.ADD_RANDOM, this.ADD_LOCATION, this.ADD_UPGRADED));
     }
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))

@@ -65,7 +65,7 @@ public class Steal extends CustomCard {
                 AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
 
         AbstractDungeon.actionManager.addToBottom(new thiefmod.actions.common.StealCardAction(
-                p, this.magicNumber, ADD_COPIES, ADD_RANDOM, ADD_LOCATION, ADD_UPGRADED));
+                this.magicNumber, ADD_COPIES, ADD_RANDOM, ADD_LOCATION, ADD_UPGRADED));
     }
 
     // Which card to return when making a copy of this card.

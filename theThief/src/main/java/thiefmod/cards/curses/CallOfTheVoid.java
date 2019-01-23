@@ -80,7 +80,7 @@ public class CallOfTheVoid extends AbstractBackstabCard {
                     AbstractGameAction.AttackEffect.SLASH_VERTICAL));
         } else {
             AbstractDungeon.actionManager.addToBottom(new StealCardAction(
-                    p, this.magicNumber, 1, ADD_RANDOM, ADD_LOCATION, ADD_UPGRADED));
+                    this.magicNumber, 1, ADD_RANDOM, ADD_LOCATION, ADD_UPGRADED));
         }
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(

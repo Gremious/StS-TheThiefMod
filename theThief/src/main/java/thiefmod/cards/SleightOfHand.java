@@ -59,7 +59,7 @@ public class SleightOfHand extends AbstractBackstabCard {
         AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.GainBlockAction(p, p, this.block));
 
         AbstractDungeon.actionManager.addToBottom(new thiefmod.actions.common.StealCardAction(
-                p, this.magicNumber, 1, ADD_RANDOM, ADD_LOCATION, ADD_UPGRADED));
+                this.magicNumber, 1, ADD_RANDOM, ADD_LOCATION, ADD_UPGRADED));
 
     }
 
