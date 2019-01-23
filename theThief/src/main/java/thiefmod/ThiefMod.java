@@ -214,6 +214,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         //    BaseMod.addCard(new GuiltTrip());
 
 
+        BaseMod.addCard(new Focused());
         BaseMod.addCard(new Retrieval());
         BaseMod.addCard(new DissoluteSatisfaction());
         BaseMod.addCard(new ShadowClone());
@@ -287,6 +288,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         // Unlock the cards
         // UnlockTracker.unlockCard(GuiltTrip.ID);
 
+        UnlockTracker.unlockCard(Focused.ID);
         UnlockTracker.unlockCard(Retrieval.ID);
         UnlockTracker.unlockCard(DissoluteSatisfaction.ID);
         UnlockTracker.unlockCard(ShadowClone.ID);
@@ -391,10 +393,13 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
 
     @Override
     public void receiveEditKeywords() {
-        final String[] elusive = {"shadowstep", "Shadowstep"};
-        BaseMod.addKeyword(elusive, "Become elusive, reducing incoming damage by 10% per stack. " +
+        final String[] shadowstep = {"shadowstep", "Shadowstep", "Shadowstepping"};
+        BaseMod.addKeyword(shadowstep, "Become elusive, reducing incoming damage by 10% per stack. " +
                 "NL If you use a Backstab card immediately after " +
                 "NL a Shadowstep card, it gains it's backstab effect.");
+
+        final String[] elusive = {"elusive", "Elusive"};
+        BaseMod.addKeyword(elusive, "Reduces incoming damage by 10% per stack.");
 
         final String[] steal = {"steal", "Steal, stolen, Stolen"};
         BaseMod.addKeyword(steal, "Stolen cards are mostly low energy card that Exhaust." +

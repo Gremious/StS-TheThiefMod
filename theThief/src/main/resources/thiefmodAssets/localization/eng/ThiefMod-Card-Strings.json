@@ -640,26 +640,26 @@
   },
   "theThief:Retrieval": {
     "NAME": "Retrieval",
-    "DESCRIPTION": "After playing 3 cards in a turn, return the !theThief:Magic! last played cards to your hand.",
-    "UPGRADE_DESCRIPTION": "After playing 3 cards in a turn, return the !theThief:Magic! last played cards to your hand.",
+    "DESCRIPTION": "After playing 3 cards in a turn, return the !M! last played cards to your hand.",
+    "UPGRADE_DESCRIPTION": "After playing 3 cards in a turn, return the !M! last played cards to your hand.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Which[] [#88888]are[] [#88888]YOUR[] [#88888]top[] [#88888]three?[]",
       "Tip.",
       "Does not work on cards that purge. NL Does work on cards that Exhaust."
     ]
   },
-  "theThief:empty14": {
-    "NAME": "EmptyCard",
-    "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+  "theThief:Focus": {
+    "NAME": "Focus",
+    "DESCRIPTION": "Shadowstep 1 time. NL Non - Backstab cards no longer break Elusive.",
     "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]
   },
-  "theThief:empty15": {
-    "NAME": "EmptyCard",
-    "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+  "theThief:ShadowMastery": {
+    "NAME": "ShadowMastery",
+    "DESCRIPTION": "Shadowstepping reduces damage taken by 20% instead of 10.",
+    "UPGRADE_DESCRIPTION": "Shadowstepping reduces damage taken by 20% instead of 10.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]

@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
 import thiefmod.patches.Character.AbstractCardEnum;
-import thiefmod.powers.Common.ShadowstepPower;
 import thiefmod.powers.Unique.RetrievalPower;
 
 import java.util.ArrayList;
@@ -42,8 +41,8 @@ public class Retrieval extends AbstractBackstabCard {
     private static final int COST = 1;
     private static final int UPGRADE_COST = 0;
 
-    private static final int MAGIC = 1;
-    private static final int SECOND_MAGIC = 3;
+    private static final int MAGIC = 3;
+    private static final int SECOND_MAGIC = 1;
 
 // /STAT DECLARATION/
 
@@ -54,15 +53,16 @@ public class Retrieval extends AbstractBackstabCard {
         backstabNumber = baseBackstabNumber = SECOND_MAGIC;
     }
 
-    // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        // Actions the card should do.
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
-                p, p, new RetrievalPower(p,p,magicNumber, backstabNumber), magicNumber));
+                p, p, new RetrievalPower(p, p, backstabNumber, magicNumber), backstabNumber));
 
     }
 
+    //TODO: Add dynamic description "'s" for card/cards.
 
     @Override
     public List<TooltipInfo> getCustomTooltips() {

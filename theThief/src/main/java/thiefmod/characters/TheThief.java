@@ -146,8 +146,6 @@ public class TheThief extends CustomPlayer {
 
         retVal.add(Lie.ID);
         retVal.add(SwiftSlash.ID);
-        retVal.add(ShadowClone.ID);
-        retVal.add(Retrieval.ID);
         retVal.add(Neutralize.ID);
         retVal.add(Headbutt.ID);
         retVal.add(Disarm.ID);

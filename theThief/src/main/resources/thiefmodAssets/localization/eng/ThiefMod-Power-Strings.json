@@ -192,20 +192,16 @@
       " cards this turn."
     ]
   },
-  "theThief:CommonPower324": {
-    "NAME": "Placeholder Power",
+  "theThief:FocusPower": {
+    "NAME": "Focused",
     "DESCRIPTIONS": [
-      "You applied ",
-      " keyword.",
-      " keywords."
+      "Non - Backstab cards no longer break Elusive."
     ]
   },
-  "theThief:CommonPower43f": {
-    "NAME": "Placeholder Power",
+  "theThief:ShadowMasteryPower": {
+    "NAME": "Shadow Mastery",
     "DESCRIPTIONS": [
-      "You applied ",
-      " keyword.",
-      " keywords."
+      "Shadowstepping reduces damage taken by 20% instead of 10."
     ]
   }
 }
