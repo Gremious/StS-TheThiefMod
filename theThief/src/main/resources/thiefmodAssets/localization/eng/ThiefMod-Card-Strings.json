@@ -415,7 +415,7 @@
   "theThief:ShadowReserves": {
     "NAME": "Shadow Reserves",
     "DESCRIPTION": "Fetch !M! card from your draw pile. NL Exhaustive !stslib:ex!.",
-    "UPGRADE_DESCRIPTION": "Fetch !M! card from your draw, discard, or exhaust pile. NL Exhaustive !stslib:ex!. ",
+    "UPGRADE_DESCRIPTION": "Fetch !M! cards from your draw, discard, or exhaust pile. NL Exhaustive !stslib:ex!. ",
     "EXTENDED_DESCRIPTION": [
       "[#88888]It's[] [#88888]kinda[] [#88888]like[] [#88888]having[] [#88888]a[] [#88888]portable[] [#88888]mini-fridge.[]"
     ]

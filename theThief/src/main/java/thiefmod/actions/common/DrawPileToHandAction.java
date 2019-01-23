@@ -18,7 +18,9 @@ public class DrawPileToHandAction extends AbstractGameAction {
 
 	public void update() {
 		if (this.duration == Settings.ACTION_DUR_FAST) {
-			if (AbstractDungeon.player.drawPile.contains(card) && AbstractDungeon.player.hand.size() < BaseMod.MAX_HAND_SIZE) {
+			if (AbstractDungeon.player.drawPile.contains(card)
+			&& AbstractDungeon.player.hand.size() < BaseMod.MAX_HAND_SIZE) {
+
 				AbstractDungeon.player.hand.addToHand(card);
 				this.card.unhover();
 				this.card.setAngle(0.0F, true);
@@ -30,7 +32,7 @@ public class DrawPileToHandAction extends AbstractGameAction {
 			}
 
 			AbstractDungeon.player.hand.refreshHandLayout();
-			AbstractDungeon.player.hand.glowCheck();
+			//AbstractDungeon.player.hand.glowCheck();
 		}
 
 		this.tickDuration();

@@ -46,6 +46,8 @@ public class RetrievalAction extends AbstractGameAction {
             logger.info("Draw to hand added.");
             AbstractDungeon.actionManager.addToBottom(new ExhaustToHandAction(iterateCard));
             logger.info("Exhaust to hand added.");
+
+            //also add limbo
         }
         logger.info("RetrievalAction is done.");
 

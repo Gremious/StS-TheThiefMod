@@ -8,6 +8,9 @@ import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.green.Neutralize;
+import com.megacrit.cardcrawl.cards.red.Disarm;
+import com.megacrit.cardcrawl.cards.red.Headbutt;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
@@ -144,6 +147,10 @@ public class TheThief extends CustomPlayer {
         retVal.add(Lie.ID);
         retVal.add(SwiftSlash.ID);
         retVal.add(ShadowClone.ID);
+        retVal.add(Retrieval.ID);
+        retVal.add(Neutralize.ID);
+        retVal.add(Headbutt.ID);
+        retVal.add(Disarm.ID);
 
 
         return retVal;
