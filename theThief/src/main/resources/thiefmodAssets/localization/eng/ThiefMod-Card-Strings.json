@@ -1,13 +1,4 @@
 {
-  "theThief:AbstractStolenCard": {
-    "EXTENDED_DESCRIPTION": [
-      "Steal a card.",
-      "Choose up to ",
-      " stolen cards to add to your hand.",
-      " stolen cards to add to your draw pile.",
-      " stolen cards to add to your discard pile."
-    ]
-  },
   "theThief:StrikeThief": {
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! damage.",
@@ -85,33 +76,6 @@
     "DESCRIPTION": "Shadowstep !M! time. Shuffle a copy of this card into your deck. Exhaust.",
     "UPGRADE_DESCRIPTION": "Shadowstep !M! times. Shuffle a copy of this card into your deck. Exhaust."
   },
-  "theThief:ShadowForm": {
-    "NAME": "Shadow Form",
-    "DESCRIPTION": "At the start of your turn, play a random card from any color. NL Backstab: Play !theThief:BkStMgc! instead ",
-    "UPGRADE_DESCRIPTION": "At the start of your turn, play a random card from any color. NL Backstab: Play !theThief:BkStMgc! instead.",
-    "EXTENDED_DESCRIPTION": [
-      " NL Backstab: Play !theThief:BkStMgc! instead",
-      " NL Backstab: [#fa5555]Play[] !theThief:BkStMgc! [#fa5555]instead.[]"
-    ]
-  },
-  "theThief:Stab": {
-    "NAME": "Stab",
-    "DESCRIPTION": "Deal !D! Damage. ",
-    "UPGRADE_DESCRIPTION": "",
-    "EXTENDED_DESCRIPTION": [
-      "NL Backstab: Deal !theThief:BkStDmg! instead",
-      "NL Backstab: [#fa5555]Deal[] !theThief:BkStDmg! [#fa5555]instead.[]"
-    ]
-  },
-  "theThief:CloakAndDaggerThief": {
-    "NAME": "Cloak and Dagger",
-    "DESCRIPTION": "Gain !B! block ",
-    "UPGRADE_DESCRIPTION": "",
-    "EXTENDED_DESCRIPTION": [
-      "NL Backstab: Deal !D! Damage instead",
-      "NL Backstab: [#fa5555]Deal[] !D! [#fa5555]Damage[] [#fa5555]instead.[]"
-    ]
-  },
   "theThief:SwiftTread": {
     "NAME": "Swift Tread",
     "DESCRIPTION": "Draw !M! cards. Shuffle 1 Void into your draw pile.",
@@ -152,26 +116,6 @@
     "NAME": "One Step Ahead",
     "DESCRIPTION": "If an enemy intends to attack, Shadowstep !M! time. If it intends to block, deal !D! damage !theThief:BkStMgc! times instead.",
     "UPGRADE_DESCRIPTION": "If an enemy intends to attack, Shadowstep !M! times. If it intends to block, deal !D! damage !theThief:BkStMgc! times instead."
-  },
-  "theThief:CripplingStrike": {
-    "NAME": "Crippling Strike",
-    "DESCRIPTION": "Deal !D! damage and apply !M! Weak. ",
-    "UPGRADE_DESCRIPTION": "",
-    "EXTENDED_DESCRIPTION": [
-      " NL Backstab: Apply !M! Vulnerable instead.",
-      " NL Backstab: [#fa5555]Apply[] !M! [#fa5555]Vulnerable[] [#fa5555]instead.[]",
-      "Flavorrrrrr text"
-    ]
-  },
-  "theThief:StickyFingers": {
-    "NAME": "Sticky Fingers",
-    "DESCRIPTION": "Draw !M! cards. ",
-    "UPGRADE_DESCRIPTION": "Draw !M! cards. ",
-    "EXTENDED_DESCRIPTION": [
-      "NL Backstab: Steal !theThief:BkStMgc! cards instead.",
-      "NL Backstab: [#fa5555]Steal[] !theThief:BkStMgc! [#fa5555]cards[] [#fa5555]instead.[]",
-      "[#88888]They[] [#88888]make[] [#88888]wearing[] [#88888]gloves[] [#88888]very[][#88888]uncomfortable.[]"
-    ]
   },
   "theThief:Sidestep": {
     "NAME": "Sidestep",
@@ -230,24 +174,6 @@
       "[#88888]Nope![]"
     ]
   },
-  "theThief:Prep": {
-    "NAME": "Prep",
-    "DESCRIPTION": "Gain !B! Block.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block.",
-    "EXTENDED_DESCRIPTION": [
-      " NL Backstab: Also gain [E].",
-      " NL Backstab: [#fa5555]Also[] [#fa5555]gain[] [E].",
-      "[#88888]Flavor[] [#88888]Text[]"
-    ]
-  },
-  "theThief:DoubleDealing": {
-    "NAME": "DoubleDealing",
-    "DESCRIPTION": "This turn, the next !M! Backstab attack you play deal double damage.",
-    "UPGRADE_DESCRIPTION": "This turn, the next !M! Backstab attacks you play deal double damage",
-    "EXTENDED_DESCRIPTION": [
-      "[#88888]Full[] [#88888]house![]"
-    ]
-  },
   "theThief:Darts": {
     "NAME": "Darts",
     "DESCRIPTION": "Deal !D! damage to a random enemy for each skill played this combat.",
@@ -276,36 +202,6 @@
       "[#88888]Flavor[] [#88888]Text[]"
     ]
   },
-  "theThief:AttackOfOpportunity": {
-    "NAME": "Attack Of Opportunity",
-    "DESCRIPTION": "Deal !D! damage. Add !theThief:Magic! Voids to your discard pile.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. Add !theThief:Magic! Voids to your discard pile.",
-    "EXTENDED_DESCRIPTION": [
-      "[#88888]Flavor[] [#88888]Text[]",
-      " NL Backstab: Draw !theThief:Magic! card.",
-      " NL Backstab: [#fa5555]Draw[] !theThief:Magic! [#fa5555]card.[]"
-    ]
-  },
-  "theThief:DirtyDeedsDDC": {
-    "NAME": "Dirty Deeds DDC",
-    "DESCRIPTION": "Deal !D! damage. If this kills a non-minion enemy, gain !M! gold.",
-    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-    "EXTENDED_DESCRIPTION": [
-      "[#88888]Filthy[] [#88888]acts[] [#88888]at[] [#88888]a[] [#88888]reasonable[] [#88888]price.[]",
-      " NL Backstab: Gain !theThief:Magic! gold instead",
-      " NL Backstab: [#fa5555]Gain[] !theThief:Magic! [#fa5555]gold[] [#fa5555]instead.[]"
-    ]
-  },
-  "theThief:ViciousAssault": {
-    "NAME": "Vicious  Assault",
-    "DESCRIPTION": "Deal !D! damage !M! times.",
-    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
-    "EXTENDED_DESCRIPTION": [
-      "[#88888]Flavor[] [#88888]Text[]",
-      " NL Backstab: !theThief:Magic! times instead",
-      " NL Backstab: !theThief:Magic! [#fa5555]times[] [#fa5555]instead.[]"
-    ]
-  },
   "theThief:Ambush": {
     "NAME": "Ambush",
     "DESCRIPTION": "Add !M! Voids to your draw pile. NL Deal damage equal to  20% of a monster's current HP. NL ( !D! Damage.) NL Exhaust.",
@@ -320,16 +216,6 @@
     "UPGRADE_DESCRIPTION": "Startup: Add !M! Voids to your draw pile. NL Deal !D! damage to all enemies. NL Grave. NL Exhaustive !stslib:ex!.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
-    ]
-  },
-  "theThief:PerfectDagger": {
-    "NAME": "Perfect Dagger",
-    "DESCRIPTION": "Deal !D! damage.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage.",
-    "EXTENDED_DESCRIPTION": [
-      "#yA #ygreat#yartifact, #yre-forged #yre-lost #yre-found [#88888]and[][#88888]re-stolen[][#88888]time[][#88888]and[][#88888]time[][#88888]again,[][#88888]by[][#88888]clans[][#88888]of[][#88888]silence[][#88888]and[][#88888]burning[][#88888]blood[][#88888]alike[]",
-      " NL Backstab: Also increase this card's damage by !M! permanently.",
-      " NL Backstab: [#fa5555]Also[] [#fa5555]increase[] [#fa5555]this[] [#fa5555]card's[] [#fa5555]damage[] [#fa5555]by[] !M! [#fa5555]permanently.[]"
     ]
   },
   "theThief:HeartBreaker": {
@@ -362,16 +248,6 @@
     "UPGRADE_DESCRIPTION": "Startup: Add !theThief:Magic! void to your draw pile and discard piles. Autoplay: Gain !M! energy.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
-    ]
-  },
-  "theThief:Reobtain": {
-    "NAME": "Reobtain",
-    "DESCRIPTION": "Fetch !M! card from your discard pile.",
-    "UPGRADE_DESCRIPTION": "Fetch !M! cards from your discard pile.",
-    "EXTENDED_DESCRIPTION": [
-      "[#88888]Flavor[] [#88888]Text[]",
-      " NL Backstab: It also costs !M! less. NL Exhaustive !stslib:ex!.",
-      " NL Backstab: [#fa5555]It[] [#fa5555]also[] [#fa5555]costs[] !M! [#fa5555]less.[] NL Exhaustive !stslib:ex!."
     ]
   },
   "theThief:Gaslight": {
@@ -494,14 +370,6 @@
       "[#88888]An[] [#88888]over-calculated[] [#88888]gamble[]"
     ]
   },
-  "theThief:Hoodlum": {
-    "NAME": "Hoodlum",
-    "DESCRIPTION": "Whenever you trigger a Backstab or steal a card, draw !M! card and discard !M! card.",
-    "UPGRADE_DESCRIPTION": "Innate. Whenever you trigger a Backstab or steal a card, draw !M! card and discard !M! card.",
-    "EXTENDED_DESCRIPTION": [
-      "[#88888]Flavor[] [#88888]Text[]"
-    ]
-  },
   "theThief:Liar": {
     "NAME": "Liar Liar",
     "DESCRIPTION": "Every time you play a skill, apply !M! Weak to a random enemy.",
@@ -524,16 +392,6 @@
     "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
-    ]
-  },
-  "theThief:Persuasion": {
-    "NAME": "Persuasion",
-    "DESCRIPTION": "Gain !M! Dexterity. ",
-    "UPGRADE_DESCRIPTION": "Gain !M! Dexterity.",
-    "EXTENDED_DESCRIPTION": [
-      "[#88888]Flavor[] [#88888]Text[]",
-      " NL Backstab: Gain !M! Strength instead.",
-      " NL Backstab: [#fa5555]Gain[] !M! [#fa5555]Strength[] [#fa5555]instead.[]"
     ]
   },
   "theThief:GhastlyEssence": {
@@ -598,6 +456,22 @@
     "UPGRADE_DESCRIPTION": "Shadowstepping reduces damage taken by 20% instead of 10.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
+    ]
+  },
+  "theThief:Hoodlum": {
+    "NAME": "Hoodlum",
+    "DESCRIPTION": "Whenever you trigger a Backstab or Steal a card, draw !M! card and discard !M! card.",
+    "UPGRADE_DESCRIPTION": "Innate. Whenever you trigger a Backstab or Steal a card, draw !M! card and discard !M! card.",
+    "EXTENDED_DESCRIPTION": [
+      "[#88888]Flavor[] [#88888]Text[]"
+    ]
+  },
+  "theThief:DoubleDealing": {
+    "NAME": "DoubleDealing",
+    "DESCRIPTION": "This turn, the next !M! Backstab attack you play deal double damage.",
+    "UPGRADE_DESCRIPTION": "This turn, the next !M! Backstab attacks you play deal double damage",
+    "EXTENDED_DESCRIPTION": [
+      "[#88888]Full[] [#88888]house![]"
     ]
   },
   "theThief:empty1": {

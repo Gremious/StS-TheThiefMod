@@ -1,4 +1,13 @@
 {
+  "theThief:AbstractStolenCard": {
+    "EXTENDED_DESCRIPTION": [
+      "Steal a card.",
+      "Choose up to ",
+      " stolen cards to add to your hand.",
+      " stolen cards to add to your draw pile.",
+      " stolen cards to add to your discard pile."
+    ]
+  },
   "theThief:StolenMoves": {
     "NAME": "Stolen Moves",
     "DESCRIPTION": "Gain !M! energy. NL Exhaust.",
@@ -50,7 +59,7 @@
   },
   "theThief:StolenWire": {
     "NAME": "Stolen Wire",
-    "DESCRIPTION": "Apply a !M! damage Choke. ",
+    "DESCRIPTION": "Apply a !M! damage Choke.",
     "UPGRADE_DESCRIPTION": "Apply a !M! damage Choke."
   },
   "theThief:StolenTrap": {
