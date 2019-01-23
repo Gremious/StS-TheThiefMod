@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
 import thiefmod.actions.common.StealCardAction;
@@ -25,6 +26,8 @@ public class CallOfTheVoid extends AbstractBackstabCard {
     public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_COMMON_ATTACK);
     public static final CardColor COLOR = CardColor.CURSE;
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("FlavorText");
+    public static final String FLAVOR_STRINGS[] = uiStrings.TEXT;
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String EXTENDED_DESCRIPTION[] = cardStrings.EXTENDED_DESCRIPTION;
@@ -82,7 +85,7 @@ public class CallOfTheVoid extends AbstractBackstabCard {
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
                 AbstractDungeon.player, AbstractDungeon.player, new TheThiefThieveryPower(
-                        AbstractDungeon.player, AbstractDungeon.player, false, 3), 1));
+                AbstractDungeon.player, AbstractDungeon.player, false, 3), 1));
 
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(
                 p, p, this.block));

@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
 import thiefmod.patches.Character.AbstractCardEnum;
@@ -25,6 +26,8 @@ public class DaggerBouquet extends AbstractBackstabCard {
     public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_COMMON_ATTACK);
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("FlavorText");
+    public static final String FLAVOR_STRINGS[] = uiStrings.TEXT;
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String EXTENDED_DESCRIPTION[] = cardStrings.EXTENDED_DESCRIPTION;
@@ -68,7 +71,7 @@ public class DaggerBouquet extends AbstractBackstabCard {
     @Override
     public List<TooltipInfo> getCustomTooltips() {
         List<TooltipInfo> tips = new ArrayList<>();
-        tips.add(new TooltipInfo("Flavor Text", "An odd number of flowers signifies a death. NL So do daggers."));
+        tips.add(new TooltipInfo(FLAVOR_STRINGS[0], "An odd number of flowers signifies a death. NL So do daggers."));
         return tips;
     }
 

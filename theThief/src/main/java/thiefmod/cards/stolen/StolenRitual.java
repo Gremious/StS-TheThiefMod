@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
 
@@ -18,6 +19,8 @@ public class StolenRitual extends CustomCard {
 
     public static final String ID = thiefmod.ThiefMod.makeID("StolenRitual");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("FlavorText");
+    public static final String FLAVOR_STRINGS[] = uiStrings.TEXT;
     public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_COMMON_ATTACK);
 
     public static final String NAME = cardStrings.NAME;

@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -385,6 +386,9 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         // RelicStrings
         BaseMod.loadCustomStringsFile(RelicStrings.class,
                 "thiefmodAssets/localization/eng/ThiefMod-Relic-Strings.json");
+
+        BaseMod.loadCustomStringsFile(UIStrings.class,
+                "thiefmodAssets/localization/eng/ThiefMod-UI-Strings.json");
 
         logger.info("Done Edtting Strings");
     }
