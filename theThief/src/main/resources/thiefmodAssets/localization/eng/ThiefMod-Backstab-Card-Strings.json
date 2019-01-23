@@ -54,11 +54,11 @@
     ]
   },
   "theThief:ViciousAssault": {
-    "NAME": "Vicious  Assault",
-    "DESCRIPTION": "Deal !D! damage !M! times.",
-    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+    "NAME": "Vicious Assault",
+    "DESCRIPTION": "Deal !D! damage !M! times.  NL Backstab: !theThief:Magic! times instead",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]",
+      "Deal !D! damage !M! times. ",
       " NL Backstab: !theThief:Magic! times instead",
       " NL Backstab: !theThief:Magic! #rtimes #rinstead."
     ]
