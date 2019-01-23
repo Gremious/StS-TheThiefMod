@@ -8,7 +8,7 @@ public class BackstabDamage extends DynamicVariable {
 
     @Override
     public String key() {
-        return "theThief:BkStDmg";
+        return "theThief:BackstabTimesDamage";
     }
 
     @Override

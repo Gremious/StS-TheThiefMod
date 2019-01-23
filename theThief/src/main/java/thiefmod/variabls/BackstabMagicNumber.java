@@ -8,7 +8,7 @@ public class BackstabMagicNumber extends DynamicVariable {
 
     @Override
     public String key() {
-        return "theThief:BkStMgc";
+        return "theThief:BackstabTimesMagic";
     }
 
     @Override

@@ -114,8 +114,8 @@
   },
   "theThief:OneStepAhead": {
     "NAME": "One Step Ahead",
-    "DESCRIPTION": "If an enemy intends to attack, Shadowstep !M! time. If it intends to block, deal !D! damage !theThief:BkStMgc! times instead.",
-    "UPGRADE_DESCRIPTION": "If an enemy intends to attack, Shadowstep !M! times. If it intends to block, deal !D! damage !theThief:BkStMgc! times instead."
+    "DESCRIPTION": "If an enemy intends to attack, Shadowstep !M! time. If it intends to block, deal !D! damage !theThief:BackstabTimesMagic! times instead.",
+    "UPGRADE_DESCRIPTION": "If an enemy intends to attack, Shadowstep !M! times. If it intends to block, deal !D! damage !theThief:BackstabTimesMagic! times instead."
   },
   "theThief:Sidestep": {
     "NAME": "Sidestep",

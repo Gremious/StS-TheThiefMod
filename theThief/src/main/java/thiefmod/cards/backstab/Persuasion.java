@@ -1,4 +1,4 @@
-package thiefmod.cards;
+package thiefmod.cards.backstab;
 
 import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import thiefmod.ThiefMod;
+import thiefmod.cards.AbstractBackstabCard;
 import thiefmod.patches.Character.AbstractCardEnum;
 import thiefmod.patches.Unique.ThiefCardTags;
 
@@ -27,12 +28,15 @@ public class Persuasion extends AbstractBackstabCard {
     public static final String ID = ThiefMod.makeID("Persuasion");
     public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_UNCOMMON_ATTACK);
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
+
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("FlavorText");
-    public static final String FLAVOR_STRINGS[] = uiStrings.TEXT;
+
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+
     public static final String EXTENDED_DESCRIPTION[] = cardStrings.EXTENDED_DESCRIPTION;
+    public static final String FLAVOR_STRINGS[] = uiStrings.TEXT;
 
 
 // /TEXT DECLARATION/
@@ -81,7 +85,7 @@ public class Persuasion extends AbstractBackstabCard {
 
     @Override
     public void applyPowers() {
-        //todo: Check if this backstab description setting work works
+        //todo: Check if this backstab description setting works
         this.rawDescription = cardStrings.DESCRIPTION;
         super.applyPowers();
 

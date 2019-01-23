@@ -38,6 +38,7 @@ public class StickyFingers extends AbstractBackstabCard {
     private static final int COST = 1;
 
     private static final int MAGIC = 2;
+    private static final int STEAL = 2;
     private static final int UPGRADED_PLUS_MAGIC = 1;
 
     private static final String ADD_LOCATION = "Hand"; // If stolen card.
@@ -49,6 +50,7 @@ public class StickyFingers extends AbstractBackstabCard {
     public StickyFingers() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = MAGIC;
+        this.backstabNumber = this.baseBackstabNumber= STEAL;
     }
 
     // Actions the card should do.
@@ -58,7 +60,7 @@ public class StickyFingers extends AbstractBackstabCard {
 
         if (count <= 1) {
             AbstractDungeon.actionManager.addToBottom(new StealCardAction(
-                    p, this.magicNumber, 1, ADD_RANDOM, true, ADD_LOCATION, ADD_UPGRADED));
+                    p, backstabNumber, 1, ADD_RANDOM, true, ADD_LOCATION, ADD_UPGRADED));
 
         } else {
             AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.magicNumber));

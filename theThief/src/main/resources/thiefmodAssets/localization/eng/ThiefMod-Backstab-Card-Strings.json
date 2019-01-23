@@ -1,12 +1,23 @@
 {
+  "theThief:Stab": {
+    "NAME": "Stab",
+    "DESCRIPTION": "Deal !D! Damage. NL Backstab: Deal !theThief:BackstabTimesDamage! instead.",
+    "UPGRADE_DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#88888]Flavor[] [#88888]Text[]",
+      "Deal !D! Damage.",
+      " NL Backstab: Deal !theThief:BackstabTimesDamage! instead.",
+      " NL Backstab: #rDeal !theThief:BackstabTimesDamage! #rinstead."
+    ]
+  },
   "theThief:Persuasion": {
     "NAME": "Persuasion",
     "DESCRIPTION": "Gain !M! Dexterity. NL Backstab: Gain !M! Strength instead.",
     "UPGRADE_DESCRIPTION": "Gain !M! Dexterity.",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]Flavor [#88888]Text",
+      "[#88888]Flavor[] [#88888]Text[]",
       " NL Backstab: Gain !M! Strength instead.",
-      " NL Backstab: #rGain !M! #rStrength #rinstead."
+      " NL Backstab: #rGain[] !M! #rStrength[] #rinstead.[]"
     ]
   },
   "theThief:Reobtain": {
@@ -14,9 +25,9 @@
     "DESCRIPTION": "Fetch !M! card from your discard pile.",
     "UPGRADE_DESCRIPTION": "Fetch !M! cards from your discard pile.",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]Flavor [#88888]Text",
+      "[#88888]Flavor[] [#88888]Text[]",
       " NL Backstab: It also costs !M! less. NL Exhaustive !stslib:ex!.",
-      " NL Backstab: #rIt #ralso #rcosts !M! #rless. NL Exhaustive !stslib:ex!."
+      " NL Backstab: #rIt[] #ralso[] #rcosts[] !M! #rless.[] NL Exhaustive !stslib:ex!."
     ]
   },
   "theThief:PerfectDagger": {
@@ -24,7 +35,7 @@
     "DESCRIPTION": "Deal !D! damage.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage.",
     "EXTENDED_DESCRIPTION": [
-      "#yA #ygreat #yartifact, #yre-forged #yre-lost #yre-found #yand #yre-stolen #ytime #yand #ytime #yagain, #yby #yclans #yof #ysilence #yand #yburning #yblood #yalike",
+      "#yA #ygreat#yartifact, #yre-forged #yre-lost #yre-found #yand #yre-stolen #ytime #yand #ytime #yagain, #yby #yclans #yof #ysilence #yand #yburning #yblood #yalike ",
       " NL Backstab: Also increase this card's damage by !M! permanently.",
       " NL Backstab: #rAlso #rincrease #rthis #rcard's #rdamage #rby !M! #rpermanently."
     ]
@@ -34,9 +45,9 @@
     "DESCRIPTION": "Deal !D! damage. Add !theThief:Magic! Voids to your discard pile.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage. Add !theThief:Magic! Voids to your discard pile.",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]Flavor [#88888]Text",
+      "[#88888]Flavor[] [#88888]Text[]",
       " NL Backstab: Draw !theThief:Magic! card.",
-      " NL Backstab: #rDraw !theThief:Magic! #rcard."
+      " NL Backstab: #rDraw[] !theThief:Magic! #rcard.[]"
     ]
   },
   "theThief:DirtyDeedsDDC": {
@@ -44,9 +55,9 @@
     "DESCRIPTION": "Deal !D! damage. If this kills a non-minion enemy, gain !M! gold.",
     "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]Filthy [#88888]acts [#88888]at [#88888]a [#88888]reasonable [#88888]price.",
+      "[#88888]Filthy[] [#88888]acts[] [#88888]at[] [#88888]a[] [#88888]reasonable[] [#88888]price.[]",
       " NL Backstab: Gain !theThief:Magic! gold instead",
-      " NL Backstab: #rGain !theThief:Magic! #rgold #rinstead."
+      " NL Backstab: #rGain[] !theThief:Magic! #rgold[] #rinstead.[]"
     ]
   },
   "theThief:ViciousAssault": {
@@ -54,9 +65,9 @@
     "DESCRIPTION": "Deal !D! damage !M! times.",
     "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]Flavor [#88888]Text",
+      "[#88888]Flavor[] [#88888]Text[]",
       " NL Backstab: !theThief:Magic! times instead",
-      " NL Backstab: !theThief:Magic! #rtimes #rinstead."
+      " NL Backstab: !theThief:Magic! #rtimes[] #rinstead.[]"
     ]
   },
   "theThief:Prep": {
@@ -64,9 +75,9 @@
     "DESCRIPTION": "Gain !B! Block.",
     "UPGRADE_DESCRIPTION": "Gain !B! Block.",
     "EXTENDED_DESCRIPTION": [
+      "[#88888]Flavor[] [#88888]Text[]",
       " NL Backstab: Also gain [E].",
-      " NL Backstab: #rAlso #rgain [E].",
-      "[#88888]Flavor [#88888]Text"
+      " NL Backstab: #rAlso[] #rgain[] [E]."
     ]
   },
   "theThief:CripplingStrike": {
@@ -74,9 +85,9 @@
     "DESCRIPTION": "Deal !D! damage and apply !M! Weak. ",
     "UPGRADE_DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
+      "[#88888]Flavor[] [#88888]Text[]",
       " NL Backstab: Apply !M! Vulnerable instead.",
-      " NL Backstab: #rApply !M! #rVulnerable #rinstead.",
-      "Flavorrrrrr text"
+      " NL Backstab: #rApply[] !M! #rVulnerable[] #rinstead.[]"
     ]
   },
   "theThief:StickyFingers": {
@@ -84,9 +95,9 @@
     "DESCRIPTION": "Draw !M! cards. ",
     "UPGRADE_DESCRIPTION": "Draw !M! cards. ",
     "EXTENDED_DESCRIPTION": [
-      "NL Backstab: Steal !theThief:BkStMgc! cards instead.",
-      "NL Backstab: #rSteal !theThief:BkStMgc! #rcards #rinstead.",
-      "[#88888]They [#88888]make [#88888]wearing [#88888]gloves [#88888]very[#88888]uncomfortable."
+      "[#88888]They[] [#88888]make[] [#88888]wearing[] [#88888]gloves[] [#88888]very[][#88888]uncomfortable.[]",
+      "NL Backstab: Steal !theThief:Magic! cards instead.",
+      "NL Backstab: #rSteal[] !theThief:Magic! #rcards[] #rinstead.[]"
     ]
   },
   "theThief:CloakAndDaggerThief": {
@@ -94,26 +105,19 @@
     "DESCRIPTION": "Gain !B! block ",
     "UPGRADE_DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
+      "[#88888]Flavor[] [#88888]Text[]",
       "NL Backstab: Deal !D! Damage instead",
-      "NL Backstab: #rDeal !D! #rDamage #rinstead."
+      "NL Backstab: #rDeal !D! #rDamage[] #rinstead."
     ]
   },
   "theThief:ShadowForm": {
     "NAME": "Shadow Form",
-    "DESCRIPTION": "At the start of your turn, play a random card from any color. NL Backstab: Play !theThief:BkStMgc! instead ",
-    "UPGRADE_DESCRIPTION": "At the start of your turn, play a random card from any color. NL Backstab: Play !theThief:BkStMgc! instead.",
+    "DESCRIPTION": "At the start of your turn, play a random card from any color. NL Backstab: Play !theThief:Magic! !theThief:BkStMgc! instead ",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, play a random card from any color. NL Backstab: Play !theThief:Magic! !theThief:BkStMgc! instead.",
     "EXTENDED_DESCRIPTION": [
+      "[#88888]Flavor[] [#88888]Text[]",
       " NL Backstab: Play !theThief:BkStMgc! instead",
       " NL Backstab: #rPlay !theThief:BkStMgc! #rinstead."
-    ]
-  },
-  "theThief:Stab": {
-    "NAME": "Stab",
-    "DESCRIPTION": "Deal !D! Damage. ",
-    "UPGRADE_DESCRIPTION": "",
-    "EXTENDED_DESCRIPTION": [
-      "NL Backstab: Deal !theThief:BkStDmg! instead",
-      "NL Backstab: #rDeal !theThief:BkStDmg! #rinstead."
     ]
   }
 }
