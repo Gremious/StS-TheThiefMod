@@ -1,4 +1,4 @@
-package thiefmod.cards;
+package thiefmod.cards.backstab;
 
 import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -11,7 +11,10 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
+import thiefmod.cards.AbstractBackstabCard;
 import thiefmod.patches.Character.AbstractCardEnum;
+import thiefmod.patches.Unique.ThiefCardTags;
+import thiefmod.powers.Common.BackstabPower;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,20 +22,23 @@ import java.util.List;
 public class Prep extends AbstractBackstabCard {
 
 
-// TEXT DECLARATION
+    // TEXT DECLARATION
 
     public static final String ID = ThiefMod.makeID("Prep");
     public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_COMMON_SKILL);
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
+
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("FlavorText");
+
     public static final String FLAVOR_STRINGS[] = uiStrings.TEXT;
     public static final String NAME = cardStrings.NAME;
+
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String EXTENDED_DESCRIPTION[] = cardStrings.EXTENDED_DESCRIPTION;
 
+    // /TEXT DECLARATION/
 
-// /TEXT DECLARATION/
 
     // STAT DECLARATION
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
@@ -43,18 +49,20 @@ public class Prep extends AbstractBackstabCard {
     private static final int COST = 1;
     private static final int UPGRADE_COST = 0;
 
-
     private static final int BLOCK = 7;
 
     private static final int MAGIC = 1;
 
 // /STAT DECLARATION/
 
+
     public Prep() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
         this.baseBlock = BLOCK;
         this.magicNumber = this.baseMagicNumber = MAGIC;
+
+        this.tags.add(ThiefCardTags.BACKSTAB);
     }
 
     // Actions the card should do.
@@ -63,21 +71,23 @@ public class Prep extends AbstractBackstabCard {
         final int count = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
 
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(
-                p, p, this.block));
+                p, p, block));
 
         if (count <= 1) {
-            AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(this.magicNumber));
+            AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(magicNumber));
         }
     }
 
     @Override
     public void applyPowers() {
         super.applyPowers();
-        if (AbstractDungeon.player.cardsPlayedThisTurn == 0) {
-            this.rawDescription = this.DESCRIPTION + this.EXTENDED_DESCRIPTION[0];
+
+        if (AbstractDungeon.player.cardsPlayedThisTurn == 0 || AbstractDungeon.player.hasPower(BackstabPower.POWER_ID)) {
+            rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[2];
         } else {
-            this.rawDescription = this.DESCRIPTION + this.EXTENDED_DESCRIPTION[1];
+            rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[3];
         }
+
         this.initializeDescription();
     }
 
@@ -88,11 +98,6 @@ public class Prep extends AbstractBackstabCard {
         return tips;
     }
 
-    // Which card to return when making a copy of this card.
-    @Override
-    public AbstractCard makeCopy() {
-        return new Prep();
-    }
 
     //Upgraded stats.
     @Override
@@ -100,7 +105,6 @@ public class Prep extends AbstractBackstabCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeBaseCost(UPGRADE_COST);
-//          this.rawDescription = UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }
     }

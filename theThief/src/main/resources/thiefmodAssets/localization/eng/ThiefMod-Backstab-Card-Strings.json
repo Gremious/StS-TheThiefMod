@@ -65,20 +65,22 @@
   },
   "theThief:Prep": {
     "NAME": "Prep",
-    "DESCRIPTION": "Gain !B! Block.",
+    "DESCRIPTION": "Gain !B! Block. NL Backstab: Also gain !M! [E].",
     "UPGRADE_DESCRIPTION": "Gain !B! Block.",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]Flavor[] [#88888]Text[]",
+      "[#88888]Strike[] [#88888]>[] [#88888]Prep[] [#88888]>[] [#88888]Abandon[] [#88888]Run.[]",
+      "Gain !B! Block. ",
       " NL Backstab: Also gain [E].",
       " NL Backstab: #rAlso #rgain [E]."
     ]
   },
   "theThief:CripplingStrike": {
     "NAME": "Crippling Strike",
-    "DESCRIPTION": "Deal !D! damage and apply !M! Weak. ",
+    "DESCRIPTION": "Deal !D! damage and apply !M! Weak. NL Backstab: Apply !M! Vulnerable instead.",
     "UPGRADE_DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]",
+      "Deal !D! damage and apply !M! Weak. ",
       " NL Backstab: Apply !M! Vulnerable instead.",
       " NL Backstab: #rApply !M! #rVulnerable #rinstead."
     ]
