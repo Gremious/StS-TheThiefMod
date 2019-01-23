@@ -1,4 +1,4 @@
-package thiefmod.cards;
+package thiefmod.cards.backstab;
 
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -10,7 +10,10 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
 import thiefmod.actions.common.StealCardAction;
+import thiefmod.cards.AbstractBackstabCard;
 import thiefmod.patches.Character.AbstractCardEnum;
+import thiefmod.patches.Unique.ThiefCardTags;
+import thiefmod.powers.Common.BackstabPower;
 
 public class StickyFingers extends AbstractBackstabCard {
 
@@ -51,6 +54,9 @@ public class StickyFingers extends AbstractBackstabCard {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = MAGIC;
         this.backstabNumber = this.baseBackstabNumber= STEAL;
+
+        this.tags.add(ThiefCardTags.BACKSTAB);
+        this.tags.add(ThiefCardTags.STEALING);
     }
 
     // Actions the card should do.
@@ -70,18 +76,14 @@ public class StickyFingers extends AbstractBackstabCard {
     @Override
     public void applyPowers() {
         super.applyPowers();
-        if (AbstractDungeon.player.cardsPlayedThisTurn == 0) {
-            this.rawDescription = this.DESCRIPTION + this.EXTENDED_DESCRIPTION[0];
-        } else {
-            this.rawDescription = this.DESCRIPTION + this.EXTENDED_DESCRIPTION[1];
-        }
-        this.initializeDescription();
-    }
 
-    // Which card to return when making a copy of this card.
-    @Override
-    public AbstractCard makeCopy() {
-        return new StickyFingers();
+        if (AbstractDungeon.player.cardsPlayedThisTurn == 0 || AbstractDungeon.player.hasPower(BackstabPower.POWER_ID)) {
+            rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[2];
+        } else {
+            rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[3];
+        }
+
+        this.initializeDescription();
     }
 
     //Upgraded stats.

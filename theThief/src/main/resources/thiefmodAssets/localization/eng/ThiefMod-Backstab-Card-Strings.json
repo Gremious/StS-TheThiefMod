@@ -87,10 +87,10 @@
   },
   "theThief:StickyFingers": {
     "NAME": "Sticky Fingers",
-    "DESCRIPTION": "Draw !M! cards. ",
-    "UPGRADE_DESCRIPTION": "Draw !M! cards. ",
+    "DESCRIPTION": "Draw !M! cards. NL Backstab: Steal !theThief:Magic! cards instead.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]They[] [#88888]make[] [#88888]wearing[] [#88888]gloves[] [#88888]very[][#88888]uncomfortable.[]",
+      "Draw !M! cards. ",
       "NL Backstab: Steal !theThief:Magic! cards instead.",
       "NL Backstab: #rSteal !theThief:Magic! #rcards #rinstead."
     ]
