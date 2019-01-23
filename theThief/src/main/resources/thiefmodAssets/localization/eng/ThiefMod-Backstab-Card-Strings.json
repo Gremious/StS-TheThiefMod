@@ -45,10 +45,10 @@
   },
   "theThief:DirtyDeedsDDC": {
     "NAME": "Dirty Deeds DDC",
-    "DESCRIPTION": "Deal !D! damage. If this kills a non-minion enemy, gain !M! gold.",
-    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+    "DESCRIPTION": "Deal !D! damage. If this kills a non-minion enemy, gain !M! gold. NL Backstab: Gain !theThief:Magic! #ygold instead",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Filthy[] [#88888]acts[] [#88888]at[] [#88888]a[] [#88888]reasonable[] [#88888]price.[]",
+      "Deal !D! damage. NL If this kills a non-minion enemy, gain !M! gold. ",
       " NL Backstab: Gain !theThief:Magic! #ygold instead",
       " NL Backstab: #rGain !theThief:Magic! #rgold #rinstead."
     ]

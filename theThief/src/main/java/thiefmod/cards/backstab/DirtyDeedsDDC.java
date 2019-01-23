@@ -1,4 +1,4 @@
-package thiefmod.cards;
+package thiefmod.cards.backstab;
 
 import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.unique.GreedAction;
@@ -11,7 +11,10 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
+import thiefmod.cards.AbstractBackstabCard;
 import thiefmod.patches.Character.AbstractCardEnum;
+import thiefmod.patches.Unique.ThiefCardTags;
+import thiefmod.powers.Common.BackstabPower;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,20 +22,24 @@ import java.util.List;
 public class DirtyDeedsDDC extends AbstractBackstabCard {
 
 
-// TEXT DECLARATION
+    // TEXT DECLARATION
 
     public static final String ID = ThiefMod.makeID("DirtyDeedsDDC");
     public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_UNCOMMON_ATTACK);
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
+
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("FlavorText");
-    public static final String FLAVOR_STRINGS[] = uiStrings.TEXT;
+
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+
+    public static final String FLAVOR_STRINGS[] = uiStrings.TEXT;
     public static final String EXTENDED_DESCRIPTION[] = cardStrings.EXTENDED_DESCRIPTION;
 
 
-// /TEXT DECLARATION/
+    // /TEXT DECLARATION/
+
 
     // STAT DECLARATION
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
@@ -58,6 +65,8 @@ public class DirtyDeedsDDC extends AbstractBackstabCard {
         this.magicNumber = this.baseMagicNumber = MAGIC;
         this.backstabNumber = this.baseBackstabNumber = BACKSTAB;
         this.exhaust = true;
+
+        this.tags.add(ThiefCardTags.BACKSTAB);
     }
 
     // Actions the card should do.
@@ -78,11 +87,13 @@ public class DirtyDeedsDDC extends AbstractBackstabCard {
     @Override
     public void applyPowers() {
         super.applyPowers();
-        if (AbstractDungeon.player.cardsPlayedThisTurn == 0) {
-            this.rawDescription = this.DESCRIPTION + this.EXTENDED_DESCRIPTION[1];
+
+        if (AbstractDungeon.player.cardsPlayedThisTurn == 0 || AbstractDungeon.player.hasPower(BackstabPower.POWER_ID)) {
+            rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[2];
         } else {
-            this.rawDescription = this.DESCRIPTION + this.EXTENDED_DESCRIPTION[2];
+            rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[3];
         }
+
         this.initializeDescription();
     }
 
@@ -93,11 +104,6 @@ public class DirtyDeedsDDC extends AbstractBackstabCard {
         return tips;
     }
 
-    // Which card to return when making a copy of this card.
-    @Override
-    public AbstractCard makeCopy() {
-        return new DirtyDeedsDDC();
-    }
 
     //Upgraded stats.
     @Override
@@ -105,7 +111,6 @@ public class DirtyDeedsDDC extends AbstractBackstabCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeDamage(UPGRADE_PLUS_DAMAGE);
-//          this.rawDescription = UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }
     }
