@@ -396,8 +396,8 @@
   },
   "theThief:GhastlyEssence": {
     "NAME": "Ghastly Essence",
-    "DESCRIPTION": "At the start of your turn, Shadowstep !M! ",
-    "UPGRADE_DESCRIPTION": "At the start of your turn, Shadowstep !M! ",
+    "DESCRIPTION": "At the start of your turn, Shadowstep !M! time",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, Shadowstep !M! times",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]",
       " time",

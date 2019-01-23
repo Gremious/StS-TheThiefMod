@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
 import thiefmod.patches.Character.AbstractCardEnum;
+import thiefmod.powers.Common.BackstabPower;
 import thiefmod.powers.Unique.GhastlyEssencePower;
 
 import java.util.ArrayList;
@@ -80,10 +81,11 @@ public class GhastlyEssence extends AbstractBackstabCard {
         super.applyPowers();
 
         if (this.magicNumber >= 2) {
-            this.rawDescription += this.EXTENDED_DESCRIPTION[1];
+            rawDescription = UPGRADE_DESCRIPTION;
         } else {
-            this.rawDescription += this.EXTENDED_DESCRIPTION[2];
+            rawDescription = DESCRIPTION;
         }
+
         this.initializeDescription();
     }
 

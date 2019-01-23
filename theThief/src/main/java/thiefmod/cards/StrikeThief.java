@@ -20,7 +20,6 @@ import java.util.List;
 
 public class StrikeThief extends CustomCard {
 
-
 // TEXT DECLARATION 
 
     public static final String ID = thiefmod.ThiefMod.makeID("StrikeThief");
@@ -28,7 +27,7 @@ public class StrikeThief extends CustomCard {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("FlavorText");
     public static final String FLAVOR_STRINGS[] = uiStrings.TEXT;
     private static final CardStrings flavortextStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_COMMON_ATTACK);
+    public static final String IMG = ThiefMod.makePath(ThiefMod.STRIKE_THIEF);
 
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;

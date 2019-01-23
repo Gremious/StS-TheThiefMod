@@ -16,16 +16,7 @@ import thiefmod.patches.Character.AbstractCardEnum;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DefendThief
-        extends CustomCard {
-
-    /*
-     * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
-     *
-     * Defend
-     * Gain 5 (8) block.
-     */
-
+public class DefendThief extends CustomCard {
 
 // TEXT DECLARATION 
 
@@ -33,7 +24,7 @@ public class DefendThief
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("FlavorText");
     public static final String FLAVOR_STRINGS[] = uiStrings.TEXT;
-    public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_COMMON_SKILL);
+    public static final String IMG = ThiefMod.makePath(ThiefMod.DEFEND_THIEF);
 
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
