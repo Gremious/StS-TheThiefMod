@@ -1,5 +1,6 @@
 package thiefmod.actions.unique;
 
+import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.DiscardToHandAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
@@ -10,6 +11,7 @@ import org.apache.logging.log4j.Logger;
 import thiefmod.ThiefMod;
 import thiefmod.actions.common.DrawPileToHandAction;
 import thiefmod.actions.common.ExhaustToHandAction;
+import thiefmod.actions.common.LimboToHandAction;
 
 import java.util.ArrayList;
 
@@ -40,17 +42,29 @@ public class RetrievalAction extends AbstractGameAction {
                 if (cardCheckDiscard == iterateCard) {}
             }
           */
+            stopCheck();
             AbstractDungeon.actionManager.addToBottom(new DiscardToHandAction(iterateCard));
             logger.info("Discard to hand added.");
+            stopCheck();
             AbstractDungeon.actionManager.addToBottom(new DrawPileToHandAction(iterateCard));
             logger.info("Draw to hand added.");
+            stopCheck();
             AbstractDungeon.actionManager.addToBottom(new ExhaustToHandAction(iterateCard));
             logger.info("Exhaust to hand added.");
+            stopCheck();
+            AbstractDungeon.actionManager.addToBottom(new LimboToHandAction(iterateCard));
+            logger.info("Limbo to hand added.");
 
-            //also add limbo
         }
         logger.info("RetrievalAction is done.");
 
         isDone = true;
+    }
+
+    private void stopCheck(){
+        if (AbstractDungeon.player.hand.size() == BaseMod.MAX_HAND_SIZE) {
+            AbstractDungeon.player.createHandIsFullDialog();
+            isDone = true;
+        }
     }
 }

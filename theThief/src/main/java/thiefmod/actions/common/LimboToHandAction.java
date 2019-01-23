@@ -7,10 +7,10 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.CorruptionPower;
 
-public class ExhaustToHandAction extends AbstractGameAction {
+public class LimboToHandAction extends AbstractGameAction {
     private AbstractCard card;
 
-    public ExhaustToHandAction(AbstractCard card) {
+    public LimboToHandAction(AbstractCard card) {
         this.actionType = ActionType.CARD_MANIPULATION;
         this.card = card;
         this.duration = Settings.ACTION_DUR_FAST;
@@ -20,9 +20,9 @@ public class ExhaustToHandAction extends AbstractGameAction {
         if (this.duration == Settings.ACTION_DUR_FAST) {
             if (AbstractDungeon.player.hand.size() == BaseMod.MAX_HAND_SIZE) {
                 this.isDone = true;
-            } else if (AbstractDungeon.player.exhaustPile.isEmpty()) {
+            } else if (AbstractDungeon.player.limbo.isEmpty()) {
                 this.isDone = true;
-            } else if (AbstractDungeon.player.exhaustPile.contains(card)) {
+            } else if (AbstractDungeon.player.limbo.contains(card)) {
 
                 AbstractDungeon.player.hand.addToHand(card);
                 card.unhover();
@@ -36,7 +36,7 @@ public class ExhaustToHandAction extends AbstractGameAction {
                 if (AbstractDungeon.player.hasPower(CorruptionPower.POWER_ID) && card.type == AbstractCard.CardType.SKILL) {
                     card.setCostForTurn(-99);
                 }
-                AbstractDungeon.player.exhaustPile.removeCard(card);
+                AbstractDungeon.player.limbo.removeCard(card);
 
             }
 
