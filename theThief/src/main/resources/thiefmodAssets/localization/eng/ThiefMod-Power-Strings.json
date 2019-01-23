@@ -198,7 +198,7 @@
       "Shadowstepping reduces damage taken by 20% instead of 10."
     ]
   },
-  "theThief:FocusPower": {
+  "theThief:FocusedPower": {
     "NAME": "Focused",
     "DESCRIPTIONS": [
       "Non - Backstab cards no longer break Elusive."
