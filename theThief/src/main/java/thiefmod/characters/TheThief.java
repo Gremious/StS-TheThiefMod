@@ -8,9 +8,6 @@ import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.green.Neutralize;
-import com.megacrit.cardcrawl.cards.red.Disarm;
-import com.megacrit.cardcrawl.cards.red.Headbutt;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
@@ -22,7 +19,10 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import thiefmod.ThiefMod;
-import thiefmod.cards.*;
+import thiefmod.cards.DefendThief;
+import thiefmod.cards.Lie;
+import thiefmod.cards.Steal;
+import thiefmod.cards.StrikeThief;
 import thiefmod.patches.Character.AbstractCardEnum;
 import thiefmod.relics.ThievesMask;
 
@@ -36,18 +36,18 @@ public class TheThief extends CustomPlayer {
 
     // =============== BASE STATS =================
 
-        public static final int ENERGY_PER_TURN = 3;
-        public static final int CURRENT_HP = 70;
-        public static final int MAX_HP = 70;
-        public static final int STARTING_GOLD = 99;
-        public static final int CARD_DRAW = 9;
-        public static final int ORB_SLOTS = 0;
+    public static final int ENERGY_PER_TURN = 3;
+    public static final int CURRENT_HP = 70;
+    public static final int MAX_HP = 70;
+    public static final int STARTING_GOLD = 99;
+    public static final int CARD_DRAW = 5;
+    public static final int ORB_SLOTS = 0;
 
-        
-        public static final float[] LAYERSPEED = { 20.0f, 0.0f, -40.0f, 40.0f, 0.0f };
+
+    public static final float[] LAYERSPEED = {20.0f, 0.0f, -40.0f, 40.0f, 0.0f};
 
     // =============== /BASE STATS/ =================
-        
+
 
     // =============== TEXTURES OF BIG ENERGY ORB ===============
 
@@ -58,7 +58,7 @@ public class TheThief extends CustomPlayer {
             "thiefmodAssets/images/char/thiefCharacter/orb/layer3.png",
             "thiefmodAssets/images/char/thiefCharacter/orb/layer2.png",
             "thiefmodAssets/images/char/thiefCharacter/orb/layer1.png",
-            
+
             "thiefmodAssets/images/char/thiefCharacter/orb/layer6.png",
 
             "thiefmodAssets/images/char/thiefCharacter/orb/layer5d.png",
@@ -69,58 +69,58 @@ public class TheThief extends CustomPlayer {
     };
     // =============== /TEXTURES OF BIG ENERGY ORB/ ===============
 
-    
+
 // =============== CHARACTER CLASS START =================
-    
+
     public TheThief(String name, PlayerClass setClass) {
         super(name, setClass, orbTextures, "thiefmodAssets/images/char/thiefCharacter/orb/vfx.png", LAYERSPEED,
                 new SpriterAnimation("thiefmodAssets/images/char/thiefCharacter/Spriter/thief8000.scml"));
 
 
-    // =============== TEXTURES, ENERGY, LOADOUT =================  
+        // =============== TEXTURES, ENERGY, LOADOUT =================
 
         initializeClass(null, // required call to load textures and setup energy/loadout
-                thiefmod.ThiefMod.makePath(thiefmod.ThiefMod.THE_THIEF_SHOULDER_1), 		// campfire pose
-                thiefmod.ThiefMod.makePath(thiefmod.ThiefMod.THE_THIEF_SHOULDER_2), 		// another campfire pose
-                thiefmod.ThiefMod.makePath(thiefmod.ThiefMod.THE_THIEF_CORPSE), 			// dead corpse
-                getLoadout(), 20.0F, -10.0F, 220.0F, 290.0F, new EnergyManager(ENERGY_PER_TURN));	// energy manager
-;
-    // =============== /TEXTURES, ENERGY, LOADOUT/ =================
-        
-        
-    // =============== ANIMATIONS =================  
-    
+                thiefmod.ThiefMod.makePath(thiefmod.ThiefMod.THE_THIEF_SHOULDER_1),        // campfire pose
+                thiefmod.ThiefMod.makePath(thiefmod.ThiefMod.THE_THIEF_SHOULDER_2),        // another campfire pose
+                thiefmod.ThiefMod.makePath(thiefmod.ThiefMod.THE_THIEF_CORPSE),            // dead corpse
+                getLoadout(), 20.0F, -10.0F, 220.0F, 290.0F, new EnergyManager(ENERGY_PER_TURN));    // energy manager
+        ;
+        // =============== /TEXTURES, ENERGY, LOADOUT/ =================
+
+
+        // =============== ANIMATIONS =================
+
         this.loadAnimation(thiefmod.ThiefMod.makePath(thiefmod.ThiefMod.THE_DEFAULT_SKELETON_ATLAS),
                 thiefmod.ThiefMod.makePath(thiefmod.ThiefMod.THE_DEFAULT_SKELETON_JSON), 1.0f);
         AnimationState.TrackEntry e = this.state.setAnimation(0, "animation", true);
         e.setTime(e.getEndTime() * MathUtils.random());
-   
-     // =============== /ANIMATIONS/ =================
-        
-        
-    // =============== TEXT BUBBLE LOCATION =================
+
+        // =============== /ANIMATIONS/ =================
+
+
+        // =============== TEXT BUBBLE LOCATION =================
 
         this.dialogX = (this.drawX + 0.0F * Settings.scale); // set location for text bubbles
         this.dialogY = (this.drawY + 220.0F * Settings.scale);
 
-    // =============== /TEXT BUBBLE LOCATION/ =================
+        // =============== /TEXT BUBBLE LOCATION/ =================
 
 
     }
-    
- // =============== /CHARACTER CLASS END/ =================
 
-    
+    // =============== /CHARACTER CLASS END/ =================
+
+
     // Starting description and loadout
     @Override
     public CharSelectInfo getLoadout() {
         return new CharSelectInfo("The Thief",
-                "A mysterious figure with a beguiling mask, and NL an expertise in a a particular, underhanded, set of skill",
+                "A mysterious figure with a beguiling mask, and NL an expertise in a a particular, underhanded, set of skills.",
                 CURRENT_HP, MAX_HP, ORB_SLOTS, STARTING_GOLD, CARD_DRAW, this, getStartingRelics(),
                 getStartingDeck(), false);
 
     }
-    
+
 
     // Starting Deck
     @Override
@@ -128,7 +128,7 @@ public class TheThief extends CustomPlayer {
         ArrayList<String> retVal = new ArrayList<>();
 
         logger.info("Begin loading started Deck strings");
-/*
+
         retVal.add(StrikeThief.ID);
         retVal.add(StrikeThief.ID);
         retVal.add(StrikeThief.ID);
@@ -138,18 +138,8 @@ public class TheThief extends CustomPlayer {
         retVal.add(DefendThief.ID);
         retVal.add(DefendThief.ID);
         retVal.add(DefendThief.ID);
-
-        One of the two probably:
-        retVal.add(Trip.ID);
-        retVal.add(Lie.ID);
-*/
 
         retVal.add(Lie.ID);
-        retVal.add(SwiftSlash.ID);
-        retVal.add(Neutralize.ID);
-        retVal.add(Headbutt.ID);
-        retVal.add(Disarm.ID);
-
 
         return retVal;
     }
@@ -247,13 +237,13 @@ public class TheThief extends CustomPlayer {
     // Attack effects are the same as used in damage action and the like.
     @Override
     public AbstractGameAction.AttackEffect[] getSpireHeartSlashEffect() {
-        return new AbstractGameAction.AttackEffect[] {
+        return new AbstractGameAction.AttackEffect[]{
                 AbstractGameAction.AttackEffect.SLASH_DIAGONAL,
                 AbstractGameAction.AttackEffect.SLASH_HORIZONTAL,
                 AbstractGameAction.AttackEffect.SLASH_VERTICAL,
                 AbstractGameAction.AttackEffect.BLUNT_HEAVY,
                 AbstractGameAction.AttackEffect.BLUNT_HEAVY,
-                AbstractGameAction.AttackEffect.BLUNT_HEAVY };
+                AbstractGameAction.AttackEffect.BLUNT_HEAVY};
 
     }
 

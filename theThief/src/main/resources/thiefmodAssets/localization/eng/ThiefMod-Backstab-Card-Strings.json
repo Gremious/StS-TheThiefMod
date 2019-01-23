@@ -95,12 +95,12 @@
       "NL Backstab: #rSteal !theThief:Magic! #rcards #rinstead."
     ]
   },
-  "theThief:CloakAndDaggerThief": {
+  "theThief:CloakAndDagger": {
     "NAME": "Cloak and Dagger",
-    "DESCRIPTION": "Gain !B! block ",
-    "UPGRADE_DESCRIPTION": "",
+    "DESCRIPTION": "Gain !B! block. NL Backstab: Deal !D! Damage instead",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]",
+      "Gain !B! block. ",
       "NL Backstab: Deal !D! Damage instead",
       "NL Backstab: #rDeal !D! #rDamage #rinstead."
     ]

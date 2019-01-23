@@ -9,7 +9,6 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
-import com.megacrit.cardcrawl.cards.green.CloakAndDagger;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
@@ -273,7 +272,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         BaseMod.addCard(new DramaticFeign());
         BaseMod.addCard(new ShadowForm());
         BaseMod.addCard(new Stab());
-        BaseMod.addCard(new CloakAndDaggerThief());
+        BaseMod.addCard(new CloakAndDagger());
         BaseMod.addCard(new Ransack());
         BaseMod.addCard(new SleightOfHand());
         BaseMod.addCard(new SharpPractice());
@@ -286,7 +285,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         BaseMod.addCard(new HideInTheShadows());
         BaseMod.addCard(new Sidestep());
         BaseMod.addCard(new StickyFingers());
-        BaseMod.addCard(new CloakAndDagger());
+        BaseMod.addCard(new com.megacrit.cardcrawl.cards.green.CloakAndDagger());
         BaseMod.addCard(new CripplingStrike());
         BaseMod.addCard(new Lie());
         BaseMod.addCard(new SwiftSlash());
@@ -346,7 +345,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         UnlockTracker.unlockCard(HideInTheShadows.ID);
         UnlockTracker.unlockCard(Sidestep.ID);
         UnlockTracker.unlockCard(StickyFingers.ID);
-        UnlockTracker.unlockCard(CloakAndDagger.ID);
+        UnlockTracker.unlockCard(com.megacrit.cardcrawl.cards.green.CloakAndDagger.ID);
         UnlockTracker.unlockCard(CripplingStrike.ID);
         UnlockTracker.unlockCard(ShadowEvade.ID);
         UnlockTracker.unlockCard(QuickThinking.ID);
@@ -359,7 +358,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         UnlockTracker.unlockCard(DramaticFeign.ID);
         UnlockTracker.unlockCard(ShadowForm.ID);
         UnlockTracker.unlockCard(Stab.ID);
-        UnlockTracker.unlockCard(CloakAndDaggerThief.ID);
+        UnlockTracker.unlockCard(CloakAndDagger.ID);
         UnlockTracker.unlockCard(Ransack.ID);
         UnlockTracker.unlockCard(SleightOfHand.ID);
         UnlockTracker.unlockCard(SharpPractice.ID);

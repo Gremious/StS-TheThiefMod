@@ -1,7 +1,6 @@
-package thiefmod.cards;
+package thiefmod.cards.backstab;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -10,24 +9,26 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
+import thiefmod.cards.AbstractBackstabCard;
 import thiefmod.patches.Character.AbstractCardEnum;
 import thiefmod.patches.Unique.ThiefCardTags;
 import thiefmod.powers.Common.BackstabPower;
 
-public class CloakAndDaggerThief extends AbstractBackstabCard {
-// public class AAAEmptyCard extends AbstractBackstabCard {
-
+public class CloakAndDagger extends AbstractBackstabCard {
 
 // TEXT DECLARATION
 
-    public static final String ID = ThiefMod.makeID("CloakAndDaggerThief");
+    public static final String ID = ThiefMod.makeID("CloakAndDagger");
     public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_COMMON_ATTACK);
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
+
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("FlavorText");
-    public static final String FLAVOR_STRINGS[] = uiStrings.TEXT;
-    public static final String NAME = cardStrings.NAME;
+
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String NAME = cardStrings.NAME;
+
+    public static final String FLAVOR_STRINGS[] = uiStrings.TEXT;
     public static final String EXTENDED_DESCRIPTION[] = cardStrings.EXTENDED_DESCRIPTION;
 
 // /TEXT DECLARATION/
@@ -45,15 +46,10 @@ public class CloakAndDaggerThief extends AbstractBackstabCard {
     private static final int BLOCK = 6;
     private static final int UPGRADE_PLUS_BLOCK = 2;
 
-
-    private static final String ADD_LOCATION = "Hand";
-    private static final boolean ADD_RANDOM = true;
-    private static final boolean ADD_UPGRADED = false;
-
     // /STAT DECLARATION/
     private static final int BACKSTAB = 2;
 
-    public CloakAndDaggerThief() {
+    public CloakAndDagger() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
         this.baseDamage = DAMAGE;
@@ -81,18 +77,12 @@ public class CloakAndDaggerThief extends AbstractBackstabCard {
         super.applyPowers();
         if (AbstractDungeon.player.cardsPlayedThisTurn == 0) {
             this.target = CardTarget.ENEMY;
-            this.rawDescription = this.DESCRIPTION + this.EXTENDED_DESCRIPTION[0];
+            rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[2];
         } else {
             this.target = CardTarget.SELF;
-            this.rawDescription = this.DESCRIPTION + this.EXTENDED_DESCRIPTION[1];
+            rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[3];
         }
         this.initializeDescription();
-    }
-
-    // Which card to return when making a copy of this card.
-    @Override
-    public AbstractCard makeCopy() {
-        return new CloakAndDaggerThief();
     }
 
     //Upgraded stats.
