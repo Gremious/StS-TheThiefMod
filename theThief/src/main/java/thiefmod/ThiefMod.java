@@ -20,6 +20,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import thiefmod.cards.*;
 import thiefmod.cards.backstab.Persuasion;
+import thiefmod.cards.backstab.Reobtain;
 import thiefmod.cards.backstab.Stab;
 import thiefmod.characters.TheThief;
 import thiefmod.patches.Character.AbstractCardEnum;

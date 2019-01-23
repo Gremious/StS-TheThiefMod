@@ -15,13 +15,12 @@ import thiefmod.ThiefMod;
 import thiefmod.cards.AbstractBackstabCard;
 import thiefmod.patches.Character.AbstractCardEnum;
 import thiefmod.patches.Unique.ThiefCardTags;
+import thiefmod.powers.Common.BackstabPower;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Persuasion extends AbstractBackstabCard {
-//implements StartupCard
-//implements ModalChoice.Callback
 
 // TEXT DECLARATION
 
@@ -41,7 +40,8 @@ public class Persuasion extends AbstractBackstabCard {
 
 // /TEXT DECLARATION/
 
-    // STAT DECLARATION
+// STAT DECLARATION
+
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -52,14 +52,12 @@ public class Persuasion extends AbstractBackstabCard {
     private static final int MAGIC = 1;
     private static final int UPGRADED_PLUS_MAGIC = 1;
 
-
 // /STAT DECLARATION/
 
     public Persuasion() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
         this.magicNumber = this.baseMagicNumber = MAGIC;
-        this.rawDescription += EXTENDED_DESCRIPTION[1];
 
         this.tags.add(ThiefCardTags.BACKSTAB);
 
@@ -85,15 +83,14 @@ public class Persuasion extends AbstractBackstabCard {
 
     @Override
     public void applyPowers() {
-        //todo: Check if this backstab description setting works
-        this.rawDescription = cardStrings.DESCRIPTION;
         super.applyPowers();
 
-        if (AbstractDungeon.player.cardsPlayedThisTurn == 0) {
-            this.rawDescription += EXTENDED_DESCRIPTION[1];
+        if (AbstractDungeon.player.cardsPlayedThisTurn == 0 || AbstractDungeon.player.hasPower(BackstabPower.POWER_ID)) {
+            rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[2];
         } else {
-            this.rawDescription += EXTENDED_DESCRIPTION[2];
+            rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[3];
         }
+
         this.initializeDescription();
     }
 
@@ -102,7 +99,6 @@ public class Persuasion extends AbstractBackstabCard {
     public List<TooltipInfo> getCustomTooltips() {
         List<TooltipInfo> tips = new ArrayList<>();
         tips.add(new TooltipInfo(FLAVOR_STRINGS[0], EXTENDED_DESCRIPTION[0]));
-        // tips.addAll(modal.generateTooltips());
         return tips;
     }
 
@@ -118,8 +114,6 @@ public class Persuasion extends AbstractBackstabCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
-            this.isInnate = true;
-//          this.rawDescription = UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }
     }

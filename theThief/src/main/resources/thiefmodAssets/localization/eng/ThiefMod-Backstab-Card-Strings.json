@@ -13,11 +13,12 @@
   "theThief:Persuasion": {
     "NAME": "Persuasion",
     "DESCRIPTION": "Gain !M! Dexterity. NL Backstab: Gain !M! Strength instead.",
-    "UPGRADE_DESCRIPTION": "Gain !M! Dexterity.",
+    "UPGRADE_DESCRIPTION": "Gain !M! Dexterity. NL Backstab: Gain !M! Strength instead.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]",
+      "Gain !M! Dexterity. ",
       " NL Backstab: Gain !M! Strength instead.",
-      " NL Backstab: #rGain[] !M! #rStrength[] #rinstead.[]"
+      " NL Backstab: #rGain !M! #rStrength #rinstead."
     ]
   },
   "theThief:Reobtain": {
@@ -115,7 +116,7 @@
     "DESCRIPTION": "At the start of your turn, play a random card from any color. NL Backstab: Play !theThief:Magic! !theThief:BkStMgc! instead ",
     "UPGRADE_DESCRIPTION": "At the start of your turn, play a random card from any color. NL Backstab: Play !theThief:Magic! !theThief:BkStMgc! instead.",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]Flavor[] [#88888]Text[]",
+      "[#FEE130]Embrace[] [#FEE130]your[] [#FEE130]true[] [#FEE130]form.[]",
       " NL Backstab: Play !theThief:BkStMgc! instead",
       " NL Backstab: #rPlay !theThief:BkStMgc! #rinstead."
     ]
