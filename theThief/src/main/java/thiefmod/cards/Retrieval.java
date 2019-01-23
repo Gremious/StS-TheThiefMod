@@ -43,8 +43,6 @@ public class Retrieval extends AbstractBackstabCard {
     private static final int UPGRADE_COST = 0;
 
     private static final int MAGIC = 1;
-    private static final int UPGRADED_PLUS_MAGIC = 1;
-
     private static final int SECOND_MAGIC = 3;
 
 // /STAT DECLARATION/
@@ -86,7 +84,6 @@ public class Retrieval extends AbstractBackstabCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
             isInnate = true;
 //          rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();

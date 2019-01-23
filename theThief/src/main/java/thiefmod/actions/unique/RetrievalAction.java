@@ -20,8 +20,10 @@ public class RetrievalAction extends AbstractGameAction {
     private static final Logger logger = LogManager.getLogger(ThiefMod.class.getName());
 
     private ArrayList<AbstractCard> cardsToReturn;
+    private int returnAmount;
+    private static int check = 0;
 
-    public RetrievalAction(final ArrayList<AbstractCard> cardsToReturn) {
+    public RetrievalAction(final ArrayList<AbstractCard> cardsToReturn, final int returnAmount) {
         this.cardsToReturn = cardsToReturn;
     }
 
@@ -37,11 +39,9 @@ public class RetrievalAction extends AbstractGameAction {
 
         for (AbstractCard iterateCard : cardsToReturn) {
             logger.info("For loop started");
-          /*
-           for (AbstractCard cardCheckDiscard : AbstractDungeon.player.discardPile.group) {
-                if (cardCheckDiscard == iterateCard) {}
-            }
-          */
+
+            check++;
+
             stopCheck();
             AbstractDungeon.actionManager.addToBottom(new DiscardToHandAction(iterateCard));
             logger.info("Discard to hand added.");
@@ -55,14 +55,18 @@ public class RetrievalAction extends AbstractGameAction {
             AbstractDungeon.actionManager.addToBottom(new LimboToHandAction(iterateCard));
             logger.info("Limbo to hand added.");
 
+            if (check >= returnAmount) {
+                isDone = true;
+            }
+
         }
         logger.info("RetrievalAction is done.");
 
         isDone = true;
     }
 
-    private void stopCheck(){
-        if (AbstractDungeon.player.hand.size() == BaseMod.MAX_HAND_SIZE) {
+    private void stopCheck() {
+        if (AbstractDungeon.player.hand.size() >= BaseMod.MAX_HAND_SIZE) {
             AbstractDungeon.player.createHandIsFullDialog();
             isDone = true;
         }
