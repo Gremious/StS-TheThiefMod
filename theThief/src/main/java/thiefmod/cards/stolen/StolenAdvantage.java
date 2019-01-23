@@ -18,8 +18,6 @@ public class StolenAdvantage extends CustomCard {
 
     public static final String ID = thiefmod.ThiefMod.makeID("StolenAdvantage");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("FlavorText");
-    public static final String FLAVOR_STRINGS[] = uiStrings.TEXT;
     public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_COMMON_ATTACK);
 
     public static final String NAME = cardStrings.NAME;

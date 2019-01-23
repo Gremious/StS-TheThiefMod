@@ -1,0 +1,66 @@
+{
+  "theThief:StolenMoves": {
+    "NAME": "Stolen Moves",
+    "DESCRIPTION": "Gain !M! energy. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !M! energy. NL Exhaust."
+  },
+  "theThief:StolenGold": {
+    "NAME": "Stolen Gold",
+    "DESCRIPTION": "Gain !M! Gold. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !M! Gold. NL Exhaust."
+  },
+  "theThief:StolenMomentum": {
+    "NAME": "Stolen Momentum",
+    "DESCRIPTION": "Draw !M! cards, then choose 1 card to discard. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards. NL Exhaust."
+  },
+  "theThief:StolenArtifice": {
+    "NAME": "Stolen Artifice",
+    "DESCRIPTION": "Gain !M! energy next turn. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !M! energy next turn. NL Exhaust."
+  },
+  "theThief:StolenAdvantage": {
+    "NAME": "Stolen Advantage",
+    "DESCRIPTION": "Draw !M! cards next turn. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards next turn. NL Exhaust."
+  },
+  "theThief:StolenRitual": {
+    "NAME": "Stolen Ritual",
+    "DESCRIPTION": "Lose 2 hp, gain !M! gold. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Lose 2 hp, gain !M! gold. NL Exhaust.",
+    "EXTENDED_DESCRIPTION[]": [
+      "CA-CAW!",
+      "Cough."
+    ]
+  },
+  "theThief:StolenTechnique": {
+    "NAME": "Stolen Technique",
+    "DESCRIPTION": "Add a random card to your hand from any color. It costs 0 this turn. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Add a random card to your hand from any color. It costs 0 this turn. NL Exhaust."
+  },
+  "theThief:StolenChange": {
+    "NAME": "Stolen Change",
+    "DESCRIPTION": "The next card you play this turn is refunded. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "The next card you play this turn is refunded. NL Exhaust."
+  },
+  "theThief:StolenBlades": {
+    "NAME": "Stolen Blades",
+    "DESCRIPTION": "Add !M! shivs to your hand.",
+    "UPGRADE_DESCRIPTION": "Add !M! shivs to your hand."
+  },
+  "theThief:StolenWire": {
+    "NAME": "Stolen Wire",
+    "DESCRIPTION": "Apply a !M! damage Choke. ",
+    "UPGRADE_DESCRIPTION": "Apply a !M! damage Choke."
+  },
+  "theThief:StolenTrap": {
+    "NAME": "Stolen Trap",
+    "DESCRIPTION": "Place a card in your hand on top of your draw pile. It cost 0 until it is played. ",
+    "UPGRADE_DESCRIPTION": "Place a card in your hand on top of your draw pile. It cost 0 until it is played."
+  },
+  "theThief:StolenToxins": {
+    "NAME": "Stolen Toxins",
+    "DESCRIPTION": "Apply !M! Poison.",
+    "UPGRADE_DESCRIPTION": "Apply !M! Poison. "
+  }
+}

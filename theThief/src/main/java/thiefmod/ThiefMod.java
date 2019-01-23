@@ -381,9 +381,13 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         logger.info("Begin Editing Strings");
 
 
-        // CardStrings
+        // Regular Cards CardStrings
         BaseMod.loadCustomStringsFile(CardStrings.class,
                 "thiefmodAssets/localization/eng/ThiefMod-Card-Strings.json");
+
+        // Stolen Cards CardStrings
+        BaseMod.loadCustomStringsFile(CardStrings.class,
+                "thiefmodAssets/localization/eng/ThiefMod-Stolen-Card-Strings.json");
 
         // PowerStrings
         BaseMod.loadCustomStringsFile(PowerStrings.class,
