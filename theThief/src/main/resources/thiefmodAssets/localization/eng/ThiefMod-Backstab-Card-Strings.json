@@ -2,7 +2,6 @@
   "theThief:Stab": {
     "NAME": "Stab",
     "DESCRIPTION": "Deal !D! Damage. NL Backstab: Deal !theThief:BackstabTimesDamage! instead.",
-    "UPGRADE_DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]",
       "Deal !D! Damage.",
@@ -13,7 +12,6 @@
   "theThief:Persuasion": {
     "NAME": "Persuasion",
     "DESCRIPTION": "Gain !M! Dexterity. NL Backstab: Gain !M! Strength instead.",
-    "UPGRADE_DESCRIPTION": "Gain !M! Dexterity. NL Backstab: Gain !M! Strength instead.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]",
       "Gain !M! Dexterity. ",
@@ -21,24 +19,15 @@
       " NL Backstab: #rGain !M! #rStrength #rinstead."
     ]
   },
-  "theThief:Reobtain": {
-    "NAME": "Reobtain",
-    "DESCRIPTION": "Fetch !M! card from your discard pile.",
-    "UPGRADE_DESCRIPTION": "Fetch !M! cards from your discard pile.",
+  "theThief:Backstep": {
+    "NAME": "Backstep",
+    "DESCRIPTION": "Fetch !M! card from your discard pile. NL Backstab: It also costs !M! less. NL Exhaustive !stslib:ex!.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]",
+      "Fetch !M! card from your discard pile. ",
       " NL Backstab: It also costs !M! less. NL Exhaustive !stslib:ex!.",
-      " NL Backstab: #rIt[] #ralso[] #rcosts[] !M! #rless.[] NL Exhaustive !stslib:ex!."
-    ]
-  },
-  "theThief:PerfectDagger": {
-    "NAME": "Perfect Dagger",
-    "DESCRIPTION": "Deal !D! damage.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage.",
-    "EXTENDED_DESCRIPTION": [
-      "#yA #ygreat#yartifact, #yre-forged #yre-lost #yre-found #yand #yre-stolen #ytime #yand #ytime #yagain, #yby #yclans #yof #ysilence #yand #yburning #yblood #yalike ",
-      " NL Backstab: Also increase this card's damage by !M! permanently.",
-      " NL Backstab: #rAlso #rincrease #rthis #rcard's #rdamage #rby !M! #rpermanently."
+      " NL Backstab: #rIt[] #ralso[] #rcosts[] !M! #rless.[] NL Exhaustive !stslib:ex!.",
+      "Fetch !M! cards from your discard pile. NL Backstab: They also costs !M! less. NL Exhaustive !stslib:ex!."
     ]
   },
   "theThief:AttackOfOpportunity": {
@@ -109,6 +98,16 @@
       "[#88888]Flavor[] [#88888]Text[]",
       "NL Backstab: Deal !D! Damage instead",
       "NL Backstab: #rDeal !D! #rDamage[] #rinstead."
+    ]
+  },
+  "theThief:PerfectDagger": {
+    "NAME": "Perfect Dagger",
+    "DESCRIPTION": "Deal !D! damage. NL Backstab: Also increase this card's damage by !M! permanently.",
+    "EXTENDED_DESCRIPTION": [
+      "#yA #ygreat#yartifact, #yre-forged #yre-lost #yre-found #yand #yre-stolen #ytime #yand #ytime #yagain, #yby #yclans #yof #ysilence #yand #yburning #yblood #yalike ",
+      "Deal !D! damage. ",
+      " NL Backstab: Also increase this card's damage by !M! permanently.",
+      " NL Backstab: #rAlso #rincrease #rthis #rcard's #rdamage #rby !M! #rpermanently."
     ]
   },
   "theThief:ShadowForm": {

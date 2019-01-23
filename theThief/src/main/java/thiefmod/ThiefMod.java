@@ -19,9 +19,7 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import thiefmod.cards.*;
-import thiefmod.cards.backstab.Persuasion;
-import thiefmod.cards.backstab.Reobtain;
-import thiefmod.cards.backstab.Stab;
+import thiefmod.cards.backstab.*;
 import thiefmod.characters.TheThief;
 import thiefmod.patches.Character.AbstractCardEnum;
 import thiefmod.patches.Character.TheThiefEnum;
@@ -249,7 +247,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         BaseMod.addCard(new LieInWait());
         BaseMod.addCard(new Multitask());
         BaseMod.addCard(new Gaslight());
-        BaseMod.addCard(new Reobtain());
+        BaseMod.addCard(new Backstep());
         BaseMod.addCard(new SteakOut());
         BaseMod.addCard(new ShadowReserves());
         BaseMod.addCard(new PaydayLoan());
@@ -324,7 +322,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         UnlockTracker.unlockCard(LieInWait.ID);
         UnlockTracker.unlockCard(Multitask.ID);
         UnlockTracker.unlockCard(Gaslight.ID);
-        UnlockTracker.unlockCard(Reobtain.ID);
+        UnlockTracker.unlockCard(Backstep.ID);
         UnlockTracker.unlockCard(SteakOut.ID);
         UnlockTracker.unlockCard(ShadowReserves.ID);
         UnlockTracker.unlockCard(PaydayLoan.ID);

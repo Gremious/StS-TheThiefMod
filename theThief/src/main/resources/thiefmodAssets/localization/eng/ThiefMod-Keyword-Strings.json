@@ -31,6 +31,8 @@
     "NAMES": [
       "backstab",
       "Backstab",
+      "backstab:",
+      "Backstab:",
       "BackstabPower"
     ],
     "DESCRIPTION": "If this is the first card you play in a turn, it changes its effect."

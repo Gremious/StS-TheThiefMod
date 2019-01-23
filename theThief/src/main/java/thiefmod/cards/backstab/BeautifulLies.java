@@ -1,4 +1,4 @@
-package thiefmod.cards;
+package thiefmod.cards.backstab;
 
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.SoulboundField;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
+import thiefmod.cards.AbstractBackstabCard;
 import thiefmod.patches.Character.AbstractCardEnum;
 
 public class BeautifulLies extends AbstractBackstabCard {
