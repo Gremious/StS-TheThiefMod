@@ -31,7 +31,6 @@ public class StealCardAction extends AbstractGameAction {
 
     private ArrayList<AbstractCard> cardsToAdd = new ArrayList<>();
 
-    private static final boolean ALLOW_DUPLICATES = true;
 
     public StealCardAction(AbstractCreature source, int amount, int copies, boolean random, String location, boolean upgraded) {
         this.actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
@@ -50,23 +49,23 @@ public class StealCardAction extends AbstractGameAction {
         if (this.duration == Settings.ACTION_DUR_FAST) {
 
             if (random) { // Random card? If yes add a random card (without replacement).
-                cardsToAdd = getRandomStolenCards(this.amount, ALLOW_DUPLICATES);
-                for (int i = 0; i < this.copies; i++) {
+                cardsToAdd = getRandomStolenCards(amount, true);
+                for (int i = 0; i < copies; i++) {
                     addStolenCards();
                 }
                 cardsToAdd.clear();
             } else {
                 if (AbstractDungeon.cardRewardScreen.codexCard != null) {
-                    for (int i = 0; i < this.copies; i++) {
+                    for (int i = 0; i < copies; i++) {
                         AbstractCard c = AbstractDungeon.cardRewardScreen.codexCard.makeStatEquivalentCopy();
                         cardsToAdd.add(c);
                     }
                     AbstractDungeon.cardRewardScreen.codexCard = null;
                 }
                 if (amount > 0) {
-                    this.amount--;
+                    amount--;
                     Utils.openCardRewardsScreen(getRandomStolenCards(3, false), true);
-                    return; // don't tickDuration, so we can open the screen again
+                    return; // Don't tickDuration, So that we can keep spamming the discover screen == amount of cards requested.
                 } else {
                     addStolenCards();
                 }
@@ -140,7 +139,7 @@ public class StealCardAction extends AbstractGameAction {
 
         for (AbstractCard c : cardsToAdd) {
             c.unhover();
-            if (Objects.equals(this.location, "Hand")) {
+            if (Objects.equals(this.location, "Hand")) { //TODO: Test whether or not having a full hand breaks this.
                 if (Settings.FAST_MODE) {
                     AbstractDungeon.actionManager.actions.add(new MakeTempCardInHandAction(c, 1));
                 } else {

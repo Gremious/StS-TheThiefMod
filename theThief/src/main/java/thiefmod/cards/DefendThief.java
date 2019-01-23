@@ -22,7 +22,7 @@ public class DefendThief extends CustomCard {
 
     public static final String ID = thiefmod.ThiefMod.makeID("DefendThief");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("FlavorText");
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:FlavorText");
     public static final String FLAVOR_STRINGS[] = uiStrings.TEXT;
     public static final String IMG = ThiefMod.makePath(ThiefMod.DEFEND_THIEF);
 
