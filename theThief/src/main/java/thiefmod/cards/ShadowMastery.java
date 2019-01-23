@@ -10,18 +10,18 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
 import thiefmod.patches.Character.AbstractCardEnum;
-import thiefmod.powers.Unique.FocusedPower;
+import thiefmod.powers.Unique.ShadowMasteryPower;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Focused extends AbstractBackstabCard {
+public class ShadowMastery extends AbstractBackstabCard {
 //implements StartupCard
 //implements ModalChoice.Callback
 
 // TEXT DECLARATION
 
-    public static final String ID = ThiefMod.makeID("Focused");
+    public static final String ID = ThiefMod.makeID("ShadowMastery");
     public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_UNCOMMON_ATTACK);
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -38,21 +38,16 @@ public class Focused extends AbstractBackstabCard {
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
 
-    private static final int COST = 1;
-    private static final int UPGRADE_COST = 0;
-
-    private static final int POWER = 1;
+    private static final int COST = 2;
 
     private static final int MAGIC = 1;
-    private static final int UPGRADED_PLUS_MAGIC = 1;
 
 
 // /STAT DECLARATION/
 
-    public Focused() {
+    public ShadowMastery() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        misc = POWER;
         magicNumber = baseMagicNumber = MAGIC;
     }
 
@@ -61,7 +56,7 @@ public class Focused extends AbstractBackstabCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
-                p, p, new FocusedPower(p,p,magicNumber), magicNumber));
+                p, p, new ShadowMasteryPower(p,p,magicNumber), magicNumber));
 
     }
 
@@ -77,7 +72,7 @@ public class Focused extends AbstractBackstabCard {
     // Which card to return when making a copy of this card.
     @Override
     public AbstractCard makeCopy() {
-        return new Focused();
+        return new ShadowMastery();
     }
 
     //Upgraded stats.
@@ -85,7 +80,6 @@ public class Focused extends AbstractBackstabCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
             isInnate = true;
 //          rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();

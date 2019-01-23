@@ -1,6 +1,5 @@
 package thiefmod.powers.Common;
 
-import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.OnReceivePowerPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
@@ -10,9 +9,9 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.FocusPower;
 import thiefmod.ThiefMod;
 import thiefmod.patches.Unique.ThiefCardTags;
+import thiefmod.powers.Unique.ShadowMasteryPower;
 
 import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager;
 
@@ -21,7 +20,7 @@ import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager;
 public class ShadowstepPower extends AbstractPower {
 
     public AbstractCreature source;
-    private int focused = this.owner.getPower(FocusPower.POWER_ID).amount;
+    private int shadowMastery = this.owner.getPower(ShadowMasteryPower.POWER_ID).amount;
 
     public static final String POWER_ID = ThiefMod.makeID("ShadowstepPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
@@ -35,7 +34,7 @@ public class ShadowstepPower extends AbstractPower {
         this.ID = POWER_ID;
         this.img = ImageMaster.loadImage(IMG);
         this.type = PowerType.BUFF;
-        this.isTurnBased = true;
+        this.isTurnBased = false;
 
         this.owner = owner;
         this.source = source;
@@ -45,11 +44,7 @@ public class ShadowstepPower extends AbstractPower {
         this.updateDescription();
     }
 
-    /*
-     * Play a shadowstep card.
-     * Apply backstab power. Apply elusive power. (This one, rename it to elusive)
-     *
-     */
+
     @Override
     public void onInitialApplication() {
         actionManager.addToBottom(new ApplyPowerAction(this.owner, this.source,
@@ -59,7 +54,7 @@ public class ShadowstepPower extends AbstractPower {
 
     @Override
     public int onLoseHp(int damageAmount) {
-        return (damageAmount / 10) * (10 - this.amount * (focused + 1));
+        return (damageAmount / 10) * (10 - this.amount * (shadowMastery + 1));
     }
 
     @Override
@@ -72,9 +67,8 @@ public class ShadowstepPower extends AbstractPower {
 
     @Override
     public void atStartOfTurn() {
-        if (this.amount <= 0) {
-            actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.source, this.ID));
-        }
+
+        actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.source, this.ID));
     }
 
 
@@ -82,13 +76,13 @@ public class ShadowstepPower extends AbstractPower {
     @Override
     public void updateDescription() {
         if (this.amount == 1) {
-            if (this.owner.hasPower(FocusPower.POWER_ID)) {
-                this.description = DESCRIPTIONS[0] + this.amount * (focused + 1) + DESCRIPTIONS[2];
+            if (this.owner.hasPower(ShadowMasteryPower.POWER_ID)) {
+                this.description = DESCRIPTIONS[0] + this.amount * (shadowMastery + 1) + DESCRIPTIONS[2];
             } else {
                 this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
             }
         } else if (this.amount > 1) {
-            this.description = DESCRIPTIONS[0] + this.amount * (focused + 1) + DESCRIPTIONS[2];
+            this.description = DESCRIPTIONS[0] + this.amount * (shadowMastery + 1) + DESCRIPTIONS[2];
         }
     }
 

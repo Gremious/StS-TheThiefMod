@@ -16,18 +16,18 @@ import thiefmod.patches.Unique.ThiefCardTags;
 
 // Empty Base
 
-public class FocusedPower extends AbstractPower {
+public class ShadowMasteryPower extends AbstractPower {
     public AbstractCreature source;
 
 
-    public static final String POWER_ID = ThiefMod.makeID("FocusedPower");
+    public static final String POWER_ID = ThiefMod.makeID("ShadowMasteryPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     public static final String IMG = ThiefMod.makePath(ThiefMod.COMMON_POWER);
 
 
-    public FocusedPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
+    public ShadowMasteryPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.img = new Texture(IMG);
