@@ -80,7 +80,7 @@ public class Multitask extends AbstractBackstabCard {
                 p, p, new ShadowstepPower(p, p, this.magicNumber), 1));
 
         AbstractDungeon.actionManager.addToBottom(new StealCardAction(
-                p, this.magicNumber, 1, ADD_RANDOM, true, ADD_LOCATION, ADD_UPGRADED));
+                p, this.magicNumber, 1, ADD_RANDOM, ADD_LOCATION, ADD_UPGRADED));
 
     }
 

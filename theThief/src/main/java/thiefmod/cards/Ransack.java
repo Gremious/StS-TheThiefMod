@@ -58,7 +58,7 @@ public class Ransack extends AbstractBackstabCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         AbstractDungeon.actionManager.addToBottom(new thiefmod.actions.common.StealCardAction(
-                p, CARDS_AMOUNT, this.magicNumber, ADD_RANDOM, true, ADD_LOCATION, ADD_UPGRADED));
+                p, CARDS_AMOUNT, this.magicNumber, ADD_RANDOM, ADD_LOCATION, ADD_UPGRADED));
 
     }
 

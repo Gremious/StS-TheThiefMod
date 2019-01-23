@@ -113,7 +113,7 @@ public class AAAEmptyCard extends AbstractBackstabCard {
                     AbstractGameAction.AttackEffect.SLASH_VERTICAL));
         } else {
             AbstractDungeon.actionManager.addToBottom(new StealCardAction(
-                    p, magicNumber, 1, ADD_RANDOM, true, ADD_LOCATION, ADD_UPGRADED));
+                    p, magicNumber, 1, ADD_RANDOM, ADD_LOCATION, ADD_UPGRADED));
         }
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(

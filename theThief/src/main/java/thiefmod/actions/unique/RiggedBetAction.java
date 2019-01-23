@@ -1,7 +1,6 @@
 package thiefmod.actions.unique;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DiscardAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -33,7 +32,7 @@ public class RiggedBetAction extends AbstractGameAction {
 
                 AbstractDungeon.actionManager.addToTop(new DrawCardAction(this.target, count));
                 AbstractDungeon.actionManager.addToTop(
-                        new StealCardAction(this.source, count, 0, this.ADD_RANDOM, false, this.ADD_LOCATION, this.ADD_UPGRADED));
+                        new StealCardAction(this.source, count, 0, this.ADD_RANDOM, this.ADD_LOCATION, this.ADD_UPGRADED));
 
 
             this.isDone = true;

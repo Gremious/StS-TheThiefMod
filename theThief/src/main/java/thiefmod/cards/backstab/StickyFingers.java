@@ -1,7 +1,6 @@
 package thiefmod.cards.backstab;
 
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -66,7 +65,7 @@ public class StickyFingers extends AbstractBackstabCard {
 
         if (count <= 1) {
             AbstractDungeon.actionManager.addToBottom(new StealCardAction(
-                    p, backstabNumber, 1, ADD_RANDOM, true, ADD_LOCATION, ADD_UPGRADED));
+                    p, backstabNumber, 1, ADD_RANDOM, ADD_LOCATION, ADD_UPGRADED));
 
         } else {
             AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.magicNumber));
