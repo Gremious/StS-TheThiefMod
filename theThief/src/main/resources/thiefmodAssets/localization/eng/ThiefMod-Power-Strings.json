@@ -192,16 +192,16 @@
       " cards this turn."
     ]
   },
-  "theThief:FocusPower": {
-    "NAME": "Focused",
-    "DESCRIPTIONS": [
-      "Non - Backstab cards no longer break Elusive."
-    ]
-  },
   "theThief:ShadowMasteryPower": {
     "NAME": "Shadow Mastery",
     "DESCRIPTIONS": [
       "Shadowstepping reduces damage taken by 20% instead of 10."
+    ]
+  },
+  "theThief:FocusPower": {
+    "NAME": "Focused",
+    "DESCRIPTIONS": [
+      "Non - Backstab cards no longer break Elusive."
     ]
   }
 }

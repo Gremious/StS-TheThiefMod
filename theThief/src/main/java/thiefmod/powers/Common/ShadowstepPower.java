@@ -44,7 +44,11 @@ public class ShadowstepPower extends AbstractPower {
         this.updateDescription();
     }
 
-
+    /*
+     * Play a shadowstep card.
+     * Apply backstab power. Apply elusive power. (This one, rename it to elusive)
+     *
+     */
     @Override
     public void onInitialApplication() {
         actionManager.addToBottom(new ApplyPowerAction(this.owner, this.source,
