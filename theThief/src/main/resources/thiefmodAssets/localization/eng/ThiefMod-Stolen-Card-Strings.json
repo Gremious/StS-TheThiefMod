@@ -113,9 +113,29 @@
     "DESCRIPTION": "The first card you play next turn is played twice.",
     "UPGRADE_DESCRIPTION": "The first card you play next turn is played twice."
   },
-  "theThief:StolenEmptyness55": {
-    "NAME": "Stolen StolenEmptyness",
-    "DESCRIPTION": "Apply !M! Poison.",
-    "UPGRADE_DESCRIPTION": "Apply !M! Poison. "
+  "theThief:StolenShieldGenerator": {
+    "NAME": "Stolen Shield Generator",
+    "DESCRIPTION": "Costs 1 less Energy for each Power card played this combat. NL Gain !B! Block.",
+    "UPGRADE_DESCRIPTION": "Costs 1 less Energy for each Power card played this combat. NL Gain !B! Block."
+  },
+  "theThief:RARE_THIEF_CARD": {
+    "NAME": "Stolen Shield Generator",
+    "DESCRIPTION": "Costs 1 less Energy for each Power card played this combat. NL Gain !B! Block.",
+    "UPGRADE_DESCRIPTION": "Costs 1 less Energy for each Power card played this combat. NL Gain !B! Block."
+  },
+  "theThief:RARE_SILENT_CARD": {
+    "NAME": "Stolen Shield Generator",
+    "DESCRIPTION": "Costs 1 less Energy for each Power card played this combat. NL Gain !B! Block.",
+    "UPGRADE_DESCRIPTION": "Costs 1 less Energy for each Power card played this combat. NL Gain !B! Block."
+  },
+  "theThief:RARE_IRONCLAD_CARD": {
+    "NAME": "Stolen Shield Generator",
+    "DESCRIPTION": "Costs 1 less Energy for each Power card played this combat. NL Gain !B! Block.",
+    "UPGRADE_DESCRIPTION": "Costs 1 less Energy for each Power card played this combat. NL Gain !B! Block."
+  },
+  "theThief:RARE_DEFECT_CARD": {
+    "NAME": "Stolen Shield Generator",
+    "DESCRIPTION": "Costs 1 less Energy for each Power card played this combat. NL Gain !B! Block.",
+    "UPGRADE_DESCRIPTION": "Costs 1 less Energy for each Power card played this combat. NL Gain !B! Block."
   }
 }

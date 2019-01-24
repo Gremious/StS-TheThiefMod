@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDiscardEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDrawPileEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
@@ -21,6 +22,8 @@ import thiefmod.powers.Unique.IllGottenGainsPower;
 
 import java.util.ArrayList;
 import java.util.Objects;
+
+import static thiefmod.ThiefMod.hasConspire;
 
 public class StealCardAction extends AbstractGameAction {
     public static final Logger logger = LogManager.getLogger(ThiefMod.class.getName());
@@ -75,12 +78,14 @@ public class StealCardAction extends AbstractGameAction {
 
 // ========================
 
+
     // Create a new card group of the cards. this is essentially your cardpool.
     private static CardGroup stolenCards;
 
-    {
+    static {
         stolenCards = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
 
+        stolenCards.addToTop(new StolenShieldGenerator());
         stolenCards.addToTop(new StolenCode());
         stolenCards.addToTop(new StolenMegaphone());
         stolenCards.addToTop(new StolenTV());
@@ -104,18 +109,35 @@ public class StealCardAction extends AbstractGameAction {
         stolenCards.addToTop(new StolenTrap());
         stolenCards.addToTop(new StolenToxins());
 
-        stolenCards.sortAlphabetically(false);
+        if (hasConspire) {
+            AbstractCard banana = CardLibrary.getCopy("conspire:Banana");
+            if (banana != null) {
+                banana.name = "Stolen " + banana.name;
+                banana.exhaustOnUseOnce = true;
+                stolenCards.addToTop(banana);
+            }
+            // ---
+            AbstractCard treasure = CardLibrary.getCopy("conspire:Treasure");
+            if (treasure != null) {
+                treasure.name = "Stolen " + treasure.name;
+                treasure.exhaustOnUseOnce = true;
+                stolenCards.addToTop(treasure);
+            }
+            // ---
+        }
+        stolenCards.sortAlphabetically(false); //TODO: Test whether you really need this?
     }
 
     // Card pool of upgraded cards.
     private static CardGroup stolenCardsUpgraded;
 
-    {
+    static {
         stolenCardsUpgraded = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
         for (AbstractCard c : stolenCards.group) {
             AbstractCard upgradedCopy = c.makeCopy();
             upgradedCopy.upgrade();
             stolenCardsUpgraded.addToTop(upgradedCopy);
+
         }
     }
 
@@ -135,9 +157,8 @@ public class StealCardAction extends AbstractGameAction {
         ArrayList<AbstractCard> cards = new ArrayList<>();
 
         while (cards.size() < amount) {
-            int tries = 0;
             AbstractCard card = allStolenCards().getRandomCard(true);
-            if (allowDuplicates || !cards.contains(card) || tries++ > 20) {
+            if (allowDuplicates || !cards.contains(card) /*|| a new int tries < 10 or something*/) {
                 cards.add(card);
             }
         }
@@ -149,7 +170,7 @@ public class StealCardAction extends AbstractGameAction {
 
         for (AbstractCard c : cardsToAdd) {
             c.unhover();
-            if (Objects.equals(this.location, "Hand")) { //TODO: Test whether or not having a full hand breaks this.
+            if (Objects.equals(this.location, "Hand")) { //TODO: Test whether or not having a full hand breaks this on both fast and slow mode.
                 if (Settings.FAST_MODE) {
                     AbstractDungeon.actionManager.actions.add(new MakeTempCardInHandAction(c, 1));
                 } else {

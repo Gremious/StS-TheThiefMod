@@ -7,6 +7,8 @@ import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
+import com.evacipated.cardcrawl.mod.stslib.Keyword;
+import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.helpers.CardHelper;
@@ -29,14 +31,47 @@ import thiefmod.variabls.BackstabMagicNumber;
 import thiefmod.variabls.ThiefSecondMagicNumber;
 
 import java.nio.charset.StandardCharsets;
-
-import com.evacipated.cardcrawl.mod.stslib.Keyword;
 // Note: #y b r g p
 
 @SpireInitializer
 public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, EditKeywordsSubscriber, EditCharactersSubscriber, PostInitializeSubscriber {
     public static final Logger logger = LogManager.getLogger(ThiefMod.class.getName());
     private int LogInt = 0;
+
+    // Check for crossover mods.
+    public static final boolean hasConspire;
+    public static final boolean hasHubris;
+    public static final boolean hasReplayTheSpire;
+    public static final boolean hasInfiniteSpire;
+    public static final boolean hasDisciple;
+    public static final boolean hasMysticMod;
+
+    static {
+        hasConspire = Loader.isModLoaded("conspire");
+        if (hasConspire) {
+            logger.info("Detected Replay The Spire");
+        }
+        hasReplayTheSpire = Loader.isModLoaded("ReplayTheSpireMod");
+        if (hasReplayTheSpire) {
+            logger.info("Detected Replay The Spire");
+        }
+        hasHubris = Loader.isModLoaded("hubris");
+        if (hasHubris) {
+            logger.info("Detected Hubris");
+        }
+        hasDisciple = Loader.isModLoaded("constructmod");
+        if (hasDisciple) {
+            logger.info("Detected ConstructMod");
+        }
+        hasInfiniteSpire = Loader.isModLoaded("infinitespire");
+        if (hasInfiniteSpire) {
+            logger.info("Detected Infinite Spire");
+        }
+        hasMysticMod = Loader.isModLoaded("MysticMod");
+        if (hasMysticMod) {
+            logger.info("Detected Mystic Mod");
+        }
+    }
 
     //This is for the in-game mod settings pannel.
     private static final String MODNAME = "Thief Mod";
@@ -413,8 +448,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
 
     // ================ LOAD THE KEYWORDS ===================
     @Override
-    public void receiveEditKeywords()
-    {
+    public void receiveEditKeywords() {
         Gson gson = new Gson();
         String json = Gdx.files.internal("thiefmodAssets/localization/eng/ThiefMod-Keyword-Strings.json").readString(String.valueOf(StandardCharsets.UTF_8));
         Keyword[] keywords = gson.fromJson(json, Keyword[].class);
@@ -425,7 +459,6 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
             }
         }
     }
-
 
 
     // ================ /LOAD THE KEYWORDS/ ===================
