@@ -88,15 +88,15 @@
     "DESCRIPTION": "Upgrade 1 card in your hand. NL Draw !M! Card, and gain !B! block if you draw an upgraded card.",
     "UPGRADE_DESCRIPTION": "pgrade 1 card in your hand. NL Draw !M! Cards, and gain !B! block if you draw an upgraded card."
   },
-  "theThief:StolenEmptyness5": {
-    "NAME": "Stolen StolenEmptyness",
-    "DESCRIPTION": "Apply !M! Poison.",
-    "UPGRADE_DESCRIPTION": "Apply !M! Poison. "
+  "theThief:StolenOrb": {
+    "NAME": "Stolen Orb",
+    "DESCRIPTION": "Evoke a random Orb.",
+    "UPGRADE_DESCRIPTION": "Evoke 2 random Orbs."
   },
-  "theThief:StolenEmptyness11": {
-    "NAME": "Stolen StolenEmptyness",
-    "DESCRIPTION": "Apply !M! Poison.",
-    "UPGRADE_DESCRIPTION": "Apply !M! Poison. "
+  "theThief:StolenClaws": {
+    "NAME": "Stolen Claws",
+    "DESCRIPTION": "Deal !D! damage. NL Draw !M! cards.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Draw !M! cards."
   },
   "theThief:StolenEmptyness22": {
     "NAME": "Stolen StolenEmptyness",

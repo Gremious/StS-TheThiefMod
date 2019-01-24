@@ -15,6 +15,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import thiefmod.ThiefMod;
 import thiefmod.Utils;
+import thiefmod.actions.unique.StolenClaws;
+import thiefmod.actions.unique.StolenOrb;
 import thiefmod.cards.stolen.*;
 import thiefmod.powers.Unique.IllGottenGainsPower;
 
@@ -80,6 +82,8 @@ public class StealCardAction extends AbstractGameAction {
     {
         stolenCards = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
 
+        stolenCards.addToTop(new StolenClaws());
+        stolenCards.addToTop(new StolenOrb());
         stolenCards.addToTop(new StolenArmor());
         stolenCards.addToTop(new StolenWeapon());
         stolenCards.addToTop(new StolenAttitude());
