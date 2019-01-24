@@ -289,7 +289,6 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         BaseMod.addCard(new HideInTheShadows());
         BaseMod.addCard(new Sidestep());
         BaseMod.addCard(new StickyFingers());
-        BaseMod.addCard(new com.megacrit.cardcrawl.cards.green.CloakAndDagger());
         BaseMod.addCard(new CripplingStrike());
         BaseMod.addCard(new Lie());
         BaseMod.addCard(new SwiftSlash());

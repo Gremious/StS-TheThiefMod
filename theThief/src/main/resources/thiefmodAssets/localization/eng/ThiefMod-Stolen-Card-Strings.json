@@ -62,5 +62,60 @@
     "NAME": "Stolen Toxins",
     "DESCRIPTION": "Apply !M! Poison.",
     "UPGRADE_DESCRIPTION": "Apply !M! Poison. "
+  },
+  "theThief:StolenMoves": {
+    "NAME": "Stolen StolenEmptyness",
+    "DESCRIPTION": "Apply !M! Poison.",
+    "UPGRADE_DESCRIPTION": "Apply !M! Poison. "
+  },
+  "theThief:StolenEmptyness1": {
+    "NAME": "Stolen StolenEmptyness",
+    "DESCRIPTION": "Apply !M! Poison.",
+    "UPGRADE_DESCRIPTION": "Apply !M! Poison. "
+  },
+  "theThief:StolenEmptyness2": {
+    "NAME": "Stolen StolenEmptyness",
+    "DESCRIPTION": "Apply !M! Poison.",
+    "UPGRADE_DESCRIPTION": "Apply !M! Poison. "
+  },
+  "theThief:StolenEmptyness3": {
+    "NAME": "Stolen StolenEmptyness",
+    "DESCRIPTION": "Apply !M! Poison.",
+    "UPGRADE_DESCRIPTION": "Apply !M! Poison. "
+  },
+  "theThief:StolenEmptyness4": {
+    "NAME": "Stolen StolenEmptyness",
+    "DESCRIPTION": "Apply !M! Poison.",
+    "UPGRADE_DESCRIPTION": "Apply !M! Poison. "
+  },
+  "theThief:StolenEmptyness5": {
+    "NAME": "Stolen StolenEmptyness",
+    "DESCRIPTION": "Apply !M! Poison.",
+    "UPGRADE_DESCRIPTION": "Apply !M! Poison. "
+  },
+  "theThief:StolenEmptyness11": {
+    "NAME": "Stolen StolenEmptyness",
+    "DESCRIPTION": "Apply !M! Poison.",
+    "UPGRADE_DESCRIPTION": "Apply !M! Poison. "
+  },
+  "theThief:StolenEmptyness22": {
+    "NAME": "Stolen StolenEmptyness",
+    "DESCRIPTION": "Apply !M! Poison.",
+    "UPGRADE_DESCRIPTION": "Apply !M! Poison. "
+  },
+  "theThief:StolenEmptyness33": {
+    "NAME": "Stolen StolenEmptyness",
+    "DESCRIPTION": "Apply !M! Poison.",
+    "UPGRADE_DESCRIPTION": "Apply !M! Poison. "
+  },
+  "theThief:StolenEmptyness44": {
+    "NAME": "Stolen StolenEmptyness",
+    "DESCRIPTION": "Apply !M! Poison.",
+    "UPGRADE_DESCRIPTION": "Apply !M! Poison. "
+  },
+  "theThief:StolenEmptyness55": {
+    "NAME": "Stolen StolenEmptyness",
+    "DESCRIPTION": "Apply !M! Poison.",
+    "UPGRADE_DESCRIPTION": "Apply !M! Poison. "
   }
 }
