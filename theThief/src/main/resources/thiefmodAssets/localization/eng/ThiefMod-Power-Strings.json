@@ -203,5 +203,21 @@
     "DESCRIPTIONS": [
       "Non - Backstab cards no longer break Elusive."
     ]
+  },
+  "theThief:StolenCodePower": {
+    "NAME": "Stolen Code",
+    "DESCRIPTIONS": [
+      "Next turn, the next",
+      " card you play is played twice.",
+      " cards you play are played twice."
+    ]
+  },
+  "theThief:StolenCodeButWaitPower": {
+    "NAME": "Stolen Code",
+    "DESCRIPTIONS": [
+      "This turn, the next",
+      " card you play is played twice.",
+      " cards you play are played twice."
+    ]
   }
 }

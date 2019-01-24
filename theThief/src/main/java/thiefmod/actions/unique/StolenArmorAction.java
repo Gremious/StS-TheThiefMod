@@ -21,6 +21,7 @@ public class StolenArmorAction extends AbstractGameAction {
 		} else {
 			AbstractCard card = AbstractDungeon.player.drawPile.getTopCard();
 			if (card.upgraded) {
+
 				AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, this.blockGain));
 			}
 

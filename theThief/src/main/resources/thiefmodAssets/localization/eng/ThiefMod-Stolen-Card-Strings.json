@@ -98,20 +98,20 @@
     "DESCRIPTION": "Deal !D! damage. NL Draw !M! cards.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Draw !M! cards."
   },
-  "theThief:StolenEmptyness22": {
-    "NAME": "Stolen StolenEmptyness",
-    "DESCRIPTION": "Apply !M! Poison.",
-    "UPGRADE_DESCRIPTION": "Apply !M! Poison. "
+  "theThief:StolenTV": {
+    "NAME": "Stolen TV",
+    "DESCRIPTION": "Add a random power to your hand. NL It costs 0 this turn.",
+    "UPGRADE_DESCRIPTION": "Add a random power to your hand. NL It costs 0 this turn."
   },
-  "theThief:StolenEmptyness33": {
-    "NAME": "Stolen StolenEmptyness",
-    "DESCRIPTION": "Apply !M! Poison.",
-    "UPGRADE_DESCRIPTION": "Apply !M! Poison. "
+  "theThief:StolenMegaphone": {
+    "NAME": "Stolen Megaphone",
+    "DESCRIPTION": "Your next !M! power is played twice.",
+    "UPGRADE_DESCRIPTION": "Your next !M! powers are played twice."
   },
-  "theThief:StolenEmptyness44": {
-    "NAME": "Stolen StolenEmptyness",
-    "DESCRIPTION": "Apply !M! Poison.",
-    "UPGRADE_DESCRIPTION": "Apply !M! Poison. "
+  "theThief:StolenCode": {
+    "NAME": "Stolen Code",
+    "DESCRIPTION": "The first card you play next turn is played twice.",
+    "UPGRADE_DESCRIPTION": "The first card you play next turn is played twice."
   },
   "theThief:StolenEmptyness55": {
     "NAME": "Stolen StolenEmptyness",
