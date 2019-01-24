@@ -79,6 +79,9 @@ public class StealCardAction extends AbstractGameAction {
 
     {
         stolenCards = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+
+        stolenCards.addToTop(new StolenChaos());
+        stolenCards.addToTop(new StolenMoves());
         stolenCards.addToTop(new StolenGold());
         stolenCards.addToTop(new StolenCandy());
         stolenCards.addToTop(new StolenMomentum());
