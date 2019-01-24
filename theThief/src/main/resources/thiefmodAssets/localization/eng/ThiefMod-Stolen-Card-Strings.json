@@ -73,15 +73,15 @@
     "DESCRIPTION": "Create a copy of an Attack or Power card in your hand.",
     "UPGRADE_DESCRIPTION": "Create 2 copies of an Attack or Power card in your hand."
   },
-  "theThief:StolenEmptyness2": {
-    "NAME": "Stolen StolenEmptyness",
-    "DESCRIPTION": "Apply !M! Poison.",
-    "UPGRADE_DESCRIPTION": "Apply !M! Poison. "
+  "theThief:StolenAttitude": {
+    "NAME": "Stolen Attitude",
+    "DESCRIPTION": "Gain !B! Block. Draw !M! card.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. Draw !M! cards."
   },
   "theThief:StolenEmptyness3": {
     "NAME": "Stolen StolenEmptyness",
     "DESCRIPTION": "Apply !M! Poison.",
-    "UPGRADE_DESCRIPTION": "Apply !M! Poison. "
+    "UPGRADE_DESCRIPTION": "Apply !M! Poison."
   },
   "theThief:StolenEmptyness4": {
     "NAME": "Stolen StolenEmptyness",
