@@ -68,10 +68,10 @@
     "DESCRIPTION": "Play the top card of your draw pile and Exhaust it.",
     "UPGRADE_DESCRIPTION": "Play the top card of your draw pile and Exhaust it."
   },
-  "theThief:StolenEmptyness1": {
-    "NAME": "Stolen StolenEmptyness",
-    "DESCRIPTION": "Apply !M! Poison.",
-    "UPGRADE_DESCRIPTION": "Apply !M! Poison. "
+  "theThief:StolenMastery": {
+    "NAME": "Stolen Mastery",
+    "DESCRIPTION": "Create a copy of an Attack or Power card in your hand.",
+    "UPGRADE_DESCRIPTION": "Create 2 copies of an Attack or Power card in your hand."
   },
   "theThief:StolenEmptyness2": {
     "NAME": "Stolen StolenEmptyness",
