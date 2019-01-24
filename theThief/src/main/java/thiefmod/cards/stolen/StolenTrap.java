@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
+import thiefmod.patches.Unique.ThiefCardTags;
 
 public class StolenTrap extends CustomCard {
 
@@ -44,17 +45,13 @@ public class StolenTrap extends CustomCard {
     public StolenTrap() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.exhaust = true;
+
+        tags.add(ThiefCardTags.STOLEN);
     }
 
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new SetupAction());
-    }
-
-
-    @Override
-    public AbstractCard makeCopy() {
-        return new StolenTrap();
     }
 
     @Override

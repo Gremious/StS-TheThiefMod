@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
+import thiefmod.patches.Unique.ThiefCardTags;
 
 public class StolenGold extends CustomCard {
 
@@ -50,6 +51,8 @@ public class StolenGold extends CustomCard {
 
         this.exhaust = true;
         this.magicNumber = this.baseMagicNumber = MAGIC;
+
+        tags.add(ThiefCardTags.STOLEN);
     }
 
     // Actions the card should do.
@@ -59,14 +62,6 @@ public class StolenGold extends CustomCard {
         AbstractDungeon.actionManager.addToBottom(new thiefmod.actions.common.GainGoldAction(p, p, this.magicNumber));
     }
 
-
-    // Which card to return when making a copy of this card.
-    @Override
-    public AbstractCard makeCopy() {
-        return new StolenGold();
-    }
-
-    //Upgraded stats.
     @Override
     public void upgrade() {
         if (!this.upgraded) {

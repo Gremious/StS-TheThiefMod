@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.EnergizedPower;
 import thiefmod.ThiefMod;
+import thiefmod.patches.Unique.ThiefCardTags;
 
 public class StolenArtifice extends CustomCard {
 
@@ -44,6 +45,7 @@ public class StolenArtifice extends CustomCard {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.exhaust = true;
         this.magicNumber = this.baseMagicNumber = MAGIC;
+        tags.add(ThiefCardTags.STOLEN);
     }
 
     // Actions the card should do.
@@ -53,13 +55,6 @@ public class StolenArtifice extends CustomCard {
                 new EnergizedPower(p, this.magicNumber), this.magicNumber));
     }
 
-    // Which card to return when making a copy of this card.
-    @Override
-    public AbstractCard makeCopy() {
-        return new StolenArtifice();
-    }
-
-    // Upgraded stats.
     @Override
     public void upgrade() {
         if (!this.upgraded) {

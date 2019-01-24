@@ -10,12 +10,9 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
 import thiefmod.actions.unique.addRandomCardToHandAction;
+import thiefmod.patches.Unique.ThiefCardTags;
 
 public class StolenTechnique extends CustomCard {
-
-    /*
-     * Empty Base
-     */
 
     // TEXT DECLARATION 
 
@@ -30,6 +27,7 @@ public class StolenTechnique extends CustomCard {
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     // /TEXT DECLARATION/
+
 
     // STAT DECLARATION 	
 
@@ -52,12 +50,15 @@ public class StolenTechnique extends CustomCard {
 
     // /STAT DECLARATION/
 
+
     public StolenTechnique() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.exhaust = true;
         this.baseDamage = DAMAGE;
         this.baseBlock = BLOCK;
         this.magicNumber = this.baseMagicNumber = MAGIC;
+
+        tags.add(ThiefCardTags.STOLEN);
     }
 
     // Actions the card should do.
@@ -67,17 +68,6 @@ public class StolenTechnique extends CustomCard {
 
     }
 
-    // public void addCardToHandFromAll(int amount, AbstractCard c) {
-
-    //   }
-
-    // Which card to return when making a copy of this card.
-    @Override
-    public AbstractCard makeCopy() {
-        return new StolenTechnique();
-    }
-
-    //Upgraded stats.
     @Override
     public void upgrade() {
         if (!this.upgraded) {

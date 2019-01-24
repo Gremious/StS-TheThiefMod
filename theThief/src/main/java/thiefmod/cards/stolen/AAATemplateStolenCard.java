@@ -1,32 +1,37 @@
 package thiefmod.cards.stolen;
 
-import basemod.abstracts.CustomCard;
-import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
-import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
+import thiefmod.cards.AbstractBackstabCard;
+import thiefmod.patches.Unique.ThiefCardTags;
+import thiefmod.powers.Unique.SimilarSkillsPower;
 
-public class EmptyCard extends CustomCard {
+public class AAATemplateStolenCard extends AbstractBackstabCard {
 
 
-// TEXT DECLARATION 
+    // TEXT DECLARATION
 
-    public static final String ID = thiefmod.ThiefMod.makeID("AAAEmptyCard");
+    public static final String ID = ThiefMod.makeID("${NAME}");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:FlavorText");
-    public static final String FLAVOR_STRINGS[] = uiStrings.TEXT;
+
     public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_COMMON_ATTACK);
 
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
-// /TEXT DECLARATION/
+    // /TEXT DECLARATION/
 
-// STAT DECLARATION 	
+
+    // STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -45,43 +50,47 @@ public class EmptyCard extends CustomCard {
     private static final int MAGIC = 1;
     private static final int UPGRADED_PLUS_MAGIC = 1;
 
-// /STAT DECLARATION/
+    private static final int BACKSTAB = 1;
+    private static final int UPGRADED_PLUS_BACKSTAB = 1;
 
-    public EmptyCard() {
+    // /STAT DECLARATION/
+
+
+    public AAATemplateStolenCard() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.exhaust = true;
         this.baseDamage = DAMAGE;
         this.baseBlock = BLOCK;
         this.magicNumber = this.baseMagicNumber = MAGIC;
+
+
+        tags.add(ThiefCardTags.STOLEN);
+
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-/*
-		AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
-				new DamageInfo(p, this.damage, this.damageTypeForTurn),
-				AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-		
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
-				new SimilarSkillsPower(p, this.magicNumber), this.magicNumber));
-		
-		AbstractDungeon.actionManager.addToBottom(new thiefmod.actions.common.StealCardAction(
-				this.magicNumber, ADD_RANDOM, true, ADD_LOCATION, ADD_UPGRADED));
-*/
-    }
 
+        AbstractDungeon.actionManager.addToBottom(
+                new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new EmptyCard();
+        AbstractDungeon.actionManager.addToBottom(
+                new ApplyPowerAction(p, p, new SimilarSkillsPower(p, this.magicNumber), this.magicNumber));
+
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBaseCost(UPGRADE_COST);
-            this.rawDescription = UPGRADE_DESCRIPTION;
+
+            upgradeBaseCost(UPGRADE_COST);
+            upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
+            upgradeDamage(UPGRADE_PLUS_DAMAGE);
+            upgradeBlock(UPGRADE_PLUS_BLOCK);
+            upgradeBackstabNumber(UPGRADED_PLUS_BACKSTAB);
+
+//          rawDescription = UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }
     }

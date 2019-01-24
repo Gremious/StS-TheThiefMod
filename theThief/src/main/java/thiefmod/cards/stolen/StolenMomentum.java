@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
+import thiefmod.patches.Unique.ThiefCardTags;
 
 public class StolenMomentum extends CustomCard {
 
@@ -49,6 +50,8 @@ public class StolenMomentum extends CustomCard {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.exhaust = true;
         this.magicNumber = this.baseMagicNumber = MAGIC;
+
+        tags.add(ThiefCardTags.STOLEN);
     }
 
     // Actions the card should do.
@@ -65,13 +68,6 @@ public class StolenMomentum extends CustomCard {
 
     }
 
-    // Which card to return when making a copy of this card.
-    @Override
-    public AbstractCard makeCopy() {
-        return new StolenMomentum();
-    }
-
-    // Upgraded stats.
     @Override
     public void upgrade() {
         if (!this.upgraded) {

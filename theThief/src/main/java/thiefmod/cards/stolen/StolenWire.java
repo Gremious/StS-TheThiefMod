@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ChokePower;
 import thiefmod.ThiefMod;
+import thiefmod.patches.Unique.ThiefCardTags;
 
 public class StolenWire extends CustomCard {
 
@@ -48,17 +49,13 @@ public class StolenWire extends CustomCard {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.exhaust = true;
         this.magicNumber = this.baseMagicNumber = MAGIC;
+
+        tags.add(ThiefCardTags.STOLEN);
     }
 
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new ChokePower(m, this.magicNumber), this.magicNumber));
-    }
-
-
-    @Override
-    public AbstractCard makeCopy() {
-        return new StolenWire();
     }
 
     @Override
