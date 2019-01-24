@@ -63,7 +63,6 @@ public class AAATemplateStolenCard extends AbstractBackstabCard {
         this.baseBlock = BLOCK;
         this.magicNumber = this.baseMagicNumber = MAGIC;
 
-
         tags.add(ThiefCardTags.STOLEN);
 
     }

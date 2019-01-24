@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
 import thiefmod.patches.Unique.ThiefCardTags;
 
-public class StolenMoves extends CustomCard {
+public class StolenCandy extends CustomCard {
 
     /*
      * 0: gain 1 (2) energy
@@ -20,7 +20,7 @@ public class StolenMoves extends CustomCard {
 
 // TEXT DECLARATION 
 
-    public static final String ID = thiefmod.ThiefMod.makeID("StolenMoves");
+    public static final String ID = thiefmod.ThiefMod.makeID("StolenCandy");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:FlavorText");
     public static final String FLAVOR_STRINGS[] = uiStrings.TEXT;
@@ -47,7 +47,7 @@ public class StolenMoves extends CustomCard {
 
 // /STAT DECLARATION/
 
-    public StolenMoves() {
+    public StolenCandy() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
         this.exhaust = true;
@@ -60,7 +60,6 @@ public class StolenMoves extends CustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.GainEnergyAction(this.magicNumber));
-
     }
 
     @Override

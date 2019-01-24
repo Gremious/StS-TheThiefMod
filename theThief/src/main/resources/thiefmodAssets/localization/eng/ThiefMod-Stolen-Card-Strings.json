@@ -1,6 +1,6 @@
 {
-  "theThief:StolenMoves": {
-    "NAME": "Stolen Moves",
+  "theThief:StolenCandy": {
+    "NAME": "Stolen Candy",
     "DESCRIPTION": "Gain !M! energy. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Gain !M! energy. NL Exhaust."
   },
