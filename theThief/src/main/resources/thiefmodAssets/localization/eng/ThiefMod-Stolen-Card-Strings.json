@@ -75,18 +75,18 @@
   },
   "theThief:StolenAttitude": {
     "NAME": "Stolen Attitude",
-    "DESCRIPTION": "Gain !B! Block. Draw !M! card.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. Draw !M! cards."
+    "DESCRIPTION": "Gain !B! Block. NL Draw !M! card.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Draw !M! cards."
   },
-  "theThief:StolenEmptyness3": {
-    "NAME": "Stolen StolenEmptyness",
-    "DESCRIPTION": "Apply !M! Poison.",
-    "UPGRADE_DESCRIPTION": "Apply !M! Poison."
+  "theThief:StolenWeapon": {
+    "NAME": "Stolen Weapon",
+    "DESCRIPTION": "Gain !M! Strength. NL At the end of your turn, lose !M! strength.",
+    "UPGRADE_DESCRIPTION": "Gain !M! Strength."
   },
-  "theThief:StolenEmptyness4": {
-    "NAME": "Stolen StolenEmptyness",
-    "DESCRIPTION": "Apply !M! Poison.",
-    "UPGRADE_DESCRIPTION": "Apply !M! Poison. "
+  "theThief:StolenArmor": {
+    "NAME": "Stolen Armor",
+    "DESCRIPTION": "Upgrade 1 card in your hand. NL Draw !M! Card, and gain !B! block if you draw an upgraded card.",
+    "UPGRADE_DESCRIPTION": "pgrade 1 card in your hand. NL Draw !M! Cards, and gain !B! block if you draw an upgraded card."
   },
   "theThief:StolenEmptyness5": {
     "NAME": "Stolen StolenEmptyness",

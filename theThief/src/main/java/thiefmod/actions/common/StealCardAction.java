@@ -80,6 +80,8 @@ public class StealCardAction extends AbstractGameAction {
     {
         stolenCards = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
 
+        stolenCards.addToTop(new StolenArmor());
+        stolenCards.addToTop(new StolenWeapon());
         stolenCards.addToTop(new StolenAttitude());
         stolenCards.addToTop(new StolenMastery());
         stolenCards.addToTop(new StolenChaos());
