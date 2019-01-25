@@ -21,13 +21,18 @@ public class StolenShadowAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        allCards.addAll(player.drawPile.group);
-        allCards.addAll(player.discardPile.group);
-        allCards.addAll(player.exhaustPile.group);
-        allCards.addAll(player.hand.group);
-        for (AbstractCard c : allCards) {
-            c.modifyCostForCombat(-costReduce);
+
+        if (this.duration == Settings.ACTION_DUR_FAST) {
+            allCards.addAll(player.drawPile.group);
+            allCards.addAll(player.discardPile.group);
+            allCards.addAll(player.exhaustPile.group);
+            allCards.addAll(player.hand.group);
+            for (AbstractCard c : allCards) {
+                c.modifyCostForCombat(-costReduce);
+            }
         }
         tickDuration();
     }
+
 }
+

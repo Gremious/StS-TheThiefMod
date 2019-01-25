@@ -1,18 +1,16 @@
 package thiefmod.cards.stolen;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
+import basemod.BaseMod;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
+import thiefmod.actions.unique.StolenArsenalAction;
 import thiefmod.cards.AbstractBackstabCard;
 import thiefmod.patches.Unique.ThiefCardTags;
-import thiefmod.powers.Unique.SimilarSkillsPower;
 
 public class StolenArsenal extends AbstractBackstabCard {
 
@@ -41,17 +39,6 @@ public class StolenArsenal extends AbstractBackstabCard {
     private static final int COST = 2;
     private static final int UPGRADE_COST = 1;
 
-    private static final int DAMAGE = ;
-    private static final int UPGRADE_PLUS_DAMAGE = ;
-
-    private static final int BLOCK = ;
-    private static final int UPGRADE_PLUS_BLOCK = ;
-
-    private static final int MAGIC = ;
-    private static final int UPGRADED_PLUS_MAGIC = ;
-
-    private static final int BACKSTAB = ;
-    private static final int UPGRADED_PLUS_BACKSTAB = ;
 
     // /STAT DECLARATION/
 
@@ -59,10 +46,6 @@ public class StolenArsenal extends AbstractBackstabCard {
     public StolenArsenal() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.exhaust = true;
-        this.baseDamage = DAMAGE;
-        this.baseBlock = BLOCK;
-        this.magicNumber = this.baseMagicNumber = MAGIC;
-
 
         tags.add(ThiefCardTags.STOLEN);
 
@@ -71,11 +54,19 @@ public class StolenArsenal extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        int maximumHand = BaseMod.MAX_HAND_SIZE;
+        int currentHand = p.hand.group.size();
 
-        AbstractDungeon.actionManager.addToBottom(
-                new ApplyPowerAction(p, p, new SimilarSkillsPower(p, this.magicNumber), this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new StolenArsenalAction(p));
+        
+        do {
+            if (!AbstractDungeon.player.drawPile.isEmpty() || !AbstractDungeon.player.discardPile.isEmpty()) {
+                AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 1));
+                currentHand++;
+            } else return;
+        }
+        while (currentHand < maximumHand);
+
 
     }
 
@@ -85,10 +76,6 @@ public class StolenArsenal extends AbstractBackstabCard {
             this.upgradeName();
 
             upgradeBaseCost(UPGRADE_COST);
-            upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
-            upgradeDamage(UPGRADE_PLUS_DAMAGE);
-            upgradeBlock(UPGRADE_PLUS_BLOCK);
-            upgradeBackstabNumber(UPGRADED_PLUS_BACKSTAB);
 
 //          rawDescription = UPGRADE_DESCRIPTION;
             this.initializeDescription();

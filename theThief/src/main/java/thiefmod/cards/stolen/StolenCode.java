@@ -1,4 +1,4 @@
-package thiefmod.actions.unique;
+package thiefmod.cards.stolen;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;

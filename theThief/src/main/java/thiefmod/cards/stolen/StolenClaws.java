@@ -1,10 +1,10 @@
-package thiefmod.actions.unique;
+package thiefmod.cards.stolen;
 
+import basemod.helpers.BaseModCardTags;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -16,12 +16,12 @@ import thiefmod.cards.AbstractBackstabCard;
 import thiefmod.patches.Unique.ThiefCardTags;
 import thiefmod.powers.Unique.SimilarSkillsPower;
 
-public class StolenTV extends AbstractBackstabCard {
+public class StolenClaws extends AbstractBackstabCard {
 
 
     // TEXT DECLARATION
 
-    public static final String ID = ThiefMod.makeID("StolenTV");
+    public static final String ID = ThiefMod.makeID("StolenClaws");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_COMMON_ATTACK);
@@ -43,22 +43,33 @@ public class StolenTV extends AbstractBackstabCard {
     private static final int COST = 1;
     private static final int UPGRADE_COST = 0;
 
+    private static final int DAMAGE = 4;
+
+    private static final int MAGIC = 2;
 
     // /STAT DECLARATION/
 
 
-    public StolenTV() {
+    public StolenClaws() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.exhaust = true;
+
+        this.baseDamage = DAMAGE;
+        this.magicNumber = this.baseMagicNumber = MAGIC;
 
         tags.add(ThiefCardTags.STOLEN);
 
     }
 
+    @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractCard c = AbstractDungeon.returnTrulyRandomCardInCombat(CardType.POWER).makeCopy();
-        c.setCostForTurn(0);
-        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(c, true));
+
+        AbstractDungeon.actionManager.addToBottom(
+                new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+
+        AbstractDungeon.actionManager.addToBottom(
+                new DrawCardAction(p,this.magicNumber));
+
     }
 
     @Override
