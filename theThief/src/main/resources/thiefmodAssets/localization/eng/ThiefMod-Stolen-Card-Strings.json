@@ -118,23 +118,27 @@
     "DESCRIPTION": "Costs 1 less Energy for each Power card played this combat. NL Gain !B! Block.",
     "UPGRADE_DESCRIPTION": "Costs 1 less Energy for each Power card played this combat. NL Gain !B! Block."
   },
-  "theThief:RARE_THIEF_CARD": {
-    "NAME": "Stolen Shield Generator",
+  "theThief:StolenShadow": {
+    "NAME": "Stolen Shadow",
+    "DESCRIPTION": "Reduce to cost of all cards in your deck by !M!.",
+    "UPGRADE_DESCRIPTION": "Reduce to cost of all cards in your deck by !M!.",
+    "EXTENDED_DESCRIPTION": [
+      "[#FEE130]Rare[] [#FEE130]Find:[]",
+      "[#FEE130]It[] [#FEE130]takes[] [#FEE130]an[] [#FEE130]expert[] [#FEE130]to[] [#FEE130]steal[] [#FEE130]one's[] [#FEE130]own[] [#FEE130]shadow.[]"
+    ]
+  },
+  "theThief:StolenArsenal": {
+    "NAME": "Stolen Arsenal",
     "DESCRIPTION": "Costs 1 less Energy for each Power card played this combat. NL Gain !B! Block.",
     "UPGRADE_DESCRIPTION": "Costs 1 less Energy for each Power card played this combat. NL Gain !B! Block."
   },
-  "theThief:RARE_SILENT_CARD": {
-    "NAME": "Stolen Shield Generator",
+  "theThief:StolenBlood": {
+    "NAME": "Stolen Blood",
     "DESCRIPTION": "Costs 1 less Energy for each Power card played this combat. NL Gain !B! Block.",
     "UPGRADE_DESCRIPTION": "Costs 1 less Energy for each Power card played this combat. NL Gain !B! Block."
   },
-  "theThief:RARE_IRONCLAD_CARD": {
-    "NAME": "Stolen Shield Generator",
-    "DESCRIPTION": "Costs 1 less Energy for each Power card played this combat. NL Gain !B! Block.",
-    "UPGRADE_DESCRIPTION": "Costs 1 less Energy for each Power card played this combat. NL Gain !B! Block."
-  },
-  "theThief:RARE_DEFECT_CARD": {
-    "NAME": "Stolen Shield Generator",
+  "theThief:StolenCore": {
+    "NAME": "Stolen Core",
     "DESCRIPTION": "Costs 1 less Energy for each Power card played this combat. NL Gain !B! Block.",
     "UPGRADE_DESCRIPTION": "Costs 1 less Energy for each Power card played this combat. NL Gain !B! Block."
   }

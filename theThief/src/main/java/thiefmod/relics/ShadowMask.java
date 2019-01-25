@@ -33,6 +33,20 @@ public class ShadowMask extends CustomRelic {
     }
 
     @Override
+    public void obtain() {
+        if (AbstractDungeon.player.hasRelic(ThievesMask.ID)) {
+            for (int i = 0; i < AbstractDungeon.player.relics.size(); ++i) {
+                if (AbstractDungeon.player.relics.get(i).relicId.equals(ThievesMask.ID)) {
+                    instantObtain(AbstractDungeon.player, i, true);
+                    break;
+                }
+            }
+        } else {
+            super.obtain();
+        }
+    }
+
+    @Override
     public boolean canSpawn() {
         return AbstractDungeon.player.hasRelic(ThievesMask.ID);
     }

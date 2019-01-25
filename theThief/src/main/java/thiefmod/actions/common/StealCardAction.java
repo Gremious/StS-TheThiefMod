@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDiscardEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDrawPileEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
+import com.sun.org.apache.xerces.internal.impl.dv.xs.AbstractDateTimeDV;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import thiefmod.ThiefMod;
@@ -114,6 +115,12 @@ public class StealCardAction extends AbstractGameAction {
         stolenCards.addToTop(new StolenWire());
         stolenCards.addToTop(new StolenTrap());
         stolenCards.addToTop(new StolenToxins());
+
+        // Rares:
+        stolenCards.addToTop(new StolenShadow());
+        stolenCards.addToTop(new StolenArsenal());
+        stolenCards.addToTop(new StolenBlood());
+        stolenCards.addToTop(new StolenCore());
 
         if (hasConspire) {
             AbstractCard banana = CardLibrary.getCopy("conspire:Banana");
