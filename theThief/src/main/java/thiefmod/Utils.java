@@ -19,7 +19,6 @@ import java.util.ArrayList;
 public class Utils {
 
     // I have absolutely no idea how this works. I copied it from the Mad Scientist and it works. So hey it looks cool.
-    // If it breaks I'll probably try and substitute it for modal choice.
 
     // TODO: Test these bad-boy hardcoded strings in a different language.
 

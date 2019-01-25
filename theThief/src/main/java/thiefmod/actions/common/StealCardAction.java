@@ -122,37 +122,64 @@ public class StealCardAction extends AbstractGameAction {
         stolenCards.addToTop(new StolenCore());
 
         if (hasConspire) {
-            AbstractCard banana = CardLibrary.getCopy("conspire:Banana");
-            if (banana != null) {
-                banana.name = "Stolen " + banana.name;
-                banana.exhaustOnUseOnce = true;
-                stolenCards.addToTop(banana);
-            }
-            // ---
-            AbstractCard treasure = CardLibrary.getCopy("conspire:Treasure");
-            if (treasure != null) {
-                treasure.name = "Stolen " + treasure.name;
-                treasure.exhaustOnUseOnce = true;
-                stolenCards.addToTop(treasure);
-            }
-            // ---
-        }
-        if (hasHubris && hasInfiniteSpire && hasReplayTheSpire) {
-            int roll = AbstractDungeon.relicRng.random(99);
-            if (roll < 10) {
-                ArrayList<AbstractCard> blackCards = new ArrayList<>();
+            ArrayList<AbstractCard> conspireCards = new ArrayList<>();
+            conspireCards.add(CardLibrary.getCopy("conspire:Banana"));
+            conspireCards.add(CardLibrary.getCopy("conspire:Treasure"));
 
-                blackCards.add(CardLibrary.getCopy("conspire:Banana"));
-                blackCards.add(CardLibrary.getCopy("conspire:Banana"));
-                blackCards.add(CardLibrary.getCopy("conspire:Banana"));
-                blackCards.add(CardLibrary.getCopy("conspire:Banana"));
-
-                for (AbstractCard c : blackCards) {
-                    if (c != null)
+            for (AbstractCard c : conspireCards) {
+                if (c != null) {
                     c.name = "Stolen " + c.name;
                     c.exhaustOnUseOnce = true;
                     stolenCards.addToTop(c);
+                }
+            }
 
+        }
+        if (hasHubris || hasInfiniteSpire || hasReplayTheSpire) {
+            ArrayList<AbstractCard> blackCards = new ArrayList<>();
+            int roll = AbstractDungeon.relicRng.random(99);
+            if (roll < 4) {
+                if (hasHubris) {
+
+                    blackCards.add(CardLibrary.getCopy("hubris:Fate"));
+                    blackCards.add(CardLibrary.getCopy("hubris:InfiniteBlow"));
+                    blackCards.add(CardLibrary.getCopy("hubris:Rewind"));
+
+                }
+                if (hasInfiniteSpire) {
+
+                    blackCards.add(CardLibrary.getCopy("infinitespire:Collect"));
+                    blackCards.add(CardLibrary.getCopy("infinitespire:DeathsTouch"));
+                    blackCards.add(CardLibrary.getCopy("infinitespire:Execution"));
+                    blackCards.add(CardLibrary.getCopy("infinitespire:FinalStrike"));
+                    blackCards.add(CardLibrary.getCopy("infinitespire:Fortify"));
+                    blackCards.add(CardLibrary.getCopy("infinitespire:FutureSight"));
+                    blackCards.add(CardLibrary.getCopy("infinitespire:Gouge"));
+                    blackCards.add(CardLibrary.getCopy("infinitespire:Menacing"));
+                    blackCards.add(CardLibrary.getCopy("infinitespire:NeuralNetwork"));
+                    blackCards.add(CardLibrary.getCopy("infinitespire:Punishment"));
+                    blackCards.add(CardLibrary.getCopy("infinitespire:TheBestDefense"));
+                    blackCards.add(CardLibrary.getCopy("infinitespire:UltimateForm"));
+
+                }
+                if (hasReplayTheSpire) {
+
+                    blackCards.add(CardLibrary.getCopy("ReplayTheSpireMod:Chaos Vortex"));
+                    blackCards.add(CardLibrary.getCopy("Replay:Dark Deal"));
+                    blackCards.add(CardLibrary.getCopy("ReplayTheSpireMod:Dark Transmutation"));
+                    blackCards.add(CardLibrary.getCopy("ReplayTheSpireMod:Echo Chamber"));
+                    blackCards.add(CardLibrary.getCopy("ReplayTheSpireMod:Echoes of Time"));
+                    blackCards.add(CardLibrary.getCopy("Replay:Fractal Strike"));
+                    blackCards.add(CardLibrary.getCopy("ReplayTheSpireMod:Haul"));
+                    blackCards.add(CardLibrary.getCopy("ReplayTheSpireMod:??????????????????????"));
+
+                }
+                for (AbstractCard c : blackCards) {
+                    if (c != null) {
+                        //    c.name = "Stolen " + c.name;
+                        c.exhaustOnUseOnce = true;
+                        stolenCards.addToTop(c);
+                    }
                 }
             }
         }
