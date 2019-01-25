@@ -17,8 +17,8 @@
   },
   "theThief:SwiftSlash": {
     "NAME": "Swift Slash",
-    "DESCRIPTION": "Deal !D! damage. Draw !M! cards.",
-    "UPGRADE_DESCRIPTION": "",
+    "DESCRIPTION": "Deal !D! damage. Draw !M! card.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. Draw !M! cards.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]As[] [#88888]fundamental[] [#88888]as[] [#88888]it[] [#88888]gets.[]"
     ]
@@ -127,8 +127,8 @@
   },
   "theThief:HideInTheShadows": {
     "NAME": "Hide In The Shadows",
-    "DESCRIPTION": "Gain !B! Block. Ethereal. Has exhaust if you’ve played an attack this turn.",
-    "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+    "DESCRIPTION": "Gain !B! Block. NL Ethereal. NL Has Exhaust if you’ve played an attack this turn.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Ethereal. NL Has Exhaust if you’ve played an attack this turn.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]",
       " NL Exhaust."

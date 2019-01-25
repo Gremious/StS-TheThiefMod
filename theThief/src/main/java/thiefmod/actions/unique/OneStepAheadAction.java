@@ -28,14 +28,14 @@ public class OneStepAheadAction extends AbstractGameAction {
 
     public void update() {
         if (this.targetMonster != null && this.targetMonster.intent == Intent.DEFEND || this.targetMonster.intent == Intent.DEFEND_BUFF || this.targetMonster.intent == Intent.ATTACK_DEBUFF || this.targetMonster.intent == Intent.DEFEND_DEBUFF) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
-                    AbstractDungeon.player, AbstractDungeon.player, new ShadowstepPower(AbstractDungeon.player, AbstractDungeon.player, this.magicNum), this.magicNum));
-        } else if (this.targetMonster.intent == Intent.ATTACK || this.targetMonster.intent == Intent.ATTACK_BUFF || this.targetMonster.intent == Intent.ATTACK_DEBUFF || this.targetMonster.intent == Intent.ATTACK_DEFEND) {
-            {
-                for (int i = 0; i < timesNum; i++)
+            for (int i = 0; i < timesNum; i++)
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(this.targetMonster,
                         new DamageInfo(AbstractDungeon.player, this.damageNum, this.damageType),
                         AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+        } else if (this.targetMonster.intent == Intent.ATTACK || this.targetMonster.intent == Intent.ATTACK_BUFF || this.targetMonster.intent == Intent.ATTACK_DEBUFF || this.targetMonster.intent == Intent.ATTACK_DEFEND) {
+            {
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
+                        AbstractDungeon.player, AbstractDungeon.player, new ShadowstepPower(AbstractDungeon.player, AbstractDungeon.player, this.magicNum), this.magicNum));
 
             }
         } else {

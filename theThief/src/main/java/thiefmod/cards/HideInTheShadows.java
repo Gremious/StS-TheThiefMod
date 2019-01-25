@@ -37,7 +37,7 @@ public class HideInTheShadows extends AbstractBackstabCard {
     private static final CardType TYPE = CardType.SKILL;
 
     private static final int COST = 1;
-    private static ArrayList<AbstractCard> thisTurnCardsArray = AbstractDungeon.actionManager.cardsPlayedThisTurn;
+    private ArrayList<AbstractCard> thisTurnCardsArray = AbstractDungeon.actionManager.cardsPlayedThisTurn;
 
 
     private static final int BLOCK = 10;
@@ -57,23 +57,23 @@ public class HideInTheShadows extends AbstractBackstabCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (AbstractCard AttackCheckCard : thisTurnCardsArray) {
             if (AttackCheckCard.type == CardType.ATTACK)
-                this.exhaustOnUseOnce = true;
+                exhaustOnUseOnce = true;
             return;
         }
 
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(
-                p, p, this.block));
+                p, p, block));
     }
 
     @Override
     public void applyPowers() {
         super.applyPowers();
 
-        this.rawDescription = this.DESCRIPTION;
+        this.rawDescription = DESCRIPTION;
 
         for (AbstractCard AttackCheckCard : thisTurnCardsArray) {
             if (AttackCheckCard.type == CardType.ATTACK)
-                this.rawDescription = this.DESCRIPTION + this.EXTENDED_DESCRIPTION[1];
+                this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[1];
         }
 
         this.initializeDescription();
@@ -91,7 +91,6 @@ public class HideInTheShadows extends AbstractBackstabCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeBlock(UPGRADE_PLUS_BLOCK);
-//          this.rawDescription = UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }
     }

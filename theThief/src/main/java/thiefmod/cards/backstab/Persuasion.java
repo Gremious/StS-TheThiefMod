@@ -2,7 +2,6 @@ package thiefmod.cards.backstab;
 
 import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -70,12 +69,12 @@ public class Persuasion extends AbstractBackstabCard {
 
         if (count <= 1) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
-                    p, p, new DexterityPower(
+                    p, p, new StrengthPower(
                     p, this.magicNumber), this.magicNumber));
 
         } else {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
-                    p, p, new StrengthPower(
+                    p, p, new DexterityPower(
                     p, this.magicNumber), this.magicNumber));
         }
     }

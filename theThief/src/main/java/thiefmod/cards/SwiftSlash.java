@@ -3,7 +3,6 @@ package thiefmod.cards;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -65,10 +64,18 @@ public class SwiftSlash extends AbstractBackstabCard {
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.magicNumber));
     }
 
-    // Which card to return when making a copy of this card.
+
     @Override
-    public AbstractCard makeCopy() {
-        return new SwiftSlash();
+    public void applyPowers() {
+        super.applyPowers();
+
+        if (this.magicNumber >= 2) {
+            this.rawDescription = UPGRADE_DESCRIPTION;
+        } else {
+            this.rawDescription = DESCRIPTION;
+        }
+
+        this.initializeDescription();
     }
 
     //Upgraded stats.
