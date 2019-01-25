@@ -24,6 +24,7 @@ import thiefmod.cards.backstab.*;
 import thiefmod.characters.TheThief;
 import thiefmod.patches.Character.AbstractCardEnum;
 import thiefmod.patches.Character.TheThiefEnum;
+import thiefmod.relics.ShadowMask;
 import thiefmod.relics.ThievesMask;
 import thiefmod.variabls.BackstabBlock;
 import thiefmod.variabls.BackstabDamage;
@@ -228,6 +229,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         logger.info("Add relics");
 
         BaseMod.addRelicToCustomPool(new ThievesMask(), AbstractCardEnum.THIEF_GRAY);
+        BaseMod.addRelicToCustomPool(new ShadowMask(), AbstractCardEnum.THIEF_GRAY);
 
         logger.info("done adding relics!");
     }
@@ -438,6 +440,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         BaseMod.loadCustomStringsFile(RelicStrings.class,
                 "thiefmodAssets/localization/eng/ThiefMod-Relic-Strings.json");
 
+        // UI Strings
         BaseMod.loadCustomStringsFile(UIStrings.class,
                 "thiefmodAssets/localization/eng/ThiefMod-UI-Strings.json");
 
