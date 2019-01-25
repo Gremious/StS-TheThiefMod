@@ -19,7 +19,7 @@ public class ShadowMask extends CustomRelic {
     public static final Logger logger = LogManager.getLogger(ThiefMod.class.getName());
 
     public ShadowMask() {
-        super(ID, new Texture(IMG), new Texture(OUTLINE), RelicTier.STARTER, LandingSound.MAGICAL);
+        super(ID, new Texture(IMG), new Texture(OUTLINE), RelicTier.BOSS, LandingSound.MAGICAL);
         tips.clear();
         tips.add(new PowerTip(name, description));
         initializeTips();
@@ -32,6 +32,10 @@ public class ShadowMask extends CustomRelic {
         AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new IntangiblePlayerPower(AbstractDungeon.player, 1), 1));
     }
 
+    @Override
+    public boolean canSpawn() {
+        return AbstractDungeon.player.hasRelic(ThievesMask.ID);
+    }
 
     // Description
     @Override

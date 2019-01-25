@@ -26,10 +26,10 @@ public class ThievesMask extends CustomRelic {
     public static final String ID = thiefmod.ThiefMod.makeID("ThievesMask");
     public static final String IMG = "thiefmodAssets/images/relics/ThievesMask.png";
     public static final String OUTLINE ="thiefmodAssets/images/relics/outline/ThievesMask.png";
-    public static final int DISCOUNT = 100;
     public static final Logger logger = LogManager.getLogger(ThiefMod.class.getName());
+
     public ThievesMask() {
-        super(ID, new Texture(IMG), new Texture(OUTLINE), RelicTier.STARTER, LandingSound.MAGICAL);
+        super(ID, new Texture(IMG), new Texture(OUTLINE), RelicTier.STARTER, LandingSound.FLAT);
         tips.clear();
         tips.add(new PowerTip(name, description));
         tips.add(new PowerTip("Synergy",
@@ -42,7 +42,7 @@ public class ThievesMask extends CustomRelic {
     public void atBattleStart() {
         this.flash();
         AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new TheThiefThieveryPower(AbstractDungeon.player, AbstractDungeon.player, false, 3), 1));
-        AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+
     }
 
     @Override

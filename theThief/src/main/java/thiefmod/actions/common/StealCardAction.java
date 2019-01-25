@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.cards.curses.Shame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
@@ -31,6 +32,7 @@ public class StealCardAction extends AbstractGameAction {
     private boolean upgraded;
     private String location;
     private int copies;
+    private int curseCounter;
 
     private ArrayList<AbstractCard> cardsToAdd = new ArrayList<>();
 
@@ -52,6 +54,7 @@ public class StealCardAction extends AbstractGameAction {
             if (random) { // Random card? If yes add a random card (without replacement).
                 cardsToAdd = getRandomStolenCards(amount, true);
                 for (int i = 0; i < copies; i++) {
+                    curseCounter();
                     addStolenCards();
                 }
                 cardsToAdd.clear();
@@ -60,14 +63,17 @@ public class StealCardAction extends AbstractGameAction {
                     for (int i = 0; i < copies; i++) {
                         AbstractCard c = AbstractDungeon.cardRewardScreen.codexCard.makeStatEquivalentCopy();
                         cardsToAdd.add(c);
+                        curseCounter();
                     }
                     AbstractDungeon.cardRewardScreen.codexCard = null;
                 }
                 if (amount > 0) {
                     amount--;
                     Utils.openCardRewardsScreen(getRandomStolenCards(3, false), true);
+                    curseCounter();
                     return; // Don't tickDuration, So that we can keep spamming the discover screen == amount of cards requested.
                 } else {
+                    curseCounter();
                     addStolenCards();
                 }
                 cardsToAdd.clear();
@@ -195,7 +201,20 @@ public class StealCardAction extends AbstractGameAction {
         }
 
     }
+//, (float) Settings.WIDTH / 2.0f, (float) Settings.HEIGHT / 2.0f - See if ShowCardAndAddToDiscardEffect looks find without noting this X and Y
 
-    //, (float) Settings.WIDTH / 2.0f, (float) Settings.HEIGHT / 2.0f - See if ShowCardAndAddToDiscardEffect looks find without noting this X and Y
+
 // ========================
+
+    private void curseCounter() {
+        curseCounter++;
+        if (curseCounter == 5) {
+            curseCounter = 0;
+            AbstractCard etherealCurse = CardLibrary.getCopy(Shame.ID);
+            etherealCurse.isEthereal = true;
+            etherealCurse.rawDescription += " NL Etherial.";
+            AbstractDungeon.actionManager.actions.add(new MakeTempCardInHandAction(etherealCurse, 1));
+        }
+    }
+
 }
