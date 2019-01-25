@@ -63,6 +63,11 @@
     "DESCRIPTION": "Apply !M! Poison.",
     "UPGRADE_DESCRIPTION": "Apply !M! Poison. "
   },
+  "theThief:StolenMoves": {
+    "NAME": "Stolen Moves",
+    "DESCRIPTION": "Gain !M! Dexterity. NL Gain !B! block.",
+    "UPGRADE_DESCRIPTION": "Gain !M! Dexterity. NL Gain !B! block."
+  },
   "theThief:StolenChaos": {
     "NAME": "Stolen Chaos",
     "DESCRIPTION": "Play the top card of your draw pile and Exhaust it.",

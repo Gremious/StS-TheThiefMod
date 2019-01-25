@@ -13,13 +13,15 @@ import thiefmod.powers.Common.ShadowstepPower;
 public class OneStepAheadAction extends AbstractGameAction {
     private int magicNum;
     private int damageNum;
+    private int timesNum;
     private AbstractMonster targetMonster;
 
-    public OneStepAheadAction(int magicNum, int damageNum, AbstractMonster m) {
+    public OneStepAheadAction(int magicNum, int damageNum, int timesNum, AbstractMonster m) {
         this.duration = 0.0F;
         this.actionType = ActionType.WAIT;
         this.magicNum = magicNum;
         this.damageNum = damageNum;
+        this.timesNum = timesNum;
         this.targetMonster = m;
     }
 
@@ -30,13 +32,11 @@ public class OneStepAheadAction extends AbstractGameAction {
                     AbstractDungeon.player, AbstractDungeon.player, new ShadowstepPower(AbstractDungeon.player, AbstractDungeon.player, this.magicNum), this.magicNum));
         } else if (this.targetMonster.intent == Intent.ATTACK || this.targetMonster.intent == Intent.ATTACK_BUFF || this.targetMonster.intent == Intent.ATTACK_DEBUFF || this.targetMonster.intent == Intent.ATTACK_DEFEND) {
             {
+                for (int i = 0; i < timesNum; i++)
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(this.targetMonster,
                         new DamageInfo(AbstractDungeon.player, this.damageNum, this.damageType),
                         AbstractGameAction.AttackEffect.SLASH_VERTICAL));
 
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(this.targetMonster,
-                        new DamageInfo(AbstractDungeon.player, this.damageNum, this.damageType),
-                        AbstractGameAction.AttackEffect.SLASH_VERTICAL));
             }
         } else {
             AbstractDungeon.actionManager.addToTop(new TalkAction(

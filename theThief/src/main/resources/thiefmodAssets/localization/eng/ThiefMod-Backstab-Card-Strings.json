@@ -6,7 +6,7 @@
       "[#88888]Flavor[] [#88888]Text[]",
       "Deal !D! Damage.",
       " NL Backstab: Deal !theThief:BackstabTimesDamage! instead.",
-      " NL Backstab: #rDeal !theThief:BackstabTimesDamage! #rinstead."
+      " NL Backstab: [#fa5555]Deal[] !theThief:BackstabTimesDamage! [#fa5555]instead.[]"
     ]
   },
   "theThief:Persuasion": {
@@ -16,7 +16,7 @@
       "[#88888]Flavor[] [#88888]Text[]",
       "Gain !M! Dexterity. ",
       " NL Backstab: Gain !M! Strength instead.",
-      " NL Backstab: #rGain !M! #rStrength #rinstead."
+      " NL Backstab: [#fa5555]Gain[] !M! [#fa5555]Strength[] [#fa5555]instead.[]"
     ]
   },
   "theThief:Backstep": {
@@ -26,7 +26,7 @@
       "[#88888]Flavor[] [#88888]Text[]",
       "Fetch !M! card from your discard pile. ",
       " NL Backstab: It also costs !M! less. NL Exhaustive !stslib:ex!.",
-      " NL Backstab: #rIt #ralso #rcosts !M! #rless. NL Exhaustive !stslib:ex!.",
+      " NL Backstab: [#fa5555]It[] [#fa5555]also[] [#fa5555]costs[] !M! [#fa5555]less.[] NL Exhaustive !stslib:ex!.",
       "Fetch !M! cards from your discard pile. NL Backstab: They also costs !M! less. NL Exhaustive !stslib:ex!."
     ]
   },
@@ -38,9 +38,9 @@
       "Deal !D! damage. NL Add !theThief:Magic! Void to your discard pile. ",
       "Deal !D! damage. NL Add !theThief:Magic! Voids to your discard pile. ",
       " NL Backstab: Draw !M! card.",
-      " NL Backstab: #rDraw !M! #rcard.",
+      " NL Backstab: [#fa5555]Draw[] !M! [#fa5555]card.[]",
       " NL Backstab: Draw !M! cards.",
-      " NL Backstab: #rDraw !M! #rcards."
+      " NL Backstab: [#fa5555]Draw[] !M! [#fa5555]cards.[]"
     ]
   },
   "theThief:DirtyDeedsDDC": {
@@ -49,8 +49,8 @@
     "EXTENDED_DESCRIPTION": [
       "[#88888]Filthy[] [#88888]acts[] [#88888]at[] [#88888]a[] [#88888]reasonable[] [#88888]price.[]",
       "Deal !D! damage. NL If this kills a non-minion enemy, gain !M! gold. ",
-      " NL Backstab: Gain !theThief:Magic! #ygold instead",
-      " NL Backstab: #rGain !theThief:Magic! #rgold #rinstead."
+      " NL Backstab: Gain !theThief:Magic! gold instead",
+      " NL Backstab: [#fa5555]Gain[] !theThief:Magic! [#fa5555]gold[] [#fa5555]instead.[]"
     ]
   },
   "theThief:ViciousAssault": {
@@ -60,7 +60,7 @@
       "[#88888]Flavor[] [#88888]Text[]",
       "Deal !D! damage !M! times. ",
       " NL Backstab: !theThief:Magic! times instead",
-      " NL Backstab: !theThief:Magic! #rtimes #rinstead."
+      " NL Backstab: !theThief:Magic! [#fa5555]times[] [#fa5555]instead.[]"
     ]
   },
   "theThief:Prep": {
@@ -70,8 +70,8 @@
     "EXTENDED_DESCRIPTION": [
       "[#88888]Strike[] [#88888]>[] [#88888]Prep[] [#88888]>[] [#88888]Abandon[] [#88888]Run.[]",
       "Gain !B! Block. ",
-      " NL Backstab: Also gain [E].",
-      " NL Backstab: #rAlso #rgain [E]."
+      " NL Backstab: Also gain !M! [E].",
+      " NL Backstab: [#fa5555]Also[] [#fa5555]gain[] !M! [E]."
     ]
   },
   "theThief:CripplingStrike": {
@@ -82,7 +82,7 @@
       "[#88888]Flavor[] [#88888]Text[]",
       "Deal !D! damage and apply !M! Weak. ",
       " NL Backstab: Apply !M! Vulnerable instead.",
-      " NL Backstab: #rApply !M! #rVulnerable #rinstead."
+      " NL Backstab: [#fa5555]Apply[] !M! [#fa5555]Vulnerable[] [#fa5555]instead.[]"
     ]
   },
   "theThief:StickyFingers": {
@@ -92,7 +92,7 @@
       "[#88888]They[] [#88888]make[] [#88888]wearing[] [#88888]gloves[] [#88888]very[][#88888]uncomfortable.[]",
       "Draw !M! cards. ",
       "NL Backstab: Steal !theThief:Magic! cards instead.",
-      "NL Backstab: #rSteal !theThief:Magic! #rcards #rinstead."
+      "NL Backstab: [#fa5555]Steal[] !theThief:Magic! [#fa5555]cards[] [#fa5555]instead.[]"
     ]
   },
   "theThief:CloakAndDagger": {
@@ -102,17 +102,17 @@
       "[#88888]Flavor[] [#88888]Text[]",
       "Gain !B! block. ",
       "NL Backstab: Deal !D! Damage instead",
-      "NL Backstab: #rDeal !D! #rDamage #rinstead."
+      "NL Backstab: [#fa5555]Deal[] !D! [#fa5555]Damage[] [#fa5555]instead.[]"
     ]
   },
   "theThief:PerfectDagger": {
     "NAME": "Perfect Dagger",
     "DESCRIPTION": "Deal !D! damage. NL Backstab: Also increase this card's damage by !M! permanently.",
     "EXTENDED_DESCRIPTION": [
-      "#yA #ygreat#yartifact, #yre-forged #yre-lost #yre-found #yand #yre-stolen #ytime #yand #ytime #yagain, #yby #yclans #yof #ysilence #yand #yburning #yblood #yalike ",
+      "[#FEE130]A[] [#FEE130]great[] [#FEE130]artifact,[] [#FEE130]re-forged[] [#FEE130]re-lost[] [#FEE130]re-found[] [#FEE130]and[] [#FEE130]re-stolen[] [#FEE130]time[] [#FEE130]and[] [#FEE130]time[] [#FEE130]again,[] [#FEE130]by[] [#FEE130]clans[] [#FEE130]of[] [#FEE130]silence[] [#FEE130]and[] [#FEE130]burning[] [#FEE130]blood[] [#FEE130]alike.[]",
       "Deal !D! damage. ",
       " NL Backstab: Also increase this card's damage by !M! permanently.",
-      " NL Backstab: #rAlso #rincrease #rthis #rcard's #rdamage #rby !M! #rpermanently."
+      " NL Backstab: [#fa5555]Also[] [#fa5555]increase[] [#fa5555]this[] [#fa5555]card's[] [#fa5555]damage[] [#fa5555]by[] !M! [#fa5555]permanently.[]"
     ]
   },
   "theThief:ShadowForm": {
@@ -122,7 +122,7 @@
     "EXTENDED_DESCRIPTION": [
       "[#FEE130]Embrace[] [#FEE130]your[] [#FEE130]true[] [#FEE130]form.[]",
       " NL Backstab: Play !theThief:BkStMgc! instead",
-      " NL Backstab: #rPlay !theThief:BkStMgc! #rinstead."
+      " NL Backstab: [#fa5555]Play[] !theThief:BkStMgc! [#fa5555]instead.[]"
     ]
   }
 }

@@ -43,6 +43,8 @@ public class OneStepAhead extends AbstractBackstabCard {
     private static final int MAGIC = 1;
     private static final int UPGRADED_PLUS_MAGIC = 1;
 
+    private static final int BACKSTAB = 2;
+
 // /STAT DECLARATION/
 
     public OneStepAhead() {
@@ -50,13 +52,14 @@ public class OneStepAhead extends AbstractBackstabCard {
 
         this.baseDamage = DAMAGE;
         this.magicNumber = this.baseMagicNumber = MAGIC;
+        this.backstabNumber = this.baseBackstabNumber = BACKSTAB;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        AbstractDungeon.actionManager.addToBottom(new OneStepAheadAction(this.magicNumber, this.damage, m));
+        AbstractDungeon.actionManager.addToBottom(new OneStepAheadAction(magicNumber, backstabNumber, damage, m));
 
     }
 
