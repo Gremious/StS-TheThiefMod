@@ -19,7 +19,7 @@ public class StolenShadow extends AbstractBackstabCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = ThiefMod.makeID("StolenShadowAction");
+    public static final String ID = ThiefMod.makeID("StolenShadow");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_COMMON_ATTACK);

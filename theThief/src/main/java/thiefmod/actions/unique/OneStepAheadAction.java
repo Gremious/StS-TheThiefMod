@@ -27,20 +27,21 @@ public class OneStepAheadAction extends AbstractGameAction {
 
 
     public void update() {
-        if (this.targetMonster != null && this.targetMonster.intent == Intent.DEFEND || this.targetMonster.intent == Intent.DEFEND_BUFF || this.targetMonster.intent == Intent.ATTACK_DEBUFF || this.targetMonster.intent == Intent.DEFEND_DEBUFF) {
-            for (int i = 0; i < timesNum; i++)
+        if (targetMonster != null && targetMonster.intent == Intent.DEFEND || targetMonster.intent == Intent.DEFEND_BUFF || targetMonster.intent == Intent.DEFEND_DEBUFF) {
+            for (int i = 0; i < timesNum; i++) {
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(this.targetMonster,
                         new DamageInfo(AbstractDungeon.player, this.damageNum, this.damageType),
                         AbstractGameAction.AttackEffect.SLASH_VERTICAL));
-        } else if (this.targetMonster.intent == Intent.ATTACK || this.targetMonster.intent == Intent.ATTACK_BUFF || this.targetMonster.intent == Intent.ATTACK_DEBUFF || this.targetMonster.intent == Intent.ATTACK_DEFEND) {
+            }
+        } else if (targetMonster.intent == Intent.ATTACK || targetMonster.intent == Intent.ATTACK_BUFF || targetMonster.intent == Intent.ATTACK_DEBUFF || targetMonster.intent == Intent.ATTACK_DEFEND) {
             {
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
-                        AbstractDungeon.player, AbstractDungeon.player, new ShadowstepPower(AbstractDungeon.player, AbstractDungeon.player, this.magicNum), this.magicNum));
+                        AbstractDungeon.player, AbstractDungeon.player, new ShadowstepPower(AbstractDungeon.player, AbstractDungeon.player, magicNum), magicNum));
 
             }
         } else {
             AbstractDungeon.actionManager.addToTop(new TalkAction(
-                    true, "It's not attacking or blocking.", 3.0f, 2.0f));
+                    true, "It's not attacking or blocking.", 2.0f, 2.0f));
         }
         this.isDone = true;
     }
