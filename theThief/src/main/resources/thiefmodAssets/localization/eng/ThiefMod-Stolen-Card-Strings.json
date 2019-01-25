@@ -147,8 +147,8 @@
   },
   "theThief:StolenCore": {
     "NAME": "Stolen Core",
-    "DESCRIPTION": "Costs 1 less Energy for each Power card played this combat. NL Gain !B! Block.",
-    "UPGRADE_DESCRIPTION": "Costs 1 less Energy for each Power card played this combat. NL Gain !B! Block.",
+    "DESCRIPTION": "Gain !theThief:Magic! Orb slots. NL Every time you play a card, channel !M! random Orb.",
+    "UPGRADE_DESCRIPTION": "Gain !theThief:Magic! Orb slots. NL Every time you play a card, channel !M! random Orbs.",
     "EXTENDED_DESCRIPTION": [
       "[#FEE130]Rare[] [#FEE130]Find:[]",
       "[#FEE130]The[] [#FEE130]core[] [#FEE130]of[] [#FEE130]a[] [#FEE130]living[] [#FEE130]automation.[]"

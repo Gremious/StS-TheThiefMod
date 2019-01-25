@@ -219,5 +219,13 @@
       " card you play is played twice.",
       " cards you play are played twice."
     ]
+  },
+  "theThief:StolenCorePower": {
+    "NAME": "Stolen Core",
+    "DESCRIPTIONS": [
+      "Every time you play a card, channel ",
+      " random Orb.",
+      " random Orbs."
+    ]
   }
 }
