@@ -223,7 +223,7 @@
     "DESCRIPTION": "Deal !D! damage. If the enemy has Weak and Vulnerable, deals double damage.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage. If the enemy has Weak and Vulnerable, deals double damage.",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]Flavor[][#88888]text[]"
+      "[#88888]Ow.[]"
     ]
   },
   "theThief:PaydayLoan": {

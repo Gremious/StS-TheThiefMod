@@ -17,14 +17,14 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import thiefmod.ThiefMod;
 import thiefmod.Utils;
-import thiefmod.actions.unique.*;
+import thiefmod.actions.unique.StolenMegaphone;
 import thiefmod.cards.stolen.*;
 import thiefmod.powers.Unique.IllGottenGainsPower;
 
 import java.util.ArrayList;
 import java.util.Objects;
 
-import static thiefmod.ThiefMod.hasConspire;
+import static thiefmod.ThiefMod.*;
 
 public class StealCardAction extends AbstractGameAction {
     public static final Logger logger = LogManager.getLogger(ThiefMod.class.getName());
@@ -137,6 +137,26 @@ public class StealCardAction extends AbstractGameAction {
             }
             // ---
         }
+        if (hasHubris && hasInfiniteSpire && hasReplayTheSpire) {
+            int roll = AbstractDungeon.relicRng.random(99);
+            if (roll < 10) {
+                ArrayList<AbstractCard> blackCards = new ArrayList<>();
+
+                blackCards.add(CardLibrary.getCopy("conspire:Banana"));
+                blackCards.add(CardLibrary.getCopy("conspire:Banana"));
+                blackCards.add(CardLibrary.getCopy("conspire:Banana"));
+                blackCards.add(CardLibrary.getCopy("conspire:Banana"));
+
+                for (AbstractCard c : blackCards) {
+                    if (c != null)
+                    c.name = "Stolen " + c.name;
+                    c.exhaustOnUseOnce = true;
+                    stolenCards.addToTop(c);
+
+                }
+            }
+        }
+
         stolenCards.sortAlphabetically(false); //TODO: Test whether you really need this?
     }
 
