@@ -15,10 +15,6 @@ import thiefmod.powers.Common.RefundCardCost;
 
 public class StolenChange extends CustomCard {
 
-    /*
-     * Empty Base
-     */
-
 
 // TEXT DECLARATION 
 

@@ -13,11 +13,6 @@ import thiefmod.patches.Unique.ThiefCardTags;
 
 public class StolenGold extends CustomCard {
 
-    /*
-     * Empty Base
-     */
-
-
 // TEXT DECLARATION 
 
     public static final String ID = thiefmod.ThiefMod.makeID("StolenGold");
