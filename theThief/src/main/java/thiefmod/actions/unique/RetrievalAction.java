@@ -1,6 +1,7 @@
 package thiefmod.actions.unique;
 
 import basemod.BaseMod;
+import com.evacipated.cardcrawl.mod.stslib.actions.common.MoveCardsAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.DiscardToHandAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
@@ -41,7 +42,7 @@ public class RetrievalAction extends AbstractGameAction {
             logger.info("For loop started");
 
             check++;
-
+            // I was now told StSlib has a MoveCardsAction. It is too late. I made all these actions. I don't wanna redo em.
             stopCheck();
             AbstractDungeon.actionManager.addToBottom(new DiscardToHandAction(iterateCard));
             logger.info("Discard to hand added.");
