@@ -63,7 +63,7 @@ public class Pickpocket extends CustomCard {
                 new DamageInfo(p, this.damage, this.damageTypeForTurn),
                 AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
 
-        AbstractDungeon.actionManager.addToBottom(new thiefmod.actions.common.GainGoldAction(p, p, this.magicNumber, ));
+        AbstractDungeon.actionManager.addToBottom(new thiefmod.actions.common.GainGoldAction(p, p, this.magicNumber));
 
 
     }
