@@ -263,6 +263,16 @@ public class StealCardAction extends AbstractGameAction {
         while (cards.size() < amount) {
             AbstractCard card = allStolenCards().getRandomCard(true);
             if (allowDuplicates || !cards.contains(card) /*TODO: || a new int tries < 10 or something*/) {
+                card.exhaustOnUseOnce = true;
+                if (!card.cardID.equals(StolenShadow.ID)
+                        || !card.cardID.equals(StolenBlood.ID)
+                        || !card.cardID.equals(StolenArsenal.ID)
+                        || !card.cardID.equals(StolenCore.ID)
+                        || !card.cardID.equals(stolenMysticalOrb.ID)) {
+                    if (!card.rawDescription.contains(" NL Exhaust.")) {
+                        card.rawDescription += " NL Exhaust.";
+                    }
+                }
                 cards.add(card);
             }
         }
@@ -274,16 +284,7 @@ public class StealCardAction extends AbstractGameAction {
 
         for (AbstractCard c : cardsToAdd) {
             c.unhover();
-            c.exhaustOnUseOnce = true;
-            if (!c.cardID.equals(StolenShadow.ID)
-                    || !c.cardID.equals(StolenBlood.ID)
-                    || !c.cardID.equals(StolenArsenal.ID)
-                    || !c.cardID.equals(StolenCore.ID)
-                    || !c.cardID.equals(stolenMysticalOrb.ID)) {
-                if (!c.rawDescription.contains(" NL Exhaust.")) {
-                    c.rawDescription += " NL Exhaust.";
-                }
-            }
+
             if (Objects.equals(this.location, "Hand")) { //TODO: Test whether or not having a full hand breaks this.
 
                 AbstractDungeon.actionManager.actions.add(new MakeTempCardInHandAction(c, 1));
