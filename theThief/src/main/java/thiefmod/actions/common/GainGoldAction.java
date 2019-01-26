@@ -45,12 +45,13 @@ public class GainGoldAction extends AbstractGameAction {
             if (AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {
                 AbstractDungeon.actionManager.clearPostCombatActions();
             }
-        }
+        } else {
 
-        if (this.target.gold < -this.goldAmount) {
-            this.goldAmount = -this.target.gold;
+            if (this.target.gold < -this.goldAmount) {
+                this.goldAmount = -this.target.gold;
+            }
+            this.target.gold += this.goldAmount;
         }
-        this.target.gold += this.goldAmount;
         this.isDone = true;
     }
 }
