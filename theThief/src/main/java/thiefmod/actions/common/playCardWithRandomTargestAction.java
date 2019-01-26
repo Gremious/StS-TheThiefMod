@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.actions.utility.QueueCardAction;
 import com.megacrit.cardcrawl.actions.utility.UnlimboAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -16,11 +15,12 @@ public class playCardWithRandomTargestAction extends AbstractGameAction {
     private boolean exhaustCards;
     private AbstractCard card;
 
-    public playCardWithRandomTargestAction(AbstractCreature target, boolean exhausts, AbstractCard card) {
+    public playCardWithRandomTargestAction(boolean exhausts, AbstractCard card) {
         this.duration = Settings.ACTION_DUR_FAST;
         this.actionType = ActionType.WAIT;
         this.source = AbstractDungeon.player;
-        this.target = target;
+        this.target = AbstractDungeon.getCurrRoom().monsters.getRandomMonster((AbstractMonster) null, true, AbstractDungeon.cardRandomRng);
+
         this.exhaustCards = exhausts;
         this.card = card;
     }

@@ -4,7 +4,7 @@
     <artifactId>ThiefMod</artifactId>
     <!--<version>1.2.0</version>-->
     <version>0.0.1</version>
-    <name>DefaultMod</name>
+    <name>ThiefMod</name>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -46,6 +46,20 @@
             <systemPath>C:/My Stuff/Games/Steam/steamapps/workshop/content/646570/1609158507/StSLib.jar</systemPath>
             <!--<systemPath>${basedir}/../lib/StSLib.jar</systemPath>-->
         </dependency>
+        <dependency>
+            <groupId>mysticmod</groupId>
+            <artifactId>MysticMod</artifactId>
+            <version>0.15.0</version>
+            <scope>system</scope>
+            <systemPath>C:/My Stuff/Games/Steam/steamapps/workshop/content/646570/1609848111/TheMystic.jar</systemPath>
+        </dependency>
+      <!--  <dependency>
+            <groupId>friendlyminions</groupId>
+            <artifactId>FriendlyMinions</artifactId>
+            <version>${FriendlyMinions.version}</version>
+            <scope>system</scope>
+            <systemPath>C:/My Stuff/Games/Steam/steamapps/workshop/content/646570/1612426481/FriendlyMinions.jar</systemPath>
+        </dependency>-->
     </dependencies>
 
 

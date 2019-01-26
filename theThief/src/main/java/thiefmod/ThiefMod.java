@@ -46,6 +46,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
     public static final boolean hasInfiniteSpire;
     public static final boolean hasDisciple;
     public static final boolean hasMysticMod;
+    public static final boolean hasBeaked;
 
     static {
         hasConspire = Loader.isModLoaded("conspire");
@@ -71,6 +72,10 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         hasMysticMod = Loader.isModLoaded("MysticMod");
         if (hasMysticMod) {
             logger.info("Detected Mystic Mod");
+        }
+        hasBeaked = Loader.isModLoaded("MysticMod");
+        if (hasBeaked) {
+            logger.info("Detected Beaked Mod");
         }
     }
 

@@ -2,15 +2,11 @@ package thiefmod.powers.Unique;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import thiefmod.ThiefMod;
 import thiefmod.actions.common.playCardWithRandomTargestAction;
 import thiefmod.cards.ShadowClone;
@@ -63,11 +59,10 @@ public class ShadowClonePower extends AbstractPower {
             } else {
                 AbstractCard copyCard = card.makeStatEquivalentCopy();
                 copyCard.purgeOnUse = true;
-                copyCard.freeToPlayOnce= true;
-                AbstractMonster randomMonster = AbstractDungeon.getCurrRoom().monsters.getRandomMonster((AbstractMonster) null, true, AbstractDungeon.cardRandomRng);
+                copyCard.freeToPlayOnce = true;
 
-                for (int i=0; i<=amount; i++)
-                    AbstractDungeon.actionManager.addToTop(new playCardWithRandomTargestAction(randomMonster, false, copyCard));
+                for (int i = 0; i <= amount; i++)
+                    AbstractDungeon.actionManager.addToTop(new playCardWithRandomTargestAction(false, copyCard));
 
                 playedCards.clear();
                 break;

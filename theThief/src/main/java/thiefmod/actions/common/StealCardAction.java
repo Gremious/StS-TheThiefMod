@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.cards.curses.Normality;
 import com.megacrit.cardcrawl.cards.curses.Shame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -19,11 +20,13 @@ import thiefmod.ThiefMod;
 import thiefmod.Utils;
 import thiefmod.actions.unique.StolenMegaphone;
 import thiefmod.cards.stolen.*;
+import thiefmod.cards.stolen.mystic.*;
 import thiefmod.powers.Unique.IllGottenGainsPower;
 
 import java.util.ArrayList;
 import java.util.Objects;
 
+import static mysticmod.MysticMod.cantripsGroup;
 import static thiefmod.ThiefMod.*;
 
 public class StealCardAction extends AbstractGameAction {
@@ -55,6 +58,15 @@ public class StealCardAction extends AbstractGameAction {
                 cardsToAdd = getRandomStolenCards(amount, true);
                 for (int i = 0; i < copies; i++) {
                     curseCounter();
+                    int roll = AbstractDungeon.relicRng.random(99);
+                    if (roll == 0) {
+
+                        AbstractCard normality = CardLibrary.getCopy(Normality.ID);
+                        normality.isEthereal = true;
+                        normality.name += " NL Etherial.";
+
+                        new MakeTempCardInDrawPileAction(normality, 1, true, true, false);
+                    }
                     addStolenCards();
                 }
                 cardsToAdd.clear();
@@ -85,7 +97,7 @@ public class StealCardAction extends AbstractGameAction {
 // ========================
 
 
-    // Create a new card group of the cards. this is essentially your cardpool.
+    // Create a new card group of the cards. This is essentially your cardpool.
     private static CardGroup stolenCards;
 
     static {
@@ -121,6 +133,8 @@ public class StealCardAction extends AbstractGameAction {
         stolenCards.addToTop(new StolenBlood());
         stolenCards.addToTop(new StolenCore());
 
+        //---
+
         if (hasConspire) {
             ArrayList<AbstractCard> conspireCards = new ArrayList<>();
             conspireCards.add(CardLibrary.getCopy("conspire:Banana"));
@@ -135,10 +149,14 @@ public class StealCardAction extends AbstractGameAction {
             }
 
         }
+
+        //---
+
         if (hasHubris || hasInfiniteSpire || hasReplayTheSpire) {
-            ArrayList<AbstractCard> blackCards = new ArrayList<>();
             int roll = AbstractDungeon.relicRng.random(99);
             if (roll < 4) {
+                ArrayList<AbstractCard> blackCards = new ArrayList<>();
+
                 if (hasHubris) {
 
                     blackCards.add(CardLibrary.getCopy("hubris:Fate"));
@@ -184,8 +202,42 @@ public class StealCardAction extends AbstractGameAction {
             }
         }
 
+        //---
+
+        if (hasMysticMod) {
+            stolenCards.addToTop(new stolenSpellScroll());
+            stolenCards.addToTop(new stolenArteScroll());
+
+            stolenCards.addToTop(new stolenMysticalSpellbook());
+            stolenCards.addToTop(new stolenBookOfArte());
+
+            stolenCards.addToTop(new stolenMagicTrinket());
+            stolenCards.addToTop(new stolenBagOfMagicTrinkets());
+
+            stolenCards.addToTop(new stolenMysticalOrb()); // Rare
+
+            ArrayList<AbstractCard> mysticCards = new ArrayList<>();
+
+            mysticCards.add(CardLibrary.getCopy("mysticmod:MagicMissile"));
+            mysticCards.add(CardLibrary.getCopy("mysticmod:Spellstrike"));
+
+            mysticCards.add(cantripsGroup.get(AbstractDungeon.cardRandomRng.random(cantripsGroup.size() - 1)));
+
+
+            for (AbstractCard c : mysticCards) {
+                if (c != null) {
+                    c.name = "Stolen " + c.name;
+                    c.exhaustOnUseOnce = true;
+                    stolenCards.addToTop(c);
+                }
+            }
+        }
+
+        //---
+
         stolenCards.sortAlphabetically(false); //TODO: Test whether you really need this?
     }
+
 
     // Card pool of upgraded cards.
     private static CardGroup stolenCardsUpgraded;
@@ -217,7 +269,7 @@ public class StealCardAction extends AbstractGameAction {
 
         while (cards.size() < amount) {
             AbstractCard card = allStolenCards().getRandomCard(true);
-            if (allowDuplicates || !cards.contains(card) /*|| a new int tries < 10 or something*/) {
+            if (allowDuplicates || !cards.contains(card) /*TODO: || a new int tries < 10 or something*/) {
                 cards.add(card);
             }
         }

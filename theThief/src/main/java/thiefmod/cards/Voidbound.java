@@ -32,7 +32,6 @@ public class Voidbound extends AbstractBackstabCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String EXTENDED_DESCRIPTION[] = cardStrings.EXTENDED_DESCRIPTION;
 
-
 // /TEXT DECLARATION/
 
     // STAT DECLARATION

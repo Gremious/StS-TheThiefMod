@@ -147,7 +147,7 @@
     "UPGRADE_DESCRIPTION": "Gain !M! Strenght.",
     "EXTENDED_DESCRIPTION": [
       "[#FEE130]Rare[] [#FEE130]Find:[]",
-      "[#FEE130]The[] [#FEE130]blood[] [#FEE130]of[] [#FEE130]the[] [#FEE130]strongest[] [#FEE130]demon.[]"
+      "[#FEE130]The[] [#FEE130]blood[] [#FEE130]of[] [#FEE130]the[] [#FEE130]strongest[], [#FEE130]and[] [#FEE130]only[], [#FEE130]demon.[]"
     ]
   },
   "theThief:StolenCore": {
@@ -157,6 +157,45 @@
     "EXTENDED_DESCRIPTION": [
       "[#FEE130]Rare[] [#FEE130]Find:[]",
       "[#FEE130]The[] [#FEE130]core[] [#FEE130]of[] [#FEE130]a[] [#FEE130]living[] [#FEE130]automation.[]"
+    ]
+  },
+  "theThief:StolenSpellScroll": {
+    "NAME": "Stolen Spell Scroll",
+    "DESCRIPTION": "Play a random Spell and Exhaust it.",
+    "UPGRADE_DESCRIPTION": "Play a random Spell."
+  },
+  "theThief:stolenArteScroll": {
+    "NAME": "Stolen Arte",
+    "DESCRIPTION": "Play a random Arte and Exhaust it.",
+    "UPGRADE_DESCRIPTION": "Play a random Arte."
+  },
+  "theThief:stolenMysticalSpellbook": {
+    "NAME": "Mystical Spellbook",
+    "DESCRIPTION": "Add !M! random Spell to your hand.",
+    "UPGRADE_DESCRIPTION": "Add !M! random Spells to your hand."
+  },
+  "theThief:stolenBookOfArte": {
+    "NAME": "Stolen Book of Arte",
+    "DESCRIPTION": "Add !M! random Arte to your hand.",
+    "UPGRADE_DESCRIPTION": "Add !M! random Artes to your hand."
+  },
+  "theThief:stolenMagicTrinket": {
+    "NAME": "Stolen Magic Trinket",
+    "DESCRIPTION": "Add a random Trinket to your hand.",
+    "UPGRADE_DESCRIPTION": "Add a random upgraded Trinket to your hand."
+  },
+  "theThief:stolenBagOfMagicTrinkets": {
+    "NAME": "Bag of Magic Trinkets",
+    "DESCRIPTION": "Discover a random Trinket.",
+    "UPGRADE_DESCRIPTION": "Discover a random upgraded Trinket."
+  },
+  "theThief:stolenMysticalOrb": {
+    "NAME": "Stolen Mystical Orb",
+    "DESCRIPTION": "Play a random Arte, then, a random Spell. NL Repeat 3 more times.",
+    "UPGRADE_DESCRIPTION": "Play a random Arte, then, a random Spell. NL Repeat 3 more times.",
+    "EXTENDED_DESCRIPTION": [
+      "[#FEE130]Rare[] [#FEE130]Find:[]",
+      "[#FEE130]A[] [#FEE130]mystical[] [#FEE130]item[] [#FEE130]of[] [#FEE130]great[] [#FEE130]power[], [#FEE130]entirely[] [#FEE130]in[] [#FEE130]the[] [#FEE130]wrong[] [#FEE130]hands.[]"
     ]
   }
 }
