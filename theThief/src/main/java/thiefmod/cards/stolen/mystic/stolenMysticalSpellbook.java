@@ -14,7 +14,7 @@ public class stolenMysticalSpellbook extends AbstractBackstabCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = ThiefMod.makeID("stolenBookOfArte");
+    public static final String ID = ThiefMod.makeID("stolenMysticalSpellbook");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_UNCOMMON_SKILL);
