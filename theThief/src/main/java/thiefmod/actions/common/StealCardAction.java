@@ -90,7 +90,6 @@ public class StealCardAction extends AbstractGameAction {
 
     static {
         stolenCards = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-        ArrayList<AbstractCard> conspireCards = new ArrayList<>();
 
         stolenCards.addToTop(new StolenShieldGenerator());
         stolenCards.addToTop(new StolenCode());
@@ -125,6 +124,8 @@ public class StealCardAction extends AbstractGameAction {
         //---
 
         if (hasConspire) {
+            ArrayList<AbstractCard> conspireCards = new ArrayList<>();
+
             conspireCards.add(CardLibrary.getCopy("conspire:Banana"));
             conspireCards.add(CardLibrary.getCopy("conspire:Treasure"));
 
@@ -193,8 +194,8 @@ public class StealCardAction extends AbstractGameAction {
         //---
 
         if (hasMysticMod) {
-            ArrayList<AbstractCard> mysticCards = new ArrayList<>();
             ArrayList<AbstractCard> customMysticCards = new ArrayList<>();
+            ArrayList<AbstractCard> mysticCards = new ArrayList<>();
 
             customMysticCards.add(new stolenSpellScroll());
             customMysticCards.add(new stolenArteScroll());
@@ -225,6 +226,7 @@ public class StealCardAction extends AbstractGameAction {
         }
 
         //---
+        // TODO: Has Gatherer - add flowers and see if potions work. "Rare: DISCARD YOUR HAND AND REPLACE IT WITH FULLY UPGRADED FLOWER CARDS."
 
         stolenCards.sortAlphabetically(false); //TODO: Test whether you really need this?
     }
