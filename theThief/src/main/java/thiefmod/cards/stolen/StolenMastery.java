@@ -50,7 +50,7 @@ public class StolenMastery extends AbstractBackstabCard {
 
     public StolenMastery() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.exhaust = true;
+
 
         this.magicNumber = this.baseMagicNumber = MAGIC;
 

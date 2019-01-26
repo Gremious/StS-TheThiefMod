@@ -1,33 +1,33 @@
 {
   "theThief:StolenCandy": {
     "NAME": "Stolen Candy",
-    "DESCRIPTION": "Gain !M! energy. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! energy. NL Exhaust."
+    "DESCRIPTION": "Gain !M! energy.",
+    "UPGRADE_DESCRIPTION": "Gain !M! energy."
   },
   "theThief:StolenGold": {
     "NAME": "Stolen Gold",
-    "DESCRIPTION": "Gain !M! Gold. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! Gold. NL Exhaust."
+    "DESCRIPTION": "Gain !M! Gold.",
+    "UPGRADE_DESCRIPTION": "Gain !M! Gold."
   },
   "theThief:StolenMomentum": {
     "NAME": "Stolen Momentum",
-    "DESCRIPTION": "Draw !M! cards, then choose 1 card to discard. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Draw !M! cards. NL Exhaust."
+    "DESCRIPTION": "Draw !M! cards, then choose 1 card to discard.",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards."
   },
   "theThief:StolenArtifice": {
     "NAME": "Stolen Artifice",
-    "DESCRIPTION": "Gain !M! energy next turn. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! energy next turn. NL Exhaust."
+    "DESCRIPTION": "Gain !M! energy next turn.",
+    "UPGRADE_DESCRIPTION": "Gain !M! energy next turn."
   },
   "theThief:StolenAdvantage": {
     "NAME": "Stolen Advantage",
-    "DESCRIPTION": "Draw !M! cards next turn. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Draw !M! cards next turn. NL Exhaust."
+    "DESCRIPTION": "Draw !M! cards next turn.",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards next turn."
   },
   "theThief:StolenRitual": {
     "NAME": "Stolen Ritual",
-    "DESCRIPTION": "Lose 2 hp, gain !M! gold. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Lose 2 hp, gain !M! gold. NL Exhaust.",
+    "DESCRIPTION": "Lose 2 hp, gain !M! gold.",
+    "UPGRADE_DESCRIPTION": "Lose 2 hp, gain !M! gold.",
     "EXTENDED_DESCRIPTION[]": [
       "CA-CAW!",
       "Cough."
@@ -35,13 +35,13 @@
   },
   "theThief:StolenTechnique": {
     "NAME": "Stolen Technique",
-    "DESCRIPTION": "Add a random card to your hand from any color. It costs 0 this turn. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Add a random card to your hand from any color. It costs 0 this turn. NL Exhaust."
+    "DESCRIPTION": "Add a random card to your hand from any color. It costs 0 this turn.",
+    "UPGRADE_DESCRIPTION": "Add a random card to your hand from any color. It costs 0 this turn."
   },
   "theThief:StolenChange": {
     "NAME": "Stolen Change",
-    "DESCRIPTION": "The next card you play this turn is refunded. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "The next card you play this turn is refunded. NL Exhaust."
+    "DESCRIPTION": "The next card you play this turn is refunded.",
+    "UPGRADE_DESCRIPTION": "The next card you play this turn is refunded."
   },
   "theThief:StolenBlades": {
     "NAME": "Stolen Blades",
@@ -91,7 +91,7 @@
   "theThief:StolenArmor": {
     "NAME": "Stolen Armor",
     "DESCRIPTION": "Upgrade 1 card in your hand. NL Draw !M! Card, and gain !B! block if you draw an upgraded card.",
-    "UPGRADE_DESCRIPTION": "pgrade 1 card in your hand. NL Draw !M! Cards, and gain !B! block if you draw an upgraded card."
+    "UPGRADE_DESCRIPTION": "Upgrade 1 card in your hand. NL Draw !M! Cards, and gain !B! block if you draw an upgraded card."
   },
   "theThief:StolenOrb": {
     "NAME": "Stolen Orb",

@@ -58,7 +58,7 @@ public class StolenArmor extends AbstractBackstabCard {
 
     public StolenArmor() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.exhaust = true;
+
 
         this.baseBlock = BLOCK;
         this.magicNumber = this.baseMagicNumber = MAGIC;

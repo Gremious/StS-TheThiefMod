@@ -50,7 +50,7 @@ public class StolenArsenal extends AbstractBackstabCard {
 
     public StolenArsenal() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.exhaust = true;
+
 
         tags.add(ThiefCardTags.STOLEN);
 

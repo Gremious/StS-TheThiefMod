@@ -47,7 +47,7 @@ public class StolenShieldGenerator extends AbstractBackstabCard {
 
     public StolenShieldGenerator() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.exhaust = true;
+
 
         this.baseBlock = BLOCK;
 

@@ -46,7 +46,7 @@ public class StolenBlades extends CustomCard {
 
     public StolenBlades() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.exhaust = true;
+
         this.magicNumber = this.baseMagicNumber = MAGIC;
 
         tags.add(ThiefCardTags.STOLEN);

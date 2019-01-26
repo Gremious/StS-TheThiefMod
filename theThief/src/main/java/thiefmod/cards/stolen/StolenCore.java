@@ -54,7 +54,6 @@ public class StolenCore extends AbstractBackstabCard {
     public StolenCore() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        exhaust = true;
         this.magicNumber = this.baseMagicNumber = MAGIC;
         this.backstabNumber = this.baseBackstabNumber = ORB_SLOTS;
 

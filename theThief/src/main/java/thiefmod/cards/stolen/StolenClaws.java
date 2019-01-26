@@ -52,7 +52,7 @@ public class StolenClaws extends AbstractBackstabCard {
 
     public StolenClaws() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.exhaust = true;
+
 
         this.baseDamage = DAMAGE;
         this.magicNumber = this.baseMagicNumber = MAGIC;

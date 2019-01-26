@@ -42,7 +42,6 @@ public class StolenAdvantage extends CustomCard {
     // Actions the card should do.
     public StolenAdvantage() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.exhaust = true;
 
         this.magicNumber = this.baseMagicNumber = MAGIC;
 

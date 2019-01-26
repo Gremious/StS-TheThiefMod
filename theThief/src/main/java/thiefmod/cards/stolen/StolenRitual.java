@@ -49,7 +49,7 @@ public class StolenRitual extends CustomCard {
 
     public StolenRitual() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.exhaust = true;
+
 
         this.magicNumber = this.baseMagicNumber = MAGIC;
         this.damage = this.baseDamage = DAMAGE;

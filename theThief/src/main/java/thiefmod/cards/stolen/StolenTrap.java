@@ -44,7 +44,7 @@ public class StolenTrap extends CustomCard {
 
     public StolenTrap() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.exhaust = true;
+
 
         tags.add(ThiefCardTags.STOLEN);
     }

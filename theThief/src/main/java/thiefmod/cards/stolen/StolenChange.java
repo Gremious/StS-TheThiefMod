@@ -47,7 +47,7 @@ public class StolenChange extends CustomCard {
 
     public StolenChange() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.exhaust = true;
+
 
         this.magicNumber = this.baseMagicNumber = MAGIC;
 

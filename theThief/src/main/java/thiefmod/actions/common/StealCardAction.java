@@ -205,22 +205,20 @@ public class StealCardAction extends AbstractGameAction {
         //---
 
         if (hasMysticMod) {
-            stolenCards.addToTop(new stolenSpellScroll());
-            stolenCards.addToTop(new stolenArteScroll());
-
-            stolenCards.addToTop(new stolenMysticalSpellbook());
-            stolenCards.addToTop(new stolenBookOfArte());
-
-            stolenCards.addToTop(new stolenMagicTrinket());
-            stolenCards.addToTop(new stolenBagOfMagicTrinkets());
-
-            stolenCards.addToTop(new stolenMysticalOrb()); // Rare
-
             ArrayList<AbstractCard> mysticCards = new ArrayList<>();
+            ArrayList<AbstractCard> customMysticCards = new ArrayList<>();
+
+            customMysticCards.add(new stolenSpellScroll());
+            customMysticCards.add(new stolenArteScroll());
+            customMysticCards.add(new stolenMysticalSpellbook());
+            customMysticCards.add(new stolenBookOfArte());
+            customMysticCards.add(new stolenMagicTrinket());
+            customMysticCards.add(new stolenBagOfMagicTrinkets());
+            // Rare:
+            customMysticCards.add(new stolenMysticalOrb());
 
             mysticCards.add(CardLibrary.getCopy("mysticmod:MagicMissile"));
             mysticCards.add(CardLibrary.getCopy("mysticmod:Spellstrike"));
-
             mysticCards.add(cantripsGroup.get(AbstractDungeon.cardRandomRng.random(cantripsGroup.size() - 1)));
 
 
@@ -230,6 +228,11 @@ public class StealCardAction extends AbstractGameAction {
                     c.exhaustOnUseOnce = true;
                     stolenCards.addToTop(c);
                 }
+            }
+            for (AbstractCard c : customMysticCards) {
+                c.exhaustOnUseOnce = true;
+                stolenCards.addToTop(c);
+
             }
         }
 

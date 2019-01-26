@@ -55,7 +55,7 @@ public class StolenBlood extends AbstractBackstabCard {
 
     public StolenBlood() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.exhaust = true;
+
         this.magicNumber = this.baseMagicNumber = MAGIC;
 
 

@@ -53,7 +53,7 @@ public class StolenTechnique extends CustomCard {
 
     public StolenTechnique() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.exhaust = true;
+
         this.baseDamage = DAMAGE;
         this.baseBlock = BLOCK;
         this.magicNumber = this.baseMagicNumber = MAGIC;

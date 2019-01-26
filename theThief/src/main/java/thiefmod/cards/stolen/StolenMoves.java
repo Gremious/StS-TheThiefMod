@@ -48,7 +48,7 @@ public class StolenMoves extends AbstractBackstabCard {
 
     public  StolenMoves() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.exhaust = true;
+
 
         this.baseBlock = BLOCK;
 

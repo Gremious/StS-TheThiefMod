@@ -46,7 +46,7 @@ public class StolenToxins extends CustomCard {
 
     public StolenToxins() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.exhaust = true;
+
         this.magicNumber = this.baseMagicNumber = MAGIC;
 
         tags.add(ThiefCardTags.STOLEN);

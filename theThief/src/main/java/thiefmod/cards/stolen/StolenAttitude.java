@@ -53,7 +53,7 @@ public class StolenAttitude extends AbstractBackstabCard {
 
     public StolenAttitude() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.exhaust = true;
+
 
         this.baseBlock = BLOCK;
         this.magicNumber = this.baseMagicNumber = MAGIC;
