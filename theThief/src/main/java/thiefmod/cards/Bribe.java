@@ -66,7 +66,7 @@ public class Bribe extends AbstractBackstabCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         AbstractDungeon.actionManager.addToBottom(
-                new GainGoldAction(p, p, this.magicNumber));
+                new GainGoldAction(p, p, this.magicNumber, ));
 
         AbstractDungeon.actionManager.addToBottom(
                 new StunMonsterAction(m, p));

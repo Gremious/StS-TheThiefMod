@@ -85,7 +85,7 @@ public class CallOfTheVoid extends AbstractBackstabCard {
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
                 AbstractDungeon.player, AbstractDungeon.player, new TheThiefThieveryPower(
-                AbstractDungeon.player, AbstractDungeon.player, false, 3), 1));
+                AbstractDungeon.player, AbstractDungeon.player, 3), 1));
 
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(
                 p, p, this.block));

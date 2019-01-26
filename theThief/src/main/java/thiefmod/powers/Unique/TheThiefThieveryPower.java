@@ -10,11 +10,11 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import thiefmod.ThiefMod;
+import thiefmod.actions.common.GainGoldAction;
 
 // Empty Base
 
 public class TheThiefThieveryPower extends AbstractPower {
-    private boolean isUpgraded;
     private AbstractPlayer source;
 
     public static final String POWER_ID = ThiefMod.makeID("TheThiefThieveryPower");
@@ -24,7 +24,7 @@ public class TheThiefThieveryPower extends AbstractPower {
     public static final String IMG = ThiefMod.makePath(ThiefMod.COMMON_POWER);
 
 
-    public TheThiefThieveryPower(final AbstractPlayer source, final AbstractCreature owner, boolean isUpgraded, final int amount) {
+    public TheThiefThieveryPower(final AbstractPlayer source, final AbstractCreature owner, final int amount) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.img = new Texture(IMG);
@@ -32,7 +32,6 @@ public class TheThiefThieveryPower extends AbstractPower {
         this.isTurnBased = false;
         this.source = source;
         this.owner = owner;
-        this.isUpgraded = isUpgraded;
 
         this.amount = amount;
 
@@ -41,8 +40,8 @@ public class TheThiefThieveryPower extends AbstractPower {
 
     @Override
     public void onInflictDamage(DamageInfo info, int damageAmount, AbstractCreature target) {
-        AbstractDungeon.actionManager.addToBottom(new thiefmod.actions.common.GainGoldAction(
-                this.source, this.owner, this.amount));
+        AbstractDungeon.actionManager.addToBottom(new GainGoldAction(
+                this.source, this.owner, this.amount, info ));
     }
 
     @Override

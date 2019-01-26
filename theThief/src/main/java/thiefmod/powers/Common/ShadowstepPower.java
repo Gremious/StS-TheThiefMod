@@ -4,7 +4,6 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -22,7 +21,7 @@ import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager;
 public class ShadowstepPower extends AbstractPower {
 
     public AbstractCreature source;
-    private int shadowMastery = AbstractDungeon.player.getPower(ShadowMasteryPower.POWER_ID).amount;
+    private int shadowMastery;
 
     public static final String POWER_ID = ThiefMod.makeID("ShadowstepPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
@@ -43,6 +42,12 @@ public class ShadowstepPower extends AbstractPower {
 
         this.amount = amount;
 
+        if (AbstractDungeon.player.hasPower(ShadowMasteryPower.POWER_ID)) {
+            shadowMastery = AbstractDungeon.player.getPower(ShadowMasteryPower.POWER_ID).amount;
+        } else {
+            shadowMastery = 0;
+        }
+
         this.updateDescription();
     }
 
@@ -60,6 +65,7 @@ public class ShadowstepPower extends AbstractPower {
 
     @Override
     public int onLoseHp(int damageAmount) {
+        shadowMastery = AbstractDungeon.player.getPower(ShadowMasteryPower.POWER_ID).amount;
         return (damageAmount / 10) * (10 - this.amount * (shadowMastery + 1));
     }
 
@@ -81,6 +87,7 @@ public class ShadowstepPower extends AbstractPower {
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {
+        shadowMastery = AbstractDungeon.player.getPower(ShadowMasteryPower.POWER_ID).amount;
         if (this.amount == 1) {
             if (this.owner.hasPower(ShadowMasteryPower.POWER_ID)) {
                 this.description = DESCRIPTIONS[0] + this.amount * (shadowMastery + 1) + DESCRIPTIONS[2];

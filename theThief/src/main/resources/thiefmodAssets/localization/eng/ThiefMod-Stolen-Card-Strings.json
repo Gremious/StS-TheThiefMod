@@ -159,7 +159,7 @@
       "[#FEE130]The[] [#FEE130]core[] [#FEE130]of[] [#FEE130]a[] [#FEE130]living[] [#FEE130]automation.[]"
     ]
   },
-  "theThief:StolenSpellScroll": {
+  "theThief:stolenSpellScroll": {
     "NAME": "Stolen Spell Scroll",
     "DESCRIPTION": "Play a random Spell and Exhaust it.",
     "UPGRADE_DESCRIPTION": "Play a random Spell."

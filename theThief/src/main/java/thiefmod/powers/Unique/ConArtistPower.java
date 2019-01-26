@@ -5,7 +5,6 @@ import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -50,7 +49,7 @@ public class ConArtistPower extends AbstractPower {
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
         if (card.hasTag(ThiefCardTags.STEALING)) {
-            AbstractDungeon.actionManager.addToBottom(new GainGoldAction(this.owner, this.source, this.amount));
+            AbstractDungeon.actionManager.addToBottom(new GainGoldAction(this.owner, this.source, this.amount, ));
         } else {
             return;
         }

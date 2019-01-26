@@ -50,7 +50,7 @@ public class EmptyPower extends AbstractPower {
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
         if (card.hasTag(ThiefCardTags.STEALING)) {
-            AbstractDungeon.actionManager.addToBottom(new GainGoldAction(owner, source, amount));
+            AbstractDungeon.actionManager.addToBottom(new GainGoldAction(owner, source, amount, ));
         } else {
             return;
         }
