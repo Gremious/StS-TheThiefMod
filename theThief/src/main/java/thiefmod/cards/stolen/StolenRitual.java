@@ -60,11 +60,11 @@ public class StolenRitual extends CustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new LoseHPAction(p, p, this.damage));
-        AbstractDungeon.actionManager.addToBottom(new thiefmod.actions.common.GainGoldAction(p, p, this.magicNumber, ));
+        AbstractDungeon.actionManager.addToBottom(new thiefmod.actions.common.GainGoldAction(p, p, this.magicNumber ));
 
         CardCrawlGame.sound.playA("VO_CULTIST_1C", 0.3f);
 
-        AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "CA-CAW", 3.0f, 2.0f));
+        AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "CA-CAW", 2.0f, 2.0f));
 
         AbstractDungeon.actionManager.addToBottom(new WaitAction(0.1f));
         AbstractDungeon.actionManager.addToBottom(new WaitAction(0.1f));
@@ -72,7 +72,7 @@ public class StolenRitual extends CustomCard {
         AbstractDungeon.actionManager.addToBottom(new WaitAction(0.1f));
         AbstractDungeon.actionManager.addToBottom(new WaitAction(0.1f));
 
-        AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "Cough..", 1.0f, 2.0f));
+        AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "Cough..", 2.0f, 2.0f));
 
     }
 
