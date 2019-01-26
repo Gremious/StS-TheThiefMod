@@ -89,12 +89,6 @@ public class GhastlyEssence extends AbstractBackstabCard {
         this.initializeDescription();
     }
 
-    // Which card to return when making a copy of this card.
-    @Override
-    public AbstractCard makeCopy() {
-        return new GhastlyEssence();
-    }
-
     //Upgraded stats.
     @Override
     public void upgrade() {
@@ -102,7 +96,7 @@ public class GhastlyEssence extends AbstractBackstabCard {
             this.upgradeName();
             this.upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
             this.isInnate = true;
-//          this.rawDescription = UPGRADE_DESCRIPTION;
+          this.rawDescription = UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }
     }

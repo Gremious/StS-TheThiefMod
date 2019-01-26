@@ -1,6 +1,8 @@
 package thiefmod.cards.stolen;
 
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
+import com.megacrit.cardcrawl.actions.defect.EvokeOrbAction;
+import com.megacrit.cardcrawl.actions.defect.IncreaseMaxOrbAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -56,8 +58,13 @@ public class StolenOrb extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ChannelAction(AbstractOrb.getRandomOrb(true)));
+        AbstractDungeon.actionManager.addToBottom(new EvokeOrbAction(1));
+        AbstractDungeon.actionManager.addToBottom(new IncreaseMaxOrbAction(-1));
+
         if (upgraded) {
             AbstractDungeon.actionManager.addToBottom(new ChannelAction(AbstractOrb.getRandomOrb(true)));
+            AbstractDungeon.actionManager.addToBottom(new EvokeOrbAction(1));
+            AbstractDungeon.actionManager.addToBottom(new IncreaseMaxOrbAction(-1));
         }
     }
 
