@@ -20,7 +20,7 @@ import thiefmod.patches.Unique.ThiefCardTags;
 public class HoodlumPower extends AbstractPower {
     public AbstractCreature source;
 
-    public static final String POWER_ID = ThiefMod.makeID("Empty");
+    public static final String POWER_ID = ThiefMod.makeID("HoodlumPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -55,15 +55,6 @@ public class HoodlumPower extends AbstractPower {
             this.flash();
             AbstractDungeon.actionManager.addToBottom(new DrawCardAction(this.owner, this.amount));
             AbstractDungeon.actionManager.addToBottom(new DiscardAction(this.owner, this.owner, this.amount, false));
-        }
-
-    }
-
-    public void atEndOfRound() {
-        if (this.amount == 0) {
-            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
-        } else {
-            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, this.ID, 1));
         }
 
     }

@@ -32,8 +32,9 @@ public class StolenCodeButWaitPower extends AbstractPower {
     }
 
 
-    public void atEndOfRound() {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, source, new EchoPower(owner, 1), 1));
+
+    public void atEndOfTurn(boolean isPlayer) {
+         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, source, new StolenCodePower(owner, 1), 1));
 
         if (amount == 0) {
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, ID));

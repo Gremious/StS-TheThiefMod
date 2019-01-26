@@ -171,13 +171,13 @@
   },
   "theThief:stolenMysticalSpellbook": {
     "NAME": "Mystical Spellbook",
-    "DESCRIPTION": "Add !M! random Spell to your hand.",
-    "UPGRADE_DESCRIPTION": "Add !M! random Spells to your hand."
+    "DESCRIPTION": "Discover !M! random Spell.",
+    "UPGRADE_DESCRIPTION": "Discover !M! random Spells."
   },
   "theThief:stolenBookOfArte": {
     "NAME": "Stolen Book of Arte",
-    "DESCRIPTION": "Add !M! random Arte to your hand.",
-    "UPGRADE_DESCRIPTION": "Add !M! random Artes to your hand."
+    "DESCRIPTION": "Discover !M! random Arte.",
+    "UPGRADE_DESCRIPTION": "Discover !M! random Artes."
   },
   "theThief:stolenMagicTrinket": {
     "NAME": "Stolen Magic Trinket",
