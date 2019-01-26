@@ -82,6 +82,7 @@ public class StolenCore extends AbstractBackstabCard {
         } else {
             rawDescription = UPGRADE_DESCRIPTION;
         }
+
         this.initializeDescription();
     }
 

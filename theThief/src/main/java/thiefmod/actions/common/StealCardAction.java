@@ -54,7 +54,6 @@ public class StealCardAction extends AbstractGameAction {
                 cardsToAdd = getRandomStolenCards(amount, true);
                 for (int i = 0; i < copies; i++) {
                     curseCounter();
-                    int roll = AbstractDungeon.relicRng.random(99);
                     addStolenCards();
                 }
                 cardsToAdd.clear();
@@ -226,7 +225,7 @@ public class StealCardAction extends AbstractGameAction {
         }
 
         //---
-        // TODO: Has Gatherer - add flowers and see if potions work. "Rare: DISCARD YOUR HAND AND REPLACE IT WITH FULLY UPGRADED FLOWER CARDS."
+        // TODO: Has Gatherer - add flowers and see if potions work. "Rare: DISCARD YOUR HAND AND REPLACE IT WITH FULLY UPGRADED FLOWER CARDS?"
 
         stolenCards.sortAlphabetically(false); //TODO: Test whether you really need this?
     }
@@ -238,7 +237,8 @@ public class StealCardAction extends AbstractGameAction {
     static {
         stolenCardsUpgraded = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
         for (AbstractCard c : stolenCards.group) {
-            AbstractCard upgradedCopy = c.makeCopy();
+
+            AbstractCard upgradedCopy = makeExhaustedStolenCard(c,false);
             upgradedCopy.upgrade();
             stolenCardsUpgraded.addToTop(upgradedCopy);
 
@@ -262,17 +262,10 @@ public class StealCardAction extends AbstractGameAction {
 
         while (cards.size() < amount) {
             AbstractCard card = allStolenCards().getRandomCard(true);
-            if (allowDuplicates || !cards.contains(card) /*TODO: || a new int tries < 10 or something*/) {
-                card.exhaustOnUseOnce = true;
-                if (!card.cardID.equals(StolenShadow.ID)
-                        || !card.cardID.equals(StolenBlood.ID)
-                        || !card.cardID.equals(StolenArsenal.ID)
-                        || !card.cardID.equals(StolenCore.ID)
-                        || !card.cardID.equals(stolenMysticalOrb.ID)) {
-                    if (!card.rawDescription.contains(" NL Exhaust.")) {
-                        card.rawDescription += " NL Exhaust.";
-                    }
-                }
+            if (allowDuplicates || !cards.contains(card)) {
+
+
+
                 cards.add(card);
             }
         }
@@ -320,4 +313,23 @@ public class StealCardAction extends AbstractGameAction {
         }
     }
 
+// ========================
+
+    public static AbstractCard makeExhaustedStolenCard(AbstractCard card, boolean free) {
+        AbstractCard copy = card.makeSameInstanceOf();
+
+       if (free) {
+           copy.modifyCostForCombat(-999);
+       }
+
+        if (!copy.exhaust) {
+            copy.rawDescription += " NL Exhaust.";
+        }
+
+        copy.exhaustOnUseOnce = copy.exhaust = true;
+
+        copy.initializeDescription();
+
+        return copy;
+    }
 }
