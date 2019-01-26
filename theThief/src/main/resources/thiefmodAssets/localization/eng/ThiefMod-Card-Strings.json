@@ -303,7 +303,9 @@
     "DESCRIPTION": "Add the next non-gray card you play to your deck. Fleeting.",
     "UPGRADE_DESCRIPTION": "Add the next non-gray card you play to your deck. Fleeting.",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]What's[][#88888]yours[][#88888]is[][#88888]mine.[]"
+      "[#88888]What's[][#88888]yours[][#88888]is[][#88888]mine.[]",
+      "Tip.",
+      "If you keep a gray Stolen card, unless it's a rare find, it will lose Exhaust."
     ]
   },
   "theThief:IAmEverywhere": {
@@ -311,7 +313,7 @@
     "DESCRIPTION": "Shadowstep X times.",
     "UPGRADE_DESCRIPTION": "Shadowstep X times for each enemy in combat.",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]Flavor[] [#88888]Text[]"
+      "[#88888]Now[] [#88888]you're[] [#88888]just[] [#88888]showing[] [#88888]off.[]"
     ]
   },
   "theThief:MurderousIntent": {

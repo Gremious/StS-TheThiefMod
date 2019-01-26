@@ -71,6 +71,7 @@ public class FindersKeepers extends AbstractBackstabCard {
     public List<TooltipInfo> getCustomTooltips() {
         List<TooltipInfo> tips = new ArrayList<>();
         tips.add(new TooltipInfo(FLAVOR_STRINGS[0], EXTENDED_DESCRIPTION[0]));
+        tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[1], EXTENDED_DESCRIPTION[2]));
         // tips.addAll(modal.generateTooltips());
         return tips;
     }

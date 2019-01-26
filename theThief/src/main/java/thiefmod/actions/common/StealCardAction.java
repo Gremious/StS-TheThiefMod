@@ -6,14 +6,10 @@ import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
-import com.megacrit.cardcrawl.cards.curses.Normality;
 import com.megacrit.cardcrawl.cards.curses.Shame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDiscardEffect;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDrawPileEffect;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import thiefmod.ThiefMod;
@@ -59,14 +55,6 @@ public class StealCardAction extends AbstractGameAction {
                 for (int i = 0; i < copies; i++) {
                     curseCounter();
                     int roll = AbstractDungeon.relicRng.random(99);
-                    if (roll == 0) {
-
-                        AbstractCard normality = CardLibrary.getCopy(Normality.ID);
-                        normality.isEthereal = true;
-                        normality.name += " NL Etherial.";
-
-                        new MakeTempCardInDrawPileAction(normality, 1, true, true, false);
-                    }
                     addStolenCards();
                 }
                 cardsToAdd.clear();
@@ -102,6 +90,7 @@ public class StealCardAction extends AbstractGameAction {
 
     static {
         stolenCards = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+        ArrayList<AbstractCard> conspireCards = new ArrayList<>();
 
         stolenCards.addToTop(new StolenShieldGenerator());
         stolenCards.addToTop(new StolenCode());
@@ -136,7 +125,6 @@ public class StealCardAction extends AbstractGameAction {
         //---
 
         if (hasConspire) {
-            ArrayList<AbstractCard> conspireCards = new ArrayList<>();
             conspireCards.add(CardLibrary.getCopy("conspire:Banana"));
             conspireCards.add(CardLibrary.getCopy("conspire:Treasure"));
 
@@ -284,24 +272,28 @@ public class StealCardAction extends AbstractGameAction {
 
         for (AbstractCard c : cardsToAdd) {
             c.unhover();
-            if (Objects.equals(this.location, "Hand")) { //TODO: Test whether or not having a full hand breaks this on both fast and slow mode.
-                if (Settings.FAST_MODE) {
-                    AbstractDungeon.actionManager.actions.add(new MakeTempCardInHandAction(c, 1));
-                } else {
-                    AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(c));
+            c.exhaustOnUseOnce = true;
+            if (!c.cardID.equals(StolenShadow.ID)
+                    || !c.cardID.equals(StolenBlood.ID)
+                    || !c.cardID.equals(StolenArsenal.ID)
+                    || !c.cardID.equals(StolenCore.ID)
+                    || !c.cardID.equals(stolenMysticalOrb.ID)) {
+                if (!c.rawDescription.contains(" NL Exhaust.")) {
+                    c.rawDescription += " NL Exhaust.";
                 }
+            }
+            if (Objects.equals(this.location, "Hand")) { //TODO: Test whether or not having a full hand breaks this.
+
+                AbstractDungeon.actionManager.actions.add(new MakeTempCardInHandAction(c, 1));
+
             } else if (Objects.equals(this.location, "Draw")) {
-                if (Settings.FAST_MODE) {
-                    AbstractDungeon.actionManager.actions.add(new MakeTempCardInDrawPileAction(c, 1, false, true));
-                } else {
-                    AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(c, true, false));
-                }
+
+                AbstractDungeon.actionManager.actions.add(new MakeTempCardInDrawPileAction(c, 1, false, true));
+
             } else if (Objects.equals(this.location, "Discard")) {
-                if (Settings.FAST_MODE) {
-                    AbstractDungeon.actionManager.actions.add(new MakeTempCardInDiscardAction(c, 1));
-                } else {
-                    AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(c));
-                }
+
+                AbstractDungeon.actionManager.actions.add(new MakeTempCardInDiscardAction(c, 1));
+
             } else {
                 logger.info("addStolenCards() didn't find ether hand, deck or discard.");
             }
