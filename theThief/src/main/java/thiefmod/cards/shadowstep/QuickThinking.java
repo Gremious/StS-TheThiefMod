@@ -43,12 +43,14 @@ public class QuickThinking extends AbstractBackstabCard {
     private static final int MAGIC = 1;
     private static final int UPGRADED_PLUS_MAGIC = 1;
 
+    private static final int MAGIC_TWO = 1;
 // /STAT DECLARATION/
 
     public QuickThinking() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
         this.magicNumber = this.baseMagicNumber = MAGIC;
+        this.backstabNumber = this.baseBackstabNumber = MAGIC_TWO;
 
         this.tags.add(ThiefCardTags.SHADOWSTEP);
     }
@@ -58,7 +60,7 @@ public class QuickThinking extends AbstractBackstabCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
-                p, p, new ShadowstepPower(p, p, 1), 1));
+                p, p, new ShadowstepPower(p, p, backstabNumber), backstabNumber));
 
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.magicNumber));
 
@@ -67,10 +69,14 @@ public class QuickThinking extends AbstractBackstabCard {
     @Override
     public void applyPowers() {
         super.applyPowers();
-        if (AbstractDungeon.player.cardsPlayedThisTurn == 0) {
-            this.rawDescription = this.DESCRIPTION + this.EXTENDED_DESCRIPTION[0];
+        if (backstabNumber == 1 && magicNumber == 1) {
+            this.rawDescription = EXTENDED_DESCRIPTION[0];
+        } else if (backstabNumber == 1 && magicNumber != 1) {
+            this.rawDescription = EXTENDED_DESCRIPTION[1];
+        } else if (backstabNumber != 1 && magicNumber == 1) {
+            this.rawDescription = EXTENDED_DESCRIPTION[2];
         } else {
-            this.rawDescription = this.DESCRIPTION + this.EXTENDED_DESCRIPTION[1];
+            this.rawDescription = EXTENDED_DESCRIPTION[3];
         }
         this.initializeDescription();
     }
@@ -87,7 +93,7 @@ public class QuickThinking extends AbstractBackstabCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
-//          this.rawDescription = UPGRADE_DESCRIPTION;
+            this.rawDescription = UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }
     }

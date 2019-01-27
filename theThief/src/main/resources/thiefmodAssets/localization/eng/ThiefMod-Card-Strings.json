@@ -160,10 +160,14 @@
   },
   "theThief:QuickThinking": {
     "NAME": "Quick Thinking",
-    "DESCRIPTION": "Shadowstep #b1 time and draw !M! cards.",
-    "UPGRADE_DESCRIPTION": "Shadowstep #b1 time and draw !M! cards.",
+    "DESCRIPTION": "Shadowstep !theThief:Magic! time and draw !M! card.",
+    "UPGRADE_DESCRIPTION": "Shadowstep !theThief:Magic! time and draw !M! cards.",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]Flavor[] [#88888]Text[]"
+      "[#88888]Flavor[] [#88888]Text[]",
+      "Shadowstep !theThief:Magic! time and draw !M! card.",
+      "Shadowstep !theThief:Magic! time and draw !M! cards.",
+      "Shadowstep !theThief:Magic! times and draw !M! card.",
+      "Shadowstep !theThief:Magic! times and draw !M! cards."
     ]
   },
   "theThief:ShadowEvade": {
@@ -196,8 +200,8 @@
   },
   "theThief:Gut": {
     "NAME": "Gut",
-    "DESCRIPTION": "Add !theThief:Magic! Voids to your draw pile. Deal !D! damage !M! times.Add !theThief:Magic! Voids to your draw pile. Deal !D! damage !M! times.",
-    "UPGRADE_DESCRIPTION": "Add !theThief:Magic! Voids to your draw pile. Deal !D! damage !M! times.",
+    "DESCRIPTION": "Add !theThief:Magic! Voids to your draw pile. NL Deal !D! damage !M! times.",
+    "UPGRADE_DESCRIPTION": "Add !theThief:Magic! Voids to your draw pile. NL Deal !D! damage !M! times.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]
