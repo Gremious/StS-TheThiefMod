@@ -59,7 +59,7 @@ public class BeautifulLies extends AbstractBackstabCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m,
-                new DamageInfo(p, this.damage * this.backstabNumber, this.damageTypeForTurn),
+                new DamageInfo(p, this.damage, this.damageTypeForTurn),
                 AbstractGameAction.AttackEffect.SLASH_VERTICAL));
 
         AbstractDungeon.actionManager.addToBottom(new AddCardToDeckAction(makeCopy()));
