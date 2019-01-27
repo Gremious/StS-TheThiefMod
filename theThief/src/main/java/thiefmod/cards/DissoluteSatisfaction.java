@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
 import thiefmod.patches.Character.AbstractCardEnum;
+import thiefmod.patches.Unique.ThiefCardTags;
 import thiefmod.powers.Unique.DissoluteSatisfactionPower;
 
 import java.util.ArrayList;
@@ -54,6 +55,8 @@ public class DissoluteSatisfaction extends AbstractBackstabCard {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
         magicNumber = baseMagicNumber = MAGIC;
+
+        this.tags.add(ThiefCardTags.SHADOWSTEP);
     }
 
     // Actions the card should do.

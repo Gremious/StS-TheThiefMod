@@ -62,7 +62,7 @@ public class BeautifulLies extends AbstractBackstabCard {
                 new DamageInfo(p, this.damage, this.damageTypeForTurn),
                 AbstractGameAction.AttackEffect.SLASH_VERTICAL));
 
-        AbstractDungeon.actionManager.addToBottom(new AddCardToDeckAction(makeCopy()));
+        AbstractDungeon.actionManager.addToBottom(new AddCardToDeckAction(makeStatEquivalentCopy()));
 
     }
 

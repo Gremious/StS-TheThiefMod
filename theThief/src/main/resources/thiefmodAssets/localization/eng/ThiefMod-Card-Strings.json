@@ -73,8 +73,8 @@
   },
   "theThief:Shadowstep": {
     "NAME": "Shadowstep",
-    "DESCRIPTION": "Shadowstep !M! time. Shuffle a copy of this card into your deck. Exhaust.",
-    "UPGRADE_DESCRIPTION": "Shadowstep !M! times. Shuffle a copy of this card into your deck. Exhaust."
+    "DESCRIPTION": "Shadowstep !M! time. NL Shuffle a copy of this card into your deck. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Shadowstep !M! times. NL Shuffle a copy of this card into your deck. Exhaust."
   },
   "theThief:SwiftTread": {
     "NAME": "Swift Tread",

@@ -8,9 +8,9 @@
     ]
   },
   "theThief:DramaticFeignPower": {
-    "NAME": "You cannot use any cards this turn.",
+    "NAME": "Feign",
     "DESCRIPTIONS": [
-      "You are feigning death for ",
+      "You cannot use any cards this turn. NL You are feigning death for ",
       " turn",
       " turns"
     ]
@@ -64,7 +64,7 @@
     ]
   },
   "theThief:TheThiefThieveryPower": {
-    "NAME": "Thievery Power",
+    "NAME": "Thievery",
     "DESCRIPTIONS": [
       "Every time you deal damage gain ",
       " gold."
@@ -86,7 +86,7 @@
     ]
   },
   "theThief:DealDamageToAllNextTurnPower": {
-    "NAME": "Deal Damage To All Enemies Next Turn",
+    "NAME": "Deal Damage To All",
     "DESCRIPTIONS": [
       "At the start of your next turn, you will deal ",
       " damage to all enemies."
@@ -177,7 +177,7 @@
     ]
   },
   "theThief:DissoluteSatisfactionPower": {
-    "NAME": "Dissolute Satisfaction Power",
+    "NAME": "Dissolute Satisfaction",
     "DESCRIPTIONS": [
       "Whenever you deal damage, you will heal for ",
       " HP."

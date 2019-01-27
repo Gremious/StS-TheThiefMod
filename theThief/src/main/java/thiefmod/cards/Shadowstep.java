@@ -1,6 +1,7 @@
 package thiefmod.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -42,6 +43,8 @@ public class Shadowstep extends AbstractBackstabCard {
     private static final int MAGIC = 1;
     private static final int UPGRADED_PLUS_MAGIC = 1;
 
+    private static final int MAGIC_TWO = 1;
+
 
 // /STAT DECLARATION/
 
@@ -49,6 +52,7 @@ public class Shadowstep extends AbstractBackstabCard {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
         this.magicNumber = this.baseMagicNumber = MAGIC;
+        this.backstabNumber = this.baseBackstabNumber = MAGIC_TWO;
         this.tags.add(ThiefCardTags.SHADOWSTEP);
     }
 
@@ -57,6 +61,8 @@ public class Shadowstep extends AbstractBackstabCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(
                 p, p, new ShadowstepPower(p, p, this.magicNumber), this.magicNumber));
+
+        AbstractDungeon.actionManager.addToTop(new MakeTempCardInDrawPileAction(new Shadowstep(), backstabNumber, true, true));
 
     }
 
