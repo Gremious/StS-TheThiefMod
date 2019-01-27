@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -59,33 +60,50 @@ public class ShadowstepPower extends AbstractPower {
 
     @Override
     public void onInitialApplication() {
-        actionManager.addToBottom(new ApplyPowerAction(this.owner, this.source,
-                new BackstabPower(this.owner, this.source, this.amount), this.amount));
+        actionManager.addToBottom(new ApplyPowerAction(owner, source,
+                new BackstabPower(owner, source, amount), amount));
 
     }
 
     @Override
     public int onLoseHp(int damageAmount) {
-        shadowMastery = AbstractDungeon.player.getPower(ShadowMasteryPower.POWER_ID).amount;
-        return (damageAmount / 10) * (10 - this.amount * (shadowMastery + 1));
+
+        if (AbstractDungeon.player.hasPower(ShadowMasteryPower.POWER_ID)) {
+            shadowMastery = AbstractDungeon.player.getPower(ShadowMasteryPower.POWER_ID).amount;
+            return (damageAmount / 10) * (10 - amount * (shadowMastery + 1));
+        } else {
+            return (damageAmount / 10) * (10 - amount);
+        }
     }
 
     @Override
-    public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (card.hasTag(ThiefCardTags.BACKSTAB) || card.hasTag(ThiefCardTags.SHADOWSTEP)) {
-            return;
+    public float atDamageReceive(float damage, DamageInfo.DamageType type) {
+
+        if (AbstractDungeon.player.hasPower(ShadowMasteryPower.POWER_ID)) {
+            shadowMastery = AbstractDungeon.player.getPower(ShadowMasteryPower.POWER_ID).amount;
+            return (damage / 10) * (10 - amount * (shadowMastery + 1));
+        } else {
+            return (damage / 10) * (10 - amount);
         }
-        actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.source, this.ID));
+    }
+
+
+    @Override
+    public void onUseCard(AbstractCard card, UseCardAction action) {
+        if (card.hasTag(ThiefCardTags.SHADOWSTEP)) {
+            return;
+        } else {
+            actionManager.addToBottom(new RemoveSpecificPowerAction(owner, source, ID));
+        }
     }
 
     @Override
     public void atStartOfTurn() {
 
-        actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.source, this.ID));
+        actionManager.addToBottom(new RemoveSpecificPowerAction(owner, source, ID));
     }
 
 
-    // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() { // tbh idk what i was thinking with this it doesn't have a >1 description
         if (AbstractDungeon.player.hasPower(ShadowMasteryPower.POWER_ID)) {
@@ -94,13 +112,13 @@ public class ShadowstepPower extends AbstractPower {
             shadowMastery = 0;
         }
         if (this.amount == 1) {
-            if (this.owner.hasPower(ShadowMasteryPower.POWER_ID)) {
-                this.description = DESCRIPTIONS[0] + this.amount * (shadowMastery + 1) + DESCRIPTIONS[1];
+            if (owner.hasPower(ShadowMasteryPower.POWER_ID)) {
+                description = DESCRIPTIONS[0] + amount * (shadowMastery + 1) + DESCRIPTIONS[1];
             } else {
-                this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+                description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
             }
         } else {
-            this.description = DESCRIPTIONS[0] + this.amount * (shadowMastery + 1) + DESCRIPTIONS[1];
+            description = DESCRIPTIONS[0] + amount * (shadowMastery + 1) + DESCRIPTIONS[1];
         }
     }
 
