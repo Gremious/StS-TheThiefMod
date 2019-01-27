@@ -26,8 +26,7 @@ public class GainGoldAction extends AbstractGameAction {
     }
 
     public GainGoldAction(AbstractCreature powerOwner, AbstractCreature powerSource, int goldAmount) {
-        this.actionType = com.megacrit.cardcrawl.actions.AbstractGameAction.ActionType.SPECIAL;
-        this.duration = Settings.ACTION_DUR_XFAST;
+        this.actionType = ActionType.HEAL;
 
         this.target = powerOwner;
         this.source = powerSource;

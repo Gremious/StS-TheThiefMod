@@ -14,10 +14,10 @@ import java.util.ArrayList;
 public class StolenArsenalAction extends AbstractGameAction {
     private AbstractPlayer player;
 
-    private static ArrayList<AbstractCard> drawCards;
-    private static ArrayList<AbstractCard> discardCards;
-    private static ArrayList<AbstractCard> exhaustCards;
-    private static ArrayList<AbstractCard> handCards;
+    private ArrayList<AbstractCard> drawCards = new ArrayList<>();
+    private ArrayList<AbstractCard> discardCards = new ArrayList<>();
+    private ArrayList<AbstractCard> exhaustCards = new ArrayList<>();
+    private ArrayList<AbstractCard> handCards = new ArrayList<>();
 
     public StolenArsenalAction(final AbstractPlayer player) {
         this.player = player;
