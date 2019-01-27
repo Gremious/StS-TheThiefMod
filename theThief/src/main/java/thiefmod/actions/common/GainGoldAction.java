@@ -11,21 +11,26 @@ import com.megacrit.cardcrawl.vfx.GainPennyEffect;
 public class GainGoldAction extends AbstractGameAction {
     private int goldAmount;
     private DamageInfo info;
+    private AbstractCreature attackTarget;
 
-    public GainGoldAction(AbstractCreature target, AbstractCreature source, int goldAmount, DamageInfo info) {
+    public GainGoldAction(AbstractCreature powerOwner, AbstractCreature powerSource, int goldAmount, AbstractCreature attackTarget, DamageInfo info) {
         this.actionType = com.megacrit.cardcrawl.actions.AbstractGameAction.ActionType.SPECIAL;
         this.duration = Settings.ACTION_DUR_XFAST;
-        this.target = target;
-        this.source = source;
-        this.info = info;
+
+        this.target = powerOwner;
+        this.source = powerSource;
         this.goldAmount = goldAmount;
+
+        this.attackTarget = attackTarget;
+        this.info = info;
     }
 
-    public GainGoldAction(AbstractCreature target, AbstractCreature source, int goldAmount) {
+    public GainGoldAction(AbstractCreature powerOwner, AbstractCreature powerSource, int goldAmount) {
         this.actionType = com.megacrit.cardcrawl.actions.AbstractGameAction.ActionType.SPECIAL;
         this.duration = Settings.ACTION_DUR_XFAST;
-        this.target = target;
-        this.source = source;
+
+        this.target = powerOwner;
+        this.source = powerSource;
         this.goldAmount = goldAmount;
     }
 
@@ -46,12 +51,12 @@ public class GainGoldAction extends AbstractGameAction {
                 AbstractDungeon.actionManager.clearPostCombatActions();
             }
         } else {
-
-            if (source.gold < - goldAmount) {
-                goldAmount = -source.gold;
+            if (this.target.gold < -this.goldAmount) {
+                this.goldAmount = -this.target.gold;
             }
-            this.source.gold += this.goldAmount;
+            this.target.gold += this.goldAmount;
         }
         this.isDone = true;
     }
+
 }
