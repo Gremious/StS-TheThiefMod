@@ -408,8 +408,8 @@
   },
   "theThief:PrecisePositioning": {
     "NAME": "Precise Positioning",
-    "DESCRIPTION": "Shadowstep !M! ",
-    "UPGRADE_DESCRIPTION": ".",
+    "DESCRIPTION": "Shadowstep !M! time. Next turn your attack damage is doubled. NL Refund stslib:refund. NL Ethereal.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Shadowstep !M! time. Next turn your attack damage is doubled. NL Refund stslib:refund. NL Ethereal.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]It's[] [#88888]a[] [#88888]shame[] [#88888]that[] [#88888]'Phantom'[] [#88888]fellow[] [#88888]isn't[] [#88888]here!...[]",
       " time. Next turn your attack damage is doubled. NL Refund stslib:refund. NL Ethereal.",

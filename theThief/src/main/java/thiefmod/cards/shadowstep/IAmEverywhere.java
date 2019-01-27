@@ -1,4 +1,4 @@
-package thiefmod.cards;
+package thiefmod.cards.shadowstep;
 
 import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -11,7 +11,9 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import thiefmod.ThiefMod;
 import thiefmod.actions.unique.IAmEverywhereAction;
+import thiefmod.cards.AbstractBackstabCard;
 import thiefmod.patches.Character.AbstractCardEnum;
+import thiefmod.patches.Unique.ThiefCardTags;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,6 +50,7 @@ public class IAmEverywhere extends AbstractBackstabCard {
     public IAmEverywhere() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
+        this.tags.add(ThiefCardTags.SHADOWSTEP);
 
     }
 

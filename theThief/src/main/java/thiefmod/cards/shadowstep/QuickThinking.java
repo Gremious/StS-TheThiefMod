@@ -1,7 +1,7 @@
-package thiefmod.cards;
+package thiefmod.cards.shadowstep;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -10,17 +10,18 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
+import thiefmod.cards.AbstractBackstabCard;
 import thiefmod.patches.Character.AbstractCardEnum;
 import thiefmod.patches.Unique.ThiefCardTags;
 import thiefmod.powers.Common.ShadowstepPower;
 
-public class Shadowstep extends AbstractBackstabCard {
+public class QuickThinking extends AbstractBackstabCard {
 
 
 // TEXT DECLARATION
 
-    public static final String ID = ThiefMod.makeID("Shadowstep");
-    public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_COMMON_ATTACK);
+    public static final String ID = ThiefMod.makeID("QuickThinking");
+    public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_COMMON_SKILL);
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:FlavorText");
@@ -39,38 +40,45 @@ public class Shadowstep extends AbstractBackstabCard {
 
     private static final int COST = 1;
 
-
     private static final int MAGIC = 1;
     private static final int UPGRADED_PLUS_MAGIC = 1;
 
-    private static final int MAGIC_TWO = 1;
-
-
 // /STAT DECLARATION/
 
-    public Shadowstep() {
+    public QuickThinking() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
         this.magicNumber = this.baseMagicNumber = MAGIC;
-        this.backstabNumber = this.baseBackstabNumber = MAGIC_TWO;
+
         this.tags.add(ThiefCardTags.SHADOWSTEP);
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(
-                p, p, new ShadowstepPower(p, p, this.magicNumber), this.magicNumber));
 
-        AbstractDungeon.actionManager.addToTop(new MakeTempCardInDrawPileAction(new Shadowstep(), backstabNumber, true, true));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
+                p, p, new ShadowstepPower(p, p, 1), 1));
+
+        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.magicNumber));
 
     }
 
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+        if (AbstractDungeon.player.cardsPlayedThisTurn == 0) {
+            this.rawDescription = this.DESCRIPTION + this.EXTENDED_DESCRIPTION[0];
+        } else {
+            this.rawDescription = this.DESCRIPTION + this.EXTENDED_DESCRIPTION[1];
+        }
+        this.initializeDescription();
+    }
 
     // Which card to return when making a copy of this card.
     @Override
     public AbstractCard makeCopy() {
-        return new Shadowstep();
+        return new QuickThinking();
     }
 
     //Upgraded stats.
@@ -79,7 +87,7 @@ public class Shadowstep extends AbstractBackstabCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
-            this.rawDescription = UPGRADE_DESCRIPTION;
+//          this.rawDescription = UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }
     }

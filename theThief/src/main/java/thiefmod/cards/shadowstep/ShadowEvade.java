@@ -1,7 +1,8 @@
-package thiefmod.cards;
+package thiefmod.cards.shadowstep;
 
+import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -10,15 +11,20 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
+import thiefmod.cards.AbstractBackstabCard;
 import thiefmod.patches.Character.AbstractCardEnum;
+import thiefmod.patches.Unique.ThiefCardTags;
 import thiefmod.powers.Common.ShadowstepPower;
 
-public class QuickThinking extends AbstractBackstabCard {
+import java.util.ArrayList;
+import java.util.List;
+
+public class ShadowEvade extends AbstractBackstabCard {
 
 
 // TEXT DECLARATION
 
-    public static final String ID = ThiefMod.makeID("QuickThinking");
+    public static final String ID = ThiefMod.makeID("ShadowEvade");
     public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_COMMON_SKILL);
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -27,6 +33,7 @@ public class QuickThinking extends AbstractBackstabCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String EXTENDED_DESCRIPTION[] = cardStrings.EXTENDED_DESCRIPTION;
+
 
 // /TEXT DECLARATION/
 
@@ -38,15 +45,19 @@ public class QuickThinking extends AbstractBackstabCard {
 
     private static final int COST = 1;
 
+    private static final int BLOCK = 5;
+    private static final int UPGRADE_PLUS_BLOCK = 3;
+
     private static final int MAGIC = 1;
-    private static final int UPGRADED_PLUS_MAGIC = 1;
 
 // /STAT DECLARATION/
 
-    public QuickThinking() {
+    public ShadowEvade() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-
+        this.baseBlock = BLOCK;
         this.magicNumber = this.baseMagicNumber = MAGIC;
+
+        this.tags.add(ThiefCardTags.SHADOWSTEP);
     }
 
     // Actions the card should do.
@@ -54,27 +65,26 @@ public class QuickThinking extends AbstractBackstabCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
-                p, p, new ShadowstepPower(p, p, 1), 1));
+                p, p, new ShadowstepPower(
+                p, p, this.magicNumber), 1));
 
-        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(
+                p, p, this.block));
 
     }
 
+
     @Override
-    public void applyPowers() {
-        super.applyPowers();
-        if (AbstractDungeon.player.cardsPlayedThisTurn == 0) {
-            this.rawDescription = this.DESCRIPTION + this.EXTENDED_DESCRIPTION[0];
-        } else {
-            this.rawDescription = this.DESCRIPTION + this.EXTENDED_DESCRIPTION[1];
-        }
-        this.initializeDescription();
+    public List<TooltipInfo> getCustomTooltips() {
+        List<TooltipInfo> tips = new ArrayList<>();
+        tips.add(new TooltipInfo(FLAVOR_STRINGS[0], EXTENDED_DESCRIPTION[0]));
+        return tips;
     }
 
     // Which card to return when making a copy of this card.
     @Override
     public AbstractCard makeCopy() {
-        return new QuickThinking();
+        return new ShadowEvade();
     }
 
     //Upgraded stats.
@@ -82,7 +92,7 @@ public class QuickThinking extends AbstractBackstabCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
+            this.upgradeBlock(UPGRADE_PLUS_BLOCK);
 //          this.rawDescription = UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }

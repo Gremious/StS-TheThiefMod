@@ -1,7 +1,8 @@
-package thiefmod.cards;
+package thiefmod.cards.shadowstep;
 
 import basemod.helpers.TooltipInfo;
-import com.evacipated.cardcrawl.mod.stslib.variables.RefundVariable;
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.FleetingField;
+import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -10,8 +11,10 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.PhantasmalPower;
+import com.megacrit.cardcrawl.powers.LoseStrengthPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import thiefmod.ThiefMod;
+import thiefmod.cards.AbstractBackstabCard;
 import thiefmod.patches.Character.AbstractCardEnum;
 import thiefmod.patches.Unique.ThiefCardTags;
 import thiefmod.powers.Common.ShadowstepPower;
@@ -19,13 +22,13 @@ import thiefmod.powers.Common.ShadowstepPower;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PrecisePositioning extends AbstractBackstabCard {
+public class MurderousIntent extends AbstractBackstabCard {
 //implements StartupCard
 //implements ModalChoice.Callback
 
 // TEXT DECLARATION
 
-    public static final String ID = ThiefMod.makeID("PrecisePositioning");
+    public static final String ID = ThiefMod.makeID("MurderousIntent");
     public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_UNCOMMON_ATTACK);
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -40,24 +43,27 @@ public class PrecisePositioning extends AbstractBackstabCard {
 
     // STAT DECLARATION
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
 
-    private static final int COST = 3;
+    private static final int COST = 1;
 
-    private static final int MAGIC = 1;
+    private static final int MAGIC = 2;
+    private static final int UPGRADED_PLUS_MAGIC = 4;
+
+    private static final int BACKSTAB = 1;
 
 // /STAT DECLARATION/
 
-    public PrecisePositioning() {
+    public MurderousIntent() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        RefundVariable.setBaseValue(this, 2);
+        ExhaustiveVariable.setBaseValue(this, 2);
 
-        this.isEthereal = !this.upgraded;
-
+        FleetingField.fleeting.set(this, true);
         this.magicNumber = this.baseMagicNumber = MAGIC;
+        this.backstabNumber = this.baseBackstabNumber = BACKSTAB;
 
         this.tags.add(ThiefCardTags.SHADOWSTEP);
     }
@@ -66,31 +72,15 @@ public class PrecisePositioning extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ShadowstepPower(p, p, this.magicNumber), this.magicNumber));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new PhantasmalPower(p, this.magicNumber), this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
+                p, p, new ShadowstepPower(p, p, this.magicNumber), this.magicNumber));
 
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
+                p, p, new StrengthPower(p, this.magicNumber), this.magicNumber));
 
-    }
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
+                p, p, new LoseStrengthPower(p, this.magicNumber), this.magicNumber));
 
-    @Override
-    public void applyPowers() {
-        super.applyPowers();
-
-        if (this.magicNumber >= 2) {
-            if (this.upgraded) {
-                this.rawDescription += this.EXTENDED_DESCRIPTION[4];
-            } else {
-                this.rawDescription += this.EXTENDED_DESCRIPTION[2];
-            }
-        } else {
-            if (!this.upgraded) {
-                this.rawDescription += this.EXTENDED_DESCRIPTION[1];
-            } else {
-                this.rawDescription += this.EXTENDED_DESCRIPTION[3];
-            }
-        }
-
-        this.initializeDescription();
     }
 
 
@@ -105,7 +95,7 @@ public class PrecisePositioning extends AbstractBackstabCard {
     // Which card to return when making a copy of this card.
     @Override
     public AbstractCard makeCopy() {
-        return new PrecisePositioning();
+        return new MurderousIntent();
     }
 
     //Upgraded stats.
@@ -113,7 +103,7 @@ public class PrecisePositioning extends AbstractBackstabCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.isInnate = true;
+            this.upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
 //          this.rawDescription = UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }
