@@ -40,18 +40,18 @@ public class TheThiefThieveryPower extends AbstractPower {
 
     @Override
     public void onInflictDamage(DamageInfo info, int damageAmount, AbstractCreature attackTarget) {
-        AbstractDungeon.actionManager.addToBottom(new GainGoldAction(owner, source, amount));
+        AbstractDungeon.actionManager.addToBottom(new GainGoldAction(owner, source, amount, attackTarget, info));
     }
 
     @Override
     public void atStartOfTurn() {
-        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.source, this.ID)) ;
+        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.source, this.ID));
     }
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {
-            this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
 
     }
 
