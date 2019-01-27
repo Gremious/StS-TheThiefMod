@@ -110,8 +110,8 @@
   },
   "theThief:StolenMegaphone": {
     "NAME": "Stolen Megaphone",
-    "DESCRIPTION": "Your next !M! power is played twice.",
-    "UPGRADE_DESCRIPTION": "Your next !M! powers are played twice."
+    "DESCRIPTION": "The next !M! power you play this turn is played twice.",
+    "UPGRADE_DESCRIPTION": "The next !M! powers you play this turn are played twice."
   },
   "theThief:StolenCode": {
     "NAME": "Stolen Code",

@@ -88,14 +88,18 @@ public class ShadowstepPower extends AbstractPower {
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() { // tbh idk what i was thinking with this it doesn't have a >1 description
-        shadowMastery = AbstractDungeon.player.getPower(ShadowMasteryPower.POWER_ID).amount;
+        if (AbstractDungeon.player.hasPower(ShadowMasteryPower.POWER_ID)) {
+            shadowMastery = AbstractDungeon.player.getPower(ShadowMasteryPower.POWER_ID).amount;
+        } else {
+            shadowMastery = 0;
+        }
         if (this.amount == 1) {
             if (this.owner.hasPower(ShadowMasteryPower.POWER_ID)) {
                 this.description = DESCRIPTIONS[0] + this.amount * (shadowMastery + 1) + DESCRIPTIONS[1];
             } else {
                 this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
             }
-        } else if (this.amount > 1) {
+        } else {
             this.description = DESCRIPTIONS[0] + this.amount * (shadowMastery + 1) + DESCRIPTIONS[1];
         }
     }

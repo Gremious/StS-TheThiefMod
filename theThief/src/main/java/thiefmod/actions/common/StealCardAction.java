@@ -236,17 +236,28 @@ public class StealCardAction extends AbstractGameAction {
         stolenCards.sortAlphabetically(false);
     }
 
-
-    // Card pool of upgraded cards.
-    private static CardGroup stolenCardsUpgraded;
+    // Create a new card group of the cards. This is essentially your cardpool.
+    private static CardGroup stolenCardsExhausted;
 
     static {
-        stolenCardsUpgraded = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+        stolenCardsExhausted = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
         for (AbstractCard c : stolenCards.group) {
+            AbstractCard upgradedCopy = makeExhaustedStolenCard(c, false);
+            stolenCardsExhausted.addToTop(upgradedCopy);
 
-            AbstractCard upgradedCopy = makeExhaustedStolenCard(c,false);
-            upgradedCopy.upgrade();
-            stolenCardsUpgraded.addToTop(upgradedCopy);
+        }
+    }
+
+
+    // Card pool of upgraded cards.
+    private static CardGroup stolenCardsUpgradedExhausted;
+
+    static {
+        stolenCardsUpgradedExhausted = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+        for (AbstractCard c : stolenCards.group) {
+            c.upgrade();
+            AbstractCard upgradedCopy = makeExhaustedStolenCard(c, false);
+            stolenCardsUpgradedExhausted.addToTop(upgradedCopy);
 
         }
     }
@@ -255,9 +266,9 @@ public class StealCardAction extends AbstractGameAction {
     // CardGroup to be called that decides whether the stolen cards to add are upgraded or not.
     private CardGroup allStolenCards() {
         if (upgraded || AbstractDungeon.player.hasPower(IllGottenGainsPower.POWER_ID)) {
-            return stolenCardsUpgraded;
+            return stolenCardsUpgradedExhausted;
         } else {
-            return stolenCards;
+            return stolenCardsExhausted;
         }
     }
 
@@ -269,8 +280,6 @@ public class StealCardAction extends AbstractGameAction {
         while (cards.size() < amount) {
             AbstractCard card = allStolenCards().getRandomCard(true);
             if (allowDuplicates || !cards.contains(card)) {
-
-
 
                 cards.add(card);
             }
@@ -323,19 +332,16 @@ public class StealCardAction extends AbstractGameAction {
 
     public static AbstractCard makeExhaustedStolenCard(AbstractCard card, boolean free) {
         AbstractCard copy = card.makeSameInstanceOf();
-
-       if (free) {
-           copy.modifyCostForCombat(-999);
-       }
+        if (free) {
+            copy.modifyCostForCombat(-999);
+        }
 
         if (!copy.exhaust) {
             copy.rawDescription += " NL Exhaust.";
         }
 
         copy.exhaustOnUseOnce = copy.exhaust = true;
-
         copy.initializeDescription();
-
         return copy;
     }
 }
