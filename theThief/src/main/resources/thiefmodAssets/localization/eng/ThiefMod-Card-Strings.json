@@ -300,8 +300,8 @@
   },
   "theThief:FindersKeepers": {
     "NAME": "Finders Keepers",
-    "DESCRIPTION": "Add the next non-gray card you play to your deck. Fleeting.",
-    "UPGRADE_DESCRIPTION": "Add the next non-gray card you play to your deck. Fleeting.",
+    "DESCRIPTION": "Add the next non-gray card you play to your deck, permanently. Fleeting.",
+    "UPGRADE_DESCRIPTION": "Add the next non-gray card you play to your deck, permanently. Fleeting.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]What's[][#88888]yours[][#88888]is[][#88888]mine.[]",
       "Tip.",

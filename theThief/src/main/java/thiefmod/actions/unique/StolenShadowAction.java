@@ -11,7 +11,7 @@ public class StolenShadowAction extends AbstractGameAction {
     private AbstractPlayer player;
     private int costReduce;
 
-    private static ArrayList<AbstractCard> allCards;
+    private ArrayList<AbstractCard> allCards = new ArrayList<>();
 
     public StolenShadowAction(final AbstractPlayer player, final int costReduce) {
         this.player = player;
