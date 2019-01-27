@@ -39,7 +39,7 @@ public class TheThiefThieveryPower extends AbstractPower {
     }
 
     @Override
-    public void onInflictDamage(DamageInfo info, int damageAmount, AbstractCreature attackTarget) {
+    public void onAttack(DamageInfo info, int damageAmount, AbstractCreature attackTarget) {
         AbstractDungeon.actionManager.addToBottom(new GainGoldAction(owner, source, amount, attackTarget, info));
     }
 

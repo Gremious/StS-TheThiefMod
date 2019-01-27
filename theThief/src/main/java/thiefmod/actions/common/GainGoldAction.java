@@ -38,28 +38,27 @@ public class GainGoldAction extends AbstractGameAction {
         com.megacrit.cardcrawl.core.CardCrawlGame.sound.play("GOLD_JINGLE");
 
         if (attackTarget != null) {
-            attackTarget.damage(info);
-            if ((((AbstractMonster) attackTarget).isDying || attackTarget.currentHealth <= 0) && !attackTarget.halfDead) {
+            this.attackTarget.damage(this.info);
+            if ((((AbstractMonster) this.attackTarget).isDying || this.attackTarget.currentHealth <= 0) && !this.attackTarget.halfDead) {
 
-                AbstractDungeon.player.gainGold(goldAmount);
+                target.gold += goldAmount;
 
-                for (int i = 0; i < goldAmount; ++i) {
-                    AbstractDungeon.effectList.add(new GainPennyEffect(source, attackTarget.hb.cX, attackTarget.hb.cY, source.hb.cX, source.hb.cY, true));
+                for (int i = 0; i < this.goldAmount; ++i) {
+                    AbstractDungeon.effectList.add(new GainPennyEffect(this.source, this.target.hb.cX, this.target.hb.cY, this.source.hb.cX, this.source.hb.cY, true));
                 }
             }
 
             if (AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {
                 AbstractDungeon.actionManager.clearPostCombatActions();
             }
-
         } else {
+
             if (target.gold < -goldAmount) {
                 goldAmount = -target.gold;
             }
             target.gold += goldAmount;
 
         }
-
         this.isDone = true;
     }
 
