@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
+import thiefmod.actions.StealCardAction;
 import thiefmod.patches.Character.AbstractCardEnum;
 
 public class Ransack extends AbstractBackstabCard {
@@ -57,7 +58,7 @@ public class Ransack extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        AbstractDungeon.actionManager.addToBottom(new thiefmod.actions.common.StealCardAction(
+        AbstractDungeon.actionManager.addToBottom(new StealCardAction(
                 CARDS_AMOUNT, this.magicNumber, ADD_RANDOM, ADD_LOCATION, ADD_UPGRADED));
 
     }

@@ -84,7 +84,7 @@ public class SwiftSlash extends AbstractBackstabCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
-//          this.rawDescription = UPGRADE_DESCRIPTION;
+            this.rawDescription = UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }
     }

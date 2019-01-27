@@ -1,4 +1,4 @@
-package thiefmod.actions.common;
+package thiefmod.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.cards.curses.Shame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
+import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import thiefmod.ThiefMod;
@@ -131,7 +132,6 @@ public class StealCardAction extends AbstractGameAction {
             for (AbstractCard c : conspireCards) {
                 if (c != null) {
                     c.name = "Stolen " + c.name;
-                    c.exhaustOnUseOnce = true;
                     stolenCards.addToTop(c);
                 }
             }
@@ -182,8 +182,6 @@ public class StealCardAction extends AbstractGameAction {
                 }
                 for (AbstractCard c : blackCards) {
                     if (c != null) {
-                        //    c.name = "Stolen " + c.name;
-                        c.exhaustOnUseOnce = true;
                         stolenCards.addToTop(c);
                     }
                 }
@@ -213,12 +211,10 @@ public class StealCardAction extends AbstractGameAction {
             for (AbstractCard c : mysticCards) {
                 if (c != null) {
                     c.name = "Stolen " + c.name;
-                    c.exhaustOnUseOnce = true;
                     stolenCards.addToTop(c);
                 }
             }
             for (AbstractCard c : customMysticCards) {
-                c.exhaustOnUseOnce = true;
                 stolenCards.addToTop(c);
 
             }
@@ -237,7 +233,7 @@ public class StealCardAction extends AbstractGameAction {
     }
 
     // Create a new card group of the cards. This is essentially your cardpool.
-    private static CardGroup stolenCardsExhausted;
+  /*  private static CardGroup stolenCardsExhausted;
 
     static {
         stolenCardsExhausted = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
@@ -248,17 +244,16 @@ public class StealCardAction extends AbstractGameAction {
         }
     }
 
-
+*/
     // Card pool of upgraded cards.
-    private static CardGroup stolenCardsUpgradedExhausted;
+     private static CardGroup stolenCardsUpgraded;
 
-    static {
-        stolenCardsUpgradedExhausted = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+    {
+        stolenCardsUpgraded = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
         for (AbstractCard c : stolenCards.group) {
-            c.upgrade();
-            AbstractCard upgradedCopy = makeExhaustedStolenCard(c, false);
-            stolenCardsUpgradedExhausted.addToTop(upgradedCopy);
-
+            AbstractCard upgradedCopy = c.makeCopy();
+            upgradedCopy.upgrade();
+            stolenCardsUpgraded.addToTop(upgradedCopy);
         }
     }
 
@@ -266,9 +261,9 @@ public class StealCardAction extends AbstractGameAction {
     // CardGroup to be called that decides whether the stolen cards to add are upgraded or not.
     private CardGroup allStolenCards() {
         if (upgraded || AbstractDungeon.player.hasPower(IllGottenGainsPower.POWER_ID)) {
-            return stolenCardsUpgradedExhausted;
+            return stolenCardsUpgraded;
         } else {
-            return stolenCardsExhausted;
+            return stolenCards;
         }
     }
 
@@ -295,7 +290,8 @@ public class StealCardAction extends AbstractGameAction {
 
             if (Objects.equals(this.location, "Hand")) { //TODO: Test whether or not having a full hand breaks this.
 
-                AbstractDungeon.actionManager.actions.add(new MakeTempCardInHandAction(c, 1));
+                logger.info("Stealing " + c + " to Hand.");
+                AbstractDungeon.actionManager.actions.add(new MakeExhaustedCopyAction(c));
 
             } else if (Objects.equals(this.location, "Draw")) {
 
@@ -307,12 +303,13 @@ public class StealCardAction extends AbstractGameAction {
 
             } else {
                 logger.info("addStolenCards() didn't find ether hand, deck or discard.");
+                break;
             }
 
         }
 
     }
-//, (float) Settings.WIDTH / 2.0f, (float) Settings.HEIGHT / 2.0f - See if ShowCardAndAddToDiscardEffect looks find without noting this X and Y
+// TODO: (float) Settings.WIDTH / 2.0f, (float) Settings.HEIGHT / 2.0f - See if ShowCardAndAddToDiscardEffect looks find without noting this X and Y
 
 
 // ========================
@@ -324,12 +321,13 @@ public class StealCardAction extends AbstractGameAction {
             AbstractCard etherealCurse = CardLibrary.getCopy(Shame.ID);
             etherealCurse.isEthereal = true;
             etherealCurse.rawDescription += " NL Etherial.";
-            AbstractDungeon.actionManager.actions.add(new MakeTempCardInHandAction(etherealCurse, 1));
+            AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(etherealCurse));
         }
     }
 
 // ========================
-
+// Let's make some proper copies of cards.
+/*
     public static AbstractCard makeExhaustedStolenCard(AbstractCard card, boolean free) {
         AbstractCard copy = card.makeSameInstanceOf();
         if (free) {
@@ -344,4 +342,5 @@ public class StealCardAction extends AbstractGameAction {
         copy.initializeDescription();
         return copy;
     }
+*/
 }

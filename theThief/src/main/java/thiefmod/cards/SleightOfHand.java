@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
+import thiefmod.actions.StealCardAction;
 import thiefmod.patches.Character.AbstractCardEnum;
 
 public class SleightOfHand extends AbstractBackstabCard {
@@ -58,7 +59,7 @@ public class SleightOfHand extends AbstractBackstabCard {
         final int count = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
         AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.GainBlockAction(p, p, this.block));
 
-        AbstractDungeon.actionManager.addToBottom(new thiefmod.actions.common.StealCardAction(
+        AbstractDungeon.actionManager.addToBottom(new StealCardAction(
                 this.magicNumber, 1, ADD_RANDOM, ADD_LOCATION, ADD_UPGRADED));
 
     }

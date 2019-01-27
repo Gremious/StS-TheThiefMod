@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
-import thiefmod.actions.common.StealCardAction;
+import thiefmod.actions.StealCardAction;
 import thiefmod.cards.AbstractBackstabCard;
 import thiefmod.patches.Character.AbstractCardEnum;
 import thiefmod.patches.Unique.ThiefCardTags;

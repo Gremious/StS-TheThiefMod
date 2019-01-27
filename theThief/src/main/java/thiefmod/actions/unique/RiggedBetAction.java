@@ -4,7 +4,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import thiefmod.actions.common.StealCardAction;
+import thiefmod.actions.StealCardAction;
 
 public class RiggedBetAction extends AbstractGameAction {
     private float startingDuration;

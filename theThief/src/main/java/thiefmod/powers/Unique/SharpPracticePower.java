@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import thiefmod.ThiefMod;
+import thiefmod.actions.StealCardAction;
 
 // Empty Base
 
@@ -47,7 +48,7 @@ public class SharpPracticePower extends AbstractPower {
 
     @Override
     public void atStartOfTurn() {
-        AbstractDungeon.actionManager.addToBottom(new thiefmod.actions.common.StealCardAction(
+        AbstractDungeon.actionManager.addToBottom(new StealCardAction(
                 this.amount, 1, this.ADD_RANDOM, this.ADD_LOCATION, this.ADD_UPGRADED));
     }
 

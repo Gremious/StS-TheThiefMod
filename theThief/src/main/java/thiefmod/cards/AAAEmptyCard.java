@@ -19,7 +19,7 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import thiefmod.ThiefMod;
-import thiefmod.actions.common.StealCardAction;
+import thiefmod.actions.StealCardAction;
 import thiefmod.patches.Character.AbstractCardEnum;
 import thiefmod.patches.Unique.ThiefCardTags;
 import thiefmod.powers.Common.ShadowstepPower;

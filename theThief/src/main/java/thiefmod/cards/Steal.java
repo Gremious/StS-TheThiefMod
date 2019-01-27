@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
+import thiefmod.actions.StealCardAction;
 import thiefmod.patches.Character.AbstractCardEnum;
 
 public class Steal extends CustomCard {
@@ -64,7 +65,7 @@ public class Steal extends CustomCard {
                 new DamageInfo(p, this.damage, this.damageTypeForTurn),
                 AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
 
-        AbstractDungeon.actionManager.addToBottom(new thiefmod.actions.common.StealCardAction(
+        AbstractDungeon.actionManager.addToBottom(new StealCardAction(
                 this.magicNumber, ADD_COPIES, ADD_RANDOM, ADD_LOCATION, ADD_UPGRADED));
     }
 
