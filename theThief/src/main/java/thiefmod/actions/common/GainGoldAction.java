@@ -35,7 +35,7 @@ public class GainGoldAction extends AbstractGameAction {
 
     public void update() {
         com.megacrit.cardcrawl.core.CardCrawlGame.sound.play("GOLD_JINGLE");
-        if ((((AbstractMonster) this.attackTarget).isDying || this.attackTarget.currentHealth <= 0) && !this.attackTarget.halfDead) {
+        if (attackTarget != null && (((AbstractMonster) this.attackTarget).isDying || this.attackTarget.currentHealth <= 0) && !this.attackTarget.halfDead) {
             AbstractDungeon.player.gainGold(this.goldAmount);
 
             for (int i = 0; i < this.goldAmount; ++i) {

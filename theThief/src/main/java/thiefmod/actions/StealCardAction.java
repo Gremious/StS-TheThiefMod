@@ -1,6 +1,7 @@
 package thiefmod.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
@@ -18,11 +19,14 @@ import thiefmod.Utils;
 import thiefmod.actions.unique.StolenMegaphone;
 import thiefmod.cards.stolen.*;
 import thiefmod.cards.stolen.mystic.*;
+import thiefmod.powers.Unique.EtherealShamePower;
 import thiefmod.powers.Unique.IllGottenGainsPower;
 
 import java.util.ArrayList;
 import java.util.Objects;
 
+import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager;
+import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.player;
 import static mysticmod.MysticMod.cantripsGroup;
 import static thiefmod.ThiefMod.*;
 
@@ -32,7 +36,6 @@ public class StealCardAction extends AbstractGameAction {
     private boolean upgraded;
     private String location;
     private int copies;
-    private int curseCounter;
 
     private ArrayList<AbstractCard> cardsToAdd = new ArrayList<>();
 
@@ -315,32 +318,10 @@ public class StealCardAction extends AbstractGameAction {
 // ========================
 
     private void curseCounter() {
-        curseCounter++;
-        if (curseCounter == 5) {
-            curseCounter = 0;
-            AbstractCard etherealCurse = CardLibrary.getCopy(Shame.ID);
-            etherealCurse.isEthereal = true;
-            etherealCurse.rawDescription += " NL Etherial.";
-            AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(etherealCurse));
-        }
+        actionManager.addToBottom(new ApplyPowerAction(player, source,
+                new EtherealShamePower(player, source, 1), 1));
     }
 
 // ========================
-// Let's make some proper copies of cards.
-/*
-    public static AbstractCard makeExhaustedStolenCard(AbstractCard card, boolean free) {
-        AbstractCard copy = card.makeSameInstanceOf();
-        if (free) {
-            copy.modifyCostForCombat(-999);
-        }
 
-        if (!copy.exhaust) {
-            copy.rawDescription += " NL Exhaust.";
-        }
-
-        copy.exhaustOnUseOnce = copy.exhaust = true;
-        copy.initializeDescription();
-        return copy;
-    }
-*/
 }

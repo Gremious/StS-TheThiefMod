@@ -227,5 +227,13 @@
       " random Orb.",
       " random Orbs."
     ]
+  },
+  "theThief:EtherealShamePower": {
+    "NAME": "Fleeting Guilt",
+    "DESCRIPTIONS": [
+      "After stealing ",
+      " more card, add an Ethereal Shame to your hand.",
+      " more cards, add an Ethereal Shame to your hand."
+    ]
   }
 }
