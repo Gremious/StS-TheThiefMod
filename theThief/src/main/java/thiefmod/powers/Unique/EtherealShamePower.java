@@ -17,7 +17,7 @@ import thiefmod.patches.Unique.ThiefCardTags;
 
 public class EtherealShamePower extends AbstractPower {
     public AbstractCreature source;
-    private int curseCounter = 0;
+    private static int curseCounter = 0;
 
 
     public static final String POWER_ID = ThiefMod.makeID("EtherealShamePower");
@@ -52,6 +52,7 @@ public class EtherealShamePower extends AbstractPower {
                 c.isEthereal = true;
                 c.rawDescription += " NL Etherial.";
                 AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(c));
+                curseCounter = 0;
             }
         }
     }

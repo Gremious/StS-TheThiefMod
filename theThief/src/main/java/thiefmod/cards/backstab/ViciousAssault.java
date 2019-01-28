@@ -1,9 +1,9 @@
 package thiefmod.cards.backstab;
 
 import basemod.helpers.TooltipInfo;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.status.VoidCard;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -78,7 +78,9 @@ public class ViciousAssault extends AbstractBackstabCard {
 
             if (this.magicNumber != 0) {
                 while (this.magicNumber-- != 0) {
-                    AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new VoidCard(), 1));
+                    AbstractDungeon.actionManager.addToBottom(new DamageAction(
+                            m, new DamageInfo(p, damage, damageTypeForTurn),
+                            AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
                 }
                 this.magicNumber = this.baseMagicNumber;
             }
@@ -87,7 +89,9 @@ public class ViciousAssault extends AbstractBackstabCard {
         } else {
             if (this.backstabNumber != 0) {
                 while (this.backstabNumber-- != 0) {
-                    AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new VoidCard(), 1));
+                    AbstractDungeon.actionManager.addToBottom(new DamageAction(
+                            m, new DamageInfo(p, damage, damageTypeForTurn),
+                            AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
                 }
                 this.backstabNumber = this.baseBackstabNumber;
             }

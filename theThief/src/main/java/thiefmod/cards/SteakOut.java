@@ -2,8 +2,7 @@ package thiefmod.cards;
 
 import basemod.helpers.TooltipInfo;
 import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.StartupCard;
-import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.FleetingField;
-import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.AutoplayField;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAndDeckAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -56,10 +55,7 @@ public class SteakOut extends AbstractBackstabCard implements StartupCard {
 
     public SteakOut() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-
-        ExhaustiveVariable.setBaseValue(this, 2);
-        FleetingField.fleeting.set(this, true);
-
+        AutoplayField.autoplay.set(this, true);
         this.magicNumber = this.baseMagicNumber = MAGIC;
     }
 
@@ -89,12 +85,6 @@ public class SteakOut extends AbstractBackstabCard implements StartupCard {
         List<TooltipInfo> tips = new ArrayList<>();
         tips.add(new TooltipInfo(FLAVOR_STRINGS[0], EXTENDED_DESCRIPTION[0]));
         return tips;
-    }
-
-    // Which card to return when making a copy of this card.
-    @Override
-    public AbstractCard makeCopy() {
-        return new SteakOut();
     }
 
     //Upgraded stats.

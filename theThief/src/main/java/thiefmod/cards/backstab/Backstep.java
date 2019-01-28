@@ -40,7 +40,7 @@ public class Backstep extends AbstractBackstabCard {
 // /TEXT DECLARATION/
 
 
-// STAT DECLARATION
+    // STAT DECLARATION
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -74,14 +74,13 @@ public class Backstep extends AbstractBackstabCard {
             AbstractDungeon.actionManager.addToBottom(new FetchAction(AbstractDungeon.player.discardPile, this.magicNumber));
 
         } else {
-            AbstractDungeon.actionManager.addToBottom(
-                    new FetchAction(AbstractDungeon.player.discardPile, this.magicNumber, fetchedCards -> {
+
+            AbstractDungeon.actionManager.addToBottom(new FetchAction(AbstractDungeon.player.discardPile, this.magicNumber,
+                    fetchedCards -> {
                         for (AbstractCard card : fetchedCards) {
                             card.modifyCostForTurn(-1);
                         }
-                    }
-                    )
-            );
+                    }));
         }
     }
 
