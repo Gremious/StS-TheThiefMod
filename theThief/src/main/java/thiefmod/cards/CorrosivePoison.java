@@ -49,7 +49,7 @@ public class CorrosivePoison extends AbstractBackstabCard {
     public CorrosivePoison() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.magicNumber = this.baseMagicNumber = MAGIC;
+        magicNumber = baseMagicNumber = MAGIC;
 
     }
 
@@ -59,37 +59,33 @@ public class CorrosivePoison extends AbstractBackstabCard {
         while (var1.hasNext()) {
             AbstractCard c = (AbstractCard) var1.next();
             if (c.type == CardType.SKILL) {
-                this.updateCost(-1);
+                updateCost(-1);
             }
         }
 
     }
 
+    @Override
     public void triggerOnCardPlayed(AbstractCard c) {
         if (c.type == CardType.SKILL) {
-            this.updateCost(-1);
+            updateCost(-1);
         }
-
     }
 
-    public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new CorrosivePoisonAction(m, 2, 1, 2, this.magicNumber));
-    }
-
-    // Which card to return when making a copy of this card.
     @Override
-    public AbstractCard makeCopy() {
-        return new CorrosivePoison();
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        AbstractMonster randomMonster = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
+        AbstractDungeon.actionManager.addToBottom(new CorrosivePoisonAction(randomMonster, 2, 1, 2, magicNumber));
     }
 
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
+        if (!upgraded) {
+            upgradeName();
+            upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
 //          this.rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+            initializeDescription();
         }
     }
 }

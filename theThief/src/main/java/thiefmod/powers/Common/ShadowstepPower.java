@@ -87,7 +87,6 @@ public class ShadowstepPower extends AbstractPower {
         }
     }
 
-
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
         if (card.hasTag(ThiefCardTags.SHADOWSTEP)) {

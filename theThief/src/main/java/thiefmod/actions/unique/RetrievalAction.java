@@ -22,10 +22,11 @@ public class RetrievalAction extends AbstractGameAction {
 
     private ArrayList<AbstractCard> cardsToReturn;
     private int returnAmount;
-    private static int check = 0;
+    private int check = 0;
 
     public RetrievalAction(final ArrayList<AbstractCard> cardsToReturn, final int returnAmount) {
         this.cardsToReturn = cardsToReturn;
+        this.returnAmount = returnAmount;
     }
 
     @Override
@@ -40,6 +41,7 @@ public class RetrievalAction extends AbstractGameAction {
 
         for (AbstractCard iterateCard : cardsToReturn) {
             logger.info("For loop started");
+            logger.info("Check is about to get incremented. It is currently " + check);
 
             check++;
             // I was now told StSlib has a MoveCardsAction. It is too late. I made all these actions. I don't wanna redo em.
@@ -56,6 +58,7 @@ public class RetrievalAction extends AbstractGameAction {
             AbstractDungeon.actionManager.addToBottom(new LimboToHandAction(iterateCard));
             logger.info("Limbo to hand added.");
 
+            logger.info("Passed through the action. Check is: " + check + " and returnAmount is " + returnAmount);
             if (check >= returnAmount) {
                 isDone = true;
             }

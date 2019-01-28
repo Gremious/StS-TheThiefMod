@@ -45,7 +45,7 @@ public class Ambush extends AbstractBackstabCard {
 
     private static final int COST = 1;
 
-    private static final int DAMAGE = 1;
+    private static final int DAMAGE = 0;
 
     private static final int MAGIC = 1;
     private static final int UPGRADED_PLUS_MAGIC = 1;
@@ -70,7 +70,7 @@ public class Ambush extends AbstractBackstabCard {
 
 
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m,
-                new DamageInfo(p, this.damage, this.damageTypeForTurn),
+                new DamageInfo(p, damage, damageTypeForTurn),
                 AbstractGameAction.AttackEffect.SLASH_VERTICAL));
 
     }
@@ -82,9 +82,9 @@ public class Ambush extends AbstractBackstabCard {
         return tips;
     }
 
-
     @Override
     public float calculateModifiedCardDamage(AbstractPlayer player, AbstractMonster mo, float tmp) {
+        tmp = 0.0f;
         if (mo == null || mo.maxHealth == 0) {
             return tmp;
         }
@@ -94,7 +94,6 @@ public class Ambush extends AbstractBackstabCard {
         } else {
             damag = (float) mo.currentHealth / 3.3f;
         }
-
         return damag;
     }
 

@@ -13,10 +13,7 @@ import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.vfx.combat.PotionBounceEffect;
 
 public class CorrosivePoisonAction extends AbstractGameAction {
-	private static final float DURATION = 0.01F;
-	private static final float POST_ATTACK_WAIT_DUR = 0.1F;
 	private int numTimes;
-
 	private int amountFrail;
 	private int amountVuln;
 	private int amountPoison;
@@ -24,7 +21,6 @@ public class CorrosivePoisonAction extends AbstractGameAction {
 	public CorrosivePoisonAction(AbstractCreature target, int amountFrail, int amountVuln, int amountPoison, int numTimes) {
 		this.target = target;
 		this.actionType = ActionType.DEBUFF;
-		this.duration = 0.01F;
 		this.numTimes = numTimes;
 
 		this.amountFrail = amountFrail;
@@ -34,28 +30,28 @@ public class CorrosivePoisonAction extends AbstractGameAction {
 
 	public void update() {
 		if (this.target == null) {
-			this.isDone = true;
+			isDone = true;
 		} else if (AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {
 			AbstractDungeon.actionManager.clearPostCombatActions();
-			this.isDone = true;
+			isDone = true;
 		} else {
-			if (this.target.currentHealth > 0) {
+			if (target.currentHealth > 0) {
 
-				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.target, AbstractDungeon.player, new FrailPower(this.target, this.amountFrail, false), this.amountFrail, true));
-				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.target, AbstractDungeon.player, new VulnerablePower(this.target, this.amountVuln, false), this.amountVuln, true));
-				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.target, AbstractDungeon.player, new PoisonPower(this.target, AbstractDungeon.player, this.amountPoison), this.amountPoison, true, AttackEffect.POISON));
+				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, AbstractDungeon.player, new FrailPower(target, amountFrail, false), amountFrail, true));
+				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, AbstractDungeon.player, new VulnerablePower(target, amountVuln, false), amountVuln, true));
+				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, AbstractDungeon.player, new PoisonPower(target, AbstractDungeon.player, amountPoison), amountPoison, true, AttackEffect.POISON));
 
 				AbstractDungeon.actionManager.addToTop(new WaitAction(0.1F));
 			}
 
-			if (this.numTimes > 1 && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-				--this.numTimes;
-				AbstractMonster randomMonster = AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster)null, true, AbstractDungeon.cardRandomRng);
-				AbstractDungeon.actionManager.addToBottom(new VFXAction(new PotionBounceEffect(this.target.hb.cX, this.target.hb.cY, randomMonster.hb.cX, randomMonster.hb.cY), 0.4F));
-				AbstractDungeon.actionManager.addToBottom(new CorrosivePoisonAction(randomMonster, this.amountFrail, this.amountVuln, this.amountPoison, this.numTimes));
+			if (numTimes > 1 && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
+				--numTimes;
+				AbstractMonster randomMonster = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
+				AbstractDungeon.actionManager.addToBottom(new VFXAction(new PotionBounceEffect(target.hb.cX, target.hb.cY, randomMonster.hb.cX, randomMonster.hb.cY), 0.4F));
+				AbstractDungeon.actionManager.addToBottom(new CorrosivePoisonAction(randomMonster, amountFrail, amountVuln, amountPoison, numTimes));
 			}
 
-			this.isDone = true;
+			isDone = true;
 		}
 	}
 }

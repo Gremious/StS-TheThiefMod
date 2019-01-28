@@ -208,8 +208,8 @@
   },
   "theThief:Ambush": {
     "NAME": "Ambush",
-    "DESCRIPTION": "Add !M! Voids to your draw pile. NL Deal damage equal to  20% of a monster's current HP. NL ( !D! Damage.) NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Add !M! Voids to your draw pile. NL Deal damage equal to  30% of a monster's current HP. NL ( !D! Damage. NL Exhaust.",
+    "DESCRIPTION": "Add !M! Void to your draw pile. NL Deal damage equal to 20% of a monster's current HP (!D!). NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Add !M! Void to your draw pile. NL Deal damage equal to  30% of a monster's current HP (!D!). NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]

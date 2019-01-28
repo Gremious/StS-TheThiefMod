@@ -76,18 +76,13 @@ public class Retrieval extends AbstractBackstabCard {
         return tips;
     }
 
-    // Which card to return when making a copy of this card.
-    @Override
-    public AbstractCard makeCopy() {
-        return new Retrieval();
-    }
 
     //Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            isInnate = true;
+            upgradeBaseCost(UPGRADE_COST);
 //          rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
