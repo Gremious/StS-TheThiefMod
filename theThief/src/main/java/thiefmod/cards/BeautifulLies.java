@@ -34,14 +34,14 @@ public class BeautifulLies extends AbstractBackstabCard {
 
     // STAT DECLARATION
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
 
     private static final int COST = 0;
 
-    private static final int DAMAGE = 6;
-    private static final int UPGRADE_PLUS_DAMAGE = 8;
+    private static final int DAMAGE = 7;
+    private static final int UPGRADE_PLUS_DAMAGE = 2;
 
 
 // /STAT DECLARATION/

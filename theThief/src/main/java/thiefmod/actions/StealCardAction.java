@@ -4,14 +4,11 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
-import com.megacrit.cardcrawl.cards.curses.Shame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import thiefmod.ThiefMod;
@@ -19,7 +16,7 @@ import thiefmod.Utils;
 import thiefmod.actions.unique.StolenMegaphone;
 import thiefmod.cards.stolen.*;
 import thiefmod.cards.stolen.mystic.*;
-import thiefmod.powers.Unique.EtherealShamePower;
+import thiefmod.powers.Unique.FleetingGuiltPower;
 import thiefmod.powers.Unique.IllGottenGainsPower;
 
 import java.util.ArrayList;
@@ -54,30 +51,29 @@ public class StealCardAction extends AbstractGameAction {
     public void update() {
         if (this.duration == Settings.ACTION_DUR_FAST) {
 
-            if (random) { // Random card? If yes add a random card (without replacement).
+            if (random) { // Add a random card
                 cardsToAdd = getRandomStolenCards(amount, true);
                 for (int i = 0; i < copies; i++) {
                     curseCounter();
                     addStolenCards();
                 }
                 cardsToAdd.clear();
-            } else {
+            } else { // Discover a card and add it
                 if (AbstractDungeon.cardRewardScreen.codexCard != null) {
                     for (int i = 0; i < copies; i++) {
                         AbstractCard c = AbstractDungeon.cardRewardScreen.codexCard.makeStatEquivalentCopy();
                         cardsToAdd.add(c);
-                        curseCounter();
                     }
                     AbstractDungeon.cardRewardScreen.codexCard = null;
                 }
                 if (amount > 0) {
                     amount--;
                     Utils.openCardRewardsScreen(getRandomStolenCards(3, false), true);
-                    curseCounter();
+
                     return; // Don't tickDuration, So that we can keep spamming the discover screen == amount of cards requested.
                 } else {
-                    curseCounter();
                     addStolenCards();
+                    curseCounter();
                 }
                 cardsToAdd.clear();
             }
@@ -235,7 +231,6 @@ public class StealCardAction extends AbstractGameAction {
         stolenCards.sortAlphabetically(false);
     }
 
-    // Create a new card group of the cards. This is essentially your cardpool.
   /*  private static CardGroup stolenCardsExhausted;
 
     static {
@@ -298,7 +293,7 @@ public class StealCardAction extends AbstractGameAction {
 
             } else if (Objects.equals(this.location, "Draw")) {
 
-                AbstractDungeon.actionManager.actions.add(new MakeTempCardInDrawPileAction(c, 1, false, true));
+                AbstractDungeon.actionManager.actions.add(new MakeTempCardInDrawPileAction(c, 1, false, true)); //TODO: make proper exhasuted copies in draw and discard
 
             } else if (Objects.equals(this.location, "Discard")) {
 
@@ -319,7 +314,7 @@ public class StealCardAction extends AbstractGameAction {
 
     private void curseCounter() {
         actionManager.addToBottom(new ApplyPowerAction(player, source,
-                new EtherealShamePower(player, source, 1), 1));
+                new FleetingGuiltPower(player, source, 1), 1));
     }
 
 // ========================

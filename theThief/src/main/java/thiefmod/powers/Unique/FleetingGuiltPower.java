@@ -1,6 +1,7 @@
 package thiefmod.powers.Unique;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.curses.Shame;
@@ -15,19 +16,18 @@ import thiefmod.patches.Unique.ThiefCardTags;
 
 // Empty Base
 
-public class EtherealShamePower extends AbstractPower {
+public class FleetingGuiltPower extends AbstractPower {
     public AbstractCreature source;
-    private static int curseCounter = 0;
 
 
-    public static final String POWER_ID = ThiefMod.makeID("EtherealShamePower");
+    public static final String POWER_ID = ThiefMod.makeID("FleetingGuiltPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     public static final String IMG = ThiefMod.makePath(ThiefMod.COMMON_POWER);
 
 
-    public EtherealShamePower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
+    public FleetingGuiltPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.img = new Texture(IMG);
@@ -45,14 +45,13 @@ public class EtherealShamePower extends AbstractPower {
     @Override
     public void onAfterUseCard(AbstractCard card, UseCardAction action) {
         if (card.hasTag(ThiefCardTags.STEALING)) {
-            curseCounter++;
-            if (curseCounter == 5) {
-                AbstractCard c = new Shame();
 
+            if (amount == 5) {
+                AbstractCard c = new Shame();
                 c.isEthereal = true;
                 c.rawDescription += " NL Etherial.";
                 AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(c));
-                curseCounter = 0;
+                AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, this.ID));
             }
         }
     }
