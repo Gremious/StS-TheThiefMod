@@ -414,14 +414,15 @@
   },
   "theThief:PrecisePositioning": {
     "NAME": "Precise Positioning",
-    "DESCRIPTION": "Shadowstep !M! time. Next turn your attack damage is doubled. NL Refund stslib:refund. NL Ethereal.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Shadowstep !M! time. Next turn your attack damage is doubled. NL Refund stslib:refund. NL Ethereal.",
+    "DESCRIPTION": "Shadowstep !M! time. Next turn your attack damage is doubled. NL Refund !stslib:refund!. NL Ethereal.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Shadowstep !M! time. Next turn your attack damage is doubled. NL Refund !stslib:refund!.",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]It's[] [#88888]a[] [#88888]shame[] [#88888]that[] [#88888]'Phantom'[] [#88888]fellow[] [#88888]isn't[] [#88888]here!...[]",
-      " time. Next turn your attack damage is doubled. NL Refund stslib:refund. NL Ethereal.",
-      " times. Next turn your attack damage is doubled. NL Refund stslib:refund. NL Ethereal.",
-      " time. Next turn your attack damage is doubled. NL Refund stslib:refund.",
-      " times. Next turn your attack damage is doubled. NL Refund stslib:refund."
+      "[#88888]A[] [#88888]VERY[] [#88888]precise[] [#88888]position.[]",
+      "Shadowstep !M!",
+      " time. Next turn your attack damage is doubled. NL Refund !stslib:refund!. NL Ethereal.",
+      " times. Next turn your attack damage is doubled. NL Refund !stslib:refund!. NL Ethereal.",
+      " time. Next turn your attack damage is doubled. NL Refund !stslib:refund!.",
+      " times. Next turn your attack damage is doubled. NL Refund !stslib:refund!."
     ]
   },
   "theThief:ShadowClone": {

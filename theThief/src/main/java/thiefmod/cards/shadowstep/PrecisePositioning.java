@@ -77,21 +77,21 @@ public class PrecisePositioning extends AbstractBackstabCard {
     public void applyPowers() {
         super.applyPowers();
 
-        if (this.magicNumber >= 2) {
-            if (this.upgraded) {
-                this.rawDescription += this.EXTENDED_DESCRIPTION[4];
+        if (magicNumber >= 2) {
+            if (upgraded) {
+                rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[5];
             } else {
-                this.rawDescription += this.EXTENDED_DESCRIPTION[2];
+                rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[3];
             }
         } else {
-            if (!this.upgraded) {
-                this.rawDescription += this.EXTENDED_DESCRIPTION[1];
+            if (upgraded) {
+                rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[4];
             } else {
-                this.rawDescription += this.EXTENDED_DESCRIPTION[3];
+                rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[2];
             }
         }
 
-        this.initializeDescription();
+        initializeDescription();
     }
 
 
@@ -109,7 +109,6 @@ public class PrecisePositioning extends AbstractBackstabCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.isInnate = true;
 //          this.rawDescription = UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }
