@@ -267,6 +267,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         //    BaseMod.addCard(new GuiltTrip());
 
 
+        BaseMod.addCard(new Shadowstep());
         BaseMod.addCard(new HeartStealer());
         BaseMod.addCard(new Focused());
         BaseMod.addCard(new ShadowMastery());
@@ -342,6 +343,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         // Unlock the cards
         // UnlockTracker.unlockCard(GuiltTrip.ID);
 
+        UnlockTracker.unlockCard(Shadowstep.ID);
         UnlockTracker.unlockCard(HeartStealer.ID);
         UnlockTracker.unlockCard(Focused.ID);
         UnlockTracker.unlockCard(ShadowMastery.ID);
