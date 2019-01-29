@@ -104,7 +104,6 @@
                     <exclude>**/*.xcf</exclude>
                     <exclude>**/*.ase</exclude>
                     <exclude>**/*.psd</exclude>
-                    <exclude>thiefmodAssets/images/char/thiefCharacter/Spriter/*</exclude>
                 </excludes>
             </resource>
             <resource>
