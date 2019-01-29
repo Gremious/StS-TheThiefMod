@@ -39,7 +39,7 @@ public class GainGoldAction extends AbstractGameAction {
             AbstractDungeon.player.gainGold(this.goldAmount);
 
             for (int i = 0; i < this.goldAmount; ++i) {
-                AbstractDungeon.effectList.add(new GainPennyEffect(this.source, this.target.hb.cX, this.target.hb.cY, this.source.hb.cX, this.source.hb.cY, true));// 40
+                AbstractDungeon.effectList.add(new GainPennyEffect(this.source, this.target.hb.cX, this.target.hb.cY, this.source.hb.cX, this.source.hb.cY, true));
             }
             if (AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {
                 AbstractDungeon.actionManager.clearPostCombatActions();
@@ -49,8 +49,9 @@ public class GainGoldAction extends AbstractGameAction {
         } else {
             AbstractDungeon.player.gainGold(this.goldAmount);
             for (int i = 0; i < this.goldAmount; ++i) {
-                AbstractDungeon.effectList.add(new GainPennyEffect(this.source, this.target.hb.cX, this.target.hb.cY, this.source.hb.cX, this.source.hb.cY, true));// 40
+                AbstractDungeon.effectList.add(new GainPennyEffect(this.source, this.target.hb.cX, this.target.hb.cY, this.source.hb.cX, this.source.hb.cY, true));
             }
+            isDone = true;
         }
     }
 
