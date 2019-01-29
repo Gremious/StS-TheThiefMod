@@ -2,7 +2,6 @@ package thiefmod.cards.shadowstep;
 
 import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -13,7 +12,6 @@ import thiefmod.ThiefMod;
 import thiefmod.cards.AbstractBackstabCard;
 import thiefmod.patches.Character.AbstractCardEnum;
 import thiefmod.patches.Unique.ThiefCardTags;
-import thiefmod.powers.Common.BackstabPower;
 import thiefmod.powers.Unique.GhastlyEssencePower;
 
 import java.util.ArrayList;
@@ -67,7 +65,7 @@ public class GhastlyEssence extends AbstractBackstabCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
-                p, p, new GhastlyEssencePower(p, p, this.magicNumber), this.magicNumber));
+                p, p, new GhastlyEssencePower(p, p, upgraded, magicNumber), magicNumber));
 
     }
 
@@ -84,10 +82,18 @@ public class GhastlyEssence extends AbstractBackstabCard {
     public void applyPowers() {
         super.applyPowers();
 
-        if (this.magicNumber >= 2) {
-            rawDescription = UPGRADE_DESCRIPTION;
+        if (upgraded) {
+            if (magicNumber == 1) {
+                rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[3];
+            } else {
+                rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[4];
+            }
         } else {
-            rawDescription = DESCRIPTION;
+            if (magicNumber == 1) {
+                rawDescription = EXTENDED_DESCRIPTION[2] + EXTENDED_DESCRIPTION[3];
+            } else {
+                rawDescription = EXTENDED_DESCRIPTION[2] + EXTENDED_DESCRIPTION[4];
+            }
         }
 
         this.initializeDescription();
@@ -99,8 +105,7 @@ public class GhastlyEssence extends AbstractBackstabCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
-            this.isInnate = true;
-          this.rawDescription = UPGRADE_DESCRIPTION;
+            this.rawDescription = UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }
     }

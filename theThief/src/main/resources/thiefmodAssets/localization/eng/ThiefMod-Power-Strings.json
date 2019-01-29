@@ -164,6 +164,7 @@
     "NAME": "Ghastly Essence",
     "DESCRIPTIONS": [
       "At the start of your turn, Shadowstep ",
+      "At the start and end of your turn, Shadowstep ",
       " time.",
       " times."
     ]
