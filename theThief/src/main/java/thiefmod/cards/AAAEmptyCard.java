@@ -81,10 +81,11 @@ public class AAAEmptyCard extends AbstractBackstabCard {
         ExhaustiveVariable.setBaseValue(this, 2);
 
         FleetingField.fleeting.set(this, true);
-        this.baseDamage = DAMAGE;
-        this.magicNumber = this.baseMagicNumber = MAGIC;
-        this.baseBlock = BLOCK;
-        this.backstabNumber = this.baseBackstabNumber = BACKSTAB;
+
+        baseDamage = DAMAGE;
+        magicNumber = baseMagicNumber = MAGIC;
+        baseBlock = BLOCK;
+        backstabNumber = baseBackstabNumber = BACKSTAB;
 
 
         tags.add(ThiefCardTags.BACKSTAB);
