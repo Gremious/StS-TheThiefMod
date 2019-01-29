@@ -13,6 +13,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import thiefmod.ThiefMod;
 import thiefmod.Utils;
+import thiefmod.actions.common.MakeExhaustedCopyAction;
 import thiefmod.actions.unique.StolenMegaphone;
 import thiefmod.cards.stolen.*;
 import thiefmod.cards.stolen.mystic.*;
@@ -203,7 +204,7 @@ public class StealCardAction extends AbstractGameAction {
             customMysticCards.add(new stolenMysticalOrb());
 
             mysticCards.add(CardLibrary.getCopy("mysticmod:MagicMissile"));
-            mysticCards.add(CardLibrary.getCopy("mysticmod:Spellstrike"));
+            //   mysticCards.add(CardLibrary.getCopy("mysticmod:Spellstrike"));
             mysticCards.add(cantripsGroup.get(AbstractDungeon.cardRandomRng.random(cantripsGroup.size() - 1)));
 
 

@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
 import thiefmod.patches.Character.AbstractCardEnum;
-import thiefmod.powers.Common.LiarPower;
+import thiefmod.powers.Unique.LiarPower;
 
 import java.util.ArrayList;
 import java.util.List;

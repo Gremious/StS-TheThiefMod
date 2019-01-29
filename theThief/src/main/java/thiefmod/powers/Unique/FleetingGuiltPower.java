@@ -10,8 +10,9 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
 import thiefmod.ThiefMod;
+import thiefmod.actions.common.MakeEtherealCopyAction;
+import thiefmod.actions.common.MakeExhaustedCopyAction;
 import thiefmod.patches.Unique.ThiefCardTags;
 
 // Empty Base
@@ -46,12 +47,10 @@ public class FleetingGuiltPower extends AbstractPower {
     public void onAfterUseCard(AbstractCard card, UseCardAction action) {
         if (card.hasTag(ThiefCardTags.STEALING)) {
 
-            if (amount == 5) {
+            if (owner.hasPower(ID) && owner.getPower(ID).amount == 5) {
                 AbstractCard c = new Shame();
-                c.isEthereal = true;
-                c.rawDescription += " NL Etherial.";
-                AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(c));
-                AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, this.ID));
+                AbstractDungeon.actionManager.addToTop(new MakeEtherealCopyAction(c));
+                AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, ID));
             }
         }
     }

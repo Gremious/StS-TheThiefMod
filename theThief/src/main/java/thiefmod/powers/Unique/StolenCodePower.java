@@ -1,5 +1,6 @@
 package thiefmod.powers.Unique;
 
+import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
@@ -29,9 +30,14 @@ public class StolenCodePower extends AbstractPower {
     public StolenCodePower(AbstractCreature owner, int amount) {
         this.name = NAME;
         this.ID = POWER_ID;
+        this.img = new Texture(IMG);
+        this.type = PowerType.BUFF;
+        this.isTurnBased = false;
+
         this.owner = owner;
         this.amount = amount;
         this.updateDescription();
+
     }
 
 
