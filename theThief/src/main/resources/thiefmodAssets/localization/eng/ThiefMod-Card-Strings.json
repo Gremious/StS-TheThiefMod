@@ -386,8 +386,8 @@
   },
   "theThief:ConArtist": {
     "NAME": "Con Artist",
-    "DESCRIPTION": "Whenever you steal a card, gain !M! #ygold.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you steal a card, gain !M! #ygold.",
+    "DESCRIPTION": "Whenever you steal a card, gain !M! gold.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you steal a card, gain !M! gold.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]
