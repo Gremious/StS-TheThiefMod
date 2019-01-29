@@ -48,9 +48,9 @@ public class SharpPractice extends AbstractBackstabCard {
 
     public SharpPractice() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.isInnate = this.upgraded;
+        isInnate = false;
 
-        this.magicNumber = this.baseMagicNumber = MAGIC;
+        magicNumber = baseMagicNumber = MAGIC;
     }
 
     // Actions the card should do.
@@ -72,6 +72,7 @@ public class SharpPractice extends AbstractBackstabCard {
     @Override
     public void upgrade() {
         if (!this.upgraded) {
+            isInnate = true;
             this.upgradeName();
             this.rawDescription = UPGRADE_DESCRIPTION;
             this.initializeDescription();

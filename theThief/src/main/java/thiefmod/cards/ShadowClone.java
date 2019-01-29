@@ -55,6 +55,7 @@ public class ShadowClone extends AbstractBackstabCard {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
         this.magicNumber = this.baseMagicNumber = MAGIC;
+        isEthereal = true;
     }
 
     // Actions the card should do.
@@ -85,9 +86,9 @@ public class ShadowClone extends AbstractBackstabCard {
     @Override
     public void upgrade() {
         if (!this.upgraded) {
+            isEthereal = false;
             this.upgradeName();
             this.upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
-            this.isInnate = true;
 //          this.rawDescription = UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }

@@ -85,7 +85,6 @@ public class Voidbound extends AbstractBackstabCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
-            this.isInnate = true;
 //          this.rawDescription = UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }

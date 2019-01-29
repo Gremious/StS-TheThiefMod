@@ -20,7 +20,9 @@
     "DESCRIPTION": "Deal !D! damage. Draw !M! card.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage. Draw !M! cards.",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]As[] [#88888]fundamental[] [#88888]as[] [#88888]it[] [#88888]gets.[]"
+      "[#88888]As[] [#88888]fundamental[] [#88888]as[] [#88888]it[] [#88888]gets.[]",
+      "Deal !D! damage. Draw !M! card.",
+      "Deal !D! damage. Draw !M! cards."
     ]
   },
   "theThief:DaggerBouquet": {
@@ -45,8 +47,8 @@
   },
   "theThief:SharpPractice": {
     "NAME": "Sharp Practice",
-    "DESCRIPTION": "At the start of each turn add !M! random stolen card to your hand.",
-    "UPGRADE_DESCRIPTION": "Innate. NL At the start of each turn add !M! random stolen card to your hand."
+    "DESCRIPTION": "At the start of each turn add !M! random Stolen card to your hand.",
+    "UPGRADE_DESCRIPTION": "Innate. NL At the start of each turn add !M! random Stolen card to your hand."
   },
   "theThief:Ransack": {
     "NAME": "Ransack",
@@ -299,7 +301,7 @@
     "DESCRIPTION": "Gain !B! block and !M! Vulnerable.",
     "UPGRADE_DESCRIPTION": "Gain !B! block and !M! Vulnerable.",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]In[] [#88888]order[] [#88888]to[] [#88888]feign[] [#88888]falling[] [#88888]down,[] NL [#88888]you[] [#88888]still[] [#88888]need[] [#88888]to[] [#88888]fall[] [#88888]down.[]"
+      "[#88888]In[] [#88888]order[] [#88888]to[] [#88888]feign[] [#88888]falling[] [#88888]down,[] [#88888]you[] [#88888]still[] [#88888]need[] [#88888]to[] [#88888]fall[] [#88888]down.[]"
     ]
   },
   "theThief:FindersKeepers": {
@@ -379,7 +381,7 @@
   "theThief:Liar": {
     "NAME": "Liar Liar",
     "DESCRIPTION": "Every time you play a skill, apply !M! Weak to a random enemy.",
-    "UPGRADE_DESCRIPTION": "Every time you play a skill, apply !M! Weak and Vulnerable to a random enemy.",
+    "UPGRADE_DESCRIPTION": "Innate. Every time you play a skill, apply !M! Weak and Vulnerable to a random enemy.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Pants[] [#88888]on[] [#fa9632]fire.[]"
     ]
@@ -477,8 +479,8 @@
   },
   "theThief:DoubleDealing": {
     "NAME": "Double Dealing",
-    "DESCRIPTION": "This turn, the next !M! Backstab attack you play deal double damage.",
-    "UPGRADE_DESCRIPTION": "This turn, the next !M! Backstab attacks you play deal double damage",
+    "DESCRIPTION": "The next (!M!) Backstab attack you play this turn will deal double damage.",
+    "UPGRADE_DESCRIPTION": "The next (!M!) Backstab attacks you play this turn will deal double damage.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Full[] [#88888]house![]"
     ]

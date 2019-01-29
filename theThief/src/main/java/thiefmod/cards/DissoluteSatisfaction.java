@@ -90,7 +90,6 @@ public class DissoluteSatisfaction extends AbstractBackstabCard {
             this.upgradeName();
             this.upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
             this.upgradeBaseCost(UPGRADED_COST);
-            this.isInnate = true;
 //          this.rawDescription = UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }

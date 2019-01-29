@@ -478,7 +478,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
                 UnlockTracker.unlockCard(card.cardID);
             }
         }
-    }` `
+    }
 
     // ================ LOAD THE TEXT ===================
 

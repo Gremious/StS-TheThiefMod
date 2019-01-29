@@ -51,7 +51,7 @@ public class Hoodlum extends AbstractBackstabCard {
     public Hoodlum() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.isInnate = this.upgraded;
+        isInnate = false;
 
         this.magicNumber = this.baseMagicNumber = MAGIC;
 

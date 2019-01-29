@@ -48,7 +48,7 @@ public class IllGottenGains extends AbstractBackstabCard {
 
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = MAGIC;
-        this.isInnate = this.upgraded;
+        isInnate = false;
     }
 
     @Override
@@ -68,6 +68,7 @@ public class IllGottenGains extends AbstractBackstabCard {
     @Override
     public void upgrade() {
         if (!this.upgraded) {
+            isInnate = true;
             this.upgradeName();
             this.upgradeBaseCost(UPGRADE_COST);
             this.rawDescription = UPGRADE_DESCRIPTION;

@@ -17,7 +17,6 @@
     "DESCRIPTION": "Reduces incoming damage by 10% per stack."
   },
   {
-    "PROPER_NAME": "Steal",
     "NAMES": [
       "Steal",
       "steal",

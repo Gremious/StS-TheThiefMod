@@ -86,8 +86,8 @@ public class Liar extends AbstractBackstabCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.isInnate = true;
-//          this.rawDescription = UPGRADE_DESCRIPTION;
+            isInnate = true;
+            this.rawDescription = UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }
     }
