@@ -38,7 +38,7 @@ public class CorrosivePoison extends AbstractBackstabCard {
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
     private static final CardType TYPE = CardType.SKILL;
 
-    private static final int COST = 4;
+    private static final int COST = 5;
 
     private static final int MAGIC = 2;
     private static final int UPGRADED_PLUS_MAGIC = 2;
