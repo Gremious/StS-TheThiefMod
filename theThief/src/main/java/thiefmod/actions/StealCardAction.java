@@ -190,7 +190,7 @@ public class StealCardAction extends AbstractGameAction {
 
         //---
 
-        if (hasMysticMod) {
+      /*  if (hasMysticMod) {
             ArrayList<AbstractCard> customMysticCards = new ArrayList<>();
             ArrayList<AbstractCard> mysticCards = new ArrayList<>();
 
@@ -218,7 +218,7 @@ public class StealCardAction extends AbstractGameAction {
                 stolenCards.addToTop(c);
 
             }
-        }
+        }*/
 
         //---
         // TODO: From every mod, add a "discover a card from that mod" card.
@@ -226,7 +226,6 @@ public class StealCardAction extends AbstractGameAction {
         // TODO: Has Gatherer - add flowers and see if potions work. "Rare: DISCARD YOUR HAND AND REPLACE IT WITH FULLY UPGRADED FLOWER CARDS?"
         // TODO: Check out kio's character mod when he releases it and add some cool cards from there.
         // TODO: Reina's, too.
-        // TODO: I forgot this one but there was one.
 
         // TODO: Test whether you really need this?
         stolenCards.sortAlphabetically(false);
