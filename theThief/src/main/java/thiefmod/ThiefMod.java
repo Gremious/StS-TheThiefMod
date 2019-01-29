@@ -11,17 +11,19 @@ import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
+import javassist.CannotCompileException;
+import javassist.CtClass;
+import javassist.NotFoundException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import thiefmod.cards.*;
-import thiefmod.cards.backstab.*;
-import thiefmod.cards.shadowstep.*;
+import org.clapper.util.classutil.*;
 import thiefmod.characters.TheThief;
 import thiefmod.patches.Character.AbstractCardEnum;
 import thiefmod.patches.Character.TheThiefEnum;
@@ -32,7 +34,13 @@ import thiefmod.variabls.BackstabDamage;
 import thiefmod.variabls.BackstabMagicNumber;
 import thiefmod.variabls.ThiefSecondMagicNumber;
 
+import java.io.File;
+import java.lang.reflect.Modifier;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.Collection;
 // Note: #y b r g p
 
 @SpireInitializer
@@ -254,8 +262,13 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         BaseMod.addDynamicVariable(new BackstabBlock());
         BaseMod.addDynamicVariable(new ThiefSecondMagicNumber());
 
+        try {
+            autoAddCards();
+        } catch (URISyntaxException | IllegalAccessException | InstantiationException | NotFoundException | CannotCompileException e) {
+            e.printStackTrace();
+        }
 
-        logger.info("Add Cards");
+  /*      logger.info("Add Cards");
         logger.info(LogInt++);
         // Add the cards
         BaseMod.addCard(new StrikeThief());
@@ -416,12 +429,56 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         UnlockTracker.unlockCard(Pickpocket.ID);
         UnlockTracker.unlockCard(Lie.ID);
         UnlockTracker.unlockCard(SwiftSlash.ID);
-
+*/
         logger.info("Cards - added!");
     }
 
     // ================ /ADD CARDS/ ===================
+    private static void autoAddCards() throws URISyntaxException, IllegalAccessException, InstantiationException, NotFoundException, CannotCompileException {
+        ClassFinder finder = new ClassFinder();
+        URL url = ThiefMod.class.getProtectionDomain().getCodeSource().getLocation();
+        finder.add(new File(url.toURI()));
 
+        ClassFilter filter =
+                new AndClassFilter(
+                        new NotClassFilter(new InterfaceOnlyClassFilter()),
+                        new NotClassFilter(new AbstractClassFilter()),
+                        new ClassModifiersClassFilter(Modifier.PUBLIC),
+                        new CardFilter() // Make sure to edit the card filter to your own packaging structure. I have added stolen cards to filter.
+                );
+        Collection<ClassInfo> foundClasses = new ArrayList<>();
+        finder.findClasses(foundClasses, filter);
+
+        for (ClassInfo classInfo : foundClasses) {
+            CtClass cls = Loader.getClassPool().get(classInfo.getClassName());
+            if (cls.hasAnnotation(CardIgnore.class)) { // Add @CardIgnore to cards you want to ignore (special cards, options, etc).
+                continue;
+            }
+            boolean isCard = false;
+            CtClass superCls = cls;
+            while (superCls != null) {
+                superCls = superCls.getSuperclass();
+                if (superCls == null) {
+                    break;
+                }
+                if (superCls.getName().equals(AbstractCard.class.getName())) {
+                    isCard = true;
+                    break;
+                }
+            }
+            if (!isCard) {
+                continue;
+            }
+            System.out.println(classInfo.getClassName());
+            AbstractCard card = (AbstractCard) Loader.getClassPool().toClass(cls).newInstance();
+            BaseMod.addCard(card);
+            if (cls.hasAnnotation(CardNoSeen.class)) { // Add to colorless cards, curses
+                UnlockTracker.hardUnlockOverride(card.cardID);
+            } else {
+                UnlockTracker.unlockCard(card.cardID);
+            }
+        }
+    }
 
     // ================ LOAD THE TEXT ===================
 

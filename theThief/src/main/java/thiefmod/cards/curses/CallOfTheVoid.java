@@ -12,11 +12,13 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import thiefmod.CardIgnore;
 import thiefmod.ThiefMod;
 import thiefmod.actions.StealCardAction;
 import thiefmod.cards.AbstractBackstabCard;
 import thiefmod.powers.Unique.TheThiefThieveryPower;
 
+@CardIgnore
 public class CallOfTheVoid extends AbstractBackstabCard {
 //TODO: Make this card.
 

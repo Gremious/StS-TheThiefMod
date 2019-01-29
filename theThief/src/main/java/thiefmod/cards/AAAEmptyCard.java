@@ -18,6 +18,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
+import thiefmod.CardIgnore;
 import thiefmod.ThiefMod;
 import thiefmod.actions.StealCardAction;
 import thiefmod.patches.Character.AbstractCardEnum;
@@ -27,6 +28,7 @@ import thiefmod.powers.Common.ShadowstepPower;
 import java.util.ArrayList;
 import java.util.List;
 
+@CardIgnore
 public class AAAEmptyCard extends AbstractBackstabCard {
 //implements StartupCard
 //implements ModalChoice.Callback

@@ -17,7 +17,7 @@ public class SerratedDagger extends AbstractBackstabCard {
 
 // TEXT DECLARATION
 
-    public static final String ID = ThiefMod.makeID("Serrated Dagger");
+    public static final String ID = ThiefMod.makeID("SerratedDagger");
     public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_COMMON_ATTACK);
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

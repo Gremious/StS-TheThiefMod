@@ -2,8 +2,10 @@ package thiefmod.cards;
 
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import thiefmod.CardIgnore;
 import thiefmod.variabls.ThiefSecondMagicNumber;
 
+@CardIgnore
 public abstract class AbstractBackstabCard extends CustomCard {
 
     public int backstabNumber;
