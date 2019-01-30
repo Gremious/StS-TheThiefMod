@@ -46,12 +46,10 @@ public class FleetingGuiltPower extends AbstractPower implements OnReceivePowerP
     public boolean onReceivePower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
         if (power.ID.equals(ID) && owner.getPower(ID).amount == 4) {
             actionManager.addToTop(new MakeTempCardInDiscardAction(new Guilt(), 1));
-            actionManager.addToTop(new MakeTempCardInDiscardAction(new Guilt(), 1));
             actionManager.addToTop(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, ID));
             return true;
         }
-        return true;
-
+        return false;
     }
 
 
