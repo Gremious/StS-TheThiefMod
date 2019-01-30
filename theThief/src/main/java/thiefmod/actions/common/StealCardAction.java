@@ -1,4 +1,4 @@
-package thiefmod.actions;
+package thiefmod.actions.common;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -11,7 +11,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import thiefmod.ThiefMod;
 import thiefmod.Utils;
-import thiefmod.actions.common.SuperCopyAction;
+import thiefmod.actions.Util.DiscoverAction;
+import thiefmod.actions.Util.SuperCopyAction;
 import thiefmod.actions.unique.StolenMegaphone;
 import thiefmod.cards.stolen.*;
 import thiefmod.powers.Unique.FleetingGuiltPower;
@@ -78,8 +79,27 @@ public class StealCardAction extends AbstractGameAction {
         this.tickDuration();
     }
 
-// ========================
+    private void addStolenCards() {
 
+        for (AbstractCard c : cardsToAdd) {
+            logger.info("addStolenCards() adding card " + c + " to " + location);
+            c.unhover();
+            AbstractDungeon.actionManager.actions.add(new SuperCopyAction(c, "Exhaust", location));
+
+
+            //TODO: Test whether or not having a full hand breaks this.
+        }
+
+        if (!Objects.equals(location, "Hand")
+                && !Objects.equals(location, "Draw")
+                && !Objects.equals(location, "Discard")) {
+            logger.info("addStolenCards() didn't find ether hand, deck or discard.");
+        }
+
+
+    }
+
+// ========================
 
     // Create a new card group of the cards. This is essentially your cardpool.
     private static CardGroup stolenCards;
@@ -270,29 +290,6 @@ public class StealCardAction extends AbstractGameAction {
         }
         return cards;
     }
-
-    // ========================
-    private void addStolenCards() {
-
-        for (AbstractCard c : cardsToAdd) {
-            logger.info("addStolenCards() adding card " + c + " to " + location);
-            c.unhover();
-            AbstractDungeon.actionManager.actions.add(new SuperCopyAction(c, "Exhaust", location));
-
-            //TODO: Test whether or not having a full hand breaks this.
-
-        }
-
-        if (!Objects.equals(location, "Hand")
-                && !Objects.equals(location, "Draw")
-                && !Objects.equals(location, "Discard")) {
-            logger.info("addStolenCards() didn't find ether hand, deck or discard.");
-        }
-
-
-    }
-
-// TODO: (float) Settings.WIDTH / 2.0f, (float) Settings.HEIGHT / 2.0f - See if ShowCardAndAddToDiscardEffect looks find without noting this X and Y
 
 
 // ========================

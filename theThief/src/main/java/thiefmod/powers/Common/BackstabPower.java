@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import thiefmod.ThiefMod;
-import thiefmod.patches.Unique.ThiefCardTags;
+import thiefmod.patches.Character.ThiefCardTags;
 
 // Empty Base
 

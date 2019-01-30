@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import thiefmod.ThiefMod;
-import thiefmod.patches.Unique.ThiefCardTags;
+import thiefmod.patches.Character.ThiefCardTags;
 import thiefmod.powers.Unique.ShadowMasteryPower;
 
 import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager;

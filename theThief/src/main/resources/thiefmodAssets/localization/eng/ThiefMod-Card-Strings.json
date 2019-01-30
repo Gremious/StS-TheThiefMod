@@ -515,5 +515,9 @@
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]
+  },
+  "theThief:testCard": {
+    "NAME": "Test Card",
+    "DESCRIPTION": "Discover a Gray card."
   }
 }

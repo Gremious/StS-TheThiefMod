@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
 import thiefmod.cards.AbstractBackstabCard;
-import thiefmod.patches.Unique.ThiefCardTags;
+import thiefmod.patches.Character.ThiefCardTags;
 
 import java.util.Iterator;
 

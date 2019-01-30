@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
 import thiefmod.cards.AbstractBackstabCard;
 import thiefmod.patches.Character.AbstractCardEnum;
-import thiefmod.patches.Unique.ThiefCardTags;
+import thiefmod.patches.Character.ThiefCardTags;
 import thiefmod.powers.Common.BackstabPower;
 
 import java.util.ArrayList;

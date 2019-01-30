@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import thiefmod.ThiefMod;
 import thiefmod.cards.AbstractBackstabCard;
-import thiefmod.patches.Unique.ThiefCardTags;
+import thiefmod.patches.Character.ThiefCardTags;
 
 public class StolenWeapon extends AbstractBackstabCard {
 

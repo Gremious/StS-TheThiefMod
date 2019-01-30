@@ -20,9 +20,9 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import thiefmod.CardIgnore;
 import thiefmod.ThiefMod;
-import thiefmod.actions.StealCardAction;
+import thiefmod.actions.common.StealCardAction;
 import thiefmod.patches.Character.AbstractCardEnum;
-import thiefmod.patches.Unique.ThiefCardTags;
+import thiefmod.patches.Character.ThiefCardTags;
 import thiefmod.powers.Common.ShadowstepPower;
 
 import java.util.ArrayList;

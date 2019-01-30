@@ -1,36 +1,46 @@
-package thiefmod.cards.shadowstep;
+package thiefmod.cards;
 
 import basemod.helpers.TooltipInfo;
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.FleetingField;
+import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
+import com.megacrit.cardcrawl.actions.unique.DiscoveryAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
+import thiefmod.CardIgnore;
 import thiefmod.ThiefMod;
-import thiefmod.cards.AbstractBackstabCard;
+import thiefmod.actions.Util.DiscoverAction;
+import thiefmod.actions.common.StealCardAction;
 import thiefmod.patches.Character.AbstractCardEnum;
 import thiefmod.patches.Character.ThiefCardTags;
 import thiefmod.powers.Common.ShadowstepPower;
-import thiefmod.powers.Unique.FocusedPower;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Focused extends AbstractBackstabCard {
+public class AAAtestCard extends AbstractBackstabCard {
 //implements StartupCard
 //implements ModalChoice.Callback
 
 // TEXT DECLARATION
 
-    public static final String ID = ThiefMod.makeID("Focused");
+    public static final String ID = ThiefMod.makeID("testCard");
     public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_UNCOMMON_ATTACK);
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:FlavorText");
-    public static final String FLAVOR_STRINGS[] = uiStrings.TEXT;
+
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String EXTENDED_DESCRIPTION[] = cardStrings.EXTENDED_DESCRIPTION;
@@ -40,56 +50,40 @@ public class Focused extends AbstractBackstabCard {
 
     // STAT DECLARATION
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.SELF;
-    private static final CardType TYPE = CardType.POWER;
+    private static final CardType TYPE = CardType.SKILL;
 
-    private static final int COST = 1;
-    private static final int UPGRADE_COST = 0;
-
-    private static final int POWER = 1;
+    private static final int COST = 0;
 
     private static final int MAGIC = 1;
     private static final int UPGRADED_PLUS_MAGIC = 1;
 
+    private static final int BACKSTAB = 1;
+    private static final int UPGRADED_PLUS_BACKSTAB = 1;
+
+    private static final String ADD_LOCATION = "Hand"; // If stolen card.
+    private static final boolean ADD_RANDOM = true;
+    private static final boolean ADD_UPGRADED = false;
 
 // /STAT DECLARATION/
 
-    public Focused() {
+    public AAAtestCard() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        misc = POWER;
         magicNumber = baseMagicNumber = MAGIC;
+        backstabNumber = baseBackstabNumber = BACKSTAB;
 
-        this.tags.add(ThiefCardTags.SHADOWSTEP);
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
-                p, p, new ShadowstepPower(p, p, magicNumber), magicNumber));
-
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
-                p, p, new FocusedPower(p, p, magicNumber), magicNumber));
-
+        // TODO: First of all, test whether the number is "discover from 3" or "discover 3 times"
+        //  Second: see if you can pre-fill derp, and have an if derp != null, just fetch the cards from it rather than filling it
+        AbstractDungeon.actionManager.addToBottom(new DiscoverAction(AbstractCardEnum.THIEF_GRAY,3));
     }
 
-
-    @Override
-    public List<TooltipInfo> getCustomTooltips() {
-        List<TooltipInfo> tips = new ArrayList<>();
-        tips.add(new TooltipInfo(FLAVOR_STRINGS[0], EXTENDED_DESCRIPTION[0]));
-        // tips.addAll(modal.generateTooltips());
-        return tips;
-    }
-
-    // Which card to return when making a copy of this card.
-    @Override
-    public AbstractCard makeCopy() {
-        return new Focused();
-    }
 
     //Upgraded stats.
     @Override
@@ -97,8 +91,7 @@ public class Focused extends AbstractBackstabCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
-            isInnate = true;
-//          rawDescription = UPGRADE_DESCRIPTION;
+            upgradeBackstabNumber(UPGRADED_PLUS_BACKSTAB);
             initializeDescription();
         }
     }

@@ -11,7 +11,7 @@ import thiefmod.ThiefMod;
 import thiefmod.actions.unique.OneStepAheadAction;
 import thiefmod.cards.AbstractBackstabCard;
 import thiefmod.patches.Character.AbstractCardEnum;
-import thiefmod.patches.Unique.ThiefCardTags;
+import thiefmod.patches.Character.ThiefCardTags;
 
 public class OneStepAhead extends AbstractBackstabCard {
 

@@ -1,7 +1,6 @@
 package thiefmod.actions.unique;
 
 import basemod.BaseMod;
-import com.evacipated.cardcrawl.mod.stslib.actions.common.MoveCardsAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.DiscardToHandAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
@@ -22,7 +21,6 @@ public class RetrievalAction extends AbstractGameAction {
 
     private ArrayList<AbstractCard> cardsToReturn;
     private int returnAmount;
-    private int check = 0;
 
     public RetrievalAction(final ArrayList<AbstractCard> cardsToReturn, final int returnAmount) {
         this.cardsToReturn = cardsToReturn;
@@ -40,32 +38,29 @@ public class RetrievalAction extends AbstractGameAction {
         logger.info("cardsToRetun inside the action is " + cardsToReturn);
 
         for (AbstractCard iterateCard : cardsToReturn) {
-            logger.info("For loop started");
-            logger.info("Check is about to get incremented. It is currently " + check);
+            logger.info("returnAmount is " + returnAmount);
 
-            check++;
-            // I was now told StSlib has a MoveCardsAction. It is too late. I made all these actions. I don't wanna redo em.
-            stopCheck();
-            AbstractDungeon.actionManager.addToBottom(new DiscardToHandAction(iterateCard));
-            logger.info("Discard to hand added.");
-            stopCheck();
-            AbstractDungeon.actionManager.addToBottom(new DrawPileToHandAction(iterateCard));
-            logger.info("Draw to hand added.");
-            stopCheck();
-            AbstractDungeon.actionManager.addToBottom(new ExhaustToHandAction(iterateCard));
-            logger.info("Exhaust to hand added.");
-            stopCheck();
-            AbstractDungeon.actionManager.addToBottom(new LimboToHandAction(iterateCard));
-            logger.info("Limbo to hand added.");
-
-            logger.info("Passed through the action. Check is: " + check + " and returnAmount is " + returnAmount);
-            if (check >= returnAmount) {
-                isDone = true;
+            for (int i = 0; i <= returnAmount; i++) {
+                if (i == returnAmount) {
+                    logger.info("RetrievalAction is done via i check.");
+                    isDone = true;
+                }
+                // I was now told StSlib has a MoveCardsAction. It is too late. I made all these actions. I don't wanna redo em.
+                stopCheck();
+                AbstractDungeon.actionManager.addToBottom(new DiscardToHandAction(iterateCard));
+                logger.info("Discard to hand added.");
+                stopCheck();
+                AbstractDungeon.actionManager.addToBottom(new DrawPileToHandAction(iterateCard));
+                logger.info("Draw to hand added.");
+                stopCheck();
+                AbstractDungeon.actionManager.addToBottom(new ExhaustToHandAction(iterateCard));
+                logger.info("Exhaust to hand added.");
+                stopCheck();
+                AbstractDungeon.actionManager.addToBottom(new LimboToHandAction(iterateCard));
+                logger.info("Limbo to hand added.");
             }
-
+            isDone = true; // Do i need this idk
         }
-        logger.info("RetrievalAction is done.");
-
         isDone = true;
     }
 
