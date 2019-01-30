@@ -1,6 +1,5 @@
 package thiefmod.actions;
 
-import basemod.patches.com.megacrit.cardcrawl.characters.AbstractPlayer.MaxHandSizePatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -12,7 +11,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import thiefmod.ThiefMod;
 import thiefmod.Utils;
-import thiefmod.actions.common.ExhaustedCopyAction;
+import thiefmod.actions.common.SuperCopyAction;
 import thiefmod.actions.unique.StolenMegaphone;
 import thiefmod.cards.stolen.*;
 import thiefmod.powers.Unique.FleetingGuiltPower;
@@ -276,9 +275,9 @@ public class StealCardAction extends AbstractGameAction {
     private void addStolenCards() {
 
         for (AbstractCard c : cardsToAdd) {
+            logger.info("addStolenCards() adding card " + c + " to " + location);
             c.unhover();
-            AbstractDungeon.actionManager.actions.add(new ExhaustedCopyAction(c, location));
-
+            AbstractDungeon.actionManager.actions.add(new SuperCopyAction(c, "Exhaust", location));
 
             //TODO: Test whether or not having a full hand breaks this.
 
