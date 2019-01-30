@@ -65,6 +65,7 @@ public class DiscoveryColorPatch {
                     c.upgrade();
                 }
             }
+
             derp.addAll(lookingForCardList);
 
 

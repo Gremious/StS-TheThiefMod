@@ -21,7 +21,7 @@
       "Stolen",
       "stolen"
     ],
-    "DESCRIPTION": "Stolen cards are mostly low energy cards that Exhaust. NL There's a small chance you'll steal a [#FEE130]Rare[] [#FEE130]Find.[] NL After stealing 5 cards, add #b1 Ethereal Shame to your hand."
+    "DESCRIPTION": "Stolen cards are mostly low energy cards that gain Exhaust when acquired through stealing. NL There's a small chance you'll Steal a [#FEE130]Rare[] [#FEE130]Find.[] NL After Stealing #b5 cards, add #b1 #rEthereal #rShame to your hand."
   },
   {
     "NAMES": [

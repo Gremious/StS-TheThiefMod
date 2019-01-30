@@ -4,13 +4,15 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import thiefmod.ThiefMod;
-import thiefmod.actions.Util.DiscoverStolenCard;
+import thiefmod.actions.Util.DiscoverAndExhaustCard;
 import thiefmod.actions.Util.SuperCopyAction;
 import thiefmod.actions.unique.StolenMegaphone;
 import thiefmod.cards.stolen.*;
@@ -28,6 +30,9 @@ import static thiefmod.ThiefMod.*;
 
 public class StealCardAction extends AbstractGameAction {
     public static final Logger logger = LogManager.getLogger(ThiefMod.class.getName());
+    public static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:SuperCopyAction");
+    public static final String UITEXT[] = uiStrings.TEXT;
+
     private boolean random;
     private boolean upgraded;
     private String location;
@@ -52,22 +57,26 @@ public class StealCardAction extends AbstractGameAction {
 
             if (random) {
                 cardsToAdd = getRandomStolenCards(amount, true);
+
                 for (int i = 0; i < copies; i++) {
                     curseCounter();
                     addStolenCards();
                 }
+
                 cardsToAdd.clear();
             } else /*Discover*/ {
                 if (amount > 0) {
-                    curseCounter();
                     amount--;
-                    AbstractDungeon.actionManager.addToBottom(new DiscoverStolenCard(getRandomStolenCards(3, false), 3, copies));
+
+                    AbstractDungeon.actionManager.addToBottom(
+                            new DiscoverAndExhaustCard(getRandomStolenCards(3, false), 3, copies));
+
+                    curseCounter();
                     return; // Don't tickDuration, So that we can keep spamming the discover screen == amount of cards requested.
                 }
                 cardsToAdd.clear();
             }
         }
-
         this.tickDuration();
     }
 

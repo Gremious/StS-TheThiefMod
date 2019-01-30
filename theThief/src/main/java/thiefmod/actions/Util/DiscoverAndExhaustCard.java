@@ -8,30 +8,30 @@ import thiefmod.patches.Common.DiscoveryColorPatch;
 
 import java.util.ArrayList;
 
-public class DiscoverStolenCard extends AbstractGameAction {
+public class DiscoverAndExhaustCard extends AbstractGameAction {
     private ArrayList<AbstractCard> cardList = new ArrayList<>();
 
     private boolean retrieveCard = false;
     private boolean upgraded;
     private int copies;
 
-    public DiscoverStolenCard(final ArrayList<AbstractCard> cardList) {
+    public DiscoverAndExhaustCard(final ArrayList<AbstractCard> cardList) {
         this(cardList, 3, 1);
     }
 
-    public DiscoverStolenCard(final ArrayList<AbstractCard> cardList, boolean upgraded) {
+    public DiscoverAndExhaustCard(final ArrayList<AbstractCard> cardList, boolean upgraded) {
         this(cardList, upgraded, 3, 1);
     }
 
-    public DiscoverStolenCard(final ArrayList<AbstractCard> cardList, int amount) {
+    public DiscoverAndExhaustCard(final ArrayList<AbstractCard> cardList, int amount) {
         this(cardList, false, amount, 1);
     }
 
-    public DiscoverStolenCard(final ArrayList<AbstractCard> cardList, int amount, int copies) {
+    public DiscoverAndExhaustCard(final ArrayList<AbstractCard> cardList, int amount, int copies) {
         this(cardList, false, amount, copies);
     }
 
-    public DiscoverStolenCard(final ArrayList<AbstractCard> cardList, boolean upgraded, int amount, int copies) {
+    public DiscoverAndExhaustCard(final ArrayList<AbstractCard> cardList, boolean upgraded, int amount, int copies) {
         actionType = ActionType.CARD_MANIPULATION;
         duration = Settings.ACTION_DUR_FAST;
         this.amount = amount;
@@ -59,9 +59,11 @@ public class DiscoverStolenCard extends AbstractGameAction {
         if (!retrieveCard) {
             if (AbstractDungeon.cardRewardScreen.discoveryCard != null) {
                 AbstractCard discoveredCard = AbstractDungeon.cardRewardScreen.discoveryCard.makeStatEquivalentCopy();
+
                 for (int i = 0; i < copies; i++) {
                     AbstractDungeon.actionManager.actions.add(new SuperCopyAction(discoveredCard, "Exhaust", "Hand"));
                 }
+
                 AbstractDungeon.cardRewardScreen.discoveryCard = null;
             }
             retrieveCard = true;

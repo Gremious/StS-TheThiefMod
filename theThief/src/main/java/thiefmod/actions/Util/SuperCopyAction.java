@@ -56,7 +56,7 @@ public class SuperCopyAction extends AbstractGameAction {
                     logger.info("Adding " + c + " with Ethereal.");
                 }
             } else{
-                logger.info("The Super Copy Action didn't find the keyword you specified.");
+                logger.info("The Super Duper Copy Action didn't find the keyword you specified.");
             }
 
             c.initializeDescription();
@@ -68,7 +68,7 @@ public class SuperCopyAction extends AbstractGameAction {
             } else if (Objects.equals(location, "Discard")) {
                 AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(c));
             } else {
-                logger.info("The Super Copy Action didn't find ether hand, deck or discard.");
+                logger.info("The Super Duper Copy Action didn't find ether hand, deck or discard.");
             }
 
             AbstractDungeon.player.hand.refreshHandLayout();
