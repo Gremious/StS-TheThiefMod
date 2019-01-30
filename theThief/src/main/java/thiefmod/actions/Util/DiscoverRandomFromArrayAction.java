@@ -1,54 +1,50 @@
 package thiefmod.actions.Util;
 
 import basemod.BaseMod;
-import thiefmod.patches.Common.DiscoveryColorPatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDiscardEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
+import thiefmod.patches.Common.DiscoveryColorPatch;
 
-public class DiscoverAction extends AbstractGameAction
-{
+import java.util.ArrayList;
+
+public class DiscoverRandomFromArrayAction extends AbstractGameAction {
+    private ArrayList<AbstractCard> cardList = new ArrayList<>();
+
     private boolean retrieveCard = false;
-    private AbstractCard.CardColor cardColor;
-    private String prohibit;
     private boolean upgraded;
 
-    public DiscoverAction(AbstractCard.CardColor color)
-    {
-        this(color, 3);
+    public DiscoverRandomFromArrayAction(final ArrayList<AbstractCard> cardList) {
+        this(cardList, 3);
     }
 
-    public DiscoverAction(AbstractCard.CardColor color, int amount)
-    {
-        this(null, color, amount);
+    public DiscoverRandomFromArrayAction(final ArrayList<AbstractCard> cardList, int amount) {
+        this(cardList, false, amount);
     }
 
-    public DiscoverAction(String prohibit, AbstractCard.CardColor color, int amount)
-    {
-        this(prohibit, color, false, amount);
-    }
-
-    public DiscoverAction(String prohibit, AbstractCard.CardColor color, boolean upgraded, int amount)
-    {
+    public DiscoverRandomFromArrayAction(final ArrayList<AbstractCard> cardList, boolean upgraded, int amount) {
         actionType = ActionType.CARD_MANIPULATION;
         duration = Settings.ACTION_DUR_FAST;
-        cardColor = color;
         this.amount = amount;
-        this.prohibit = prohibit;
         this.upgraded = upgraded;
+        this.cardList = cardList;
     }
 
     @Override
-    public void update()
-    {
+    public void update() {
         if (duration == Settings.ACTION_DUR_FAST) {
-            DiscoveryColorPatch.lookingForColor = cardColor;
+
+            if (cardList.size() < amount)
+            {
+                amount = cardList.size();
+            }
+
             DiscoveryColorPatch.lookingForCount = amount;
-            DiscoveryColorPatch.lookingForProhibit = prohibit;
             DiscoveryColorPatch.lookingForUpgraded = upgraded;
+            DiscoveryColorPatch.lookingForCardList = cardList;
 
             AbstractDungeon.cardRewardScreen.discoveryOpen();
             tickDuration();

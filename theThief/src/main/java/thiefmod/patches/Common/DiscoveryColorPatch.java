@@ -14,23 +14,22 @@ import java.util.Map;
 
 // Thank you hubris/kio!
 @SpirePatch(
-        clz=CardRewardScreen.class,
-        method="discoveryOpen",
-        paramtypez={}
+        clz = CardRewardScreen.class,
+        method = "discoveryOpen",
+        paramtypez = {}
 )
-public class DiscoveryColorPatch
-{
+public class DiscoveryColorPatch {
     public static AbstractCard.CardColor lookingForColor = null;
     public static int lookingForCount = 3;
     public static String lookingForProhibit = null;
     public static boolean lookingForUpgraded = false;
+    public static ArrayList<AbstractCard> lookingForCardList = new ArrayList<>();
 
     @SpireInsertPatch(
-            locator=Locator.class,
-            localvars={"derp"}
+            locator = Locator.class,
+            localvars = {"derp"}
     )
-    public static void Insert(CardRewardScreen __instance, ArrayList<AbstractCard> derp)
-    {
+    public static void Insert(CardRewardScreen __instance, ArrayList<AbstractCard> derp) {
         if (lookingForColor != null) {
             derp.clear();
             while (derp.size() != lookingForCount) {
@@ -59,11 +58,25 @@ public class DiscoveryColorPatch
             lookingForCount = 3;
             lookingForProhibit = null;
             lookingForUpgraded = false;
+        } else {
+            derp.clear();
+            if (lookingForUpgraded) {
+                for (AbstractCard c : lookingForCardList) {
+                    c.upgrade();
+                }
+            }
+            derp.addAll(lookingForCardList);
+
+
+            __instance.rewardGroup = derp;
+            lookingForCount = 3;
+            lookingForProhibit = null;
+            lookingForUpgraded = false;
+
         }
     }
 
-    private static AbstractCard getColorSpecificCard(String prohibit, AbstractCard.CardColor color, Random rng)
-    {
+    private static AbstractCard getColorSpecificCard(String prohibit, AbstractCard.CardColor color, Random rng) {
         List<String> tmp = new ArrayList<>();
         for (Map.Entry<String, AbstractCard> c : CardLibrary.cards.entrySet()) {
             if (c.getValue().color == color && !c.getKey().equals(prohibit)) {
@@ -73,11 +86,9 @@ public class DiscoveryColorPatch
         return CardLibrary.cards.get(tmp.get(rng.random(0, tmp.size() - 1)));
     }
 
-    private static class Locator extends SpireInsertLocator
-    {
+    private static class Locator extends SpireInsertLocator {
         @Override
-        public int[] Locate(CtBehavior ctMethodToPatch) throws Exception
-        {
+        public int[] Locate(CtBehavior ctMethodToPatch) throws Exception {
             Matcher finalMatcher = new Matcher.FieldAccessMatcher(CardRewardScreen.class, "rewardGroup");
             return LineFinder.findInOrder(ctMethodToPatch, finalMatcher);
         }

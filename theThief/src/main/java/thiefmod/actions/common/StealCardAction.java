@@ -11,7 +11,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import thiefmod.ThiefMod;
 import thiefmod.Utils;
-import thiefmod.actions.Util.DiscoverAction;
 import thiefmod.actions.Util.SuperCopyAction;
 import thiefmod.actions.unique.StolenMegaphone;
 import thiefmod.cards.stolen.*;
