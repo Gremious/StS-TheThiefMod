@@ -12,5 +12,11 @@
       " stolen cards to add to your draw pile.",
       " stolen cards to add to your discard pile."
     ]
+  },
+  "theThief:CopyToHandAction": {
+    "TEXT": [
+      " NL Exhaust.",
+      " NL Ethereal."
+    ]
   }
 }
