@@ -10,6 +10,7 @@ import mysticmod.MysticMod;
 import mysticmod.actions.SpellDiscoveryAction;
 import thiefmod.ThiefMod;
 import thiefmod.Utils;
+import thiefmod.actions.Util.DiscoverRandomFromArrayAction;
 import thiefmod.cards.AbstractBackstabCard;
 import thiefmod.patches.Character.AbstractCardEnum;
 
@@ -56,15 +57,12 @@ public class stolenBookOfArte extends AbstractBackstabCard {
         for (int i = 0; i < magicNumber; i++) {
 
             ArrayList<AbstractCard> threeRandomArtes = new ArrayList<>();
-
             threeRandomArtes.add(MysticMod.returnTrulyRandomArte());
-            threeRandomArtes.add(MysticMod.returnTrulyRandomArte());
-            threeRandomArtes.add(MysticMod.returnTrulyRandomArte());
-            threeRandomArtes.add(MysticMod.returnTrulyRandomArte()); // Just to be safe idk
             threeRandomArtes.add(MysticMod.returnTrulyRandomArte());
             threeRandomArtes.add(MysticMod.returnTrulyRandomArte());
 
-            Utils.openCardRewardsScreen(threeRandomArtes, true);
+            AbstractDungeon.actionManager.addToBottom(new DiscoverRandomFromArrayAction(threeRandomArtes));
+
         }
     }
 

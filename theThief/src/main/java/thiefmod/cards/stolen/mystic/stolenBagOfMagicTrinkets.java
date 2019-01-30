@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
 import thiefmod.Utils;
+import thiefmod.actions.Util.DiscoverRandomFromArrayAction;
 import thiefmod.cards.AbstractBackstabCard;
 import thiefmod.patches.Character.AbstractCardEnum;
 
@@ -60,14 +61,11 @@ public class stolenBagOfMagicTrinkets extends AbstractBackstabCard {
         trinketCards.add(cantripsGroup.get(AbstractDungeon.cardRandomRng.random(cantripsGroup.size() - 1)));
 
         if (upgraded) {
-            for (AbstractCard tc : trinketCards) {
-                tc.upgrade();
-            }
+            AbstractDungeon.actionManager.addToBottom(new DiscoverRandomFromArrayAction(trinketCards,true));
         }
 
-        for (int i = 0; i < magicNumber; i++) {
-            Utils.openCardRewardsScreen(trinketCards, true);
-        }
+        AbstractDungeon.actionManager.addToBottom(new DiscoverRandomFromArrayAction(trinketCards));
+
     }
 
     @Override

@@ -20,6 +20,9 @@ public class DiscoverRandomFromArrayAction extends AbstractGameAction {
     public DiscoverRandomFromArrayAction(final ArrayList<AbstractCard> cardList) {
         this(cardList, 3);
     }
+    public DiscoverRandomFromArrayAction(final ArrayList<AbstractCard> cardList, boolean upgraded) {
+        this(cardList, upgraded, 3);
+    }
 
     public DiscoverRandomFromArrayAction(final ArrayList<AbstractCard> cardList, int amount) {
         this(cardList, false, amount);
