@@ -15,12 +15,20 @@
       "[#88888]As[] [#88888]fundamental[] [#88888]as[] [#88888]it[] [#88888]gets.[]"
     ]
   },
+  "theThief:Lie": {
+    "NAME": "Lie",
+    "DESCRIPTION": "Gain !B! Block. Apply !M! vulnerable to all enemies. ",
+    "UPGRADE_DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#fa5555]As[] [#fa5555]fundamental[] [#fa5555]as[] [#fa5555]it[] [#fa5555]gets?[]"
+    ]
+  },
   "theThief:SwiftSlash": {
     "NAME": "Swift Slash",
     "DESCRIPTION": "Deal !D! damage. Draw !M! card.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage. Draw !M! cards.",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]As[] [#88888]fundamental[] [#88888]as[] [#88888]it[] [#88888]gets.[]",
+      "[#88888]Not[] [#88888]to[] [#88888]be[] [#88888]confused[] [#88888]for[] [#88888]its[] [#88888]identical[] [#88888]twin[] [#88888]cousin[] [#88888]-[] [#88888]Quick[] [#88888]Slash.[]",
       "Deal !D! damage. Draw !M! card.",
       "Deal !D! damage. Draw !M! cards."
     ]
@@ -28,32 +36,42 @@
   "theThief:DaggerBouquet": {
     "NAME": "Dagger Bouquet",
     "DESCRIPTION": "Deal !D! damage to a random enemy !M! times.",
-    "UPGRADE_DESCRIPTION": ""
-  },
-  "theThief:Lie": {
-    "NAME": "Lie",
-    "DESCRIPTION": "Gain !B! Block. Apply !M! vulnerable to all enemies. ",
-    "UPGRADE_DESCRIPTION": ""
+    "UPGRADE_DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#88888]An[] [#88888]odd[] [#88888]number[] [#88888]of[] [#88888]flowers[] [#88888]signify[] [#88888]death.[] [#88888]So[] [#88888]do[] [#88888]daggers.[]"
+    ]
   },
   "theThief:Steal": {
     "NAME": "Steal",
     "DESCRIPTION": "Deal !D! damage. Steal !M! card.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. Steal !M! cards."
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. Steal !M! cards.",
+    "EXTENDED_DESCRIPTION": [
+      "[#88888]Flavor[] [#88888]Text[]"
+    ]
   },
   "theThief:Pickpocket": {
     "NAME": "Pickpocket",
     "DESCRIPTION": "Deal !D! damage. Gain !M! gold.",
-    "UPGRADE_DESCRIPTION": ""
+    "UPGRADE_DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#88888]Pick[] [#88888]your[] [#88888]pickpocket[] [#88888]pockets[][ #88888]well.[]"
+    ]
   },
   "theThief:SharpPractice": {
     "NAME": "Sharp Practice",
     "DESCRIPTION": "At the start of each turn add !M! random Stolen card to your hand.",
-    "UPGRADE_DESCRIPTION": "Innate. NL At the start of each turn add !M! random Stolen card to your hand."
+    "UPGRADE_DESCRIPTION": "Innate. NL At the start of each turn add !M! random Stolen card to your hand.",
+    "EXTENDED_DESCRIPTION": [
+      "[#88888]Ow![] [#88888]Practice-cut![]"
+    ]
   },
   "theThief:Ransack": {
     "NAME": "Ransack",
     "DESCRIPTION": "Choose 1 out of 3 stolen cards and add !M! copies of it to your hand.",
-    "UPGRADE_DESCRIPTION": ""
+    "UPGRADE_DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "[#88888]ransack[]"
+    ]
   },
   "theThief:IllGottenGains": {
     "NAME": "Ill Gotten Gains",
@@ -64,10 +82,6 @@
     "NAME": "Similar Skills",
     "DESCRIPTION": "At the start of your turn, add a random Green card to your deck. It costs 0 this combat.",
     "UPGRADE_DESCRIPTION": "At the start of your turn, add a random Upgraded Green card to your deck. It costs 0 this combat."
-  },
-  "theThief:DefaultRareAttack": {
-    "NAME": "TOUCH",
-    "DESCRIPTION": "Deal !D! damage."
   },
   "theThief:DramaticFeign": {
     "NAME": "Dramatic Feign",
@@ -96,13 +110,16 @@
     "DESCRIPTION": "Deal !D! damage. NL Add a copy of this card to your deck. NL Exhaust. NL Soulbound.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Add a copy of this card to your deck. NL Exhaust. NL Soulbound.",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]Raining[] [#88888]down[] [#88888]like[] [#88888]petals.[]"
+      "[#EE130]Raining[] [#EE130]down[] [#EE130]like[] [#EE130]petals.[]"
     ]
   },
   "theThief:SerratedDagger": {
     "NAME": "Serrated Dagger",
     "DESCRIPTION": "Enemy loses !D! HP.",
-    "UPGRADE_DESCRIPTION": "Enemy loses !D! HP."
+    "UPGRADE_DESCRIPTION": "Enemy loses !D! HP.",
+    "EXTENDED_DESCRIPTION": [
+      "[#88888]Always[] [#88888]serrate[] [#88888]your[] [#88888]daggers,[] [#88888]it's[] [#88888]good[] [#88888]practice.[]"
+    ]
   },
   "theThief:Exploit": {
     "NAME": "Exploit",
@@ -112,12 +129,18 @@
   "theThief:Follow-up": {
     "NAME": "Follow-up",
     "DESCRIPTION": "Deal !D! damage to an enemy. Next turn, to all enemies.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage to an enemy. Next turn, to all enemies."
+    "UPGRADE_DESCRIPTION": "Deal !D! damage to an enemy. Next turn, to all enemies.",
+    "EXTENDED_DESCRIPTION": [
+      "[#88888]Flavor[] [#88888]Text[]"
+    ]
   },
   "theThief:OneStepAhead": {
     "NAME": "One Step Ahead",
     "DESCRIPTION": "If an enemy intends to attack, Shadowstep !M! time. If it intends to block, deal !D! damage !theThief:Magic! times instead.",
-    "UPGRADE_DESCRIPTION": "If an enemy intends to attack, Shadowstep !M! times. If it intends to block, deal !D! damage !theThief:Magic! times instead."
+    "UPGRADE_DESCRIPTION": "If an enemy intends to attack, Shadowstep !M! times. If it intends to block, deal !D! damage !theThief:Magic! times instead.",
+    "EXTENDED_DESCRIPTION": [
+      "[#88888]Flavor[] [#88888]Text[]"
+    ]
   },
   "theThief:Sidestep": {
     "NAME": "Sidestep",

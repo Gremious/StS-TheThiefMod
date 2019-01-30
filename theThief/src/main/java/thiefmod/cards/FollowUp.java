@@ -1,5 +1,6 @@
 package thiefmod.cards;
 
+import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -14,6 +15,9 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
 import thiefmod.patches.Character.AbstractCardEnum;
 import thiefmod.powers.Common.DealDamageToAllNextTurnPower;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class FollowUp extends AbstractBackstabCard {
 
@@ -64,6 +68,12 @@ public class FollowUp extends AbstractBackstabCard {
 
     }
 
+    @Override
+    public List<TooltipInfo> getCustomTooltips() {
+        List<TooltipInfo> tips = new ArrayList<>();
+        tips.add(new TooltipInfo(FLAVOR_STRINGS[0], EXTENDED_DESCRIPTION[0]));
+        return tips;
+    }
 
     // Which card to return when making a copy of this card.
     @Override

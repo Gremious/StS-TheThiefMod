@@ -1,5 +1,6 @@
 package thiefmod.cards;
 
+import basemod.helpers.TooltipInfo;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.SoulboundField;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -14,6 +15,9 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
 import thiefmod.patches.Character.AbstractCardEnum;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class BeautifulLies extends AbstractBackstabCard {
 
@@ -66,10 +70,11 @@ public class BeautifulLies extends AbstractBackstabCard {
 
     }
 
-    // Which card to return when making a copy of this card.
     @Override
-    public AbstractCard makeCopy() {
-        return new BeautifulLies();
+    public List<TooltipInfo> getCustomTooltips() {
+        List<TooltipInfo> tips = new ArrayList<>();
+        tips.add(new TooltipInfo(FLAVOR_STRINGS[0], EXTENDED_DESCRIPTION[0]));
+        return tips;
     }
 
     //Upgraded stats.

@@ -1,6 +1,7 @@
 package thiefmod.cards;
 
 import basemod.abstracts.CustomCard;
+import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -13,6 +14,9 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
 import thiefmod.actions.StealCardAction;
 import thiefmod.patches.Character.AbstractCardEnum;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Steal extends CustomCard {
 
@@ -27,6 +31,7 @@ public class Steal extends CustomCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+    public static final String EXTENDED_DESCRIPTION[] = cardStrings.EXTENDED_DESCRIPTION;
 
     // /TEXT DECLARATION/
 
@@ -67,6 +72,13 @@ public class Steal extends CustomCard {
 
         AbstractDungeon.actionManager.addToBottom(new StealCardAction(
                 this.magicNumber, ADD_COPIES, ADD_RANDOM, ADD_LOCATION, ADD_UPGRADED));
+    }
+
+    @Override
+    public List<TooltipInfo> getCustomTooltips() {
+        List<TooltipInfo> tips = new ArrayList<>();
+        tips.add(new TooltipInfo(FLAVOR_STRINGS[0], EXTENDED_DESCRIPTION[0]));
+        return tips;
     }
 
     // Which card to return when making a copy of this card.

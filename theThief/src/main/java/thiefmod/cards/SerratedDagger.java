@@ -1,5 +1,6 @@
 package thiefmod.cards;
 
+import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -11,6 +12,9 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
 import thiefmod.patches.Character.AbstractCardEnum;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class SerratedDagger extends AbstractBackstabCard {
 
@@ -57,11 +61,11 @@ public class SerratedDagger extends AbstractBackstabCard {
 
     }
 
-
-    // Which card to return when making a copy of this card.
     @Override
-    public AbstractCard makeCopy() {
-        return new SerratedDagger();
+    public List<TooltipInfo> getCustomTooltips() {
+        List<TooltipInfo> tips = new ArrayList<>();
+        tips.add(new TooltipInfo(FLAVOR_STRINGS[0], EXTENDED_DESCRIPTION[0]));
+        return tips;
     }
 
     //Upgraded stats.

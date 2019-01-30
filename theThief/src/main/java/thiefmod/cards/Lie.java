@@ -1,5 +1,6 @@
 package thiefmod.cards;
 
+import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -12,6 +13,9 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import thiefmod.ThiefMod;
 import thiefmod.patches.Character.AbstractCardEnum;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Lie extends AbstractBackstabCard {
 
@@ -64,6 +68,13 @@ public class Lie extends AbstractBackstabCard {
                     mo, this.magicNumber, false), this.magicNumber));
         }
 
+    }
+
+    @Override
+    public List<TooltipInfo> getCustomTooltips() {
+        List<TooltipInfo> tips = new ArrayList<>();
+        tips.add(new TooltipInfo(FLAVOR_STRINGS[0], EXTENDED_DESCRIPTION[0]));
+        return tips;
     }
 
     // Which card to return when making a copy of this card.
