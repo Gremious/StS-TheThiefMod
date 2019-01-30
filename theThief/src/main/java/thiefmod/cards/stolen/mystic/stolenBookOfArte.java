@@ -62,7 +62,7 @@ public class stolenBookOfArte extends AbstractBackstabCard {
             threeRandomArtes.add(MysticMod.returnTrulyRandomArte());
 
             AbstractDungeon.actionManager.addToBottom(new DiscoverRandomFromArrayAction(threeRandomArtes));
-
+            threeRandomArtes.clear();
         }
     }
 

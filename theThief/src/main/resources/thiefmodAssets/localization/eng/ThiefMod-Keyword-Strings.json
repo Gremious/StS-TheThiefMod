@@ -1,6 +1,5 @@
 [
   {
-    "PROPER_NAME": "Shadowstep",
     "NAMES": [
       "Shadowstep",
       "shadowstep",
@@ -9,10 +8,9 @@
     "DESCRIPTION": "Become elusive, reducing incoming damage by 10% per stack. NL If you use a Backstab card immediately after a Shadowstep card, it gains its Backstab effect."
   },
   {
-    "PROPER_NAME": "Elusive",
     "NAMES": [
-      "elusive",
-      "Elusive"
+      "Elusive",
+      "elusive"
     ],
     "DESCRIPTION": "Reduces incoming damage by 10% per stack."
   },
@@ -23,10 +21,9 @@
       "Stolen",
       "stolen"
     ],
-    "DESCRIPTION": "Stolen cards are mostly low energy card that Exhaust. NL They range from specific effects from any class, to cards unique for the Thief. NL They are added to your hand unless stated otherwise. NL After stealing 5 cards, add #b1 Etherial Shame to your hand."
+    "DESCRIPTION": "Stolen cards are mostly low energy cards that Exhaust. NL There's a small chance you'll steal a [#FEE130]Rare[] [#FEE130]Find.[] NL After stealing 5 cards, add #b1 Ethereal Shame to your hand."
   },
   {
-    "PROPER_NAME": "Backstab",
     "NAMES": [
       "backstab",
       "Backstab",
@@ -37,10 +34,11 @@
     "DESCRIPTION": "If this is the first card you play in a turn, it changes its effect."
   },
   {
-    "PROPER_NAME": "Discover",
     "NAMES": [
-      "discover:",
-      "Discover"
+      "Discover",
+      "Discover:",
+      "discover",
+      "discover:"
     ],
     "DESCRIPTION": "Choose 1 out of 3 cards and add it to your hand."
   }

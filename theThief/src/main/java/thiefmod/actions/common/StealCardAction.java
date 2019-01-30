@@ -10,10 +10,11 @@ import com.megacrit.cardcrawl.helpers.CardLibrary;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import thiefmod.ThiefMod;
-import thiefmod.Utils;
+import thiefmod.actions.Util.DiscoverRandomFromArrayAction;
 import thiefmod.actions.Util.SuperCopyAction;
 import thiefmod.actions.unique.StolenMegaphone;
 import thiefmod.cards.stolen.*;
+import thiefmod.cards.stolen.mystic.*;
 import thiefmod.powers.Unique.FleetingGuiltPower;
 import thiefmod.powers.Unique.IllGottenGainsPower;
 
@@ -22,6 +23,7 @@ import java.util.Objects;
 
 import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager;
 import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.player;
+import static mysticmod.MysticMod.cantripsGroup;
 import static thiefmod.ThiefMod.*;
 
 public class StealCardAction extends AbstractGameAction {
@@ -48,41 +50,40 @@ public class StealCardAction extends AbstractGameAction {
     public void update() {
         if (this.duration == Settings.ACTION_DUR_FAST) {
 
-            if (random) { // Add a random card
+            if (random) {
                 cardsToAdd = getRandomStolenCards(amount, true);
                 for (int i = 0; i < copies; i++) {
                     curseCounter();
                     addStolenCards();
                 }
                 cardsToAdd.clear();
-            } else { // Discover a card and add it
-                if (AbstractDungeon.cardRewardScreen.codexCard != null) {
-                    for (int i = 0; i < copies; i++) {
-                        AbstractCard c = AbstractDungeon.cardRewardScreen.codexCard.makeStatEquivalentCopy();
-                        cardsToAdd.add(c);
-                    }
-                    AbstractDungeon.cardRewardScreen.codexCard = null;
-                }
+            } else /*Discover*/ {
+
                 if (amount > 0) {
                     amount--;
-                    Utils.openCardRewardsScreen(getRandomStolenCards(3, false), true);
-
+                    AbstractDungeon.actionManager.addToBottom(new DiscoverRandomFromArrayAction(getRandomStolenCards(3, false)));
                     return; // Don't tickDuration, So that we can keep spamming the discover screen == amount of cards requested.
                 } else {
                     addStolenCards();
                     curseCounter();
                 }
+
+                for (int i = 0; i < copies; i++) {
+                }
+
                 cardsToAdd.clear();
             }
         }
+
         this.tickDuration();
     }
 
+    // Add the stolen cards to whatever location your heart desires.
     private void addStolenCards() {
 
         for (AbstractCard c : cardsToAdd) {
             logger.info("addStolenCards() adding card " + c + " to " + location);
-            c.unhover();
+            //    c.unhover();
             AbstractDungeon.actionManager.actions.add(new SuperCopyAction(c, "Exhaust", location));
 
 
@@ -100,7 +101,7 @@ public class StealCardAction extends AbstractGameAction {
 
 // ========================
 
-    // Create a new card group of the cards. This is essentially your cardpool.
+    // Cardpool of non-upgraded cards.
     private static CardGroup stolenCards;
 
     static {
@@ -157,7 +158,7 @@ public class StealCardAction extends AbstractGameAction {
 
         if (hasHubris || hasInfiniteSpire || hasReplayTheSpire) {
             int roll = AbstractDungeon.relicRng.random(99);
-            if (roll < 4) {
+            if (roll < 15) {
                 ArrayList<AbstractCard> blackCards = new ArrayList<>();
 
                 if (hasHubris) {
@@ -187,8 +188,8 @@ public class StealCardAction extends AbstractGameAction {
 
                     blackCards.add(CardLibrary.getCopy("ReplayTheSpireMod:Chaos Vortex"));
                     blackCards.add(CardLibrary.getCopy("Replay:Dark Deal"));
-                    blackCards.add(CardLibrary.getCopy("ReplayTheSpireMod:Dark Transmutation"));
-                    blackCards.add(CardLibrary.getCopy("ReplayTheSpireMod:Echo Chamber"));
+//                    blackCards.add(CardLibrary.getCopy("ReplayTheSpireMod:Dark Transmutation"));
+//                    blackCards.add(CardLibrary.getCopy("ReplayTheSpireMod:Echo Chamber"));
                     blackCards.add(CardLibrary.getCopy("ReplayTheSpireMod:Echoes of Time"));
                     blackCards.add(CardLibrary.getCopy("Replay:Fractal Strike"));
                     blackCards.add(CardLibrary.getCopy("ReplayTheSpireMod:Haul"));
@@ -205,7 +206,7 @@ public class StealCardAction extends AbstractGameAction {
 
         //---
 
-      /*  if (hasMysticMod) {
+        if (hasMysticMod) {
             ArrayList<AbstractCard> customMysticCards = new ArrayList<>();
             ArrayList<AbstractCard> mysticCards = new ArrayList<>();
 
@@ -233,7 +234,7 @@ public class StealCardAction extends AbstractGameAction {
                 stolenCards.addToTop(c);
 
             }
-        }*/
+        }
 
         //---
 
@@ -241,18 +242,7 @@ public class StealCardAction extends AbstractGameAction {
         stolenCards.sortAlphabetically(false);
     }
 
-    /*  private static CardGroup stolenCardsExhausted;
 
-      static {
-          stolenCardsExhausted = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-          for (AbstractCard c : stolenCards.group) {
-              AbstractCard upgradedCopy = makeExhaustedStolenCard(c, false);
-              stolenCardsExhausted.addToTop(upgradedCopy);
-
-          }
-      }
-
-  */
     // Card pool of upgraded cards.
     private static CardGroup stolenCardsUpgraded;
 
@@ -275,29 +265,25 @@ public class StealCardAction extends AbstractGameAction {
         }
     }
 
-    // If stolen cards are requested, this array list is the output.
+    // Generates random stolen cards
     private ArrayList<AbstractCard> getRandomStolenCards(int amount, boolean allowDuplicates) {
 
-        ArrayList<AbstractCard> cards = new ArrayList<>();
+        ArrayList<AbstractCard> randomCards = new ArrayList<>();
 
-        while (cards.size() < amount) {
+        while (randomCards.size() < amount) {
             AbstractCard card = allStolenCards().getRandomCard(true);
-            if (allowDuplicates || !cards.contains(card)) {
+            if (allowDuplicates || !randomCards.contains(card)) {
 
-                cards.add(card);
+                randomCards.add(card);
             }
         }
-        return cards;
+        return randomCards;
     }
 
-
-// ========================
 
     private void curseCounter() {
         actionManager.addToBottom(new ApplyPowerAction(player, source,
                 new FleetingGuiltPower(player, source, 1), 1));
     }
-
-// ========================
 
 }

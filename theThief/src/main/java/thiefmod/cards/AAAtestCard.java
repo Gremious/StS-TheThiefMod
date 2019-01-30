@@ -66,8 +66,7 @@ private ArrayList<AbstractCard> cardsToDiscoverFrom = new ArrayList<>();
         cardsToDiscoverFrom.add(new DoubleTap());
         cardsToDiscoverFrom.add(new AAAtestCard());
         cardsToDiscoverFrom.add(new Neutralize());
-        //
-        //  Second: see if you can pre-fill derp, and have an if derp != null, just fetch the cards from it rather than filling it
+
         AbstractDungeon.actionManager.addToBottom(new DiscoverRandomFromArrayAction(cardsToDiscoverFrom));
     }
 

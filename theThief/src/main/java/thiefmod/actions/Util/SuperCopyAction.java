@@ -22,8 +22,8 @@ public class SuperCopyAction extends AbstractGameAction {
     private String location;
     private String keyword;
 
-    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:CopyToHandAction");
-    private static final String UITEXT[] = uiStrings.TEXT;
+    public static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:SuperCopyAction");
+    public static final String UITEXT[] = uiStrings.TEXT;
 
     /*
      * Will not add they keyword if card already has it.
@@ -47,14 +47,15 @@ public class SuperCopyAction extends AbstractGameAction {
                 if (!c.exhaust) {
                     c.exhaust = true;
                     c.rawDescription = c.rawDescription + UITEXT[0];
+                    logger.info("Adding " + c + " with Exhaust.");
                 }
             } else if (Objects.equals(keyword, "Ethereal")) {
                 if (!c.isEthereal) {
                     c.isEthereal = true;
                     c.rawDescription = c.rawDescription + UITEXT[1];
+                    logger.info("Adding " + c + " with Ethereal.");
                 }
             } else{
-
                 logger.info("The Super Copy Action didn't find the keyword you specified.");
             }
 

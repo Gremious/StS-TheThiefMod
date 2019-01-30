@@ -13,7 +13,7 @@
       " stolen cards to add to your discard pile."
     ]
   },
-  "theThief:CopyToHandAction": {
+  "theThief:SuperCopyAction": {
     "TEXT": [
       " NL Exhaust.",
       " NL Ethereal."
