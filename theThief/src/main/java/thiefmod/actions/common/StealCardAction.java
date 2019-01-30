@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.helpers.CardLibrary;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import thiefmod.ThiefMod;
-import thiefmod.actions.Util.DiscoverRandomFromArrayAction;
+import thiefmod.actions.Util.DiscoverStolenCard;
 import thiefmod.actions.Util.SuperCopyAction;
 import thiefmod.actions.unique.StolenMegaphone;
 import thiefmod.cards.stolen.*;
@@ -58,19 +58,12 @@ public class StealCardAction extends AbstractGameAction {
                 }
                 cardsToAdd.clear();
             } else /*Discover*/ {
-
                 if (amount > 0) {
-                    amount--;
-                    AbstractDungeon.actionManager.addToBottom(new DiscoverRandomFromArrayAction(getRandomStolenCards(3, false)));
-                    return; // Don't tickDuration, So that we can keep spamming the discover screen == amount of cards requested.
-                } else {
-                    addStolenCards();
                     curseCounter();
+                    amount--;
+                    AbstractDungeon.actionManager.addToBottom(new DiscoverStolenCard(getRandomStolenCards(3, false), 3, copies));
+                    return; // Don't tickDuration, So that we can keep spamming the discover screen == amount of cards requested.
                 }
-
-                for (int i = 0; i < copies; i++) {
-                }
-
                 cardsToAdd.clear();
             }
         }
