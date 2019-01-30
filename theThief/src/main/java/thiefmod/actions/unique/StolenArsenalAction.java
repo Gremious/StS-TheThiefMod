@@ -1,13 +1,14 @@
 package thiefmod.actions.unique;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.colorless.Shiv;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.CardLibrary;
+import thiefmod.actions.Util.MakeSuperCopyAction;
 
 import java.util.ArrayList;
 
@@ -38,26 +39,26 @@ public class StolenArsenalAction extends AbstractGameAction {
             int discardSize = discardCards.size();
             int exhaustSize = exhaustCards.size();
 
-            AbstractCard shiv = CardLibrary.getCopy(Shiv.ID);
+            AbstractCard shiv = new Shiv();
             shiv.exhaust = false;
             shiv.rawDescription = "Deal !D! damage.";
 
             for (AbstractCard c : handCards) {
                 AbstractDungeon.player.hand.removeCard(c);
 
-                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(shiv, handSize));
+                AbstractDungeon.actionManager.addToBottom(new MakeSuperCopyAction());
             }
             for (AbstractCard c : drawCards) {
                 AbstractDungeon.player.drawPile.removeCard(c);
-                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(shiv, handSize));
+                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(shiv, 1, false, true));
             }
             for (AbstractCard c : discardCards) {
                 AbstractDungeon.player.discardPile.removeCard(c);
-                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(shiv, handSize));
+                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(shiv, handSize));
             }
             for (AbstractCard c : exhaustCards) {
                 AbstractDungeon.player.exhaustPile.removeCard(c);
-                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(shiv, handSize));
+                AbstractDungeon.actionManager.addToBottom(new (shiv, handSize));
             }
             AbstractDungeon.player.hand.refreshHandLayout();
             AbstractDungeon.player.hand.glowCheck();

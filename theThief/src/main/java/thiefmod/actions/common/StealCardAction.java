@@ -13,7 +13,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import thiefmod.ThiefMod;
 import thiefmod.actions.Util.DiscoverAndExhaustCard;
-import thiefmod.actions.Util.SuperCopyAction;
+import thiefmod.actions.Util.MakeSuperCopyAction;
 import thiefmod.actions.unique.StolenMegaphone;
 import thiefmod.cards.stolen.*;
 import thiefmod.cards.stolen.mystic.*;
@@ -30,7 +30,7 @@ import static thiefmod.ThiefMod.*;
 
 public class StealCardAction extends AbstractGameAction {
     public static final Logger logger = LogManager.getLogger(ThiefMod.class.getName());
-    public static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:SuperCopyAction");
+    public static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:MakeSuperCopyAction");
     public static final String UITEXT[] = uiStrings.TEXT;
 
     private boolean random;
@@ -86,7 +86,7 @@ public class StealCardAction extends AbstractGameAction {
         for (AbstractCard c : cardsToAdd) {
             logger.info("addStolenCards() adding card " + c + " to " + location);
             //    c.unhover();
-            AbstractDungeon.actionManager.actions.add(new SuperCopyAction(c, "Exhaust", location));
+            AbstractDungeon.actionManager.actions.add(new MakeSuperCopyAction(c, "Exhaust", location));
 
 
             //TODO: Test whether or not having a full hand breaks this.

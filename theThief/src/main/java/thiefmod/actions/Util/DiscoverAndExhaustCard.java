@@ -61,7 +61,7 @@ public class DiscoverAndExhaustCard extends AbstractGameAction {
                 AbstractCard discoveredCard = AbstractDungeon.cardRewardScreen.discoveryCard.makeStatEquivalentCopy();
 
                 for (int i = 0; i < copies; i++) {
-                    AbstractDungeon.actionManager.actions.add(new SuperCopyAction(discoveredCard, "Exhaust", "Hand"));
+                    AbstractDungeon.actionManager.actions.add(new MakeSuperCopyAction(discoveredCard, "Exhaust", "Hand"));
                 }
 
                 AbstractDungeon.cardRewardScreen.discoveryCard = null;

@@ -15,8 +15,12 @@
   },
   "theThief:SuperCopyAction": {
     "TEXT": [
+      "Exhaust\\.",
       " NL Exhaust.",
-      " NL Ethereal."
+      "Ethereal\\.",
+      " NL Ethereal.",
+      "Unplayable\\.",
+      "Unplayable. NL"
     ]
   }
 }

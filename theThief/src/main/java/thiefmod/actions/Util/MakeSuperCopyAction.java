@@ -1,0 +1,116 @@
+package thiefmod.actions.Util;
+
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.UIStrings;
+import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDiscardEffect;
+import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDrawPileEffect;
+import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import thiefmod.ThiefMod;
+
+import java.util.Objects;
+
+public class MakeSuperCopyAction extends AbstractGameAction {
+    public static final Logger logger = LogManager.getLogger(ThiefMod.class.getName());
+
+    private AbstractCard c;
+    private String location;
+    private String keyword;
+    private boolean removeKeyword;
+
+    public static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:MakeSuperCopyAction");
+    public static final String UITEXT[] = uiStrings.TEXT;
+
+    /*
+     * Will not add/remove the keyword if card already has it/doesn't have it, respectively.
+     * keywords:  "Exhaust", "Ethereal", "Unplayable"
+     * location: "Hand", "Draw", "Discard"
+     */
+
+    public MakeSuperCopyAction(AbstractCard c, final String keyword, final String location) {
+        this(c, keyword, false, location);
+    }
+
+    public MakeSuperCopyAction(AbstractCard c, final String keyword, boolean removeKeyword, final String location) {
+        this.actionType = ActionType.CARD_MANIPULATION;
+        this.duration = Settings.ACTION_DUR_FAST;
+        this.c = c;
+        this.location = location;
+        this.keyword = keyword;
+        this.removeKeyword = removeKeyword;
+    }
+
+    public void update() {
+        if (this.duration == Settings.ACTION_DUR_FAST) {
+            switch (keyword) {
+                case "Exhaust":
+                    if (removeKeyword) {
+                        if (c.exhaust) {
+                            c.exhaust = false;
+                            c.rawDescription = c.rawDescription.replaceAll(UITEXT[0], "");
+                            logger.info("Adding " + c + " with REMOVED Exhaust.");
+                        }
+                    } else {
+                        if (!c.exhaust) {
+                            c.exhaust = true;
+                            c.rawDescription = c.rawDescription + UITEXT[1];
+                            logger.info("Adding " + c + " with Exhaust.");
+                        }
+                    }
+                    break;
+                case "Ethereal":
+                    if (removeKeyword) {
+                        if (c.isEthereal) {
+                            c.isEthereal = false;
+                            c.rawDescription = c.rawDescription.replaceAll(UITEXT[2], "");
+                            logger.info("Adding " + c + " with REMOVED Ethereal.");
+                        }
+                    } else {
+                        if (!c.isEthereal) {
+                            c.isEthereal = true;
+                            c.rawDescription = c.rawDescription + UITEXT[3];
+                            logger.info("Adding " + c + " with Ethereal.");
+                        }
+                    }
+                case "Unplayable":
+                    if (removeKeyword) {
+                        if (c.cost == -2) {
+                            c.cost = 1;
+                            c.rawDescription = c.rawDescription.replaceAll(UITEXT[4], "");
+                            logger.info("Adding " + c + " with REMOVED Unplayable.");
+                        }
+                    } else {
+                        if (c.cost != -2) {
+                            c.cost = -2;
+                            c.rawDescription = UITEXT[5] + c.rawDescription;
+                            logger.info("Adding " + c + " with Unplayable.");
+                        }
+                    }
+            }
+
+            c.initializeDescription();
+
+            if (Objects.equals(location, "Hand")) {
+                AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(c));
+            } else if (Objects.equals(location, "Draw")) {
+                AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(c, true, false));
+            } else if (Objects.equals(location, "Discard")) {
+                AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(c));
+            } else {
+                logger.info("The Super Duper Copy Action didn't find ether hand, deck or discard.");
+            }
+
+            AbstractDungeon.player.hand.refreshHandLayout();
+            AbstractDungeon.player.hand.glowCheck();
+            this.tickDuration();
+        }
+        this.isDone = true;
+    }
+
+
+}
