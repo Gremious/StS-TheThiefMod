@@ -221,11 +221,6 @@ public class StealCardAction extends AbstractGameAction {
         }*/
 
         //---
-        // TODO: From every mod, add a "discover a card from that mod" card.
-        // TODO: Add a merchant from hubris card? and also SPICE
-        // TODO: Has Gatherer - add flowers and see if potions work. "Rare: DISCARD YOUR HAND AND REPLACE IT WITH FULLY UPGRADED FLOWER CARDS?"
-        // TODO: Check out kio's character mod when he releases it and add some cool cards from there.
-        // TODO: Reina's, too.
 
         // TODO: Test whether you really need this?
         stolenCards.sortAlphabetically(false);

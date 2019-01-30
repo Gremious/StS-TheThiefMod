@@ -1,23 +1,22 @@
 package thiefmod.powers.Unique;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.OnReceivePowerPower;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.actions.utility.UseCardAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.curses.Shame;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import thiefmod.ThiefMod;
-import thiefmod.actions.common.MakeEtherealCopyAction;
-import thiefmod.actions.common.MakeExhaustedCopyAction;
-import thiefmod.patches.Unique.ThiefCardTags;
+import thiefmod.cards.curses.Guilt;
+
+import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager;
 
 // Empty Base
 
-public class FleetingGuiltPower extends AbstractPower {
+public class FleetingGuiltPower extends AbstractPower implements OnReceivePowerPower {
     public AbstractCreature source;
 
 
@@ -44,15 +43,15 @@ public class FleetingGuiltPower extends AbstractPower {
     }
 
     @Override
-    public void onAfterUseCard(AbstractCard card, UseCardAction action) {
-        if (card.hasTag(ThiefCardTags.STEALING)) {
-
-            if (owner.hasPower(ID) && owner.getPower(ID).amount == 5) {
-                AbstractCard c = new Shame();
-                AbstractDungeon.actionManager.addToTop(new MakeEtherealCopyAction(c));
-                AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, ID));
-            }
+    public boolean onReceivePower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
+        if (power.ID.equals(ID) && owner.getPower(ID).amount == 4) {
+            actionManager.addToTop(new MakeTempCardInDiscardAction(new Guilt(), 1));
+            actionManager.addToTop(new MakeTempCardInDiscardAction(new Guilt(), 1));
+            actionManager.addToTop(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, ID));
+            return true;
         }
+        return true;
+
     }
 
 

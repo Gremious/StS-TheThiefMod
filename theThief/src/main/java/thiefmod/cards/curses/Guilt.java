@@ -1,29 +1,32 @@
 package thiefmod.cards.curses;
 
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.unique.LoseEnergyAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.SetDontTriggerAction;
+import com.megacrit.cardcrawl.cards.CardQueueItem;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.EvolvePower;
-import com.megacrit.cardcrawl.powers.NoDrawPower;
+import com.megacrit.cardcrawl.powers.LoseDexterityPower;
+import com.megacrit.cardcrawl.relics.BlueCandle;
+import thiefmod.CardIgnore;
 import thiefmod.CardNoSeen;
 import thiefmod.ThiefMod;
 import thiefmod.cards.AbstractBackstabCard;
 
 @CardNoSeen
-public class CallOfTheVoid extends AbstractBackstabCard {
-//TODO: Make this card.
+public class Guilt extends AbstractBackstabCard {
 
 // TEXT DECLARATION
 
-    public static final String ID = ThiefMod.makeID("CallOfTheVoid");
+    public static final String ID = ThiefMod.makeID("Guilt");
     public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_COMMON_ATTACK);
     public static final CardColor COLOR = CardColor.CURSE;
-
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+
+
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 
@@ -38,31 +41,45 @@ public class CallOfTheVoid extends AbstractBackstabCard {
 
     private static final int COST = -2;
 
+
     private static final int MAGIC = 1;
 
 // /STAT DECLARATION/
 
-    public CallOfTheVoid() {
+    public Guilt() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = MAGIC;
+
+        isEthereal = true; // I'll be honest idk which one I need I can't be bothered to check. I think exhaust.
+        exhaust = true;
     }
 
     @Override
-    public void triggerWhenDrawn() {
-        AbstractDungeon.actionManager.addToBottom(new LoseEnergyAction(magicNumber));
-        if (AbstractDungeon.player.hasPower(EvolvePower.POWER_ID) && !AbstractDungeon.player.hasPower(NoDrawPower.POWER_ID)) {
-            AbstractDungeon.player.getPower(EvolvePower.POWER_ID).flash();
-            AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, AbstractDungeon.player.getPower(EvolvePower.POWER_ID).amount));
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        if (!this.dontTriggerOnUseCard && p.hasRelic(BlueCandle.ID)) {
+            this.useBlueCandle(p);
+        } else {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
+                    p, p, new LoseDexterityPower(p, 1)));
         }
 
     }
 
     @Override
-    public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-
+    public void triggerWhenDrawn() {
+        AbstractDungeon.actionManager.addToBottom(new SetDontTriggerAction(this, false));
     }
 
     @Override
+    public void triggerOnEndOfTurnForPlayingCard() {
+        this.dontTriggerOnUseCard = true;
+        AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(this, true));
+    }
+
+
+    //Upgraded stats.
+    @Override
     public void upgrade() {
     }
+
 }

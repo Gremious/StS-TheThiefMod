@@ -1,0 +1,10 @@
+{
+  "theThief:Guilt": {
+    "NAME": "Guilt",
+    "DESCRIPTION": "Unplayable. NL At the end of your turn, lose 1 Dexterity. NL Ethereal."
+  },
+  "theThief:CallOfTheVoid": {
+    "NAME": "Call Of The Void",
+    "DESCRIPTION": "Unplayable. NL When you draw this card, lose 1 [E]."
+  }
+}

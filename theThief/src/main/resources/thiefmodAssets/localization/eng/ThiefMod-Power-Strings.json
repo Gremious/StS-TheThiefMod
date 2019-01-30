@@ -233,8 +233,8 @@
     "NAME": "Fleeting Guilt",
     "DESCRIPTIONS": [
       "You have stolen ",
-      " card this turn. After stealing 5, add an Ethereal Shame to your hand.",
-      " cards this turn. After stealing 5, add an Ethereal Shame to your hand."
+      " card. After stealing 5, add an Ethereal Guilt to your hand.",
+      " cards. After stealing 5, add an Ethereal Guilt to your hand."
     ]
   }
 }
