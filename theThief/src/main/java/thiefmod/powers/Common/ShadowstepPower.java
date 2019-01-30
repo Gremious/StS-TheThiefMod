@@ -1,5 +1,6 @@
 package thiefmod.powers.Common;
 
+import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.OnReceivePowerPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
@@ -19,7 +20,7 @@ import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager;
 
 // Empty Base
 
-public class ShadowstepPower extends AbstractPower {
+public class ShadowstepPower extends AbstractPower implements OnReceivePowerPower {
 
     public AbstractCreature source;
     private int shadowMastery;
@@ -54,8 +55,9 @@ public class ShadowstepPower extends AbstractPower {
 
     /*
      * Play a shadowstep card.
-     * Apply backstab power. Apply elusive power. (This one, rename it to elusive)
-     *
+     * Apply Backstab! power. Apply elusive power. (This one)
+     * On play Shadowstep Card: Remove Backstab only.
+     * On play ANY card: Remove all.
      */
 
     @Override
@@ -63,6 +65,17 @@ public class ShadowstepPower extends AbstractPower {
         actionManager.addToBottom(new ApplyPowerAction(owner, source,
                 new BackstabPower(owner, source, amount), amount));
 
+    }
+
+    @Override
+    public boolean onReceivePower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
+        if (power.ID.equals(ID)) {
+            actionManager.addToBottom(new ApplyPowerAction(owner, source,
+                    new BackstabPower(owner, source, amount), amount));
+            return true;
+        } else {
+            return true;
+        }
     }
 
     @Override
