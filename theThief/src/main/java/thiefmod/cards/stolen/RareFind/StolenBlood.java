@@ -55,8 +55,14 @@ public class StolenBlood extends AbstractBackstabCard {
     public StolenBlood() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.setBackgroundTexture("thiefmodAssets/images/512/special/red_rare_skill_bg.png", "thiefmodAssets/images/1024/special/red_rare_skill_bg.png");
-        this.setBannerTexture("thiefmodAssets/images/512/special/red_rare_skill_banner.png", "thiefmodAssets/images/1024/special/red_rare_skill_banner.png");
+        setBackgroundTexture("thiefmodAssets/images/512/special/red_rare_skill_bg.png",
+                "thiefmodAssets/images/1024/special/red_rare_skill_bg.png");
+
+        setOrbTexture("thiefmodAssets/images/512/card_thief_gray_orb.png",
+                "thiefmodAssets/images/1024/card_thief_gray_orb.png");
+
+        setBannerTexture("thiefmodAssets/images/512/special/red_rare_skill_banner.png",
+                "thiefmodAssets/images/1024/special/red_rare_skill_banner.png");
 
         this.magicNumber = this.baseMagicNumber = MAGIC;
         tags.add(ThiefCardTags.STOLEN);

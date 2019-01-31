@@ -61,6 +61,15 @@ public class StolenCore extends AbstractBackstabCard {
         this.backstabNumber = this.baseBackstabNumber = ORB_SLOTS;
 
 
+        setBackgroundTexture("thiefmodAssets/images/512/special/blue_rare_skill_bg.png",
+                "thiefmodAssets/images/1024/special/blue_rare_skill_bg.png");
+
+        setOrbTexture("thiefmodAssets/images/512/card_thief_gray_orb.png",
+                "thiefmodAssets/images/1024/card_thief_gray_orb.png");
+
+        setBannerTexture("thiefmodAssets/images/512/special/blue_rare_skill_banner.png",
+                "thiefmodAssets/images/1024/special/blue_rare_skill_banner.png");
+
         tags.add(ThiefCardTags.STOLEN);
         exhaust = true;
 

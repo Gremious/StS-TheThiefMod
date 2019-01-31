@@ -52,6 +52,15 @@ public class StolenArsenal extends AbstractBackstabCard {
     public StolenArsenal() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
+        setBackgroundTexture("thiefmodAssets/images/512/special/red_rare_skill_bg.png",
+                "thiefmodAssets/images/1024/special/red_rare_skill_bg.png");
+
+        setOrbTexture("thiefmodAssets/images/512/card_thief_gray_orb.png",
+                "thiefmodAssets/images/1024/card_thief_gray_orb.png");
+
+        setBannerTexture("thiefmodAssets/images/512/special/red_rare_skill_banner.png",
+                "thiefmodAssets/images/1024/special/red_rare_skill_banner.png");
+
         tags.add(ThiefCardTags.STOLEN);
         exhaust = true;
 
