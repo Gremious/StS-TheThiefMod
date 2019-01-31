@@ -45,7 +45,6 @@ public class SharpPractice extends AbstractBackstabCard {
     private static final int MAGIC = 1;
 
 
-    private static final String ADD_LOCATION = "Hand";
     private static final boolean ADD_RANDOM = true;
     private static final boolean ADD_UPGRADED = false;
 
@@ -62,7 +61,7 @@ public class SharpPractice extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
-                new SharpPracticePower(p, p, this.upgraded, this.magicNumber, ADD_RANDOM, ADD_LOCATION, ADD_UPGRADED), this.magicNumber));
+                new SharpPracticePower(p, p, this.upgraded, this.magicNumber, ADD_RANDOM, AbstractDungeon.player.hand, ADD_UPGRADED), this.magicNumber));
 
     }
 

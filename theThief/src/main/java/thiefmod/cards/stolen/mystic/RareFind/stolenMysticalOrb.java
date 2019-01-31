@@ -1,4 +1,4 @@
-package thiefmod.cards.stolen.mystic;
+package thiefmod.cards.stolen.mystic.RareFind;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;

@@ -16,12 +16,16 @@ import thiefmod.actions.Util.DiscoverAndExhaustCard;
 import thiefmod.actions.Util.MakeSuperCopyAction;
 import thiefmod.actions.unique.StolenMegaphone;
 import thiefmod.cards.stolen.*;
+import thiefmod.cards.stolen.RareFind.StolenArsenal;
+import thiefmod.cards.stolen.RareFind.StolenBlood;
+import thiefmod.cards.stolen.RareFind.StolenCore;
+import thiefmod.cards.stolen.RareFind.StolenShadow;
 import thiefmod.cards.stolen.mystic.*;
+import thiefmod.cards.stolen.mystic.RareFind.stolenMysticalOrb;
 import thiefmod.powers.Unique.FleetingGuiltPower;
 import thiefmod.powers.Unique.IllGottenGainsPower;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager;
 import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.player;
@@ -84,21 +88,12 @@ public class StealCardAction extends AbstractGameAction {
     private void addStolenCards() {
 
         for (AbstractCard c : cardsToAdd) {
-            logger.info("addStolenCards() adding card " + c + " to " + location);
+            logger.info("addStolenCards() adding card " + c + " to " + location.toString());
             //    c.unhover();
             AbstractDungeon.actionManager.actions.add(new MakeSuperCopyAction(c, "Exhaust", location));
 
-
             //TODO: Test whether or not having a full hand breaks this.
         }
-
-        if (!Objects.equals(location, "Hand")
-                && !Objects.equals(location, "Draw")
-                && !Objects.equals(location, "Discard")) {
-            logger.info("addStolenCards() didn't find ether hand, deck or discard.");
-        }
-
-
     }
 
 // ========================

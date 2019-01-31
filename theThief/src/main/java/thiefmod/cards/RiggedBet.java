@@ -46,7 +46,6 @@ public class RiggedBet extends AbstractBackstabCard {
     private static final int MAGIC = 1;
     private static final int UPGRADED_PLUS_MAGIC = 1;
 
-    private static final String ADD_LOCATION = "Hand"; // If stolen card.
     private static final boolean ADD_RANDOM = true;
     private static final boolean ADD_UPGRADED = false;
 
@@ -62,7 +61,7 @@ public class RiggedBet extends AbstractBackstabCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new RiggedBetAction(ADD_LOCATION, ADD_RANDOM, ADD_UPGRADED));
+        AbstractDungeon.actionManager.addToBottom(new RiggedBetAction(AbstractDungeon.player.hand, ADD_RANDOM, ADD_UPGRADED));
 
     }
 

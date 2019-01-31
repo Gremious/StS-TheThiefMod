@@ -1,6 +1,7 @@
 package thiefmod.powers.Unique;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -16,7 +17,7 @@ public class SharpPracticePower extends AbstractPower {
     private boolean isUpgraded;
     private boolean ADD_UPGRADED;
     private boolean ADD_RANDOM;
-    private String ADD_LOCATION;
+    private CardGroup ADD_LOCATION;
     private AbstractPlayer source;
 
     public static final String POWER_ID = ThiefMod.makeID("SharpPracticePower");
@@ -26,7 +27,7 @@ public class SharpPracticePower extends AbstractPower {
     public static final String IMG = ThiefMod.makePath(ThiefMod.COMMON_POWER);
 
 
-    public SharpPracticePower(final AbstractCreature owner, final AbstractPlayer source, boolean isUpgraded, final int amount, boolean ADD_RANDOM, final String ADD_LOCATION, boolean ADD_UPGRADED) {
+    public SharpPracticePower(final AbstractCreature owner, final AbstractPlayer source, boolean isUpgraded, final int amount, boolean ADD_RANDOM, final CardGroup ADD_LOCATION, boolean ADD_UPGRADED) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.img = new Texture(IMG);

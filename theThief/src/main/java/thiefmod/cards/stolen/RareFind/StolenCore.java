@@ -1,4 +1,4 @@
-package thiefmod.cards.stolen;
+package thiefmod.cards.stolen.RareFind;
 
 import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
