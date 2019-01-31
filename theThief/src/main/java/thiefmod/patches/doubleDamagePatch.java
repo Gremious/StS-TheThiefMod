@@ -1,4 +1,4 @@
-package thiefmod.patches.Unique;
+package thiefmod.patches;
 
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.modthespire.lib.*;

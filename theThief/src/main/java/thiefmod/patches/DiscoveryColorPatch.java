@@ -1,4 +1,4 @@
-package thiefmod.patches.Common;
+package thiefmod.patches;
 
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;

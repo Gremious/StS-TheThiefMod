@@ -1,7 +1,7 @@
 package thiefmod.actions.Util;
 
 import basemod.BaseMod;
-import thiefmod.patches.Common.DiscoveryColorPatch;
+import thiefmod.patches.DiscoveryColorPatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;

@@ -45,6 +45,8 @@ import java.util.Collection;
 
 @SpireInitializer
 public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, EditKeywordsSubscriber, EditCharactersSubscriber, PostInitializeSubscriber {
+
+    // Logger
     public static final Logger logger = LogManager.getLogger(ThiefMod.class.getName());
     private int LogInt = 0;
 
