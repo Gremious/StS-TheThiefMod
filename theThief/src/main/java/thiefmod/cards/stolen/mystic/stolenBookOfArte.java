@@ -13,6 +13,7 @@ import thiefmod.Utils;
 import thiefmod.actions.Util.DiscoverRandomFromArrayAction;
 import thiefmod.cards.AbstractBackstabCard;
 import thiefmod.patches.Character.AbstractCardEnum;
+import thiefmod.patches.Character.ThiefCardTags;
 
 import java.util.ArrayList;
 
@@ -49,6 +50,7 @@ public class stolenBookOfArte extends AbstractBackstabCard {
     public stolenBookOfArte() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
+        tags.add(ThiefCardTags.STOLEN);
     }
 
 

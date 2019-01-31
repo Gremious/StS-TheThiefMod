@@ -15,13 +15,14 @@ import thiefmod.ThiefMod;
 import thiefmod.actions.Util.DiscoverAndExhaustCard;
 import thiefmod.actions.Util.MakeSuperCopyAction;
 import thiefmod.actions.unique.StolenMegaphone;
-import thiefmod.cards.stolen.*;
 import thiefmod.cards.stolen.RareFind.StolenArsenal;
 import thiefmod.cards.stolen.RareFind.StolenBlood;
 import thiefmod.cards.stolen.RareFind.StolenCore;
 import thiefmod.cards.stolen.RareFind.StolenShadow;
-import thiefmod.cards.stolen.mystic.*;
+import thiefmod.cards.stolen.*;
 import thiefmod.cards.stolen.mystic.RareFind.stolenMysticalOrb;
+import thiefmod.cards.stolen.mystic.*;
+import thiefmod.patches.Character.ThiefCardTags;
 import thiefmod.powers.Unique.FleetingGuiltPower;
 import thiefmod.powers.Unique.IllGottenGainsPower;
 
@@ -270,7 +271,9 @@ public class StealCardAction extends AbstractGameAction {
         while (randomCards.size() < amount) {
             AbstractCard card = allStolenCards().getRandomCard(true);
             if (allowDuplicates || !randomCards.contains(card)) {
-
+                if (!card.hasTag(ThiefCardTags.STOLEN)) {
+                    card.tags.add(ThiefCardTags.STOLEN);
+                }
                 randomCards.add(card);
             }
         }

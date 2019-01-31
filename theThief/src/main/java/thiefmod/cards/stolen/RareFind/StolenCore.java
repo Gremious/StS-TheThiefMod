@@ -1,6 +1,7 @@
 package thiefmod.cards.stolen.RareFind;
 
 import basemod.helpers.TooltipInfo;
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.defect.IncreaseMaxOrbAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -8,6 +9,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.cardManip.CardFlashVfx;
 import thiefmod.ThiefMod;
 import thiefmod.cards.AbstractBackstabCard;
 import thiefmod.patches.Character.ThiefCardTags;
@@ -59,12 +61,13 @@ public class StolenCore extends AbstractBackstabCard {
 
 
         tags.add(ThiefCardTags.STOLEN);
+        exhaust = true;
 
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-
+        AbstractDungeon.effectList.add(new CardFlashVfx(this, Color.BLUE));
         AbstractDungeon.actionManager.addToBottom(
                 new IncreaseMaxOrbAction(backstabNumber));
 

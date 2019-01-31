@@ -1,6 +1,7 @@
 package thiefmod.cards.stolen.RareFind;
 
 import basemod.helpers.TooltipInfo;
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -8,6 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.vfx.cardManip.CardFlashVfx;
 import thiefmod.ThiefMod;
 import thiefmod.cards.AbstractBackstabCard;
 import thiefmod.patches.Character.ThiefCardTags;
@@ -54,13 +56,16 @@ public class StolenBlood extends AbstractBackstabCard {
 
         this.magicNumber = this.baseMagicNumber = MAGIC;
 
-
         tags.add(ThiefCardTags.STOLEN);
+        this.setBackgroundTexture("thiefmodAssets/images/512/special/red_rare_skill_banner.png", "thiefmodAssets/images/1024/special/red_rare_skill_banner.png");
+        this.setBannerTexture("thiefmodAssets/images/512/special/red_rare_skill_bg.png", "thiefmodAssets/images/1024/special/red_rare_skill_bg.png");
 
+        exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        AbstractDungeon.effectList.add(new CardFlashVfx(this, Color.GOLD));
 
         AbstractDungeon.actionManager.addToBottom(
                 new ApplyPowerAction(p, p, new StrengthPower(p, this.magicNumber), this.magicNumber));
@@ -70,7 +75,7 @@ public class StolenBlood extends AbstractBackstabCard {
     @Override
     public List<TooltipInfo> getCustomTooltips() {
         List<TooltipInfo> tips = new ArrayList<>();
-        tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[0],EXTENDED_DESCRIPTION[1]));
+        tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[0], EXTENDED_DESCRIPTION[1]));
         return tips;
     }
 

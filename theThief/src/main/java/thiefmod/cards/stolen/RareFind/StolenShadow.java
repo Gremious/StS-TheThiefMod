@@ -1,11 +1,13 @@
 package thiefmod.cards.stolen.RareFind;
 
 import basemod.helpers.TooltipInfo;
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.cardManip.CardFlashVfx;
 import thiefmod.ThiefMod;
 import thiefmod.actions.unique.StolenShadowAction;
 import thiefmod.cards.AbstractBackstabCard;
@@ -52,12 +54,12 @@ public class StolenShadow extends AbstractBackstabCard {
 
 
         tags.add(ThiefCardTags.STOLEN);
-
+        exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-
+        AbstractDungeon.effectList.add(new CardFlashVfx(this, Color.BLACK));
         AbstractDungeon.actionManager.addToBottom(new StolenShadowAction(p, magicNumber));
 
     }

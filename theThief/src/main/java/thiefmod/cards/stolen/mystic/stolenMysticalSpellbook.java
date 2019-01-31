@@ -9,6 +9,7 @@ import mysticmod.actions.SpellDiscoveryAction;
 import thiefmod.ThiefMod;
 import thiefmod.cards.AbstractBackstabCard;
 import thiefmod.patches.Character.AbstractCardEnum;
+import thiefmod.patches.Character.ThiefCardTags;
 
 public class stolenMysticalSpellbook extends AbstractBackstabCard {
 
@@ -43,6 +44,7 @@ public class stolenMysticalSpellbook extends AbstractBackstabCard {
     public stolenMysticalSpellbook() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
+        tags.add(ThiefCardTags.STOLEN);
     }
 
 

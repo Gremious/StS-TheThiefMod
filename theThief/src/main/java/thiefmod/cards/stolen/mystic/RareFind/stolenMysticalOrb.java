@@ -4,13 +4,15 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.cardManip.CardFlashVfx;
 import mysticmod.MysticMod;
 import thiefmod.ThiefMod;
 import thiefmod.actions.common.playCardWithRandomTargestAction;
 import thiefmod.cards.AbstractBackstabCard;
-import thiefmod.patches.Character.AbstractCardEnum;
+import thiefmod.patches.Character.ThiefCardTags;
 
 import java.util.ArrayList;
 
@@ -47,15 +49,18 @@ public class stolenMysticalOrb extends AbstractBackstabCard {
     public stolenMysticalOrb() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
+        tags.add(ThiefCardTags.STOLEN);
+        exhaust = true;
     }
 
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-       for (int i = 0; i <magicNumber; i++){
-           AbstractDungeon.actionManager.addToTop(new playCardWithRandomTargestAction(false, MysticMod.returnTrulyRandomSpell()));
-           AbstractDungeon.actionManager.addToTop(new playCardWithRandomTargestAction(false, MysticMod.returnTrulyRandomArte()));
-       }
+        AbstractDungeon.effectList.add(new CardFlashVfx(this, CardHelper.getColor(152.0F, 34.0F, 171.0F)));
+        for (int i = 0; i < magicNumber; i++) {
+            AbstractDungeon.actionManager.addToTop(new playCardWithRandomTargestAction(false, MysticMod.returnTrulyRandomSpell()));
+            AbstractDungeon.actionManager.addToTop(new playCardWithRandomTargestAction(false, MysticMod.returnTrulyRandomArte()));
+        }
     }
 
     // Upgraded stats.

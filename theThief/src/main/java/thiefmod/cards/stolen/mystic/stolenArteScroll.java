@@ -11,6 +11,7 @@ import thiefmod.ThiefMod;
 import thiefmod.actions.common.playCardWithRandomTargestAction;
 import thiefmod.cards.AbstractBackstabCard;
 import thiefmod.patches.Character.AbstractCardEnum;
+import thiefmod.patches.Character.ThiefCardTags;
 
 import java.util.ArrayList;
 
@@ -45,6 +46,7 @@ public class stolenArteScroll extends AbstractBackstabCard {
 
     public stolenArteScroll() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        tags.add(ThiefCardTags.STOLEN);
     }
 
 

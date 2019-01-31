@@ -11,6 +11,7 @@ import thiefmod.ThiefMod;
 import thiefmod.actions.common.playCardWithRandomTargestAction;
 import thiefmod.cards.AbstractBackstabCard;
 import thiefmod.patches.Character.AbstractCardEnum;
+import thiefmod.patches.Character.ThiefCardTags;
 
 import java.util.ArrayList;
 
@@ -47,6 +48,7 @@ public class stolenSpellScroll extends AbstractBackstabCard {
     public stolenSpellScroll() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
+        tags.add(ThiefCardTags.STOLEN);
     }
 
 
