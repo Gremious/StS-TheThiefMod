@@ -68,7 +68,7 @@ public class StolenCore extends AbstractBackstabCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.effectList.add(new BorderFlashEffect(Color.BLUE));
+        AbstractDungeon.effectList.add(new BorderFlashEffect(Color.ROYAL));
         AbstractDungeon.actionManager.addToBottom(
                 new IncreaseMaxOrbAction(backstabNumber));
 
