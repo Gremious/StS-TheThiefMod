@@ -67,8 +67,8 @@ public class StolenCore extends AbstractBackstabCard {
         setOrbTexture("thiefmodAssets/images/512/card_thief_gray_orb.png",
                 "thiefmodAssets/images/1024/card_thief_gray_orb.png");
 
-        setBannerTexture("thiefmodAssets/images/512/special/blue_rare_skill_banner.png",
-                "thiefmodAssets/images/1024/special/blue_rare_skill_banner.png");
+        setBannerTexture("thiefmodAssets/images/512/special/rare_skill_banner.png",
+                "thiefmodAssets/images/1024/special/rare_skill_banner.png");
 
         tags.add(ThiefCardTags.STOLEN);
         exhaust = true;
@@ -78,6 +78,7 @@ public class StolenCore extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.effectList.add(new BorderFlashEffect(Color.ROYAL));
+
         AbstractDungeon.actionManager.addToBottom(
                 new IncreaseMaxOrbAction(backstabNumber));
 

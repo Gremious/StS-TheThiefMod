@@ -2,6 +2,7 @@ package thiefmod.cards.stolen.RareFind;
 
 import basemod.helpers.TooltipInfo;
 import com.badlogic.gdx.graphics.Color;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -58,8 +59,8 @@ public class StolenArsenal extends AbstractBackstabCard {
         setOrbTexture("thiefmodAssets/images/512/card_thief_gray_orb.png",
                 "thiefmodAssets/images/1024/card_thief_gray_orb.png");
 
-        setBannerTexture("thiefmodAssets/images/512/special/red_rare_skill_banner.png",
-                "thiefmodAssets/images/1024/special/red_rare_skill_banner.png");
+        setBannerTexture("thiefmodAssets/images/512/special/rare_skill_banner.png",
+                "thiefmodAssets/images/1024/special/rare_skill_banner.png");
 
         tags.add(ThiefCardTags.STOLEN);
         exhaust = true;
@@ -69,6 +70,7 @@ public class StolenArsenal extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.effectList.add(new BorderFlashEffect(Color.GREEN));
+        AbstractDungeon.actionManager.addToTop(new WaitAction(0.1f));
 
         AbstractDungeon.actionManager.addToTop(new StolenArsenalAction(p));
     }
