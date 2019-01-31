@@ -2,8 +2,10 @@ package thiefmod.actions.Util;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import thiefmod.patches.Common.DiscoveryColorPatch;
 
 import java.util.ArrayList;
@@ -14,6 +16,9 @@ public class DiscoverAndExhaustCard extends AbstractGameAction {
     private boolean retrieveCard = false;
     private boolean upgraded;
     private int copies;
+
+    public static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:MakeSuperCopyAction");
+    public static final String KEYWORD_STRINGS[] = uiStrings.TEXT;
 
     public DiscoverAndExhaustCard(final ArrayList<AbstractCard> cardList) {
         this(cardList, 3, 1);
@@ -61,7 +66,7 @@ public class DiscoverAndExhaustCard extends AbstractGameAction {
                 AbstractCard discoveredCard = AbstractDungeon.cardRewardScreen.discoveryCard.makeStatEquivalentCopy();
 
                 for (int i = 0; i < copies; i++) {
-                    AbstractDungeon.actionManager.actions.add(new MakeSuperCopyAction(discoveredCard, "Exhaust", "Hand"));
+                    AbstractDungeon.actionManager.actions.add(new MakeSuperCopyAction(discoveredCard, KEYWORD_STRINGS[0], "Hand"));
                 }
 
                 AbstractDungeon.cardRewardScreen.discoveryCard = null;

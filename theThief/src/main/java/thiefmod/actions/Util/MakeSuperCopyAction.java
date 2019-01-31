@@ -24,11 +24,11 @@ public class MakeSuperCopyAction extends AbstractGameAction {
     private boolean removeKeyword;
 
     public static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:MakeSuperCopyAction");
-    public static final String UITEXT[] = uiStrings.TEXT;
+    public static final String KEYWORD_STRINGS[] = uiStrings.TEXT;
 
     /*
      * Will not add/remove the keyword if card already has it/doesn't have it, respectively.
-     * keywords:  "Exhaust", "Ethereal", "Unplayable"
+     * keywords:  "Exhaust", "Ethereal", "Unplayable". Use KEYWORD_STRINGS[].
      * location: "Hand", "Draw", "Discard"
      */
 
@@ -47,50 +47,50 @@ public class MakeSuperCopyAction extends AbstractGameAction {
 
     public void update() {
         if (this.duration == Settings.ACTION_DUR_FAST) {
-            switch (keyword) {
-                case "Exhaust":
-                    if (removeKeyword) {
-                        if (c.exhaust) {
-                            c.exhaust = false;
-                            c.rawDescription = c.rawDescription.replaceAll(UITEXT[0], "");
-                            logger.info("Adding " + c + " with REMOVED Exhaust.");
-                        }
-                    } else {
-                        if (!c.exhaust) {
-                            c.exhaust = true;
-                            c.rawDescription = c.rawDescription + UITEXT[1];
-                            logger.info("Adding " + c + " with Exhaust.");
-                        }
+
+            if (keyword.equals(KEYWORD_STRINGS[0])) {
+
+                if (removeKeyword) {
+                    if (c.exhaust) {
+                        c.exhaust = false;
+                        c.rawDescription = c.rawDescription.replaceAll(KEYWORD_STRINGS[1], "");
+                        logger.info("Adding " + c + " with REMOVED Exhaust.");
                     }
-                    break;
-                case "Ethereal":
-                    if (removeKeyword) {
-                        if (c.isEthereal) {
-                            c.isEthereal = false;
-                            c.rawDescription = c.rawDescription.replaceAll(UITEXT[2], "");
-                            logger.info("Adding " + c + " with REMOVED Ethereal.");
-                        }
-                    } else {
-                        if (!c.isEthereal) {
-                            c.isEthereal = true;
-                            c.rawDescription = c.rawDescription + UITEXT[3];
-                            logger.info("Adding " + c + " with Ethereal.");
-                        }
+                } else {
+                    if (!c.exhaust) {
+                        c.exhaust = true;
+                        c.rawDescription = c.rawDescription + KEYWORD_STRINGS[2];
+                        logger.info("Adding " + c + " with Exhaust.");
                     }
-                case "Unplayable":
-                    if (removeKeyword) {
-                        if (c.cost == -2) {
-                            c.cost = 1;
-                            c.rawDescription = c.rawDescription.replaceAll(UITEXT[4], "");
-                            logger.info("Adding " + c + " with REMOVED Unplayable.");
-                        }
-                    } else {
-                        if (c.cost != -2) {
-                            c.cost = -2;
-                            c.rawDescription = UITEXT[5] + c.rawDescription;
-                            logger.info("Adding " + c + " with Unplayable.");
-                        }
+                }
+            } else if (keyword.equals(KEYWORD_STRINGS[3])) {
+                if (removeKeyword) {
+                    if (c.isEthereal) {
+                        c.isEthereal = false;
+                        c.rawDescription = c.rawDescription.replaceAll(KEYWORD_STRINGS[4], "");
+                        logger.info("Adding " + c + " with REMOVED Ethereal.");
                     }
+                } else {
+                    if (!c.isEthereal) {
+                        c.isEthereal = true;
+                        c.rawDescription = c.rawDescription + KEYWORD_STRINGS[5];
+                        logger.info("Adding " + c + " with Ethereal.");
+                    }
+                }
+            } else if (keyword.equals(KEYWORD_STRINGS[6])) {
+                if (removeKeyword) {
+                    if (c.cost == -2) {
+                        c.cost = 1;
+                        c.rawDescription = c.rawDescription.replaceAll(KEYWORD_STRINGS[7], "");
+                        logger.info("Adding " + c + " with REMOVED Unplayable.");
+                    }
+                } else {
+                    if (c.cost != -2) {
+                        c.cost = -2;
+                        c.rawDescription = KEYWORD_STRINGS[8] + c.rawDescription;
+                        logger.info("Adding " + c + " with Unplayable.");
+                    }
+                }
             }
 
             c.initializeDescription();

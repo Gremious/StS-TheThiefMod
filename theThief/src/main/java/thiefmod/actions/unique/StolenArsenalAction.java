@@ -1,13 +1,13 @@
 package thiefmod.actions.unique;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.colorless.Shiv;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import thiefmod.actions.Util.MakeSuperCopyAction;
 
 import java.util.ArrayList;
@@ -19,6 +19,9 @@ public class StolenArsenalAction extends AbstractGameAction {
     private ArrayList<AbstractCard> discardCards = new ArrayList<>();
     private ArrayList<AbstractCard> exhaustCards = new ArrayList<>();
     private ArrayList<AbstractCard> handCards = new ArrayList<>();
+
+    public static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:MakeSuperCopyAction");
+    public static final String KEYWORD_STRINGS[] = uiStrings.TEXT;
 
     public StolenArsenalAction(final AbstractPlayer player) {
         this.player = player;
@@ -39,26 +42,22 @@ public class StolenArsenalAction extends AbstractGameAction {
             int discardSize = discardCards.size();
             int exhaustSize = exhaustCards.size();
 
-            AbstractCard shiv = new Shiv();
-            shiv.exhaust = false;
-            shiv.rawDescription = "Deal !D! damage.";
 
             for (AbstractCard c : handCards) {
                 AbstractDungeon.player.hand.removeCard(c);
-
-                AbstractDungeon.actionManager.addToBottom(new MakeSuperCopyAction());
+                AbstractDungeon.actionManager.addToBottom(new MakeSuperCopyAction(new Shiv(), KEYWORD_STRINGS[0], true, "Hand"));
             }
             for (AbstractCard c : drawCards) {
                 AbstractDungeon.player.drawPile.removeCard(c);
-                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(shiv, 1, false, true));
+                AbstractDungeon.actionManager.addToBottom(new MakeSuperCopyAction(new Shiv(), KEYWORD_STRINGS[0], true, "Draw"));
             }
             for (AbstractCard c : discardCards) {
                 AbstractDungeon.player.discardPile.removeCard(c);
-                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(shiv, handSize));
+                AbstractDungeon.actionManager.addToBottom(new MakeSuperCopyAction(new Shiv(), KEYWORD_STRINGS[0], true, "Discard"));
             }
             for (AbstractCard c : exhaustCards) {
                 AbstractDungeon.player.exhaustPile.removeCard(c);
-                AbstractDungeon.actionManager.addToBottom(new (shiv, handSize));
+                AbstractDungeon.player.exhaustPile.addToTop(new Shiv());
             }
             AbstractDungeon.player.hand.refreshHandLayout();
             AbstractDungeon.player.hand.glowCheck();

@@ -13,12 +13,15 @@
       " stolen cards to add to your discard pile."
     ]
   },
-  "theThief:SuperCopyAction": {
+  "theThief:MakeSuperCopyAction": {
     "TEXT": [
+      "Exhaust",
       "Exhaust\\.",
       " NL Exhaust.",
+      "Ethereal",
       "Ethereal\\.",
       " NL Ethereal.",
+      "Unplayable",
       "Unplayable\\.",
       "Unplayable. NL"
     ]
