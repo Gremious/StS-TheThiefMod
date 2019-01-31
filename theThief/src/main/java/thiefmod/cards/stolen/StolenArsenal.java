@@ -1,6 +1,8 @@
 package thiefmod.cards.stolen;
 
+import basemod.BaseMod;
 import basemod.helpers.TooltipInfo;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -56,7 +58,9 @@ public class StolenArsenal extends AbstractBackstabCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new StolenArsenalAction(p));
+        AbstractDungeon.actionManager.addToTop(new StolenArsenalAction(p));
+
+
     }
 
     @Override

@@ -65,16 +65,17 @@ public class HuntersInstinct extends AbstractBackstabCard {
         int maximumHand = BaseMod.MAX_HAND_SIZE;
         int currentHand = p.hand.group.size();
 
+        do {
+            AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 1));
+            if (!AbstractDungeon.player.drawPile.isEmpty() && !AbstractDungeon.player.discardPile.isEmpty()) {
+                break;
+            }
+            currentHand++;
+        }
+        while (currentHand != maximumHand);
+
         AbstractDungeon.actionManager.addToBottom(
                 new MakeTempCardInDrawPileAction(new VoidCard(), this.magicNumber, true, true, false));
-
-        do {
-            if (!AbstractDungeon.player.drawPile.isEmpty() || !AbstractDungeon.player.discardPile.isEmpty()) {
-                AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 1));
-                currentHand++;
-            } else return;
-        }
-        while (currentHand < maximumHand);
 
     }
 

@@ -363,8 +363,8 @@
   },
   "theThief:HuntersInstinct": {
     "NAME": "Hunter's Instinct",
-    "DESCRIPTION": "Gain !M! Voids to your draw pile. NL Draw until your hand is full. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! Voids to your draw pile. NL Draw until your hand is full. NL Exhaust.",
+    "DESCRIPTION": "Draw until your hand is full. NL Add !M! Voids to your draw pile. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Draw until your hand is full. NL Add !M! Voids to your draw pile. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]It[] [#88888]put[]"
     ]
