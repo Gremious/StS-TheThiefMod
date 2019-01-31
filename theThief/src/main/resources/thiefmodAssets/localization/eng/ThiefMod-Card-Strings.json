@@ -498,10 +498,13 @@
   },
   "theThief:GhastlyPresence": {
     "NAME": "Ghastly Presence",
-    "DESCRIPTION": "If you trigger 2 Backstabs in a turn, Shadowstep twice",
-    "UPGRADE_DESCRIPTION": "If you trigger 2 Backstabs in a turn, Shadowstep twice",
+    "DESCRIPTION": "If you trigger 2 Backstabs in a turn, Shadowstep !M! times",
+    "UPGRADE_DESCRIPTION": "If you trigger 2 Backstabs in a turn, Shadowstep !M! times.",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]Ghastly[] [#88888]Essence?[]"
+      "[#88888]Ghastly[] [#88888]Essence?[]",
+      "If you trigger 2 Backstabs in a turn, Shadowstep !M! ",
+      " time.",
+      " times."
     ]
   },
   "theThief:GhastlyEssence": {

@@ -1,8 +1,7 @@
 package thiefmod.powers.Unique;
 
 import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -11,15 +10,16 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import thiefmod.ThiefMod;
-import thiefmod.actions.common.GainGoldAction;
 import thiefmod.patches.Character.ThiefCardTags;
+import thiefmod.powers.Common.BackstabPower;
+import thiefmod.powers.Common.ShadowstepPower;
 
 // Empty Base
 
 public class GhastlyPresencePower extends AbstractPower {
     public AbstractCreature source;
 
-    public static final String POWER_ID = ThiefMod.makeID("Empty");
+    public static final String POWER_ID = ThiefMod.makeID("GhastlyPresencePower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -42,26 +42,14 @@ public class GhastlyPresencePower extends AbstractPower {
     }
 
     @Override
-    public void atStartOfTurn() {
-
-    }
-
-    @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (card.hasTag(ThiefCardTags.STEALING)) {
-            AbstractDungeon.actionManager.addToBottom(new GainGoldAction(owner, source, amount));
-        } else {
-            return;
-        }
-    }
+        if (AbstractDungeon.player.cardsPlayedThisTurn <= 1
+                || AbstractDungeon.player.hasPower(BackstabPower.POWER_ID)
+                && card.hasTag(ThiefCardTags.BACKSTAB)) {
 
-    public void atEndOfRound() {
-        if (this.amount == 0) {
-            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
-        } else {
-            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, this.ID, 1));
-        }
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, source, new ShadowstepPower(owner, source, amount), amount));
 
+        }
     }
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
@@ -73,8 +61,6 @@ public class GhastlyPresencePower extends AbstractPower {
             this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[2];
         }
     }
-
-
 }
 
 

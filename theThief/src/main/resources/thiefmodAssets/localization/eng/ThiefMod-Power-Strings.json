@@ -228,17 +228,16 @@
       " cards. After stealing 5, add an Ethereal Guilt to your hand."
     ]
   },
-  "theThief:GhastlyEssencePower": {
-    "NAME": "Ghastly Essence",
+  "theThief:GhastlyPresencePower": {
+    "NAME": "Ghastly Presence",
     "DESCRIPTIONS": [
-      "At the start of your turn, Shadowstep ",
-      "At the start and end of your turn, Shadowstep ",
+      "If you trigger 2 Backstabs in a turn, Shadowstep ",
       " time.",
       " times."
     ]
   },
-  "theThief:GhastlyPresencePower": {
-    "NAME": "Ghastly Presence",
+  "theThief:GhastlyEssencePower": {
+    "NAME": "Ghastly Essence",
     "DESCRIPTIONS": [
       "At the start of your turn, Shadowstep ",
       "At the start and end of your turn, Shadowstep ",
