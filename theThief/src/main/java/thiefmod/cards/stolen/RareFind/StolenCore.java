@@ -61,11 +61,15 @@ public class StolenCore extends AbstractBackstabCard {
         this.backstabNumber = this.baseBackstabNumber = ORB_SLOTS;
 
 
+     /* Straight up just doesn't work. But maybe one day it will. And when that happens, I'll be waiting. And I will uncomment this code. And my rare cards will look cool.
+
         setBackgroundTexture("thiefmodAssets/images/512/special/blue_rare_skill_bg.png",
                 "thiefmodAssets/images/1024/special/blue_rare_skill_bg.png");
 
         setOrbTexture("thiefmodAssets/images/512/card_thief_gray_orb.png",
                 "thiefmodAssets/images/1024/card_thief_gray_orb.png");
+
+    */
 
         setBannerTexture("thiefmodAssets/images/512/special/rare_skill_banner.png",
                 "thiefmodAssets/images/1024/special/rare_skill_banner.png");
@@ -104,7 +108,7 @@ public class StolenCore extends AbstractBackstabCard {
     public void applyPowers() {
         super.applyPowers();
 
-        if (magicNumber > 1) {
+        if (magicNumber == 1) {
             rawDescription = DESCRIPTION;
         } else {
             rawDescription = UPGRADE_DESCRIPTION;

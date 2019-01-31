@@ -49,6 +49,10 @@ public class stolenMysticalOrb extends AbstractBackstabCard {
 
     public stolenMysticalOrb() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+
+        setBannerTexture("thiefmodAssets/images/512/special/rare_skill_banner.png",
+                "thiefmodAssets/images/1024/special/rare_skill_banner.png");
+
         magicNumber = baseMagicNumber = MAGIC;
         tags.add(ThiefCardTags.STOLEN);
         exhaust = true;
