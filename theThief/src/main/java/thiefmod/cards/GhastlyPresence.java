@@ -1,4 +1,4 @@
-package thiefmod.cards.shadowstep;
+package thiefmod.cards;
 
 import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -9,20 +9,19 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
-import thiefmod.cards.AbstractBackstabCard;
 import thiefmod.patches.Character.AbstractCardEnum;
 import thiefmod.powers.Unique.DEPRECATEDGhastlyEssencePower;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class GhastlyEssence extends AbstractBackstabCard {
+public class GhastlyPresence extends AbstractBackstabCard {
 //implements StartupCard
 //implements ModalChoice.Callback
 
 // TEXT DECLARATION
 
-    public static final String ID = ThiefMod.makeID("GhastlyEssence");
+    public static final String ID = ThiefMod.makeID("GhastlyPresence");
     public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_UNCOMMON_ATTACK);
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -51,7 +50,7 @@ public class GhastlyEssence extends AbstractBackstabCard {
 
 // /STAT DECLARATION/
 
-    public GhastlyEssence() {
+    public GhastlyPresence() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
         this.magicNumber = this.baseMagicNumber = MAGIC;

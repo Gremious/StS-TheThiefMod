@@ -16,17 +16,17 @@ import thiefmod.patches.Character.ThiefCardTags;
 
 // Empty Base
 
-public class GhastlyEssencePower extends AbstractPower {
+public class GhastlyPresencePower extends AbstractPower {
     public AbstractCreature source;
 
-    public static final String POWER_ID = ThiefMod.makeID("GhastlyEssencePower");
+    public static final String POWER_ID = ThiefMod.makeID("Empty");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     public static final String IMG = ThiefMod.makePath(ThiefMod.COMMON_POWER);
 
 
-    public GhastlyEssencePower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
+    public GhastlyPresencePower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.img = new Texture(IMG);

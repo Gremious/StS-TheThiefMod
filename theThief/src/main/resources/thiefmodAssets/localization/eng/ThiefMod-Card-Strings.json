@@ -425,18 +425,6 @@
       "[#88888]Flavor[] [#88888]Text[]"
     ]
   },
-  "theThief:GhastlyEssence": {
-    "NAME": "Ghastly Essence",
-    "DESCRIPTION": "At the start of your turn, Shadowstep !M! time.",
-    "UPGRADE_DESCRIPTION": "At the start and end of your turn, Shadowstep !M! time.",
-    "EXTENDED_DESCRIPTION": [
-      "[#88888]Flavor[] [#88888]Text[]",
-      "At the start of your turn, Shadowstep !M!",
-      "At the start and end of your turn, Shadowstep !M!",
-      " time",
-      " times"
-    ]
-  },
   "theThief:PrecisePositioning": {
     "NAME": "Precise Positioning",
     "DESCRIPTION": "Shadowstep !M! time. Next turn your attack damage is doubled. NL Refund !stslib:refund!. NL Ethereal.",
@@ -506,6 +494,22 @@
     "UPGRADE_DESCRIPTION": "The next (!M!) Backstab attacks you play this turn will deal double damage.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Full[] [#88888]house![]"
+    ]
+  },
+  "theThief:GhastlyPresence": {
+    "NAME": "Ghastly Presence",
+    "DESCRIPTION": "If you trigger 2 Backstabs in a turn, Shadowstep twice",
+    "UPGRADE_DESCRIPTION": "If you trigger 2 Backstabs in a turn, Shadowstep twice",
+    "EXTENDED_DESCRIPTION": [
+      "[#88888]Ghastly[] [#88888]Essence?[]"
+    ]
+  },
+  "theThief:GhastlyEssence": {
+    "NAME": "Ghastly Essence",
+    "DESCRIPTION": "Whenever you would lose Elusive, you lose !M! instead of all.",
+    "UPGRADE_DESCRIPTION": "Whenever you would lose Elusive, you lose !M! instead of all.",
+    "EXTENDED_DESCRIPTION": [
+      "[#88888]Ghastly[] [#88888]Presence?[]"
     ]
   },
   "theThief:empty1": {
