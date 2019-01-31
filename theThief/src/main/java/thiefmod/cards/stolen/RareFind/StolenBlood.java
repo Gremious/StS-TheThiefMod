@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.CardFlashVfx;
 import thiefmod.ThiefMod;
 import thiefmod.cards.AbstractBackstabCard;
@@ -65,11 +66,24 @@ public class StolenBlood extends AbstractBackstabCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.effectList.add(new CardFlashVfx(this, Color.GOLD));
+        AbstractDungeon.effectList.add(new BorderFlashEffect(Color.GOLD));
 
         AbstractDungeon.actionManager.addToBottom(
                 new ApplyPowerAction(p, p, new StrengthPower(p, this.magicNumber), this.magicNumber));
 
+    }
+
+    @Override
+    public void triggerWhenDrawn() {
+
+        AbstractDungeon.effectList.add(new CardFlashVfx(this, Color.GOLD));
+
+    }
+
+    @Override
+    public void triggerWhenCopied() {
+
+        AbstractDungeon.effectList.add(new CardFlashVfx(this, Color.GOLD));
     }
 
     @Override

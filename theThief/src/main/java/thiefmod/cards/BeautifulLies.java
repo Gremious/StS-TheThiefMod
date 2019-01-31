@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.PetalEffect;
 import thiefmod.ThiefMod;
 import thiefmod.patches.Character.AbstractCardEnum;
 
@@ -61,10 +62,11 @@ public class BeautifulLies extends AbstractBackstabCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m,
                 new DamageInfo(p, this.damage, this.damageTypeForTurn),
-                AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+                AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+
+        AbstractDungeon.effectList.add(new PetalEffect());
 
         AbstractDungeon.actionManager.addToBottom(new AddCardToDeckAction(makeStatEquivalentCopy()));
 

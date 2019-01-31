@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.CardFlashVfx;
 import thiefmod.ThiefMod;
 import thiefmod.actions.unique.StolenShadowAction;
@@ -59,15 +60,28 @@ public class StolenShadow extends AbstractBackstabCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.effectList.add(new CardFlashVfx(this, Color.BLACK));
+        AbstractDungeon.effectList.add(new BorderFlashEffect(Color.BLACK));
         AbstractDungeon.actionManager.addToBottom(new StolenShadowAction(p, magicNumber));
 
     }
 
     @Override
+    public void triggerWhenDrawn() {
+
+        AbstractDungeon.effectList.add(new CardFlashVfx(this, Color.GOLD));
+
+    }
+
+    @Override
+    public void triggerWhenCopied() {
+
+        AbstractDungeon.effectList.add(new CardFlashVfx(this, Color.GOLD));
+    }
+
+    @Override
     public List<TooltipInfo> getCustomTooltips() {
         List<TooltipInfo> tips = new ArrayList<>();
-        tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[0],EXTENDED_DESCRIPTION[1]));
+        tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[0], EXTENDED_DESCRIPTION[1]));
         return tips;
     }
 
