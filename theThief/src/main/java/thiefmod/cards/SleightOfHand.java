@@ -40,7 +40,6 @@ public class SleightOfHand extends AbstractBackstabCard {
     private static final int MAGIC = 1;
     private static final int UPGRADED_PLUS_MAGIC = 1;
 
-    private static final String ADD_LOCATION = "Hand";
     private static final boolean ADD_RANDOM = true;
     private boolean ADD_UPGRADED = false;
 
@@ -60,7 +59,7 @@ public class SleightOfHand extends AbstractBackstabCard {
         AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.GainBlockAction(p, p, this.block));
 
         AbstractDungeon.actionManager.addToBottom(new StealCardAction(
-                this.magicNumber, 1, ADD_RANDOM, ADD_LOCATION, ADD_UPGRADED));
+                this.magicNumber, 1, ADD_RANDOM, AbstractDungeon.player.hand, ADD_UPGRADED));
 
     }
 

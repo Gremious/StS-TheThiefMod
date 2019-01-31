@@ -51,7 +51,7 @@ public class StolenArsenal extends AbstractBackstabCard {
     public StolenArsenal() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-
+        this.exhaust = true;
         tags.add(ThiefCardTags.STOLEN);
 
     }
@@ -59,8 +59,6 @@ public class StolenArsenal extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToTop(new StolenArsenalAction(p));
-
-
     }
 
     @Override

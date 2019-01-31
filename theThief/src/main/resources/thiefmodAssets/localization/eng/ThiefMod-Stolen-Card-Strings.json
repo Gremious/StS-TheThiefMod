@@ -134,8 +134,8 @@
   },
   "theThief:StolenArsenal": {
     "NAME": "Stolen Arsenal",
-    "DESCRIPTION": "Replace all your cards with Shivs. NL They lose Exhaust. NL Draw until your hand is full.",
-    "UPGRADE_DESCRIPTION": "Replace all your cards with Shivs. NL They lose Exhaust. NL Draw until your hand is full.",
+    "DESCRIPTION": "Replace all your cards with Shivs. NL They lose Exhaust. NL Draw until your hand is full. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Replace all your cards with Shivs. NL They lose Exhaust. NL Draw until your hand is full. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "[#FEE130]Rare[] [#FEE130]Find:[]",
       "[#FEE130]The[] [#FEE130]arsenal[] [#FEE130]of[] [#FEE130]an[] [#FEE130]expert[] [#FEE130]Fogland[] [#FEE130]huntress.[]"

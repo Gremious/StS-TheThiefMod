@@ -69,7 +69,6 @@ public class AAAEmptyCard extends AbstractBackstabCard {
     private static final int BACKSTAB = 2;
     private static final int UPGRADED_PLUS_BACKSTAB = 1;
 
-    private static final String ADD_LOCATION = "Hand"; // If stolen card.
     private static final boolean ADD_RANDOM = true;
     private static final boolean ADD_UPGRADED = false;
 
@@ -116,7 +115,7 @@ public class AAAEmptyCard extends AbstractBackstabCard {
                     AbstractGameAction.AttackEffect.SLASH_VERTICAL));
         } else {
             AbstractDungeon.actionManager.addToBottom(new StealCardAction(
-                    magicNumber, 1, ADD_RANDOM, ADD_LOCATION, ADD_UPGRADED));
+                    magicNumber, 1, ADD_RANDOM, AbstractDungeon.player.hand, ADD_UPGRADED));
         }
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(

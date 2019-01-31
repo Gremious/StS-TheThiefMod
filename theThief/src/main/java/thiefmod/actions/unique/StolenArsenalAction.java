@@ -58,15 +58,15 @@ public class StolenArsenalAction extends AbstractGameAction {
                 AbstractDungeon.effectList.add(new CardFlashVfx(c, Color.GOLD));
 
                 AbstractDungeon.player.hand.removeCard(c);
-                AbstractDungeon.actionManager.addToTop(new MakeSuperCopyAction(new Shiv(), KEYWORD_STRINGS[0], true, "Hand"));
+                AbstractDungeon.actionManager.addToTop(new MakeSuperCopyAction(new Shiv(), KEYWORD_STRINGS[0], true, AbstractDungeon.player.hand));
             }
             for (AbstractCard c : drawCards) {
                 AbstractDungeon.player.drawPile.removeCard(c);
-                AbstractDungeon.actionManager.addToTop(new MakeSuperCopyAction(new Shiv(), KEYWORD_STRINGS[0], true, "Draw"));
+                AbstractDungeon.actionManager.addToTop(new MakeSuperCopyAction(new Shiv(), KEYWORD_STRINGS[0], true, AbstractDungeon.player.drawPile));
             }
             for (AbstractCard c : discardCards) {
                 AbstractDungeon.player.discardPile.removeCard(c);
-                AbstractDungeon.actionManager.addToTop(new MakeSuperCopyAction(new Shiv(), KEYWORD_STRINGS[0], true, "Discard"));
+                AbstractDungeon.actionManager.addToTop(new MakeSuperCopyAction(new Shiv(), KEYWORD_STRINGS[0], true, AbstractDungeon.player.discardPile));
             }
 
             for (AbstractCard c : exhaustCards) {

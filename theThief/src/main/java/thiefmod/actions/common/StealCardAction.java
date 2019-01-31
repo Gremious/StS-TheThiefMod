@@ -35,12 +35,12 @@ public class StealCardAction extends AbstractGameAction {
 
     private boolean random;
     private boolean upgraded;
-    private String location;
+    private CardGroup location;
     private int copies;
 
     private ArrayList<AbstractCard> cardsToAdd = new ArrayList<>();
 
-    public StealCardAction(int amount, int copies, boolean random, String location, boolean upgraded) {
+    public StealCardAction(int amount, int copies, boolean random, CardGroup location, boolean upgraded) {
         this.actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
         this.duration = Settings.ACTION_DUR_FAST;
         this.amount = amount;

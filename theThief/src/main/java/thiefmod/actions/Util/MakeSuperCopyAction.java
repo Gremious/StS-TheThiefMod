@@ -2,6 +2,7 @@ package thiefmod.actions.Util;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -13,13 +14,11 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import thiefmod.ThiefMod;
 
-import java.util.Objects;
-
 public class MakeSuperCopyAction extends AbstractGameAction {
     public static final Logger logger = LogManager.getLogger(ThiefMod.class.getName());
 
     private AbstractCard c;
-    private String addLocation;
+    private CardGroup addLocation;
     private String keyword;
     private boolean removeKeyword;
     public static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:MakeSuperCopyAction");
@@ -31,11 +30,11 @@ public class MakeSuperCopyAction extends AbstractGameAction {
      * addLocation: "Hand", "Draw", "Discard"
      */
 
-    public MakeSuperCopyAction(AbstractCard c, final String keyword, final String addLocation) {
+    public MakeSuperCopyAction(AbstractCard c, final String keyword, final CardGroup addLocation) {
         this(c, keyword, false, addLocation);
     }
 
-    public MakeSuperCopyAction(AbstractCard c, final String keyword, boolean removeKeyword, final String addLocation) {
+    public MakeSuperCopyAction(AbstractCard c, final String keyword, boolean removeKeyword, final CardGroup addLocation) {
         this.actionType = ActionType.CARD_MANIPULATION;
         this.duration = Settings.ACTION_DUR_FAST;
         this.c = c;
@@ -93,11 +92,11 @@ public class MakeSuperCopyAction extends AbstractGameAction {
 
             c.initializeDescription();
 
-            if (Objects.equals(addLocation, "Hand")) {
+            if (addLocation == AbstractDungeon.player.hand) {
                 AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(c));
-            } else if (Objects.equals(addLocation, "Draw")) {
+            } else if (addLocation == AbstractDungeon.player.drawPile) {
                 AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(c, true, false));
-            } else if (Objects.equals(addLocation, "Discard")) {
+            } else if (addLocation == AbstractDungeon.player.discardPile) {
                 AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(c));
             } else {
                 logger.info("The Super Duper Copy Action didn't find ether hand, deck or discard.");

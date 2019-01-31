@@ -70,7 +70,6 @@ public class Multitask extends AbstractBackstabCard {
         this.tags.add(ThiefCardTags.STEALING);
     }
 
-    private static final String ADD_LOCATION = "Hand"; // For stolen card.
     private static final boolean ADD_RANDOM = true;
     private static final boolean ADD_UPGRADED = false;
 
@@ -85,7 +84,7 @@ public class Multitask extends AbstractBackstabCard {
                 p, p, new ShadowstepPower(p, p, this.magicNumber), 1));
 
         AbstractDungeon.actionManager.addToBottom(new StealCardAction(
-                this.magicNumber, 1, ADD_RANDOM, ADD_LOCATION, ADD_UPGRADED));
+                this.magicNumber, 1, ADD_RANDOM, AbstractDungeon.player.hand, ADD_UPGRADED));
 
     }
 

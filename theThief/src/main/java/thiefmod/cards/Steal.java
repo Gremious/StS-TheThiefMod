@@ -49,7 +49,6 @@ public class Steal extends CustomCard {
     private static final int MAGIC = 1;
     private static final int UPGRADE_PLUS_MAGIC = 1;
 
-    private static final String ADD_LOCATION = "Hand";
     private static final boolean ADD_RANDOM = true;
     private static final boolean ADD_UPGRADED = false;
     private static final int ADD_COPIES = 1;
@@ -71,7 +70,7 @@ public class Steal extends CustomCard {
                 AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
 
         AbstractDungeon.actionManager.addToBottom(new StealCardAction(
-                this.magicNumber, ADD_COPIES, ADD_RANDOM, ADD_LOCATION, ADD_UPGRADED));
+                this.magicNumber, ADD_COPIES, ADD_RANDOM, AbstractDungeon.player.hand, ADD_UPGRADED));
     }
 
     @Override

@@ -45,7 +45,6 @@ public class Ransack extends AbstractBackstabCard {
 
     private static int CARDS_AMOUNT = 1;
 
-    private static final String ADD_LOCATION = "Hand";
     private static final boolean ADD_RANDOM = false;
     private static final boolean ADD_UPGRADED = false;
 
@@ -63,7 +62,7 @@ public class Ransack extends AbstractBackstabCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         AbstractDungeon.actionManager.addToBottom(new StealCardAction(
-                CARDS_AMOUNT, this.magicNumber, ADD_RANDOM, ADD_LOCATION, ADD_UPGRADED));
+                CARDS_AMOUNT, this.magicNumber, ADD_RANDOM, AbstractDungeon.player.hand, ADD_UPGRADED));
 
     }
 
