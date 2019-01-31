@@ -19,28 +19,27 @@ public class MakeSuperCopyAction extends AbstractGameAction {
     public static final Logger logger = LogManager.getLogger(ThiefMod.class.getName());
 
     private AbstractCard c;
-    private String location;
+    private String addLocation;
     private String keyword;
     private boolean removeKeyword;
-
     public static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:MakeSuperCopyAction");
     public static final String KEYWORD_STRINGS[] = uiStrings.TEXT;
 
     /*
      * Will not add/remove the keyword if card already has it/doesn't have it, respectively.
      * keywords:  "Exhaust", "Ethereal", "Unplayable". Use KEYWORD_STRINGS[].
-     * location: "Hand", "Draw", "Discard"
+     * addLocation: "Hand", "Draw", "Discard"
      */
 
-    public MakeSuperCopyAction(AbstractCard c, final String keyword, final String location) {
-        this(c, keyword, false, location);
+    public MakeSuperCopyAction(AbstractCard c, final String keyword, final String addLocation) {
+        this(c, keyword, false, addLocation);
     }
 
-    public MakeSuperCopyAction(AbstractCard c, final String keyword, boolean removeKeyword, final String location) {
+    public MakeSuperCopyAction(AbstractCard c, final String keyword, boolean removeKeyword, final String addLocation) {
         this.actionType = ActionType.CARD_MANIPULATION;
         this.duration = Settings.ACTION_DUR_FAST;
         this.c = c;
-        this.location = location;
+        this.addLocation = addLocation;
         this.keyword = keyword;
         this.removeKeyword = removeKeyword;
     }
@@ -49,7 +48,6 @@ public class MakeSuperCopyAction extends AbstractGameAction {
         if (this.duration == Settings.ACTION_DUR_FAST) {
 
             if (keyword.equals(KEYWORD_STRINGS[0])) {
-
                 if (removeKeyword) {
                     if (c.exhaust) {
                         c.exhaust = false;
@@ -95,11 +93,11 @@ public class MakeSuperCopyAction extends AbstractGameAction {
 
             c.initializeDescription();
 
-            if (Objects.equals(location, "Hand")) {
+            if (Objects.equals(addLocation, "Hand")) {
                 AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(c));
-            } else if (Objects.equals(location, "Draw")) {
+            } else if (Objects.equals(addLocation, "Draw")) {
                 AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(c, true, false));
-            } else if (Objects.equals(location, "Discard")) {
+            } else if (Objects.equals(addLocation, "Discard")) {
                 AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(c));
             } else {
                 logger.info("The Super Duper Copy Action didn't find ether hand, deck or discard.");
@@ -107,10 +105,9 @@ public class MakeSuperCopyAction extends AbstractGameAction {
 
             AbstractDungeon.player.hand.refreshHandLayout();
             AbstractDungeon.player.hand.glowCheck();
+            logger.info("Final log. Super Copy Action should be done.");
             this.tickDuration();
         }
-        this.isDone = true;
+        this.tickDuration();
     }
-
-
 }

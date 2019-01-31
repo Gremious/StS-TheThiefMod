@@ -1,8 +1,6 @@
 package thiefmod.cards.stolen;
 
-import basemod.BaseMod;
 import basemod.helpers.TooltipInfo;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -58,27 +56,13 @@ public class StolenArsenal extends AbstractBackstabCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-
-        int maximumHand = BaseMod.MAX_HAND_SIZE;
-        int currentHand = p.hand.group.size();
-
         AbstractDungeon.actionManager.addToBottom(new StolenArsenalAction(p));
-
-        do {
-            if (!AbstractDungeon.player.drawPile.isEmpty() || !AbstractDungeon.player.discardPile.isEmpty()) {
-                AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 1));
-                currentHand++;
-            } else return;
-        }
-        while (currentHand < maximumHand);
-
-
     }
 
     @Override
     public List<TooltipInfo> getCustomTooltips() {
         List<TooltipInfo> tips = new ArrayList<>();
-        tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[0],EXTENDED_DESCRIPTION[1]));
+        tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[0], EXTENDED_DESCRIPTION[1]));
         return tips;
     }
 
