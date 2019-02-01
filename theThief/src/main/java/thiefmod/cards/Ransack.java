@@ -73,11 +73,6 @@ public class Ransack extends AbstractBackstabCard {
         return tips;
     }
 
-    // Which card to return when making a copy of this card.
-    @Override
-    public AbstractCard makeCopy() {
-        return new Ransack();
-    }
 
     //Upgraded stats.
     @Override

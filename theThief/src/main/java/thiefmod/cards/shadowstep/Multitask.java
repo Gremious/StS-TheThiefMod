@@ -96,11 +96,6 @@ public class Multitask extends AbstractBackstabCard {
         return tips;
     }
 
-    // Which card to return when making a copy of this card.
-    @Override
-    public AbstractCard makeCopy() {
-        return new Multitask();
-    }
 
     //Upgraded stats.
     @Override

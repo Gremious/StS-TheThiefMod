@@ -90,12 +90,6 @@ public class DramaticFeign extends CustomCard {
         AbstractDungeon.actionManager.addToBottom(new VFXAction(new GrandFinalEffect(), 1.0f));
     }
 
-    // Which card to return when making a copy of this card.
-    @Override
-    public AbstractCard makeCopy() {
-        return new DramaticFeign();
-    }
-
     //Upgraded stats.
     @Override
     public void upgrade() {

@@ -103,11 +103,6 @@ public class ShadowReserves extends AbstractBackstabCard implements ModalChoice.
         return tips;
     }
 
-    // Which card to return when making a copy of this card.
-    @Override
-    public AbstractCard makeCopy() {
-        return new ShadowReserves();
-    }
 
     //Upgraded stats.
     @Override

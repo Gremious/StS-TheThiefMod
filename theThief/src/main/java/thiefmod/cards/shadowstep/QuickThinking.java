@@ -81,11 +81,6 @@ public class QuickThinking extends AbstractBackstabCard {
         this.initializeDescription();
     }
 
-    // Which card to return when making a copy of this card.
-    @Override
-    public AbstractCard makeCopy() {
-        return new QuickThinking();
-    }
 
     //Upgraded stats.
     @Override

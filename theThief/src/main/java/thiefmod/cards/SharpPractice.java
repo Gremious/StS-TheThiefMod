@@ -72,11 +72,6 @@ public class SharpPractice extends AbstractBackstabCard {
         return tips;
     }
 
-    // Which card to return when making a copy of this card.
-    @Override
-    public AbstractCard makeCopy() {
-        return new SharpPractice();
-    }
 
     //Upgraded stats.
     @Override

@@ -81,11 +81,6 @@ public class ShadowEvade extends AbstractBackstabCard {
         return tips;
     }
 
-    // Which card to return when making a copy of this card.
-    @Override
-    public AbstractCard makeCopy() {
-        return new ShadowEvade();
-    }
 
     //Upgraded stats.
     @Override

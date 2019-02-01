@@ -56,11 +56,6 @@ public class SwiftTread extends AbstractBackstabCard {
         AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new VoidCard(), 1));
     }
 
-    // Which card to return when making a copy of this card.
-    @Override
-    public AbstractCard makeCopy() {
-        return new SwiftTread();
-    }
 
     //Upgraded stats.
     @Override

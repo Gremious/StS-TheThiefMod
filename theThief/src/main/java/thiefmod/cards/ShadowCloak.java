@@ -61,13 +61,6 @@ public class ShadowCloak extends AbstractBackstabCard {
         AbstractDungeon.actionManager.addToBottom(new ModifyBlockAction(this.uuid, this.magicNumber));
     }
 
-
-    // Which card to return when making a copy of this card.
-    @Override
-    public AbstractCard makeCopy() {
-        return new ShadowCloak();
-    }
-
     //Upgraded stats.
     @Override
     public void upgrade() {

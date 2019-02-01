@@ -58,12 +58,6 @@ public class IllGottenGains extends AbstractBackstabCard {
                 new IllGottenGainsPower(p, this.magicNumber), this.magicNumber));
     }
 
-    // Which card to return when making a copy of this card.
-    @Override
-    public AbstractCard makeCopy() {
-        return new IllGottenGains();
-    }
-
     //Upgraded stats.
     @Override
     public void upgrade() {

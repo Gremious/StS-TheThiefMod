@@ -60,11 +60,6 @@ public class StolenToxins extends CustomCard {
     }
 
     @Override
-    public AbstractCard makeCopy() {
-        return new StolenToxins();
-    }
-
-    @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();

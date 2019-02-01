@@ -69,11 +69,6 @@ public class DefendThief extends CustomCard {
         return tips;
     }
 
-    // Which card to return when making a copy of this card.
-    @Override
-    public AbstractCard makeCopy() {
-        return new DefendThief();
-    }
 
     //Upgraded stats.
     @Override

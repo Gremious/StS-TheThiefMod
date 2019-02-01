@@ -65,12 +65,6 @@ public class Sidestep extends AbstractBackstabCard {
     }
 
 
-    // Which card to return when making a copy of this card.
-    @Override
-    public AbstractCard makeCopy() {
-        return new Sidestep();
-    }
-
     //Upgraded stats.
     @Override
     public void upgrade() {

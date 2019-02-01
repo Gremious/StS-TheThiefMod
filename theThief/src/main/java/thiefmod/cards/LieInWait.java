@@ -85,11 +85,6 @@ public class LieInWait extends AbstractBackstabCard implements StartupCard {
         return tips;
     }
 
-    // Which card to return when making a copy of this card.
-    @Override
-    public AbstractCard makeCopy() {
-        return new LieInWait();
-    }
 
     //Upgraded stats.
     @Override

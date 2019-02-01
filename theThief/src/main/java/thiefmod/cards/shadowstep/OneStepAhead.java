@@ -67,11 +67,6 @@ public class OneStepAhead extends AbstractBackstabCard {
 
     }
 
-    // Which card to return when making a copy of this card.
-    @Override
-    public AbstractCard makeCopy() {
-        return new OneStepAhead();
-    }
 
     //Upgraded stats.
     @Override
