@@ -15,7 +15,7 @@ import thiefmod.actions.common.GainGoldAction;
 import thiefmod.patches.Character.ThiefCardTags;
 
 // Empty Base
-
+@Deprecated
 public class EmptyPower extends AbstractPower {
     public AbstractCreature source;
 
