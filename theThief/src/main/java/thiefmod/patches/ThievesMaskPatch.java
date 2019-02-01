@@ -11,8 +11,8 @@ import thiefmod.relics.ThievesMask;
 
 
 @SpirePatch(
-clz = ShopScreen.class,
-method = "initCards"
+        clz = ShopScreen.class,
+        method = "initCards"
 )
 
 public class ThievesMaskPatch {

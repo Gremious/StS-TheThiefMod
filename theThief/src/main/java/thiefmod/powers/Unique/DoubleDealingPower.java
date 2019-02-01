@@ -40,7 +40,7 @@ public class DoubleDealingPower extends AbstractPower {
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (card.hasTag(ThiefCardTags.BACKSTAB)){
+        if (card.hasTag(ThiefCardTags.BACKSTAB)) {
             AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, this.ID, 1));
 
         }

@@ -1,11 +1,16 @@
 {
   "modid": "thiefmod",
   "name": "Thief Mod",
-  "author_list": ["Gremious"],
+  "author_list": [
+    "Gremious"
+  ],
   "description": "A mod that adds The Thief as a playable character, as well as relics and events!",
   "version": "${project.version}",
   "sts_version": "${SlayTheSpire.version}",
   "mts_version": "${ModTheSpire.version}",
-  "dependencies": ["basemod", "stslib"],
+  "dependencies": [
+    "basemod",
+    "stslib"
+  ],
   "update_json": ""
 }

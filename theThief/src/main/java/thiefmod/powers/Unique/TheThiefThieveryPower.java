@@ -11,7 +11,6 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.GainPennyEffect;
 import thiefmod.ThiefMod;
-import thiefmod.actions.common.GainGoldAction;
 
 // Empty Base
 
@@ -47,7 +46,7 @@ public class TheThiefThieveryPower extends AbstractPower {
         for (int i = 0; i < amount; ++i) {
             AbstractDungeon.effectList.add(new GainPennyEffect(this.source, attackTarget.hb.cX, attackTarget.hb.cY, source.hb.cX, source.hb.cY, true));
         }
-    //    AbstractDungeon.actionManager.addToBottom(new GainGoldAction(owner, source, amount, attackTarget, info));
+        //    AbstractDungeon.actionManager.addToBottom(new GainGoldAction(owner, source, amount, attackTarget, info));
     }
 
     @Override

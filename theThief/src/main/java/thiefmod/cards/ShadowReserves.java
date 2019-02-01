@@ -99,7 +99,7 @@ public class ShadowReserves extends AbstractBackstabCard implements ModalChoice.
     public List<TooltipInfo> getCustomTooltips() {
         List<TooltipInfo> tips = new ArrayList<>();
         tips.add(new TooltipInfo(FLAVOR_STRINGS[0], EXTENDED_DESCRIPTION[0]));
-      //  tips.addAll(modal.generateTooltips());
+        //  tips.addAll(modal.generateTooltips());
         return tips;
     }
 

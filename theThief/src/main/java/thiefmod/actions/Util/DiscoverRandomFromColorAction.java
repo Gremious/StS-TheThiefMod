@@ -1,38 +1,33 @@
 package thiefmod.actions.Util;
 
 import basemod.BaseMod;
-import thiefmod.patches.DiscoveryColorPatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDiscardEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
+import thiefmod.patches.DiscoveryColorPatch;
 
-public class DiscoverRandomFromColorAction extends AbstractGameAction
-{
+public class DiscoverRandomFromColorAction extends AbstractGameAction {
     private boolean retrieveCard = false;
     private AbstractCard.CardColor cardColor;
     private String prohibit;
     private boolean upgraded;
 
-    public DiscoverRandomFromColorAction(AbstractCard.CardColor color)
-    {
+    public DiscoverRandomFromColorAction(AbstractCard.CardColor color) {
         this(color, 3);
     }
 
-    public DiscoverRandomFromColorAction(AbstractCard.CardColor color, int amount)
-    {
+    public DiscoverRandomFromColorAction(AbstractCard.CardColor color, int amount) {
         this(null, color, amount);
     }
 
-    public DiscoverRandomFromColorAction(String prohibit, AbstractCard.CardColor color, int amount)
-    {
+    public DiscoverRandomFromColorAction(String prohibit, AbstractCard.CardColor color, int amount) {
         this(prohibit, color, false, amount);
     }
 
-    public DiscoverRandomFromColorAction(String prohibit, AbstractCard.CardColor color, boolean upgraded, int amount)
-    {
+    public DiscoverRandomFromColorAction(String prohibit, AbstractCard.CardColor color, boolean upgraded, int amount) {
         actionType = ActionType.CARD_MANIPULATION;
         duration = Settings.ACTION_DUR_FAST;
         cardColor = color;
@@ -42,8 +37,7 @@ public class DiscoverRandomFromColorAction extends AbstractGameAction
     }
 
     @Override
-    public void update()
-    {
+    public void update() {
         if (duration == Settings.ACTION_DUR_FAST) {
             DiscoveryColorPatch.lookingForColor = cardColor;
             DiscoveryColorPatch.lookingForCount = amount;

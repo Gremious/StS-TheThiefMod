@@ -6,8 +6,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 // so that powers can prevent you from using cards (like e.g. Normality)
 // Used for patches.powersCanStopPlay
 
-public interface CanUsePower
-{
+public interface CanUsePower {
     boolean canUse(AbstractCard card);
 }
 

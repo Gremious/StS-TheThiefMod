@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import mysticmod.actions.SpellDiscoveryAction;
 import thiefmod.ThiefMod;
 import thiefmod.cards.AbstractBackstabCard;
-import thiefmod.patches.Character.AbstractCardEnum;
 import thiefmod.patches.Character.ThiefCardTags;
 
 public class stolenMysticalSpellbook extends AbstractBackstabCard {

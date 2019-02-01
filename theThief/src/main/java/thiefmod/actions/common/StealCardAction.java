@@ -204,6 +204,8 @@ public class StealCardAction extends AbstractGameAction {
 
         //---
 
+//        stolenCards.addToTop(CardLibrary.getColorSpecificCard(AbstractCardEnum.THIEF_GRAY, relicRng));
+
         if (hasMysticMod) {
             ArrayList<AbstractCard> customMysticCards = new ArrayList<>();
             ArrayList<AbstractCard> mysticCards = new ArrayList<>();

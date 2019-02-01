@@ -15,13 +15,13 @@ import thiefmod.powers.Unique.GhastlyEssencePower;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GhastlyPresence extends AbstractBackstabCard {
+public class GhastlyEssence extends AbstractBackstabCard {
 //implements StartupCard
 //implements ModalChoice.Callback
 
 // TEXT DECLARATION
 
-    public static final String ID = ThiefMod.makeID("GhastlyPresence");
+    public static final String ID = ThiefMod.makeID("GhastlyEssence");
     public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_UNCOMMON_ATTACK);
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -50,7 +50,7 @@ public class GhastlyPresence extends AbstractBackstabCard {
 
 // /STAT DECLARATION/
 
-    public GhastlyPresence() {
+    public GhastlyEssence() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
         this.magicNumber = this.baseMagicNumber = MAGIC;
@@ -65,25 +65,13 @@ public class GhastlyPresence extends AbstractBackstabCard {
 
     }
 
+
     @Override
     public List<TooltipInfo> getCustomTooltips() {
         List<TooltipInfo> tips = new ArrayList<>();
         tips.add(new TooltipInfo(FLAVOR_STRINGS[0], EXTENDED_DESCRIPTION[0]));
         // tips.addAll(modal.generateTooltips());
         return tips;
-    }
-
-    @Override
-    public void applyPowers() {
-        super.applyPowers();
-        if (magicNumber == 1) {
-            rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[2];
-        } else {
-            rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[3];
-        }
-
-
-        this.initializeDescription();
     }
 
 

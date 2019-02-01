@@ -30,7 +30,7 @@ public class QueueCardFrontAction extends AbstractGameAction {
             if (this.card == null) {
                 AbstractDungeon.actionManager.cardQueue.add(queueIndex, new CardQueueItem());
             } else if (!this.queueContains(this.card)) {
-                AbstractDungeon.actionManager.cardQueue.add(queueIndex, new CardQueueItem(this.card, (AbstractMonster)this.target));
+                AbstractDungeon.actionManager.cardQueue.add(queueIndex, new CardQueueItem(this.card, (AbstractMonster) this.target));
             }
 
             this.isDone = true;
@@ -47,8 +47,8 @@ public class QueueCardFrontAction extends AbstractGameAction {
                 return false;
             }
 
-            i = (CardQueueItem)var2.next();
-        } while(i.card != card);
+            i = (CardQueueItem) var2.next();
+        } while (i.card != card);
 
         return true;
     }

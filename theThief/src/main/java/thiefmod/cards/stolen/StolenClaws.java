@@ -65,7 +65,7 @@ public class StolenClaws extends AbstractBackstabCard {
                 new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
 
         AbstractDungeon.actionManager.addToBottom(
-                new DrawCardAction(p,this.magicNumber));
+                new DrawCardAction(p, this.magicNumber));
 
     }
 

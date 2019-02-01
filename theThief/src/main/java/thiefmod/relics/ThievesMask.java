@@ -19,7 +19,7 @@ public class ThievesMask extends CustomRelic {
     // ID, images, stats.
     public static final String ID = thiefmod.ThiefMod.makeID("ThievesMask");
     public static final String IMG = "thiefmodAssets/images/relics/ThievesMask.png";
-    public static final String OUTLINE ="thiefmodAssets/images/relics/outline/ThievesMask.png";
+    public static final String OUTLINE = "thiefmodAssets/images/relics/outline/ThievesMask.png";
     public static final Logger logger = LogManager.getLogger(ThiefMod.class.getName());
 
     public ThievesMask() {

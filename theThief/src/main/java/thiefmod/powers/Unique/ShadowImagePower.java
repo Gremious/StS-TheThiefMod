@@ -19,11 +19,11 @@ public class ShadowImagePower extends AbstractPower {
     public AbstractCreature source;
     private int DamageAmountToTake;
 
-	public static final String POWER_ID = ThiefMod.makeID("ShadowImagePower");
-	private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
-	public static final String NAME = powerStrings.NAME;
-	public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-	public static final String IMG = ThiefMod.makePath(ThiefMod.COMMON_POWER);
+    public static final String POWER_ID = ThiefMod.makeID("ShadowImagePower");
+    private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
+    public static final String NAME = powerStrings.NAME;
+    public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
+    public static final String IMG = ThiefMod.makePath(ThiefMod.COMMON_POWER);
 
 
     public ShadowImagePower(AbstractCreature owner, AbstractCreature source, final int amount, final int DamageAmountToTake) {
@@ -33,7 +33,7 @@ public class ShadowImagePower extends AbstractPower {
         this.type = PowerType.DEBUFF;
         this.isTurnBased = false;
         this.DamageAmountToTake = DamageAmountToTake;
-        
+
         this.owner = owner;
         this.source = source;
 
@@ -42,8 +42,8 @@ public class ShadowImagePower extends AbstractPower {
         this.updateDescription();
     }
 
-	@Override
-	public void atStartOfTurn() {
+    @Override
+    public void atStartOfTurn() {
 
         this.updateDescription();
 
@@ -66,11 +66,10 @@ public class ShadowImagePower extends AbstractPower {
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
-    public void updateDescription() 
-    {
+    public void updateDescription() {
 
-        this.description = DESCRIPTIONS[0] + this.DamageAmountToTake + DESCRIPTIONS[1];}
-
+        this.description = DESCRIPTIONS[0] + this.DamageAmountToTake + DESCRIPTIONS[1];
+    }
 
 
 }

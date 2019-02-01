@@ -68,7 +68,6 @@ public class Backstep extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         final int count = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
-
         if (count <= 1) {
 
             AbstractDungeon.actionManager.addToBottom(new FetchAction(AbstractDungeon.player.discardPile, this.magicNumber));

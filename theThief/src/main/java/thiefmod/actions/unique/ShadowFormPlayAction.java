@@ -1,7 +1,6 @@
 package thiefmod.actions.unique;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-
 import thiefmod.powers.Unique.ShadowFormPower;
 
 public class ShadowFormPlayAction extends AbstractGameAction {

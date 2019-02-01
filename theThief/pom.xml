@@ -31,7 +31,8 @@
             <artifactId>modthespire</artifactId>
             <version>${ModTheSpire.version}</version>
             <scope>system</scope>
-            <systemPath>C:/My Stuff/Games/Steam/steamapps/workshop/content/646570/1605060445/ModTheSpire.jar</systemPath>
+            <systemPath>C:/My Stuff/Games/Steam/steamapps/workshop/content/646570/1605060445/ModTheSpire.jar
+            </systemPath>
         </dependency>
         <dependency>
             <groupId>basemod</groupId>
@@ -68,14 +69,16 @@
             <artifactId>ReplayTheSpireMod</artifactId>
             <version>4.0.0</version>
             <scope>system</scope>
-            <systemPath>C:/My Stuff/Games/Steam/steamapps/workshop/content/646570/1610173938/ReplayTheSpireMod.jar</systemPath>
+            <systemPath>C:/My Stuff/Games/Steam/steamapps/workshop/content/646570/1610173938/ReplayTheSpireMod.jar
+            </systemPath>
         </dependency>
         <dependency>
             <groupId>InfiniteSpire</groupId>
             <artifactId>InfiniteSpire</artifactId>
             <version>0.9.0</version>
             <scope>system</scope>
-            <systemPath>C:/My Stuff/Games/Steam/steamapps/workshop/content/646570/1610128058/InfiniteSpire.jar</systemPath>
+            <systemPath>C:/My Stuff/Games/Steam/steamapps/workshop/content/646570/1610128058/InfiniteSpire.jar
+            </systemPath>
         </dependency>
 
     </dependencies>

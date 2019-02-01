@@ -27,7 +27,7 @@ import thiefmod.powers.Common.ShadowstepPower;
 
 import java.util.ArrayList;
 import java.util.List;
-
+@Deprecated
 @CardIgnore
 public class AAAEmptyCard extends AbstractBackstabCard {
 //implements StartupCard

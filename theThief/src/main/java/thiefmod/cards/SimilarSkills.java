@@ -2,7 +2,6 @@ package thiefmod.cards;
 
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -14,14 +13,7 @@ import thiefmod.patches.Character.AbstractCardEnum;
 import thiefmod.powers.Unique.SimilarSkillsPower;
 import thiefmod.powers.Unique.SimilarSkillsPowerUpgraded;
 
-public class SimilarSkills
-        extends CustomCard {
-
-    /*
-     * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
-     *
-     * (2) At the start of your turn, add a random (Upgraded) Green card to your hand.
-     */
+public class SimilarSkills extends CustomCard {
 
 
 // TEXT DECLARATION 
@@ -71,11 +63,6 @@ public class SimilarSkills
         }
     }
 
-    // Which card to return when making a copy of this card.
-    @Override
-    public AbstractCard makeCopy() {
-        return new SimilarSkills();
-    }
 
     //Upgraded stats.
     @Override

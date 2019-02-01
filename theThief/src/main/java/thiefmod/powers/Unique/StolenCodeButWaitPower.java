@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.EchoPower;
 import thiefmod.ThiefMod;
 
 // Empty Base
@@ -40,7 +39,7 @@ public class StolenCodeButWaitPower extends AbstractPower {
 
     @Override
     public void atEndOfTurn(boolean isPlayer) {
-         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, source, new StolenCodePower(owner, 1), 1));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, source, new StolenCodePower(owner, 1), 1));
 
         if (this.amount == 0) {
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, ID));

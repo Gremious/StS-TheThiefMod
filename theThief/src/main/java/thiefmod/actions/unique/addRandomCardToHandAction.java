@@ -58,7 +58,7 @@ public class addRandomCardToHandAction extends com.megacrit.cardcrawl.actions.Ab
                 || nextHandCard.type == AbstractCard.CardType.CURSE
                 || nextHandCard.rarity == AbstractCard.CardRarity.CURSE
                 || nextHandCard.type == AbstractCard.CardType.STATUS ||
-                // Yohane's summons require a special FriendlyMinions-enabled character, which Beaked is not.
+                // Yohane's summons require a special FriendlyMinions-enabled character.
                 nextHandCard.cardID.startsWith("Yohane:Little_Demon_") ||
                 // Mad Scientist's Mechanize apparently doesn't work
                 nextHandCard.cardID == "MadScienceMod:Mechanize" ||
@@ -72,12 +72,6 @@ public class addRandomCardToHandAction extends com.megacrit.cardcrawl.actions.Ab
         );
 
         nextHandCard.freeToPlayOnce = true;
-//        AbstractDungeon.player.limbo.addToTop(nextHandCard);
-
-//        nextHandCard.target_x = Settings.WIDTH / 2;
-//        nextHandCard.target_y = Settings.HEIGHT / 2;
-//        nextHandCard.targetDrawScale = nextHandCard.targetDrawScale * 1.4f;
-//        
         return nextHandCard;
     }
 }

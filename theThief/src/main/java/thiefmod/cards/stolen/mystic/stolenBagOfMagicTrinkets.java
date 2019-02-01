@@ -61,7 +61,7 @@ public class stolenBagOfMagicTrinkets extends AbstractBackstabCard {
         trinketCards.add(cantripsGroup.get(AbstractDungeon.cardRandomRng.random(cantripsGroup.size() - 1)));
 
         if (upgraded) {
-            AbstractDungeon.actionManager.addToBottom(new DiscoverRandomFromArrayAction(trinketCards,true));
+            AbstractDungeon.actionManager.addToBottom(new DiscoverRandomFromArrayAction(trinketCards, true));
         }
 
         AbstractDungeon.actionManager.addToBottom(new DiscoverRandomFromArrayAction(trinketCards));

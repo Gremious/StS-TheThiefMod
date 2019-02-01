@@ -94,7 +94,7 @@ public class HeartStealer extends AbstractBackstabCard {
         } else {
             rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[3];
         }
-        
+
         initializeDescription();
     }
 

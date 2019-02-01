@@ -14,8 +14,6 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.combat.AdditiveSlashImpactEffect;
-import com.megacrit.cardcrawl.vfx.combat.LightningEffect;
-import com.megacrit.cardcrawl.vfx.combat.StrikeEffect;
 import thiefmod.ThiefMod;
 
 import java.util.Iterator;
@@ -61,8 +59,8 @@ public class DealDamageToAllNextTurnPower extends AbstractPower {
         Iterator var3 = AbstractDungeon.getCurrRoom().monsters.monsters.iterator();
 
         AbstractMonster mo;
-        while(var3.hasNext()) {
-            mo = (AbstractMonster)var3.next();
+        while (var3.hasNext()) {
+            mo = (AbstractMonster) var3.next();
             if (!mo.isDeadOrEscaped()) {
                 AbstractDungeon.actionManager.addToBottom(new VFXAction(
                         new AdditiveSlashImpactEffect(mo.drawX, mo.drawY, Color.GOLD), 0.05F));

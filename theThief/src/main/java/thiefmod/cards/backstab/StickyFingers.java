@@ -51,7 +51,7 @@ public class StickyFingers extends AbstractBackstabCard {
     public StickyFingers() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = MAGIC;
-        this.backstabNumber = this.baseBackstabNumber= STEAL;
+        this.backstabNumber = this.baseBackstabNumber = STEAL;
 
         this.tags.add(ThiefCardTags.BACKSTAB);
         this.tags.add(ThiefCardTags.STEALING);

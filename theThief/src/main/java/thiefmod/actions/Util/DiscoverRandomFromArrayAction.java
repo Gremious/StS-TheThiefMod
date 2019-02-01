@@ -20,6 +20,7 @@ public class DiscoverRandomFromArrayAction extends AbstractGameAction {
     public DiscoverRandomFromArrayAction(final ArrayList<AbstractCard> cardList) {
         this(cardList, 3);
     }
+
     public DiscoverRandomFromArrayAction(final ArrayList<AbstractCard> cardList, boolean upgraded) {
         this(cardList, upgraded, 3);
     }
@@ -40,8 +41,7 @@ public class DiscoverRandomFromArrayAction extends AbstractGameAction {
     public void update() {
         if (duration == Settings.ACTION_DUR_FAST) {
 
-            if (cardList.size() < amount)
-            {
+            if (cardList.size() < amount) {
                 amount = cardList.size();
             }
 

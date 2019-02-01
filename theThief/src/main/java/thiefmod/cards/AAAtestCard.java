@@ -8,15 +8,16 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import thiefmod.CardIgnore;
 import thiefmod.ThiefMod;
 import thiefmod.actions.Util.DiscoverRandomFromArrayAction;
-import thiefmod.actions.Util.DiscoverRandomFromColorAction;
 import thiefmod.patches.Character.AbstractCardEnum;
 
 import java.util.ArrayList;
-
+@Deprecated
+@CardIgnore // Comment to test, obv
 public class AAAtestCard extends AbstractBackstabCard {
-private ArrayList<AbstractCard> cardsToDiscoverFrom = new ArrayList<>();
+    private ArrayList<AbstractCard> cardsToDiscoverFrom = new ArrayList<>();
 
 // TEXT DECLARATION
 

@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
 import thiefmod.ThiefMod;
 import thiefmod.cards.AbstractBackstabCard;
-import thiefmod.patches.Character.AbstractCardEnum;
 import thiefmod.patches.Character.ThiefCardTags;
 
 import java.util.ArrayList;

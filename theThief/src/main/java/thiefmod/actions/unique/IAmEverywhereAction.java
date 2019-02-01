@@ -45,7 +45,7 @@ public class IAmEverywhereAction extends AbstractGameAction {
                 if (forEachMonster = true) {
                     for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
 
-                     //  new DarkSmokePuffEffect(this.p.drawX, this.p.drawY);
+                        //  new DarkSmokePuffEffect(this.p.drawX, this.p.drawY);
                         new FastDarkSmoke(this.p.drawX, this.p.drawY);
 
                         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(

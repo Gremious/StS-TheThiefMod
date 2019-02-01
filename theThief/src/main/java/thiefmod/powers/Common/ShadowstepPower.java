@@ -2,6 +2,7 @@ package thiefmod.powers.Common;
 
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.OnReceivePowerPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -14,6 +15,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import thiefmod.ThiefMod;
 import thiefmod.patches.Character.ThiefCardTags;
+import thiefmod.powers.Unique.GhastlyEssencePower;
 import thiefmod.powers.Unique.ShadowMasteryPower;
 
 import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager;
@@ -104,6 +106,8 @@ public class ShadowstepPower extends AbstractPower implements OnReceivePowerPowe
     public void onUseCard(AbstractCard card, UseCardAction action) {
         if (card.hasTag(ThiefCardTags.SHADOWSTEP)) {
             return;
+        } else if (AbstractDungeon.player.hasPower(GhastlyEssencePower.POWER_ID)) {
+            actionManager.addToBottom(new ReducePowerAction(owner, source, this, AbstractDungeon.player.getPower(GhastlyEssencePower.POWER_ID).amount));
         } else {
             actionManager.addToBottom(new RemoveSpecificPowerAction(owner, source, ID));
         }

@@ -60,7 +60,7 @@ public class StolenRitual extends CustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new LoseHPAction(p, p, this.damage));
-        AbstractDungeon.actionManager.addToBottom(new thiefmod.actions.common.GainGoldAction(p, p, this.magicNumber ));
+        AbstractDungeon.actionManager.addToBottom(new thiefmod.actions.common.GainGoldAction(p, p, this.magicNumber));
 
         CardCrawlGame.sound.playA("VO_CULTIST_1C", 0.3f);
 

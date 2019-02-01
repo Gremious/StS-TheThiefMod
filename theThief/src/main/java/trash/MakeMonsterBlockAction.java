@@ -24,7 +24,7 @@ public class MakeMonsterBlockAction extends AbstractGameAction {
     public void update() {
         if (this.duration == Settings.ACTION_DUR_FAST) {
             AbstractDungeon.actionManager.addToTop(
-                    new ApplyPowerAction(this.target, this.source, new MakeMonsterBlockPower((AbstractMonster)this.target, this.amount), this.amount));
+                    new ApplyPowerAction(this.target, this.source, new MakeMonsterBlockPower((AbstractMonster) this.target, this.amount), this.amount));
         }
 
         this.tickDuration();

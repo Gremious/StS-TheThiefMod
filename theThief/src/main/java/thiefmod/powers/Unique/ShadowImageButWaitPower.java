@@ -19,11 +19,11 @@ public class ShadowImageButWaitPower extends AbstractPower {
 
     private int damageToReceive;
 
-	public static final String POWER_ID = ThiefMod.makeID("ShadowImageButWaitPower");
-	private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
-	public static final String NAME = powerStrings.NAME;
-	public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-	public static final String IMG = ThiefMod.makePath(ThiefMod.COMMON_POWER);
+    public static final String POWER_ID = ThiefMod.makeID("ShadowImageButWaitPower");
+    private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
+    public static final String NAME = powerStrings.NAME;
+    public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
+    public static final String IMG = ThiefMod.makePath(ThiefMod.COMMON_POWER);
 
 
     public ShadowImageButWaitPower(AbstractCreature owner, AbstractCreature source, final int amount) {
@@ -42,21 +42,20 @@ public class ShadowImageButWaitPower extends AbstractPower {
 
     }
 
-	@Override
-	public void atStartOfTurn() {
+    @Override
+    public void atStartOfTurn() {
 
-        AbstractDungeon.actionManager.addToBottom( new ApplyPowerAction(
-                this.owner, this.source, (new ShadowImagePower(this.owner, this.source, this.amount, damageToReceive)),this.amount));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
+                this.owner, this.source, (new ShadowImagePower(this.owner, this.source, this.amount, damageToReceive)), this.amount));
 
         AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
 
-         this.damageToReceive = 0;
+        this.damageToReceive = 0;
     }
 
 
     @Override
-    public int onAttacked(DamageInfo info, int damage)
-    {
+    public int onAttacked(DamageInfo info, int damage) {
         damageToReceive = damage;
         this.updateDescription();
 
@@ -75,9 +74,9 @@ public class ShadowImageButWaitPower extends AbstractPower {
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
-    public void updateDescription() 
-    {
-    		this.description = DESCRIPTIONS[0] + this.damageToReceive + DESCRIPTIONS[1];}
+    public void updateDescription() {
+        this.description = DESCRIPTIONS[0] + this.damageToReceive + DESCRIPTIONS[1];
+    }
 
 
 }

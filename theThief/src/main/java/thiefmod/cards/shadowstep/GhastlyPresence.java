@@ -11,18 +11,18 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
 import thiefmod.cards.AbstractBackstabCard;
 import thiefmod.patches.Character.AbstractCardEnum;
-import thiefmod.powers.Unique.DEPRECATEDGhastlyEssencePower;
+import thiefmod.powers.Unique.GhastlyEssencePower;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class GhastlyEssence extends AbstractBackstabCard {
+public class GhastlyPresence extends AbstractBackstabCard {
 //implements StartupCard
 //implements ModalChoice.Callback
 
 // TEXT DECLARATION
 
-    public static final String ID = ThiefMod.makeID("GhastlyEssence");
+    public static final String ID = ThiefMod.makeID("GhastlyPresence");
     public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_UNCOMMON_ATTACK);
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -51,10 +51,11 @@ public class GhastlyEssence extends AbstractBackstabCard {
 
 // /STAT DECLARATION/
 
-    public GhastlyEssence() {
+    public GhastlyPresence() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
         this.magicNumber = this.baseMagicNumber = MAGIC;
+
     }
 
     // Actions the card should do.
@@ -62,10 +63,9 @@ public class GhastlyEssence extends AbstractBackstabCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
-                p, p, new DEPRECATEDGhastlyEssencePower(p, p, upgraded, magicNumber), magicNumber));
+                p, p, new GhastlyEssencePower(p, p, magicNumber), magicNumber));
 
     }
-
 
     @Override
     public List<TooltipInfo> getCustomTooltips() {
@@ -78,23 +78,16 @@ public class GhastlyEssence extends AbstractBackstabCard {
     @Override
     public void applyPowers() {
         super.applyPowers();
-
-        if (upgraded) {
-            if (magicNumber == 1) {
-                rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[3];
-            } else {
-                rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[4];
-            }
+        if (magicNumber == 1) {
+            rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[2];
         } else {
-            if (magicNumber == 1) {
-                rawDescription = EXTENDED_DESCRIPTION[2] + EXTENDED_DESCRIPTION[3];
-            } else {
-                rawDescription = EXTENDED_DESCRIPTION[2] + EXTENDED_DESCRIPTION[4];
-            }
+            rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[3];
         }
+
 
         this.initializeDescription();
     }
+
 
     //Upgraded stats.
     @Override
@@ -102,7 +95,6 @@ public class GhastlyEssence extends AbstractBackstabCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
-            this.rawDescription = UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }
     }
