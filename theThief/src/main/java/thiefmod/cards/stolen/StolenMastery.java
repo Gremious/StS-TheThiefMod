@@ -47,25 +47,25 @@ public class StolenMastery extends AbstractBackstabCard {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
 
-        this.magicNumber = this.baseMagicNumber = MAGIC;
+        magicNumber = baseMagicNumber = MAGIC;
 
         tags.add(ThiefCardTags.STOLEN);
 
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new DualWieldAction(p, this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new DualWieldAction(p, magicNumber));
     }
 
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
+        if (!upgraded) {
+            upgradeName();
 
             upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
 
             rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+            initializeDescription();
         }
     }
 }

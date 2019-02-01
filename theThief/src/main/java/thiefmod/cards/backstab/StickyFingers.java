@@ -50,11 +50,11 @@ public class StickyFingers extends AbstractBackstabCard {
 
     public StickyFingers() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = MAGIC;
-        this.backstabNumber = this.baseBackstabNumber = STEAL;
+        magicNumber = baseMagicNumber = MAGIC;
+        backstabNumber = baseBackstabNumber = STEAL;
 
-        this.tags.add(ThiefCardTags.BACKSTAB);
-        this.tags.add(ThiefCardTags.STEALING);
+        tags.add(ThiefCardTags.BACKSTAB);
+        tags.add(ThiefCardTags.STEALING);
     }
 
     // Actions the card should do.
@@ -67,7 +67,7 @@ public class StickyFingers extends AbstractBackstabCard {
                     backstabNumber, 1, ADD_RANDOM, AbstractDungeon.player.hand, ADD_UPGRADED));
 
         } else {
-            AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.magicNumber));
+            AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, magicNumber));
         }
     }
 
@@ -81,17 +81,17 @@ public class StickyFingers extends AbstractBackstabCard {
             rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[3];
         }
 
-        this.initializeDescription();
+        initializeDescription();
     }
 
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
-//          this.rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+            upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
+//          rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

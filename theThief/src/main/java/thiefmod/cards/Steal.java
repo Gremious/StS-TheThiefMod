@@ -57,8 +57,8 @@ public class Steal extends CustomCard {
     public Steal() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.baseDamage = DAMAGE;
-        this.magicNumber = this.baseMagicNumber = MAGIC;
+        baseDamage = DAMAGE;
+        magicNumber = baseMagicNumber = MAGIC;
     }
 
     // Actions the card should do.
@@ -66,11 +66,11 @@ public class Steal extends CustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
-                new DamageInfo(p, this.damage, this.damageTypeForTurn),
+                new DamageInfo(p, damage, damageTypeForTurn),
                 AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
 
         AbstractDungeon.actionManager.addToBottom(new StealCardAction(
-                this.magicNumber, ADD_COPIES, ADD_RANDOM, AbstractDungeon.player.hand, ADD_UPGRADED));
+                magicNumber, ADD_COPIES, ADD_RANDOM, AbstractDungeon.player.hand, ADD_UPGRADED));
     }
 
     @Override
@@ -84,11 +84,11 @@ public class Steal extends CustomCard {
     // Upgraded stats.
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
-            this.rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
+            rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

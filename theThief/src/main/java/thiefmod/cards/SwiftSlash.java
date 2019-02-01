@@ -50,18 +50,18 @@ public class SwiftSlash extends AbstractBackstabCard {
     public SwiftSlash() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.baseDamage = DAMAGE;
-        this.magicNumber = this.baseMagicNumber = MAGIC;
+        baseDamage = DAMAGE;
+        magicNumber = baseMagicNumber = MAGIC;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m,
-                new DamageInfo(p, this.damage, this.damageTypeForTurn),
+                new DamageInfo(p, damage, damageTypeForTurn),
                 AbstractGameAction.AttackEffect.SLASH_VERTICAL));
 
-        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, magicNumber));
     }
 
 

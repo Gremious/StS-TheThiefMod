@@ -50,7 +50,7 @@ public class DoubleDealing extends AbstractBackstabCard {
     public DoubleDealing() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.magicNumber = this.baseMagicNumber = MAGIC;
+        magicNumber = baseMagicNumber = MAGIC;
     }
 
     // Actions the card should do.
@@ -58,7 +58,7 @@ public class DoubleDealing extends AbstractBackstabCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
-                p, p, new DoubleDealingPower(p, p, this.magicNumber), this.magicNumber));
+                p, p, new DoubleDealingPower(p, p, magicNumber), magicNumber));
 
     }
 
@@ -74,11 +74,11 @@ public class DoubleDealing extends AbstractBackstabCard {
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
-//          this.rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+            upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
+//          rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

@@ -52,7 +52,7 @@ public class Darts extends AbstractBackstabCard {
     public Darts() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.baseDamage = DAMAGE;
+        baseDamage = DAMAGE;
     }
 
     // Actions the card should do.
@@ -60,15 +60,15 @@ public class Darts extends AbstractBackstabCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         AbstractDungeon.actionManager.addToBottom(
-                new DartsAction(new DamageInfo(p, this.damage, this.damageTypeForTurn)));
+                new DartsAction(new DamageInfo(p, damage, damageTypeForTurn)));
 
-        if (this.upgraded) {
+        if (upgraded) {
             AbstractDungeon.actionManager.addToBottom(
-                    new DartsAction(new DamageInfo(p, this.damage, this.damageTypeForTurn)));
+                    new DartsAction(new DamageInfo(p, damage, damageTypeForTurn)));
         }
 
-        this.rawDescription = DESCRIPTION;
-        this.initializeDescription();
+        rawDescription = DESCRIPTION;
+        initializeDescription();
 
 
     }
@@ -85,17 +85,17 @@ public class Darts extends AbstractBackstabCard {
             }
         }
 
-        this.rawDescription = DESCRIPTION;
+        rawDescription = DESCRIPTION;
         ;
         if (count == 1) {
-            this.rawDescription = this.rawDescription + EXTENDED_DESCRIPTION[1] + count + EXTENDED_DESCRIPTION[2];
+            rawDescription = rawDescription + EXTENDED_DESCRIPTION[1] + count + EXTENDED_DESCRIPTION[2];
         } else if (count > 1) {
-            this.rawDescription = this.rawDescription + EXTENDED_DESCRIPTION[1] + count + EXTENDED_DESCRIPTION[3];
+            rawDescription = rawDescription + EXTENDED_DESCRIPTION[1] + count + EXTENDED_DESCRIPTION[3];
         } else {
-            this.rawDescription = this.rawDescription + EXTENDED_DESCRIPTION[4];
+            rawDescription = rawDescription + EXTENDED_DESCRIPTION[4];
         }
 
-        this.initializeDescription();
+        initializeDescription();
     }
 
 
@@ -109,9 +109,9 @@ public class Darts extends AbstractBackstabCard {
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+            initializeDescription();
         }
     }
 }

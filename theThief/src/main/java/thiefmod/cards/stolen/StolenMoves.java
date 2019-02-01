@@ -50,9 +50,9 @@ public class StolenMoves extends AbstractBackstabCard {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
 
-        this.baseBlock = BLOCK;
+        baseBlock = BLOCK;
 
-        this.magicNumber = this.baseMagicNumber = MAGIC;
+        magicNumber = baseMagicNumber = MAGIC;
 
         tags.add(ThiefCardTags.STOLEN);
 
@@ -62,21 +62,21 @@ public class StolenMoves extends AbstractBackstabCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         AbstractDungeon.actionManager.addToBottom(
-                new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber), this.magicNumber));
+                new ApplyPowerAction(p, p, new DexterityPower(p, magicNumber), magicNumber));
 
         AbstractDungeon.actionManager.addToBottom(
-                new GainBlockAction(p, p, this.block));
+                new GainBlockAction(p, p, block));
     }
 
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
+        if (!upgraded) {
+            upgradeName();
 
             upgradeBaseCost(UPGRADE_COST);
 
 //          rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+            initializeDescription();
         }
     }
 }

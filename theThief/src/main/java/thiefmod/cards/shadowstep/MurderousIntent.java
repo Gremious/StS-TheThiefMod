@@ -62,10 +62,10 @@ public class MurderousIntent extends AbstractBackstabCard {
         ExhaustiveVariable.setBaseValue(this, 2);
 
         FleetingField.fleeting.set(this, true);
-        this.magicNumber = this.baseMagicNumber = MAGIC;
-        this.backstabNumber = this.baseBackstabNumber = BACKSTAB;
+        magicNumber = baseMagicNumber = MAGIC;
+        backstabNumber = baseBackstabNumber = BACKSTAB;
 
-        this.tags.add(ThiefCardTags.SHADOWSTEP);
+        tags.add(ThiefCardTags.SHADOWSTEP);
     }
 
     // Actions the card should do.
@@ -73,13 +73,13 @@ public class MurderousIntent extends AbstractBackstabCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
-                p, p, new ShadowstepPower(p, p, this.magicNumber), this.magicNumber));
+                p, p, new ShadowstepPower(p, p, magicNumber), magicNumber));
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
-                p, p, new StrengthPower(p, this.magicNumber), this.magicNumber));
+                p, p, new StrengthPower(p, magicNumber), magicNumber));
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
-                p, p, new LoseStrengthPower(p, this.magicNumber), this.magicNumber));
+                p, p, new LoseStrengthPower(p, magicNumber), magicNumber));
 
     }
 
@@ -96,11 +96,11 @@ public class MurderousIntent extends AbstractBackstabCard {
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
-//          this.rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+            upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
+//          rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

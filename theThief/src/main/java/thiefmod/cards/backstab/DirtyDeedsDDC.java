@@ -60,12 +60,12 @@ public class DirtyDeedsDDC extends AbstractBackstabCard {
     public DirtyDeedsDDC() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.baseDamage = DAMAGE;
-        this.magicNumber = this.baseMagicNumber = MAGIC;
-        this.backstabNumber = this.baseBackstabNumber = BACKSTAB;
-        this.exhaust = true;
+        baseDamage = DAMAGE;
+        magicNumber = baseMagicNumber = MAGIC;
+        backstabNumber = baseBackstabNumber = BACKSTAB;
+        exhaust = true;
 
-        this.tags.add(ThiefCardTags.BACKSTAB);
+        tags.add(ThiefCardTags.BACKSTAB);
     }
 
     // Actions the card should do.
@@ -76,10 +76,10 @@ public class DirtyDeedsDDC extends AbstractBackstabCard {
 
         if (count <= 1) {
             AbstractDungeon.actionManager.addToBottom(
-                    new GreedAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), this.backstabNumber));
+                    new GreedAction(m, new DamageInfo(p, damage, damageTypeForTurn), backstabNumber));
         } else {
             AbstractDungeon.actionManager.addToBottom(
-                    new GreedAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), this.magicNumber));
+                    new GreedAction(m, new DamageInfo(p, damage, damageTypeForTurn), magicNumber));
         }
     }
 
@@ -93,7 +93,7 @@ public class DirtyDeedsDDC extends AbstractBackstabCard {
             rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[3];
         }
 
-        this.initializeDescription();
+        initializeDescription();
     }
 
     @Override
@@ -107,10 +107,10 @@ public class DirtyDeedsDDC extends AbstractBackstabCard {
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeDamage(UPGRADE_PLUS_DAMAGE);
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+            upgradeDamage(UPGRADE_PLUS_DAMAGE);
+            initializeDescription();
         }
     }
 }

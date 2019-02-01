@@ -50,15 +50,15 @@ public class DefendThief extends CustomCard {
 
     public DefendThief() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.baseBlock = BLOCK;
-        this.tags.add(BaseModCardTags.BASIC_DEFEND);
+        baseBlock = BLOCK;
+        tags.add(BaseModCardTags.BASIC_DEFEND);
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager
-                .addToBottom(new com.megacrit.cardcrawl.actions.common.GainBlockAction(p, p, this.block));
+                .addToBottom(new com.megacrit.cardcrawl.actions.common.GainBlockAction(p, p, block));
 
     }
 
@@ -73,11 +73,11 @@ public class DefendThief extends CustomCard {
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeBlock(UPGRADE_PLUS_BLOCK);
-            this.rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+            upgradeBlock(UPGRADE_PLUS_BLOCK);
+            rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

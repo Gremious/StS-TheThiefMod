@@ -54,7 +54,7 @@ public class Gaslight extends AbstractBackstabCard {
 
         ExhaustiveVariable.setBaseValue(this, 3);
 
-        this.magicNumber = this.baseMagicNumber = MAGIC;
+        magicNumber = baseMagicNumber = MAGIC;
     }
 
     // Actions the card should do.
@@ -62,10 +62,10 @@ public class Gaslight extends AbstractBackstabCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
-                m, p, new LoseStrengthPower(m, this.magicNumber), this.magicNumber));
+                m, p, new LoseStrengthPower(m, magicNumber), magicNumber));
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
-                m, p, new GainStrengthPower(p, this.magicNumber), this.magicNumber));
+                m, p, new GainStrengthPower(p, magicNumber), magicNumber));
 
     }
 
@@ -81,11 +81,11 @@ public class Gaslight extends AbstractBackstabCard {
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeBaseCost(UPGRADE_COST);
-//          this.rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+            upgradeBaseCost(UPGRADE_COST);
+//          rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

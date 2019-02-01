@@ -43,7 +43,7 @@ public class StolenArtifice extends CustomCard {
     public StolenArtifice() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.magicNumber = this.baseMagicNumber = MAGIC;
+        magicNumber = baseMagicNumber = MAGIC;
         tags.add(ThiefCardTags.STOLEN);
     }
 
@@ -51,16 +51,16 @@ public class StolenArtifice extends CustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
-                new EnergizedPower(p, this.magicNumber), this.magicNumber));
+                new EnergizedPower(p, magicNumber), magicNumber));
     }
 
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
-            this.rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+            upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
+            rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

@@ -61,7 +61,7 @@ public class Focused extends AbstractBackstabCard {
         misc = POWER;
         magicNumber = baseMagicNumber = MAGIC;
 
-        this.tags.add(ThiefCardTags.SHADOWSTEP);
+        tags.add(ThiefCardTags.SHADOWSTEP);
     }
 
     // Actions the card should do.

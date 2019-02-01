@@ -52,9 +52,9 @@ public class CloakAndDagger extends AbstractBackstabCard {
     public CloakAndDagger() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.baseDamage = DAMAGE;
-        this.baseBlock = BLOCK;
-        this.tags.add(ThiefCardTags.BACKSTAB);
+        baseDamage = DAMAGE;
+        baseBlock = BLOCK;
+        tags.add(ThiefCardTags.BACKSTAB);
     }
 
     // Actions the card should do.
@@ -64,11 +64,11 @@ public class CloakAndDagger extends AbstractBackstabCard {
 
         if (count <= 1 || p.hasPower(BackstabPower.POWER_ID)) {
             AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
-                    new DamageInfo(p, this.damage, this.damageTypeForTurn),
+                    new DamageInfo(p, damage, damageTypeForTurn),
                     AbstractGameAction.AttackEffect.SLASH_VERTICAL));
         } else {
             AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.GainBlockAction(
-                    p, p, this.block));
+                    p, p, block));
         }
     }
 
@@ -77,23 +77,23 @@ public class CloakAndDagger extends AbstractBackstabCard {
         super.applyPowers();
 
         if (AbstractDungeon.player.cardsPlayedThisTurn == 0 || AbstractDungeon.player.hasPower(BackstabPower.POWER_ID)) {
-            this.target = CardTarget.ENEMY;
+            target = CardTarget.ENEMY;
             rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[2];
         } else {
-            this.target = CardTarget.SELF;
+            target = CardTarget.SELF;
             rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[3];
         }
-        this.initializeDescription();
+        initializeDescription();
     }
 
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeDamage(UPGRADE_PLUS_DAMAGE);
-            this.upgradeBlock(UPGRADE_PLUS_BLOCK);
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+            upgradeDamage(UPGRADE_PLUS_DAMAGE);
+            upgradeBlock(UPGRADE_PLUS_BLOCK);
+            initializeDescription();
         }
     }
 }

@@ -58,10 +58,10 @@ public class Prep extends AbstractBackstabCard {
     public Prep() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.baseBlock = BLOCK;
-        this.magicNumber = this.baseMagicNumber = MAGIC;
+        baseBlock = BLOCK;
+        magicNumber = baseMagicNumber = MAGIC;
 
-        this.tags.add(ThiefCardTags.BACKSTAB);
+        tags.add(ThiefCardTags.BACKSTAB);
     }
 
     // Actions the card should do.
@@ -87,7 +87,7 @@ public class Prep extends AbstractBackstabCard {
             rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[3];
         }
 
-        this.initializeDescription();
+        initializeDescription();
     }
 
     @Override
@@ -101,10 +101,10 @@ public class Prep extends AbstractBackstabCard {
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeBaseCost(UPGRADE_COST);
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+            upgradeBaseCost(UPGRADE_COST);
+            initializeDescription();
         }
     }
 }

@@ -48,7 +48,7 @@ public class StolenMomentum extends CustomCard {
     public StolenMomentum() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.magicNumber = this.baseMagicNumber = MAGIC;
+        magicNumber = baseMagicNumber = MAGIC;
 
         tags.add(ThiefCardTags.STOLEN);
     }
@@ -57,11 +57,11 @@ public class StolenMomentum extends CustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, magicNumber));
 
-        if (!this.upgraded) {
+        if (!upgraded) {
             AbstractDungeon.actionManager
-                    .addToBottom(new DiscardAction(p, p, this.magicNumber, false));
+                    .addToBottom(new DiscardAction(p, p, magicNumber, false));
 
         }
 
@@ -69,10 +69,10 @@ public class StolenMomentum extends CustomCard {
 
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+            rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

@@ -48,18 +48,18 @@ public class SleightOfHand extends AbstractBackstabCard {
     public SleightOfHand() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.baseBlock = BLOCK;
-        this.magicNumber = this.baseMagicNumber = MAGIC;
+        baseBlock = BLOCK;
+        magicNumber = baseMagicNumber = MAGIC;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         final int count = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
-        AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.GainBlockAction(p, p, this.block));
+        AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.GainBlockAction(p, p, block));
 
         AbstractDungeon.actionManager.addToBottom(new StealCardAction(
-                this.magicNumber, 1, ADD_RANDOM, AbstractDungeon.player.hand, ADD_UPGRADED));
+                magicNumber, 1, ADD_RANDOM, AbstractDungeon.player.hand, ADD_UPGRADED));
 
     }
 
@@ -67,10 +67,10 @@ public class SleightOfHand extends AbstractBackstabCard {
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+            upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
+            initializeDescription();
         }
     }
 }

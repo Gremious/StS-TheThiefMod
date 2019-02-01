@@ -50,7 +50,7 @@ public class StolenCandy extends CustomCard {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
 
-        this.magicNumber = this.baseMagicNumber = MAGIC;
+        magicNumber = baseMagicNumber = MAGIC;
 
         tags.add(ThiefCardTags.STOLEN);
     }
@@ -58,16 +58,16 @@ public class StolenCandy extends CustomCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.GainEnergyAction(this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.GainEnergyAction(magicNumber));
     }
 
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.rawDescription = UPGRADE_DESCRIPTION;
-            this.upgradeMagicNumber(UPGRADE_MAGIC);
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+            rawDescription = UPGRADE_DESCRIPTION;
+            upgradeMagicNumber(UPGRADE_MAGIC);
+            initializeDescription();
         }
     }
 }

@@ -56,7 +56,7 @@ public class DissoluteSatisfaction extends AbstractBackstabCard {
 
         magicNumber = baseMagicNumber = MAGIC;
 
-        this.tags.add(ThiefCardTags.SHADOWSTEP);
+        tags.add(ThiefCardTags.SHADOWSTEP);
     }
 
     // Actions the card should do.
@@ -64,7 +64,7 @@ public class DissoluteSatisfaction extends AbstractBackstabCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
-                p, p, new DissoluteSatisfactionPower(p, p, this.magicNumber), this.magicNumber));
+                p, p, new DissoluteSatisfactionPower(p, p, magicNumber), magicNumber));
 
     }
 
@@ -81,12 +81,12 @@ public class DissoluteSatisfaction extends AbstractBackstabCard {
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
-            this.upgradeBaseCost(UPGRADED_COST);
-//          this.rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+            upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
+            upgradeBaseCost(UPGRADED_COST);
+//          rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

@@ -50,7 +50,7 @@ public class StolenOrb extends AbstractBackstabCard {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
 
-        this.magicNumber = this.baseMagicNumber = MAGIC;
+        magicNumber = baseMagicNumber = MAGIC;
 
         tags.add(ThiefCardTags.STOLEN);
 
@@ -75,13 +75,13 @@ public class StolenOrb extends AbstractBackstabCard {
 
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
+        if (!upgraded) {
+            upgradeName();
 
             upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
 
 //          rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+            initializeDescription();
         }
     }
 }

@@ -46,7 +46,7 @@ public class Guilt extends AbstractBackstabCard {
 
     public Guilt() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = MAGIC;
+        magicNumber = baseMagicNumber = MAGIC;
 
         isEthereal = true; // I'll be honest idk which one I need I can't be bothered to check. I think exhaust.
         exhaust = true;
@@ -54,8 +54,8 @@ public class Guilt extends AbstractBackstabCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (!this.dontTriggerOnUseCard && p.hasRelic(BlueCandle.ID)) {
-            this.useBlueCandle(p);
+        if (!dontTriggerOnUseCard && p.hasRelic(BlueCandle.ID)) {
+            useBlueCandle(p);
         } else {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
                     p, p, new LoseDexterityPower(p, 1)));
@@ -70,7 +70,7 @@ public class Guilt extends AbstractBackstabCard {
 
     @Override
     public void triggerOnEndOfTurnForPlayingCard() {
-        this.dontTriggerOnUseCard = true;
+        dontTriggerOnUseCard = true;
         AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(this, true));
     }
 

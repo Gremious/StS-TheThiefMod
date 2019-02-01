@@ -65,7 +65,7 @@ public class StolenBlood extends AbstractBackstabCard {
         setBannerTexture("thiefmodAssets/images/512/special/rare_skill_banner.png",
                 "thiefmodAssets/images/1024/special/rare_skill_banner.png");
 
-        this.magicNumber = this.baseMagicNumber = MAGIC;
+        magicNumber = baseMagicNumber = MAGIC;
         tags.add(ThiefCardTags.STOLEN);
         exhaust = true;
     }
@@ -75,7 +75,7 @@ public class StolenBlood extends AbstractBackstabCard {
         AbstractDungeon.effectList.add(new BorderFlashEffect(Color.GOLD));
 
         AbstractDungeon.actionManager.addToBottom(
-                new ApplyPowerAction(p, p, new StrengthPower(p, this.magicNumber), this.magicNumber));
+                new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber), magicNumber));
 
     }
 
@@ -101,12 +101,12 @@ public class StolenBlood extends AbstractBackstabCard {
 
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
+        if (!upgraded) {
+            upgradeName();
 
             upgradeBaseCost(UPGRADE_COST);
 
-            this.initializeDescription();
+            initializeDescription();
         }
     }
 }

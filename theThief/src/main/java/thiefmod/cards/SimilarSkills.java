@@ -47,19 +47,19 @@ public class SimilarSkills extends CustomCard {
 
 
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = MAGIC;
+        magicNumber = baseMagicNumber = MAGIC;
 
     }
 
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
-        if (!this.upgraded) {
+        if (!upgraded) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
-                    new SimilarSkillsPower(p, this.magicNumber), this.magicNumber));
+                    new SimilarSkillsPower(p, magicNumber), magicNumber));
         }
-        if (this.upgraded) {
+        if (upgraded) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
-                    new SimilarSkillsPowerUpgraded(p, this.magicNumber), this.magicNumber));
+                    new SimilarSkillsPowerUpgraded(p, magicNumber), magicNumber));
         }
     }
 
@@ -67,10 +67,10 @@ public class SimilarSkills extends CustomCard {
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+            rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

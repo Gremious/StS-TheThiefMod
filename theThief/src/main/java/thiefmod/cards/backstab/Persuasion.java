@@ -56,9 +56,9 @@ public class Persuasion extends AbstractBackstabCard {
     public Persuasion() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.magicNumber = this.baseMagicNumber = MAGIC;
+        magicNumber = baseMagicNumber = MAGIC;
 
-        this.tags.add(ThiefCardTags.BACKSTAB);
+        tags.add(ThiefCardTags.BACKSTAB);
 
     }
 
@@ -70,12 +70,12 @@ public class Persuasion extends AbstractBackstabCard {
         if (count <= 1) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
                     p, p, new StrengthPower(
-                    p, this.magicNumber), this.magicNumber));
+                    p, magicNumber), magicNumber));
 
         } else {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
                     p, p, new DexterityPower(
-                    p, this.magicNumber), this.magicNumber));
+                    p, magicNumber), magicNumber));
         }
     }
 
@@ -90,7 +90,7 @@ public class Persuasion extends AbstractBackstabCard {
             rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[3];
         }
 
-        this.initializeDescription();
+        initializeDescription();
     }
 
 
@@ -104,10 +104,10 @@ public class Persuasion extends AbstractBackstabCard {
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+            upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
+            initializeDescription();
         }
     }
 }

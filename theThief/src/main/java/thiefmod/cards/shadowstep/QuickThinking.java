@@ -49,10 +49,10 @@ public class QuickThinking extends AbstractBackstabCard {
     public QuickThinking() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.magicNumber = this.baseMagicNumber = MAGIC;
-        this.backstabNumber = this.baseBackstabNumber = MAGIC_TWO;
+        magicNumber = baseMagicNumber = MAGIC;
+        backstabNumber = baseBackstabNumber = MAGIC_TWO;
 
-        this.tags.add(ThiefCardTags.SHADOWSTEP);
+        tags.add(ThiefCardTags.SHADOWSTEP);
     }
 
     // Actions the card should do.
@@ -62,7 +62,7 @@ public class QuickThinking extends AbstractBackstabCard {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
                 p, p, new ShadowstepPower(p, p, backstabNumber), backstabNumber));
 
-        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, magicNumber));
 
     }
 
@@ -70,26 +70,26 @@ public class QuickThinking extends AbstractBackstabCard {
     public void applyPowers() {
         super.applyPowers();
         if (backstabNumber == 1 && magicNumber == 1) {
-            this.rawDescription = EXTENDED_DESCRIPTION[0];
+            rawDescription = EXTENDED_DESCRIPTION[0];
         } else if (backstabNumber == 1 && magicNumber != 1) {
-            this.rawDescription = EXTENDED_DESCRIPTION[1];
+            rawDescription = EXTENDED_DESCRIPTION[1];
         } else if (backstabNumber != 1 && magicNumber == 1) {
-            this.rawDescription = EXTENDED_DESCRIPTION[2];
+            rawDescription = EXTENDED_DESCRIPTION[2];
         } else {
-            this.rawDescription = EXTENDED_DESCRIPTION[3];
+            rawDescription = EXTENDED_DESCRIPTION[3];
         }
-        this.initializeDescription();
+        initializeDescription();
     }
 
 
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
-            this.rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+            upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
+            rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

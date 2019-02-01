@@ -51,8 +51,8 @@ public class StolenClaws extends AbstractBackstabCard {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
 
-        this.baseDamage = DAMAGE;
-        this.magicNumber = this.baseMagicNumber = MAGIC;
+        baseDamage = DAMAGE;
+        magicNumber = baseMagicNumber = MAGIC;
 
         tags.add(ThiefCardTags.STOLEN);
 
@@ -62,22 +62,22 @@ public class StolenClaws extends AbstractBackstabCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
 
         AbstractDungeon.actionManager.addToBottom(
-                new DrawCardAction(p, this.magicNumber));
+                new DrawCardAction(p, magicNumber));
 
     }
 
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
+        if (!upgraded) {
+            upgradeName();
 
             upgradeBaseCost(UPGRADE_COST);
 
 //          rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+            initializeDescription();
         }
     }
 }

@@ -52,16 +52,16 @@ public class Shadowstep extends AbstractBackstabCard {
     public Shadowstep() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.magicNumber = this.baseMagicNumber = MAGIC;
-        this.backstabNumber = this.baseBackstabNumber = MAGIC_TWO;
-        this.tags.add(ThiefCardTags.SHADOWSTEP);
+        magicNumber = baseMagicNumber = MAGIC;
+        backstabNumber = baseBackstabNumber = MAGIC_TWO;
+        tags.add(ThiefCardTags.SHADOWSTEP);
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(
-                p, p, new ShadowstepPower(p, p, this.magicNumber), this.magicNumber));
+                p, p, new ShadowstepPower(p, p, magicNumber), magicNumber));
 
         AbstractDungeon.actionManager.addToTop(new MakeTempCardInDrawPileAction(new Shadowstep(), backstabNumber, true, true));
 
@@ -70,11 +70,11 @@ public class Shadowstep extends AbstractBackstabCard {
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
-            this.rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+            upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
+            rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

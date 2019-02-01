@@ -57,8 +57,8 @@ public class LieInWait extends AbstractBackstabCard implements StartupCard {
 
         ExhaustiveVariable.setBaseValue(this, 2);
 
-        this.magicNumber = this.baseMagicNumber = MAGIC;
-        this.baseBlock = BLOCK;
+        magicNumber = baseMagicNumber = MAGIC;
+        baseBlock = BLOCK;
     }
 
     // Actions the card should do.
@@ -66,7 +66,7 @@ public class LieInWait extends AbstractBackstabCard implements StartupCard {
     @Override // Startup: Add 1 void to your draw pile.
     public boolean atBattleStartPreDraw() {
         AbstractDungeon.actionManager.addToBottom(
-                new MakeTempCardInDrawPileAction(new VoidCard(), this.magicNumber, true, true, false));
+                new MakeTempCardInDrawPileAction(new VoidCard(), magicNumber, true, true, false));
         return true;
     }
 
@@ -74,7 +74,7 @@ public class LieInWait extends AbstractBackstabCard implements StartupCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(
-                p, p, this.block));
+                p, p, block));
 
     }
 
@@ -89,10 +89,10 @@ public class LieInWait extends AbstractBackstabCard implements StartupCard {
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-//          this.rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+//          rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

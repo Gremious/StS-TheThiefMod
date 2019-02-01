@@ -69,13 +69,13 @@ public class stolenBookOfArte extends AbstractBackstabCard {
     public void applyPowers() {
         super.applyPowers();
 
-        if (this.magicNumber >= 2) {
-            this.rawDescription = UPGRADE_DESCRIPTION;
+        if (magicNumber >= 2) {
+            rawDescription = UPGRADE_DESCRIPTION;
         } else {
-            this.rawDescription = DESCRIPTION;
+            rawDescription = DESCRIPTION;
         }
 
-        this.initializeDescription();
+        initializeDescription();
     }
 
     // Upgraded stats.

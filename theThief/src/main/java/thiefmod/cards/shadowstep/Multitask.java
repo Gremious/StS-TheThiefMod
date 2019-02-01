@@ -63,11 +63,11 @@ public class Multitask extends AbstractBackstabCard {
         ExhaustiveVariable.setBaseValue(this, 2);
         FleetingField.fleeting.set(this, true);
 
-        this.magicNumber = this.baseMagicNumber = MAGIC;
-        this.backstabNumber = this.baseBackstabNumber = BACKSTAB;
+        magicNumber = baseMagicNumber = MAGIC;
+        backstabNumber = baseBackstabNumber = BACKSTAB;
 
-        this.tags.add(ThiefCardTags.SHADOWSTEP);
-        this.tags.add(ThiefCardTags.STEALING);
+        tags.add(ThiefCardTags.SHADOWSTEP);
+        tags.add(ThiefCardTags.STEALING);
     }
 
     private static final boolean ADD_RANDOM = true;
@@ -78,13 +78,13 @@ public class Multitask extends AbstractBackstabCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         AbstractDungeon.actionManager.addToBottom(
-                new DiscardAction(p, p, this.backstabNumber, false));
+                new DiscardAction(p, p, backstabNumber, false));
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
-                p, p, new ShadowstepPower(p, p, this.magicNumber), 1));
+                p, p, new ShadowstepPower(p, p, magicNumber), 1));
 
         AbstractDungeon.actionManager.addToBottom(new StealCardAction(
-                this.magicNumber, 1, ADD_RANDOM, AbstractDungeon.player.hand, ADD_UPGRADED));
+                magicNumber, 1, ADD_RANDOM, AbstractDungeon.player.hand, ADD_UPGRADED));
 
     }
 
@@ -100,13 +100,13 @@ public class Multitask extends AbstractBackstabCard {
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeBaseCost(UPGRADE_COST);
-            this.upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
-            this.upgradeBackstabNumber(UPGRADED_PLUS_BACKSTAB);
-//          this.rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+            upgradeBaseCost(UPGRADE_COST);
+            upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
+            upgradeBackstabNumber(UPGRADED_PLUS_BACKSTAB);
+//          rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

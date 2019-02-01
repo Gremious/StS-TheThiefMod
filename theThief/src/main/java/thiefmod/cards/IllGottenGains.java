@@ -47,7 +47,7 @@ public class IllGottenGains extends AbstractBackstabCard {
 
 
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = MAGIC;
+        magicNumber = baseMagicNumber = MAGIC;
         isInnate = false;
     }
 
@@ -55,18 +55,18 @@ public class IllGottenGains extends AbstractBackstabCard {
     public void use(final AbstractPlayer p, final AbstractMonster m) {
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
-                new IllGottenGainsPower(p, this.magicNumber), this.magicNumber));
+                new IllGottenGainsPower(p, magicNumber), magicNumber));
     }
 
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
+        if (!upgraded) {
             isInnate = true;
-            this.upgradeName();
-            this.upgradeBaseCost(UPGRADE_COST);
-            this.rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+            upgradeName();
+            upgradeBaseCost(UPGRADE_COST);
+            rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

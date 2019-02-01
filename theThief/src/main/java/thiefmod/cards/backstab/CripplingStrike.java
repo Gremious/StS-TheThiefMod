@@ -57,11 +57,11 @@ public class CripplingStrike extends AbstractBackstabCard {
     public CripplingStrike() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.baseDamage = DAMAGE;
-        this.magicNumber = this.baseMagicNumber = MAGIC;
-        this.backstabNumber = this.baseBackstabNumber = BACKSTAB;
+        baseDamage = DAMAGE;
+        magicNumber = baseMagicNumber = MAGIC;
+        backstabNumber = baseBackstabNumber = BACKSTAB;
 
-        this.tags.add(ThiefCardTags.BACKSTAB);
+        tags.add(ThiefCardTags.BACKSTAB);
     }
 
     // Actions the card should do.
@@ -70,16 +70,16 @@ public class CripplingStrike extends AbstractBackstabCard {
         final int count = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
 
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m,
-                new DamageInfo(p, this.damage, this.damageTypeForTurn),
+                new DamageInfo(p, damage, damageTypeForTurn),
                 AbstractGameAction.AttackEffect.SLASH_VERTICAL));
 
         if (count <= 1) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
-                    m, p, new VulnerablePower(m, this.magicNumber, false), this.magicNumber));
+                    m, p, new VulnerablePower(m, magicNumber, false), magicNumber));
 
         } else {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
-                    m, p, new WeakPower(m, this.magicNumber, false), this.magicNumber));
+                    m, p, new WeakPower(m, magicNumber, false), magicNumber));
 
         }
     }
@@ -94,16 +94,16 @@ public class CripplingStrike extends AbstractBackstabCard {
             rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[3];
         }
 
-        this.initializeDescription();
+        initializeDescription();
     }
 
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+            upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
+            initializeDescription();
         }
     }
 }

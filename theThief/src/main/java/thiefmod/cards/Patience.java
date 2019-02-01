@@ -46,7 +46,7 @@ public class Patience extends AbstractBackstabCard {
     public Patience() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.baseBlock = BLOCK;
+        baseBlock = BLOCK;
         GraveField.grave.set(this, true);
     }
 
@@ -55,18 +55,18 @@ public class Patience extends AbstractBackstabCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(
-                p, p, this.block));
+                p, p, block));
 
     }
 
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeBlock(UPGRADE_PLUS_BLOCK);
-//          this.rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+            upgradeBlock(UPGRADE_PLUS_BLOCK);
+//          rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

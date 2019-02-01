@@ -49,27 +49,27 @@ public class ShadowCloak extends AbstractBackstabCard {
 
     public ShadowCloak() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.baseBlock = BLOCK;
-        this.magicNumber = this.baseMagicNumber = MAGIC;
+        baseBlock = BLOCK;
+        magicNumber = baseMagicNumber = MAGIC;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
-        AbstractDungeon.actionManager.addToBottom(new ModifyBlockAction(this.uuid, this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
+        AbstractDungeon.actionManager.addToBottom(new ModifyBlockAction(uuid, magicNumber));
     }
 
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
-            this.upgradeBlock(UPGRADE_PLUS_BLOCK);
-//          this.rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+            upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
+            upgradeBlock(UPGRADE_PLUS_BLOCK);
+//          rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

@@ -55,14 +55,14 @@ public class SteakOut extends AbstractBackstabCard implements StartupCard {
     public SteakOut() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         AutoplayField.autoplay.set(this, true);
-        this.magicNumber = this.baseMagicNumber = MAGIC;
+        magicNumber = baseMagicNumber = MAGIC;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(magicNumber));
 
     }
 
@@ -70,7 +70,7 @@ public class SteakOut extends AbstractBackstabCard implements StartupCard {
     public boolean atBattleStartPreDraw() {
 
         //? AbstractDungeon.actionManager.addToBottom(
-        //?          new MakeTempCardInDrawPileAction(new VoidCard(), this.magicNumber, true, true, false));
+        //?          new MakeTempCardInDrawPileAction(new VoidCard(), magicNumber, true, true, false));
 
         AbstractDungeon.actionManager.addToBottom(
                 new MakeTempCardInDiscardAndDeckAction(new VoidCard()));
@@ -89,11 +89,11 @@ public class SteakOut extends AbstractBackstabCard implements StartupCard {
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
-//          this.rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+            upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
+//          rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

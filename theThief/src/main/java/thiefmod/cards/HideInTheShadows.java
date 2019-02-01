@@ -47,8 +47,8 @@ public class HideInTheShadows extends AbstractBackstabCard {
     public HideInTheShadows() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.baseBlock = BLOCK;
-        this.isEthereal = true;
+        baseBlock = BLOCK;
+        isEthereal = true;
 
     }
 
@@ -69,24 +69,24 @@ public class HideInTheShadows extends AbstractBackstabCard {
     public void applyPowers() {
         super.applyPowers();
 
-        this.rawDescription = DESCRIPTION;
+        rawDescription = DESCRIPTION;
 
         for (AbstractCard AttackCheckCard : thisTurnCardsArray) {
             if (AttackCheckCard.type == CardType.ATTACK)
-                this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[1];
+                rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[1];
         }
 
-        this.initializeDescription();
+        initializeDescription();
     }
 
 
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeBlock(UPGRADE_PLUS_BLOCK);
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+            upgradeBlock(UPGRADE_PLUS_BLOCK);
+            initializeDescription();
         }
     }
 }

@@ -54,7 +54,7 @@ public class Ransack extends AbstractBackstabCard {
     public Ransack() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.magicNumber = this.baseMagicNumber = MAGIC;
+        magicNumber = baseMagicNumber = MAGIC;
     }
 
     // Actions the card should do.
@@ -62,7 +62,7 @@ public class Ransack extends AbstractBackstabCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         AbstractDungeon.actionManager.addToBottom(new StealCardAction(
-                CARDS_AMOUNT, this.magicNumber, ADD_RANDOM, AbstractDungeon.player.hand, ADD_UPGRADED));
+                CARDS_AMOUNT, magicNumber, ADD_RANDOM, AbstractDungeon.player.hand, ADD_UPGRADED));
 
     }
 
@@ -77,10 +77,10 @@ public class Ransack extends AbstractBackstabCard {
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+            upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
+            initializeDescription();
         }
     }
 }

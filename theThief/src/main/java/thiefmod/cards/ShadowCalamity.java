@@ -60,8 +60,8 @@ public class ShadowCalamity extends AbstractBackstabCard implements StartupCard 
         ExhaustiveVariable.setBaseValue(this, 2);
         GraveField.grave.set(this, true);
 
-        this.magicNumber = this.baseMagicNumber = MAGIC;
-        this.baseDamage = DAMAGE;
+        magicNumber = baseMagicNumber = MAGIC;
+        baseDamage = DAMAGE;
     }
 
     // Actions the card should do.
@@ -69,7 +69,7 @@ public class ShadowCalamity extends AbstractBackstabCard implements StartupCard 
     @Override // Startup: Add 1 void to your draw pile.
     public boolean atBattleStartPreDraw() {
         AbstractDungeon.actionManager.addToBottom(
-                new MakeTempCardInDrawPileAction(new VoidCard(), this.magicNumber, true, true, false));
+                new MakeTempCardInDrawPileAction(new VoidCard(), magicNumber, true, true, false));
         return true;
     }
 
@@ -77,7 +77,7 @@ public class ShadowCalamity extends AbstractBackstabCard implements StartupCard 
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         AbstractDungeon.actionManager.addToBottom(new DamageAction(
-                m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
+                m, new DamageInfo(p, damage, damageTypeForTurn),
                 AbstractGameAction.AttackEffect.SLASH_VERTICAL));
     }
 
@@ -92,11 +92,11 @@ public class ShadowCalamity extends AbstractBackstabCard implements StartupCard 
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeDamage(UPGRADE_PLUS_DAMAGE);
-//          this.rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+            upgradeDamage(UPGRADE_PLUS_DAMAGE);
+//          rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

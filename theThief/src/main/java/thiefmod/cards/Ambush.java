@@ -56,9 +56,9 @@ public class Ambush extends AbstractBackstabCard {
     public Ambush() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.damage = DAMAGE;
-        this.magicNumber = this.baseMagicNumber = MAGIC;
-        this.exhaust = true;
+        damage = DAMAGE;
+        magicNumber = baseMagicNumber = MAGIC;
+        exhaust = true;
     }
 
     // Actions the card should do.
@@ -66,7 +66,7 @@ public class Ambush extends AbstractBackstabCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         AbstractDungeon.actionManager.addToBottom(
-                new MakeTempCardInDrawPileAction(new VoidCard(), this.magicNumber, true, true, false));
+                new MakeTempCardInDrawPileAction(new VoidCard(), magicNumber, true, true, false));
 
 
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m,
@@ -89,7 +89,7 @@ public class Ambush extends AbstractBackstabCard {
             return tmp;
         }
         float damag;
-        if (this.upgraded) {
+        if (upgraded) {
             damag = (float) mo.currentHealth / 2;
         } else {
             damag = (float) mo.currentHealth / 3.3f;
@@ -100,11 +100,11 @@ public class Ambush extends AbstractBackstabCard {
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
-//          this.rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+            upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
+//          rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

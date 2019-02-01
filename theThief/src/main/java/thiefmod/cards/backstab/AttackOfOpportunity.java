@@ -67,9 +67,9 @@ public class AttackOfOpportunity extends AbstractBackstabCard {
     public AttackOfOpportunity() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.baseDamage = DAMAGE;
-        this.magicNumber = this.baseMagicNumber = MAGIC;
-        this.backstabNumber = this.baseBackstabNumber = BACKSTAB;
+        baseDamage = DAMAGE;
+        magicNumber = baseMagicNumber = MAGIC;
+        backstabNumber = baseBackstabNumber = BACKSTAB;
 
         tags.add(ThiefCardTags.BACKSTAB);
     }
@@ -81,7 +81,7 @@ public class AttackOfOpportunity extends AbstractBackstabCard {
 
         // Deal 16 Damage
         AbstractDungeon.actionManager.addToBottom(new DamageAction(
-                m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
+                m, new DamageInfo(p, damage, damageTypeForTurn),
                 AbstractGameAction.AttackEffect.SLASH_VERTICAL));
 
         // Add voids to your draw pile
@@ -128,7 +128,7 @@ public class AttackOfOpportunity extends AbstractBackstabCard {
                 }
             }
         }
-        this.initializeDescription();
+        initializeDescription();
     }
 
     @Override
@@ -141,11 +141,11 @@ public class AttackOfOpportunity extends AbstractBackstabCard {
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
-            this.upgradeBackstabNumber(UPGRADED_PLUS_BACKSTAB);
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+            upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
+            upgradeBackstabNumber(UPGRADED_PLUS_BACKSTAB);
+            initializeDescription();
         }
     }
 }

@@ -48,7 +48,7 @@ public class StolenChange extends CustomCard {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
 
-        this.magicNumber = this.baseMagicNumber = MAGIC;
+        magicNumber = baseMagicNumber = MAGIC;
 
         tags.add(ThiefCardTags.STOLEN);
     }
@@ -58,17 +58,17 @@ public class StolenChange extends CustomCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
-                new RefundCardCost(p, p, this.magicNumber), this.magicNumber));
+                new RefundCardCost(p, p, magicNumber), magicNumber));
 
     }
 
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeBaseCost(UPGRADE_COST);
-            this.upgradeName();
-            this.rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeBaseCost(UPGRADE_COST);
+            upgradeName();
+            rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

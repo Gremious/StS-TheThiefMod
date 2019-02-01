@@ -61,7 +61,7 @@ public class ConArtist extends AbstractBackstabCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
-                p, p, new ConArtistPower(p, p, this.magicNumber), this.magicNumber));
+                p, p, new ConArtistPower(p, p, magicNumber), magicNumber));
 
     }
 
@@ -82,7 +82,7 @@ public class ConArtist extends AbstractBackstabCard {
             upgradeName();
             upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
             isInnate = true;
-//          this.rawDescription = UPGRADE_DESCRIPTION;
+//          rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

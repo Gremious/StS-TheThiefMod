@@ -45,7 +45,7 @@ public class StolenCode extends AbstractBackstabCard {
     public StolenCode() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.magicNumber = this.baseMagicNumber = MAGIC;
+        magicNumber = baseMagicNumber = MAGIC;
 
 
         tags.add(ThiefCardTags.STOLEN);
@@ -61,12 +61,12 @@ public class StolenCode extends AbstractBackstabCard {
 
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
+        if (!upgraded) {
+            upgradeName();
 
             upgradeBaseCost(UPGRADE_COST);
 
-            this.initializeDescription();
+            initializeDescription();
         }
     }
 }

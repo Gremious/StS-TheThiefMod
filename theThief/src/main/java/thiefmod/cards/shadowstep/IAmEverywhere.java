@@ -50,18 +50,18 @@ public class IAmEverywhere extends AbstractBackstabCard {
     public IAmEverywhere() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.tags.add(ThiefCardTags.SHADOWSTEP);
+        tags.add(ThiefCardTags.SHADOWSTEP);
 
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (this.energyOnUse < EnergyPanel.totalCount) {
-            this.energyOnUse = EnergyPanel.totalCount;
+        if (energyOnUse < EnergyPanel.totalCount) {
+            energyOnUse = EnergyPanel.totalCount;
         }
 
-        AbstractDungeon.actionManager.addToBottom(new IAmEverywhereAction(p, this.magicNumber, this.freeToPlayOnce, this.energyOnUse, this.upgraded));
+        AbstractDungeon.actionManager.addToBottom(new IAmEverywhereAction(p, magicNumber, freeToPlayOnce, energyOnUse, upgraded));
 
 
     }
@@ -78,10 +78,10 @@ public class IAmEverywhere extends AbstractBackstabCard {
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-//          this.rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+//          rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

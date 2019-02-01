@@ -53,17 +53,17 @@ public class DaggerBouquet extends AbstractBackstabCard {
     public DaggerBouquet() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.baseDamage = DAMAGE;
-        this.magicNumber = this.baseMagicNumber = MAGIC;
-        this.isMultiDamage = true;
+        baseDamage = DAMAGE;
+        magicNumber = baseMagicNumber = MAGIC;
+        isMultiDamage = true;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for (int i = 0; i < this.magicNumber; i++) {
+        for (int i = 0; i < magicNumber; i++) {
             AbstractDungeon.actionManager.addToBottom(new DamageAction(m,
-                    new DamageInfo(p, this.damage, this.damageTypeForTurn),
+                    new DamageInfo(p, damage, damageTypeForTurn),
                     AbstractGameAction.AttackEffect.SLASH_VERTICAL));
         }
     }
@@ -79,11 +79,11 @@ public class DaggerBouquet extends AbstractBackstabCard {
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
-//          this.rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+            upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
+//          rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

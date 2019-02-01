@@ -54,7 +54,7 @@ public class HeartBreaker extends AbstractBackstabCard {
     public HeartBreaker() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.baseDamage = DAMAGE;
+        baseDamage = DAMAGE;
     }
 
     // Actions the card should do.
@@ -62,7 +62,7 @@ public class HeartBreaker extends AbstractBackstabCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         AbstractDungeon.actionManager.addToBottom(new DamageAction(
-                m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
+                m, new DamageInfo(p, damage, damageTypeForTurn),
                 AbstractGameAction.AttackEffect.SLASH_VERTICAL));
     }
 
@@ -71,13 +71,13 @@ public class HeartBreaker extends AbstractBackstabCard {
     public float calculateModifiedCardDamage(AbstractPlayer player, AbstractMonster mo, float dmg) {
 
         if (mo == null || mo.maxHealth == 0) {
-            return this.damage;
+            return damage;
         }
 
         if (mo.hasPower(VulnerablePower.POWER_ID) && mo.hasPower(WeakPower.POWER_ID)) {
-            dmg = this.damage * 2;
+            dmg = damage * 2;
         } else {
-            dmg = this.damage;
+            dmg = damage;
         }
 
         return dmg;
@@ -95,11 +95,11 @@ public class HeartBreaker extends AbstractBackstabCard {
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeDamage(UPGRADE_PLUS_DAMAGE);
-//          this.rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+            upgradeDamage(UPGRADE_PLUS_DAMAGE);
+//          rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

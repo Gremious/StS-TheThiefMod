@@ -55,7 +55,7 @@ public class ShadowMastery extends AbstractBackstabCard {
 
         magicNumber = baseMagicNumber = MAGIC;
 
-        this.tags.add(ThiefCardTags.SHADOWSTEP);
+        tags.add(ThiefCardTags.SHADOWSTEP);
     }
 
     // Actions the card should do.

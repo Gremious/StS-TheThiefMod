@@ -50,8 +50,8 @@ public class StolenAttitude extends AbstractBackstabCard {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
 
-        this.baseBlock = BLOCK;
-        this.magicNumber = this.baseMagicNumber = MAGIC;
+        baseBlock = BLOCK;
+        magicNumber = baseMagicNumber = MAGIC;
 
 
         tags.add(ThiefCardTags.STOLEN);
@@ -60,19 +60,19 @@ public class StolenAttitude extends AbstractBackstabCard {
 
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
-        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
+        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, magicNumber));
     }
 
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
+        if (!upgraded) {
+            upgradeName();
 
             upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
 
             rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+            initializeDescription();
         }
     }
 }

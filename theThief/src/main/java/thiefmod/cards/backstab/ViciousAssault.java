@@ -62,11 +62,11 @@ public class ViciousAssault extends AbstractBackstabCard {
     public ViciousAssault() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.baseDamage = DAMAGE;
-        this.magicNumber = this.baseMagicNumber = MAGIC;
-        this.backstabNumber = this.baseBackstabNumber = BACKSTAB;
+        baseDamage = DAMAGE;
+        magicNumber = baseMagicNumber = MAGIC;
+        backstabNumber = baseBackstabNumber = BACKSTAB;
 
-        this.tags.add(ThiefCardTags.BACKSTAB);
+        tags.add(ThiefCardTags.BACKSTAB);
     }
 
     // Actions the card should do.
@@ -76,24 +76,24 @@ public class ViciousAssault extends AbstractBackstabCard {
 
         if (count <= 1) {
 
-            if (this.magicNumber != 0) {
-                while (this.magicNumber-- != 0) {
+            if (magicNumber != 0) {
+                while (magicNumber-- != 0) {
                     AbstractDungeon.actionManager.addToBottom(new DamageAction(
                             m, new DamageInfo(p, damage, damageTypeForTurn),
                             AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
                 }
-                this.magicNumber = this.baseMagicNumber;
+                magicNumber = baseMagicNumber;
             }
 
 
         } else {
-            if (this.backstabNumber != 0) {
-                while (this.backstabNumber-- != 0) {
+            if (backstabNumber != 0) {
+                while (backstabNumber-- != 0) {
                     AbstractDungeon.actionManager.addToBottom(new DamageAction(
                             m, new DamageInfo(p, damage, damageTypeForTurn),
                             AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
                 }
-                this.backstabNumber = this.baseBackstabNumber;
+                backstabNumber = baseBackstabNumber;
             }
         }
 
@@ -109,7 +109,7 @@ public class ViciousAssault extends AbstractBackstabCard {
             rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[3];
         }
 
-        this.initializeDescription();
+        initializeDescription();
     }
 
     @Override
@@ -123,12 +123,12 @@ public class ViciousAssault extends AbstractBackstabCard {
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
-            this.upgradeBackstabNumber(UPGRADED_PLUS_BACKSTAB);
-//          this.rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+            upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
+            upgradeBackstabNumber(UPGRADED_PLUS_BACKSTAB);
+//          rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

@@ -61,7 +61,7 @@ public class SharpPractice extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
-                new SharpPracticePower(p, p, this.upgraded, this.magicNumber, ADD_RANDOM, AbstractDungeon.player.hand, ADD_UPGRADED), this.magicNumber));
+                new SharpPracticePower(p, p, upgraded, magicNumber, ADD_RANDOM, AbstractDungeon.player.hand, ADD_UPGRADED), magicNumber));
 
     }
 
@@ -76,11 +76,11 @@ public class SharpPractice extends AbstractBackstabCard {
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
+        if (!upgraded) {
             isInnate = true;
-            this.upgradeName();
-            this.rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+            upgradeName();
+            rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

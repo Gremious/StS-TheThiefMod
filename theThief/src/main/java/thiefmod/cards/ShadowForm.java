@@ -48,13 +48,13 @@ public class ShadowForm extends AbstractBackstabCard {
     public ShadowForm() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0];
-        this.initializeDescription();
+        initializeDescription();
 
-        this.isEthereal = this.upgraded;
-        this.magicNumber = this.baseMagicNumber = MAGIC;
-        this.baseBackstabNumber = this.backstabNumber = BACKSTAB;
-        this.tags.add(ThiefCardTags.BACKSTAB);
-        this.tags.add(BaseModCardTags.FORM);
+        isEthereal = upgraded;
+        magicNumber = baseMagicNumber = MAGIC;
+        baseBackstabNumber = backstabNumber = BACKSTAB;
+        tags.add(ThiefCardTags.BACKSTAB);
+        tags.add(BaseModCardTags.FORM);
     }
 
     @Override
@@ -64,10 +64,10 @@ public class ShadowForm extends AbstractBackstabCard {
         if (count <= 1 || p.hasPower(BackstabPower.POWER_ID)) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
                     new ShadowFormPower(p, magicNumber * backstabNumber),
-                    this.magicNumber * this.backstabNumber));
+                    magicNumber * backstabNumber));
         } else {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
-                    new ShadowFormPower(p, this.magicNumber), this.magicNumber));
+                    new ShadowFormPower(p, magicNumber), magicNumber));
         }
     }
 
@@ -75,20 +75,20 @@ public class ShadowForm extends AbstractBackstabCard {
     public void applyPowers() {
         super.applyPowers();
         if (AbstractDungeon.player.cardsPlayedThisTurn == 0) {
-            this.rawDescription = this.DESCRIPTION + this.EXTENDED_DESCRIPTION[0];
+            rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0];
         } else {
-            this.rawDescription = this.DESCRIPTION + this.EXTENDED_DESCRIPTION[1];
+            rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[1];
         }
-        this.initializeDescription();
+        initializeDescription();
     }
 
 
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+            initializeDescription();
         }
     }
 }

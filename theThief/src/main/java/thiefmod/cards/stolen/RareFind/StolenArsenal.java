@@ -99,13 +99,13 @@ public class StolenArsenal extends AbstractBackstabCard {
 
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
+        if (!upgraded) {
+            upgradeName();
 
             upgradeBaseCost(UPGRADE_COST);
 
 //          rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+            initializeDescription();
         }
     }
 }

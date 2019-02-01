@@ -54,7 +54,7 @@ public class ShadowReserves extends AbstractBackstabCard implements ModalChoice.
 
         ExhaustiveVariable.setBaseValue(this, 2);
 
-        this.magicNumber = this.baseMagicNumber = MAGIC;
+        magicNumber = baseMagicNumber = MAGIC;
 
 
         modal = new ModalChoiceBuilder()
@@ -71,8 +71,8 @@ public class ShadowReserves extends AbstractBackstabCard implements ModalChoice.
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (!this.upgraded) {
-            AbstractDungeon.actionManager.addToTop(new FetchAction(AbstractDungeon.player.drawPile, this.magicNumber));
+        if (!upgraded) {
+            AbstractDungeon.actionManager.addToTop(new FetchAction(AbstractDungeon.player.drawPile, magicNumber));
         } else {
             modal.open();
         }
@@ -82,13 +82,13 @@ public class ShadowReserves extends AbstractBackstabCard implements ModalChoice.
     public void optionSelected(AbstractPlayer p, AbstractMonster m, int i) {
         switch (i) {
             case 0:
-                AbstractDungeon.actionManager.addToTop(new FetchAction(AbstractDungeon.player.drawPile, this.magicNumber));
+                AbstractDungeon.actionManager.addToTop(new FetchAction(AbstractDungeon.player.drawPile, magicNumber));
                 break;
             case 1:
-                AbstractDungeon.actionManager.addToTop(new FetchAction(AbstractDungeon.player.discardPile, this.magicNumber));
+                AbstractDungeon.actionManager.addToTop(new FetchAction(AbstractDungeon.player.discardPile, magicNumber));
                 break;
             case 2:
-                AbstractDungeon.actionManager.addToTop(new FetchAction(AbstractDungeon.player.exhaustPile, this.magicNumber));
+                AbstractDungeon.actionManager.addToTop(new FetchAction(AbstractDungeon.player.exhaustPile, magicNumber));
                 break;
             default:
                 return;
@@ -107,10 +107,10 @@ public class ShadowReserves extends AbstractBackstabCard implements ModalChoice.
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-//          this.rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+//          rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

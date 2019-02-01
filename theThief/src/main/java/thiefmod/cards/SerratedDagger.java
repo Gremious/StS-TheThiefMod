@@ -48,7 +48,7 @@ public class SerratedDagger extends AbstractBackstabCard {
     public SerratedDagger() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.baseDamage = DAMAGE;
+        baseDamage = DAMAGE;
     }
 
     // Actions the card should do.
@@ -56,7 +56,7 @@ public class SerratedDagger extends AbstractBackstabCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         AbstractDungeon.actionManager.addToBottom(new LoseHPAction(
-                m, p, this.damage, AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+                m, p, damage, AbstractGameAction.AttackEffect.SLASH_VERTICAL));
 
     }
 
@@ -70,11 +70,11 @@ public class SerratedDagger extends AbstractBackstabCard {
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeDamage(UPGRADE_PLUS_DAMAGE);
-//          this.rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+            upgradeDamage(UPGRADE_PLUS_DAMAGE);
+//          rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

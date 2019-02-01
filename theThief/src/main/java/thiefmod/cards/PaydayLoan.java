@@ -57,8 +57,8 @@ public class PaydayLoan extends AbstractBackstabCard {
 
         ExhaustiveVariable.setBaseValue(this, 2);
 
-        this.magicNumber = this.baseMagicNumber = MAGIC;
-        this.backstabNumber = this.baseBackstabNumber = BACKSTAB;
+        magicNumber = baseMagicNumber = MAGIC;
+        backstabNumber = baseBackstabNumber = BACKSTAB;
     }
 
     // Actions the card should do.
@@ -67,12 +67,12 @@ public class PaydayLoan extends AbstractBackstabCard {
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
                 p, p, new RefundCardCost(
-                p, p, this.magicNumber), 1));
+                p, p, magicNumber), 1));
 
 
         AbstractDungeon.actionManager.addToBottom(
                 new MakeTempCardInDrawPileAction(
-                        new VoidCard(), this.backstabNumber, true, true, false));
+                        new VoidCard(), backstabNumber, true, true, false));
 
     }
 
@@ -88,11 +88,11 @@ public class PaydayLoan extends AbstractBackstabCard {
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeBaseCost(UPGRADE_COST);
-//          this.rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+            upgradeBaseCost(UPGRADE_COST);
+//          rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

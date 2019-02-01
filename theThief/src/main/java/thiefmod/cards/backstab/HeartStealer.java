@@ -58,8 +58,8 @@ public class HeartStealer extends AbstractBackstabCard {
     public HeartStealer() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.magicNumber = this.baseMagicNumber = MAGIC;
-        this.backstabNumber = this.baseBackstabNumber = BACKSTAB;
+        magicNumber = baseMagicNumber = MAGIC;
+        backstabNumber = baseBackstabNumber = BACKSTAB;
 
 
         tags.add(ThiefCardTags.BACKSTAB);

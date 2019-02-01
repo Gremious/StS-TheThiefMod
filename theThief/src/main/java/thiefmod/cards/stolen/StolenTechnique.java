@@ -53,9 +53,9 @@ public class StolenTechnique extends CustomCard {
     public StolenTechnique() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.baseDamage = DAMAGE;
-        this.baseBlock = BLOCK;
-        this.magicNumber = this.baseMagicNumber = MAGIC;
+        baseDamage = DAMAGE;
+        baseBlock = BLOCK;
+        magicNumber = baseMagicNumber = MAGIC;
 
         tags.add(ThiefCardTags.STOLEN);
     }
@@ -63,17 +63,17 @@ public class StolenTechnique extends CustomCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new addRandomCardToHandAction(this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new addRandomCardToHandAction(magicNumber));
 
     }
 
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeBaseCost(UPGRADE_COST);
-            this.upgradeName();
-            this.rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeBaseCost(UPGRADE_COST);
+            upgradeName();
+            rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

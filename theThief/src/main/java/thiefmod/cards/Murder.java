@@ -56,7 +56,7 @@ public class Murder extends AbstractBackstabCard {
     public Murder() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.baseDamage = DAMAGE;
+        baseDamage = DAMAGE;
         FleetingField.fleeting.set(this, true);
     }
 
@@ -65,7 +65,7 @@ public class Murder extends AbstractBackstabCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m,
-                new DamageInfo(p, this.damage * this.backstabNumber, this.damageTypeForTurn),
+                new DamageInfo(p, damage * backstabNumber, damageTypeForTurn),
                 AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
 
         AbstractDungeon.actionManager.addToBottom(new ShakeScreenAction(1.0f, MED, HIGH));
@@ -81,22 +81,22 @@ public class Murder extends AbstractBackstabCard {
     public void applyPowers() {
         super.applyPowers();
         if (AbstractDungeon.player.cardsPlayedThisTurn == 0) {
-            this.rawDescription = this.DESCRIPTION + this.EXTENDED_DESCRIPTION[0];
+            rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0];
         } else {
-            this.rawDescription = this.DESCRIPTION + this.EXTENDED_DESCRIPTION[1];
+            rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[1];
         }
-        this.initializeDescription();
+        initializeDescription();
     }
 
 
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeDamage(UPGRADE_PLUS_DAMAGE);
-//          this.rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+            upgradeDamage(UPGRADE_PLUS_DAMAGE);
+//          rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

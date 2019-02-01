@@ -53,8 +53,8 @@ public class Liar extends AbstractBackstabCard {
     public Liar() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.misc = POWER;
-        this.magicNumber = this.baseMagicNumber = MAGIC;
+        misc = POWER;
+        magicNumber = baseMagicNumber = MAGIC;
     }
 
     // Actions the card should do.
@@ -62,7 +62,7 @@ public class Liar extends AbstractBackstabCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
-                p, p, new LiarPower(p, p, m, this.upgraded, this.misc, this.magicNumber), this.misc));
+                p, p, new LiarPower(p, p, m, upgraded, misc, magicNumber), misc));
 
     }
 
@@ -79,11 +79,11 @@ public class Liar extends AbstractBackstabCard {
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
+        if (!upgraded) {
+            upgradeName();
             isInnate = true;
-            this.rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+            rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

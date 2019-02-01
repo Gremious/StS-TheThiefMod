@@ -47,7 +47,7 @@ public class StolenToxins extends CustomCard {
     public StolenToxins() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.magicNumber = this.baseMagicNumber = MAGIC;
+        magicNumber = baseMagicNumber = MAGIC;
 
         tags.add(ThiefCardTags.STOLEN);
     }
@@ -55,17 +55,17 @@ public class StolenToxins extends CustomCard {
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
         AbstractDungeon.actionManager
-                .addToBottom(new ApplyPowerAction(m, p, new PoisonPower(m, p, this.magicNumber),
-                        this.magicNumber, AbstractGameAction.AttackEffect.POISON));
+                .addToBottom(new ApplyPowerAction(m, p, new PoisonPower(m, p, magicNumber),
+                        magicNumber, AbstractGameAction.AttackEffect.POISON));
     }
 
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
-            this.rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+            upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
+            rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

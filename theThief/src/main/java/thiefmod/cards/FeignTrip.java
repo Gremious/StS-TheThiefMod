@@ -56,10 +56,10 @@ public class FeignTrip extends AbstractBackstabCard {
     public FeignTrip() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.exhaust = this.upgraded;
+        exhaust = upgraded;
 
-        this.magicNumber = this.baseMagicNumber = MAGIC;
-        this.baseBlock = BLOCK;
+        magicNumber = baseMagicNumber = MAGIC;
+        baseBlock = BLOCK;
 
     }
 
@@ -68,10 +68,10 @@ public class FeignTrip extends AbstractBackstabCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(
-                p, p, this.block));
+                p, p, block));
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
-                p, p, new VulnerablePower(p, this.magicNumber, false), this.magicNumber));
+                p, p, new VulnerablePower(p, magicNumber, false), magicNumber));
 
 
     }
@@ -89,11 +89,11 @@ public class FeignTrip extends AbstractBackstabCard {
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeBlock(UPGRADE_PLUS_BLOCK);
-//          this.rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+            upgradeBlock(UPGRADE_PLUS_BLOCK);
+//          rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

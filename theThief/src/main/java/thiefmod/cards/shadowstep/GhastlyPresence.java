@@ -54,7 +54,7 @@ public class GhastlyPresence extends AbstractBackstabCard {
     public GhastlyPresence() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.magicNumber = this.baseMagicNumber = MAGIC;
+        magicNumber = baseMagicNumber = MAGIC;
 
     }
 
@@ -85,17 +85,17 @@ public class GhastlyPresence extends AbstractBackstabCard {
         }
 
 
-        this.initializeDescription();
+        initializeDescription();
     }
 
 
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+            upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
+            initializeDescription();
         }
     }
 }

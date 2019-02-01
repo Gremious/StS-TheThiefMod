@@ -59,9 +59,9 @@ public class Backstep extends AbstractBackstabCard {
 
         ExhaustiveVariable.setBaseValue(this, 2);
 
-        this.magicNumber = this.baseMagicNumber = MAGIC;
+        magicNumber = baseMagicNumber = MAGIC;
 
-        this.tags.add(ThiefCardTags.BACKSTAB);
+        tags.add(ThiefCardTags.BACKSTAB);
     }
 
     // Actions the card should do.
@@ -70,11 +70,11 @@ public class Backstep extends AbstractBackstabCard {
         final int count = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
         if (count <= 1) {
 
-            AbstractDungeon.actionManager.addToBottom(new FetchAction(AbstractDungeon.player.discardPile, this.magicNumber));
+            AbstractDungeon.actionManager.addToBottom(new FetchAction(AbstractDungeon.player.discardPile, magicNumber));
 
         } else {
 
-            AbstractDungeon.actionManager.addToBottom(new FetchAction(AbstractDungeon.player.discardPile, this.magicNumber,
+            AbstractDungeon.actionManager.addToBottom(new FetchAction(AbstractDungeon.player.discardPile, magicNumber,
                     fetchedCards -> {
                         for (AbstractCard card : fetchedCards) {
                             card.modifyCostForTurn(-1);
@@ -87,10 +87,10 @@ public class Backstep extends AbstractBackstabCard {
     public void applyPowers() {
         super.applyPowers();
 
-        if (this.magicNumber >= 2) {
-            this.rawDescription = EXTENDED_DESCRIPTION[4];
+        if (magicNumber >= 2) {
+            rawDescription = EXTENDED_DESCRIPTION[4];
         } else {
-            this.rawDescription = DESCRIPTION;
+            rawDescription = DESCRIPTION;
         }
 
         if (AbstractDungeon.player.cardsPlayedThisTurn == 0 || AbstractDungeon.player.hasPower(BackstabPower.POWER_ID)) {
@@ -99,7 +99,7 @@ public class Backstep extends AbstractBackstabCard {
             rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[3];
         }
 
-        this.initializeDescription();
+        initializeDescription();
     }
 
     @Override
@@ -112,10 +112,10 @@ public class Backstep extends AbstractBackstabCard {
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeBaseCost(UPGRADE_COST);
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+            upgradeBaseCost(UPGRADE_COST);
+            initializeDescription();
         }
     }
 }

@@ -53,9 +53,9 @@ public class HuntersInstinct extends AbstractBackstabCard {
     public HuntersInstinct() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.exhaust = true;
+        exhaust = true;
 
-        this.magicNumber = this.baseMagicNumber = MAGIC;
+        magicNumber = baseMagicNumber = MAGIC;
 
     }
 
@@ -75,7 +75,7 @@ public class HuntersInstinct extends AbstractBackstabCard {
         while (currentHand != maximumHand);
 
         AbstractDungeon.actionManager.addToBottom(
-                new MakeTempCardInDrawPileAction(new VoidCard(), this.magicNumber, true, true, false));
+                new MakeTempCardInDrawPileAction(new VoidCard(), magicNumber, true, true, false));
 
     }
 
@@ -91,11 +91,11 @@ public class HuntersInstinct extends AbstractBackstabCard {
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeBaseCost(UPGRADE_COST);
-//          this.rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+            upgradeBaseCost(UPGRADE_COST);
+//          rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

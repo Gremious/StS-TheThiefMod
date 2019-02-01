@@ -60,7 +60,7 @@ public class DramaticFeign extends CustomCard {
 
     public DramaticFeign() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.baseMagicNumber = this.magicNumber = MAGIC;
+        baseMagicNumber = magicNumber = MAGIC;
 
         logger.info("Initialized Method");
 
@@ -76,7 +76,7 @@ public class DramaticFeign extends CustomCard {
 
             // Apply 2 vulnerable to all enemies
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p,
-                    new VulnerablePower(mo, this.magicNumber, false), this.magicNumber));
+                    new VulnerablePower(mo, magicNumber, false), magicNumber));
         }
 
         // Can't play any more cards this turn.
@@ -93,10 +93,10 @@ public class DramaticFeign extends CustomCard {
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeBaseCost(UPGRADE_COST);
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+            upgradeBaseCost(UPGRADE_COST);
+            initializeDescription();
         }
     }
 }

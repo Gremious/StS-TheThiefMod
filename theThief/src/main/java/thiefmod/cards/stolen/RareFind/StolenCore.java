@@ -57,8 +57,8 @@ public class StolenCore extends AbstractBackstabCard {
     public StolenCore() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.magicNumber = this.baseMagicNumber = MAGIC;
-        this.backstabNumber = this.baseBackstabNumber = ORB_SLOTS;
+        magicNumber = baseMagicNumber = MAGIC;
+        backstabNumber = baseBackstabNumber = ORB_SLOTS;
 
 
      /* Straight up just doesn't work. But maybe one day it will. And when that happens, I'll be waiting. And I will uncomment this code. And my rare cards will look cool.
@@ -114,7 +114,7 @@ public class StolenCore extends AbstractBackstabCard {
             rawDescription = UPGRADE_DESCRIPTION;
         }
 
-        this.initializeDescription();
+        initializeDescription();
     }
 
     @Override

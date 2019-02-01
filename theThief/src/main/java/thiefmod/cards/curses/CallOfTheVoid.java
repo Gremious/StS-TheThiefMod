@@ -44,7 +44,7 @@ public class CallOfTheVoid extends AbstractBackstabCard {
 
     public CallOfTheVoid() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = MAGIC;
+        magicNumber = baseMagicNumber = MAGIC;
     }
 
     @Override

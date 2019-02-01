@@ -54,10 +54,10 @@ public class ShadowEvade extends AbstractBackstabCard {
 
     public ShadowEvade() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.baseBlock = BLOCK;
-        this.magicNumber = this.baseMagicNumber = MAGIC;
+        baseBlock = BLOCK;
+        magicNumber = baseMagicNumber = MAGIC;
 
-        this.tags.add(ThiefCardTags.SHADOWSTEP);
+        tags.add(ThiefCardTags.SHADOWSTEP);
     }
 
     // Actions the card should do.
@@ -66,10 +66,10 @@ public class ShadowEvade extends AbstractBackstabCard {
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
                 p, p, new ShadowstepPower(
-                p, p, this.magicNumber), 1));
+                p, p, magicNumber), 1));
 
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(
-                p, p, this.block));
+                p, p, block));
 
     }
 
@@ -85,11 +85,11 @@ public class ShadowEvade extends AbstractBackstabCard {
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeBlock(UPGRADE_PLUS_BLOCK);
-//          this.rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+            upgradeBlock(UPGRADE_PLUS_BLOCK);
+//          rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

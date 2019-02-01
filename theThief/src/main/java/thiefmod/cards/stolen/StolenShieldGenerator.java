@@ -49,10 +49,10 @@ public class StolenShieldGenerator extends AbstractBackstabCard {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
 
-        this.baseBlock = BLOCK;
+        baseBlock = BLOCK;
 
         if (CardCrawlGame.dungeon != null) {
-            this.configureCostsOnNewCard();
+            configureCostsOnNewCard();
         }
 
         tags.add(ThiefCardTags.STOLEN);
@@ -65,7 +65,7 @@ public class StolenShieldGenerator extends AbstractBackstabCard {
         while (var1.hasNext()) {
             AbstractCard c = (AbstractCard) var1.next();
             if (c.type == CardType.POWER) {
-                this.updateCost(-1);
+                updateCost(-1);
             }
         }
 
@@ -74,25 +74,25 @@ public class StolenShieldGenerator extends AbstractBackstabCard {
     @Override
     public void triggerOnCardPlayed(AbstractCard c) {
         if (c.type == CardType.POWER) {
-            this.updateCost(-1);
+            updateCost(-1);
         }
 
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
     }
 
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
+        if (!upgraded) {
+            upgradeName();
 
             upgradeBlock(UPGRADE_PLUS_BLOCK);
 
 //          rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+            initializeDescription();
         }
     }
 }

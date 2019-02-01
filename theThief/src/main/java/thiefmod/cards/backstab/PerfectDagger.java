@@ -60,12 +60,12 @@ public class PerfectDagger extends AbstractBackstabCard {
     public PerfectDagger() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.misc = MISC;
-        this.baseMagicNumber = MAGIC;
-        this.magicNumber = this.baseMagicNumber;
-        this.baseBlock = this.misc;
+        misc = MISC;
+        baseMagicNumber = MAGIC;
+        magicNumber = baseMagicNumber;
+        baseBlock = misc;
 
-        this.tags.add(ThiefCardTags.BACKSTAB);
+        tags.add(ThiefCardTags.BACKSTAB);
     }
 
 
@@ -77,17 +77,17 @@ public class PerfectDagger extends AbstractBackstabCard {
         if (count <= 1) {
 
             AbstractDungeon.actionManager.addToBottom(
-                    new IncreaseMiscAction(this.uuid, this.misc, this.magicNumber));
+                    new IncreaseMiscAction(uuid, misc, magicNumber));
         }
         AbstractDungeon.actionManager.addToBottom(new DamageAction(
-                m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
+                m, new DamageInfo(p, damage, damageTypeForTurn),
                 AbstractGameAction.AttackEffect.SLASH_VERTICAL));
     }
 
 
     @Override
     public void applyPowers() {
-        this.baseDamage = this.misc;
+        baseDamage = misc;
         super.applyPowers();
 
         if (AbstractDungeon.player.cardsPlayedThisTurn == 0 || AbstractDungeon.player.hasPower(BackstabPower.POWER_ID)) {
@@ -96,7 +96,7 @@ public class PerfectDagger extends AbstractBackstabCard {
             rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[3];
         }
 
-        this.initializeDescription();
+        initializeDescription();
     }
 
 
@@ -111,10 +111,10 @@ public class PerfectDagger extends AbstractBackstabCard {
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+            upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
+            initializeDescription();
         }
     }
 }

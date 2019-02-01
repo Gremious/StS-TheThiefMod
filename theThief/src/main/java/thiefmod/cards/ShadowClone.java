@@ -54,7 +54,7 @@ public class ShadowClone extends AbstractBackstabCard {
     public ShadowClone() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.magicNumber = this.baseMagicNumber = MAGIC;
+        magicNumber = baseMagicNumber = MAGIC;
         isEthereal = true;
     }
 
@@ -63,7 +63,7 @@ public class ShadowClone extends AbstractBackstabCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
-                p, p, new ShadowClonePower(p, p, this.magicNumber), this.magicNumber));
+                p, p, new ShadowClonePower(p, p, magicNumber), magicNumber));
 
     }
 
@@ -80,12 +80,12 @@ public class ShadowClone extends AbstractBackstabCard {
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
+        if (!upgraded) {
             isEthereal = false;
-            this.upgradeName();
-            this.upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
-//          this.rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+            upgradeName();
+            upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
+//          rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

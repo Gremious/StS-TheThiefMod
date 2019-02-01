@@ -53,10 +53,10 @@ public class Stab extends AbstractBackstabCard {
     public Stab() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        this.baseDamage = DAMAGE;
-        this.baseBackstabNumber = this.backstabNumber = BACKSTAB;
+        baseDamage = DAMAGE;
+        baseBackstabNumber = backstabNumber = BACKSTAB;
 
-        this.tags.add(ThiefCardTags.BACKSTAB);
+        tags.add(ThiefCardTags.BACKSTAB);
     }
 
     // Actions the card should do.
@@ -67,11 +67,11 @@ public class Stab extends AbstractBackstabCard {
         if (count <= 1 || p.hasPower(BackstabPower.POWER_ID)) {
 
             AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
-                    new DamageInfo(p, this.damage * this.backstabNumber, this.damageTypeForTurn),
+                    new DamageInfo(p, damage * backstabNumber, damageTypeForTurn),
                     AbstractGameAction.AttackEffect.SLASH_VERTICAL));
         } else {
             AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
-                    new DamageInfo(p, this.damage, this.damageTypeForTurn),
+                    new DamageInfo(p, damage, damageTypeForTurn),
                     AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         }
     }
@@ -86,16 +86,16 @@ public class Stab extends AbstractBackstabCard {
             rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[3];
         }
 
-        this.initializeDescription();
+        initializeDescription();
     }
 
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeDamage(UPGRADED_DAMAGE);
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+            upgradeDamage(UPGRADED_DAMAGE);
+            initializeDescription();
         }
     }
 }

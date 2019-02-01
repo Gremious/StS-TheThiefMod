@@ -19,20 +19,20 @@ public abstract class AbstractBackstabCard extends CustomCard {
                                 final AbstractCard.CardRarity rarity, final AbstractCard.CardTarget target) {
         super(id, name, img, cost, rawDescription, type, color, rarity, target);
 
-        this.isCostModified = false;
-        this.isCostModifiedForTurn = false;
+        isCostModified = false;
+        isCostModifiedForTurn = false;
 
-        this.isDamageModified = false;
-        this.isBlockModified = false;
-        this.isMagicNumberModified = false;
-        this.isBackstabNumberModified = false;
+        isDamageModified = false;
+        isBlockModified = false;
+        isMagicNumberModified = false;
+        isBackstabNumberModified = false;
     }
 
     public void displayUpgrades() {
 
-        if (this.upgradedBackstabNumber) {
-            this.backstabNumber = this.baseBackstabNumber;
-            this.isBackstabNumberModified = true;
+        if (upgradedBackstabNumber) {
+            backstabNumber = baseBackstabNumber;
+            isBackstabNumberModified = true;
         }
 
     }
@@ -43,8 +43,8 @@ public abstract class AbstractBackstabCard extends CustomCard {
     }
 
     public void upgradeBackstabNumber(int amount) {
-        this.baseBackstabNumber += amount;
-        this.backstabNumber = this.baseBackstabNumber;
-        this.upgradedBackstabNumber = true;
+        baseBackstabNumber += amount;
+        backstabNumber = baseBackstabNumber;
+        upgradedBackstabNumber = true;
     }
 }

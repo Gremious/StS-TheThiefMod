@@ -54,8 +54,8 @@ public class StolenArmor extends AbstractBackstabCard {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
 
-        this.baseBlock = BLOCK;
-        this.magicNumber = this.baseMagicNumber = MAGIC;
+        baseBlock = BLOCK;
+        magicNumber = baseMagicNumber = MAGIC;
 
 
         tags.add(ThiefCardTags.STOLEN);
@@ -70,19 +70,19 @@ public class StolenArmor extends AbstractBackstabCard {
         }
 
         AbstractDungeon.actionManager.addToBottom(new StolenArmorAction(block));
-        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, magicNumber));
     }
 
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
+        if (!upgraded) {
+            upgradeName();
 
             upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
             upgradeBlock(UPGRADE_PLUS_BLOCK);
 
             rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+            initializeDescription();
         }
     }
 }

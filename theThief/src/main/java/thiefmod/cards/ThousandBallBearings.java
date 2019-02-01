@@ -57,10 +57,10 @@ public class ThousandBallBearings extends AbstractBackstabCard {
 
     public ThousandBallBearings(int upgrades) {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.exhaust = true;
-        this.magicNumber = this.baseMagicNumber = MAGIC;
+        exhaust = true;
+        magicNumber = baseMagicNumber = MAGIC;
 
-        this.timesUpgraded = upgrades;
+        timesUpgraded = upgrades;
     }
 
     // Actions the card should do.
@@ -69,9 +69,9 @@ public class ThousandBallBearings extends AbstractBackstabCard {
 
         for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new VulnerablePower(
-                    mo, this.magicNumber, false), this.magicNumber));
+                    mo, magicNumber, false), magicNumber));
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new WeakPower(
-                    mo, this.magicNumber, false), this.magicNumber));
+                    mo, magicNumber, false), magicNumber));
         }
     }
 
@@ -88,13 +88,13 @@ public class ThousandBallBearings extends AbstractBackstabCard {
     //Upgraded stats.
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
-            ++this.timesUpgraded;
-            this.name = "100" + this.timesUpgraded + NAME;
-            this.upgradeName();
-//          this.rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
+            ++timesUpgraded;
+            name = "100" + timesUpgraded + NAME;
+            upgradeName();
+//          rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 

@@ -50,8 +50,8 @@ public class StolenRitual extends CustomCard {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
 
-        this.magicNumber = this.baseMagicNumber = MAGIC;
-        this.damage = this.baseDamage = DAMAGE;
+        magicNumber = baseMagicNumber = MAGIC;
+        damage = baseDamage = DAMAGE;
 
         tags.add(ThiefCardTags.STOLEN);
     }
@@ -59,8 +59,8 @@ public class StolenRitual extends CustomCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new LoseHPAction(p, p, this.damage));
-        AbstractDungeon.actionManager.addToBottom(new thiefmod.actions.common.GainGoldAction(p, p, this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new LoseHPAction(p, p, damage));
+        AbstractDungeon.actionManager.addToBottom(new thiefmod.actions.common.GainGoldAction(p, p, magicNumber));
 
         CardCrawlGame.sound.playA("VO_CULTIST_1C", 0.3f);
 
@@ -78,11 +78,11 @@ public class StolenRitual extends CustomCard {
 
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
-            this.rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+            upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
+            rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }
