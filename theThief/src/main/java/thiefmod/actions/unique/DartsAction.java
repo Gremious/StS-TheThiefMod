@@ -16,9 +16,9 @@ public class DartsAction extends AbstractGameAction {
     private DamageInfo info;
 
     public DartsAction(DamageInfo info) {
-        this.duration = Settings.ACTION_DUR_XFAST;
+        duration = Settings.ACTION_DUR_XFAST;
         this.info = info;
-        this.actionType = ActionType.DAMAGE;
+        actionType = ActionType.DAMAGE;
 
     }
 
@@ -33,7 +33,7 @@ public class DartsAction extends AbstractGameAction {
                 AbstractMonster randomMonster =
                         AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster) null, true, AbstractDungeon.cardRandomRng);
 
-                AbstractDungeon.actionManager.addToTop(new DamageAction(randomMonster, this.info, true));
+                AbstractDungeon.actionManager.addToTop(new DamageAction(randomMonster, info, true));
 
                 if (randomMonster != null && randomMonster.hb != null) {
                     AbstractDungeon.actionManager.addToTop(new VFXAction(new ThrowDaggerEffect(randomMonster.hb.cX, randomMonster.hb.cY)));
@@ -43,6 +43,6 @@ public class DartsAction extends AbstractGameAction {
             }
         }
 
-        this.isDone = true;
+        isDone = true;
     }
 }

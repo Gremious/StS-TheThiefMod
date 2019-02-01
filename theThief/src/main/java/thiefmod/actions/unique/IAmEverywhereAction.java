@@ -22,21 +22,21 @@ public class IAmEverywhereAction extends AbstractGameAction {
         this.p = p;
         this.amount = amount;
         this.freeToPlayOnce = freeToPlayOnce;
-        this.duration = Settings.ACTION_DUR_FAST;
-        this.actionType = ActionType.SPECIAL;
+        duration = Settings.ACTION_DUR_FAST;
+        actionType = ActionType.SPECIAL;
         this.energyOnUse = energyOnUse;
         this.forEachMonster = forEachMonster;
     }
 
     public void update() {
         int effect = EnergyPanel.totalCount;
-        if (this.energyOnUse != -1) {
-            effect = this.energyOnUse;
+        if (energyOnUse != -1) {
+            effect = energyOnUse;
         }
 
-        if (this.p.hasRelic("Chemical X")) {
+        if (p.hasRelic("Chemical X")) {
             effect += 2;
-            this.p.getRelic("Chemical X").flash();
+            p.getRelic("Chemical X").flash();
         }
 
         if (effect > 0) {
@@ -45,26 +45,26 @@ public class IAmEverywhereAction extends AbstractGameAction {
                 if (forEachMonster = true) {
                     for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
 
-                        //  new DarkSmokePuffEffect(this.p.drawX, this.p.drawY);
-                        new FastDarkSmoke(this.p.drawX, this.p.drawY);
+                        //  new DarkSmokePuffEffect(p.drawX, p.drawY);
+                        new FastDarkSmoke(p.drawX, p.drawY);
 
                         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
                                 p, p, new ShadowstepPower(
-                                p, p, this.amount), this.amount));
+                                p, p, amount), amount));
                     }
 
                 } else {
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
                             p, p, new ShadowstepPower(
-                            p, p, this.amount), this.amount));
+                            p, p, amount), amount));
                 }
             }
 
-            if (!this.freeToPlayOnce) {
-                this.p.energy.use(EnergyPanel.totalCount);
+            if (!freeToPlayOnce) {
+                p.energy.use(EnergyPanel.totalCount);
             }
         }
 
-        this.isDone = true;
+        isDone = true;
     }
 }

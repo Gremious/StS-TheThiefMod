@@ -15,6 +15,6 @@ public class ShadowFormPlayAction extends AbstractGameAction {
 
         power.playCardEffect(1);
 
-        this.isDone = true;
+        isDone = true;
     }
 }

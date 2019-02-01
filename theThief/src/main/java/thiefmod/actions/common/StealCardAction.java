@@ -14,7 +14,7 @@ import org.apache.logging.log4j.Logger;
 import thiefmod.ThiefMod;
 import thiefmod.actions.Util.DiscoverAndExhaustCard;
 import thiefmod.actions.Util.MakeSuperCopyAction;
-import thiefmod.actions.unique.StolenMegaphone;
+import thiefmod.cards.stolen.StolenMegaphone;
 import thiefmod.cards.stolen.RareFind.StolenArsenal;
 import thiefmod.cards.stolen.RareFind.StolenBlood;
 import thiefmod.cards.stolen.RareFind.StolenCore;

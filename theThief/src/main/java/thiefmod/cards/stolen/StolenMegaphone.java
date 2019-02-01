@@ -1,4 +1,4 @@
-package thiefmod.actions.unique;
+package thiefmod.cards.stolen;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -45,9 +45,9 @@ public class StolenMegaphone extends AbstractBackstabCard {
 
     public StolenMegaphone() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.exhaust = true;
+        exhaust = true;
 
-        this.magicNumber = this.baseMagicNumber = MAGIC;
+        magicNumber = baseMagicNumber = MAGIC;
 
 
         tags.add(ThiefCardTags.STOLEN);
@@ -56,7 +56,7 @@ public class StolenMegaphone extends AbstractBackstabCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new AmplifyPower(p, this.magicNumber), this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new AmplifyPower(p, magicNumber), magicNumber));
     }
 
 
@@ -70,17 +70,17 @@ public class StolenMegaphone extends AbstractBackstabCard {
             rawDescription = DESCRIPTION;
         }
 
-        this.initializeDescription();
+        initializeDescription();
     }
 
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
+        if (!upgraded) {
+            upgradeName();
 
             upgradeBaseCost(UPGRADE_COST);
 
-            this.initializeDescription();
+            initializeDescription();
         }
     }
 }

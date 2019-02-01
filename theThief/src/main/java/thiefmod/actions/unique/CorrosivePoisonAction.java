@@ -20,8 +20,8 @@ public class CorrosivePoisonAction extends AbstractGameAction {
 
     public CorrosivePoisonAction(AbstractCreature target, int amountFrail, int amountVuln, int amountPoison, int numTimes) {
         this.target = target;
-        this.actionType = ActionType.DEBUFF;
         this.numTimes = numTimes;
+        actionType = ActionType.DEBUFF;
 
         this.amountFrail = amountFrail;
         this.amountVuln = amountVuln;
@@ -29,7 +29,7 @@ public class CorrosivePoisonAction extends AbstractGameAction {
     }
 
     public void update() {
-        if (this.target == null) {
+        if (target == null) {
             isDone = true;
         } else if (AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {
             AbstractDungeon.actionManager.clearPostCombatActions();

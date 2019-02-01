@@ -22,7 +22,7 @@ public class addRandomCardToHandAction extends com.megacrit.cardcrawl.actions.Ab
 
     public addRandomCardToHandAction(int amount) {
 
-        this.actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
+        actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
         this.amount = amount;
 
     }
@@ -43,7 +43,7 @@ public class addRandomCardToHandAction extends com.megacrit.cardcrawl.actions.Ab
         AbstractDungeon.actionManager.addToBottom(new WaitAction(0.1f));
 
         AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(nextHandCard));
-        this.isDone = true;
+        isDone = true;
 
     }
 

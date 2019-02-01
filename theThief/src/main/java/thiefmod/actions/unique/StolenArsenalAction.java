@@ -35,13 +35,13 @@ public class StolenArsenalAction extends AbstractGameAction {
 
     public StolenArsenalAction(final AbstractPlayer player) {
         this.player = player;
-        this.duration = Settings.ACTION_DUR_FAST;
+        duration = Settings.ACTION_DUR_FAST;
     }
 
     @Override
     public void update() {
         logger.info("Update start");
-        if (this.duration == Settings.ACTION_DUR_FAST) {
+        if (duration == Settings.ACTION_DUR_FAST) {
             logger.info("Action duration is fast");
 
             int maximumHand = BaseMod.MAX_HAND_SIZE;

@@ -15,10 +15,10 @@ public class RiggedBetAction extends AbstractGameAction {
     private boolean ADD_UPGRADED;
 
     public RiggedBetAction(CardGroup ADD_LOCATION, boolean ADD_RANDOM, boolean ADD_UPGRADED) {
-        this.target = AbstractDungeon.player;
-        this.actionType = ActionType.WAIT;
-        this.startingDuration = Settings.ACTION_DUR_FAST;
-        this.duration = Settings.ACTION_DUR_FAST;
+        target = AbstractDungeon.player;
+        actionType = ActionType.WAIT;
+        startingDuration = Settings.ACTION_DUR_FAST;
+        duration = Settings.ACTION_DUR_FAST;
 
         this.ADD_LOCATION = ADD_LOCATION;
         this.ADD_RANDOM = ADD_RANDOM;
@@ -28,15 +28,15 @@ public class RiggedBetAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        if (this.duration == this.startingDuration) {
+        if (duration == startingDuration) {
             int count = AbstractDungeon.player.hand.size();
 
-            AbstractDungeon.actionManager.addToTop(new DrawCardAction(this.target, count));
+            AbstractDungeon.actionManager.addToTop(new DrawCardAction(target, count));
             AbstractDungeon.actionManager.addToTop(
-                    new StealCardAction(count, 0, this.ADD_RANDOM, this.ADD_LOCATION, this.ADD_UPGRADED));
+                    new StealCardAction(count, 0, ADD_RANDOM, ADD_LOCATION, ADD_UPGRADED));
 
 
-            this.isDone = true;
+            isDone = true;
         }
 
     }

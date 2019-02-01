@@ -17,20 +17,20 @@ public class OneStepAheadAction extends AbstractGameAction {
     private AbstractMonster targetMonster;
 
     public OneStepAheadAction(int magicNum, int damageNum, int timesNum, AbstractMonster m) {
-        this.duration = 0.0F;
-        this.actionType = ActionType.WAIT;
+        duration = 0.0F;
+        actionType = ActionType.WAIT;
         this.magicNum = magicNum;
         this.damageNum = damageNum;
         this.timesNum = timesNum;
-        this.targetMonster = m;
+        targetMonster = m;
     }
 
 
     public void update() {
         if (targetMonster != null && targetMonster.intent == Intent.DEFEND || targetMonster.intent == Intent.DEFEND_BUFF || targetMonster.intent == Intent.DEFEND_DEBUFF) {
             for (int i = 0; i < timesNum; i++) {
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(this.targetMonster,
-                        new DamageInfo(AbstractDungeon.player, this.damageNum, this.damageType),
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(targetMonster,
+                        new DamageInfo(AbstractDungeon.player, damageNum, damageType),
                         AbstractGameAction.AttackEffect.SLASH_VERTICAL));
             }
         } else if (targetMonster.intent == Intent.ATTACK || targetMonster.intent == Intent.ATTACK_BUFF || targetMonster.intent == Intent.ATTACK_DEBUFF || targetMonster.intent == Intent.ATTACK_DEFEND) {
@@ -43,6 +43,6 @@ public class OneStepAheadAction extends AbstractGameAction {
             AbstractDungeon.actionManager.addToTop(new TalkAction(
                     true, "It's not attacking or blocking.", 2.0f, 2.0f));
         }
-        this.isDone = true;
+        isDone = true;
     }
 }

@@ -16,13 +16,13 @@ public class StolenShadowAction extends AbstractGameAction {
     public StolenShadowAction(final AbstractPlayer player, final int costReduce) {
         this.player = player;
         this.costReduce = costReduce;
-        this.duration = Settings.ACTION_DUR_FAST;
+        duration = Settings.ACTION_DUR_FAST;
     }
 
     @Override
     public void update() {
 
-        if (this.duration == Settings.ACTION_DUR_FAST) {
+        if (duration == Settings.ACTION_DUR_FAST) {
             allCards.addAll(player.drawPile.group);
             allCards.addAll(player.discardPile.group);
             allCards.addAll(player.exhaustPile.group);

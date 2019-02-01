@@ -19,21 +19,21 @@ public class QueueCardFrontAction extends AbstractGameAction {
     }
 
     public QueueCardFrontAction(AbstractCard card, AbstractCreature target, int queueIndex) {
-        this.duration = Settings.ACTION_DUR_FAST;
+        duration = Settings.ACTION_DUR_FAST;
         this.card = card;
         this.target = target;
         this.queueIndex = queueIndex;
     }
 
     public void update() {
-        if (this.duration == Settings.ACTION_DUR_FAST) {
-            if (this.card == null) {
+        if (duration == Settings.ACTION_DUR_FAST) {
+            if (card == null) {
                 AbstractDungeon.actionManager.cardQueue.add(queueIndex, new CardQueueItem());
-            } else if (!this.queueContains(this.card)) {
-                AbstractDungeon.actionManager.cardQueue.add(queueIndex, new CardQueueItem(this.card, (AbstractMonster) this.target));
+            } else if (!queueContains(card)) {
+                AbstractDungeon.actionManager.cardQueue.add(queueIndex, new CardQueueItem(card, (AbstractMonster) target));
             }
 
-            this.isDone = true;
+            isDone = true;
         }
 
     }
