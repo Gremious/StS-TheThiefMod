@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import thiefmod.ThiefMod;
@@ -23,16 +24,16 @@ public class StolenCodeButWaitPower extends AbstractPower {
     public static final String IMG = ThiefMod.makePath(ThiefMod.COMMON_POWER);
 
     public StolenCodeButWaitPower(final AbstractCreature owner, final AbstractCreature source, int amount) {
-        this.name = NAME;
-        this.ID = POWER_ID;
-        this.img = new Texture(IMG);
-        this.type = PowerType.BUFF;
-        this.isTurnBased = false;
+        name = NAME;
+        ID = POWER_ID;
+        img = ImageMaster.loadImage(IMG);
+        type = PowerType.BUFF;
+        isTurnBased = false;
 
         this.owner = owner;
         this.source = source;
         this.amount = amount;
-        this.updateDescription();
+        updateDescription();
 
     }
 
@@ -41,7 +42,7 @@ public class StolenCodeButWaitPower extends AbstractPower {
     public void atEndOfTurn(boolean isPlayer) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, source, new StolenCodePower(owner, 1), 1));
 
-        if (this.amount == 0) {
+        if (amount == 0) {
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, ID));
         } else {
             AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(owner, owner, ID, 1));
@@ -50,10 +51,10 @@ public class StolenCodeButWaitPower extends AbstractPower {
 
     @Override
     public void updateDescription() {
-        if (this.amount == 1) {
-            this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+        if (amount == 1) {
+            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
         } else {
-            this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[2];
+            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
         }
     }
 }

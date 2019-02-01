@@ -1,7 +1,7 @@
 {
   "theThief:StrikeThief": {
     "NAME": "Strike",
-    "DESCRIPTION": "Deal !D! damage.",
+    "DESCRIPTION": "Deal !D! damage. NL [#239ECF]Magic[] [#239ECF]5:[] do cool thing",
     "UPGRADE_DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
       "[#88888]As[] [#88888]fundamental[] [#88888]as[] [#88888]it[] [#88888]gets.[]"

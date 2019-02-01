@@ -33,20 +33,20 @@ public class ShadowFormPower extends AbstractPower {
     private int maxAmount;
 
     public ShadowFormPower(AbstractCreature owner, int amount) {
-        this.name = NAME;
-        this.ID = POWER_ID;
+        name = NAME;
+        ID = POWER_ID;
         this.owner = owner;
-        this.amount = this.maxAmount = amount;
-        this.isTurnBased = false;
+        this.amount = maxAmount = amount;
+        isTurnBased = false;
         updateDescription();
-        this.loadRegion("hex");
+        loadRegion("hex");
     }
 
     // Get amount of power stacks and add it to maxAmount.
     @Override
     public void stackPower(final int stackAmount) {
         super.stackPower(stackAmount);
-        this.maxAmount += stackAmount;
+        maxAmount += stackAmount;
     }
 
     @Override
@@ -67,7 +67,7 @@ public class ShadowFormPower extends AbstractPower {
         if (cards == null) {
             cards = CardLibrary.getAllCards();
         }
-        this.amount = this.maxAmount;
+        amount = maxAmount;
         isFinishedThisTurn = false;
 
         // start the chain
@@ -77,8 +77,8 @@ public class ShadowFormPower extends AbstractPower {
     // The big play card effect
     public void playCardEffect(int queueIndex) {
         // If this reaches 0 amount, it's done.
-        if (this.amount-- <= 0) {
-            this.amount = this.maxAmount;
+        if (amount-- <= 0) {
+            amount = maxAmount;
             isFinishedThisTurn = true;
             return;
         }
@@ -128,10 +128,10 @@ public class ShadowFormPower extends AbstractPower {
 
     @Override
     public void updateDescription() {
-        if (this.amount == 1) {
-            this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
-        } else if (this.amount > 1) {
-            this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[2];
+        if (amount == 1) {
+            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+        } else if (amount > 1) {
+            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
         }
     }
 }

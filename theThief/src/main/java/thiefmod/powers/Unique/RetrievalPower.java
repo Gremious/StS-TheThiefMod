@@ -34,21 +34,20 @@ public class RetrievalPower extends AbstractPower {
 
     public RetrievalPower(final AbstractCreature owner, final AbstractCreature source, final int amount, final int returnAmount) {
 
-        this.name = NAME;
-        this.ID = POWER_ID;
+        name = NAME;
+        ID = POWER_ID;
 
-        this.img = ImageMaster.loadImage(IMG);
-        this.type = PowerType.BUFF;
-        this.isTurnBased = false;
+        img = ImageMaster.loadImage(IMG);
+        type = PowerType.BUFF;
+        isTurnBased = false;
 
         this.owner = owner;
         this.source = source;
 
-
         this.amount = amount;
         this.returnAmount = returnAmount;
 
-        this.updateDescription();
+        updateDescription();
     }
 
 
@@ -84,9 +83,9 @@ public class RetrievalPower extends AbstractPower {
     @Override
     public void updateDescription() {
         if (count == 1) {
-            this.description = DESCRIPTIONS[0] + returnAmount + DESCRIPTIONS[1] + count + DESCRIPTIONS[2];
+            description = DESCRIPTIONS[0] + returnAmount + DESCRIPTIONS[1] + count + DESCRIPTIONS[2];
         } else {
-            this.description = DESCRIPTIONS[0] + returnAmount + DESCRIPTIONS[1] + count + DESCRIPTIONS[3];
+            description = DESCRIPTIONS[0] + returnAmount + DESCRIPTIONS[1] + count + DESCRIPTIONS[3];
         }
     }
 

@@ -3,6 +3,7 @@ package thiefmod.powers.Unique;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import thiefmod.ThiefMod;
@@ -21,25 +22,25 @@ public class FocusedPower extends AbstractPower {
 
 
     public FocusedPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
-        this.name = NAME;
-        this.ID = POWER_ID;
-        this.img = new Texture(IMG);
-        this.type = PowerType.BUFF;
-        this.isTurnBased = false;
+        name = NAME;
+        ID = POWER_ID;
+        img = ImageMaster.loadImage(IMG);
+        type = PowerType.BUFF;
+        isTurnBased = false;
 
         this.owner = owner;
         this.source = source;
 
         this.amount = amount;
 
-        this.updateDescription();
+        updateDescription();
     }
 
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0];
+        description = DESCRIPTIONS[0];
     }
 
 

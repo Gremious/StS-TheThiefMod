@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import thiefmod.ThiefMod;
@@ -26,17 +27,17 @@ public class RefundCardCost extends AbstractPower {
 
 
     public RefundCardCost(AbstractCreature owner, AbstractCreature source, final int amount) {
-        this.name = NAME;
-        this.ID = POWER_ID;
+        name = NAME;
+        ID = POWER_ID;
         this.owner = owner;
         this.source = source;
-        updateDescription();
+        this.updateDescription();
 
         this.amount = amount;
 
-        this.type = PowerType.BUFF;
-        this.isTurnBased = false;
-        this.img = new Texture(IMG);
+        type = PowerType.BUFF;
+        isTurnBased = false;
+        img = ImageMaster.loadImage(IMG);
     }
 
     @Override
@@ -45,20 +46,20 @@ public class RefundCardCost extends AbstractPower {
         AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(card.costForTurn));
 
         AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(
-                this.owner, this.source, this.ID));
+                owner, source, ID));
     }
 
     @Override
     public void atStartOfTurn() {
-        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.source, this.ID));
+        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, source, ID));
     }
 
     @Override
     public void updateDescription() {
-        if (this.amount == 1) {
-            this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
-        } else if (this.amount > 1) {
-            this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[2];
+        if (amount == 1) {
+            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+        } else if (amount > 1) {
+            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
         }
     }
 

@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import thiefmod.ThiefMod;
@@ -26,18 +27,17 @@ public class VoidboundPower extends AbstractPower implements OnCardDrawPower {
 
 
     public VoidboundPower(AbstractPlayer owner, AbstractCreature source, final int amount) {
-        this.name = NAME;
-        this.ID = POWER_ID;
-        this.img = new Texture(IMG);
-        this.type = PowerType.BUFF;
-        this.isTurnBased = false;
+        name = NAME;
+        ID = POWER_ID;
+        img = ImageMaster.loadImage(IMG);
+        type = PowerType.BUFF;
+        isTurnBased = false;
 
         this.owner = owner;
         this.source = source;
-
         this.amount = amount;
 
-        this.updateDescription();
+        updateDescription();
     }
 
     @Override
@@ -48,7 +48,7 @@ public class VoidboundPower extends AbstractPower implements OnCardDrawPower {
     @Override
     public void onCardDraw(AbstractCard card) {
         if (card.cardID.equals(VoidCard.ID)) {
-            AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(this.amount));
+            AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(amount));
         }
     }
 
@@ -56,7 +56,7 @@ public class VoidboundPower extends AbstractPower implements OnCardDrawPower {
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }
 
 }

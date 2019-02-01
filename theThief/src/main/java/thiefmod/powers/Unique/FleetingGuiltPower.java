@@ -28,18 +28,18 @@ public class FleetingGuiltPower extends AbstractPower implements OnReceivePowerP
 
 
     public FleetingGuiltPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
-        this.name = NAME;
-        this.ID = POWER_ID;
-        this.img = new Texture(IMG);
-        this.type = PowerType.DEBUFF;
-        this.isTurnBased = false;
+        name = NAME;
+        ID = POWER_ID;
+        img = ImageMaster.loadImage(IMG);
+        type = PowerType.DEBUFF;
+        isTurnBased = false;
 
-        this.owner = owner;
-        this.source = source;
+        owner = owner;
+        source = source;
 
-        this.amount = amount;
+        amount = amount;
 
-        this.updateDescription();
+        updateDescription();
     }
 
     @Override
@@ -58,9 +58,9 @@ public class FleetingGuiltPower extends AbstractPower implements OnReceivePowerP
     @Override
     public void updateDescription() {
         if (amount == 1) {
-            this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
         } else if (amount > 1) {
-            this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[2];
+            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
         }
     }
 

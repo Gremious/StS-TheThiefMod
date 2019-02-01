@@ -35,11 +35,11 @@ public class ShadowstepPower extends AbstractPower implements OnReceivePowerPowe
 
 
     public ShadowstepPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
-        this.name = NAME;
-        this.ID = POWER_ID;
-        this.img = ImageMaster.loadImage(IMG);
-        this.type = PowerType.BUFF;
-        this.isTurnBased = false;
+        name = NAME;
+        ID = POWER_ID;
+        img = ImageMaster.loadImage(IMG);
+        type = PowerType.BUFF;
+        isTurnBased = false;
 
         this.owner = owner;
         this.source = source;
@@ -52,7 +52,7 @@ public class ShadowstepPower extends AbstractPower implements OnReceivePowerPowe
             shadowMastery = 0;
         }
 
-        this.updateDescription();
+        updateDescription();
     }
 
     /*
@@ -127,7 +127,7 @@ public class ShadowstepPower extends AbstractPower implements OnReceivePowerPowe
         } else {
             shadowMastery = 0;
         }
-        if (this.amount == 1) {
+        if (amount == 1) {
             if (owner.hasPower(ShadowMasteryPower.POWER_ID)) {
                 description = DESCRIPTIONS[0] + amount * (shadowMastery + 1) + DESCRIPTIONS[1];
             } else {

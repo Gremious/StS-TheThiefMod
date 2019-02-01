@@ -3,6 +3,7 @@ package thiefmod.powers.Unique;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import thiefmod.ThiefMod;
@@ -20,17 +21,16 @@ public class IllGottenGainsPower extends AbstractPower {
 
 
     public IllGottenGainsPower(final AbstractCreature owner, final int amount) {
-        this.name = NAME;
-        this.ID = POWER_ID;
-        this.img = new Texture(IMG);
-        this.type = PowerType.BUFF;
-        this.isTurnBased = false;
+        name = NAME;
+        ID = POWER_ID;
+        img = ImageMaster.loadImage(IMG);
+        type = PowerType.BUFF;
+        isTurnBased = false;
 
         this.owner = owner;
-
         this.amount = amount;
 
-        this.updateDescription();
+        updateDescription();
     }
 
     @Override
@@ -42,7 +42,7 @@ public class IllGottenGainsPower extends AbstractPower {
     @Override
     public void updateDescription() {
 
-        this.description = DESCRIPTIONS[0];
+        description = DESCRIPTIONS[0];
 
     }
 

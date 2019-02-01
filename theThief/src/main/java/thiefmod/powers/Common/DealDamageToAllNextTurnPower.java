@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -35,11 +36,11 @@ public class DealDamageToAllNextTurnPower extends AbstractPower {
 
 
     public DealDamageToAllNextTurnPower(AbstractCreature owner, AbstractCreature source, AbstractCreature target, int damageAmount, final int amount) {
-        this.name = NAME;
-        this.ID = POWER_ID;
-        this.img = new Texture(IMG);
-        this.type = PowerType.BUFF;
-        this.isTurnBased = true;
+        name = NAME;
+        ID = POWER_ID;
+        img = ImageMaster.loadImage(IMG);
+        type = PowerType.BUFF;
+        isTurnBased = true;
 
         this.owner = owner;
         this.source = source;
@@ -48,7 +49,7 @@ public class DealDamageToAllNextTurnPower extends AbstractPower {
         this.amount = amount;
         this.damageAmount = damageAmount;
 
-        this.updateDescription();
+        updateDescription();
     }
 
 
@@ -68,21 +69,21 @@ public class DealDamageToAllNextTurnPower extends AbstractPower {
         }
 
         AbstractDungeon.actionManager.addToBottom(new DamageAction(
-                this.target, new DamageInfo(this.source, this.damageAmount, DamageInfo.DamageType.NORMAL),
+                target, new DamageInfo(source, damageAmount, DamageInfo.DamageType.NORMAL),
                 AbstractGameAction.AttackEffect.SLASH_VERTICAL));
 
-        if (this.amount <= 0) {
-            actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.source, this.ID));
+        if (amount <= 0) {
+            actionManager.addToBottom(new RemoveSpecificPowerAction(owner, source, ID));
         }
     }
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {
-        if (this.amount == 1) {
-            this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
-        } else if (this.amount > 1) {
-            this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[2];
+        if (amount == 1) {
+            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+        } else if (amount > 1) {
+            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
         }
     }
 

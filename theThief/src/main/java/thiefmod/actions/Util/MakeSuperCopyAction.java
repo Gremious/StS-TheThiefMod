@@ -35,8 +35,8 @@ public class MakeSuperCopyAction extends AbstractGameAction {
     }
 
     public MakeSuperCopyAction(AbstractCard c, final String keyword, boolean removeKeyword, final CardGroup addLocation) {
-        this.actionType = ActionType.CARD_MANIPULATION;
-        this.duration = Settings.ACTION_DUR_FAST;
+        actionType = ActionType.CARD_MANIPULATION;
+        duration = Settings.ACTION_DUR_FAST;
         this.c = c;
         this.addLocation = addLocation;
         this.keyword = keyword;
@@ -44,7 +44,7 @@ public class MakeSuperCopyAction extends AbstractGameAction {
     }
 
     public void update() {
-        if (this.duration == Settings.ACTION_DUR_FAST) {
+        if (duration == Settings.ACTION_DUR_FAST) {
 
             if (keyword.equals(KEYWORD_STRINGS[0])) {
                 if (removeKeyword) {
@@ -105,8 +105,8 @@ public class MakeSuperCopyAction extends AbstractGameAction {
             AbstractDungeon.player.hand.refreshHandLayout();
             AbstractDungeon.player.hand.glowCheck();
             logger.info("Final log. Super Copy Action should be done.");
-            this.tickDuration();
+            tickDuration();
         }
-        this.tickDuration();
+        tickDuration();
     }
 }

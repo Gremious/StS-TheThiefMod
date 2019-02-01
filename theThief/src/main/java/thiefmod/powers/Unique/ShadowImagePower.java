@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import thiefmod.ThiefMod;
@@ -27,11 +28,11 @@ public class ShadowImagePower extends AbstractPower {
 
 
     public ShadowImagePower(AbstractCreature owner, AbstractCreature source, final int amount, final int DamageAmountToTake) {
-        this.name = NAME;
-        this.ID = POWER_ID;
-        this.img = new Texture(IMG);
-        this.type = PowerType.DEBUFF;
-        this.isTurnBased = false;
+        name = NAME;
+        ID = POWER_ID;
+        img = ImageMaster.loadImage(IMG);
+        type = PowerType.DEBUFF;
+        isTurnBased = false;
         this.DamageAmountToTake = DamageAmountToTake;
 
         this.owner = owner;
@@ -39,27 +40,27 @@ public class ShadowImagePower extends AbstractPower {
 
         this.amount = amount;
 
-        this.updateDescription();
+        updateDescription();
     }
 
     @Override
     public void atStartOfTurn() {
 
-        this.updateDescription();
+        updateDescription();
 
         AbstractDungeon.actionManager.addToBottom(new DamageAction(
-                this.owner, (new DamageInfo(this.owner, this.DamageAmountToTake, DamageInfo.DamageType.THORNS)),
+                owner, (new DamageInfo(owner, DamageAmountToTake, DamageInfo.DamageType.THORNS)),
                 AbstractGameAction.AttackEffect.FIRE));
 
-        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
+        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, ID));
 
     }
 
     public void atEndOfRound() {
-        if (this.amount == 0) {
-            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
+        if (amount == 0) {
+            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, ID));
         } else {
-            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, this.ID, 1));
+            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(owner, owner, ID, 1));
         }
 
     }
@@ -68,7 +69,7 @@ public class ShadowImagePower extends AbstractPower {
     @Override
     public void updateDescription() {
 
-        this.description = DESCRIPTIONS[0] + this.DamageAmountToTake + DESCRIPTIONS[1];
+        description = DESCRIPTIONS[0] + DamageAmountToTake + DESCRIPTIONS[1];
     }
 
 

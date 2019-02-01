@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import thiefmod.ThiefMod;
@@ -25,42 +26,42 @@ public class SimilarSkillsPowerUpgraded extends AbstractPower {
 
 
     public SimilarSkillsPowerUpgraded(final AbstractCreature owner, final int amount) {
-        this.name = NAME;
-        this.ID = POWER_ID;
-        this.img = new Texture(IMG);
-        this.type = PowerType.BUFF;
-        this.isTurnBased = false;
+        name = NAME;
+        ID = POWER_ID;
+        img = ImageMaster.loadImage(IMG);
+        type = PowerType.BUFF;
+        isTurnBased = false;
 
         this.owner = owner;
         this.isUpgraded = isUpgraded;
 
         this.amount = amount;
 
-        this.updateDescription();
+        updateDescription();
     }
 
     @Override
     public void atStartOfTurn() {
         AbstractCard c;
 
-        for (int i = 0; i < this.amount; i++) {
+        for (int i = 0; i < amount; i++) {
             c = CardLibrary
                     .getRandomColorSpecificCard(CardColor.GREEN, AbstractDungeon.cardRandomRng).makeCopy();
             c.upgrade();
             c.modifyCostForCombat(-20);
-            AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(c, this.amount, true, true));
+            AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(c, amount, true, true));
         }
 
-        this.updateDescription();
+        updateDescription();
     }
 
 
     @Override
     public void updateDescription() {
-        if (this.amount == 1) {
-            this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
-        } else if (this.amount > 1) {
-            this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[2];
+        if (amount == 1) {
+            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+        } else if (amount > 1) {
+            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
         }
     }
 

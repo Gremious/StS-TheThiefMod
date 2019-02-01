@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import thiefmod.ThiefMod;
@@ -25,28 +26,28 @@ public class DissoluteSatisfactionPower extends AbstractPower {
 
 
     public DissoluteSatisfactionPower(AbstractCreature owner, AbstractCreature source, final int amount) {
-        this.name = NAME;
-        this.ID = POWER_ID;
-        this.img = new Texture(IMG);
-        this.type = PowerType.BUFF;
-        this.isTurnBased = true;
+        name = NAME;
+        ID = POWER_ID;
+        img = ImageMaster.loadImage(IMG);
+        type = PowerType.BUFF;
+        isTurnBased = true;
 
         this.owner = owner;
         this.source = source;
 
         this.amount = amount;
 
-        this.updateDescription();
+        updateDescription();
     }
 
     @Override
     public void onInflictDamage(DamageInfo info, int damageAmount, AbstractCreature target) {
-        AbstractDungeon.actionManager.addToBottom(new HealAction(target, source, this.amount));
+        AbstractDungeon.actionManager.addToBottom(new HealAction(target, source, amount));
     }
 
 
     public void atEndOfRound() {
-        if (this.amount == 0) {
+        if (amount == 0) {
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, ID));
         } else {
             AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(owner, owner, ID, 1));
@@ -57,7 +58,7 @@ public class DissoluteSatisfactionPower extends AbstractPower {
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
 
     }
 

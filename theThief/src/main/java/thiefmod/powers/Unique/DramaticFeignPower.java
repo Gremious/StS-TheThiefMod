@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import thiefmod.ThiefMod;
@@ -32,16 +33,16 @@ public class DramaticFeignPower extends AbstractPower implements CanUsePower {
     public AbstractCreature source;
 
     public DramaticFeignPower(AbstractCreature owner, AbstractCreature source, final int amount) {
-        this.name = NAME;
-        this.ID = POWER_ID;
-        this.img = new Texture(IMG);
+        name = NAME;
+        ID = POWER_ID;
+        img = ImageMaster.loadImage(IMG);
 
         this.owner = owner;
         this.source = source;
         this.amount = amount;
 
-        this.type = PowerType.DEBUFF;
-        this.isTurnBased = false;
+        type = PowerType.DEBUFF;
+        isTurnBased = false;
         updateDescription();
 
     }
@@ -62,19 +63,19 @@ public class DramaticFeignPower extends AbstractPower implements CanUsePower {
     @Override
     public void atStartOfTurn() {
         AbstractDungeon.actionManager.addToBottom(
-                new ApplyPowerAction(this.owner, this.source, new RefundCardCost(
-                        this.owner, this.source, this.amount), this.amount));
+                new ApplyPowerAction(owner, source, new RefundCardCost(
+                        owner, source, amount), amount));
 
         AbstractDungeon.actionManager
-                .addToBottom(new RemoveSpecificPowerAction(this.owner, this.source, this.ID));
+                .addToBottom(new RemoveSpecificPowerAction(owner, source, ID));
     }
 
     @Override
     public void updateDescription() {
-        if (this.amount == 1) {
-            this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
-        } else if (this.amount > 1) {
-            this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[2];
+        if (amount == 1) {
+            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+        } else if (amount > 1) {
+            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
         }
     }
 

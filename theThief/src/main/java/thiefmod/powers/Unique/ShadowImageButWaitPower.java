@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import thiefmod.ThiefMod;
@@ -27,18 +28,18 @@ public class ShadowImageButWaitPower extends AbstractPower {
 
 
     public ShadowImageButWaitPower(AbstractCreature owner, AbstractCreature source, final int amount) {
-        this.name = NAME;
-        this.ID = POWER_ID;
-        this.img = new Texture(IMG);
-        this.type = PowerType.DEBUFF;
-        this.isTurnBased = false;
+        name = NAME;
+        ID = POWER_ID;
+        img = ImageMaster.loadImage(IMG);
+        type = PowerType.DEBUFF;
+        isTurnBased = false;
 
         this.owner = owner;
         this.source = source;
 
         this.amount = amount;
 
-        this.updateDescription();
+        updateDescription();
 
     }
 
@@ -46,28 +47,28 @@ public class ShadowImageButWaitPower extends AbstractPower {
     public void atStartOfTurn() {
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
-                this.owner, this.source, (new ShadowImagePower(this.owner, this.source, this.amount, damageToReceive)), this.amount));
+                owner, source, (new ShadowImagePower(owner, source, amount, damageToReceive)), amount));
 
-        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
+        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, ID));
 
-        this.damageToReceive = 0;
+        damageToReceive = 0;
     }
 
 
     @Override
     public int onAttacked(DamageInfo info, int damage) {
         damageToReceive = damage;
-        this.updateDescription();
+        updateDescription();
 
         return damage;
     }
 
 
     public void atEndOfRound() {
-        if (this.amount == 0) {
-            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
+        if (amount == 0) {
+            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, ID));
         } else {
-            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, this.ID, 1));
+            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(owner, owner, ID, 1));
         }
 
     }
@@ -75,7 +76,7 @@ public class ShadowImageButWaitPower extends AbstractPower {
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + this.damageToReceive + DESCRIPTIONS[1];
+        description = DESCRIPTIONS[0] + damageToReceive + DESCRIPTIONS[1];
     }
 
 

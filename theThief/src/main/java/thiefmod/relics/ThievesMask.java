@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.relics.SmilingMask;
@@ -23,7 +24,7 @@ public class ThievesMask extends CustomRelic {
     public static final Logger logger = LogManager.getLogger(ThiefMod.class.getName());
 
     public ThievesMask() {
-        super(ID, new Texture(IMG), new Texture(OUTLINE), RelicTier.STARTER, LandingSound.FLAT);
+        super(ID, ImageMaster.loadImage(IMG), new Texture(OUTLINE), RelicTier.STARTER, LandingSound.FLAT);
         tips.clear();
         tips.add(new PowerTip(name, description));
         tips.add(new PowerTip("Synergy",

@@ -15,32 +15,32 @@ public class MakeTempCardInExhaustAction extends AbstractGameAction {
 
     public MakeTempCardInExhaustAction(AbstractCard card, int amount) {
         UnlockTracker.markCardAsSeen(card.cardID);
-        this.numCards = amount;
-        this.actionType = ActionType.CARD_MANIPULATION;
-        this.duration = Settings.ACTION_DUR_FAST;
-        this.cardToMake = card;
+        numCards = amount;
+        actionType = ActionType.CARD_MANIPULATION;
+        duration = Settings.ACTION_DUR_FAST;
+        cardToMake = card;
     }
 
     public void update() {
-        if (this.duration == Settings.ACTION_DUR_FAST) {
+        if (duration == Settings.ACTION_DUR_FAST) {
             AbstractCard c;
             int i;
-            if (this.numCards < 6) {
-                for (i = 0; i < this.numCards; ++i) {
-                    c = this.cardToMake.makeStatEquivalentCopy();
+            if (numCards < 6) {
+                for (i = 0; i < numCards; ++i) {
+                    c = cardToMake.makeStatEquivalentCopy();
                     AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(c));
                 }
             } else {
-                for (i = 0; i < this.numCards; ++i) {
-                    c = this.cardToMake.makeStatEquivalentCopy();
+                for (i = 0; i < numCards; ++i) {
+                    c = cardToMake.makeStatEquivalentCopy();
                     AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(c));
                 }
             }
 
-            this.duration -= Gdx.graphics.getDeltaTime();
+            duration -= Gdx.graphics.getDeltaTime();
         }
 
-        this.tickDuration();
+        tickDuration();
     }
 }
 

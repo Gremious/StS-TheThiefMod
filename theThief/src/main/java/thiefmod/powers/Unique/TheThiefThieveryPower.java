@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.GainPennyEffect;
@@ -25,39 +26,39 @@ public class TheThiefThieveryPower extends AbstractPower {
 
 
     public TheThiefThieveryPower(final AbstractPlayer source, final AbstractCreature owner, final int amount) {
-        this.name = NAME;
-        this.ID = POWER_ID;
-        this.img = new Texture(IMG);
-        this.type = PowerType.BUFF;
-        this.isTurnBased = false;
+        name = NAME;
+        ID = POWER_ID;
+        img = ImageMaster.loadImage(IMG);
+        type = PowerType.BUFF;
+        isTurnBased = false;
+
         this.source = source;
         this.owner = owner;
-
         this.amount = amount;
 
-        this.updateDescription();
+        updateDescription();
     }
 
     @Override
     public void onAttack(DamageInfo info, int damageAmount, AbstractCreature attackTarget) {
 
         com.megacrit.cardcrawl.core.CardCrawlGame.sound.play("GOLD_JINGLE");
-        AbstractDungeon.player.gainGold(this.amount);
+        AbstractDungeon.player.gainGold(amount);
         for (int i = 0; i < amount; ++i) {
-            AbstractDungeon.effectList.add(new GainPennyEffect(this.source, attackTarget.hb.cX, attackTarget.hb.cY, source.hb.cX, source.hb.cY, true));
+            AbstractDungeon.effectList.add(new GainPennyEffect(source, attackTarget.hb.cX, attackTarget.hb.cY, source.hb.cX, source.hb.cY, true));
         }
         //    AbstractDungeon.actionManager.addToBottom(new GainGoldAction(owner, source, amount, attackTarget, info));
     }
 
     @Override
     public void atStartOfTurn() {
-        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.source, this.ID));
+        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, source, ID));
     }
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
 
     }
 

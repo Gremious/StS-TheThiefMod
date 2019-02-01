@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -28,15 +29,15 @@ public class StolenCodePower extends AbstractPower {
     private int cardsDoubledThisTurn = 0;
 
     public StolenCodePower(AbstractCreature owner, int amount) {
-        this.name = NAME;
-        this.ID = POWER_ID;
-        this.img = new Texture(IMG);
-        this.type = PowerType.BUFF;
-        this.isTurnBased = false;
+        name = NAME;
+        ID = POWER_ID;
+        img = ImageMaster.loadImage(IMG);
+        type = PowerType.BUFF;
+        isTurnBased = false;
 
         this.owner = owner;
         this.amount = amount;
-        this.updateDescription();
+        updateDescription();
 
     }
 
@@ -48,9 +49,9 @@ public class StolenCodePower extends AbstractPower {
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (!card.purgeOnUse && this.amount > 0 && AbstractDungeon.actionManager.cardsPlayedThisTurn.size() - this.cardsDoubledThisTurn <= this.amount) {
-            ++this.cardsDoubledThisTurn;
-            this.flash();
+        if (!card.purgeOnUse && amount > 0 && AbstractDungeon.actionManager.cardsPlayedThisTurn.size() - cardsDoubledThisTurn <= amount) {
+            ++cardsDoubledThisTurn;
+            flash();
             AbstractMonster m = null;
             if (action.target != null) {
                 m = (AbstractMonster) action.target;
@@ -81,10 +82,10 @@ public class StolenCodePower extends AbstractPower {
 
     @Override
     public void updateDescription() {
-        if (this.amount == 1) {
-            this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+        if (amount == 1) {
+            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
         } else {
-            this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[2];
+            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
         }
     }
 }

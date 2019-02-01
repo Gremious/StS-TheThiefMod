@@ -4,6 +4,7 @@ import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
@@ -19,7 +20,7 @@ public class ShadowMask extends CustomRelic {
     public static final Logger logger = LogManager.getLogger(ThiefMod.class.getName());
 
     public ShadowMask() {
-        super(ID, new Texture(IMG), new Texture(OUTLINE), RelicTier.BOSS, LandingSound.MAGICAL);
+        super(ID, ImageMaster.loadImage(IMG), new Texture(OUTLINE), RelicTier.BOSS, LandingSound.MAGICAL);
         tips.clear();
         tips.add(new PowerTip(name, description));
         initializeTips();
