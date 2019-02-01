@@ -11,26 +11,26 @@ public class LimboToHandAction extends AbstractGameAction {
     private AbstractCard card;
 
     public LimboToHandAction(AbstractCard card) {
-        this.actionType = ActionType.CARD_MANIPULATION;
         this.card = card;
-        this.duration = Settings.ACTION_DUR_FAST;
+        actionType = ActionType.CARD_MANIPULATION;
+        duration = Settings.ACTION_DUR_FAST;
     }
 
     public void update() {
-        if (this.duration == Settings.ACTION_DUR_FAST) {
+        if (duration == Settings.ACTION_DUR_FAST) {
             if (AbstractDungeon.player.hand.size() == BaseMod.MAX_HAND_SIZE) {
-                this.isDone = true;
+                isDone = true;
             } else if (AbstractDungeon.player.limbo.isEmpty()) {
-                this.isDone = true;
+                isDone = true;
             } else if (AbstractDungeon.player.limbo.contains(card)) {
 
                 AbstractDungeon.player.hand.addToHand(card);
                 card.unhover();
-                this.card.setAngle(0.0F, true);
-                this.card.lighten(false);
-                this.card.drawScale = 0.12F;
-                this.card.targetDrawScale = 0.75F;
-                this.card.applyPowers();
+                card.setAngle(0.0F, true);
+                card.lighten(false);
+                card.drawScale = 0.12F;
+                card.targetDrawScale = 0.75F;
+                card.applyPowers();
                 card.unfadeOut();        // Exhaust cards need this specifically not to break everything.
                 card.fadingOut = false;
                 if (AbstractDungeon.player.hasPower(CorruptionPower.POWER_ID) && card.type == AbstractCard.CardType.SKILL) {
@@ -44,6 +44,6 @@ public class LimboToHandAction extends AbstractGameAction {
             AbstractDungeon.player.hand.glowCheck();
         }
 
-        this.tickDuration();
+        tickDuration();
     }
 }

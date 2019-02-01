@@ -14,11 +14,11 @@ public class GainGoldAction extends AbstractGameAction {
     private AbstractCreature attackTarget;
 
     public GainGoldAction(AbstractCreature powerOwner, AbstractCreature powerSource, int goldAmount, AbstractCreature attackTarget, DamageInfo info) {
-        this.actionType = com.megacrit.cardcrawl.actions.AbstractGameAction.ActionType.SPECIAL;
-        this.duration = Settings.ACTION_DUR_XFAST;
+        actionType = ActionType.SPECIAL;
+        duration = Settings.ACTION_DUR_XFAST;
 
-        this.target = powerOwner;
-        this.source = powerSource;
+        target = powerOwner;
+        source = powerSource;
         this.goldAmount = goldAmount;
 
         this.attackTarget = attackTarget;
@@ -26,20 +26,20 @@ public class GainGoldAction extends AbstractGameAction {
     }
 
     public GainGoldAction(AbstractCreature powerOwner, AbstractCreature powerSource, int goldAmount) {
-        this.actionType = ActionType.HEAL;
+        actionType = ActionType.HEAL;
 
-        this.target = powerOwner;
-        this.source = powerSource;
+        target = powerOwner;
+        source = powerSource;
         this.goldAmount = goldAmount;
     }
 
     public void update() {
         com.megacrit.cardcrawl.core.CardCrawlGame.sound.play("GOLD_JINGLE");
-        if (attackTarget != null && (((AbstractMonster) this.attackTarget).isDying || this.attackTarget.currentHealth <= 0) && !this.attackTarget.halfDead) {
-            AbstractDungeon.player.gainGold(this.goldAmount);
+        if (attackTarget != null && (((AbstractMonster) attackTarget).isDying || attackTarget.currentHealth <= 0) && !attackTarget.halfDead) {
+            AbstractDungeon.player.gainGold(goldAmount);
 
-            for (int i = 0; i < this.goldAmount; ++i) {
-                AbstractDungeon.effectList.add(new GainPennyEffect(this.source, this.target.hb.cX, this.target.hb.cY, this.source.hb.cX, this.source.hb.cY, true));
+            for (int i = 0; i < goldAmount; ++i) {
+                AbstractDungeon.effectList.add(new GainPennyEffect(source, target.hb.cX, target.hb.cY, source.hb.cX, source.hb.cY, true));
             }
             if (AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {
                 AbstractDungeon.actionManager.clearPostCombatActions();
@@ -47,9 +47,9 @@ public class GainGoldAction extends AbstractGameAction {
 
             isDone = true;
         } else {
-            AbstractDungeon.player.gainGold(this.goldAmount);
-            for (int i = 0; i < this.goldAmount; ++i) {
-                AbstractDungeon.effectList.add(new GainPennyEffect(this.source, this.target.hb.cX, this.target.hb.cY, this.source.hb.cX, this.source.hb.cY, true));
+            AbstractDungeon.player.gainGold(goldAmount);
+            for (int i = 0; i < goldAmount; ++i) {
+                AbstractDungeon.effectList.add(new GainPennyEffect(source, target.hb.cX, target.hb.cY, source.hb.cX, source.hb.cY, true));
             }
             isDone = true;
         }

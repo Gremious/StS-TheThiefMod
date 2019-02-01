@@ -46,8 +46,8 @@ public class StealCardAction extends AbstractGameAction {
     private ArrayList<AbstractCard> cardsToAdd = new ArrayList<>();
 
     public StealCardAction(int amount, int copies, boolean random, CardGroup location, boolean upgraded) {
-        this.actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
-        this.duration = Settings.ACTION_DUR_FAST;
+        actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
+        duration = Settings.ACTION_DUR_FAST;
         this.amount = amount;
         this.random = random;
         this.upgraded = upgraded;
@@ -58,7 +58,7 @@ public class StealCardAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        if (this.duration == Settings.ACTION_DUR_FAST) {
+        if (duration == Settings.ACTION_DUR_FAST) {
 
             if (random) {
                 cardsToAdd = getRandomStolenCards(amount, true);
@@ -82,7 +82,7 @@ public class StealCardAction extends AbstractGameAction {
                 cardsToAdd.clear();
             }
         }
-        this.tickDuration();
+        tickDuration();
     }
 
     // Add the stolen cards to whatever location your heart desires.

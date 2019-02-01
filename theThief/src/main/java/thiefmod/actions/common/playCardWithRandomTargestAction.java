@@ -16,22 +16,22 @@ public class playCardWithRandomTargestAction extends AbstractGameAction {
     private AbstractCard card;
 
     public playCardWithRandomTargestAction(boolean exhausts, AbstractCard card) {
-        this.duration = Settings.ACTION_DUR_FAST;
-        this.actionType = ActionType.WAIT;
-        this.source = AbstractDungeon.player;
-        this.target = AbstractDungeon.getCurrRoom().monsters.getRandomMonster((AbstractMonster) null, true, AbstractDungeon.cardRandomRng);
+        duration = Settings.ACTION_DUR_FAST;
+        actionType = ActionType.WAIT;
+        source = AbstractDungeon.player;
+        target = AbstractDungeon.getCurrRoom().monsters.getRandomMonster((AbstractMonster) null, true, AbstractDungeon.cardRandomRng);
 
-        this.exhaustCards = exhausts;
+        exhaustCards = exhausts;
         this.card = card;
     }
 
     @Override
     public void update() {
-        if (this.duration == Settings.ACTION_DUR_FAST) {
+        if (duration == Settings.ACTION_DUR_FAST) {
 
             AbstractDungeon.getCurrRoom().souls.remove(card);
             card.freeToPlayOnce = true;
-            card.exhaustOnUseOnce = this.exhaustCards;
+            card.exhaustOnUseOnce = exhaustCards;
             AbstractDungeon.player.limbo.group.add(card);
             card.current_y = -200.0F * Settings.scale;
             card.target_x = (float) Settings.WIDTH / 2.0F + 200.0F * Settings.scale;
@@ -40,8 +40,8 @@ public class playCardWithRandomTargestAction extends AbstractGameAction {
             card.lighten(false);
             card.drawScale = 0.12F;
             card.targetDrawScale = 0.75F;
-            if (!card.canUse(AbstractDungeon.player, (AbstractMonster) this.target)) {
-                if (this.exhaustCards) {
+            if (!card.canUse(AbstractDungeon.player, (AbstractMonster) target)) {
+                if (exhaustCards) {
                     AbstractDungeon.actionManager.addToTop(new ExhaustSpecificCardAction(card, AbstractDungeon.player.limbo));
                 } else {
                     AbstractDungeon.actionManager.addToTop(new UnlimboAction(card));
@@ -50,7 +50,7 @@ public class playCardWithRandomTargestAction extends AbstractGameAction {
                 }
             } else {
                 card.applyPowers();
-                AbstractDungeon.actionManager.addToTop(new QueueCardAction(card, this.target));
+                AbstractDungeon.actionManager.addToTop(new QueueCardAction(card, target));
                 AbstractDungeon.actionManager.addToTop(new UnlimboAction(card));
                 if (!Settings.FAST_MODE) {
                     AbstractDungeon.actionManager.addToTop(new WaitAction(Settings.ACTION_DUR_MED));
@@ -60,7 +60,7 @@ public class playCardWithRandomTargestAction extends AbstractGameAction {
             }
 
 
-            this.isDone = true;
+            isDone = true;
         }
 
     }
