@@ -11,8 +11,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
 import thiefmod.patches.Character.AbstractCardEnum;
 
-import java.util.ArrayList;
-
 public class HideInTheShadows extends AbstractBackstabCard {
 
 
@@ -37,7 +35,6 @@ public class HideInTheShadows extends AbstractBackstabCard {
     private static final CardType TYPE = CardType.SKILL;
 
     private static final int COST = 1;
-    private ArrayList<AbstractCard> thisTurnCardsArray = AbstractDungeon.actionManager.cardsPlayedThisTurn;
 
 
     private static final int BLOCK = 10;
@@ -55,10 +52,11 @@ public class HideInTheShadows extends AbstractBackstabCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for (AbstractCard AttackCheckCard : thisTurnCardsArray) {
-            if (AttackCheckCard.type == CardType.ATTACK)
-                exhaustOnUseOnce = true;
-            return;
+        for (AbstractCard AttackCheckCard : AbstractDungeon.actionManager.cardsPlayedThisTurn) {
+            if (AttackCheckCard.type == CardType.ATTACK) {
+                this.exhaustOnUseOnce = true;
+                return;
+            }
         }
 
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(
@@ -71,7 +69,7 @@ public class HideInTheShadows extends AbstractBackstabCard {
 
         rawDescription = DESCRIPTION;
 
-        for (AbstractCard AttackCheckCard : thisTurnCardsArray) {
+        for (AbstractCard AttackCheckCard : AbstractDungeon.actionManager.cardsPlayedThisTurn) {
             if (AttackCheckCard.type == CardType.ATTACK)
                 rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[1];
         }
