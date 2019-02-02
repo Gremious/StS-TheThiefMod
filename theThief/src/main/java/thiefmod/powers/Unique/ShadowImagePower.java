@@ -1,6 +1,5 @@
 package thiefmod.powers.Unique;
 
-import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
@@ -44,11 +43,11 @@ public class ShadowImagePower extends AbstractPower {
     }
 
     @Override
-    public void atStartOfTurn() {
+    public void atEndOfTurn(boolean isPlayer) {
 
         updateDescription();
 
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(
+        AbstractDungeon.actionManager.addToTop(new DamageAction(
                 owner, (new DamageInfo(owner, DamageAmountToTake, DamageInfo.DamageType.THORNS)),
                 AbstractGameAction.AttackEffect.FIRE));
 
@@ -57,7 +56,7 @@ public class ShadowImagePower extends AbstractPower {
     }
 
     @Override
-    public void atEndOfTurn(boolean isPlayer) {
+    public void atEndOfRound() {
         if (amount == 0) {
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, ID));
         } else {
