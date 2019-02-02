@@ -67,16 +67,8 @@ public class StolenBlood extends AbstractBackstabCard {
 
         magicNumber = baseMagicNumber = MAGIC;
         tags.add(ThiefCardTags.STOLEN);
+        tags.add(ThiefCardTags.RARE_FIND);
         exhaust = true;
-    }
-
-    @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.effectList.add(new BorderFlashEffect(Color.GOLD));
-
-        AbstractDungeon.actionManager.addToBottom(
-                new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber), magicNumber));
-
     }
 
     @Override
@@ -91,6 +83,16 @@ public class StolenBlood extends AbstractBackstabCard {
 
         AbstractDungeon.effectList.add(new CardFlashVfx(this, Color.GOLD));
     }
+
+    @Override
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        AbstractDungeon.effectList.add(new BorderFlashEffect(Color.GOLD));
+
+        AbstractDungeon.actionManager.addToBottom(
+                new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber), magicNumber));
+
+    }
+
 
     @Override
     public List<TooltipInfo> getCustomTooltips() {

@@ -1,5 +1,6 @@
 package thiefmod.actions.common;
 
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -9,6 +10,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.UIStrings;
+import com.megacrit.cardcrawl.vfx.cardManip.CardFlashVfx;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import thiefmod.ThiefMod;
@@ -91,8 +93,12 @@ public class StealCardAction extends AbstractGameAction {
         for (AbstractCard c : cardsToAdd) {
             logger.info("addStolenCards() adding card " + c + " to " + location.toString());
             //    c.unhover();
+
             AbstractDungeon.actionManager.actions.add(new MakeSuperCopyAction(c, "Exhaust", location));
 
+            if(c.hasTag(ThiefCardTags.RARE_FIND)){
+                AbstractDungeon.effectList.add(new CardFlashVfx(c, Color.GOLD));
+            }
             //TODO: Test whether or not having a full hand breaks this.
         }
     }

@@ -55,6 +55,7 @@ public class stolenMysticalOrb extends AbstractBackstabCard {
 
         magicNumber = baseMagicNumber = MAGIC;
         tags.add(ThiefCardTags.STOLEN);
+        tags.add(ThiefCardTags.RARE_FIND);
         exhaust = true;
     }
 

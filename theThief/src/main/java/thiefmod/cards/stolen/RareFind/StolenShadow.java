@@ -53,8 +53,11 @@ public class StolenShadow extends AbstractBackstabCard {
 
         magicNumber = baseMagicNumber = MAGIC;
 
+        setBannerTexture("thiefmodAssets/images/512/special/rare_skill_banner.png",
+                "thiefmodAssets/images/1024/special/rare_skill_banner.png");
 
         tags.add(ThiefCardTags.STOLEN);
+        tags.add(ThiefCardTags.RARE_FIND);
         exhaust = true;
     }
 
@@ -64,7 +67,6 @@ public class StolenShadow extends AbstractBackstabCard {
         AbstractDungeon.actionManager.addToBottom(new StolenShadowAction(p, magicNumber));
 
     }
-
     @Override
     public void triggerWhenDrawn() {
 
@@ -77,7 +79,6 @@ public class StolenShadow extends AbstractBackstabCard {
 
         AbstractDungeon.effectList.add(new CardFlashVfx(this, Color.GOLD));
     }
-
     @Override
     public List<TooltipInfo> getCustomTooltips() {
         List<TooltipInfo> tips = new ArrayList<>();

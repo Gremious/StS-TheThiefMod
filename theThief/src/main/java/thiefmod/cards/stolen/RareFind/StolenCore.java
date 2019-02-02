@@ -75,6 +75,7 @@ public class StolenCore extends AbstractBackstabCard {
                 "thiefmodAssets/images/1024/special/rare_skill_banner.png");
 
         tags.add(ThiefCardTags.STOLEN);
+        tags.add(ThiefCardTags.RARE_FIND);
         exhaust = true;
 
     }
