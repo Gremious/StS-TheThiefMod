@@ -12,11 +12,9 @@ import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.CardHelper;
-import com.megacrit.cardcrawl.localization.CardStrings;
-import com.megacrit.cardcrawl.localization.PowerStrings;
-import com.megacrit.cardcrawl.localization.RelicStrings;
-import com.megacrit.cardcrawl.localization.UIStrings;
+import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import javassist.CannotCompileException;
 import javassist.CtClass;
@@ -270,168 +268,6 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
             e.printStackTrace();
         }
 
-  /*      logger.info("Add Cards");
-        logger.info(LogInt++);
-        // Add the cards
-        BaseMod.addCard(new StrikeThief());
-        logger.info(LogInt++);
-        BaseMod.addCard(new Steal());
-        logger.info(LogInt++);
-        BaseMod.addCard(new DefendThief());
-        logger.info(LogInt++);
-        //    BaseMod.addCard(new GuiltTrip());
-
-
-        BaseMod.addCard(new Shadowstep());
-        BaseMod.addCard(new HeartStealer());
-        BaseMod.addCard(new Focused());
-        BaseMod.addCard(new ShadowMastery());
-        BaseMod.addCard(new Retrieval());
-        BaseMod.addCard(new DissoluteSatisfaction());
-        BaseMod.addCard(new ShadowClone());
-        BaseMod.addCard(new PrecisePositioning());
-        BaseMod.addCard(new GhastlyEssence());
-        BaseMod.addCard(new Persuasion());
-        BaseMod.addCard(new Voidbound());
-        BaseMod.addCard(new ConArtist());
-        BaseMod.addCard(new Liar());
-        BaseMod.addCard(new Hoodlum());
-        BaseMod.addCard(new RiggedBet());
-        BaseMod.addCard(new Cunning());
-        BaseMod.addCard(new ShadowImage());
-        BaseMod.addCard(new Bribe());
-        BaseMod.addCard(new HuntersInstinct());
-        BaseMod.addCard(new CorrosivePoison());
-        BaseMod.addCard(new MurderousIntent());
-        BaseMod.addCard(new IAmEverywhere());
-        BaseMod.addCard(new FindersKeepers());
-        BaseMod.addCard(new FeignTrip());
-        BaseMod.addCard(new ThousandBallBearings());
-        BaseMod.addCard(new LieInWait());
-        BaseMod.addCard(new Multitask());
-        BaseMod.addCard(new Gaslight());
-        BaseMod.addCard(new Backstep());
-        BaseMod.addCard(new SteakOut());
-        BaseMod.addCard(new ShadowReserves());
-        BaseMod.addCard(new PaydayLoan());
-        BaseMod.addCard(new HeartBreaker());
-        BaseMod.addCard(new PerfectDagger());
-        BaseMod.addCard(new ShadowCalamity());
-        BaseMod.addCard(new Ambush());
-        BaseMod.addCard(new ViciousAssault());
-        BaseMod.addCard(new DirtyDeedsDDC());
-        BaseMod.addCard(new AttackOfOpportunity());
-        BaseMod.addCard(new Mercy());
-        BaseMod.addCard(new Darts());
-        BaseMod.addCard(new DoubleDealing());
-        BaseMod.addCard(new Prep());
-        BaseMod.addCard(new ShadowEvade());
-        BaseMod.addCard(new OneStepAhead());
-        BaseMod.addCard(new FollowUp());
-        BaseMod.addCard(new Exploit());
-        BaseMod.addCard(new BeautifulLies());
-        BaseMod.addCard(new SimilarSkills());
-        BaseMod.addCard(new Murder());
-        BaseMod.addCard(new SwiftTread());
-        BaseMod.addCard(new DramaticFeign());
-        BaseMod.addCard(new ShadowForm());
-        BaseMod.addCard(new Stab());
-        BaseMod.addCard(new CloakAndDagger());
-        BaseMod.addCard(new Ransack());
-        BaseMod.addCard(new SleightOfHand());
-        BaseMod.addCard(new SharpPractice());
-        BaseMod.addCard(new IllGottenGains());
-        BaseMod.addCard(new Pickpocket());
-        BaseMod.addCard(new Gut());
-        BaseMod.addCard(new QuickThinking());
-        BaseMod.addCard(new Patience());
-        BaseMod.addCard(new ShadowCloak());
-        BaseMod.addCard(new HideInTheShadows());
-        BaseMod.addCard(new Sidestep());
-        BaseMod.addCard(new StickyFingers());
-        BaseMod.addCard(new CripplingStrike());
-        BaseMod.addCard(new Lie());
-        BaseMod.addCard(new SwiftSlash());
-
-
-        logger.info("Making sure the cards are unlocked.");
-        // Unlock the cards
-        // UnlockTracker.unlockCard(GuiltTrip.ID);
-
-        UnlockTracker.unlockCard(Shadowstep.ID);
-        UnlockTracker.unlockCard(HeartStealer.ID);
-        UnlockTracker.unlockCard(Focused.ID);
-        UnlockTracker.unlockCard(ShadowMastery.ID);
-        UnlockTracker.unlockCard(Retrieval.ID);
-        UnlockTracker.unlockCard(DissoluteSatisfaction.ID);
-        UnlockTracker.unlockCard(ShadowClone.ID);
-        UnlockTracker.unlockCard(PrecisePositioning.ID);
-        UnlockTracker.unlockCard(GhastlyEssence.ID);
-        UnlockTracker.unlockCard(Persuasion.ID);
-        UnlockTracker.unlockCard(Voidbound.ID);
-        UnlockTracker.unlockCard(ConArtist.ID);
-        UnlockTracker.unlockCard(Liar.ID);
-        UnlockTracker.unlockCard(Hoodlum.ID);
-        UnlockTracker.unlockCard(RiggedBet.ID);
-        UnlockTracker.unlockCard(Cunning.ID);
-        UnlockTracker.unlockCard(ShadowImage.ID);
-        UnlockTracker.unlockCard(Bribe.ID);
-        UnlockTracker.unlockCard(HuntersInstinct.ID);
-        UnlockTracker.unlockCard(CorrosivePoison.ID);
-        UnlockTracker.unlockCard(MurderousIntent.ID);
-        UnlockTracker.unlockCard(IAmEverywhere.ID);
-        UnlockTracker.unlockCard(FindersKeepers.ID);
-        UnlockTracker.unlockCard(FeignTrip.ID);
-        UnlockTracker.unlockCard(ThousandBallBearings.ID);
-        UnlockTracker.unlockCard(LieInWait.ID);
-        UnlockTracker.unlockCard(Multitask.ID);
-        UnlockTracker.unlockCard(Gaslight.ID);
-        UnlockTracker.unlockCard(Backstep.ID);
-        UnlockTracker.unlockCard(SteakOut.ID);
-        UnlockTracker.unlockCard(ShadowReserves.ID);
-        UnlockTracker.unlockCard(PaydayLoan.ID);
-        UnlockTracker.unlockCard(HeartBreaker.ID);
-        UnlockTracker.unlockCard(PerfectDagger.ID);
-        UnlockTracker.unlockCard(ShadowCalamity.ID);
-        UnlockTracker.unlockCard(Ambush.ID);
-        UnlockTracker.unlockCard(Mercy.ID);
-        UnlockTracker.unlockCard(StrikeThief.ID);
-        UnlockTracker.unlockCard(DefendThief.ID);
-        UnlockTracker.unlockCard(SimilarSkills.ID);
-        UnlockTracker.unlockCard(SwiftTread.ID);
-        UnlockTracker.unlockCard(ViciousAssault.ID);
-        UnlockTracker.unlockCard(DirtyDeedsDDC.ID);
-        UnlockTracker.unlockCard(AttackOfOpportunity.ID);
-        UnlockTracker.unlockCard(Gut.ID);
-        UnlockTracker.unlockCard(Darts.ID);
-        UnlockTracker.unlockCard(DoubleDealing.ID);
-        UnlockTracker.unlockCard(Prep.ID);
-        UnlockTracker.unlockCard(ShadowCloak.ID);
-        UnlockTracker.unlockCard(HideInTheShadows.ID);
-        UnlockTracker.unlockCard(Sidestep.ID);
-        UnlockTracker.unlockCard(StickyFingers.ID);
-        UnlockTracker.unlockCard(com.megacrit.cardcrawl.cards.green.CloakAndDagger.ID);
-        UnlockTracker.unlockCard(CripplingStrike.ID);
-        UnlockTracker.unlockCard(ShadowEvade.ID);
-        UnlockTracker.unlockCard(QuickThinking.ID);
-        UnlockTracker.unlockCard(Patience.ID);
-        UnlockTracker.unlockCard(OneStepAhead.ID);
-        UnlockTracker.unlockCard(FollowUp.ID);
-        UnlockTracker.unlockCard(Exploit.ID);
-        UnlockTracker.unlockCard(BeautifulLies.ID);
-        UnlockTracker.unlockCard(Murder.ID);
-        UnlockTracker.unlockCard(DramaticFeign.ID);
-        UnlockTracker.unlockCard(ShadowForm.ID);
-        UnlockTracker.unlockCard(Stab.ID);
-        UnlockTracker.unlockCard(CloakAndDagger.ID);
-        UnlockTracker.unlockCard(Ransack.ID);
-        UnlockTracker.unlockCard(SleightOfHand.ID);
-        UnlockTracker.unlockCard(SharpPractice.ID);
-        UnlockTracker.unlockCard(IllGottenGains.ID);
-        UnlockTracker.unlockCard(Pickpocket.ID);
-        UnlockTracker.unlockCard(Lie.ID);
-        UnlockTracker.unlockCard(SwiftSlash.ID);
-*/
         logger.info("Cards - added!");
     }
 
@@ -488,6 +324,9 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
     public void receiveEditStrings() {
         logger.info("Begin Editing Strings");
 
+        // Character trings
+        BaseMod.loadCustomStringsFile(CardStrings.class,
+                "thiefmodAssets/localization/eng/ThiefMod-Character-Strings.json");
 
         // Regular Cards CardStrings
         BaseMod.loadCustomStringsFile(CardStrings.class,
@@ -504,6 +343,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         // Curse Cards CardStrings
         BaseMod.loadCustomStringsFile(CardStrings.class,
                 "thiefmodAssets/localization/eng/ThiefMod-Curse-Card-Strings.json");
+
         // PowerStrings
         BaseMod.loadCustomStringsFile(PowerStrings.class,
                 "thiefmodAssets/localization/eng/ThiefMod-Power-Strings.json");

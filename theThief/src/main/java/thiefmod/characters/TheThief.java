@@ -29,9 +29,6 @@ import thiefmod.relics.ThievesMask;
 
 import java.util.ArrayList;
 
-//Wiki-page https://github.com/daviscook477/BaseMod/wiki/Custom-Characters
-//and https://github.com/daviscook477/BaseMod/wiki/Migrating-to-5.0
-
 public class TheThief extends CustomPlayer {
     public static final Logger logger = LogManager.getLogger(ThiefMod.class.getName());
 
@@ -46,7 +43,7 @@ public class TheThief extends CustomPlayer {
 
     // =============== STRINGS =================
 
-    private static final String ID = ThiefMod.makeID("DefaultCharacter");
+    private static final String ID = ThiefMod.makeID("ThiefCharacter");
     private static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString(ID);
     private static final String[] NAMES = characterStrings.NAMES;
     private static final String[] TEXT = characterStrings.TEXT;
@@ -93,7 +90,7 @@ public class TheThief extends CustomPlayer {
                 thiefmod.ThiefMod.makePath(thiefmod.ThiefMod.THE_THIEF_SHOULDER_2),        // another campfire pose
                 thiefmod.ThiefMod.makePath(thiefmod.ThiefMod.THE_THIEF_CORPSE),            // dead corpse
                 getLoadout(), 20.0F, -10.0F, 220.0F, 290.0F, new EnergyManager(ENERGY_PER_TURN));    // energy manager
-        ;
+
         // =============== /TEXTURES, ENERGY, LOADOUT/ =================
 
 
