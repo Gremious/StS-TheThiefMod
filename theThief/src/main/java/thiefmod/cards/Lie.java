@@ -42,7 +42,7 @@ public class Lie extends AbstractBackstabCard {
 
     private static final int COST = 1;
 
-    private static final int BLOCK = 7;
+    private static final int BLOCK = 4;
 
     private static final int MAGIC = 1;
     private static final int UPGRADED_PLUS_MAGIC = 1;
