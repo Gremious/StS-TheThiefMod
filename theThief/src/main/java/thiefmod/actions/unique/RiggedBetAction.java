@@ -1,7 +1,7 @@
 package thiefmod.actions.unique;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.DiscardAction;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -30,12 +30,10 @@ public class RiggedBetAction extends AbstractGameAction {
     public void update() {
         if (duration == startingDuration) {
             int count = AbstractDungeon.player.hand.size();
-
-            AbstractDungeon.actionManager.addToTop(new DrawCardAction(target, count));
-            AbstractDungeon.actionManager.addToTop(
-                    new StealCardAction(count, 0, ADD_RANDOM, ADD_LOCATION, ADD_UPGRADED));
-
-
+            if (count != 0) {
+                AbstractDungeon.actionManager.addToTop(new StealCardAction(count, 0, ADD_RANDOM, ADD_LOCATION, ADD_UPGRADED));
+                AbstractDungeon.actionManager.addToTop(new DiscardAction(this.target, this.target, count, true));
+            }
             isDone = true;
         }
 
