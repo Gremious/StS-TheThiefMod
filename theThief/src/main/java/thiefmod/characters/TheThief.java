@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
+import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
@@ -43,6 +44,14 @@ public class TheThief extends CustomPlayer {
     public static final int CARD_DRAW = 5;
     public static final int ORB_SLOTS = 0;
 
+    // =============== STRINGS =================
+
+    private static final String ID = ThiefMod.makeID("DefaultCharacter");
+    private static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString(ID);
+    private static final String[] NAMES = characterStrings.NAMES;
+    private static final String[] TEXT = characterStrings.TEXT;
+
+    // =============== /STRINGS/ =================
 
     public static final float[] LAYERSPEED = {20.0f, 0.0f, -40.0f, 40.0f, 0.0f};
 
@@ -114,8 +123,7 @@ public class TheThief extends CustomPlayer {
     // Starting description and loadout
     @Override
     public CharSelectInfo getLoadout() {
-        return new CharSelectInfo("The Thief",
-                "A mysterious figure with a beguiling mask, and NL an expertise in a a particular, underhanded, set of skills.",
+        return new CharSelectInfo(NAMES[0], TEXT[0],
                 CURRENT_HP, MAX_HP, ORB_SLOTS, STARTING_GOLD, CARD_DRAW, this, getStartingRelics(),
                 getStartingDeck(), false);
 
@@ -198,7 +206,7 @@ public class TheThief extends CustomPlayer {
     // Should return class name as it appears in run history screen.
     @Override
     public String getLocalizedCharacterName() {
-        return "The Thief";
+        return NAMES[0];
     }
 
     //Which starting card should specific events give you?
@@ -210,7 +218,7 @@ public class TheThief extends CustomPlayer {
     // The class name as it appears next to your player name in game
     @Override
     public String getTitle(AbstractPlayer.PlayerClass playerClass) {
-        return "the Thief";
+        return NAMES[1];
     }
 
     // Should return a new instance of your character, sending this.name as its name parameter.
@@ -252,7 +260,7 @@ public class TheThief extends CustomPlayer {
     // core to its maximum..."
     @Override
     public String getSpireHeartText() {
-        return "You slash at the heart.";
+        return TEXT[1];
     }
 
     // The vampire events refer to the base game characters as "brother", "sister",
@@ -260,7 +268,7 @@ public class TheThief extends CustomPlayer {
     // the full text that will be displayed as the first screen of the vampires event.
     @Override
     public String getVampireText() {
-        return "Navigating an unlit street, you come across several hooded figures in the midst of some dark ritual. As you approach, they turn to you in eerie unison. The tallest among them bares fanged teeth and extends a long, pale hand towards you. NL ~\"Join~ ~us~ ~smiling~ ~one,~ ~and~ ~feel~ ~the~ ~warmth~ ~of~ ~the~ ~Spire.\"~";
+        return TEXT[2];
     }
 
 }

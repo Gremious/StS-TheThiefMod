@@ -184,7 +184,7 @@
     "DESCRIPTION": "Add a random Cantrip to your hand.",
     "UPGRADE_DESCRIPTION": "Add a random upgraded Cantrip to your hand."
   },
-  "theThief:stolenBagOfMagicCantrips`": {
+  "theThief:stolenBagOfMagicCantrips": {
     "NAME": "Bag of Magic Cantrips",
     "DESCRIPTION": "Discover a random Cantrip.",
     "UPGRADE_DESCRIPTION": "Discover a random upgraded Cantrip."

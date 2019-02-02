@@ -1,0 +1,13 @@
+{
+        "theThief:ThiefCharacter": {
+                "NAMES": [
+                        "The Thief",
+                        "the Thief"
+                ],
+                "TEXT": [
+                        "A mysterious figure with a beguiling mask, NL and an expertise in a a particular, underhanded, set of skills.",
+                        "You slash at the heart.",
+                        "Navigating an unlit street, you come across several hooded figures in the midst of some dark ritual. As you approach, they turn to you in eerie unison. The tallest among them bares fanged teeth and extends a long, pale hand towards you. NL ~\"Join~ ~us~ ~grinning~ ~one,~ ~and~ ~feel~ ~the~ ~warmth~ ~of~ ~the~ ~Spire.\"~"
+                ]
+        }
+}
