@@ -41,7 +41,7 @@ public class DissoluteSatisfactionPower extends AbstractPower {
     }
 
     @Override
-    public void onInflictDamage(DamageInfo info, int damageAmount, AbstractCreature target) {
+    public void onAttack(DamageInfo info, int damageAmount, AbstractCreature target) {
         AbstractDungeon.actionManager.addToBottom(new HealAction(target, source, amount));
     }
 
