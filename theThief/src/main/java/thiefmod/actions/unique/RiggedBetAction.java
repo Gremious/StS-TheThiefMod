@@ -35,7 +35,7 @@ public class RiggedBetAction extends AbstractGameAction {
                 AbstractDungeon.actionManager.addToTop(new DiscardAction(this.target, this.target, count, true));
             }
             isDone = true;
-        }
+        }64
 
     }
 }
