@@ -3,7 +3,6 @@ package thiefmod.cards;
 import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -71,10 +70,8 @@ public class HeartBreaker extends AbstractBackstabCard {
     public float calculateModifiedCardDamage(AbstractPlayer player, AbstractMonster mo, float dmg) {
 
         if (mo == null || mo.maxHealth == 0) {
-            return damage;
-        }
-
-        if (mo.hasPower(VulnerablePower.POWER_ID) && mo.hasPower(WeakPower.POWER_ID)) {
+            dmg = damage;
+        } else if (mo.hasPower(VulnerablePower.POWER_ID) && mo.hasPower(WeakPower.POWER_ID)) {
             dmg = damage * 2;
         } else {
             dmg = damage;
