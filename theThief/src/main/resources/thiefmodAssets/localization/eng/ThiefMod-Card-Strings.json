@@ -17,8 +17,8 @@
   },
   "theThief:Lie": {
     "NAME": "Lie",
-    "DESCRIPTION": "Gain !B! Block. Apply !M! vulnerable to all enemies. ",
-    "UPGRADE_DESCRIPTION": "",
+    "DESCRIPTION": "Gain !B! Block. Apply !M! vulnerable to all enemies.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. Apply !M! vulnerable to all enemies.",
     "EXTENDED_DESCRIPTION": [
       "[#fa5555]As[] [#fa5555]fundamental[] [#fa5555]as[] [#fa5555]it[] [#fa5555]gets?[]"
     ]

@@ -1,6 +1,5 @@
 package thiefmod.powers.Unique;
 
-import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -20,7 +19,6 @@ import thiefmod.ThiefMod;
 
 public class LiarPower extends AbstractPower {
     public static AbstractCreature source;
-    public static AbstractMonster target;
     private static int debuffAmount;
     private static boolean upgraded;
 
@@ -31,7 +29,7 @@ public class LiarPower extends AbstractPower {
     public static final String IMG = ThiefMod.makePath(ThiefMod.COMMON_POWER);
 
 
-    public LiarPower(AbstractCreature owner, AbstractCreature source, AbstractMonster target, final boolean upgraded, final int amount, final int debuffAmount) {
+    public LiarPower(AbstractCreature owner, AbstractCreature source, final boolean upgraded, final int amount, final int debuffAmount) {
         name = NAME;
         ID = POWER_ID;
         img = ImageMaster.loadImage(IMG);
@@ -40,7 +38,6 @@ public class LiarPower extends AbstractPower {
 
         this.owner = owner;
         this.source = source;
-        this.target = target;
         this.upgraded = upgraded;
 
         this.amount = amount;
@@ -52,14 +49,16 @@ public class LiarPower extends AbstractPower {
     @Override
     public void onPlayCard(AbstractCard card, AbstractMonster m) {
         if (card.type.equals(AbstractCard.CardType.SKILL)) {
+            AbstractMonster randomMonster = AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster) null, true, AbstractDungeon.cardRandomRng);
+
             if (upgraded) {
                 AbstractDungeon.actionManager.addToBottom(
-                        new ApplyPowerAction(target, source, new WeakPower(target, debuffAmount, false), debuffAmount));
+                        new ApplyPowerAction(randomMonster, source, new WeakPower(randomMonster, debuffAmount, false), debuffAmount));
                 AbstractDungeon.actionManager.addToBottom(
-                        new ApplyPowerAction(target, source, new VulnerablePower(target, debuffAmount, false), debuffAmount));
+                        new ApplyPowerAction(randomMonster, source, new VulnerablePower(randomMonster, debuffAmount, false), debuffAmount));
             } else {
                 AbstractDungeon.actionManager.addToBottom(
-                        new ApplyPowerAction(target, source, new WeakPower(target, debuffAmount, false), debuffAmount));
+                        new ApplyPowerAction(randomMonster, source, new WeakPower(randomMonster, debuffAmount, false), debuffAmount));
             }
         }
     }
