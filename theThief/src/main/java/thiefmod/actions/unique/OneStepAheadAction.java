@@ -5,9 +5,12 @@ import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster.Intent;
+import com.megacrit.cardcrawl.vfx.ThoughtBubble;
 import thiefmod.powers.Common.ShadowstepPower;
 
 public class OneStepAheadAction extends AbstractGameAction {
@@ -15,6 +18,9 @@ public class OneStepAheadAction extends AbstractGameAction {
     private int damageNum;
     private int timesNum;
     private AbstractMonster targetMonster;
+
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("OpeningAction");
+    public static final String TEXT[] = uiStrings.TEXT;
 
     public OneStepAheadAction(int magicNum, int damageNum, int timesNum, AbstractMonster m) {
         duration = 0.0F;
@@ -40,8 +46,7 @@ public class OneStepAheadAction extends AbstractGameAction {
 
             }
         } else {
-            AbstractDungeon.actionManager.addToTop(new TalkAction(
-                    true, "It's not attacking or blocking.", 2.0f, 2.0f));
+            AbstractDungeon.effectList.add(new ThoughtBubble(AbstractDungeon.player.dialogX, AbstractDungeon.player.dialogY, 3.0F, TEXT[0], true));
         }
         isDone = true;
     }

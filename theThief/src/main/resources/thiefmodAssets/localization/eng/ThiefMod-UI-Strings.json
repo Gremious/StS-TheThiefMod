@@ -25,5 +25,10 @@
       "Unplayable\\.",
       "Unplayable. NL"
     ]
+  },
+  "theThief:Actions": {
+    "TEXT": [
+      "Steal a card."
+    ]
   }
 }

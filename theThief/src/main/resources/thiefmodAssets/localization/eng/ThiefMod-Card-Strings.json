@@ -68,9 +68,10 @@
   "theThief:Ransack": {
     "NAME": "Ransack",
     "DESCRIPTION": "Choose 1 out of 3 stolen cards and add !M! copies of it to your hand.",
-    "UPGRADE_DESCRIPTION": "",
+    "UPGRADE_DESCRIPTION": "Choose 1 out of 3 stolen cards and add !M! copies of it to your hand.",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]ransack[]"
+      "[#88888]ransack[]",
+      "Choose 1 out of 3 stolen cards and add !M! copy of it to your hand."
     ]
   },
   "theThief:IllGottenGains": {
@@ -287,14 +288,6 @@
       "[#88888]Louse,[][#88888]you're[][#88888]just[][#88888]being[][#88888]crazy.[]"
     ]
   },
-  "theThief:GuiltTrip": {
-    "NAME": "Guilt Trip",
-    "DESCRIPTION": "If an enemy intends to attack, make them block for that much instead.",
-    "UPGRADE_DESCRIPTION": "If an enemy intends to attack, make them block for that much instead.",
-    "EXTENDED_DESCRIPTION": [
-      "[#88888]Flavor[] [#88888]Text[]"
-    ]
-  },
   "theThief:Multitask": {
     "NAME": "Multitask",
     "DESCRIPTION": "Discard !theThief:Magic! cards. Shadowstep 1 time and Steal !M! cards.",
@@ -334,7 +327,7 @@
     "EXTENDED_DESCRIPTION": [
       "[#88888]What's[][#88888]yours[][#88888]is[][#88888]mine.[]",
       "Tip.",
-      "If you keep a gray Stolen card, unless it's a [#FEE130]Rare[] [#FEE130]Find[] , it will lose Exhaust."
+      "If you keep a gray Stolen card, unless it's a [#FEE130]Rare[] [#FEE130]Find,[] it will lose Exhaust."
     ]
   },
   "theThief:IAmEverywhere": {
@@ -519,6 +512,22 @@
     "NAME": "EmptyCard",
     "DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "[#88888]Flavor[] [#88888]Text[]"
+    ]
+  },
+  "theThief:TripUp": {
+    "NAME": "Trip-up",
+    "DESCRIPTION": "Apply !M! Vulnerable. NL Gain !B! block.",
+    "UPGRADE_DESCRIPTION": "Apply !M! Vulnerable. NL Gain !B! block.",
+    "EXTENDED_DESCRIPTION": [
+      "[#88888]It's[] [#88888]like[] [#88888]a[] [#88888]leg[] [#88888]sweep[] [#88888]they[] [#88888]least[] [#88888]expect.[]"
+    ]
+  },
+  "theThief:GuiltTrip": {
+    "NAME": "Guilt Trip",
+    "DESCRIPTION": "If an enemy intends to attack, apply !M! Weak and it loses !theThief:Magic! strength. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "If an enemy intends to attack, apply !M! Weak and it loses !theThief:Magic! strength. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]
