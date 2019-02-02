@@ -1,16 +1,20 @@
 package thiefmod.cards;
 
 import basemod.helpers.TooltipInfo;
+import com.evacipated.cardcrawl.mod.hubris.patches.PiercingPatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.LoseHPAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
 import thiefmod.patches.Character.AbstractCardEnum;
+import thiefmod.patches.PiercingTag;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,14 +53,18 @@ public class SerratedDagger extends AbstractBackstabCard {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
         baseDamage = DAMAGE;
+        tags.add(PiercingTag.THIEF_PIERCING);
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        AbstractDungeon.actionManager.addToBottom(new LoseHPAction(
-                m, p, damage, AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(
+                m, new DamageInfo(p, damage, PiercingPatch.PIERCING), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+
+        CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.LOW, ScreenShake.ShakeDur.SHORT, true); // Screen Effect
+
 
     }
 
