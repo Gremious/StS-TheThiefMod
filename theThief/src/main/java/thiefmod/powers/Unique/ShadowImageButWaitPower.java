@@ -59,8 +59,7 @@ public class ShadowImageButWaitPower extends AbstractPower {
     public int onAttacked(DamageInfo info, int damage) {
         damageToReceive = damage;
         updateDescription();
-
-        return damage;
+        return 0;
     }
 
 

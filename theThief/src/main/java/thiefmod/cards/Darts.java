@@ -14,7 +14,6 @@ import thiefmod.actions.unique.DartsAction;
 import thiefmod.patches.Character.AbstractCardEnum;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class Darts extends AbstractBackstabCard {
@@ -45,6 +44,7 @@ public class Darts extends AbstractBackstabCard {
     private static final int COST = 2;
 
     private static final int DAMAGE = 1;
+    private static final int UPGRADED_DAMAGE = 1;
 
 // /STAT DECLARATION/
 
@@ -76,17 +76,15 @@ public class Darts extends AbstractBackstabCard {
     public void applyPowers() {
         super.applyPowers();
         int count = 0;
-        Iterator skillCheckDescription = AbstractDungeon.actionManager.cardsPlayedThisCombat.iterator();
 
-        while (skillCheckDescription.hasNext()) {
-            AbstractCard c = (AbstractCard) skillCheckDescription.next();
+        for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisCombat) {
             if (c.type == CardType.SKILL) {
                 ++count;
             }
         }
 
         rawDescription = DESCRIPTION;
-        ;
+
         if (count == 1) {
             rawDescription = rawDescription + EXTENDED_DESCRIPTION[1] + count + EXTENDED_DESCRIPTION[2];
         } else if (count > 1) {
@@ -110,6 +108,7 @@ public class Darts extends AbstractBackstabCard {
     @Override
     public void upgrade() {
         if (!upgraded) {
+            upgradeDamage(UPGRADED_DAMAGE);
             upgradeName();
             initializeDescription();
         }

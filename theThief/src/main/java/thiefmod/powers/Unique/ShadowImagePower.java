@@ -56,7 +56,8 @@ public class ShadowImagePower extends AbstractPower {
 
     }
 
-    public void atEndOfRound() {
+    @Override
+    public void atEndOfTurn(boolean isPlayer) {
         if (amount == 0) {
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, ID));
         } else {
