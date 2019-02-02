@@ -179,15 +179,15 @@
     "DESCRIPTION": "Discover !M! random Arte.",
     "UPGRADE_DESCRIPTION": "Discover !M! random Artes."
   },
-  "theThief:stolenMagicTrinket": {
-    "NAME": "Stolen Magic Trinket",
-    "DESCRIPTION": "Add a random Trinket to your hand.",
-    "UPGRADE_DESCRIPTION": "Add a random upgraded Trinket to your hand."
+  "theThief:stolenMagicCantrip": {
+    "NAME": "Stolen Magic Cantrip",
+    "DESCRIPTION": "Add a random Cantrip to your hand.",
+    "UPGRADE_DESCRIPTION": "Add a random upgraded Cantrip to your hand."
   },
-  "theThief:stolenBagOfMagicTrinkets": {
-    "NAME": "Bag of Magic Trinkets",
-    "DESCRIPTION": "Discover a random Trinket.",
-    "UPGRADE_DESCRIPTION": "Discover a random upgraded Trinket."
+  "theThief:stolenBagOfMagicCantrips`": {
+    "NAME": "Bag of Magic Cantrips",
+    "DESCRIPTION": "Discover a random Cantrip.",
+    "UPGRADE_DESCRIPTION": "Discover a random upgraded Cantrip."
   },
   "theThief:stolenMysticalOrb": {
     "NAME": "Stolen Mystical Orb",

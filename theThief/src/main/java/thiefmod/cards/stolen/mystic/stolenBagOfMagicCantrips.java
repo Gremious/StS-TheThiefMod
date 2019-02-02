@@ -6,8 +6,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
 import thiefmod.ThiefMod;
+import thiefmod.actions.Util.DiscoverRandomFromArrayAction;
 import thiefmod.cards.AbstractBackstabCard;
 import thiefmod.patches.Character.ThiefCardTags;
 
@@ -15,11 +15,11 @@ import java.util.ArrayList;
 
 import static mysticmod.MysticMod.cantripsGroup;
 
-public class stolenMagicTrinket extends AbstractBackstabCard {
+public class stolenBagOfMagicCantrips extends AbstractBackstabCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = ThiefMod.makeID("stolenMagicTrinket");
+    public static final String ID = ThiefMod.makeID("stolenBagOfMagicCantrips");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_UNCOMMON_SKILL);
@@ -27,7 +27,6 @@ public class stolenMagicTrinket extends AbstractBackstabCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    private ArrayList<AbstractCard> artesGroup = new ArrayList<>();
 
     // /TEXT DECLARATION/
 
@@ -39,13 +38,14 @@ public class stolenMagicTrinket extends AbstractBackstabCard {
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = CardColor.COLORLESS;
 
-    private static final int COST = 0;
+    private static final int COST = 1;
+    private static final int UPGRADED_COST = 0;
 
     private static final int MAGIC = 1;
     // /STAT DECLARATION/
 
 
-    public stolenMagicTrinket() {
+    public stolenBagOfMagicCantrips() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
         tags.add(ThiefCardTags.STOLEN);
@@ -54,22 +54,39 @@ public class stolenMagicTrinket extends AbstractBackstabCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractCard trinketCard = cantripsGroup.get(AbstractDungeon.cardRandomRng.random(cantripsGroup.size() - 1));
-        if (upgraded) {
-            trinketCard.upgrade();
-            AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(trinketCard));
-        } else {
+        ArrayList<AbstractCard> trinketCards = new ArrayList<>();
 
-            AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(trinketCard));
+        trinketCards.add(cantripsGroup.get(AbstractDungeon.cardRandomRng.random(cantripsGroup.size() - 1)));
+        trinketCards.add(cantripsGroup.get(AbstractDungeon.cardRandomRng.random(cantripsGroup.size() - 1)));
+        trinketCards.add(cantripsGroup.get(AbstractDungeon.cardRandomRng.random(cantripsGroup.size() - 1)));
+
+        if (upgraded) {
+            AbstractDungeon.actionManager.addToBottom(new DiscoverRandomFromArrayAction(trinketCards, true));
         }
+
+        AbstractDungeon.actionManager.addToBottom(new DiscoverRandomFromArrayAction(trinketCards));
+
+    }
+
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+
+        if (magicNumber >= 2) {
+            rawDescription = UPGRADE_DESCRIPTION;
+        } else {
+            rawDescription = DESCRIPTION;
+        }
+
+        initializeDescription();
     }
 
     // Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {
-            rawDescription = UPGRADE_DESCRIPTION;
             upgradeName();
+            upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }
     }

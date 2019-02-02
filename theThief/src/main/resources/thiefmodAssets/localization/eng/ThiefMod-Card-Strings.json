@@ -380,7 +380,7 @@
   },
   "theThief:Cunning": {
     "NAME": "Cunning",
-    "DESCRIPTION": "The next !M! Stolen card you play this turn are played twice.",
+    "DESCRIPTION": "The next !M! Stolen card you play this turn is played twice.",
     "UPGRADE_DESCRIPTION": "The next !M! Stolen cards you play this turn are played twice.",
     "EXTENDED_DESCRIPTION": [
       "[#88888][] [#88888]Text[]"
