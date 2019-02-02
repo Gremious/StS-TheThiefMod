@@ -50,7 +50,7 @@ public class MurderousIntent extends AbstractBackstabCard {
     private static final int COST = 1;
 
     private static final int MAGIC = 2;
-    private static final int UPGRADED_PLUS_MAGIC = 4;
+    private static final int UPGRADED_PLUS_MAGIC = 2;
 
     private static final int BACKSTAB = 1;
 
@@ -59,9 +59,6 @@ public class MurderousIntent extends AbstractBackstabCard {
     public MurderousIntent() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        ExhaustiveVariable.setBaseValue(this, 2);
-
-        FleetingField.fleeting.set(this, true);
         magicNumber = baseMagicNumber = MAGIC;
         backstabNumber = baseBackstabNumber = BACKSTAB;
 
@@ -73,7 +70,7 @@ public class MurderousIntent extends AbstractBackstabCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
-                p, p, new ShadowstepPower(p, p, magicNumber), magicNumber));
+                p, p, new ShadowstepPower(p, p, backstabNumber), backstabNumber));
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
                 p, p, new StrengthPower(p, magicNumber), magicNumber));

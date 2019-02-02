@@ -1,5 +1,6 @@
 package thiefmod.actions.Util;
 
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -7,12 +8,14 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
+import com.megacrit.cardcrawl.vfx.cardManip.CardFlashVfx;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDiscardEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDrawPileEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import thiefmod.ThiefMod;
+import thiefmod.patches.Character.ThiefCardTags;
 
 public class MakeSuperCopyAction extends AbstractGameAction {
     public static final Logger logger = LogManager.getLogger(ThiefMod.class.getName());
@@ -98,10 +101,19 @@ public class MakeSuperCopyAction extends AbstractGameAction {
 
             if (addLocation == AbstractDungeon.player.hand) {
                 AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(c));
+                if (c.hasTag(ThiefCardTags.RARE_FIND)) {
+                    AbstractDungeon.effectList.add(new CardFlashVfx(c, Color.GOLD));
+                }
             } else if (addLocation == AbstractDungeon.player.drawPile) {
                 AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(c, true, false));
+                if (c.hasTag(ThiefCardTags.RARE_FIND)) {
+                    AbstractDungeon.effectList.add(new CardFlashVfx(c, Color.GOLD));
+                }
             } else if (addLocation == AbstractDungeon.player.discardPile) {
                 AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(c));
+                if (c.hasTag(ThiefCardTags.RARE_FIND)) {
+                    AbstractDungeon.effectList.add(new CardFlashVfx(c, Color.GOLD));
+                }
             } else {
                 logger.info("The Super Duper Copy Action didn't find ether hand, deck or discard.");
             }

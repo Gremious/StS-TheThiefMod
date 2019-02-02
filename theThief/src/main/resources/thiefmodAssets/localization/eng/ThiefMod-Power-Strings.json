@@ -16,9 +16,9 @@
     ]
   },
   "theThief:RefunCostPower": {
-    "NAME": "Surprise!",
+    "NAME": "Refund!",
     "DESCRIPTIONS": [
-      "Refunds ",
+      "Refund the next ",
       " card you play this turn.",
       " cards you play this turn."
     ]
@@ -224,8 +224,8 @@
     "NAME": "Fleeting Guilt",
     "DESCRIPTIONS": [
       "You have stolen ",
-      " card. After stealing 5, add an Ethereal Guilt to your hand.",
-      " cards. After stealing 5, add an Ethereal Guilt to your hand."
+      " card. After stealing 5, add an #rFleeting #rGuilt to your hand.",
+      " cards. After stealing 5, add an #rFleeting #rGuilt to your hand."
     ]
   },
   "theThief:GhastlyPresencePower": {

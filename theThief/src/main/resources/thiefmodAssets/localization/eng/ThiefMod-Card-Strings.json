@@ -343,7 +343,7 @@
     "DESCRIPTION": "Shadowstep !theThief:Magic! time. NL Gain !M! Strenght. NL At the end of your turn, lose !M! Strenght.",
     "UPGRADE_DESCRIPTION": "Shadowstep !theThief:Magic! time. NL Gain !M! Strenght. NL At the end of your turn, lose !M! Strenght.",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]Flavor[] [#88888]Text[]"
+      "[#fa5555]You[] [#fa5555]are[] [#fa5555]walking[] [#fa5555]a[] [#fa5555]thin[] [#fa5555]line.[]"
     ]
   },
   "theThief:CorrosivePoison": {

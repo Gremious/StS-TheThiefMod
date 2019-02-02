@@ -96,9 +96,7 @@ public class StealCardAction extends AbstractGameAction {
 
             AbstractDungeon.actionManager.actions.add(new MakeSuperCopyAction(c, "Exhaust", location));
 
-            if(c.hasTag(ThiefCardTags.RARE_FIND)){
-                AbstractDungeon.effectList.add(new CardFlashVfx(c, Color.GOLD));
-            }
+
             //TODO: Test whether or not having a full hand breaks this.
         }
     }
