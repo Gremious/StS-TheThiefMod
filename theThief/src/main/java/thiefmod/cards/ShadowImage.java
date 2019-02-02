@@ -74,9 +74,10 @@ public class ShadowImage extends AbstractBackstabCard {
     @Override
     public void upgrade() {
         if (!upgraded) {
+            exhaust = false;
             upgradeName();
             upgradeBaseCost(UPGRADE_COST);
-//          rawDescription = UPGRADE_DESCRIPTION;
+          rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

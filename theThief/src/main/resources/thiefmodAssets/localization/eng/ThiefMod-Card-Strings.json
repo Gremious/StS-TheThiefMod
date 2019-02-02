@@ -372,7 +372,7 @@
   },
   "theThief:ShadowImage": {
     "NAME": "Shadow Image",
-    "DESCRIPTION": "Take all damage you would have taken this turn, at the end of your next turn instead.",
+    "DESCRIPTION": "Take all damage you would have taken this turn, at the end of your next turn instead. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Take all damage you would have taken this turn, at the end of your next turn instead.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
