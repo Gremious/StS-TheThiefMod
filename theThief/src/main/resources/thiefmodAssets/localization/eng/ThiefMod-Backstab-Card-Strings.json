@@ -46,22 +46,25 @@
     "DESCRIPTION": "Deal !D! damage. NL Add !theThief:Magic! Void to your discard pile. NL Backstab: Draw !theThief:Magic! card.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Your[] [#88888]one[] [#88888]free*[] [#88888]attack[] [#88888]per[] [#88888]turn![]",
-      "Deal !D! damage. NL Add !theThief:Magic! Voids to your discard pile. ",
       "Deal !D! damage. NL Add !theThief:Magic! Void to your discard pile. ",
-      " NL Backstab: Draw !M! cards.",
-      " NL Backstab: [#fa5555]Draw[] !M! [#fa5555]card.[]",
+      "Deal !D! damage. NL Add !theThief:Magic! Voids to your discard pile. ",
       " NL Backstab: Draw !M! card.",
+      " NL Backstab: [#fa5555]Draw[] !M! [#fa5555]card.[]",
+      " NL Backstab: Draw !M! cards.",
       " NL Backstab: [#fa5555]Draw[] !M! [#fa5555]cards.[]"
     ]
   },
   "theThief:DirtyDeedsDDC": {
     "NAME": "Dirty Deeds DDC",
-    "DESCRIPTION": "Deal !D! damage. If this kills a non-minion enemy, gain !M! gold. NL Backstab: Gain !theThief:Magic! gold instead",
+    "DESCRIPTION": "Deal !D! damage. If this kills a non-minion enemy, gain !M! gold. NL Backstab: Gain !theThief:Magic! gold instead.  NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. If this kills a non-minion enemy, gain !M! gold. NL Backstab: Gain !theThief:Magic! gold instead.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Filthy[] [#88888]acts[] [#88888]at[] [#88888]a[] [#88888]reasonable[] [#88888]price.[]",
       "Deal !D! damage. NL If this kills a non-minion enemy, gain !M! gold. ",
-      " NL Backstab: Gain !theThief:Magic! gold instead",
-      " NL Backstab: [#fa5555]Gain[] !theThief:Magic! [#fa5555]gold[] [#fa5555]instead.[]"
+      " NL Backstab: Gain !theThief:Magic! gold instead.",
+      " NL Backstab: Gain !theThief:Magic! gold instead. NL Exhaust.",
+      " NL Backstab: [#fa5555]Gain[] !theThief:Magic! [#fa5555]gold[] [#fa5555]instead.[]",
+      " NL Backstab: [#fa5555]Gain[] !theThief:Magic! [#fa5555]gold[] [#fa5555]instead.[] NL Exhaust."
     ]
   },
   "theThief:ViciousAssault": {

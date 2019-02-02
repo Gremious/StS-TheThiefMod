@@ -48,7 +48,7 @@ public class DirtyDeedsDDC extends AbstractBackstabCard {
 
     private static final int COST = 1;
 
-    private static final int DAMAGE = 9;
+    private static final int DAMAGE = 8;
     private static final int UPGRADE_PLUS_DAMAGE = 3;
 
     private static final int MAGIC = 5;
@@ -88,9 +88,18 @@ public class DirtyDeedsDDC extends AbstractBackstabCard {
         super.applyPowers();
 
         if (AbstractDungeon.player.cardsPlayedThisTurn == 0 || AbstractDungeon.player.hasPower(BackstabPower.POWER_ID)) {
-            rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[2];
+            if (upgraded) {
+                rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[2];
+            } else {
+                rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[3];
+            }
         } else {
-            rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[3];
+            if (upgraded) {
+                rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[4];
+            } else {
+                rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[5];
+            }
+
         }
 
         initializeDescription();
@@ -108,8 +117,10 @@ public class DirtyDeedsDDC extends AbstractBackstabCard {
     @Override
     public void upgrade() {
         if (!upgraded) {
+            exhaust = false;
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DAMAGE);
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

@@ -115,8 +115,8 @@
   },
   "theThief:SerratedDagger": {
     "NAME": "Serrated Dagger",
-    "DESCRIPTION": "Enemy loses !D! HP.",
-    "UPGRADE_DESCRIPTION": "Enemy loses !D! HP.",
+    "DESCRIPTION": "Deal !D! damage. Goes through Block.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. Goes through Block.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Always[] [#88888]serrate[] [#88888]your[] [#88888]daggers,[] [#88888]it's[] [#88888]good[] [#88888]practice.[]"
     ]
