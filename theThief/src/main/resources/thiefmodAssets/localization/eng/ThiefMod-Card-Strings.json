@@ -490,8 +490,8 @@
   },
   "theThief:DoubleDealing": {
     "NAME": "Double Dealing",
-    "DESCRIPTION": "The next (!M!) Backstab attack you play this turn will deal double damage.",
-    "UPGRADE_DESCRIPTION": "The next (!M!) Backstab attacks you play this turn will deal double damage.",
+    "DESCRIPTION": "The next !M! Backstab attack you play this turn will deal double damage.",
+    "UPGRADE_DESCRIPTION": "The next !M! Backstab attacks you play this turn will deal double damage.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Full[] [#88888]house![]"
     ]
