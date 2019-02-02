@@ -5,7 +5,7 @@
       "shadowstep",
       "Shadowstepping"
     ],
-    "DESCRIPTION": "Become elusive, reducing incoming damage by 10% per stack. NL If you use a Backstab card immediately after a Shadowstep card, it gains its Backstab effect."
+    "DESCRIPTION": "Become elusive, reducing incoming damage by 10% per stack. NL If you use a Backstab card immediately after a Shadowstep card, it gains its Backstab effect. Playing ANY non-Shadowstep card removes ALL elusive."
   },
   {
     "NAMES": [

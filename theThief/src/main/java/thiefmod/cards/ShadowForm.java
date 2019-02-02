@@ -1,6 +1,7 @@
 package thiefmod.cards;
 
 import basemod.helpers.BaseModCardTags;
+import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -14,6 +15,9 @@ import thiefmod.patches.Character.AbstractCardEnum;
 import thiefmod.patches.Character.ThiefCardTags;
 import thiefmod.powers.Common.BackstabPower;
 import thiefmod.powers.Unique.ShadowFormPower;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ShadowForm extends AbstractBackstabCard {
 
@@ -72,12 +76,19 @@ public class ShadowForm extends AbstractBackstabCard {
     }
 
     @Override
+    public List<TooltipInfo> getCustomTooltips() {
+        List<TooltipInfo> tips = new ArrayList<>();
+        tips.add(new TooltipInfo(FLAVOR_STRINGS[0], EXTENDED_DESCRIPTION[0]));
+        return tips;
+    }
+
+    @Override
     public void applyPowers() {
         super.applyPowers();
         if (AbstractDungeon.player.cardsPlayedThisTurn == 0) {
-            rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0];
-        } else {
             rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[1];
+        } else {
+            rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[2];
         }
         initializeDescription();
     }
