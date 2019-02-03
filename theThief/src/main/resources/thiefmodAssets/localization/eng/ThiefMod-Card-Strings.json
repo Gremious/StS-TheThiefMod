@@ -466,7 +466,7 @@
     ]
   },
   "theThief:ShadowMastery": {
-    "NAME": "ShadowMastery",
+    "NAME": "Shadow Mastery",
     "DESCRIPTION": "Shadowstepping reduces damage taken by 20% instead of 10.",
     "UPGRADE_DESCRIPTION": "Shadowstepping reduces damage taken by 20% instead of 10.",
     "EXTENDED_DESCRIPTION": [
