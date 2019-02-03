@@ -70,13 +70,13 @@ public class QuickThinking extends AbstractBackstabCard {
     public void applyPowers() {
         super.applyPowers();
         if (backstabNumber == 1 && magicNumber == 1) {
-            rawDescription = EXTENDED_DESCRIPTION[0];
-        } else if (backstabNumber == 1 && magicNumber != 1) {
             rawDescription = EXTENDED_DESCRIPTION[1];
-        } else if (backstabNumber != 1 && magicNumber == 1) {
+        } else if (backstabNumber == 1 && magicNumber != 1) {
             rawDescription = EXTENDED_DESCRIPTION[2];
-        } else {
+        } else if (backstabNumber != 1 && magicNumber == 1) {
             rawDescription = EXTENDED_DESCRIPTION[3];
+        } else {
+            rawDescription = EXTENDED_DESCRIPTION[4];
         }
         initializeDescription();
     }
