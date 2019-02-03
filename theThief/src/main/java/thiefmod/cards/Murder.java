@@ -1,12 +1,12 @@
 package thiefmod.cards;
 
+import basemod.helpers.TooltipInfo;
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.FleetingField;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.actions.utility.ShakeScreenAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -15,9 +15,13 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.AdditiveSlashImpactEffect;
+import com.megacrit.cardcrawl.vfx.combat.ClashEffect;
 import com.megacrit.cardcrawl.vfx.combat.RoomTintEffect;
 import thiefmod.ThiefMod;
 import thiefmod.patches.Character.AbstractCardEnum;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.megacrit.cardcrawl.helpers.ScreenShake.ShakeDur.MED;
 import static com.megacrit.cardcrawl.helpers.ScreenShake.ShakeIntensity.HIGH;
@@ -64,30 +68,28 @@ public class Murder extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m,
-                new DamageInfo(p, damage * backstabNumber, damageTypeForTurn),
-                AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-
-        AbstractDungeon.actionManager.addToBottom(new ShakeScreenAction(1.0f, MED, HIGH));
-
         AbstractDungeon.actionManager.addToBottom(new VFXAction(
                 new RoomTintEffect(Color.RED, 0.2f), 1.0f));
 
-        AbstractDungeon.actionManager.addToBottom(new VFXAction(
-                new AdditiveSlashImpactEffect(m.drawX, m.drawY, Color.RED)));
+        AbstractDungeon.actionManager.addToBottom(new ShakeScreenAction(1.0f, MED, HIGH));
+
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m,
+                new DamageInfo(p, damage, damageTypeForTurn)));
+
+        for (int i = 0; i < 3; i++) {
+            AbstractDungeon.actionManager.addToBottom(new SFXAction("ATTACK_HEAVY"));
+            AbstractDungeon.actionManager.addToBottom(new VFXAction(new AdditiveSlashImpactEffect(m.drawX, m.drawY, Color.RED)));
+            AbstractDungeon.actionManager.addToBottom(new VFXAction(new ClashEffect(m.drawX, m.drawY)));
+        }
     }
+
 
     @Override
-    public void applyPowers() {
-        super.applyPowers();
-        if (AbstractDungeon.player.cardsPlayedThisTurn == 0) {
-            rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0];
-        } else {
-            rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[1];
-        }
-        initializeDescription();
+    public List<TooltipInfo> getCustomTooltips() {
+        List<TooltipInfo> tips = new ArrayList<>();
+        tips.add(new TooltipInfo(FLAVOR_STRINGS[0], EXTENDED_DESCRIPTION[0]));
+        return tips;
     }
-
 
     //Upgraded stats.
     @Override
