@@ -31,13 +31,13 @@ public class RefundCardCost extends AbstractPower {
         ID = POWER_ID;
         this.owner = owner;
         this.source = source;
-        this.updateDescription();
-
         this.amount = amount;
 
         type = PowerType.BUFF;
         isTurnBased = false;
         img = ImageMaster.loadImage(IMG);
+
+        this.updateDescription();
     }
 
     @Override

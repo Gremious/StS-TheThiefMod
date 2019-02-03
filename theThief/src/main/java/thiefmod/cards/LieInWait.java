@@ -5,7 +5,6 @@ import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.StartupCard;
 import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -49,16 +48,20 @@ public class LieInWait extends AbstractBackstabCard implements StartupCard {
 
     private static final int MAGIC = 1;
 
+    private static final int BACKSTAB = 2;
+    private static final int UPGRADED_BACKSTAB = 3;
+
 
 // /STAT DECLARATION/
 
     public LieInWait() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        ExhaustiveVariable.setBaseValue(this, 2);
-
         magicNumber = baseMagicNumber = MAGIC;
         baseBlock = BLOCK;
+        backstabNumber = baseBackstabNumber = BACKSTAB;
+
+        ExhaustiveVariable.setBaseValue(this, backstabNumber);
     }
 
     // Actions the card should do.
@@ -91,7 +94,8 @@ public class LieInWait extends AbstractBackstabCard implements StartupCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-//          rawDescription = UPGRADE_DESCRIPTION;
+            upgradeBackstabNumber(UPGRADED_BACKSTAB);
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

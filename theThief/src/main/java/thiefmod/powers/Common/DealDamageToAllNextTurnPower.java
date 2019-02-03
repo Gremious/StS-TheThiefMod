@@ -1,10 +1,10 @@
 package thiefmod.powers.Common;
 
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -63,16 +63,17 @@ public class DealDamageToAllNextTurnPower extends AbstractPower {
         while (var3.hasNext()) {
             mo = (AbstractMonster) var3.next();
             if (!mo.isDeadOrEscaped()) {
-                AbstractDungeon.actionManager.addToBottom(new VFXAction(
+                AbstractDungeon.actionManager.addToTop(new VFXAction(
                         new AdditiveSlashImpactEffect(mo.drawX, mo.drawY, Color.GOLD), 0.05F));
             }
         }
 
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(
-                target, new DamageInfo(source, damageAmount, DamageInfo.DamageType.NORMAL),
-                AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+        AbstractDungeon.actionManager.addToTop(
+                new DamageAllEnemiesAction(AbstractDungeon.player, DamageInfo.createDamageMatrix(damageAmount, false, true), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
 
-        if (amount <= 0) {
+        if (amount > 0) {
+            actionManager.addToBottom(new ReducePowerAction(owner, source, ID, 1));
+        } else {
             actionManager.addToBottom(new RemoveSpecificPowerAction(owner, source, ID));
         }
     }
@@ -81,9 +82,9 @@ public class DealDamageToAllNextTurnPower extends AbstractPower {
     @Override
     public void updateDescription() {
         if (amount == 1) {
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+            description = DESCRIPTIONS[0] + damageAmount + DESCRIPTIONS[1];
         } else if (amount > 1) {
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
+            description = DESCRIPTIONS[0] + damageAmount + DESCRIPTIONS[2];
         }
     }
 
