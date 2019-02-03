@@ -1,8 +1,11 @@
 package thiefmod.cards;
 
 import basemod.helpers.TooltipInfo;
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -10,6 +13,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.combat.AdditiveSlashImpactEffect;
+import com.megacrit.cardcrawl.vfx.combat.ClashEffect;
+import com.megacrit.cardcrawl.vfx.combat.DaggerSprayEffect;
 import thiefmod.ThiefMod;
 import thiefmod.patches.Character.AbstractCardEnum;
 
@@ -39,12 +45,12 @@ public class DaggerBouquet extends AbstractBackstabCard {
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
 
-    private static final int COST = 1;
+    private static final int COST = 2;
+    private static final int UPGRADE_COST = 1;
 
     private static final int DAMAGE = 4;
 
-    private static final int MAGIC = 3;
-    private static final int UPGRADED_PLUS_MAGIC = 5;
+    private static final int MAGIC = 4;
 
 
 // /STAT DECLARATION/
@@ -54,18 +60,18 @@ public class DaggerBouquet extends AbstractBackstabCard {
 
         baseDamage = DAMAGE;
         magicNumber = baseMagicNumber = MAGIC;
-        isMultiDamage = true;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (int i = 0; i < magicNumber; i++) {
-
             AbstractDungeon.actionManager.addToBottom(new DamageAction(
                     AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster) null, true, AbstractDungeon.cardRandomRng),
-                    new DamageInfo(p, damage, damageTypeForTurn),
-                    AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+                    new DamageInfo(p, damage, damageTypeForTurn)));
+
+            AbstractDungeon.actionManager.addToBottom(new SFXAction("ATTACK_DAGGER_6"));
+            AbstractDungeon.actionManager.addToBottom(new VFXAction(new DaggerSprayEffect(false)));
         }
     }
 
@@ -82,7 +88,7 @@ public class DaggerBouquet extends AbstractBackstabCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
+            upgradeBaseCost(UPGRADE_COST);
 //          rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
