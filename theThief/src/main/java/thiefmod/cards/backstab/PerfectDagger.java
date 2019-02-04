@@ -132,7 +132,7 @@ public class PerfectDagger extends AbstractBackstabCard {
 
     @Override
     public void triggerOnEndOfPlayerTurn() {
-        initializeDescription();
+        rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[2];
         super.triggerOnEndOfPlayerTurn();
     }
 
