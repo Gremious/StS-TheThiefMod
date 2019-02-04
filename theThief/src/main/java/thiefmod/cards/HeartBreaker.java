@@ -70,14 +70,12 @@ public class HeartBreaker extends AbstractBackstabCard {
     public float calculateModifiedCardDamage(AbstractPlayer player, AbstractMonster mo, float dmg) {
 
         if (mo == null || mo.maxHealth == 0) {
-            dmg = damage;
+            return dmg;
         } else if (mo.hasPower(VulnerablePower.POWER_ID) && mo.hasPower(WeakPower.POWER_ID)) {
-            dmg = damage * 2;
+            return dmg * 2;
         } else {
-            dmg = damage;
+            return dmg;
         }
-
-        return dmg;
 
     }
 
