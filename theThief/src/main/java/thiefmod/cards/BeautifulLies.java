@@ -25,19 +25,22 @@ public class BeautifulLies extends AbstractBackstabCard {
 // TEXT DECLARATION
 
     public static final String ID = ThiefMod.makeID("BeautifulLies");
-    public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_UNCOMMON_ATTACK);
-    public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:FlavorText");
-    public static final String FLAVOR_STRINGS[] = uiStrings.TEXT;
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String EXTENDED_DESCRIPTION[] = cardStrings.EXTENDED_DESCRIPTION;
 
+    public static final String IMG = "thiefmodAssets/images/cards/Strike.png";
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+
+    public static final String NAME = cardStrings.NAME;
+
+    public static final String EXTENDED_DESCRIPTION[] = cardStrings.EXTENDED_DESCRIPTION;
+    public static final String FLAVOR_STRINGS[] = uiStrings.TEXT;
+
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 // /TEXT DECLARATION/
 
     // STAT DECLARATION
-    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+    public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
