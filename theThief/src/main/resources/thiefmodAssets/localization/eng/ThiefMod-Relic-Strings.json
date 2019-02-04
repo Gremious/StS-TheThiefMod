@@ -14,5 +14,12 @@
     "DESCRIPTIONS": [
       "On the first turn of each combat, gain 1 #yIntangible."
     ]
+  },
+  "theThief:Lockpicks": {
+    "NAME": "Lockpicks",
+    "FLAVOR": "Darn, I broke my lockpick! NL Darn, I broke my lockpick! NL Darn, I broke my lockpick! ...",
+    "DESCRIPTIONS": [
+      "[#2aecd7]Usable [#2aecd7]once [#2aecd7]per [#2aecd7]combat.[] NL #yFetch one card from anywhere."
+    ]
   }
 }

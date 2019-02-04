@@ -14,7 +14,6 @@ import org.apache.logging.log4j.Logger;
 import thiefmod.ThiefMod;
 import thiefmod.actions.Util.DiscoverAndExhaustCard;
 import thiefmod.actions.Util.MakeSuperCopyAction;
-import thiefmod.cards.stolen.StolenMegaphone;
 import thiefmod.cards.stolen.RareFind.StolenArsenal;
 import thiefmod.cards.stolen.RareFind.StolenBlood;
 import thiefmod.cards.stolen.RareFind.StolenCore;
@@ -132,11 +131,13 @@ public class StealCardAction extends AbstractGameAction {
         stolenCards.addToTop(new StolenToxins());
 
         // Rares:
-        stolenCards.addToTop(new StolenShadow());
-        stolenCards.addToTop(new StolenArsenal());
-        stolenCards.addToTop(new StolenBlood());
-        stolenCards.addToTop(new StolenCore());
-
+        int roll = AbstractDungeon.relicRng.random(99);
+        if (roll < 75) {
+            stolenCards.addToTop(new StolenShadow());
+            stolenCards.addToTop(new StolenArsenal());
+            stolenCards.addToTop(new StolenBlood());
+            stolenCards.addToTop(new StolenCore());
+        }
         //---
 
         if (hasConspire) {
@@ -157,8 +158,7 @@ public class StealCardAction extends AbstractGameAction {
         //---
 
         if (hasHubris || hasInfiniteSpire || hasReplayTheSpire) {
-            int roll = AbstractDungeon.relicRng.random(99);
-            if (roll < 15) {
+            if (roll < 25) {
                 ArrayList<AbstractCard> blackCards = new ArrayList<>();
 
                 if (hasHubris) {
@@ -218,13 +218,13 @@ public class StealCardAction extends AbstractGameAction {
             customMysticCards.add(new stolenBookOfArte());
             customMysticCards.add(new stolenMagicCantrip());
             customMysticCards.add(new stolenBagOfMagicCantrips());
-            // Rare:
-            customMysticCards.add(new stolenMysticalOrb());
-
             mysticCards.add(CardLibrary.getCopy("mysticmod:MagicMissile"));
-            //   mysticCards.add(CardLibrary.getCopy("mysticmod:Spellstrike"));
             mysticCards.add(cantripsGroup.get(AbstractDungeon.cardRandomRng.random(cantripsGroup.size() - 1)));
 
+            // Rare:
+            if (roll < 75) {
+                customMysticCards.add(new stolenMysticalOrb());
+            }
 
             for (AbstractCard c : mysticCards) {
                 if (c != null) {

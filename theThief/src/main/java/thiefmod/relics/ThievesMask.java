@@ -45,7 +45,7 @@ public class ThievesMask extends CustomRelic {
     public void onEnterRoom(AbstractRoom room) {
         logger.info("On room enter - triggered");
         if (room instanceof ShopRoom && AbstractDungeon.player.hasRelic(SmilingMask.ID)) {
-            logger.info("This is a shop room.");
+            logger.info("This is a shop room and you have smiling mask.");
             this.flash();
             this.pulse = true;
         } else {
@@ -59,9 +59,4 @@ public class ThievesMask extends CustomRelic {
         return DESCRIPTIONS[0] + new SmilingMask().name + ".";
     }
 
-    // Which relic to return on making a copy of this relic.
-    @Override
-    public AbstractRelic makeCopy() {
-        return new ThievesMask();
-    }
 }

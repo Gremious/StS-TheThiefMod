@@ -25,6 +25,7 @@ import org.clapper.util.classutil.*;
 import thiefmod.characters.TheThief;
 import thiefmod.patches.Character.AbstractCardEnum;
 import thiefmod.patches.Character.TheThiefEnum;
+import thiefmod.relics.Lockpicks;
 import thiefmod.relics.ShadowMask;
 import thiefmod.relics.ThievesMask;
 import thiefmod.variabls.BackstabBlock;
@@ -114,18 +115,12 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
     private static final String ENERGY_ORB_DEAFULT_GRAY_PORTRAIT = "1024/card_thief_gray_orb.png";
 
     // Card images
-    public static final String STRIKE_THIEF = "cards/Strike.png";
-    public static final String DEFEND_THIEF = "cards/Defend.png";
 
     public static final String DEFAULT_COMMON_ATTACK = "cards/Attack.png";
     public static final String DEFAULT_COMMON_SKILL = "cards/Skill.png";
-    public static final String DEFAULT_COMMON_POWER = "cards/Power.png";
     public static final String DEFAULT_UNCOMMON_ATTACK = "cards/Attack.png";
     public static final String DEFAULT_UNCOMMON_SKILL = "cards/Skill.png";
     public static final String DEFAULT_UNCOMMON_POWER = "cards/Power.png";
-    public static final String DEFAULT_RARE_ATTACK = "cards/Attack.png";
-    public static final String DEFAULT_RARE_SKILL = "cards/Skill.png";
-    public static final String DEFAULT_RARE_POWER = "cards/Power.png";
 
 
     public static final String DRAMATIC_FEIGN = "cards/DramaticFeign.png";
@@ -133,13 +128,8 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
 
     // Power images
     public static final String COMMON_POWER = "powers/placeholder_power.png";
-    public static final String UNCOMMON_POWER = "powers/placeholder_power.png";
     public static final String RARE_POWER = "powers/placeholder_power.png";
 
-
-    // Relic images
-    public static final String PLACEHOLDER_RELIC = "relics/placeholder_relic.png";
-    public static final String PLACEHOLDER_RELIC_OUTLINE = "relics/outline/placeholder_relic.png";
 
     // Character assets
     private static final String THE_THIEF_BUTTON = "charSelect/thiefCharacterButton.png";
@@ -244,6 +234,8 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
 
         BaseMod.addRelicToCustomPool(new ThievesMask(), AbstractCardEnum.THIEF_GRAY);
         BaseMod.addRelicToCustomPool(new ShadowMask(), AbstractCardEnum.THIEF_GRAY);
+
+        BaseMod.addRelicToCustomPool(new Lockpicks(), AbstractCardEnum.THIEF_GRAY);
 
         logger.info("done adding relics!");
     }
