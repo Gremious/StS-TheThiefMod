@@ -30,7 +30,7 @@ public class MakeSuperCopyAction extends AbstractGameAction {
     /*
      * Will not add/remove the keyword if card already has it/doesn't have it, respectively.
      * keywords:  "Exhaust", "Ethereal", "Unplayable". Use KEYWORD_STRINGS[].
-     * addLocation: "Hand", "Draw", "Discard"
+     * addLocation: Hand, Draw, Discard
      */
     public MakeSuperCopyAction(AbstractCard c, final CardGroup addLocation) {
         this(c, null, false, addLocation);
@@ -43,7 +43,7 @@ public class MakeSuperCopyAction extends AbstractGameAction {
     public MakeSuperCopyAction(AbstractCard c, final String keyword, boolean removeKeyword, final CardGroup addLocation) {
         actionType = ActionType.CARD_MANIPULATION;
         duration = Settings.ACTION_DUR_FAST;
-        this.c = c;
+        this.c = c.makeStatEquivalentCopy();
         this.addLocation = addLocation;
         this.keyword = keyword;
         this.removeKeyword = removeKeyword;

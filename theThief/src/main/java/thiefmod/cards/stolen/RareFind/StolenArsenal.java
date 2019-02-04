@@ -72,7 +72,6 @@ public class StolenArsenal extends AbstractBackstabCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.effectList.add(new BorderFlashEffect(Color.GREEN));
         AbstractDungeon.actionManager.addToTop(new WaitAction(0.1f));
 
         AbstractDungeon.actionManager.addToTop(new StolenArsenalAction(p));

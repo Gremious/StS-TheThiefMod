@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
+import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.ExhaustEmberEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.CardFlashVfx;
 import com.megacrit.cardcrawl.vfx.combat.RoomTintEffect;
@@ -52,7 +53,7 @@ public class StolenArsenalAction extends AbstractGameAction {
             discardCards.addAll(player.discardPile.group);
             exhaustCards.addAll(player.exhaustPile.group);
 
-            AbstractDungeon.effectList.add(new RoomTintEffect(Color.GREEN, 1.0f));
+            AbstractDungeon.effectList.add(new BorderFlashEffect(Color.GREEN));
             for (AbstractCard c : handCards) {
                 AbstractDungeon.effectList.add(new ExhaustEmberEffect(c.current_x, c.current_y));
                 AbstractDungeon.effectList.add(new CardFlashVfx(c, Color.GOLD));
