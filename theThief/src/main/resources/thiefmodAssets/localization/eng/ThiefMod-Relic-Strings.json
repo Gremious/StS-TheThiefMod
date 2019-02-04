@@ -26,7 +26,9 @@
     "NAME": "PocketChange",
     "FLAVOR": "A couple of extra coins never hurt.",
     "DESCRIPTIONS": [
-      "[#2aecd7]Usable [#2aecd7]once [#2aecd7]per [#2aecd7]combat.[] NL #yFetch #b1 card from any pile."
+      "At the start of each combat, #yRefund the first card you play. NL #ySynergy: ",
+      "If you have the ",
+      ": gain #ygold equal to the refunded cost."
     ]
   }
 }
