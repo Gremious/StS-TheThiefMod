@@ -109,7 +109,7 @@ public class ShadowReserves extends AbstractBackstabCard implements ModalChoice.
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-//          rawDescription = UPGRADE_DESCRIPTION;
+          rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }
