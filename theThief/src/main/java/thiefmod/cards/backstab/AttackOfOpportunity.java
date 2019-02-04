@@ -145,6 +145,7 @@ public class AttackOfOpportunity extends AbstractBackstabCard {
             upgradeName();
             upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
             upgradeBackstabNumber(UPGRADED_PLUS_BACKSTAB);
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

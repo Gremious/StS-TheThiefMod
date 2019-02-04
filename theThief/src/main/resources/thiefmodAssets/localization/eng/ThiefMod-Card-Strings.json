@@ -388,8 +388,8 @@
   },
   "theThief:RiggedBet": {
     "NAME": "Rigged Bet",
-    "DESCRIPTION": "Discard your hand, then, steal that many cards. Exhaust.",
-    "UPGRADE_DESCRIPTION": "Discard your hand, then, steal that many cards. Exhaust.",
+    "DESCRIPTION": "Discard your hand, then, steal that many cards. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Discard your hand, then, steal that many cards. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]An[] [#88888]over-calculated[] [#88888]gamble[]"
     ]

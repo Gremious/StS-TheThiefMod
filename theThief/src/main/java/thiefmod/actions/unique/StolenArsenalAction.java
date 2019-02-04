@@ -78,7 +78,7 @@ public class StolenArsenalAction extends AbstractGameAction {
 
             do {
                 AbstractDungeon.actionManager.addToBottom(new DrawCardAction(player, 1));
-                if (!AbstractDungeon.player.drawPile.isEmpty() && !AbstractDungeon.player.discardPile.isEmpty()) {
+                if (AbstractDungeon.player.drawPile.isEmpty() && AbstractDungeon.player.discardPile.isEmpty()) {
                     break;
                 }
                 currentHand++;

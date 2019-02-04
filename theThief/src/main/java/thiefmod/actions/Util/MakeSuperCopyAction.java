@@ -30,7 +30,7 @@ public class MakeSuperCopyAction extends AbstractGameAction {
     /*
      * Will not add/remove the keyword if card already has it/doesn't have it, respectively.
      * keywords:  "Exhaust", "Ethereal", "Unplayable". Use KEYWORD_STRINGS[].
-     * addLocation: Hand, Draw, Discard
+     * addLocation: Hand, Draw, Discard piles from Abdun.player
      */
     public MakeSuperCopyAction(AbstractCard c, final CardGroup addLocation) {
         this(c, null, false, addLocation);

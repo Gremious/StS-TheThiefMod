@@ -43,7 +43,8 @@
   },
   "theThief:AttackOfOpportunity": {
     "NAME": "Attack Of Opportunity",
-    "DESCRIPTION": "Deal !D! damage. NL Add !theThief:Magic! Void to your discard pile. NL Backstab: Draw !theThief:Magic! card.",
+    "DESCRIPTION": "Deal !D! damage. NL Add !theThief:Magic! Voids to your discard pile. NL Backstab: Draw !theThief:Magic! cards.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Add !theThief:Magic! Void to your discard pile. NL Backstab: Draw !theThief:Magic! cards.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Your[] [#88888]one[] [#88888]free*[] [#88888]attack[] [#88888]per[] [#88888]turn![]",
       "Deal !D! damage. NL Add !theThief:Magic! Void to your discard pile. ",
