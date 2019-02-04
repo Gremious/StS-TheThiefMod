@@ -19,7 +19,7 @@ public class IllGottenGains extends AbstractBackstabCard {
 
     public static final String ID = ThiefMod.makeID("IllGottenGains");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:FlavorText");
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:TooltipNames");
     public static final String FLAVOR_STRINGS[] = uiStrings.TEXT;
     public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_UNCOMMON_POWER);
 

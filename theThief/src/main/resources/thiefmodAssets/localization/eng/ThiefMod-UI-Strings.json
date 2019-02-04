@@ -1,13 +1,8 @@
 {
-  "theThief:FlavorText": {
+  "theThief:TooltipNames": {
     "TEXT": [
-      "Flavor Text"
-    ]
-  },
-  "theThief:Synergy": {
-    "TEXT": [
-      "Synergy",
-      "To be honest I should have made FlavorText and Synergy into their own 'tooltip names' section rather than seperate. "
+      "Flavor Text",
+      "Synergy"
     ]
   },
   "theThief:StealCardUtil": {

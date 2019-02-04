@@ -24,7 +24,7 @@ public class StrikeThief extends CustomCard {
 
     public static final String ID = thiefmod.ThiefMod.makeID("StrikeThief");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:FlavorText");
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:TooltipNames");
     public static final String FLAVOR_STRINGS[] = uiStrings.TEXT;
     private static final CardStrings flavortextStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String IMG = "thiefmodAssets/images/cards/Strike.png";

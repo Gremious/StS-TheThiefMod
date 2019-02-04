@@ -19,7 +19,7 @@ public class StolenRitual extends CustomCard {
 
     public static final String ID = thiefmod.ThiefMod.makeID("StolenRitual");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:FlavorText");
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:TooltipNames");
     public static final String FLAVOR_STRINGS[] = uiStrings.TEXT;
     public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_COMMON_ATTACK);
 
