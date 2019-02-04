@@ -9,8 +9,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import thiefmod.ThiefMod;
-import thiefmod.actions.common.DrawPileToHandAction;
-import thiefmod.actions.common.ExhaustToHandAction;
+import thiefmod.actions.Util.DrawPileToHandAction;
+import thiefmod.actions.Util.ExhaustToHandAction;
 import thiefmod.actions.common.LimboToHandAction;
 
 import java.util.ArrayList;

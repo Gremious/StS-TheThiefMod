@@ -1,4 +1,4 @@
-package thiefmod.actions.common;
+package thiefmod.actions.Util;
 
 import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;

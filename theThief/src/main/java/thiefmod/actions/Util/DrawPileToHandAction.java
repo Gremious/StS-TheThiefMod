@@ -1,4 +1,4 @@
-package thiefmod.actions.common;
+package thiefmod.actions.Util;
 
 import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -7,10 +7,10 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.CorruptionPower;
 
-public class DiscardToHandAction extends AbstractGameAction {
+public class DrawPileToHandAction extends AbstractGameAction {
     private AbstractCard card;
 
-    public DiscardToHandAction(AbstractCard card) {
+    public DrawPileToHandAction(AbstractCard card) {
         this.card = card;
         actionType = ActionType.CARD_MANIPULATION;
         duration = Settings.ACTION_DUR_FAST;
@@ -20,10 +20,9 @@ public class DiscardToHandAction extends AbstractGameAction {
         if (duration == Settings.ACTION_DUR_FAST) {
             if (AbstractDungeon.player.hand.size() == BaseMod.MAX_HAND_SIZE) {
                 isDone = true;
-            } else if (AbstractDungeon.player.discardPile.isEmpty()) {
+            } else if (AbstractDungeon.player.drawPile.isEmpty()) {
                 isDone = true;
-            } else if (AbstractDungeon.player.discardPile.contains(card)) {
-
+            } else if (AbstractDungeon.player.drawPile.contains(card)) {
                 AbstractDungeon.player.hand.addToHand(card);
                 card.unhover();
                 card.setAngle(0.0F, true);
@@ -34,14 +33,14 @@ public class DiscardToHandAction extends AbstractGameAction {
                 if (AbstractDungeon.player.hasPower(CorruptionPower.POWER_ID) && card.type == AbstractCard.CardType.SKILL) {
                     card.setCostForTurn(-99);
                 }
-                AbstractDungeon.player.discardPile.removeCard(card);
-
+                AbstractDungeon.player.drawPile.removeCard(card);
             }
 
             AbstractDungeon.player.hand.refreshHandLayout();
-            AbstractDungeon.player.hand.glowCheck();
+            //AbstractDungeon.player.hand.glowCheck();
         }
 
         tickDuration();
+        isDone = true;
     }
 }

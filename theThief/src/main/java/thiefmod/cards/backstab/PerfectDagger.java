@@ -1,9 +1,12 @@
 package thiefmod.cards.backstab;
 
 import basemod.helpers.TooltipInfo;
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.defect.IncreaseMiscAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -11,6 +14,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.combat.AdditiveSlashImpactEffect;
+import com.megacrit.cardcrawl.vfx.combat.DamageImpactCurvyEffect;
+import com.megacrit.cardcrawl.vfx.combat.DamageImpactLineEffect;
 import thiefmod.ThiefMod;
 import thiefmod.cards.AbstractBackstabCard;
 import thiefmod.patches.Character.AbstractCardEnum;
@@ -49,8 +55,8 @@ public class PerfectDagger extends AbstractBackstabCard {
 
     private static final int COST = 1;
 
-    private static final int MISC = 1;
-    private static final int MAGIC = 2;
+    private static int MISC = 1;
+    private static final int MAGIC = 1;
     private static final int UPGRADED_PLUS_MAGIC = 1;
 
 
@@ -67,6 +73,8 @@ public class PerfectDagger extends AbstractBackstabCard {
         damage = baseDamage = misc;
 
         tags.add(ThiefCardTags.BACKSTAB);
+
+        initializeDescription();
     }
 
 
@@ -80,9 +88,23 @@ public class PerfectDagger extends AbstractBackstabCard {
             AbstractDungeon.actionManager.addToBottom(
                     new IncreaseMiscAction(uuid, misc, magicNumber));
         }
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(
-                m, new DamageInfo(p, damage, damageTypeForTurn),
-                AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+        if (damage < 19) {
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(
+                    m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        } else if (damage >= 19 && damage < 35) {
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(
+                    m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+            AbstractDungeon.actionManager.addToBottom(new SFXAction("ATTACK_DAGGER_1"));
+            AbstractDungeon.actionManager.addToBottom(new VFXAction(new DamageImpactCurvyEffect(m.drawX, m.drawY)));
+        } else {
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(
+                    m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+            AbstractDungeon.actionManager.addToBottom(new SFXAction("ATTACK_DAGGER_5"));
+            AbstractDungeon.actionManager.addToBottom(new SFXAction("ATTACK_DAGGER_5"));
+            AbstractDungeon.actionManager.addToBottom(new VFXAction(new DamageImpactCurvyEffect(m.drawX, m.drawY)));
+            AbstractDungeon.actionManager.addToBottom(new VFXAction(new DamageImpactLineEffect(m.drawX, m.drawY)));
+            AbstractDungeon.actionManager.addToBottom(new VFXAction(new AdditiveSlashImpactEffect(m.drawX, m.drawY, Color.RED)));
+        }
     }
 
 
@@ -108,6 +130,11 @@ public class PerfectDagger extends AbstractBackstabCard {
         return tips;
     }
 
+    @Override
+    public void triggerOnEndOfPlayerTurn() {
+        initializeDescription();
+        super.triggerOnEndOfPlayerTurn();
+    }
 
     //Upgraded stats.
     @Override
