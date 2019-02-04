@@ -19,7 +19,14 @@
     "NAME": "Lockpicks",
     "FLAVOR": "Darn, I broke my lockpick! NL Darn, I broke my lockpick! NL Darn, I broke my lockpick! ...",
     "DESCRIPTIONS": [
-      "[#2aecd7]Usable [#2aecd7]once [#2aecd7]per [#2aecd7]combat.[] NL #yFetch one card from anywhere."
+      "[#2aecd7]Usable [#2aecd7]once [#2aecd7]per [#2aecd7]combat.[] NL #yFetch #b1 card from any pile."
+    ]
+  },
+  "theThief:PocketChange": {
+    "NAME": "PocketChange",
+    "FLAVOR": "A couple of extra coins never hurt.",
+    "DESCRIPTIONS": [
+      "[#2aecd7]Usable [#2aecd7]once [#2aecd7]per [#2aecd7]combat.[] NL #yFetch #b1 card from any pile."
     ]
   }
 }

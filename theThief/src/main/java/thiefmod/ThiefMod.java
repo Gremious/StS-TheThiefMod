@@ -3,6 +3,7 @@ package thiefmod;
 import basemod.BaseMod;
 import basemod.ModLabel;
 import basemod.ModPanel;
+import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -26,6 +27,7 @@ import thiefmod.characters.TheThief;
 import thiefmod.patches.Character.AbstractCardEnum;
 import thiefmod.patches.Character.TheThiefEnum;
 import thiefmod.relics.Lockpicks;
+import thiefmod.relics.PocketChange;
 import thiefmod.relics.ShadowMask;
 import thiefmod.relics.ThievesMask;
 import thiefmod.variabls.BackstabBlock;
@@ -232,10 +234,13 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
     public void receiveEditRelics() {
         logger.info("Add relics");
 
+        // Thief-Specific:
         BaseMod.addRelicToCustomPool(new ThievesMask(), AbstractCardEnum.THIEF_GRAY);
         BaseMod.addRelicToCustomPool(new ShadowMask(), AbstractCardEnum.THIEF_GRAY);
-
         BaseMod.addRelicToCustomPool(new Lockpicks(), AbstractCardEnum.THIEF_GRAY);
+
+        // All-Classes:
+        BaseMod.addRelic(new PocketChange(), RelicType.SHARED);
 
         logger.info("done adding relics!");
     }

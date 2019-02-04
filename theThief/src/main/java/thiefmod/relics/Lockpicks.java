@@ -25,7 +25,7 @@ public class Lockpicks extends CustomRelic implements ClickableRelic, ModalChoic
     private ModalChoice modal;
 
     public Lockpicks() {
-        super(ID, ImageMaster.loadImage(IMG), new Texture(OUTLINE), RelicTier.BOSS, LandingSound.MAGICAL);
+        super(ID, ImageMaster.loadImage(IMG), new Texture(OUTLINE), RelicTier.BOSS, LandingSound.CLINK);
 
         tips.clear();
         tips.add(new PowerTip(name, description));
