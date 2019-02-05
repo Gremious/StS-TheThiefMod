@@ -22,13 +22,13 @@ import thiefmod.patches.Character.AbstractCardEnum;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DaggerBouquet extends AbstractBackstabCard {
+public class BouqetOKnives extends AbstractBackstabCard {
 
 
 // TEXT DECLARATION
 
-    public static final String ID = ThiefMod.makeID("DaggerBouquet");
-    public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_COMMON_ATTACK);
+    public static final String ID = ThiefMod.makeID("BouqetOKnives");
+    public static final String IMG = "thiefmodAssets/images/cards/BouqetOKnives.png";
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:TooltipNames");
@@ -55,7 +55,7 @@ public class DaggerBouquet extends AbstractBackstabCard {
 
 // /STAT DECLARATION/
 
-    public DaggerBouquet() {
+    public BouqetOKnives() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
         baseDamage = DAMAGE;

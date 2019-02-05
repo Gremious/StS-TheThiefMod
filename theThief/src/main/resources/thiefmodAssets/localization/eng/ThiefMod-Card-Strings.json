@@ -33,12 +33,12 @@
       "Deal !D! damage. Draw !M! cards."
     ]
   },
-  "theThief:DaggerBouquet": {
-    "NAME": "Dagger Bouquet",
+  "theThief:BouqetOKnives": {
+    "NAME": "Bouqet-O-Knives",
     "DESCRIPTION": "Deal !D! damage to a random enemy !M! times.",
     "UPGRADE_DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]An[] [#88888]odd[] [#88888]number[] [#88888]of[] [#88888]flowers[] [#88888]signify[] [#88888]death.[] [#88888]So[] [#88888]do[] [#88888]daggers.[]"
+      "[#88888]An[] [#88888]odd[] [#88888]number[] [#88888]of[] [#88888]flowers[] [#88888]signify[] [#88888]death.[] [#88888]So[] [#88888]do[] [#88888]knives.[]"
     ]
   },
   "theThief:Steal": {

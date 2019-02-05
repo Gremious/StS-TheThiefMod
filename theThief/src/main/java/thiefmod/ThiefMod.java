@@ -116,15 +116,12 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
 
     // Card images
 
-    public static final String DEFAULT_COMMON_ATTACK = "cards/Attack.png";
-    public static final String DEFAULT_COMMON_SKILL = "cards/Skill.png";
-    public static final String DEFAULT_UNCOMMON_ATTACK = "cards/Attack.png";
-    public static final String DEFAULT_UNCOMMON_SKILL = "cards/Skill.png";
-    public static final String DEFAULT_UNCOMMON_POWER = "cards/Power.png";
+    public static final String DEFAULT_COMMON_ATTACK = "cards/beta/Attack.png";
+    public static final String DEFAULT_COMMON_SKILL = "cards/beta/Skill.png";
+    public static final String DEFAULT_UNCOMMON_ATTACK = "cards/beta/Attack.png";
+    public static final String DEFAULT_UNCOMMON_SKILL = "cards/beta/Skill.png";
+    public static final String DEFAULT_UNCOMMON_POWER = "cards/beta/Power.png";
 
-
-    public static final String DRAMATIC_FEIGN = "cards/DramaticFeign.png";
-    public static final String SHADOW_FORM = "cards/ShadowForm.png";
 
     // Power images
     public static final String COMMON_POWER = "powers/placeholder_power.png";
