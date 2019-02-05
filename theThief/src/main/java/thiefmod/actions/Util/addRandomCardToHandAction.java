@@ -1,4 +1,4 @@
-package thiefmod.actions.unique;
+package thiefmod.actions.Util;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
@@ -62,7 +62,8 @@ public class addRandomCardToHandAction extends com.megacrit.cardcrawl.actions.Ab
                 nextHandCard.cardID.startsWith("Yohane:Little_Demon_") ||
                 // Mad Scientist's Mechanize apparently doesn't work
                 nextHandCard.cardID == "MadScienceMod:Mechanize" ||
-                // Pickle why is this ID not public, I'm far too lazy to use reflection
+                // Pickle why is this ID not public, I'm far too lazy to use reflection - Beaked
+                // So am I - Grem
                 nextHandCard.cardID == "ReplayTheSpireMod:??????????????????????" ||
                 // blakkmod
                 nextHandCard.cardID == "BlakkBlade" ||

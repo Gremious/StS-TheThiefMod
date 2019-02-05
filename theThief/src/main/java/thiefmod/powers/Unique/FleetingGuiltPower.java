@@ -1,6 +1,5 @@
 package thiefmod.powers.Unique;
 
-import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.OnReceivePowerPower;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -11,7 +10,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import thiefmod.ThiefMod;
-import thiefmod.cards.curses.Guilt;
+import thiefmod.cards.curses.FleetingGuilt;
 
 import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager;
 
@@ -46,7 +45,7 @@ public class FleetingGuiltPower extends AbstractPower implements OnReceivePowerP
     @Override
     public boolean onReceivePower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
         if (power.ID.equals(ID) && owner.getPower(ID).amount == 4) {
-            actionManager.addToTop(new MakeTempCardInDiscardAction(new Guilt(), 1));
+            actionManager.addToTop(new MakeTempCardInDiscardAction(new FleetingGuilt(), 1));
             actionManager.addToTop(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, ID));
             return false;
         } else {

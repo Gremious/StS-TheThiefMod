@@ -15,12 +15,11 @@ import thiefmod.cards.AbstractBackstabCard;
 
 @CardNoSeen
 public class CallOfTheVoid extends AbstractBackstabCard {
-//TODO: Make this card.
 
 // TEXT DECLARATION
 
     public static final String ID = ThiefMod.makeID("CallOfTheVoid");
-    public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_COMMON_ATTACK);
+    public static final String IMG = "thiefmodAssets/images/cards/CallOfTheVoid.png";
     public static final CardColor COLOR = CardColor.CURSE;
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

@@ -1,5 +1,6 @@
 package thiefmod.cards.curses;
 
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.GraveField;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.SetDontTriggerAction;
 import com.megacrit.cardcrawl.cards.CardQueueItem;
@@ -15,12 +16,12 @@ import thiefmod.ThiefMod;
 import thiefmod.cards.AbstractBackstabCard;
 
 @CardNoSeen
-public class Guilt extends AbstractBackstabCard {
+public class FleetingGuilt extends AbstractBackstabCard {
 
 // TEXT DECLARATION
 
-    public static final String ID = ThiefMod.makeID("Guilt");
-    public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_COMMON_ATTACK);
+    public static final String ID = ThiefMod.makeID("FleetingGuilt");
+    public static final String IMG = "thiefmodAssets/images/cards/beta/FleetingGuilt.png";
     public static final CardColor COLOR = CardColor.CURSE;
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
@@ -44,9 +45,10 @@ public class Guilt extends AbstractBackstabCard {
 
 // /STAT DECLARATION/
 
-    public Guilt() {
+    public FleetingGuilt() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
+        GraveField.grave.set(this, true);
 
         isEthereal = true; // I'll be honest idk which one I need I can't be bothered to check. I think exhaust.
         exhaust = true;

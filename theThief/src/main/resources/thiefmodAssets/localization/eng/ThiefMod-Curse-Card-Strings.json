@@ -1,7 +1,7 @@
 {
-  "theThief:Guilt": {
+  "theThief:FleetingGuilt": {
     "NAME": "Fleeting Guilt",
-    "DESCRIPTION": "Unplayable. NL At the end of your turn, lose 1 Dexterity. NL Ethereal."
+    "DESCRIPTION": "Grave. NL Unplayable. NL At the end of your turn, lose 1 Dexterity. NL Ethereal."
   },
   "theThief:CallOfTheVoid": {
     "NAME": "Call Of The Void",
