@@ -16,7 +16,7 @@ public class StickyGloves extends CustomRelic {
 
 
     public StickyGloves() {
-        super(ID, ImageMaster.loadImage(IMG), new Texture(OUTLINE), RelicTier.SHOP, LandingSound.MAGICAL);
+        super(ID, ImageMaster.loadImage(IMG), new Texture(OUTLINE), RelicTier.SHOP, LandingSound.FLAT);
 
         tips.clear();
         tips.add(new PowerTip(name, description));

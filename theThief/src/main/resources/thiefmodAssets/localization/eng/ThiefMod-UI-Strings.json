@@ -29,7 +29,8 @@
   },
   "theThief:Actions": {
     "TEXT": [
-      "Steal a card."
+      "Steal a card.",
+      "Choose cards to discard."
     ]
   }
 }

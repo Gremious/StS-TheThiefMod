@@ -16,6 +16,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.relics.QuestionCard;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import javassist.CannotCompileException;
 import javassist.CtClass;
@@ -26,10 +27,7 @@ import org.clapper.util.classutil.*;
 import thiefmod.characters.TheThief;
 import thiefmod.patches.Character.AbstractCardEnum;
 import thiefmod.patches.Character.TheThiefEnum;
-import thiefmod.relics.Lockpicks;
-import thiefmod.relics.PocketChange;
-import thiefmod.relics.ShadowMask;
-import thiefmod.relics.ThievesMask;
+import thiefmod.relics.*;
 import thiefmod.variabls.BackstabBlock;
 import thiefmod.variabls.BackstabDamage;
 import thiefmod.variabls.BackstabMagicNumber;
@@ -238,6 +236,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         BaseMod.addRelicToCustomPool(new ThievesMask(), AbstractCardEnum.THIEF_GRAY);
         BaseMod.addRelicToCustomPool(new ShadowMask(), AbstractCardEnum.THIEF_GRAY);
         BaseMod.addRelicToCustomPool(new Lockpicks(), AbstractCardEnum.THIEF_GRAY);
+        BaseMod.addRelicToCustomPool(new StickyGloves(), AbstractCardEnum.THIEF_GRAY);
 
         // All-Classes:
         BaseMod.addRelic(new PocketChange(), RelicType.SHARED);
