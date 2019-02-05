@@ -3,17 +3,15 @@ package thiefmod.relics;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.PowerTip;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.relics.SmilingMask;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.ShopRoom;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import thiefmod.ThiefMod;
 import thiefmod.powers.Unique.TheThiefThieveryPower;
 
 public class ThievesMask extends CustomRelic {
@@ -21,13 +19,16 @@ public class ThievesMask extends CustomRelic {
     public static final String ID = thiefmod.ThiefMod.makeID("ThievesMask");
     public static final String IMG = "thiefmodAssets/images/relics/ThievesMask.png";
     public static final String OUTLINE = "thiefmodAssets/images/relics/outline/ThievesMask.png";
-    public static final Logger logger = LogManager.getLogger(ThiefMod.class.getName());
+
+
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:TooltipNames");
+    public static final String TOOLTIP_STRINGS[] = uiStrings.TEXT;
 
     public ThievesMask() {
         super(ID, ImageMaster.loadImage(IMG), new Texture(OUTLINE), RelicTier.STARTER, LandingSound.FLAT);
         tips.clear();
         tips.add(new PowerTip(name, description));
-        tips.add(new PowerTip("Synergy",
+        tips.add(new PowerTip(TOOLTIP_STRINGS[1],
                 DESCRIPTIONS[1] + FontHelper.colorString(new SmilingMask().name, "y") + DESCRIPTIONS[2]));
         initializeTips();
     }
@@ -43,9 +44,7 @@ public class ThievesMask extends CustomRelic {
 
     @Override
     public void onEnterRoom(AbstractRoom room) {
-        logger.info("On room enter - triggered");
         if (room instanceof ShopRoom && AbstractDungeon.player.hasRelic(SmilingMask.ID)) {
-            logger.info("This is a shop room and you have smiling mask.");
             this.flash();
             this.pulse = true;
         } else {

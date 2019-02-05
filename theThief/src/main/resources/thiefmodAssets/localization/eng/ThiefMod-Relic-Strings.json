@@ -30,5 +30,12 @@
       "If you have the ",
       ": gain #ygold equal to the refunded cost."
     ]
+  },
+  "theThief:StickyGloves": {
+    "NAME": "Sticky Gloves",
+    "FLAVOR": "They're covered in [#51166b]SLiMe[] [#51166b]GOoOoOP[]",
+    "DESCRIPTIONS": [
+      "At the start of each combat, #ySteal #b1 card."
+    ]
   }
 }

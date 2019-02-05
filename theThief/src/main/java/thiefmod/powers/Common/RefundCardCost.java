@@ -1,6 +1,5 @@
 package thiefmod.powers.Common;
 
-import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
@@ -11,7 +10,10 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.relics.MawBank;
 import thiefmod.ThiefMod;
+import thiefmod.actions.common.GainGoldAction;
+import thiefmod.relics.PocketChange;
 
 public class RefundCardCost extends AbstractPower {
 
@@ -44,6 +46,13 @@ public class RefundCardCost extends AbstractPower {
     public void onUseCard(AbstractCard card, UseCardAction action) {
         flash();
         AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(card.costForTurn));
+
+        if (AbstractDungeon.player.hasRelic(PocketChange.ID)
+                && AbstractDungeon.player.hasRelic(MawBank.ID)
+                && AbstractDungeon.actionManager.cardsPlayedThisCombat.size() <= 1) {
+
+            AbstractDungeon.actionManager.addToBottom(new GainGoldAction(owner, source, card.costForTurn));
+        }
 
         AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(
                 owner, source, ID));
