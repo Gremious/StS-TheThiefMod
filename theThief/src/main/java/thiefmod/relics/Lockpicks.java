@@ -18,8 +18,8 @@ import com.megacrit.cardcrawl.cards.AbstractCard.CardTarget;
 public class Lockpicks extends CustomRelic implements ClickableRelic, ModalChoice.Callback  {
 
     public static final String ID = thiefmod.ThiefMod.makeID("Lockpicks");
-    public static final String IMG = "defaultModResources/images/relics/Lockpicks.png";
-    public static final String OUTLINE = "defaultModResources/images/relics/outline/Lockpicks.png";
+    public static final String IMG = "thiefmodAssets/images/relics/Lockpicks.png";
+    public static final String OUTLINE = "thiefmodAssets/images/relics/outline/Lockpicks.png";
 
     private boolean usedThisCombat = false;
     private ModalChoice modal;

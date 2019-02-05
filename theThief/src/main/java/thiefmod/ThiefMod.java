@@ -237,6 +237,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         BaseMod.addRelicToCustomPool(new ShadowMask(), AbstractCardEnum.THIEF_GRAY);
         BaseMod.addRelicToCustomPool(new Lockpicks(), AbstractCardEnum.THIEF_GRAY);
         BaseMod.addRelicToCustomPool(new StickyGloves(), AbstractCardEnum.THIEF_GRAY);
+        BaseMod.addRelicToCustomPool(new LoadedDice(), AbstractCardEnum.THIEF_GRAY);
 
         // All-Classes:
         BaseMod.addRelic(new PocketChange(), RelicType.SHARED);

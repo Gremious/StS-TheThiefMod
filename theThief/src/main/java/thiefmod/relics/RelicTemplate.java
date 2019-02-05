@@ -12,8 +12,8 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 public class RelicTemplate extends CustomRelic implements ClickableRelic {
 
     public static final String ID = thiefmod.ThiefMod.makeID("RelicTemplate");
-    public static final String IMG = "defaultModResources/images/relics/RelicTemplate.png";
-    public static final String OUTLINE = "defaultModResources/images/relics/outline/RelicTemplate.png";
+    public static final String IMG = "thiefmodAssets/images/relics/RelicTemplate.png";
+    public static final String OUTLINE = "thiefmodAssets/images/relics/outline/RelicTemplate.png";
 
     private boolean usedThisTurn = false;
 

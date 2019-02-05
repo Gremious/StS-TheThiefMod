@@ -17,14 +17,14 @@ import thiefmod.actions.LoadedDiceAction;
 public class LoadedDice extends CustomRelic {
 
     public static final String ID = thiefmod.ThiefMod.makeID("LoadedDice");
-    public static final String IMG = "defaultModResources/images/relics/LoadedDice.png";
-    public static final String OUTLINE = "defaultModResources/images/relics/outline/LoadedDice.png";
+    public static final String IMG = "thiefmodAssets/images/relics/LoadedDice.png";
+    public static final String OUTLINE = "thiefmodAssets/images/relics/outline/LoadedDice.png";
 
 
     private boolean activated = false;
 
     public LoadedDice() {
-        super(ID, ImageMaster.loadImage(IMG), new Texture(OUTLINE), RelicTier.BOSS, LandingSound.FLAT);
+        super(ID, ImageMaster.loadImage(IMG), new Texture(OUTLINE), RelicTier.SHOP, LandingSound.FLAT);
 
         tips.clear();
         tips.add(new PowerTip(name, description));
@@ -45,6 +45,11 @@ public class LoadedDice extends CustomRelic {
             AbstractDungeon.actionManager.addToBottom(new LoadedDiceAction(AbstractDungeon.player));
         }
 
+    }
+
+    @Override
+    public int getPrice() {
+        return 250;
     }
 
     // Description
