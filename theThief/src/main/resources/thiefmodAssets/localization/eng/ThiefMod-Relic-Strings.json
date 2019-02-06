@@ -38,6 +38,13 @@
       "At the start of each combat, #ySteal #b1 card."
     ]
   },
+  "theThief:ShadowBoots": {
+    "NAME": "Shadow Boots",
+    "FLAVOR": "\"Phantasmal quality of the finest making!\" - A Ghost.",
+    "DESCRIPTIONS": [
+      "Gain 2 [E]. NL At the start of each turn, shuffle #b1 #yVoid into your discard pile."
+    ]
+  },
   "theThief:LouseBounty": {
     "NAME": "Louse Bounty",
     "FLAVOR": "A truly monstrous bounty.",
