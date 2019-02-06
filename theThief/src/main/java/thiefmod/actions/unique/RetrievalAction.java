@@ -11,7 +11,7 @@ import org.apache.logging.log4j.Logger;
 import thiefmod.ThiefMod;
 import thiefmod.actions.Util.DrawPileToHandAction;
 import thiefmod.actions.Util.ExhaustToHandAction;
-import thiefmod.actions.common.LimboToHandAction;
+import thiefmod.actions.Util.LimboToHandAction;
 
 import java.util.ArrayList;
 
