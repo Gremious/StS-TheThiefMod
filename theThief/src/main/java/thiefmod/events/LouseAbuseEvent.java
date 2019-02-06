@@ -8,15 +8,7 @@ import com.megacrit.cardcrawl.localization.EventStrings;
 import thiefmod.ThiefMod;
 
 public class LouseAbuseEvent extends AbstractImageEvent {
-    // A random shaky stranger stops you. He is shaking and asks if you'd be agree to be hired to get rid of a "problem".
-    // "I just...I can't deal with those things man...."
-    // He's talking about louses.
-
-    // "[Agree.] I feel you."
-    // "[Agree.] Yeah man I totally agree."
-    // "[Agree.] Screw those things!"
     // Gain a unique relic. If you ever FTK a louse - the relic stops glowing and you get a 150g reward.
-    // "[Denial.] Punch him in the face. Lose 3 hp, cause he punches back."
 
     public static final String ID = ThiefMod.makeID("LouseAbuseEvent");
     private static final EventStrings eventStrings = CardCrawlGame.languagePack.getEventString(ID);
@@ -30,9 +22,9 @@ public class LouseAbuseEvent extends AbstractImageEvent {
         super(NAME, DESCRIPTIONS[0], "thiefmodAssets/images/relics/Lockpicks.png");
 
         if (AbstractDungeon.ascensionLevel >= 15) {
-            HEALTH_LOSS = 15;
+            HEALTH_LOSS = 3;
         } else {
-            HEALTH_LOSS = 10;
+            HEALTH_LOSS = 5;
         }
 
         imageEventText.setDialogOption(OPTIONS[0]);
@@ -66,10 +58,8 @@ public class LouseAbuseEvent extends AbstractImageEvent {
                 }
                 break;
             case 1:
-                switch (i) {
-                    case 0:
-                        openMap();
-                        break;
+                if (i == 0) {
+                    openMap();
                 }
         }
     }
