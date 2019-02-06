@@ -17,6 +17,8 @@ import thiefmod.ThiefMod;
 import thiefmod.patches.Character.ThiefCardTags;
 import thiefmod.powers.Unique.GhastlyEssencePower;
 import thiefmod.powers.Unique.ShadowMasteryPower;
+import thiefmod.relics.ShadowBoots;
+import thiefmod.relics.ShadowMask;
 
 import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager;
 
@@ -82,7 +84,6 @@ public class ShadowstepPower extends AbstractPower implements OnReceivePowerPowe
 
     @Override
     public int onLoseHp(int damageAmount) {
-
         if (AbstractDungeon.player.hasPower(ShadowMasteryPower.POWER_ID)) {
             shadowMastery = AbstractDungeon.player.getPower(ShadowMasteryPower.POWER_ID).amount;
             return (damageAmount / 10) * (10 - amount * (shadowMastery + 1));
@@ -104,7 +105,7 @@ public class ShadowstepPower extends AbstractPower implements OnReceivePowerPowe
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (card.hasTag(ThiefCardTags.SHADOWSTEP)) {
+        if (card.hasTag(ThiefCardTags.SHADOWSTEP) || (AbstractDungeon.player.hasRelic(ShadowMask.ID) && AbstractDungeon.player.hasRelic(ShadowBoots.ID))) {
             return;
         } else if (AbstractDungeon.player.hasPower(GhastlyEssencePower.POWER_ID)) {
             actionManager.addToBottom(new ReducePowerAction(owner, source, this, AbstractDungeon.player.getPower(GhastlyEssencePower.POWER_ID).amount));

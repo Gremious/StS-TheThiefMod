@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 
 public class ShadowBoots extends CustomRelic {
+
     /*
     at the start of your turn gain 1 energy and shuffle a void into your discard pile
     thanks robbo!

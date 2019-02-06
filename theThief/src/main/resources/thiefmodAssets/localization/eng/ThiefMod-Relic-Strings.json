@@ -45,6 +45,16 @@
       "Gain 1 [E]. NL At the start of each turn, shuffle #b1 #yVoid into your discard pile."
     ]
   },
+  "theThief:ShadowCloak": {
+    "NAME": "Shadow Cloak",
+    "FLAVOR": "A cloak made out of pure absence.",
+    "DESCRIPTIONS": [
+      "Whenever you play #b2 #bSkills in a turn, #yShadowstep #b1 time. NL #ySynergy: ",
+      "If you have the ",
+      " AND the ",
+      ": Any time you play a card, #yShadowstep #b1 time. Cards can't break #yShadowstep."
+    ]
+  },
   "theThief:LouseBounty": {
     "NAME": "Louse Bounty",
     "FLAVOR": "A truly monstrous bounty.",
