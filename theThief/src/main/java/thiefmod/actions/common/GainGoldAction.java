@@ -44,12 +44,18 @@ public class GainGoldAction extends AbstractGameAction {
             if (AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {
                 AbstractDungeon.actionManager.clearPostCombatActions();
             }
-
             isDone = true;
+
         } else {
             AbstractDungeon.player.gainGold(goldAmount);
-            for (int i = 0; i < goldAmount; ++i) {
-                AbstractDungeon.effectList.add(new GainPennyEffect(source, target.hb.cX, target.hb.cY, source.hb.cX, source.hb.cY, true));
+            if (goldAmount < 30) {
+                for (int i = 0; i < goldAmount; ++i) {
+                    AbstractDungeon.effectList.add(new GainPennyEffect(source, target.hb.cX, target.hb.cY, source.hb.cX, source.hb.cY, true));
+                }
+            } else {
+                for (int i = 0; i < 30; ++i) {
+                    AbstractDungeon.effectList.add(new GainPennyEffect(source, target.hb.cX, target.hb.cY, source.hb.cX, source.hb.cY, true));
+                }
             }
             isDone = true;
         }

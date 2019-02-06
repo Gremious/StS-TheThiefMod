@@ -13,6 +13,7 @@ import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.dungeons.Exordium;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
@@ -23,6 +24,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.clapper.util.classutil.*;
 import thiefmod.characters.TheThief;
+import thiefmod.events.LouseAbuseEvent;
 import thiefmod.patches.Character.AbstractCardEnum;
 import thiefmod.patches.Character.TheThiefEnum;
 import thiefmod.relics.*;
@@ -208,15 +210,17 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         logger.info("Load Badge Image and mod options");
 
         Texture badgeTexture = new Texture(makePath(BADGE_IMAGE));
-
         ModPanel settingsPanel = new ModPanel();
         settingsPanel.addUIElement(new ModLabel("The Thief Mod does not have any settings!", 400.0f, 700.0f, settingsPanel, (me) -> {
         }));
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
 
-        logger.info("Done loadiing badge Image and mod options");
+        logger.info("Done loading badge Image and mod options");
 
+        logger.info("Done loading badge Image and mod options");
+        BaseMod.addEvent(LouseAbuseEvent.ID, LouseAbuseEvent.class, Exordium.ID);
     }
+
 
     // =============== /LOAD THE MOD BADGE AND MENU/ =================
 
@@ -236,6 +240,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
 
         // All-Classes:
         BaseMod.addRelic(new PocketChange(), RelicType.SHARED);
+        BaseMod.addRelic(new LouseBounty(), RelicType.SHARED);
 
         logger.info("done adding relics!");
     }

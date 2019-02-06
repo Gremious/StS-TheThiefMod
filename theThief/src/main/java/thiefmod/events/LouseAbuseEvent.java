@@ -6,6 +6,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import thiefmod.ThiefMod;
+import thiefmod.relics.LouseBounty;
+import thiefmod.relics.ThievesMask;
 
 public class LouseAbuseEvent extends AbstractImageEvent {
     // Gain a unique relic. If you ever FTK a louse - the relic stops glowing and you get a 150g reward.
@@ -41,7 +43,7 @@ public class LouseAbuseEvent extends AbstractImageEvent {
                     case 0:
                     case 1:
                     case 2:
-                        // Give the player the relic.
+                        AbstractDungeon.player.relics.add(new LouseBounty());
                         imageEventText.loadImage("thiefmodAssets/images/relics/LoadedDice.png");
                         imageEventText.updateBodyText(DESCRIPTIONS[1]);
                         imageEventText.updateDialogOption(0, OPTIONS[4]);

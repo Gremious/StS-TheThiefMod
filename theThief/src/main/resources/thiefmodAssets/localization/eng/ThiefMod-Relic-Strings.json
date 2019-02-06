@@ -37,5 +37,12 @@
     "DESCRIPTIONS": [
       "At the start of each combat, #ySteal #b1 card."
     ]
+  },
+  "theThief:LouseBounty": {
+    "NAME": "Louse Bounty",
+    "FLAVOR": "A truly monstrous bounty.",
+    "DESCRIPTIONS": [
+      "If you kill any #bLouse on the first turn of combat, gain #y150 #yGold. NL Only usable once."
+    ]
   }
 }
