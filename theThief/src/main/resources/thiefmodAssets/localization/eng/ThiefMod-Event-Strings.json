@@ -1,0 +1,18 @@
+{
+  "theThief:LouseAbuse": {
+    "NAME": "Strike for Hire.",
+    "DESCRIPTIONS": [
+      "While you're passing through the ~Spire~ , random stranger stops you. He is @shaking@ and asks if you'd be agree to be hired to get rid of a #r\"problem\". NL \"I just... @I@ @can't@ @deal@ @with@ @those@ @things@ @man...@ \" NL It seems he is talking about louses.",
+      "You are a little uncertain at first, but the more he talks, the more you understand. You're doing the world (or, at least, this creature) a favor, and a bit of extra coin never hurts.",
+      "His talking about @louses@ stirred up something you ~didn't~ ~quite~ ~know~ ~you~ ~had~ ~in~ ~you.~ In the heat of the moment you lose control and @#rpunch@ the creature in the face. NL It retaliates, @#rpunching@ @#ryou@ @#rback.@ NL @\"Y-YOU@ @MANIAC!@ @They'll@ @get@ @you!@ @Just@ @you@ @wait!\"@"
+    ],
+    "OPTIONS": [
+      "[Agree] I feel you.",
+      "[Agree] Yeah man I totally get it.",
+      "[Agree] Screw those things!",
+      "[Denial] Punch him in the face. #rLose #r3 #rHP.",
+      "[Continue] #gGain #ga #gLouse #gBounty #grelic.",
+      "[Walk Away]"
+    ]
+  }
+}

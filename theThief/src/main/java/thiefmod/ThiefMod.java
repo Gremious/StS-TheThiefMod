@@ -13,10 +13,8 @@ import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.*;
-import com.megacrit.cardcrawl.relics.QuestionCard;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import javassist.CannotCompileException;
 import javassist.CtClass;
@@ -318,10 +316,6 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
     public void receiveEditStrings() {
         logger.info("Begin Editing Strings");
 
-        // Character Strings
-        BaseMod.loadCustomStringsFile(CharacterStrings.class,
-                "thiefmodAssets/localization/eng/ThiefMod-Character-Strings.json");
-
         // Regular Cards CardStrings
         BaseMod.loadCustomStringsFile(CardStrings.class,
                 "thiefmodAssets/localization/eng/ThiefMod-Card-Strings.json");
@@ -338,13 +332,21 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         BaseMod.loadCustomStringsFile(CardStrings.class,
                 "thiefmodAssets/localization/eng/ThiefMod-Curse-Card-Strings.json");
 
-        // PowerStrings
+        // Character Strings
+        BaseMod.loadCustomStringsFile(CharacterStrings.class,
+                "thiefmodAssets/localization/eng/ThiefMod-Character-Strings.json");
+
+        // Power Strings
         BaseMod.loadCustomStringsFile(PowerStrings.class,
                 "thiefmodAssets/localization/eng/ThiefMod-Power-Strings.json");
 
-        // RelicStrings
+        // Relic Strings
         BaseMod.loadCustomStringsFile(RelicStrings.class,
                 "thiefmodAssets/localization/eng/ThiefMod-Relic-Strings.json");
+
+        // Event Strings
+        BaseMod.loadCustomStringsFile(EventStrings.class,
+                "thiefmodAssets/localization/eng/ThiefMod-Event-Strings.json");
 
         // UI Strings
         BaseMod.loadCustomStringsFile(UIStrings.class,
