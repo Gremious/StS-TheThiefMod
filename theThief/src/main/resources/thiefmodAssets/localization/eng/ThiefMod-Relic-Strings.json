@@ -42,14 +42,14 @@
     "NAME": "Shadow Boots",
     "FLAVOR": "\"Phantasmal quality of the finest making!\" - A Ghost.",
     "DESCRIPTIONS": [
-      "Gain 2 [E]. NL At the start of each turn, shuffle #b1 #yVoid into your discard pile."
+      "Gain 1 [E]. NL At the start of each turn, shuffle #b1 #yVoid into your discard pile."
     ]
   },
   "theThief:LouseBounty": {
     "NAME": "Louse Bounty",
     "FLAVOR": "A truly monstrous bounty.",
     "DESCRIPTIONS": [
-      "If you kill any #bLouse on the first turn of combat, gain #y150 #yGold. NL Only usable once."
+      "If you kill any #bLouse on the first turn of combat, gain #y100 #yGold. NL Only usable once."
     ]
   }
 }

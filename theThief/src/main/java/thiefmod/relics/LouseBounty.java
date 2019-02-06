@@ -43,7 +43,7 @@ public class LouseBounty extends CustomRelic {
     public void onMonsterDeath(AbstractMonster m) {
         if (m.id.equals(LouseNormal.ID) || m.id.equals(LouseDefensive.ID) && !used && counter <= 1) {
             used = true;
-            AbstractDungeon.actionManager.addToBottom(new GainGoldAction(AbstractDungeon.player, AbstractDungeon.player, 150));
+            AbstractDungeon.actionManager.addToBottom(new GainGoldAction(AbstractDungeon.player, AbstractDungeon.player, 100));
             stopPulse();
         }
     }

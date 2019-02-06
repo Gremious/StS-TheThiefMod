@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.helpers.PowerTip;
 
 public class ShadowBoots extends CustomRelic {
     /*
-    at the start of your turn gain 2 energy and shuffle a void into your discard pile
+    at the start of your turn gain 1 energy and shuffle a void into your discard pile
     thanks robbo!
     */
 
@@ -42,12 +42,12 @@ public class ShadowBoots extends CustomRelic {
 
     @Override
     public void onEquip() {
-        AbstractDungeon.player.energy.energyMaster += 2;
+        AbstractDungeon.player.energy.energyMaster += 1;
     }
 
     @Override
     public void onUnequip() {
-        AbstractDungeon.player.energy.energyMaster -= 2;
+        AbstractDungeon.player.energy.energyMaster -= 1;
     }
 
 
