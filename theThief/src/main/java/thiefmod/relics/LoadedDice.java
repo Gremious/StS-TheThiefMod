@@ -43,7 +43,7 @@ public class LoadedDice extends CustomRelic {
 
     @Override
     public int getPrice() {
-        return 250;
+        return 270;
     }
 
     // Description

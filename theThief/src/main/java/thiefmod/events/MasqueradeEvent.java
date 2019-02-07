@@ -1,10 +1,18 @@
 package thiefmod.events;
 
+import com.megacrit.cardcrawl.actions.common.HealAction;
+import com.megacrit.cardcrawl.cards.colorless.JAX;
+import com.megacrit.cardcrawl.cards.curses.Doubt;
+import com.megacrit.cardcrawl.cards.curses.Normality;
+import com.megacrit.cardcrawl.cards.curses.Shame;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.localization.EventStrings;
+import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import thiefmod.ThiefMod;
+import thiefmod.actions.common.GainGoldAction;
 
 public class MasqueradeEvent extends AbstractImageEvent {
     public static final String ID = ThiefMod.makeID("MasqueradeEvent");
@@ -30,9 +38,9 @@ public class MasqueradeEvent extends AbstractImageEvent {
         }
 
         imageEventText.setDialogOption(OPTIONS[0]);
-        imageEventText.setDialogOption(OPTIONS[1]);
-        imageEventText.setDialogOption(OPTIONS[2]);
-        imageEventText.setDialogOption(OPTIONS[3]);
+        imageEventText.setDialogOption(OPTIONS[5]);
+        imageEventText.setDialogOption(OPTIONS[11]);
+        imageEventText.setDialogOption(OPTIONS[15]);
     }
 
     @Override
@@ -76,13 +84,16 @@ public class MasqueradeEvent extends AbstractImageEvent {
                 switch (i) {
                     case 0: /*Gossip - Join In*/
                         // ADD 'HOT GOSSIP'
+                        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new JAX(), (float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2)));
+
                         imageEventText.updateBodyText(DESCRIPTIONS[2]);
                         imageEventText.updateDialogOption(0, OPTIONS[2]);
                         imageEventText.clearRemainingOptions();
                         screenNum = -1;
                         break;
                     case 1:/*Gossip - Keep Listening*/
-                        // ADD A DOUBT
+                        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Doubt(), (float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2)));
+
                         imageEventText.updateBodyText(DESCRIPTIONS[3]);
                         imageEventText.updateDialogOption(0, OPTIONS[4]);
                         imageEventText.clearRemainingOptions();
@@ -92,9 +103,10 @@ public class MasqueradeEvent extends AbstractImageEvent {
                 break;
             case 2:/*Flirt*/
                 imageEventText.updateBodyText(DESCRIPTIONS[5]);
-                imageEventText.updateDialogOption(0, OPTIONS[6]);
-                imageEventText.updateDialogOption(1, OPTIONS[9]);
-                imageEventText.clearRemainingOptions();
+                imageEventText.clearAllDialogs();
+                imageEventText.setDialogOption(OPTIONS[6]);
+                imageEventText.setDialogOption(OPTIONS[9]);
+                // nice.
                 screenNum = 3;
                 break;
             case 3:/*Flirt 2.*/
@@ -107,6 +119,8 @@ public class MasqueradeEvent extends AbstractImageEvent {
                         break;
                     case 1:/*Flirt - Ignore*/
                         // ADD A DEDICATION
+                        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new JAX(), (float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2)));
+
                         imageEventText.updateBodyText(DESCRIPTIONS[8]);
                         imageEventText.updateDialogOption(0, OPTIONS[10]);
                         imageEventText.clearRemainingOptions();
@@ -115,7 +129,8 @@ public class MasqueradeEvent extends AbstractImageEvent {
                 }
                 break;
             case 4: /*Flirt Final*/
-                // ADD A SHAME.
+                AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Shame(), (float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2)));
+
                 imageEventText.updateBodyText(DESCRIPTIONS[7]);
                 imageEventText.updateDialogOption(0, OPTIONS[8]);
                 imageEventText.clearRemainingOptions();
@@ -124,13 +139,14 @@ public class MasqueradeEvent extends AbstractImageEvent {
             case 5:/*Steal*/
                 switch (i) {
                     case 0: /*Steal - Steal*/
+                        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Normality(), (float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2)));
                         imageEventText.updateBodyText(DESCRIPTIONS[10]);
                         imageEventText.updateDialogOption(0, OPTIONS[12]);
                         imageEventText.clearRemainingOptions();
                         screenNum = -1;
                         break;
                     case 1:/*Steal - Conversation*/
-                        // Gain 75 gold
+                        AbstractDungeon.actionManager.addToBottom(new GainGoldAction(AbstractDungeon.player, AbstractDungeon.player, 75));
                         imageEventText.updateBodyText(DESCRIPTIONS[11]);
                         imageEventText.updateDialogOption(0, OPTIONS[14]);
                         imageEventText.clearRemainingOptions();
@@ -140,6 +156,9 @@ public class MasqueradeEvent extends AbstractImageEvent {
                 break;
             case 6:/*Drink*/
                 // HEAL PLAYER
+                AbstractDungeon.actionManager.addToBottom(new HealAction(AbstractDungeon.player, AbstractDungeon.player, heal));
+                // Drunk - When you draw this card, shuffle 2 "Dazed" into your draw and discard piles. Exhaustive 2.
+                AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Shame(), (float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2)));
                 imageEventText.updateBodyText(DESCRIPTIONS[13]);
                 imageEventText.updateDialogOption(0, OPTIONS[18]);
                 imageEventText.clearRemainingOptions();
@@ -152,10 +171,4 @@ public class MasqueradeEvent extends AbstractImageEvent {
                 }
         }
     }
-
-
-    // [Drink Wine.]
-    // You decide to relax a bit and lean back again the table with the fruity-juice bowl.
-    // Heal 15% max hp. Add a Drunk curse to your deck.
-    // Drunk - When you draw this card, shuffle 2 "Dazed" into your draw and discard piles. Exhaustive 2.
 }

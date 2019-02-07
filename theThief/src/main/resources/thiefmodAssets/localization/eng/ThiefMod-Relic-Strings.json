@@ -55,6 +55,13 @@
       ": Any time you play a card, #yShadowstep #b1 time instead. Playing cards doesn't break #yShadowstep."
     ]
   },
+  "theThief:LoadedDice": {
+    "NAME": "Loaded Dice",
+    "FLAVOR": "Locked and Loaded.",
+    "DESCRIPTIONS": [
+      "At the start of each combat, you may discard any number of cards and #ySteal that many cards."
+    ]
+  },
   "theThief:LouseBounty": {
     "NAME": "Louse Bounty",
     "FLAVOR": "A truly monstrous bounty.",
