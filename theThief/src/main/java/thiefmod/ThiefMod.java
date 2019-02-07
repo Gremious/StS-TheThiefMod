@@ -14,6 +14,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.Exordium;
+import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
@@ -26,6 +27,7 @@ import org.clapper.util.classutil.*;
 import thiefmod.characters.TheThief;
 import thiefmod.events.BlackMarketTrader;
 import thiefmod.events.LouseAbuseEvent;
+import thiefmod.events.MasqueradeEvent;
 import thiefmod.patches.Character.AbstractCardEnum;
 import thiefmod.patches.Character.TheThiefEnum;
 import thiefmod.relics.*;
@@ -222,6 +224,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
 
         BaseMod.addEvent(LouseAbuseEvent.ID, LouseAbuseEvent.class, Exordium.ID);
         BaseMod.addEvent(BlackMarketTrader.ID, BlackMarketTrader.class, Exordium.ID);
+        BaseMod.addEvent(MasqueradeEvent.ID, MasqueradeEvent.class, TheCity.ID);
 
         logger.info("Done Adding Events!");
     }
