@@ -36,6 +36,11 @@ public class MasqueradeEvent extends AbstractImageEvent {
                         screenNum = 1;
                         break;
                     case 1: /*You press [Flirt]*/
+                        imageEventText.loadImage("thiefmodAssets/images/relics/LoadedDice.png");
+                        imageEventText.updateBodyText(DESCRIPTIONS[4]);
+                        imageEventText.updateDialogOption(0, OPTIONS[7]);
+                        imageEventText.clearRemainingOptions();
+                        screenNum = 2;
                         break;
                     case 2: /*You press [Steal]*/
                         break;
@@ -61,9 +66,43 @@ public class MasqueradeEvent extends AbstractImageEvent {
                         break;
                 }
                 break;
-            case 3:
+            case 2:/*Flirt*/
+                imageEventText.updateBodyText(DESCRIPTIONS[5]);
+                imageEventText.updateDialogOption(0, OPTIONS[6]);
+                imageEventText.updateDialogOption(1, OPTIONS[9]);
+                imageEventText.clearRemainingOptions();
+                screenNum = 3;
                 break;
-            case 4:
+            case 3:/*Flirt 2.*/
+                switch (i) {
+                    case 0: /*Flirt - Continue*/
+                        imageEventText.updateBodyText(DESCRIPTIONS[6]);
+                        imageEventText.updateDialogOption(0, OPTIONS[7]);
+                        imageEventText.clearRemainingOptions();
+                        screenNum = 4;
+                        break;
+                    case 1:/*Flirt - Ignore*/
+                        // ADD A DEDICATION
+                        imageEventText.updateBodyText(DESCRIPTIONS[8]);
+                        imageEventText.updateDialogOption(0, OPTIONS[10]);
+                        imageEventText.clearRemainingOptions();
+                        screenNum = -1;
+                        break;
+                }
+                break;
+            case 4:/*Flirt Final*/
+                // ADD A SHAME.
+                imageEventText.updateBodyText(DESCRIPTIONS[7]);
+                imageEventText.updateDialogOption(0, OPTIONS[8]);
+                imageEventText.clearRemainingOptions();
+                screenNum = -1;
+                break;
+            case 5:/*???*/
+                imageEventText.updateBodyText(DESCRIPTIONS[5]);
+                imageEventText.updateDialogOption(0, OPTIONS[6]);
+                imageEventText.updateDialogOption(1, OPTIONS[9]);
+                imageEventText.clearRemainingOptions();
+                screenNum = 3;
                 break;
             case -1:
                 if (i == 0) {
