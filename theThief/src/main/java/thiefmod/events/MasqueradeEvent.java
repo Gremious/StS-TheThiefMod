@@ -1,6 +1,7 @@
 package thiefmod.events;
 
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import thiefmod.ThiefMod;
@@ -11,10 +12,22 @@ public class MasqueradeEvent extends AbstractImageEvent {
     private static final String NAME = eventStrings.NAME;
     private static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;
     private static final String[] OPTIONS = eventStrings.OPTIONS;
+
+    private float HEALTH_HEAL_PERCENT = 0.13F;
+    private float HEALTH_HEAL_PERCENT_ASCENSION = 0.10F;
+
+    private int heal;
+
     private int screenNum = 0;
 
     public MasqueradeEvent() {
         super(NAME, DESCRIPTIONS[0], "thiefmodAssets/images/relics/Lockpicks.png");
+
+        if (AbstractDungeon.ascensionLevel >= 15) {
+            heal = (int) ((float) AbstractDungeon.player.maxHealth * HEALTH_HEAL_PERCENT);
+        } else {
+            heal = (int) ((float) AbstractDungeon.player.maxHealth * HEALTH_HEAL_PERCENT_ASCENSION);
+        }
 
         imageEventText.setDialogOption(OPTIONS[0]);
         imageEventText.setDialogOption(OPTIONS[1]);
@@ -51,6 +64,11 @@ public class MasqueradeEvent extends AbstractImageEvent {
                         screenNum = 5;
                         break;
                     case 3: /*You press [Drink Wine]*/
+                        imageEventText.loadImage("thiefmodAssets/images/relics/LoadedDice.png");
+                        imageEventText.updateBodyText(DESCRIPTIONS[12]);
+                        imageEventText.updateDialogOption(0, OPTIONS[16] + heal + OPTIONS[17]);
+                        imageEventText.clearRemainingOptions();
+                        screenNum = 6;
                         break;
                 }
                 break;
@@ -120,23 +138,17 @@ public class MasqueradeEvent extends AbstractImageEvent {
                         break;
                 }
                 break;
-            case 6:/*???*/
-                imageEventText.updateBodyText(DESCRIPTIONS[5]);
-                imageEventText.updateDialogOption(0, OPTIONS[6]);
-                imageEventText.updateDialogOption(1, OPTIONS[9]);
-                imageEventText.clearRemainingOptions();
-                screenNum = -1;
-                break;
-            case 7:/*???*/
-                imageEventText.updateBodyText(DESCRIPTIONS[5]);
-                imageEventText.updateDialogOption(0, OPTIONS[6]);
-                imageEventText.updateDialogOption(1, OPTIONS[9]);
+            case 6:/*Drink*/
+                // HEAL PLAYER
+                imageEventText.updateBodyText(DESCRIPTIONS[13]);
+                imageEventText.updateDialogOption(0, OPTIONS[18]);
                 imageEventText.clearRemainingOptions();
                 screenNum = -1;
                 break;
             case -1:
                 if (i == 0) {
                     openMap();
+                    break;
                 }
         }
     }

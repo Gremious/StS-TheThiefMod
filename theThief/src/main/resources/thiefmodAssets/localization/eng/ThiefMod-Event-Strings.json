@@ -23,11 +23,11 @@
       "You don't trust this shady figure, so you decide to leave."
     ],
     "OPTIONS": [
-      "[Prescription Substances] #rLose ",
+      "[Prescription Substances] #rLose #r",
       " #rMax #rHP. #gAcquire #gJ.A.X.",
-      "[Weapons] #rLose ",
+      "[Weapons] #rLose #r",
       " #rMax #rHP. #gAcquire #ga #grandom #gUpgraded #gUncommon #gcard.",
-      "[Organs] #rLose ",
+      "[Organs] #rLose #r",
       " #rMax #rHP. #gAcquire #ga #gspecial @grelic.",
       "[Not Interested] Walk away.",
       "[Leave]"
@@ -37,7 +37,7 @@
     "NAME": "Masquerade!",
     "DESCRIPTIONS": [
       "As you climb up a floor, you stumble upon what you instantly recognize as a...formal event? NL #yThe #yfloor #yis #ylit. NL #b~The~ #b~masks~ #b~are~ #b~on.~ NL #gThe #ggremlin #gband #gis #gplaying. NL This is a Masquarade Ball! NL NL You decide to participate...but what do you do?",
-      "You get yourself a small glass of #g~juice~ and lean against the table, next to two gremlins that seem to be in a ~very~ ~interesting~ ~conversation.~ NL #b\"Can #byou #bbelieve #bit! #bAnd, #band, #babout #bthe #bband #bleader ...\" NL  You hear them out for a while, and notice a small spot where you can intervene...",
+      "You get yourself a small glass of [#ff4999]~juice~[] and lean against the table, next to two gremlins that seem to be in a ~very~ ~interesting~ ~conversation.~ NL #b\"Can #byou #bbelieve #bit! #bAnd, #band, #babout #bthe #bband #bleader ...\" NL  You hear them out for a while, and notice a small spot where you can intervene...",
       "They both gasp! NL @#rWhat@ @#ra@ @#rspicy@ @#rpiece@ @#rof@ @#rgossip!@ NL Those rumors will surely last! NL At least, as long as the ball does.",
       "You keep listening in on their conversation and... NL Oh Neowl! Really?? NL @#bThe@ @#bMerchant!?@ NL #p~This~ #p~makes~ #p~you~ #p~question~ #p~everything...~",
       "You lay your eyes on one of the taller creatures and decide try your ~[#ff4999]charm[]~. The more you talk the more it seems that the [#ff4999]interest[] [#ff4999]is[] [#ff4999]mutual![]",
@@ -47,7 +47,9 @@
       "As you talk, you take a step back and remember why you were here in the first place. NL You decide that it's not in your best interest to indulge in such things. You have more important things to attend to.",
       "You notice a creature in a #pblack #psuit, heavily engaged in conversation. NL He's absolutely not paying attention to his pockets, but taking something could still be ~risky.~",
       "~You~ ~quietly~ ~move~ ~in,~ and attempt to sneakily pull anything out of his pocket... NL @Alas!@ There are #rguards paroling the ballroom! NL #rYou've #rbeen #rCaught!",
-      "He's ~really~ engaged in talking about money...this is a spire investor! NL After his friend goes away, you approach him and ask if he could help you get started. He's #r@extremely@ eager to help!"
+      "He's ~really~ engaged in talking about money...this is a spire investor! NL After his friend goes away, you approach him and ask if he could help you get started. He's #r@extremely@ eager to help!",
+      "You decide to relax for a bit, and lean back against the table with the ~[#ff4999]juice[]~ ~[#ff4999]bowl.[]~"
+      "You had a good time."
     ],
     "OPTIONS": [
       "[Gossip]",
@@ -65,7 +67,10 @@
       "[Continue] #rAdd #ra #rNormality #rto #ryour #rdeck.",
       "[Engage in conversation]",
       "[Continue] #gGain #y75 #ygold.",
-      "[Drink Wine]"
+      "[Drink Wine]",
+      "[Continue] #gHeal #g",
+      " #gmax #ghp. #rAdd #ra #rDrunk #rcurse #rto #ryour #rdeck.",
+      "[Continue]"
     ]
   }
 }
