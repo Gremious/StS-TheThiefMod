@@ -23,9 +23,12 @@
       "You don't trust this shady figure, so you decide to leave."
     ],
     "OPTIONS": [
-      "[Prescription Substances] #rLose #r2 #rMax #rHP. #gAcquire #gJ.A.X.",
-      "[Weapons] #rLose #r4 #rMax #rHP. #gAcquire #ga #grandom #gUpgraded #gUncommon #gcard.",
-      "[Organs] #rLose #r7 #rMax #rHP. #gAcquire #ga #gspecial @grelic.",
+      "[Prescription Substances] #rLose ",
+      " #rMax #rHP. #gAcquire #gJ.A.X.",
+      "[Weapons] #rLose ",
+      " #rMax #rHP. #gAcquire #ga #grandom #gUpgraded #gUncommon #gcard.",
+      "[Organs] #rLose ",
+      " #rMax #rHP. #gAcquire #ga #gspecial @grelic.",
       "[Not Interested] Walk away.",
       "[Leave]"
     ]
