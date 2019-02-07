@@ -25,7 +25,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.clapper.util.classutil.*;
 import thiefmod.characters.TheThief;
-import thiefmod.events.BlackMarketTrader;
+import thiefmod.events.BlackMarketTraderEvent;
 import thiefmod.events.LouseAbuseEvent;
 import thiefmod.events.MasqueradeEvent;
 import thiefmod.patches.Character.AbstractCardEnum;
@@ -223,7 +223,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         logger.info("Adding Events");
 
         BaseMod.addEvent(LouseAbuseEvent.ID, LouseAbuseEvent.class, Exordium.ID);
-        BaseMod.addEvent(BlackMarketTrader.ID, BlackMarketTrader.class, Exordium.ID);
+        BaseMod.addEvent(BlackMarketTraderEvent.ID, BlackMarketTraderEvent.class, Exordium.ID);
         BaseMod.addEvent(MasqueradeEvent.ID, MasqueradeEvent.class, TheCity.ID);
 
         logger.info("Done Adding Events!");

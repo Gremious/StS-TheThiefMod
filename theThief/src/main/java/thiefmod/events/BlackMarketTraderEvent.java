@@ -13,10 +13,10 @@ import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import thiefmod.ThiefMod;
 import thiefmod.relics.BottledLiver;
 
-public class BlackMarketTrader extends AbstractImageEvent {
+public class BlackMarketTraderEvent extends AbstractImageEvent {
 
 
-    public static final String ID = ThiefMod.makeID("BlackMarketTrader");
+    public static final String ID = ThiefMod.makeID("BlackMarketTraderEvent");
     private static final EventStrings eventStrings = CardCrawlGame.languagePack.getEventString(ID);
     private static final String NAME = eventStrings.NAME;
     private static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;
@@ -35,7 +35,7 @@ public class BlackMarketTrader extends AbstractImageEvent {
     private int damageMedium;
     private int damageHigh;
 
-    public BlackMarketTrader() {
+    public BlackMarketTraderEvent() {
         super(NAME, DESCRIPTIONS[0], "thiefmodAssets/images/relics/Lockpicks.png");
 
         if (AbstractDungeon.ascensionLevel >= 15) {

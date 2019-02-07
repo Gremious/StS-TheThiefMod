@@ -1,5 +1,5 @@
 {
-  "theThief:LouseAbuse": {
+  "theThief:LouseAbuseEvent": {
     "NAME": "Strike for Hire.",
     "DESCRIPTIONS": [
       "While you're passing through the ~Spire~ , random stranger stops you. He is @shaking@ and asks if you'd be agree to be #ghired to get rid of a #r\"problem\". NL \"I just... @I@ @can't@ @deal@ @with@ @those@ @things@ @man...@ \" NL It seems he is talking about louses.",
@@ -15,7 +15,7 @@
       "[Walk Away]"
     ]
   },
-  "theThief:BlackMarketTrader": {
+  "theThief:BlackMarketTraderEvent": {
     "NAME": "Dark Market Trader",
     "DESCRIPTIONS": [
       "\"@Psst.@ @Hey,@ @you.@\" NL You see a hooded figure, masked in the shadows of an alleyway beckons you. NL #p\"You #plook #plike #pa #pflla' #pthat'd #pbe #pinterested #pin #pmy #rgoods... #p@yeah...@ \"",
@@ -48,7 +48,7 @@
       "You notice a creature in a #pblack #psuit, heavily engaged in conversation. NL He's absolutely not paying attention to his pockets, but taking something could still be ~risky.~",
       "~You~ ~quietly~ ~move~ ~in,~ and attempt to sneakily pull anything out of his pocket... NL @Alas!@ There are #rguards paroling the ballroom! NL #rYou've #rbeen #rCaught!",
       "He's ~really~ engaged in talking about money...this is a spire investor! NL After his friend goes away, you approach him and ask if he could help you get started. He's #r@extremely@ eager to help!",
-      "You decide to relax for a bit, and lean back against the table with the ~[#ff4999]juice[]~ ~[#ff4999]bowl.[]~"
+      "You decide to relax for a bit, and lean back against the table with the ~[#ff4999]juice[]~ ~[#ff4999]bowl.[]~",
       "You had a good time."
     ],
     "OPTIONS": [
