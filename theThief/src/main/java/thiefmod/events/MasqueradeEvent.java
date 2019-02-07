@@ -27,41 +27,50 @@ public class MasqueradeEvent extends AbstractImageEvent {
         switch (screenNum) {
             case 0: /*First Screen. You find the event.*/
                 switch (i) {
-                    case 0: /*Gossip 1.*/
+                    case 0: /*You press [Gossip]*/
                         imageEventText.loadImage("thiefmodAssets/images/relics/LoadedDice.png");
                         imageEventText.updateBodyText(DESCRIPTIONS[1]);
-                        imageEventText.updateDialogOption(0, OPTIONS[4]);
+                        imageEventText.updateDialogOption(0, OPTIONS[1]);
+                        imageEventText.updateDialogOption(1, OPTIONS[3]);
                         imageEventText.clearRemainingOptions();
                         screenNum = 1;
                         break;
-                    case 1:
+                    case 1: /*You press [Flirt]*/
                         break;
-                    case 2:
+                    case 2: /*You press [Steal]*/
                         break;
-                    case 3:
+                    case 3: /*You press [Drink Wine]*/
                         break;
                 }
                 break;
-            case 1:
+            case 1: /*Gossip*/
+                switch (i) {
+                    case 0: /*Gossip - Join In*/
+                        // ADD 'HOT GOSSIP'
+                        imageEventText.updateBodyText(DESCRIPTIONS[2]);
+                        imageEventText.updateDialogOption(0, OPTIONS[2]);
+                        imageEventText.clearRemainingOptions();
+                        screenNum = -1;
+                        break;
+                    case 1:/*Gossip - Keep Listening*/
+                        // ADD A DOUBT
+                        imageEventText.updateBodyText(DESCRIPTIONS[3]);
+                        imageEventText.updateDialogOption(0, OPTIONS[4]);
+                        imageEventText.clearRemainingOptions();
+                        screenNum = -1;
+                        break;
+                }
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            case -1:
                 if (i == 0) {
                     openMap();
                 }
         }
     }
-
-    // [Flirt.]
-    // You lay your eyes on one of the taller creatures and decide try your charm. The more you talk the more it seems that the interest is mutual!
-    // As you get to know each other, the coat it's wearing unbuttons on it's own, and they instantly cover themselves up. How scandalous!
-    // [Proceed.] Offer to take them somewhere more private.
-    // @You and the taller creature move to a dimply-lit, empty room...@
-    // [Proceed.]
-    // The coat comes off ! It was 3 gremlins in a trenchcoat all along!
-    // They scram, giggling away. Now everyone at the ball know what happened. ADD 1 SHAME TO YOUR DECK.
-    //[Maybe not right now.]
-    // As you talk, you take a step back and remember why you were here in the first place.
-    // [Proceed.]
-    // You decide that it's not in your best interest to indulge in such things. You have more important things to attend to.
-    // Add 'Dedication' colorless card to your deck. - 0 mana, deal 5 (7) damage and draw 1 card.
 
     // [Steal.]
     // You notice a creature in a black suit, heavily engaged in conversation. He's absolutely not paying attention to his pockets, but taking something could still be risky.

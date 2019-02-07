@@ -39,7 +39,12 @@
       "As you climb up a floor, you stumble upon what you instantly recognize as a...formal event? NL #yThe #yfloor #yis #ylit. NL #b~The~ #b~masks~ #b~are~ #b~on.~ NL #gThe #ggremlin #gband #gis #gplaying. NL This is a Masquarade Ball! NL NL You decide to participate...but what do you do?",
       "You get yourself a small glass of #g~juice~ and lean against the table, next to two gremlins that seem to be in a ~very~ ~interesting~ ~conversation.~ NL #b\"Can #byou #bbelieve #bit! #bAnd, #band, #babout #bthe #bband #bleader ...\" NL  You hear them out for a while, and notice a small spot where you can intervene...",
       "They both gasp! NL @#rWhat@ @#ra@ @#rspicy@ @#rpiece@ @#rof@ @#rgossip!@ NL Those rumors will surely last! NL At least, as long as the ball does.",
-      "You keep listening in on their conversation and... NL Oh Neowl! Really?? NL @#bThe@ @#bMerchant!?@ NL #p~This~ #p~makes~ #p~you~ #p~question~ #p~everything...~"
+      "You keep listening in on their conversation and... NL Oh Neowl! Really?? NL @#bThe@ @#bMerchant!?@ NL #p~This~ #p~makes~ #p~you~ #p~question~ #p~everything...~",
+      "You lay your eyes on one of the taller creatures and decide try your ~[#ff4999]charm[]~. The more you talk the more it seems that the [#ff4999]interest[] [#ff4999]is[] [#ff4999]mutual![]",
+      "As you get to know each other, the coat it's wearing ~[#db235d]unbuttons[db235d]~ on it's own a bit, and they instantly cover themselves up. NL ~[#db235d]How[] ~[#db235d]scandalous![]",
+      "~You~ ~and~ ~the~ ~creature~ ~move~ ~to~ ~a~ ~dimply-lit,~ ~empty~ ~room...~",
+      "[#db235d]The[] [#db235d]coat[] [#db235d]comes[] [#db235d]off![] NL @It@ @was@ @3@ #r@gremlins@ @in@ @a@ #r@trenchcoat@ @all@ @along!@ NL They scram, giggling away. #rNow #reveryone #rat #rthe #rball #rknow #rwhat #rhappened.",
+      "As you talk, you take a step back and remember why you were here in the first place. NL You decide that it's not in your best interest to indulge in such things. You have more important things to attend to."
     ],
     "OPTIONS": [
       "[Gossip]",
@@ -48,6 +53,11 @@
       "[Keep listening]",
       "[Continue] #rAdd #ra #rDoubt #rto #ryour #rdeck.",
       "[Flirt]",
+      "[Proceed] Offer to take them somewhere more [#db235d]private.[]",
+      "[Proceed]",
+      "[Proceed] #rAdd #ra #rShame #rto #ryour #rdeck.",
+      "[Maybe not right now]",
+      "[Continue] #gAdd #ga #gDedication #gto #gyour #gdeck.",
       "[Steal]",
       "[Drink Wine]"
     ]
