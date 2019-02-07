@@ -27,7 +27,7 @@ public class ShadowCloak extends CustomRelic {
     private int count = 0;
 
     public ShadowCloak() {
-        super(ID, ImageMaster.loadImage(IMG), new Texture(OUTLINE), RelicTier.BOSS, LandingSound.MAGICAL);
+        super(ID, ImageMaster.loadImage(IMG), new Texture(OUTLINE), RelicTier.SHOP, LandingSound.MAGICAL);
 
         tips.clear();
         tips.add(new PowerTip(name, description));
@@ -74,6 +74,11 @@ public class ShadowCloak extends CustomRelic {
     @Override
     public void onVictory() {
         stopPulse();
+    }
+
+    @Override
+    public int getPrice() {
+        return 250;
     }
 
     // Description

@@ -52,14 +52,14 @@
       "Whenever you play #b2 #bSkills in a turn, #yShadowstep #b1 time. NL #ySynergy: ",
       "If you have the ",
       " AND the ",
-      ": Any time you play a card, #yShadowstep #b1 time. Cards can't break #yShadowstep."
+      ": Any time you play a card, #yShadowstep #b1 time instead. Playing cards doesn't break #yShadowstep."
     ]
   },
   "theThief:LouseBounty": {
     "NAME": "Louse Bounty",
     "FLAVOR": "A truly monstrous bounty.",
     "DESCRIPTIONS": [
-      "If you kill any #bLouse on the first turn of combat, gain #y100 #yGold. NL Only usable once."
+      "If you kill any Louse on the first turn of combat, gain #y100 #yGold. NL Only usable once."
     ]
   }
 }
