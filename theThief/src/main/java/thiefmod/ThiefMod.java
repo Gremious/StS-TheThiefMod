@@ -43,6 +43,7 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Random;
 // Note: #y b r g p
 
 @SpireInitializer
@@ -133,7 +134,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
 
     // Character assets
     private static final String THE_THIEF_BUTTON = "charSelect/thiefCharacterButton.png";
-    private static final String THE_THIEF_PORTRAIT = "charSelect/thiefCharacterPortraitBG.png";
+    private static final String THE_THIEF_PORTRAIT = rollBGImage();
     public static final String THE_THIEF_SHOULDER_1 = "char/thiefCharacter/shoulder.png";
     public static final String THE_THIEF_SHOULDER_2 = "char/thiefCharacter/shoulder2.png";
     public static final String THE_THIEF_CORPSE = "char/thiefCharacter/corpse.png";
@@ -190,6 +191,18 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
 
 
     // =============== LOAD THE CHARACTER =================
+    private static final String rollBGImage() {
+        String PORTRAIT;
+
+        Random rand = new Random();
+        int i = rand.nextInt(99);
+        if (i < 75) {
+            PORTRAIT = "charSelect/thiefCharacterPortraitBG.png";
+        } else {
+            PORTRAIT = "charSelect/thiefCharacterPortraitEvilBG.png";
+        }
+        return PORTRAIT;
+    }
 
     @Override
     public void receiveEditCharacters() {
