@@ -248,6 +248,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         BaseMod.addRelic(new PocketChange(), RelicType.SHARED);
         BaseMod.addRelic(new ShadowBoots(), RelicType.SHARED);
         BaseMod.addRelic(new LouseBounty(), RelicType.SHARED);
+        BaseMod.addRelic(new BottledLiver(), RelicType.SHARED);
 
         logger.info("done adding relics!");
     }

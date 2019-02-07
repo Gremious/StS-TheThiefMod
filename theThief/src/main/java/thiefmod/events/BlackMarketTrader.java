@@ -10,11 +10,10 @@ import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import thiefmod.ThiefMod;
+import thiefmod.relics.BottledLiver;
 import thiefmod.relics.LouseBounty;
 
 public class BlackMarketTrader extends AbstractImageEvent {
-    // Floor 1 or 2? Probably just 1.
-    // Bottled Heart - Whenever you lose HP, return the bottled card to your hand. Tip: Doesn't return from exhaust.
 
 
     public static final String ID = ThiefMod.makeID("BlackMarketTrader");
@@ -32,6 +31,8 @@ public class BlackMarketTrader extends AbstractImageEvent {
 
         if (AbstractDungeon.ascensionLevel >= 15) {
             HEALTH_LOSS_LOW = 2;
+            // HEALTH_LOSS_LOW = (int)(AbstractDungeon.player.maxHealth*(2.0f/100.0f));
+            // Idk how to make it display percentages correctly in strings.
             HEALTH_LOSS_MEDIUM = 4;
             HEALTH_LOSS_LARGE = 7;
         } else {
@@ -68,7 +69,7 @@ public class BlackMarketTrader extends AbstractImageEvent {
                         screenNum = 1;
                         break;
                     case 2: /*Bottled Heart*/
-                        AbstractDungeon.player.relics.add(new LouseBounty()); //TODO
+                        AbstractDungeon.player.relics.add(new BottledLiver());
                         this.imageEventText.updateBodyText(DESCRIPTIONS[1]);
                         this.imageEventText.updateDialogOption(0, OPTIONS[4]);
                         this.imageEventText.clearRemainingOptions();
