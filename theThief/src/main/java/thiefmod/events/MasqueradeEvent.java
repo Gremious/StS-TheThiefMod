@@ -43,6 +43,12 @@ public class MasqueradeEvent extends AbstractImageEvent {
                         screenNum = 2;
                         break;
                     case 2: /*You press [Steal]*/
+                        imageEventText.loadImage("thiefmodAssets/images/relics/LoadedDice.png");
+                        imageEventText.updateBodyText(DESCRIPTIONS[9]);
+                        imageEventText.updateDialogOption(0, OPTIONS[11]);
+                        imageEventText.updateDialogOption(1, OPTIONS[13]);
+                        imageEventText.clearRemainingOptions();
+                        screenNum = 5;
                         break;
                     case 3: /*You press [Drink Wine]*/
                         break;
@@ -90,19 +96,43 @@ public class MasqueradeEvent extends AbstractImageEvent {
                         break;
                 }
                 break;
-            case 4:/*Flirt Final*/
+            case 4: /*Flirt Final*/
                 // ADD A SHAME.
                 imageEventText.updateBodyText(DESCRIPTIONS[7]);
                 imageEventText.updateDialogOption(0, OPTIONS[8]);
                 imageEventText.clearRemainingOptions();
                 screenNum = -1;
                 break;
-            case 5:/*???*/
+            case 5:/*Steal*/
+                switch (i) {
+                    case 0: /*Steal - Steal*/
+                        imageEventText.updateBodyText(DESCRIPTIONS[10]);
+                        imageEventText.updateDialogOption(0, OPTIONS[12]);
+                        imageEventText.clearRemainingOptions();
+                        screenNum = -1;
+                        break;
+                    case 1:/*Steal - Conversation*/
+                        // Gain 75 gold
+                        imageEventText.updateBodyText(DESCRIPTIONS[11]);
+                        imageEventText.updateDialogOption(0, OPTIONS[14]);
+                        imageEventText.clearRemainingOptions();
+                        screenNum = -1;
+                        break;
+                }
+                break;
+            case 6:/*???*/
                 imageEventText.updateBodyText(DESCRIPTIONS[5]);
                 imageEventText.updateDialogOption(0, OPTIONS[6]);
                 imageEventText.updateDialogOption(1, OPTIONS[9]);
                 imageEventText.clearRemainingOptions();
-                screenNum = 3;
+                screenNum = -1;
+                break;
+            case 7:/*???*/
+                imageEventText.updateBodyText(DESCRIPTIONS[5]);
+                imageEventText.updateDialogOption(0, OPTIONS[6]);
+                imageEventText.updateDialogOption(1, OPTIONS[9]);
+                imageEventText.clearRemainingOptions();
+                screenNum = -1;
                 break;
             case -1:
                 if (i == 0) {
@@ -111,13 +141,6 @@ public class MasqueradeEvent extends AbstractImageEvent {
         }
     }
 
-    // [Steal.]
-    // You notice a creature in a black suit, heavily engaged in conversation. He's absolutely not paying attention to his pockets, but taking something could still be risky.
-    // [Steal.]
-    // You attempt to sneakily pull something out of his pocket...but you are caught by a guard patroling the ballroom! ADD 1 NORMALITY.
-    // [Engage in conversation.]
-    // If you have mod installed - He's really engaged in talking about money...this is a spire investor! After his friend goes away, you ask him if he help you get started, and he's very eager to help out. Get 1 copy of spire co stock card.
-    // If you don't, just get gold.
 
     // [Drink Wine.]
     // You decide to relax a bit and lean back again the table with the fruity-juice bowl.

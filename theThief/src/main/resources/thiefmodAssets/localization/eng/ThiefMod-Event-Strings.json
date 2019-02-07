@@ -45,7 +45,9 @@
       "~You~ ~and~ ~the~ ~creature~ ~move~ ~to~ ~a~ ~dimply-lit,~ ~empty~ ~room...~",
       "[#db235d]The[] [#db235d]coat[] [#db235d]comes[] [#db235d]off![] NL @It@ @was@ @3@ #r@gremlins@ @in@ @a@ #r@trenchcoat@ @all@ @along!@ NL They scram, giggling away. #rNow #reveryone #rat #rthe #rball #rknow #rwhat #rhappened.",
       "As you talk, you take a step back and remember why you were here in the first place. NL You decide that it's not in your best interest to indulge in such things. You have more important things to attend to.",
-      "You notice a creature in a black suit, heavily engaged in conversation. He's absolutely not paying attention to his pockets, but taking something could still be risky."
+      "You notice a creature in a #pblack #psuit, heavily engaged in conversation. NL He's absolutely not paying attention to his pockets, but taking something could still be ~risky.~",
+      "~You~ ~quietly~ ~move~ ~in,~ and attempt to sneakily pull anything out of his pocket... NL @Alas!@ There are #rguards paroling the ballroom! NL #rYou've #rbeen #rCaught!",
+      "He's ~really~ engaged in talking about money...this is a spire investor! NL After his friend goes away, you approach him and ask if he could help you get started. He's #r@extremely@ eager to help!"
     ],
     "OPTIONS": [
       "[Gossip]",
@@ -56,10 +58,13 @@
       "[Flirt]",
       "[Proceed] Offer to take them somewhere more [#db235d]private.[]",
       "[Proceed]",
-      "[Proceed] #rAdd #ra #rShame #rto #ryour #rdeck.",
+      "[Continue] #rAdd #ra #rShame #rto #ryour #rdeck.",
       "[Maybe not right now]",
       "[Continue] #gAdd #ga #gDedication #gto #gyour #gdeck.",
       "[Steal]",
+      "[Continue] #rAdd #ra #rNormality #rto #ryour #rdeck.",
+      "[Engage in conversation]",
+      "[Continue] #gGain #y75 #ygold.",
       "[Drink Wine]"
     ]
   }
