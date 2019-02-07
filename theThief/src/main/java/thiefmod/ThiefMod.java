@@ -44,23 +44,22 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Random;
-// Note: #y b r g p
+
 
 @SpireInitializer
 public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, EditKeywordsSubscriber, EditCharactersSubscriber, PostInitializeSubscriber {
 
     // Logger
     public static final Logger logger = LogManager.getLogger(ThiefMod.class.getName());
-    private int LogInt = 0;
 
     // Check for crossover mods.
     public static final boolean hasConspire;
     public static final boolean hasHubris;
     public static final boolean hasReplayTheSpire;
     public static final boolean hasInfiniteSpire;
-    public static final boolean hasDisciple;
     public static final boolean hasMysticMod;
-    public static final boolean hasBeaked;
+//  public static final boolean hasDisciple;
+//  public static final boolean hasBeaked;
 
     static {
         hasConspire = Loader.isModLoaded("conspire");
@@ -75,10 +74,12 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         if (hasHubris) {
             logger.info("Detected Hubris");
         }
-        hasDisciple = Loader.isModLoaded("constructmod");
+      /*
+       hasDisciple = Loader.isModLoaded("constructmod");
         if (hasDisciple) {
             logger.info("Detected ConstructMod");
         }
+      */
         hasInfiniteSpire = Loader.isModLoaded("infinitespire");
         if (hasInfiniteSpire) {
             logger.info("Detected Infinite Spire");
@@ -86,10 +87,6 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         hasMysticMod = Loader.isModLoaded("MysticMod");
         if (hasMysticMod) {
             logger.info("Detected Mystic Mod");
-        }
-        hasBeaked = Loader.isModLoaded("MysticMod");
-        if (hasBeaked) {
-            logger.info("Detected Beaked Mod");
         }
     }
 
@@ -192,16 +189,14 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
 
     // =============== LOAD THE CHARACTER =================
     private static final String rollBGImage() {
-        String PORTRAIT;
 
         Random rand = new Random();
         int i = rand.nextInt(99);
-        if (i < 75) {
-            PORTRAIT = "charSelect/thiefCharacterPortraitBG.png";
+        if (i < 90) {
+            return "charSelect/thiefCharacterPortraitBG.png";
         } else {
-            PORTRAIT = "charSelect/thiefCharacterPortraitEvilBG.png";
+            return "charSelect/thiefCharacterPortraitEvilBG.png";
         }
-        return PORTRAIT;
     }
 
     @Override
@@ -241,7 +236,6 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
 
         logger.info("Done Adding Events!");
     }
-
 
     // =============== /LOAD THE MOD BADGE AND MENU/ =================
 
@@ -292,7 +286,6 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         logger.info("Cards - added!");
     }
 
-    // ================ /ADD CARDS/ ===================
     private static void autoAddCards() throws URISyntaxException, IllegalAccessException, InstantiationException, NotFoundException, CannotCompileException {
         ClassFinder finder = new ClassFinder();
         URL url = ThiefMod.class.getProtectionDomain().getCodeSource().getLocation();
@@ -338,6 +331,9 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
             }
         }
     }
+
+    // ================ /ADD CARDS/ ===================
+
 
     // ================ LOAD THE TEXT ===================
 
@@ -386,7 +382,9 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
 
     // ================ /LOAD THE TEXT/ ===================
 
+
     // ================ LOAD THE KEYWORDS ===================
+
     @Override
     public void receiveEditKeywords() {
         Gson gson = new Gson();
@@ -400,11 +398,8 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         }
     }
 
-
     // ================ /LOAD THE KEYWORDS/ ===================
 
-    // this adds "ModName:" before the ID of any card/relic/power etc.
-    // in order to avoid conflics if any other mod uses the same ID.
     public static String makeID(String idText) {
         return "theThief:" + idText;
     }
