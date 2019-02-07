@@ -24,6 +24,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.clapper.util.classutil.*;
 import thiefmod.characters.TheThief;
+import thiefmod.events.BlackMarketTrader;
 import thiefmod.events.LouseAbuseEvent;
 import thiefmod.patches.Character.AbstractCardEnum;
 import thiefmod.patches.Character.TheThiefEnum;
@@ -216,9 +217,13 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
 
         logger.info("Done loading badge Image and mod options");
+        // Events
+        logger.info("Adding Events");
 
-        logger.info("Done loading badge Image and mod options");
         BaseMod.addEvent(LouseAbuseEvent.ID, LouseAbuseEvent.class, Exordium.ID);
+        BaseMod.addEvent(BlackMarketTrader.ID, BlackMarketTrader.class, Exordium.ID);
+
+        logger.info("Done Adding Events!");
     }
 
 

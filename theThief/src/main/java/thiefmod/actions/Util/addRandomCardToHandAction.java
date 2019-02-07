@@ -12,7 +12,7 @@ import thiefmod.ThiefMod;
 
 import java.util.ArrayList;
 
-public class addRandomCardToHandAction extends com.megacrit.cardcrawl.actions.AbstractGameAction {
+public class addRandomCardToHandAction extends AbstractGameAction {
     // Blatantly stolen from the Beaked's Crazy rituals. Thank you very much guys!
 
     public static final Logger logger = LogManager.getLogger(ThiefMod.class.getName());

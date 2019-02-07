@@ -1,6 +1,6 @@
 package thiefmod.events;
 
-public class Masquerade {
+public class MasqueradeEvent {
     // Act 2 event.
 
     // As you climb up a floor, you stumble upon what you instantly recognize as a...formal event?
