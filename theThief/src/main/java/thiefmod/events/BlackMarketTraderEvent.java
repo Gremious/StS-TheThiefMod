@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import thiefmod.ThiefMod;
-import thiefmod.relics.BottledLiver;
+import thiefmod.relics.BottledHand;
 
 public class BlackMarketTraderEvent extends AbstractImageEvent {
 
@@ -81,7 +81,7 @@ public class BlackMarketTraderEvent extends AbstractImageEvent {
                         break;
                     case 2: /*Bottled Heart*/
                         AbstractDungeon.player.damage(new DamageInfo((AbstractCreature) null, damageHigh));
-                        AbstractDungeon.player.relics.add(new BottledLiver());
+                        AbstractDungeon.player.relics.add(new BottledHand());
                         this.imageEventText.updateBodyText(DESCRIPTIONS[1]);
                         this.imageEventText.updateDialogOption(0, OPTIONS[7]);
                         this.imageEventText.clearRemainingOptions();

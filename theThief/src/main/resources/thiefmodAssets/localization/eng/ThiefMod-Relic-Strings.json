@@ -69,13 +69,13 @@
       "If you kill any Louse on the first turn of combat, gain #y100 #yGold. NL Only usable once."
     ]
   },
-  "theThief:BottledLiver": {
-    "NAME": "Bottled Liver",
-    "FLAVOR": "...Ew.",
+  "theThief:BottledHand": {
+    "NAME": "Bottled Hand",
+    "FLAVOR": "...Ew. Is this some sort of sick experiment?",
     "DESCRIPTIONS": [
-      "Choose a card. Whenever you take unblocked damage, return the bottled card to your hand. NL (Doesn't return #yExhausted cards.)",
-      "Whenever you take unblocked damage, return ",
-      " to your hand.",
+      "Choose a card. Whenever you take unblocked attack damage, draw the card.",
+      "Whenever you take unblocked damage, draw ",
+      ".",
       "Select a card to bottle for "
     ]
   }

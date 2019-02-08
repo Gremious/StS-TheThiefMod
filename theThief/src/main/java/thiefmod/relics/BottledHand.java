@@ -1,10 +1,12 @@
 package thiefmod.relics;
 
+import basemod.BaseMod;
 import basemod.abstracts.CustomBottleRelic;
 import basemod.abstracts.CustomRelic;
 import basemod.abstracts.CustomSavable;
 import com.badlogic.gdx.graphics.Texture;
-import com.evacipated.cardcrawl.mod.stslib.actions.common.MoveCardsAction;
+import com.evacipated.cardcrawl.mod.stslib.actions.common.AutoplayCardAction;
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.AutoplayField;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -12,21 +14,23 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.PowerTip;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import replayTheSpire.patches.BottlePatches;
 import thiefmod.patches.relics.BottledLiverField;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.function.Predicate;
 
-public class BottledLiver extends CustomRelic implements CustomBottleRelic, CustomSavable<Integer> {
+public class BottledHand extends CustomRelic implements CustomBottleRelic, CustomSavable<Integer> {
     private static AbstractCard card;
     private boolean cardSelected = true;
 
-    public static final String ID = thiefmod.ThiefMod.makeID("BottledLiver");
-    public static final String IMG = "thiefmodAssets/images/relics/PocketChange.png";
-    public static final String OUTLINE = "thiefmodAssets/images/relics/outline/PocketChange.png";
+    public static final String ID = thiefmod.ThiefMod.makeID("BottledHand");
+    public static final String IMG = "thiefmodAssets/images/relics/BottledHand.png";
+    public static final String OUTLINE = "thiefmodAssets/images/relics/outline/BottledHand.png";
 
-    public BottledLiver() {
+    public BottledHand() {
         super(ID, ImageMaster.loadImage(IMG), new Texture(OUTLINE), RelicTier.RARE, LandingSound.CLINK);
 
         tips.clear();
@@ -45,8 +49,8 @@ public class BottledLiver extends CustomRelic implements CustomBottleRelic, Cust
 
     @Override
     public Integer onSave() {
-        if (this.card != null) {
-            return AbstractDungeon.player.masterDeck.group.indexOf(this.card);
+        if (card != null) {
+            return AbstractDungeon.player.masterDeck.group.indexOf(card);
         } else {
             return -1;
         }
@@ -77,7 +81,7 @@ public class BottledLiver extends CustomRelic implements CustomBottleRelic, Cust
         }
         AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.INCOMPLETE;
         CardGroup group = CardGroup.getGroupWithoutBottledCards(AbstractDungeon.player.masterDeck);
-        AbstractDungeon.gridSelectScreen.open(group, 1, DESCRIPTIONS[3] + name + ".", false, false, false, false);
+        AbstractDungeon.gridSelectScreen.open(group, 1, DESCRIPTIONS[3] + name + DESCRIPTIONS[2], false, false, false, false);
     }
 
 
@@ -109,9 +113,33 @@ public class BottledLiver extends CustomRelic implements CustomBottleRelic, Cust
     public int onAttacked(DamageInfo info, int damageAmount) {
         if (damageAmount > 0 && info.type == DamageInfo.DamageType.NORMAL) {
             this.flash();
-            // It doesn't work rn.
-            AbstractDungeon.actionManager.addToTop(new MoveCardsAction(AbstractDungeon.player.hand, AbstractDungeon.player.discardPile, Predicate.isEqual(BottlePatches.BottleFields.inBottleFlurry.get(card))));
-            AbstractDungeon.actionManager.addToTop(new MoveCardsAction(AbstractDungeon.player.hand, AbstractDungeon.player.drawPile, Predicate.isEqual(BottlePatches.BottleFields.inBottleFlurry.get(card))));
+            boolean fullHandDialog = false;
+
+            for (Iterator<AbstractCard> it = AbstractDungeon.player.drawPile.group.iterator(); it.hasNext(); ) {
+                AbstractCard card = it.next();
+                if (BottledLiverField.inBottledLiverField.get(card)) {
+                    flash();
+                    it.remove();
+                    if (AbstractDungeon.player.hand.size() < BaseMod.MAX_HAND_SIZE) {
+                        if (AutoplayField.autoplay.get(card)) {
+                            AbstractDungeon.actionManager.addToBottom(new AutoplayCardAction(card, AbstractDungeon.player.hand));
+                        }
+                        card.triggerWhenDrawn();
+                        AbstractDungeon.player.drawPile.moveToHand(card, AbstractDungeon.player.drawPile);
+
+                        for (AbstractRelic r : AbstractDungeon.player.relics) {
+                            r.onCardDraw(card);
+                        }
+                    } else {
+                        if (!fullHandDialog) {
+                            AbstractDungeon.player.createHandIsFullDialog();
+                            fullHandDialog = true;
+                        }
+                        AbstractDungeon.player.drawPile.moveToDiscardPile(card);
+                    }
+                }
+            }
+
         }
         return damageAmount;
     }
