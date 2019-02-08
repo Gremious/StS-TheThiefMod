@@ -18,7 +18,7 @@ import com.megacrit.cardcrawl.vfx.combat.AdditiveSlashImpactEffect;
 import com.megacrit.cardcrawl.vfx.combat.ClashEffect;
 import com.megacrit.cardcrawl.vfx.combat.RoomTintEffect;
 import thiefmod.ThiefMod;
-import thiefmod.patches.Character.AbstractCardEnum;
+import thiefmod.patches.character.AbstractCardEnum;
 
 import java.util.ArrayList;
 import java.util.List;

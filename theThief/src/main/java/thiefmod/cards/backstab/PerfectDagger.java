@@ -19,8 +19,8 @@ import com.megacrit.cardcrawl.vfx.combat.DamageImpactCurvyEffect;
 import com.megacrit.cardcrawl.vfx.combat.DamageImpactLineEffect;
 import thiefmod.ThiefMod;
 import thiefmod.cards.AbstractBackstabCard;
-import thiefmod.patches.Character.AbstractCardEnum;
-import thiefmod.patches.Character.ThiefCardTags;
+import thiefmod.patches.character.AbstractCardEnum;
+import thiefmod.patches.character.ThiefCardTags;
 import thiefmod.powers.Common.BackstabPower;
 
 import java.util.ArrayList;

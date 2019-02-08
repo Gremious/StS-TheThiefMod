@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.CardFlashVfx;
 import thiefmod.ThiefMod;
 import thiefmod.cards.AbstractBackstabCard;
-import thiefmod.patches.Character.ThiefCardTags;
+import thiefmod.patches.character.ThiefCardTags;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package thiefmod.patches.Character;
+package thiefmod.patches.character;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.helpers.CardLibrary;

@@ -12,8 +12,8 @@ import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import thiefmod.ThiefMod;
 import thiefmod.cards.AbstractBackstabCard;
-import thiefmod.patches.Character.AbstractCardEnum;
-import thiefmod.patches.Character.ThiefCardTags;
+import thiefmod.patches.character.AbstractCardEnum;
+import thiefmod.patches.character.ThiefCardTags;
 import thiefmod.powers.Common.BackstabPower;
 
 import java.util.ArrayList;

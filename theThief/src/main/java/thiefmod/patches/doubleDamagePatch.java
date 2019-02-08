@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import javassist.CtBehavior;
-import thiefmod.patches.Character.ThiefCardTags;
+import thiefmod.patches.character.ThiefCardTags;
 import thiefmod.powers.Unique.DoubleDealingPower;
 
 

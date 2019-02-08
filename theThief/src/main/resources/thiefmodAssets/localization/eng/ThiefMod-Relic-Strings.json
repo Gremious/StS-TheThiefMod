@@ -75,7 +75,8 @@
     "DESCRIPTIONS": [
       "Choose a card. Whenever you take unblocked damage, return the bottled card to your hand. NL (Doesn't return #yExhausted cards.)",
       "Whenever you take unblocked damage, return ",
-      " to your hand."
+      " to your hand.",
+      "Select a card to bottle for "
     ]
   }
 }

@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ChokePower;
 import thiefmod.ThiefMod;
-import thiefmod.patches.Character.ThiefCardTags;
+import thiefmod.patches.character.ThiefCardTags;
 
 public class StolenWire extends CustomCard {
 

@@ -5,7 +5,6 @@ import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.FleetingFie
 import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.*;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -19,8 +18,8 @@ import com.megacrit.cardcrawl.powers.VulnerablePower;
 import thiefmod.CardIgnore;
 import thiefmod.ThiefMod;
 import thiefmod.actions.common.StealCardAction;
-import thiefmod.patches.Character.AbstractCardEnum;
-import thiefmod.patches.Character.ThiefCardTags;
+import thiefmod.patches.character.AbstractCardEnum;
+import thiefmod.patches.character.ThiefCardTags;
 import thiefmod.powers.Common.ShadowstepPower;
 
 import java.util.ArrayList;

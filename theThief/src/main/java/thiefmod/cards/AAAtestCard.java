@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.CardIgnore;
 import thiefmod.ThiefMod;
 import thiefmod.actions.Util.DiscoverRandomFromArrayAction;
-import thiefmod.patches.Character.AbstractCardEnum;
+import thiefmod.patches.character.AbstractCardEnum;
 
 import java.util.ArrayList;
 @Deprecated

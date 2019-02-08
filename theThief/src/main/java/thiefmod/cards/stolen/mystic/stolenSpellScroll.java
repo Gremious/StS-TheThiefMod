@@ -10,7 +10,7 @@ import mysticmod.MysticMod;
 import thiefmod.ThiefMod;
 import thiefmod.actions.common.playCardWithRandomTargestAction;
 import thiefmod.cards.AbstractBackstabCard;
-import thiefmod.patches.Character.ThiefCardTags;
+import thiefmod.patches.character.ThiefCardTags;
 
 import java.util.ArrayList;
 

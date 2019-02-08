@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
 import thiefmod.actions.unique.GuiltTripAction;
-import thiefmod.patches.Character.AbstractCardEnum;
+import thiefmod.patches.character.AbstractCardEnum;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -65,24 +65,6 @@ public class GuiltTrip extends AbstractBackstabCard {
         AbstractDungeon.actionManager.addToBottom(new GuiltTripAction(p, m, magicNumber, backstabNumber));
     }
 
-
-    @Override
-    public void applyPowers() {
-        super.applyPowers();
-
-        if (magicNumber >= 2) {
-            rawDescription = UPGRADE_DESCRIPTION;
-        } else {
-            rawDescription = DESCRIPTION;
-        }
-
-        if (AbstractDungeon.player.cardsPlayedThisTurn == 0) {
-            rawDescription += EXTENDED_DESCRIPTION[1];
-        } else {
-            rawDescription += EXTENDED_DESCRIPTION[2];
-        }
-        initializeDescription();
-    }
 
     @Override
     public List<TooltipInfo> getCustomTooltips() {

@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
 import thiefmod.actions.unique.StolenArmorAction;
 import thiefmod.cards.AbstractBackstabCard;
-import thiefmod.patches.Character.ThiefCardTags;
+import thiefmod.patches.character.ThiefCardTags;
 
 public class StolenArmor extends AbstractBackstabCard {
 

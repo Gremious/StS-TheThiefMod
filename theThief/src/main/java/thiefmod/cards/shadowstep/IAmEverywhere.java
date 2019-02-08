@@ -1,7 +1,6 @@
 package thiefmod.cards.shadowstep;
 
 import basemod.helpers.TooltipInfo;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -12,8 +11,8 @@ import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import thiefmod.ThiefMod;
 import thiefmod.actions.unique.IAmEverywhereAction;
 import thiefmod.cards.AbstractBackstabCard;
-import thiefmod.patches.Character.AbstractCardEnum;
-import thiefmod.patches.Character.ThiefCardTags;
+import thiefmod.patches.character.AbstractCardEnum;
+import thiefmod.patches.character.ThiefCardTags;
 
 import java.util.ArrayList;
 import java.util.List;

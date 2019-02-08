@@ -28,8 +28,8 @@ import thiefmod.characters.TheThief;
 import thiefmod.events.BlackMarketTraderEvent;
 import thiefmod.events.LouseAbuseEvent;
 import thiefmod.events.MasqueradeEvent;
-import thiefmod.patches.Character.AbstractCardEnum;
-import thiefmod.patches.Character.TheThiefEnum;
+import thiefmod.patches.character.AbstractCardEnum;
+import thiefmod.patches.character.TheThiefEnum;
 import thiefmod.relics.*;
 import thiefmod.variabls.BackstabBlock;
 import thiefmod.variabls.BackstabDamage;
@@ -129,7 +129,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
     public static final String RARE_POWER = "powers/placeholder_power.png";
 
 
-    // Character assets
+    // character assets
     private static final String THE_THIEF_BUTTON = "charSelect/thiefCharacterButton.png";
     private static final String THE_THIEF_PORTRAIT = rollBGImage();
     public static final String THE_THIEF_SHOULDER_1 = "char/thiefCharacter/shoulder.png";
@@ -357,7 +357,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         BaseMod.loadCustomStringsFile(CardStrings.class,
                 "thiefmodAssets/localization/eng/ThiefMod-Curse-Card-Strings.json");
 
-        // Character Strings
+        // character Strings
         BaseMod.loadCustomStringsFile(CharacterStrings.class,
                 "thiefmodAssets/localization/eng/ThiefMod-Character-Strings.json");
 

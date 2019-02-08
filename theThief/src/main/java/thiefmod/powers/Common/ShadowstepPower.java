@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.DarkSmokePuffEffect;
 import thiefmod.ThiefMod;
-import thiefmod.patches.Character.ThiefCardTags;
+import thiefmod.patches.character.ThiefCardTags;
 import thiefmod.powers.Unique.GhastlyEssencePower;
 import thiefmod.powers.Unique.ShadowMasteryPower;
 import thiefmod.relics.ShadowBoots;

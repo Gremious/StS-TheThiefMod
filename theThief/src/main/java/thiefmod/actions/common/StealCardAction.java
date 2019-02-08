@@ -21,7 +21,7 @@ import thiefmod.cards.stolen.RareFind.StolenShadow;
 import thiefmod.cards.stolen.*;
 import thiefmod.cards.stolen.mystic.RareFind.stolenMysticalOrb;
 import thiefmod.cards.stolen.mystic.*;
-import thiefmod.patches.Character.ThiefCardTags;
+import thiefmod.patches.character.ThiefCardTags;
 import thiefmod.powers.Unique.FleetingGuiltPower;
 import thiefmod.powers.Unique.IllGottenGainsPower;
 

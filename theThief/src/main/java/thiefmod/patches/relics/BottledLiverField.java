@@ -1,4 +1,4 @@
-package thiefmod.patches;
+package thiefmod.patches.relics;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpireField;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;

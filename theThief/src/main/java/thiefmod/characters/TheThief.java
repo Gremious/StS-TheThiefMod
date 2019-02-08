@@ -24,7 +24,7 @@ import thiefmod.cards.DefendThief;
 import thiefmod.cards.Lie;
 import thiefmod.cards.Steal;
 import thiefmod.cards.StrikeThief;
-import thiefmod.patches.Character.AbstractCardEnum;
+import thiefmod.patches.character.AbstractCardEnum;
 import thiefmod.relics.ThievesMask;
 
 import java.util.ArrayList;
@@ -160,14 +160,14 @@ public class TheThief extends CustomPlayer {
         return retVal;
     }
 
-    // Character select screen effect
+    // character select screen effect
     @Override
     public void doCharSelectScreenSelectEffect() {
         CardCrawlGame.sound.playA("ATTACK_DAGGER_1", 1.25f); // Sound Effect
         CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.LOW, ScreenShake.ShakeDur.SHORT, false); // Screen Effect
     }
 
-    // Character select on-button-press sound effect
+    // character select on-button-press sound effect
     @Override
     public String getCustomModeCharacterButtonSoundKey() {
         return "ATTACK_DAGGER_1";
