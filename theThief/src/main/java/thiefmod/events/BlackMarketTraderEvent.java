@@ -36,7 +36,7 @@ public class BlackMarketTraderEvent extends AbstractImageEvent {
     private int damageHigh;
 
     public BlackMarketTraderEvent() {
-        super(NAME, DESCRIPTIONS[0], "thiefmodAssets/images/relics/Lockpicks.png");
+        super(NAME, DESCRIPTIONS[0], "thiefmodAssets/images/events/BlackMarketTraderEvent.png");
 
         if (AbstractDungeon.ascensionLevel >= 15) {
             damageLow = (int) ((float) AbstractDungeon.player.maxHealth * HEALTH_LOSS_PERCENTAGE_LOW);

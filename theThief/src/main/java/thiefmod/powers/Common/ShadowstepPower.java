@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.vfx.DarkSmokePuffEffect;
 import thiefmod.ThiefMod;
 import thiefmod.patches.Character.ThiefCardTags;
 import thiefmod.powers.Unique.GhastlyEssencePower;
@@ -73,6 +74,8 @@ public class ShadowstepPower extends AbstractPower implements OnReceivePowerPowe
 
     @Override
     public boolean onReceivePower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
+        AbstractDungeon.effectsQueue.add(new DarkSmokePuffEffect(target.hb_x, target.hb_y));
+
         if (power.ID.equals(ID)) {
             actionManager.addToBottom(new ApplyPowerAction(owner, source,
                     new BackstabPower(owner, source, amount), amount));
