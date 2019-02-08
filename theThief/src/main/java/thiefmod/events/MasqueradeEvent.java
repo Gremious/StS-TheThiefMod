@@ -29,7 +29,7 @@ public class MasqueradeEvent extends AbstractImageEvent {
     private int screenNum = 0;
 
     public MasqueradeEvent() {
-        super(NAME, DESCRIPTIONS[0], "thiefmodAssets/images/relics/Lockpicks.png");
+        super(NAME, DESCRIPTIONS[0], "thiefmodAssets/images/events/MasqueradeEvent.png");
 
         if (AbstractDungeon.ascensionLevel >= 15) {
             heal = (int) ((float) AbstractDungeon.player.maxHealth * HEALTH_HEAL_PERCENT);
@@ -49,7 +49,7 @@ public class MasqueradeEvent extends AbstractImageEvent {
             case 0: /*First Screen. You find the event.*/
                 switch (i) {
                     case 0: /*You press [Gossip]*/
-                        imageEventText.loadImage("thiefmodAssets/images/relics/LoadedDice.png");
+                    //    imageEventText.loadImage("thiefmodAssets/images/relics/LoadedDice.png");
                         imageEventText.updateBodyText(DESCRIPTIONS[1]);
                         imageEventText.updateDialogOption(0, OPTIONS[1]);
                         imageEventText.updateDialogOption(1, OPTIONS[3]);
@@ -57,14 +57,14 @@ public class MasqueradeEvent extends AbstractImageEvent {
                         screenNum = 1;
                         break;
                     case 1: /*You press [Flirt]*/
-                        imageEventText.loadImage("thiefmodAssets/images/relics/LoadedDice.png");
+                   //     imageEventText.loadImage("thiefmodAssets/images/relics/LoadedDice.png");
                         imageEventText.updateBodyText(DESCRIPTIONS[4]);
                         imageEventText.updateDialogOption(0, OPTIONS[7]);
                         imageEventText.clearRemainingOptions();
                         screenNum = 2;
                         break;
                     case 2: /*You press [Steal]*/
-                        imageEventText.loadImage("thiefmodAssets/images/relics/LoadedDice.png");
+                  //      imageEventText.loadImage("thiefmodAssets/images/relics/LoadedDice.png");
                         imageEventText.updateBodyText(DESCRIPTIONS[9]);
                         imageEventText.updateDialogOption(0, OPTIONS[11]);
                         imageEventText.updateDialogOption(1, OPTIONS[13]);
@@ -72,7 +72,7 @@ public class MasqueradeEvent extends AbstractImageEvent {
                         screenNum = 5;
                         break;
                     case 3: /*You press [Drink Wine]*/
-                        imageEventText.loadImage("thiefmodAssets/images/relics/LoadedDice.png");
+                 //       imageEventText.loadImage("thiefmodAssets/images/relics/LoadedDice.png");
                         imageEventText.updateBodyText(DESCRIPTIONS[12]);
                         imageEventText.updateDialogOption(0, OPTIONS[16] + heal + OPTIONS[17]);
                         imageEventText.clearRemainingOptions();
