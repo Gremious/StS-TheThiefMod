@@ -14,7 +14,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.vfx.DarkSmokePuffEffect;
 import thiefmod.ThiefMod;
 import thiefmod.patches.character.ThiefCardTags;
 import thiefmod.powers.Unique.GhastlyEssencePower;
@@ -22,6 +21,7 @@ import thiefmod.powers.Unique.ShadowMasteryPower;
 import thiefmod.relics.ShadowBoots;
 import thiefmod.relics.ShadowMask;
 import thiefmod.util.TextureLoader;
+import thiefmod.vfx.ShadowstepSmokeBoofEffect;
 
 import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager;
 
@@ -37,8 +37,8 @@ public class ShadowstepPower extends AbstractPower implements OnReceivePowerPowe
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private static final Texture tex84 = TextureLoader.getTexture("thiefmodAssets/images/powers/84/RefundCardCostPower.png");
-    private static final Texture tex32 = TextureLoader.getTexture("thiefmodAssets/images/powers/32/RefundCardCostPower.png");
+    private static final Texture tex84 = TextureLoader.getTexture("thiefmodAssets/images/powers/84/ShadowstepPower.png");
+    private static final Texture tex32 = TextureLoader.getTexture("thiefmodAssets/images/powers/32/ShadowstepPower.png");
 
 
     public ShadowstepPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
@@ -73,6 +73,8 @@ public class ShadowstepPower extends AbstractPower implements OnReceivePowerPowe
 
     @Override
     public void onInitialApplication() {
+        AbstractDungeon.effectsQueue.add(new ShadowstepSmokeBoofEffect(AbstractDungeon.player.drawX, AbstractDungeon.player.drawY));
+
         actionManager.addToBottom(new ApplyPowerAction(owner, source,
                 new BackstabPower(owner, source, amount), amount));
 
@@ -82,7 +84,7 @@ public class ShadowstepPower extends AbstractPower implements OnReceivePowerPowe
     public boolean onReceivePower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
 
         if (power.ID.equals(ID)) {
-            AbstractDungeon.effectsQueue.add(new DarkSmokePuffEffect(target.hb_x, target.hb_y));
+            AbstractDungeon.effectsQueue.add(new ShadowstepSmokeBoofEffect(AbstractDungeon.player.drawX, AbstractDungeon.player.drawY));
             actionManager.addToBottom(new ApplyPowerAction(owner, source,
                     new BackstabPower(owner, source, amount), amount));
             return true;
