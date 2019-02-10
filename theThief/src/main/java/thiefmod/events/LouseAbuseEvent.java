@@ -21,7 +21,7 @@ public class LouseAbuseEvent extends AbstractImageEvent {
     private int HEALTH_LOSS;
 
     public LouseAbuseEvent() {
-        super(NAME, DESCRIPTIONS[0], "thiefmodAssets/images/relics/Lockpicks.png");
+        super(NAME, DESCRIPTIONS[0], "thiefmodAssets/images/events/LouseAbuseEvent.png");
 
         if (AbstractDungeon.ascensionLevel >= 15) {
             HEALTH_LOSS = 3;

@@ -1,6 +1,7 @@
 package thiefmod.cards.backstab;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -66,11 +67,11 @@ public class Stab extends AbstractBackstabCard {
 
         if (count <= 1 || p.hasPower(BackstabPower.POWER_ID)) {
 
-            AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(m,
                     new DamageInfo(p, damage * backstabNumber, damageTypeForTurn),
                     AbstractGameAction.AttackEffect.SLASH_VERTICAL));
         } else {
-            AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(m,
                     new DamageInfo(p, damage, damageTypeForTurn),
                     AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         }
