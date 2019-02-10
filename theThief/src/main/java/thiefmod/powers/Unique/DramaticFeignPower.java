@@ -1,6 +1,5 @@
 package thiefmod.powers.Unique;
 
-import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -13,7 +12,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import thiefmod.ThiefMod;
 import thiefmod.hooks.CanUsePower;
-import thiefmod.powers.Common.RefundCardCost;
+import thiefmod.powers.Common.RefundCardCostPower;
 
 public class DramaticFeignPower extends AbstractPower implements CanUsePower {
 
@@ -63,7 +62,7 @@ public class DramaticFeignPower extends AbstractPower implements CanUsePower {
     @Override
     public void atStartOfTurn() {
         AbstractDungeon.actionManager.addToBottom(
-                new ApplyPowerAction(owner, source, new RefundCardCost(
+                new ApplyPowerAction(owner, source, new RefundCardCostPower(
                         owner, source, amount), amount));
 
         AbstractDungeon.actionManager

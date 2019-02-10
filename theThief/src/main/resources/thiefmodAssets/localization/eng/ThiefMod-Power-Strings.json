@@ -15,8 +15,8 @@
       " turns"
     ]
   },
-  "theThief:RefunCostPower": {
-    "NAME": "Refund!",
+  "theThief:RefundCardCostPower": {
+    "NAME": "Refund",
     "DESCRIPTIONS": [
       "Refund the next ",
       " card you play this turn.",

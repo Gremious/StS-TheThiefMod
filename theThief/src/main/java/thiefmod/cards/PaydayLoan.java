@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
 import thiefmod.patches.character.AbstractCardEnum;
-import thiefmod.powers.Common.RefundCardCost;
+import thiefmod.powers.Common.RefundCardCostPower;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -65,7 +65,7 @@ public class PaydayLoan extends AbstractBackstabCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
-                p, p, new RefundCardCost(
+                p, p, new RefundCardCostPower(
                 p, p, magicNumber), 1));
 
 

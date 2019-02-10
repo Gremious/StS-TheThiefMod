@@ -83,7 +83,7 @@ public class DramaticFeign extends CustomCard {
                 new ApplyPowerAction(p, p, new DramaticFeignPower(p, p, AMOUNT), AMOUNT));
 
         // Next turn, the first card you play is refunded.
-        // See DramaticFeignPower (it applies powers.RefundCardCost).
+        // See DramaticFeignPower (it applies powers.RefundCardCostPower).
 
         // VFX
         AbstractDungeon.actionManager.addToBottom(new VFXAction(new GrandFinalEffect(), 1.0f));

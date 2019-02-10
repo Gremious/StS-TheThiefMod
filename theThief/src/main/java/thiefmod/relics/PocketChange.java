@@ -4,17 +4,15 @@ import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.localization.UIStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.MawBank;
 import com.megacrit.cardcrawl.relics.SmilingMask;
-import thiefmod.powers.Common.RefundCardCost;
+import thiefmod.powers.Common.RefundCardCostPower;
 
 public class PocketChange extends CustomRelic {
 
@@ -39,7 +37,7 @@ public class PocketChange extends CustomRelic {
         flash();
         AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
-                AbstractDungeon.player, AbstractDungeon.player, new RefundCardCost(AbstractDungeon.player, AbstractDungeon.player, 1), 1));
+                AbstractDungeon.player, AbstractDungeon.player, new RefundCardCostPower(AbstractDungeon.player, AbstractDungeon.player, 1), 1));
     }
 
 

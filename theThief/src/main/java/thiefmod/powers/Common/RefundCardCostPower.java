@@ -18,11 +18,11 @@ import thiefmod.actions.common.GainGoldAction;
 import thiefmod.relics.PocketChange;
 import thiefmod.util.TextureLoader;
 
-public class RefundCardCost extends AbstractPower {
+public class RefundCardCostPower extends AbstractPower {
 
     public AbstractCreature source;
 
-    public static final String POWER_ID = thiefmod.ThiefMod.makeID("RefunCostPower");
+    public static final String POWER_ID = thiefmod.ThiefMod.makeID("RefundCardCostPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -32,7 +32,7 @@ public class RefundCardCost extends AbstractPower {
     private static final Texture tex32 = TextureLoader.getTexture("thiefmodAssets/images/powers/32/RefundCardCostPower.png");
 
 
-    public RefundCardCost(AbstractCreature owner, AbstractCreature source, final int amount) {
+    public RefundCardCostPower(AbstractCreature owner, AbstractCreature source, final int amount) {
         name = NAME;
         ID = POWER_ID;
         this.owner = owner;

@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
 import thiefmod.patches.character.ThiefCardTags;
-import thiefmod.powers.Common.RefundCardCost;
+import thiefmod.powers.Common.RefundCardCostPower;
 
 public class StolenChange extends CustomCard {
 
@@ -58,7 +58,7 @@ public class StolenChange extends CustomCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
-                new RefundCardCost(p, p, magicNumber), magicNumber));
+                new RefundCardCostPower(p, p, magicNumber), magicNumber));
 
     }
 
