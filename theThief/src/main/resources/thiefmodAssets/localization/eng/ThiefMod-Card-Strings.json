@@ -534,7 +534,7 @@
   },
   "theThief:testCard": {
     "NAME": "Test Card",
-    "DESCRIPTION": "Discover a Gray card."
+    "DESCRIPTION": "Deal 5 damage. NL Apply 1 Mark of Roses."
   },
   "theThief:HotGossip": {
     "NAME": "HOT Gossip",

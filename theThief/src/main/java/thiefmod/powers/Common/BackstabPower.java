@@ -46,6 +46,9 @@ public class BackstabPower extends AbstractPower {
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
+        if (!(1 == 2 && 1 ==3)){
+
+        }
         if (card.hasTag(ThiefCardTags.BACKSTAB)) {
             AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(owner, source, ID, 1));
         } else {

@@ -1,5 +1,7 @@
 package thiefmod.powers.Common;
 
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
@@ -14,6 +16,7 @@ import com.megacrit.cardcrawl.relics.MawBank;
 import thiefmod.ThiefMod;
 import thiefmod.actions.common.GainGoldAction;
 import thiefmod.relics.PocketChange;
+import thiefmod.util.TextureLoader;
 
 public class RefundCardCost extends AbstractPower {
 
@@ -25,7 +28,8 @@ public class RefundCardCost extends AbstractPower {
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     public static final String[] TEXT = powerStrings.DESCRIPTIONS;
 
-    public static final String IMG = ThiefMod.makePath(ThiefMod.RARE_POWER);
+    private static final Texture tex84 = TextureLoader.getTexture("thiefmodAssets/images/powers/84/RefundCardCostPower.png");
+    private static final Texture tex32 = TextureLoader.getTexture("thiefmodAssets/images/powers/32/RefundCardCostPower.png");
 
 
     public RefundCardCost(AbstractCreature owner, AbstractCreature source, final int amount) {
@@ -37,7 +41,9 @@ public class RefundCardCost extends AbstractPower {
 
         type = PowerType.BUFF;
         isTurnBased = false;
-        img = ImageMaster.loadImage(IMG);
+
+        this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
+        this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
 
         this.updateDescription();
     }
