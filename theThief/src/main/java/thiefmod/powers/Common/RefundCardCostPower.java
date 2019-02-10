@@ -31,7 +31,6 @@ public class RefundCardCostPower extends AbstractPower {
     private static final Texture tex84 = TextureLoader.getTexture("thiefmodAssets/images/powers/84/RefundCardCostPower.png");
     private static final Texture tex32 = TextureLoader.getTexture("thiefmodAssets/images/powers/32/RefundCardCostPower.png");
 
-
     public RefundCardCostPower(AbstractCreature owner, AbstractCreature source, final int amount) {
         name = NAME;
         ID = POWER_ID;
