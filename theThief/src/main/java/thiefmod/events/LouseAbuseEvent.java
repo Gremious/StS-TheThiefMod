@@ -44,7 +44,6 @@ public class LouseAbuseEvent extends AbstractImageEvent {
                     case 1:
                     case 2:
                         AbstractDungeon.player.relics.add(new LouseBounty());
-                        imageEventText.loadImage("thiefmodAssets/images/relics/LoadedDice.png");
                         imageEventText.updateBodyText(DESCRIPTIONS[1]);
                         imageEventText.updateDialogOption(0, OPTIONS[4]);
                         imageEventText.clearRemainingOptions();
