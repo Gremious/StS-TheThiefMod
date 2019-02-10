@@ -6,5 +6,9 @@
   "theThief:CallOfTheVoid": {
     "NAME": "Call Of The Void",
     "DESCRIPTION": "Unplayable. NL When you draw this card, lose 1 [E]."
+  },
+  "theThief:Drunk": {
+    "NAME": "Drunk",
+    "DESCRIPTION": "Autoplay: Shuffle 2 Dazes into your draw and discard piles. Exhaustive 2."
   }
 }

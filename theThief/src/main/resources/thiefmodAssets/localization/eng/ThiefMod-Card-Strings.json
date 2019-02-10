@@ -535,5 +535,13 @@
   "theThief:testCard": {
     "NAME": "Test Card",
     "DESCRIPTION": "Discover a Gray card."
+  },
+  "theThief:HotGossip": {
+    "NAME": "HOT Gossip",
+    "DESCRIPTION": "Stun all monsters. NL Exhaust."
+  },
+  "theThief:Dedication": {
+    "NAME": "Dedication",
+    "DESCRIPTION": "Deal !D! damage."
   }
 }
