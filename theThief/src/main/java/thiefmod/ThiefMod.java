@@ -143,6 +143,14 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
     public static final String THE_DEFAULT_SKELETON_ATLAS = "char/thiefCharacter/skeleton.atlas";
     public static final String THE_DEFAULT_SKELETON_JSON = "char/thiefCharacter/skeleton.json";
 
+    // =============== MAKE IMAGE PATHS =================
+
+     public static String makePowerPath(String resourcePath) {
+        return "thiefmodAssets/images/powers/" + resourcePath;
+    }
+
+    // =============== /MAKE IMAGE PATHS/ =================
+
 
     // =============== /IMPUT TEXTURE LOCATION/ =================
 

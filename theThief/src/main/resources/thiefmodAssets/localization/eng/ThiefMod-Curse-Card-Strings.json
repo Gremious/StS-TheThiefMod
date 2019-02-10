@@ -9,6 +9,6 @@
   },
   "theThief:Drunk": {
     "NAME": "Drunk",
-    "DESCRIPTION": "Autoplay: Shuffle 2 Dazes into your draw and discard piles. Exhaustive 2."
+    "DESCRIPTION": "Autoplay: Shuffle 2 Dazes into your draw and discard piles. NL Exhaustive !stslib:ex!."
   }
 }
