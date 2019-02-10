@@ -64,6 +64,7 @@ public class Ambush extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
+
         AbstractDungeon.actionManager.addToBottom(
                 new MakeTempCardInDrawPileAction(new VoidCard(), magicNumber, true, true, false));
 

@@ -78,5 +78,12 @@
       ".",
       "Select a card to bottle for "
     ]
+  },
+  "theThief:StolenBag": {
+    "NAME": "Stolen Bag",
+    "FLAVOR": "Yoink!",
+    "DESCRIPTIONS": [
+      "The first time you play #b2 cards that don't belong to your color in a turn, draw 2 cards. NL Usable once per combat."
+    ]
   }
 }
