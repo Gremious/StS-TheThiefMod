@@ -34,8 +34,8 @@ public class ShadowFormPower extends AbstractPower {
     private boolean isFinishedThisTurn = true;
     private int maxAmount;
 
-    private static final Texture tex84 = TextureLoader.getTexture("thiefmodAssets/images/powers/84/LiarPower.png");
-    private static final Texture tex32 = TextureLoader.getTexture("thiefmodAssets/images/powers/32/LiarPower.png");
+    private static final Texture tex84 = TextureLoader.getTexture("thiefmodAssets/images/powers/84/ShadowFormPower.png");
+    private static final Texture tex32 = TextureLoader.getTexture("thiefmodAssets/images/powers/32/ShadowFormPower.png");
 
     public ShadowFormPower(AbstractCreature owner, int amount) {
         name = NAME;
