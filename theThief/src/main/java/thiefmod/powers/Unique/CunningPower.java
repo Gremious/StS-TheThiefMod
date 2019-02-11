@@ -1,5 +1,7 @@
 package thiefmod.powers.Unique;
 
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
@@ -15,23 +17,29 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import thiefmod.ThiefMod;
 import thiefmod.patches.character.ThiefCardTags;
+import thiefmod.util.TextureLoader;
 
 // Empty Base
 
 public class CunningPower extends AbstractPower {
     public AbstractCreature source;
 
-    public static final String POWER_ID = ThiefMod.makeID("Cunning");
+    public static final String POWER_ID = ThiefMod.makeID("CunningPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    public static final String IMG = ThiefMod.makePath(ThiefMod.COMMON_POWER);
+
+    private static final Texture tex84 = TextureLoader.getTexture("thiefmodAssets/images/powers/84/CunningPower.png");
+    private static final Texture tex32 = TextureLoader.getTexture("thiefmodAssets/images/powers/32/CunningPower.png");
 
 
     public CunningPower(AbstractCreature owner, AbstractCreature source, final int amount) {
         name = NAME;
         ID = POWER_ID;
-        img = ImageMaster.loadImage(IMG);
+
+        this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
+        this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
+
         type = PowerType.BUFF;
         isTurnBased = false;
 

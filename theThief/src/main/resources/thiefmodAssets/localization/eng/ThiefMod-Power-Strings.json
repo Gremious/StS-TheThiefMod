@@ -242,5 +242,13 @@
       "Whenever you would lose Elusive, you lose ",
       " instead of all."
     ]
+  },
+  "theThief:CunningPower": {
+    "NAME": "Cunning",
+    "DESCRIPTIONS": [
+      "The next",
+      " stolen card you play this turn is played twice.",
+      " stolen cards you play this turn are played twice."
+    ]
   }
 }

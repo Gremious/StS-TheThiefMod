@@ -16,9 +16,8 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import thiefmod.patches.relics.BottledLiverField;
+import thiefmod.patches.relics.BottledHandField;
 
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.function.Predicate;
 
@@ -39,7 +38,7 @@ public class BottledHand extends CustomRelic implements CustomBottleRelic, Custo
 
     @Override
     public Predicate<AbstractCard> isOnCard() {
-        return BottledLiverField.inBottledLiverField::get;
+        return BottledHandField.inBottledHandField::get;
     }
 
     @Override
@@ -65,7 +64,7 @@ public class BottledHand extends CustomRelic implements CustomBottleRelic, Custo
         if (cardIndex >= 0 && cardIndex < AbstractDungeon.player.masterDeck.group.size()) {
             card = AbstractDungeon.player.masterDeck.group.get(cardIndex);
             if (card != null) {
-                BottledLiverField.inBottledLiverField.set(card, true);
+                BottledHandField.inBottledHandField.set(card, true);
                 setDescriptionAfterLoading();
             }
         }
@@ -90,7 +89,7 @@ public class BottledHand extends CustomRelic implements CustomBottleRelic, Custo
         if (card != null) {
             AbstractCard cardInDeck = AbstractDungeon.player.masterDeck.getSpecificCard(card);
             if (cardInDeck != null) {
-                BottledLiverField.inBottledLiverField.set(cardInDeck, false);
+                BottledHandField.inBottledHandField.set(cardInDeck, false);
             }
         }
     }
@@ -101,7 +100,7 @@ public class BottledHand extends CustomRelic implements CustomBottleRelic, Custo
         if (!this.cardSelected && !AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
             this.cardSelected = true;
             card = AbstractDungeon.gridSelectScreen.selectedCards.get(0);
-            BottledLiverField.inBottledLiverField.set(card, true);
+            BottledHandField.inBottledHandField.set(card, true);
             AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
             AbstractDungeon.gridSelectScreen.selectedCards.clear();
             this.setDescriptionAfterLoading();
@@ -117,7 +116,7 @@ public class BottledHand extends CustomRelic implements CustomBottleRelic, Custo
 
             for (Iterator<AbstractCard> it = AbstractDungeon.player.drawPile.group.iterator(); it.hasNext(); ) {
                 AbstractCard card = it.next();
-                if (BottledLiverField.inBottledLiverField.get(card)) {
+                if (BottledHandField.inBottledHandField.get(card)) {
                     flash();
                     it.remove();
                     if (AbstractDungeon.player.hand.size() < BaseMod.MAX_HAND_SIZE) {
