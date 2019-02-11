@@ -21,10 +21,12 @@ public class ShadowstepSingleSmokeEffect extends AbstractGameEffect {
     private TextureAtlas.AtlasRegion img;
 
     public ShadowstepSingleSmokeEffect(float x, float y) {
+
         this.color = new Color(0.0F, 0.0F, 0.0F, 1.0F);
-        this.color.r = 0.2F;
-        this.color.g = 0.2F;
-        this.color.b = 0.2F;
+        color.r = MathUtils.random(0.1F, 0.4F);
+        color.g = color.r - MathUtils.random(0.0F, 0.07F);
+        color.b = color.r;
+
         if (MathUtils.randomBoolean()) {
             this.img = ImageMaster.EXHAUST_L;
             this.duration = MathUtils.random(2.0F, 2.5F);
@@ -36,12 +38,12 @@ public class ShadowstepSingleSmokeEffect extends AbstractGameEffect {
         }
 
         this.startDur = this.duration;
-        this.x = x + MathUtils.random(-180.0F * Settings.scale, 150.0F * Settings.scale) - (float) this.img.packedWidth / 2.0F;
-        this.y = y + MathUtils.random(-240.0F * Settings.scale, 150.0F * Settings.scale) - (float) this.img.packedHeight / 2.0F;
+        this.x = x + MathUtils.random(-180.0F * Settings.scale, 150.0F * Settings.scale) - (float)this.img.packedWidth / 2.0F;
+        this.y = y + MathUtils.random(-240.0F * Settings.scale, 150.0F * Settings.scale) - (float)this.img.packedHeight / 2.0F;
         this.scale = 0.01F;
         this.rotation = MathUtils.random(360.0F);
-        this.aV = MathUtils.random(-50.0F, 50.0F);
-        this.vY = MathUtils.random(1.0F * Settings.scale, 3.0F * Settings.scale);
+        this.aV = MathUtils.random(-150.0F, 150.0F);
+        this.vY = MathUtils.random(1.0F * Settings.scale, 5.0F * Settings.scale);
     }
 
     public void update() {
@@ -64,7 +66,7 @@ public class ShadowstepSingleSmokeEffect extends AbstractGameEffect {
 
     public void render(SpriteBatch sb) {
         sb.setColor(this.color);
-        sb.draw(this.img, this.x, this.y, (float) this.img.packedWidth / 2.0F, (float) this.img.packedHeight / 2.0F, (float) this.img.packedWidth, (float) this.img.packedHeight, this.scale, this.scale, this.rotation);
+        sb.draw(this.img, this.x, this.y, (float)this.img.packedWidth / 2.0F, (float)this.img.packedHeight / 2.0F, (float)this.img.packedWidth, (float)this.img.packedHeight, this.scale, this.scale, this.rotation);
     }
 
     public void dispose() {
