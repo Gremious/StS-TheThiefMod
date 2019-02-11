@@ -84,6 +84,7 @@
       " Backstab card you play gains it's Backstab effect. NL If you play any other card, remove this power.",
       " Backstab cards you play gains their Backstab effect. NL If you play any other card, remove this power."
     ]
+    ]
   },
   "theThief:DealDamageToAllNextTurnPower": {
     "NAME": "Deal Damage To All",

@@ -1,5 +1,7 @@
 package thiefmod.powers.Unique;
 
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -14,8 +16,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import thiefmod.ThiefMod;
-
-// Empty Base
+import thiefmod.util.TextureLoader;
 
 public class LiarPower extends AbstractPower {
     public static AbstractCreature source;
@@ -26,13 +27,15 @@ public class LiarPower extends AbstractPower {
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    public static final String IMG = ThiefMod.makePath(ThiefMod.COMMON_POWER);
+    private static final Texture tex84 = TextureLoader.getTexture("thiefmodAssets/images/powers/84/LiarPower.png");
+    private static final Texture tex32 = TextureLoader.getTexture("thiefmodAssets/images/powers/32/LiarPower.png");
 
 
     public LiarPower(AbstractCreature owner, AbstractCreature source, final boolean upgraded, final int amount, final int debuffAmount) {
         name = NAME;
         ID = POWER_ID;
-        img = ImageMaster.loadImage(IMG);
+        region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
+        region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
         type = PowerType.BUFF;
         isTurnBased = false;
 
