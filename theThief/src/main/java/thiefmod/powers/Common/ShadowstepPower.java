@@ -75,8 +75,7 @@ public class ShadowstepPower extends AbstractPower implements OnReceivePowerPowe
     public void onInitialApplication() {
         AbstractDungeon.effectsQueue.add(new ShadowstepSmokeBoofEffect(AbstractDungeon.player.drawX, AbstractDungeon.player.drawY));
 
-        actionManager.addToBottom(new ApplyPowerAction(owner, source,
-                new BackstabPower(owner, source, amount), amount));
+        actionManager.addToBottom(new ApplyPowerAction(owner, source, new BackstabPower(owner, source, amount), amount));
 
     }
 
@@ -85,8 +84,7 @@ public class ShadowstepPower extends AbstractPower implements OnReceivePowerPowe
 
         if (power.ID.equals(ID)) {
             AbstractDungeon.effectsQueue.add(new ShadowstepSmokeBoofEffect(AbstractDungeon.player.drawX, AbstractDungeon.player.drawY));
-            actionManager.addToBottom(new ApplyPowerAction(owner, source,
-                    new BackstabPower(owner, source, amount), amount));
+            actionManager.addToBottom(new ApplyPowerAction(owner, source, new BackstabPower(owner, source, amount), amount));
             return true;
         } else {
             return true;
