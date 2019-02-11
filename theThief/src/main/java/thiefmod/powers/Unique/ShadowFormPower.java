@@ -1,5 +1,7 @@
 package thiefmod.powers.Unique;
 
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -13,16 +15,16 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import thiefmod.actions.unique.QueueCardFrontAction;
 import thiefmod.actions.unique.ShadowFormPlayAction;
+import thiefmod.util.TextureLoader;
 
 import java.util.ArrayList;
 
 public class ShadowFormPower extends AbstractPower {
     // Yep, this is literally crazy rituals. I think it's both a super fun mechanic and extremely fitting for the character,
-    // so thank you Beaked Mod for adding this, letting people use, and commenting it!
+    // so thank you Beaked Mod for adding this, letting people use it, and commenting it!
 
     public static final String POWER_ID = thiefmod.ThiefMod.makeID("ShadowFormPower");
-    private static final PowerStrings powerStrings = CardCrawlGame.languagePack
-            .getPowerStrings(POWER_ID);
+    private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
@@ -32,6 +34,9 @@ public class ShadowFormPower extends AbstractPower {
     private boolean isFinishedThisTurn = true;
     private int maxAmount;
 
+    private static final Texture tex84 = TextureLoader.getTexture("thiefmodAssets/images/powers/84/LiarPower.png");
+    private static final Texture tex32 = TextureLoader.getTexture("thiefmodAssets/images/powers/32/LiarPower.png");
+
     public ShadowFormPower(AbstractCreature owner, int amount) {
         name = NAME;
         ID = POWER_ID;
@@ -39,7 +44,8 @@ public class ShadowFormPower extends AbstractPower {
         this.amount = maxAmount = amount;
         isTurnBased = false;
         updateDescription();
-        loadRegion("hex");
+        region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
+        region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
     }
 
     // Get amount of power stacks and add it to maxAmount.
