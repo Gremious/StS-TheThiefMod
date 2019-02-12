@@ -1,11 +1,12 @@
 [
   {
     "NAMES": [
-      "Shadowstep",
-      "shadowstep",
-      "Shadowstepping"
+      "Discover",
+      "Discover:",
+      "discover",
+      "discover:"
     ],
-    "DESCRIPTION": "Become elusive, reducing incoming damage by 10% per stack. NL If you use a Backstab card immediately after a Shadowstep card, it gains its Backstab effect. Playing ANY non-Shadowstep card removes ALL elusive."
+    "DESCRIPTION": "Choose 1 out of 3 cards and add it to your hand."
   },
   {
     "NAMES": [
@@ -13,6 +14,14 @@
       "elusive"
     ],
     "DESCRIPTION": "Reduces incoming damage by 10% per stack."
+  },
+  {
+    "NAMES": [
+      "Shadowstep",
+      "shadowstep",
+      "Shadowstepping"
+    ],
+    "DESCRIPTION": "Become elusive, reducing incoming damage by 10% per stack. NL If you use a Backstab card immediately after a Shadowstep card, it gains its Backstab effect. Playing ANY non-Shadowstep card removes ALL elusive."
   },
   {
     "NAMES": [
@@ -34,16 +43,5 @@
       "BackstabPower"
     ],
     "DESCRIPTION": "If this is the first card you play in a turn, it changes its effect."
-  },
-  {
-    "NAMES": [
-      "Discover",
-      "Discover:",
-      "discover",
-      "discover:"
-    ],
-    "DESCRIPTION": "Choose 1 out of 3 cards and add it to your hand."
   }
 ]
-
-

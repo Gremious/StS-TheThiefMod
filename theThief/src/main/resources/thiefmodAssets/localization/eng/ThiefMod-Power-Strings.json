@@ -1,10 +1,56 @@
 {
+  "theThief:BackstabPower": {
+    "NAME": "Backstab!",
+    "DESCRIPTIONS": [
+      "The next ",
+      " Backstab card you play gains it's Backstab effect. NL If you play any other card, remove this power.",
+      " Backstab cards you play gains their Backstab effect. NL If you play any other card, remove this power."
+    ]
+  },
   "theThief:CommonPower": {
     "NAME": "Placeholder Power",
     "DESCRIPTIONS": [
       "You applied ",
       " keyword.",
       " keywords."
+    ]
+  },
+  "theThief:ConArtist": {
+    "NAME": "Con Artist",
+    "DESCRIPTIONS": [
+      "When you steal a card, you will gain #y",
+      " #ygold.",
+      " #ygold."
+    ]
+  },
+  "theThief:CunningPower": {
+    "NAME": "Cunning",
+    "DESCRIPTIONS": [
+      "The next",
+      " stolen card you play this turn is played twice.",
+      " stolen cards you play this turn are played twice."
+    ]
+  },
+  "theThief:DealDamageToAllNextTurnPower": {
+    "NAME": "Deal Damage To All",
+    "DESCRIPTIONS": [
+      "At the start of your next turn, you will deal ",
+      " damage to all enemies."
+    ]
+  },
+  "theThief:DissoluteSatisfactionPower": {
+    "NAME": "Dissolute Satisfaction",
+    "DESCRIPTIONS": [
+      "Whenever you deal damage, you will heal for ",
+      " HP."
+    ]
+  },
+  "theThief:DoubleDealingPower": {
+    "NAME": "Double Dealing",
+    "DESCRIPTIONS": [
+      "This turn, the next ",
+      " Backstab attack you play will deal double damage.",
+      " Backstab attacks you play will deal double damage."
     ]
   },
   "theThief:DramaticFeignPower": {
@@ -15,12 +61,132 @@
       " turns"
     ]
   },
+  "theThief:FindersKeepersPower": {
+    "NAME": "Finders Keepers!",
+    "DESCRIPTIONS": [
+      "Add the next ",
+      " non-gray card you play to your deck.",
+      " non-gray cards you play to your deck."
+    ]
+  },
+  "theThief:FleetingGuiltPower": {
+    "NAME": "Fleeting Guilt",
+    "DESCRIPTIONS": [
+      "You have stolen ",
+      " card. After stealing 5, add an #rFleeting #rGuilt to your hand.",
+      " cards. After stealing 5, add an #rFleeting #rGuilt to your hand."
+    ]
+  },
+  "theThief:FocusedPower": {
+    "NAME": "Focused",
+    "DESCRIPTIONS": [
+      "Non - Backstab cards no longer break Elusive."
+    ]
+  },
+  "theThief:GhastlyEssencePower": {
+    "NAME": "Ghastly Essence",
+    "DESCRIPTIONS": [
+      "Whenever you would lose Elusive, you lose ",
+      " instead of all."
+    ]
+  },
+  "theThief:GhastlyPresencePower": {
+    "NAME": "Ghastly Presence",
+    "DESCRIPTIONS": [
+      "If you trigger 2 Backstabs in a turn, Shadowstep ",
+      " time.",
+      " times."
+    ]
+  },
+  "theThief:HoodlumPower": {
+    "NAME": "Hoodlum",
+    "DESCRIPTIONS": [
+      "Whenever you trigger a #bBackstab card or #bSteal a card, draw then discard ",
+      " card.",
+      " cards."
+    ]
+  },
+  "theThief:IllGottenGainsPower": {
+    "NAME": "Ill-Gotten Gains",
+    "DESCRIPTIONS": [
+      "For the rest of this combat, all stolen cards you gain are upgraded."
+    ]
+  },
+  "theThief:LiarPower": {
+    "NAME": "Liar",
+    "DESCRIPTIONS": [
+      "Every time you play a skill, apply ",
+      " Weak to a random enemy.",
+      " Weak and Vulnerable to a random enemy."
+    ]
+  },
   "theThief:RefundCardCostPower": {
     "NAME": "Refund",
     "DESCRIPTIONS": [
       "Refund the next ",
       " card you play this turn.",
       " cards you play this turn."
+    ]
+  },
+  "theThief:RetrievalPower": {
+    "NAME": "Retrieval",
+    "DESCRIPTIONS": [
+      "After you play 3 cards in a turn, return the last ",
+      " played cards to your hand. NL You have currently played ",
+      " cards this turn.",
+      " cards this turn."
+    ]
+  },
+  "theThief:ShadowClonePower": {
+    "NAME": "Shadow Clone",
+    "DESCRIPTIONS": [
+      "At the start of your turn, play the last card you've played ",
+      " time.",
+      " times."
+    ]
+  },
+  "theThief:ShadowFormPower": {
+    "NAME": "Shadow Form.",
+    "DESCRIPTIONS": [
+      "At the start of your turn, play ",
+      " random card from ANY color.",
+      " random cards from ANY color."
+    ]
+  },
+  "theThief:ShadowImageButWaitPower": {
+    "NAME": "Shadow Image",
+    "DESCRIPTIONS": [
+      "You will take ",
+      " damage at the end of the next turn.",
+      " damage at the end of this turn."
+    ]
+  },
+  "theThief:ShadowImagePower": {
+    "NAME": "Shadow Image",
+    "DESCRIPTIONS": [
+      "You will take ",
+      " damage at the end of this turn."
+    ]
+  },
+  "theThief:ShadowMasteryPower": {
+    "NAME": "Shadow Mastery",
+    "DESCRIPTIONS": [
+      "Shadowstepping reduces damage taken by 20% instead of 10."
+    ]
+  },
+  "theThief:ShadowstepPower": {
+    "NAME": "Elusive",
+    "DESCRIPTIONS": [
+      "You are harder to hit! Take ",
+      "0% reduced damage. If you play any card, remove this power."
+    ]
+  },
+  "theThief:SharpPracticePower": {
+    "NAME": "Sharp Practice Power",
+    "DESCRIPTIONS": [
+      "At the start of each turn, add ",
+      " Stolen card to your hand.",
+      " Stolen cards to your hand."
     ]
   },
   "theThief:SimilarSkillsPower": {
@@ -39,176 +205,18 @@
       " random, free, upgraded green card to your hands."
     ]
   },
-  "theThief:ShadowFormPower": {
-    "NAME": "Shadow Form.",
+  "theThief:StolenCodeButWaitPower": {
+    "NAME": "Stolen Code",
     "DESCRIPTIONS": [
-      "At the start of your turn, play ",
-      " random card from ANY color.",
-      " random cards from ANY color."
-    ]
-  },
-  "theThief:Empty": {
-    "NAME": "Empty base power.",
-    "DESCRIPTIONS": [
-      "Does nothing for ",
-      " turn.",
-      " turns."
-    ]
-  },
-  "theThief:SharpPracticePower": {
-    "NAME": "Sharp Practice Power",
-    "DESCRIPTIONS": [
-      "At the start of each turn, add ",
-      " Stolen card to your hand.",
-      " Stolen cards to your hand."
-    ]
-  },
-  "theThief:TheThiefThieveryPower": {
-    "NAME": "Thievery",
-    "DESCRIPTIONS": [
-      "Every time you deal damage gain ",
-      " gold."
-    ]
-  },
-  "theThief:ShadowstepPower": {
-    "NAME": "Elusive",
-    "DESCRIPTIONS": [
-      "You are harder to hit! Take ",
-      "0% reduced damage. If you play any card, remove this power."
-    ]
-  },
-  "theThief:BackstabPower": {
-    "NAME": "Backstab!",
-    "DESCRIPTIONS": [
-      "The next ",
-      " Backstab card you play gains it's Backstab effect. NL If you play any other card, remove this power.",
-      " Backstab cards you play gains their Backstab effect. NL If you play any other card, remove this power."
-    ]
-    ]
-  },
-  "theThief:DealDamageToAllNextTurnPower": {
-    "NAME": "Deal Damage To All",
-    "DESCRIPTIONS": [
-      "At the start of your next turn, you will deal ",
-      " damage to all enemies."
-    ]
-  },
-  "theThief:IllGottenGainsPower": {
-    "NAME": "Ill-Gotten Gains",
-    "DESCRIPTIONS": [
-      "For the rest of this combat, all stolen cards you gain are upgraded."
-    ]
-  },
-  "theThief:DoubleDealingPower": {
-    "NAME": "Double Dealing",
-    "DESCRIPTIONS": [
-      "This turn, the next ",
-      " Backstab attack you play will deal double damage.",
-      " Backstab attacks you play will deal double damage."
-    ]
-  },
-  "theThief:FindersKeepersPower": {
-    "NAME": "Finders Keepers!",
-    "DESCRIPTIONS": [
-      "Add the next ",
-      " non-gray card you play to your deck.",
-      " non-gray cards you play to your deck."
-    ]
-  },
-  "theThief:ShadowImageButWaitPower": {
-    "NAME": "Shadow Image",
-    "DESCRIPTIONS": [
-      "You will take ",
-      " damage at the end of the next turn.",
-      " damage at the end of this turn."
-    ]
-  },
-  "theThief:ShadowImagePower": {
-    "NAME": "Shadow Image",
-    "DESCRIPTIONS": [
-      "You will take ",
-      " damage at the end of this turn."
-    ]
-  },
-  "theThief:HoodlumPower": {
-    "NAME": "Hoodlum",
-    "DESCRIPTIONS": [
-      "Whenever you trigger a #bBackstab card or #bSteal a card, draw then discard ",
-      " card.",
-      " cards."
-    ]
-  },
-  "theThief:LiarPower": {
-    "NAME": "Liar",
-    "DESCRIPTIONS": [
-      "Every time you play a skill, apply ",
-      " Weak to a random enemy.",
-      " Weak and Vulnerable to a random enemy."
-    ]
-  },
-  "theThief:ConArtist": {
-    "NAME": "Con Artist",
-    "DESCRIPTIONS": [
-      "When you steal a card, you will gain #y",
-      " #ygold.",
-      " #ygold."
-    ]
-  },
-  "theThief:VoidboundPower": {
-    "NAME": "Voidbound",
-    "DESCRIPTIONS": [
-      "When you draw a void, gain ",
-      " [E]"
-    ]
-  },
-  "theThief:ShadowClonePower": {
-    "NAME": "Shadow Clone",
-    "DESCRIPTIONS": [
-      "At the start of your turn, play the last card you've played ",
-      " time.",
-      " times."
-    ]
-  },
-  "theThief:DissoluteSatisfactionPower": {
-    "NAME": "Dissolute Satisfaction",
-    "DESCRIPTIONS": [
-      "Whenever you deal damage, you will heal for ",
-      " HP."
-    ]
-  },
-  "theThief:RetrievalPower": {
-    "NAME": "Retrieval",
-    "DESCRIPTIONS": [
-      "After you play 3 cards in a turn, return the last ",
-      " played cards to your hand. NL You have currently played ",
-      " cards this turn.",
-      " cards this turn."
-    ]
-  },
-  "theThief:ShadowMasteryPower": {
-    "NAME": "Shadow Mastery",
-    "DESCRIPTIONS": [
-      "Shadowstepping reduces damage taken by 20% instead of 10."
-    ]
-  },
-  "theThief:FocusedPower": {
-    "NAME": "Focused",
-    "DESCRIPTIONS": [
-      "Non - Backstab cards no longer break Elusive."
+      "This turn, the next",
+      " card you play is played twice.",
+      " cards you play are played twice."
     ]
   },
   "theThief:StolenCodePower": {
     "NAME": "Stolen Code",
     "DESCRIPTIONS": [
       "Next turn, the next",
-      " card you play is played twice.",
-      " cards you play are played twice."
-    ]
-  },
-  "theThief:StolenCodeButWaitPower": {
-    "NAME": "Stolen Code",
-    "DESCRIPTIONS": [
-      "This turn, the next",
       " card you play is played twice.",
       " cards you play are played twice."
     ]
@@ -221,35 +229,18 @@
       " random Orbs."
     ]
   },
-  "theThief:FleetingGuiltPower": {
-    "NAME": "Fleeting Guilt",
+  "theThief:TheThiefThieveryPower": {
+    "NAME": "Thievery",
     "DESCRIPTIONS": [
-      "You have stolen ",
-      " card. After stealing 5, add an #rFleeting #rGuilt to your hand.",
-      " cards. After stealing 5, add an #rFleeting #rGuilt to your hand."
+      "Every time you deal damage gain ",
+      " gold."
     ]
   },
-  "theThief:GhastlyPresencePower": {
-    "NAME": "Ghastly Presence",
+  "theThief:VoidboundPower": {
+    "NAME": "Voidbound",
     "DESCRIPTIONS": [
-      "If you trigger 2 Backstabs in a turn, Shadowstep ",
-      " time.",
-      " times."
-    ]
-  },
-  "theThief:GhastlyEssencePower": {
-    "NAME": "Ghastly Essence",
-    "DESCRIPTIONS": [
-      "Whenever you would lose Elusive, you lose ",
-      " instead of all."
-    ]
-  },
-  "theThief:CunningPower": {
-    "NAME": "Cunning",
-    "DESCRIPTIONS": [
-      "The next",
-      " stolen card you play this turn is played twice.",
-      " stolen cards you play this turn are played twice."
+      "When you draw a void, gain ",
+      " [E]"
     ]
   }
 }

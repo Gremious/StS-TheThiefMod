@@ -14,8 +14,6 @@ import thiefmod.ThiefMod;
 import thiefmod.actions.common.StealCardAction;
 import thiefmod.util.TextureLoader;
 
-// Empty Base
-
 public class SharpPracticePower extends AbstractPower {
     private boolean isUpgraded;
     private boolean ADD_UPGRADED;
@@ -27,9 +25,8 @@ public class SharpPracticePower extends AbstractPower {
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    private static final Texture tex84 = TextureLoader.getTexture("thiefmodAssets/images/powers/84/ShadowClonePower.png");
-    private static final Texture tex32 = TextureLoader.getTexture("thiefmodAssets/images/powers/32/ShadowClonePower.png");
-
+    private static final Texture tex84 = TextureLoader.getTexture("thiefmodAssets/images/powers/84/SharpPracticePower.png");
+    private static final Texture tex32 = TextureLoader.getTexture("thiefmodAssets/images/powers/32/SharpPracticePower.png");
 
     public SharpPracticePower(final AbstractCreature owner, final AbstractPlayer source, boolean isUpgraded, final int amount, boolean ADD_RANDOM, final CardGroup ADD_LOCATION, boolean ADD_UPGRADED) {
         name = NAME;
