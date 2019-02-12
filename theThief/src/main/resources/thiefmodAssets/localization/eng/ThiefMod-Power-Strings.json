@@ -190,7 +190,7 @@
     ]
   },
   "theThief:SimilarSkillsPower": {
-    "NAME": "Similar Skills.",
+    "NAME": "Similar Skills",
     "DESCRIPTIONS": [
       "You've seen how the Rogues do it. NL At the start of your turn add ",
       " random, free green card to your hand.",
@@ -198,7 +198,7 @@
     ]
   },
   "theThief:SimilarSkillsPowerUpgraded": {
-    "NAME": "Expert Similar Skills.",
+    "NAME": "Similar Skills+",
     "DESCRIPTIONS": [
       "You've seen how the Rogues do it. NL At the start of your turn add ",
       " random, free, upgraded green card to your hand.",
