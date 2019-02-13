@@ -32,7 +32,7 @@ public class DealDamageToAllNextTurnPower extends AbstractPower {
     private int damageAmount;
 
     public static final String POWER_ID = ThiefMod.makeID("DealDamageToAllNextTurnPower");
-    private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
+    public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 

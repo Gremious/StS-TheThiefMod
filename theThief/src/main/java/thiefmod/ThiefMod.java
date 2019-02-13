@@ -203,6 +203,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         if (i < 90) {
             return "charSelect/thiefCharacterPortraitBG.png";
         } else {
+            logger.info("Spooky.");
             return "charSelect/thiefCharacterPortraitEvilBG.png";
         }
     }
@@ -305,7 +306,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
                         new NotClassFilter(new InterfaceOnlyClassFilter()),
                         new NotClassFilter(new AbstractClassFilter()),
                         new ClassModifiersClassFilter(Modifier.PUBLIC),
-                        new CardFilter() // Make sure to edit the card filter to your own packaging structure. I have added stolen cards to filter.
+                        new CardFilter() // Make sure to edit the card filter to your own packaging structure. Cards outside of the filter will not be loaded.
                 );
         Collection<ClassInfo> foundClasses = new ArrayList<>();
         finder.findClasses(foundClasses, filter);

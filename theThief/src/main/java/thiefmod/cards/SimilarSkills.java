@@ -45,7 +45,6 @@ public class SimilarSkills extends CustomCard {
 
     public SimilarSkills() {
 
-
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
 
@@ -62,7 +61,6 @@ public class SimilarSkills extends CustomCard {
                     new SimilarSkillsPowerUpgraded(p, magicNumber), magicNumber));
         }
     }
-
 
     //Upgraded stats.
     @Override
