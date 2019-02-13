@@ -4,10 +4,10 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractImageEvent;
+import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import thiefmod.ThiefMod;
 import thiefmod.relics.LouseBounty;
-import thiefmod.relics.ThievesMask;
 
 public class LouseAbuseEvent extends AbstractImageEvent {
     // Gain a unique relic. If you ever FTK a louse - the relic stops glowing and you get a 150g reward.
@@ -43,7 +43,7 @@ public class LouseAbuseEvent extends AbstractImageEvent {
                     case 0:
                     case 1:
                     case 2:
-                        AbstractDungeon.player.relics.add(new LouseBounty());
+                        AbstractDungeon.player.relics.add(new LouseBounty().makeCopy());
                         imageEventText.updateBodyText(DESCRIPTIONS[1]);
                         imageEventText.updateDialogOption(0, OPTIONS[4]);
                         imageEventText.clearRemainingOptions();
@@ -51,6 +51,8 @@ public class LouseAbuseEvent extends AbstractImageEvent {
                         break;
                     case 4:
                         AbstractDungeon.player.damage(new DamageInfo(AbstractDungeon.player, HEALTH_LOSS));
+                        CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.MED, false);
+                        CardCrawlGame.sound.play("BLUNT_FAST");
                         imageEventText.updateBodyText(DESCRIPTIONS[4]);
                         imageEventText.updateDialogOption(0, OPTIONS[8]);
                         imageEventText.clearRemainingOptions();

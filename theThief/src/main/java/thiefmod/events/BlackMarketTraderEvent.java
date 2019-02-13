@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractImageEvent;
+import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import thiefmod.ThiefMod;
@@ -62,7 +63,11 @@ public class BlackMarketTraderEvent extends AbstractImageEvent {
             case 0:
                 switch (i) {
                     case 0: /*J.A.X.*/
-                        AbstractDungeon.player.damage(new DamageInfo((AbstractCreature) null, damageLow));
+
+                        AbstractDungeon.player.decreaseMaxHealth(this.damageLow);
+                        CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.MED, false);
+                        CardCrawlGame.sound.play("ATTACK_DAGGER_6");
+                        CardCrawlGame.sound.play("BLOOD_SPLAT");
                         AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new JAX(), (float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2)));
                         this.imageEventText.updateBodyText(DESCRIPTIONS[1]);
                         this.imageEventText.updateDialogOption(0, OPTIONS[7]);
@@ -70,7 +75,11 @@ public class BlackMarketTraderEvent extends AbstractImageEvent {
                         screenNum = 1;
                         break;
                     case 1: /*Random Upgraded Uncommon.*/
-                        AbstractDungeon.player.damage(new DamageInfo((AbstractCreature) null, damageMedium));
+                        AbstractDungeon.player.decreaseMaxHealth(this.damageMedium);
+                        CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.MED, false);
+                        CardCrawlGame.sound.play("ATTACK_DAGGER_6");
+                        CardCrawlGame.sound.play("BLOOD_SPLAT");
+
                         AbstractCard c = AbstractDungeon.getCard(AbstractCard.CardRarity.UNCOMMON, AbstractDungeon.cardRng).makeCopy();
                         c.upgrade();
                         AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(c, (float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2)));
@@ -80,8 +89,12 @@ public class BlackMarketTraderEvent extends AbstractImageEvent {
                         screenNum = 1;
                         break;
                     case 2: /*Bottled Heart*/
-                        AbstractDungeon.player.damage(new DamageInfo((AbstractCreature) null, damageHigh));
-                        AbstractDungeon.player.relics.add(new BottledHand());
+                        AbstractDungeon.player.decreaseMaxHealth(this.damageHigh);
+                        CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.MED, false);
+                        CardCrawlGame.sound.play("ATTACK_DAGGER_6");
+                        CardCrawlGame.sound.play("BLOOD_SPLAT");
+
+                        AbstractDungeon.player.relics.add(new BottledHand().makeCopy());
                         this.imageEventText.updateBodyText(DESCRIPTIONS[1]);
                         this.imageEventText.updateDialogOption(0, OPTIONS[7]);
                         this.imageEventText.clearRemainingOptions();
