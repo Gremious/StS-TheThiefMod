@@ -2,7 +2,6 @@ package thiefmod.cards;
 
 import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -13,6 +12,7 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.DaggerSprayEffect;
 import thiefmod.ThiefMod;
+import thiefmod.actions.unique.BouqetOKnivesAction;
 import thiefmod.patches.character.AbstractCardEnum;
 
 import java.util.ArrayList;
@@ -61,14 +61,14 @@ public class BouqetOKnives extends AbstractBackstabCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for (int i = 0; i < magicNumber; i++) {
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(
-                    AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster) null, true, AbstractDungeon.cardRandomRng),
-                    new DamageInfo(p, damage, damageTypeForTurn)));
 
-            AbstractDungeon.actionManager.addToBottom(new SFXAction("ATTACK_DAGGER_6"));
-            AbstractDungeon.actionManager.addToBottom(new VFXAction(new DaggerSprayEffect(false)));
-        }
+        AbstractDungeon.actionManager.addToBottom(new SFXAction("ATTACK_DAGGER_6"));
+        AbstractDungeon.actionManager.addToBottom(new VFXAction(new DaggerSprayEffect(false)));
+
+        AbstractDungeon.actionManager.addToBottom(new BouqetOKnivesAction(
+                AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster) null, true, AbstractDungeon.cardRandomRng),
+                new DamageInfo(p, damage), magicNumber));
+
     }
 
     @Override
