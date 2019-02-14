@@ -19,9 +19,10 @@
     "NAMES": [
       "Shadowstep",
       "shadowstep",
-      "Shadowstepping"
+      "Shadowstepping",
+      "non-Shadowstep"
     ],
-    "DESCRIPTION": "Become elusive, reducing incoming damage by 10% per stack. NL If you use a Backstab card immediately after a Shadowstep card, it gains its Backstab effect. Playing ANY non-Shadowstep card removes ALL elusive."
+    "DESCRIPTION": "Become Elusive, reducing incoming damage by 10% per stack, but breaks if you play ANY non-Shadowstep card."
   },
   {
     "NAMES": [
@@ -30,7 +31,7 @@
       "Stolen",
       "stolen"
     ],
-    "DESCRIPTION": "Stolen cards are mostly low energy cards that gain Exhaust when attained through stealing. NL There's a small chance you'll Steal a [#FEE130]Rare[] [#FEE130]Find.[] NL After Stealing #b5 cards, add #b1 #rFleeting #rGuilt to your hand."
+    "DESCRIPTION": "Stolen cards are mostly low energy cards that gain Exhaust when attained through stealing. NL After Stealing #b5 cards, add #b1 #rFleeting #rGuilt to your hand."
   },
   {
     "NAMES": [
@@ -42,6 +43,6 @@
       "Backstab:",
       "BackstabPower"
     ],
-    "DESCRIPTION": "If this is the first card you play in a turn, it changes its effect."
+    "DESCRIPTION": "Triggers if this is the first card you play in a turn, or if it's played after a Shadowstep card."
   }
 ]
