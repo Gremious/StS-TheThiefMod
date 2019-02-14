@@ -132,12 +132,13 @@
   },
   "theThief:ShadowForm": {
     "NAME": "Shadow Form",
-    "DESCRIPTION": "At the start of your turn, play a random card from any color. NL Backstab: Play !theThief:Magic! instead ",
+    "DESCRIPTION": "At the start of your turn, play a random card from any color. NL Backstab: Play !theThief:Magic! instead. NL Ethereal.",
     "UPGRADE_DESCRIPTION": "At the start of your turn, play a random card from any color. NL Backstab: Play !theThief:Magic! instead.",
     "EXTENDED_DESCRIPTION": [
       "[#FEE130]Embrace[] [#FEE130]your[] [#FEE130]true[] [#FEE130]form.[]",
-      " NL Backstab: Play !theThief:BkStMgc! instead",
-      " NL Backstab: [#fa5555]Play[] !theThief:BkStMgc! [#fa5555]instead.[]"
+      "At the start of your turn, play a random card from any color. ",
+      " NL Backstab: Play !theThief:Magic! instead",
+      " NL Backstab: [#fa5555]Play[] !theThief:Magic! [#fa5555]instead.[]"
     ]
   }
 }

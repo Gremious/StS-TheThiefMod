@@ -171,8 +171,8 @@
   },
   "theThief:stolenMysticalSpellbook": {
     "NAME": "Mystical Spellbook",
-    "DESCRIPTION": "Discover !M! random Spell.",
-    "UPGRADE_DESCRIPTION": "Discover !M! random Spells."
+    "DESCRIPTION": "Discover !M! random Spell. NL It costs 0 this turn.",
+    "UPGRADE_DESCRIPTION": "Discover !M! random Spells. NL They costs 0 this turn."
   },
   "theThief:stolenBookOfArte": {
     "NAME": "Stolen Book of Arte",

@@ -76,8 +76,8 @@
   },
   "theThief:IllGottenGains": {
     "NAME": "Ill Gotten Gains",
-    "DESCRIPTION": "For the rest of this combat, all stolen cards you gain are upgraded.",
-    "UPGRADE_DESCRIPTION": "Innate. NL For the rest of this combat, all stolen cards you gain are upgraded."
+    "DESCRIPTION": "For the rest of this combat, all Stolen cards you gain are Upgraded.",
+    "UPGRADE_DESCRIPTION": "Innate. NL For the rest of this combat, all Stolen cards you gain are Upgraded."
   },
   "theThief:SimilarSkills": {
     "NAME": "Similar Skills",
@@ -218,8 +218,8 @@
   },
   "theThief:Mercy": {
     "NAME": "Mercy",
-    "DESCRIPTION": "Heal an enemy for !M! HP. NL Then, do !D! damage to it.",
-    "UPGRADE_DESCRIPTION": "Heal an enemy for !M! HP. NL Then, do !D! damage to it.",
+    "DESCRIPTION": "Heal an enemy for !M! HP, then do !D! damage to it.",
+    "UPGRADE_DESCRIPTION": "Heal an enemy for !M! HP, then do !D! damage to it.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Fat [][#88888]chance.[]"
     ]

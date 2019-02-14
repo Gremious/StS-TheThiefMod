@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ShadowForm extends AbstractBackstabCard {
-
+//TODO: The strings don't display ethereal. Maybe upgrade should add backstab.
 
     // TEXT DECLARATION
 
@@ -49,10 +49,8 @@ public class ShadowForm extends AbstractBackstabCard {
 
     public ShadowForm() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0];
-        initializeDescription();
 
-        isEthereal = upgraded;
+        isEthereal = true;
         magicNumber = baseMagicNumber = MAGIC;
         baseBackstabNumber = backstabNumber = BACKSTAB;
         tags.add(ThiefCardTags.BACKSTAB);
@@ -84,9 +82,9 @@ public class ShadowForm extends AbstractBackstabCard {
     public void applyPowers() {
         super.applyPowers();
         if (AbstractDungeon.player.cardsPlayedThisTurn == 0) {
-            rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[1];
+            rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[2];
         } else {
-            rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[2];
+            rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[3];
         }
         initializeDescription();
     }
@@ -96,6 +94,7 @@ public class ShadowForm extends AbstractBackstabCard {
     @Override
     public void upgrade() {
         if (!upgraded) {
+            isEthereal = false;
             upgradeName();
             initializeDescription();
         }

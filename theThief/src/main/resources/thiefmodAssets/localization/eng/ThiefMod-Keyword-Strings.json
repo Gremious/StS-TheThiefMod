@@ -13,7 +13,7 @@
       "Elusive",
       "elusive"
     ],
-    "DESCRIPTION": "Reduces incoming damage by 10% per stack."
+    "DESCRIPTION": "Reduces incoming damage by #b10% per stack."
   },
   {
     "NAMES": [
@@ -22,7 +22,7 @@
       "Shadowstepping",
       "non-Shadowstep"
     ],
-    "DESCRIPTION": "Become Elusive, reducing incoming damage by 10% per stack, but breaks if you play ANY non-Shadowstep card."
+    "DESCRIPTION": "Become #yElusive, reducing incoming damage by #b10% per stack, but breaks if you play ANY #ynon-Shadowstep card."
   },
   {
     "NAMES": [
@@ -31,7 +31,7 @@
       "Stolen",
       "stolen"
     ],
-    "DESCRIPTION": "Stolen cards are mostly low energy cards that gain Exhaust when attained through stealing. NL After Stealing #b5 cards, add #b1 #rFleeting #rGuilt to your hand."
+    "DESCRIPTION": "Stolen cards are mostly low energy cards that gain Exhaust when attained through #yStealing. NL After #yStealing #b5 cards, add #b1 #rFleeting #rGuilt to your hand."
   },
   {
     "NAMES": [
@@ -43,6 +43,6 @@
       "Backstab:",
       "BackstabPower"
     ],
-    "DESCRIPTION": "Triggers if this is the first card you play in a turn, or if it's played after a Shadowstep card."
+    "DESCRIPTION": "Triggers if this is the first card you play in a turn, or if it's played after a #yShadowstep card."
   }
 ]

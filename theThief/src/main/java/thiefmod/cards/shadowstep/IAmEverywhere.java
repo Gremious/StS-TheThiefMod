@@ -79,7 +79,7 @@ public class IAmEverywhere extends AbstractBackstabCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-//          rawDescription = UPGRADE_DESCRIPTION;
+          rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }
