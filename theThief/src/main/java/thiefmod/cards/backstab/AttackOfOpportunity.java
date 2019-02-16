@@ -28,7 +28,7 @@ public class AttackOfOpportunity extends AbstractBackstabCard {
     // TEXT DECLARATION
 
     public static final String ID = ThiefMod.makeID("AttackOfOpportunity");
-    public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_UNCOMMON_ATTACK);
+    public static final String IMG = "thiefmodAssets/images/cards/beta/AttackOfOpportunity.png";
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
