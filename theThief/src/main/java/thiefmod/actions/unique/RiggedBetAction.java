@@ -18,6 +18,7 @@ public class RiggedBetAction extends AbstractGameAction {
         target = AbstractDungeon.player;
         actionType = ActionType.WAIT;
         startingDuration = Settings.ACTION_DUR_FAST;
+
         duration = Settings.ACTION_DUR_FAST;
 
         this.ADD_LOCATION = ADD_LOCATION;
@@ -31,7 +32,7 @@ public class RiggedBetAction extends AbstractGameAction {
         if (duration == startingDuration) {
             int count = AbstractDungeon.player.hand.size();
             if (count != 0) {
-                AbstractDungeon.actionManager.addToTop(new StealCardAction(count, 0, ADD_RANDOM, ADD_LOCATION, ADD_UPGRADED));
+                AbstractDungeon.actionManager.addToTop(new StealCardAction(count, 1, ADD_RANDOM, ADD_LOCATION, ADD_UPGRADED));
                 AbstractDungeon.actionManager.addToTop(new DiscardAction(this.target, this.target, count, true));
             }
             isDone = true;

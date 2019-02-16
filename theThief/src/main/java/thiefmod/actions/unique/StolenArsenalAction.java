@@ -4,6 +4,7 @@ import basemod.BaseMod;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.colorless.Shiv;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -14,7 +15,6 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.ExhaustEmberEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.CardFlashVfx;
-import com.megacrit.cardcrawl.vfx.combat.RoomTintEffect;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import thiefmod.ThiefMod;
@@ -54,6 +54,8 @@ public class StolenArsenalAction extends AbstractGameAction {
             exhaustCards.addAll(player.exhaustPile.group);
 
             AbstractDungeon.effectList.add(new BorderFlashEffect(Color.GREEN));
+            AbstractDungeon.actionManager.addToBottom(new SFXAction("TINGSHA"));
+
             for (AbstractCard c : handCards) {
                 AbstractDungeon.effectList.add(new ExhaustEmberEffect(c.current_x, c.current_y));
                 AbstractDungeon.effectList.add(new CardFlashVfx(c, Color.GOLD));
@@ -72,12 +74,13 @@ public class StolenArsenalAction extends AbstractGameAction {
 
             for (AbstractCard c : exhaustCards) {
                 AbstractDungeon.player.exhaustPile.removeCard(c);
+                AbstractDungeon.actionManager.addToBottom(new SFXAction("CARD_OBTAIN"));
                 AbstractDungeon.player.exhaustPile.addToTop(new Shiv());
             }
 
 
             do {
-                AbstractDungeon.actionManager.addToBottom(new DrawCardAction(player, 1));
+                AbstractDungeon.actionManager.addToTop(new DrawCardAction(player, 1));
                 if (AbstractDungeon.player.drawPile.isEmpty() && AbstractDungeon.player.discardPile.isEmpty()) {
                     break;
                 }

@@ -131,8 +131,10 @@ public class StealCardAction extends AbstractGameAction {
         stolenCards.addToTop(new StolenToxins());
 
         // Rares:
-        int roll = AbstractDungeon.relicRng.random(99);
-        if (roll < 75) {
+        int roll = AbstractDungeon.miscRng.random(99);
+        int rollRare = AbstractDungeon.miscRng.random(99);
+
+        if (rollRare < 75) {
             stolenCards.addToTop(new StolenShadow());
             stolenCards.addToTop(new StolenArsenal());
             stolenCards.addToTop(new StolenBlood());

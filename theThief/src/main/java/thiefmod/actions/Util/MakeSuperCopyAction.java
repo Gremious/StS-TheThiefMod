@@ -2,6 +2,7 @@ package thiefmod.actions.Util;
 
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -98,6 +99,8 @@ public class MakeSuperCopyAction extends AbstractGameAction {
                 }
             }
             c.initializeDescription();
+
+            AbstractDungeon.actionManager.addToBottom(new SFXAction("CARD_OBTAIN"));
 
             if (addLocation == AbstractDungeon.player.hand) {
                 AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(c));

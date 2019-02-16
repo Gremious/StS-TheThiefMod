@@ -3,6 +3,7 @@ package thiefmod.cards.stolen.RareFind;
 import basemod.helpers.TooltipInfo;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -87,7 +88,8 @@ public class StolenBlood extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.effectList.add(new BorderFlashEffect(Color.GOLD));
-
+        AbstractDungeon.actionManager.addToBottom(new SFXAction("RAGE"));
+        AbstractDungeon.actionManager.addToBottom(new SFXAction("CEILING_BOOM_1"));
         AbstractDungeon.actionManager.addToBottom(
                 new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber), magicNumber));
 
