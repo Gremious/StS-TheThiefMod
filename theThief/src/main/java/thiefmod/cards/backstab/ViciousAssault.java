@@ -14,7 +14,6 @@ import thiefmod.ThiefMod;
 import thiefmod.cards.AbstractBackstabCard;
 import thiefmod.patches.character.AbstractCardEnum;
 import thiefmod.patches.character.ThiefCardTags;
-import thiefmod.powers.Common.BackstabPower;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -75,24 +74,17 @@ public class ViciousAssault extends AbstractBackstabCard {
 
 
         if (canBackstab()) {
-            if (backstabNumber != 0) {
-                while (backstabNumber-- != 0) {
-                    AbstractDungeon.actionManager.addToBottom(new DamageAction(
-                            m, new DamageInfo(p, damage, damageTypeForTurn),
-                            AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-                }
-                backstabNumber = baseBackstabNumber;
+            for (int i = 0; i < backstabNumber; i++) {
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(
+                        m, new DamageInfo(p, damage, damageTypeForTurn),
+                        AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+
             }
-
-
         } else {
-            if (backstabNumber != 0) {
-                while (backstabNumber-- != 0) {
-                    AbstractDungeon.actionManager.addToBottom(new DamageAction(
-                            m, new DamageInfo(p, damage, damageTypeForTurn),
-                            AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-                }
-                backstabNumber = baseBackstabNumber;
+            for (int i = 0; i < magicNumber; i++) {
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(
+                        m, new DamageInfo(p, damage, damageTypeForTurn),
+                        AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
             }
         }
 
