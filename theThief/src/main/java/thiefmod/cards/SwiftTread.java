@@ -39,7 +39,7 @@ public class SwiftTread extends AbstractBackstabCard {
 
 
     private static final int MAGIC = 3;
-    private static final int UPGRADED_PLUS_MAGIC = 4;
+    private static final int UPGRADED_PLUS_MAGIC = 1;
 
 
 // /STAT DECLARATION/

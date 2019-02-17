@@ -66,7 +66,7 @@ public class BouqetOKnives extends AbstractBackstabCard {
         AbstractDungeon.actionManager.addToBottom(new VFXAction(new DaggerSprayEffect(false)));
 
         AbstractDungeon.actionManager.addToBottom(new BouqetOKnivesAction(
-                AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster) null, true, AbstractDungeon.cardRandomRng),
+                AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng),
                 new DamageInfo(p, damage), magicNumber));
 
     }

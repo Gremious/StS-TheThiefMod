@@ -105,7 +105,6 @@ public class StealCardAction extends AbstractGameAction {
 
     static {
         stolenCards = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-
         stolenCards.addToTop(new StolenShieldGenerator());
         stolenCards.addToTop(new StolenCode());
         stolenCards.addToTop(new StolenMegaphone());
@@ -131,8 +130,8 @@ public class StealCardAction extends AbstractGameAction {
         stolenCards.addToTop(new StolenToxins());
 
         // Rares:
-        int roll = AbstractDungeon.miscRng.random(99);
-        int rollRare = AbstractDungeon.miscRng.random(99);
+        int roll = AbstractDungeon.cardRandomRng.random(99);
+        int rollRare = AbstractDungeon.cardRandomRng.random(99);
 
         if (rollRare < 75) {
             stolenCards.addToTop(new StolenShadow());
