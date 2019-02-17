@@ -1,5 +1,6 @@
 package thiefmod.cards.shadowstep;
 
+import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -13,6 +14,9 @@ import thiefmod.cards.AbstractBackstabCard;
 import thiefmod.patches.character.AbstractCardEnum;
 import thiefmod.patches.character.ThiefCardTags;
 import thiefmod.powers.Common.ShadowstepPower;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Shadowstep extends AbstractBackstabCard {
 
@@ -64,6 +68,13 @@ public class Shadowstep extends AbstractBackstabCard {
 
         AbstractDungeon.actionManager.addToTop(new MakeTempCardInDrawPileAction(new Shadowstep(), backstabNumber, true, true));
 
+    }
+
+    @Override
+    public List<TooltipInfo> getCustomTooltips() {
+        List<TooltipInfo> tips = new ArrayList<>();
+        tips.add(new TooltipInfo(FLAVOR_STRINGS[0], EXTENDED_DESCRIPTION[0]));
+        return tips;
     }
 
     //Upgraded stats.

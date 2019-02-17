@@ -36,7 +36,7 @@
   "theThief:BouqetOKnives": {
     "NAME": "Bouqet-O-Knives",
     "DESCRIPTION": "Deal !D! damage to a random enemy !M! times.",
-    "UPGRADE_DESCRIPTION": "",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage to a random enemy !M! times.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]An[] [#88888]odd[] [#88888]number[] [#88888]of[] [#88888]flowers[] [#88888]signify[] [#88888]death.[] [#88888]So[] [#88888]do[] [#88888]knives.[]"
     ]
@@ -52,7 +52,7 @@
   "theThief:Pickpocket": {
     "NAME": "Pickpocket",
     "DESCRIPTION": "Deal !D! damage. Gain !M! gold.",
-    "UPGRADE_DESCRIPTION": "",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. Gain !M! gold.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Pick[] [#88888]your[] [#88888]pickpocket[] [#88888]pockets[] [#88888]well.[]"
     ]
@@ -100,12 +100,18 @@
   "theThief:Shadowstep": {
     "NAME": "Shadowstep",
     "DESCRIPTION": "Shadowstep !M! time. NL Shuffle a copy of this card into your deck. Exhaust.",
-    "UPGRADE_DESCRIPTION": "Shadowstep !M! times. NL Shuffle a copy of this card into your deck. Exhaust."
+    "UPGRADE_DESCRIPTION": "Shadowstep !M! times. NL Shuffle a copy of this card into your deck. Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "[#88888]Flavor[] [#88888]Text[]"
+    ]
   },
   "theThief:SwiftTread": {
     "NAME": "Swift Tread",
     "DESCRIPTION": "Draw !M! cards. Shuffle 1 Void into your draw pile.",
-    "UPGRADE_DESCRIPTION": ""
+    "UPGRADE_DESCRIPTION": "Draw !M! cards. Shuffle 1 Void into your draw pile.",
+    "EXTENDED_DESCRIPTION": [
+      "[#88888]Flavor[] [#88888]Text[]"
+    ]
   },
   "theThief:Murder.": {
     "NAME": "Murder.",

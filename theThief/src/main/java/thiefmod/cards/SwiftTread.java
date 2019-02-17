@@ -1,5 +1,6 @@
 package thiefmod.cards;
 
+import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
@@ -11,6 +12,9 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
 import thiefmod.patches.character.AbstractCardEnum;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class SwiftTread extends AbstractBackstabCard {
 
@@ -55,6 +59,12 @@ public class SwiftTread extends AbstractBackstabCard {
         AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new VoidCard(), 1));
     }
 
+    @Override
+    public List<TooltipInfo> getCustomTooltips() {
+        List<TooltipInfo> tips = new ArrayList<>();
+        tips.add(new TooltipInfo(FLAVOR_STRINGS[0], EXTENDED_DESCRIPTION[0]));
+        return tips;
+    }
 
     //Upgraded stats.
     @Override
