@@ -92,7 +92,7 @@ public class ThousandBallBearings extends AbstractBackstabCard {
             ++timesUpgraded;
             name = "100" + timesUpgraded + NAME;
             upgradeName();
-//          rawDescription = UPGRADE_DESCRIPTION;
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

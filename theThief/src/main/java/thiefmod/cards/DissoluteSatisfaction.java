@@ -84,7 +84,7 @@ public class DissoluteSatisfaction extends AbstractBackstabCard {
             upgradeName();
             upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
             upgradeBaseCost(UPGRADED_COST);
-//          rawDescription = UPGRADE_DESCRIPTION;
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

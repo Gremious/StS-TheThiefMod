@@ -86,7 +86,7 @@ public class Bribe extends AbstractBackstabCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
-//          rawDescription = UPGRADE_DESCRIPTION;
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

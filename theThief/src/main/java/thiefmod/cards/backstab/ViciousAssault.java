@@ -127,7 +127,7 @@ public class ViciousAssault extends AbstractBackstabCard {
             upgradeName();
             upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
             upgradeBackstabNumber(UPGRADED_PLUS_BACKSTAB);
-//          rawDescription = UPGRADE_DESCRIPTION;
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

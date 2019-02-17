@@ -64,7 +64,7 @@ public class Patience extends AbstractBackstabCard {
         if (!upgraded) {
             upgradeName();
             upgradeBlock(UPGRADE_PLUS_BLOCK);
-//          rawDescription = UPGRADE_DESCRIPTION;
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

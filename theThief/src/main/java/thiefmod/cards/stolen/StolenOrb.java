@@ -80,7 +80,7 @@ public class StolenOrb extends AbstractBackstabCard {
 
             upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
 
-//          rawDescription = UPGRADE_DESCRIPTION;
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

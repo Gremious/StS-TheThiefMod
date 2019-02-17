@@ -82,7 +82,7 @@ public class Retrieval extends AbstractBackstabCard {
         if (!upgraded) {
             upgradeName();
             upgradeBaseCost(UPGRADE_COST);
-//          rawDescription = UPGRADE_DESCRIPTION;
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

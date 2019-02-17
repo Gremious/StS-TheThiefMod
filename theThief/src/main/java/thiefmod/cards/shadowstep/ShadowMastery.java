@@ -82,7 +82,7 @@ public class ShadowMastery extends AbstractBackstabCard {
         if (!upgraded) {
             upgradeName();
             isInnate = true;
-//          rawDescription = UPGRADE_DESCRIPTION;
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

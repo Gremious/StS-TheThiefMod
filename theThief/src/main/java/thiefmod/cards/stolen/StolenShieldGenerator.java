@@ -91,7 +91,7 @@ public class StolenShieldGenerator extends AbstractBackstabCard {
 
             upgradeBlock(UPGRADE_PLUS_BLOCK);
 
-//          rawDescription = UPGRADE_DESCRIPTION;
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

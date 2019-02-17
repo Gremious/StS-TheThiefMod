@@ -92,7 +92,7 @@ public class Focused extends AbstractBackstabCard {
             upgradeName();
             upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
             isInnate = true;
-//          rawDescription = UPGRADE_DESCRIPTION;
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

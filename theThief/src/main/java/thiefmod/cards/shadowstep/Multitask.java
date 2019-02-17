@@ -104,7 +104,7 @@ public class Multitask extends AbstractBackstabCard {
             upgradeBaseCost(UPGRADE_COST);
             upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
             upgradeBackstabNumber(UPGRADED_PLUS_BACKSTAB);
-//          rawDescription = UPGRADE_DESCRIPTION;
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

@@ -74,7 +74,7 @@ public class OneStepAhead extends AbstractBackstabCard {
             upgradeName();
             upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
             upgradeDamage(UPGRADE_PLUS_DAMAGE);
-//          rawDescription = UPGRADE_DESCRIPTION;
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

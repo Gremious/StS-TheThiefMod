@@ -81,7 +81,7 @@ public class RiggedBet extends AbstractBackstabCard {
             upgradeName();
             upgradeBaseCost(UPGRADE_COST);
             upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
-//          rawDescription = UPGRADE_DESCRIPTION;
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

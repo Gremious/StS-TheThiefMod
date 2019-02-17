@@ -76,7 +76,7 @@ public class StolenClaws extends AbstractBackstabCard {
 
             upgradeBaseCost(UPGRADE_COST);
 
-//          rawDescription = UPGRADE_DESCRIPTION;
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

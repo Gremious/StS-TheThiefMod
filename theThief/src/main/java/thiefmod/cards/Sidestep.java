@@ -71,7 +71,7 @@ public class Sidestep extends AbstractBackstabCard {
             upgradeName();
             upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
             upgradeBlock(UPGRADE_PLUS_BLOCK);
-//          rawDescription = UPGRADE_DESCRIPTION;
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

@@ -113,7 +113,7 @@ public class HeartStealer extends AbstractBackstabCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(UPGRADE_MAGIC);
-//          rawDescription = UPGRADE_DESCRIPTION;
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

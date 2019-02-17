@@ -203,7 +203,7 @@ public class AAAEmptyCard extends AbstractBackstabCard {
             upgradeDamage(UPGRADE_PLUS_DAMAGE);
             upgradeBlock(UPGRADE_PLUS_BLOCK);
             upgradeBackstabNumber(UPGRADED_PLUS_BACKSTAB);
-//          rawDescription = UPGRADE_DESCRIPTION;
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }
