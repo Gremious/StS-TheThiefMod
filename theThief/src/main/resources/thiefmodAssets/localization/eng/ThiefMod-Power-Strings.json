@@ -133,7 +133,7 @@
     "DESCRIPTIONS": [
       "After you play 3 cards in a turn, return the last ",
       " played cards to your hand. NL You have currently played ",
-      " cards this turn.",
+      " card this turn.",
       " cards this turn."
     ]
   },
