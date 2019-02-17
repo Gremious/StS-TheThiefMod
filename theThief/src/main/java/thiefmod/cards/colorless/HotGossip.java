@@ -16,7 +16,7 @@ public class HotGossip extends AbstractBackstabCard {
 // TEXT DECLARATION
 
     public static final String ID = ThiefMod.makeID("HotGossip");
-    public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_UNCOMMON_ATTACK);
+    public static final String IMG = "thiefmodAssets/images/cards/beta/Attack.png";
     public static final CardColor COLOR = CardColor.COLORLESS;
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

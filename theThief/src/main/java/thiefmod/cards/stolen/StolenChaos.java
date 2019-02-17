@@ -18,7 +18,7 @@ public class StolenChaos extends AbstractBackstabCard {
     public static final String ID = ThiefMod.makeID("StolenChaos");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
-    public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_COMMON_ATTACK);
+    public static final String IMG = "thiefmodAssets/images/cards/beta/Attack.png";
 
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;

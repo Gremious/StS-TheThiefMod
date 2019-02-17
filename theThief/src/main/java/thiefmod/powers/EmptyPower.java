@@ -23,7 +23,7 @@ public class EmptyPower extends AbstractPower {
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    public static final String IMG = ThiefMod.makePath(ThiefMod.COMMON_POWER);
+public static final String IMG = "thiefmodAssets/images/cards/beta/Attack.png";
 
 
     public EmptyPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
