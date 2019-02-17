@@ -75,14 +75,13 @@ public class ViciousAssault extends AbstractBackstabCard {
 
 
         if (canBackstab()) {
-
-            if (magicNumber != 0) {
-                while (magicNumber-- != 0) {
+            if (backstabNumber != 0) {
+                while (backstabNumber-- != 0) {
                     AbstractDungeon.actionManager.addToBottom(new DamageAction(
                             m, new DamageInfo(p, damage, damageTypeForTurn),
                             AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
                 }
-                magicNumber = baseMagicNumber;
+                backstabNumber = baseBackstabNumber;
             }
 
 
