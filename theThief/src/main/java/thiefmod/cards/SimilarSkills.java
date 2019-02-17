@@ -1,6 +1,7 @@
 package thiefmod.cards;
 
 import basemod.abstracts.CustomCard;
+import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -12,6 +13,9 @@ import thiefmod.ThiefMod;
 import thiefmod.patches.character.AbstractCardEnum;
 import thiefmod.powers.Unique.SimilarSkillsPower;
 import thiefmod.powers.Unique.SimilarSkillsPowerUpgraded;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class SimilarSkills extends CustomCard {
 
@@ -27,6 +31,7 @@ public class SimilarSkills extends CustomCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+    public static final String EXTENDED_DESCRIPTION[] = cardStrings.EXTENDED_DESCRIPTION;
 
 // /TEXT DECLARATION/
 
@@ -60,6 +65,13 @@ public class SimilarSkills extends CustomCard {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
                     new SimilarSkillsPowerUpgraded(p, magicNumber), magicNumber));
         }
+    }
+
+    @Override
+    public List<TooltipInfo> getCustomTooltips() {
+        List<TooltipInfo> tips = new ArrayList<>();
+        tips.add(new TooltipInfo(FLAVOR_STRINGS[0], EXTENDED_DESCRIPTION[0]));
+        return tips;
     }
 
     //Upgraded stats.

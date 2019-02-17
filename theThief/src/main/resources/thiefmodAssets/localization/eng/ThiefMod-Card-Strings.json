@@ -77,16 +77,25 @@
   "theThief:IllGottenGains": {
     "NAME": "Ill Gotten Gains",
     "DESCRIPTION": "For the rest of this combat, all Stolen cards you gain are Upgraded.",
-    "UPGRADE_DESCRIPTION": "Innate. NL For the rest of this combat, all Stolen cards you gain are Upgraded."
+    "UPGRADE_DESCRIPTION": "Innate. NL For the rest of this combat, all Stolen cards you gain are Upgraded.",
+    "EXTENDED_DESCRIPTION": [
+      "[#88888]Flavor[] [#88888]Text[]"
+    ]
   },
   "theThief:SimilarSkills": {
     "NAME": "Similar Skills",
     "DESCRIPTION": "At the start of your turn, add a random Green card to your deck. It costs 0 this combat.",
-    "UPGRADE_DESCRIPTION": "At the start of your turn, add a random Upgraded Green card to your deck. It costs 0 this combat."
+    "UPGRADE_DESCRIPTION": "At the start of your turn, add a random Upgraded Green card to your deck. It costs 0 this combat.",
+    "EXTENDED_DESCRIPTION": [
+      "[#88888]Flavor[] [#88888]Text[]"
+    ]
   },
   "theThief:DramaticFeign": {
     "NAME": "Dramatic Feign",
-    "DESCRIPTION": "Stun and apply 2 Vulnerable to all enemies. NL You cannot play cards for the rest of this turn. NL The first card you play next turn is refunded."
+    "DESCRIPTION": "Stun and apply 2 Vulnerable to all enemies. NL You cannot play cards for the rest of this turn. NL The first card you play next turn is refunded.",
+    "EXTENDED_DESCRIPTION": [
+      "[#88888]Flavor[] [#88888]Text[]"
+    ]
   },
   "theThief:Shadowstep": {
     "NAME": "Shadowstep",

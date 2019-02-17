@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class StolenShadowAction extends AbstractGameAction {
     private AbstractPlayer player;
@@ -36,6 +37,7 @@ public class StolenShadowAction extends AbstractGameAction {
             allCards.addAll(player.discardPile.group);
             allCards.addAll(player.exhaustPile.group);
             allCards.addAll(player.hand.group);
+
             for (AbstractCard c : allCards) {
                 c.modifyCostForCombat(-costReduce);
             }

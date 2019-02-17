@@ -1,6 +1,7 @@
 package thiefmod.cards;
 
 import basemod.abstracts.CustomCard;
+import basemod.helpers.TooltipInfo;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.StunMonsterAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -17,6 +18,9 @@ import org.apache.logging.log4j.Logger;
 import thiefmod.ThiefMod;
 import thiefmod.patches.character.AbstractCardEnum;
 import thiefmod.powers.Unique.DramaticFeignPower;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DramaticFeign extends CustomCard {
     public static final Logger logger = LogManager.getLogger(ThiefMod.class.getName());
@@ -39,6 +43,7 @@ public class DramaticFeign extends CustomCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+    public static final String EXTENDED_DESCRIPTION[] = cardStrings.EXTENDED_DESCRIPTION;
 
 // /TEXT DECLARATION/
 
@@ -70,10 +75,8 @@ public class DramaticFeign extends CustomCard {
 
         for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
 
-            // Stun all enemies
             AbstractDungeon.actionManager.addToBottom(new StunMonsterAction(mo, p));
 
-            // Apply 2 vulnerable to all enemies
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p,
                     new VulnerablePower(mo, magicNumber, false), magicNumber));
         }
@@ -87,6 +90,13 @@ public class DramaticFeign extends CustomCard {
 
         // VFX
         AbstractDungeon.actionManager.addToBottom(new VFXAction(new GrandFinalEffect(), 1.0f));
+    }
+
+    @Override
+    public List<TooltipInfo> getCustomTooltips() {
+        List<TooltipInfo> tips = new ArrayList<>();
+        tips.add(new TooltipInfo(FLAVOR_STRINGS[0], EXTENDED_DESCRIPTION[0]));
+        return tips;
     }
 
     //Upgraded stats.
