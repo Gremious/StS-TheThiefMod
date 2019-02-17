@@ -11,7 +11,8 @@
       "Choose up to ",
       " stolen cards to add to your hand.",
       " stolen cards to add to your draw pile.",
-      " stolen cards to add to your discard pile."
+      " stolen cards to add to your discard pile.",
+      "Stolen "
     ]
   },
   "theThief:MakeSuperCopyAction": {

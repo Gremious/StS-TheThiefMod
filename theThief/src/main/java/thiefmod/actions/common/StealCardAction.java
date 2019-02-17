@@ -34,8 +34,10 @@ import static thiefmod.ThiefMod.*;
 
 public class StealCardAction extends AbstractGameAction {
     public static final Logger logger = LogManager.getLogger(ThiefMod.class.getName());
-    public static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:MakeSuperCopyAction");
-    public static final String UITEXT[] = uiStrings.TEXT;
+    public static final UIStrings uiKeywordStrings = CardCrawlGame.languagePack.getUIString("theThief:MakeSuperCopyAction");
+    public static final UIStrings uiStealStrings = CardCrawlGame.languagePack.getUIString("theThief:StealCardUtil");
+    public static final String KEYWORD_STRINGS[] = uiKeywordStrings.TEXT;
+    public static final String STEAL_STRINGS[] = uiStealStrings.TEXT;
 
     private boolean random;
     private boolean upgraded;
@@ -91,7 +93,7 @@ public class StealCardAction extends AbstractGameAction {
             logger.info("addStolenCards() adding card " + c + " to " + location.toString());
             //    c.unhover();
 
-            AbstractDungeon.actionManager.actions.add(new MakeSuperCopyAction(c, "Exhaust", location));
+            AbstractDungeon.actionManager.actions.add(new MakeSuperCopyAction(c, KEYWORD_STRINGS[0], location));
 
 
             //TODO: Test whether or not having a full hand breaks this.
@@ -130,7 +132,7 @@ public class StealCardAction extends AbstractGameAction {
         stolenCards.addToTop(new StolenToxins());
 
         // Rares:
-        int roll = AbstractDungeon.cardRandomRng.random(99);
+        int rollBlack = AbstractDungeon.cardRandomRng.random(99);
         int rollRare = AbstractDungeon.cardRandomRng.random(99);
 
         if (rollRare < 75) {
@@ -149,7 +151,7 @@ public class StealCardAction extends AbstractGameAction {
 
             for (AbstractCard c : conspireCards) {
                 if (c != null) {
-                    c.name = "Stolen " + c.name;
+                    c.name = STEAL_STRINGS[5] + c.name;
                     stolenCards.addToTop(c);
                 }
             }
@@ -159,7 +161,7 @@ public class StealCardAction extends AbstractGameAction {
         //---
 
         if (hasHubris || hasInfiniteSpire || hasReplayTheSpire) {
-            if (roll < 25) {
+            if (rollBlack < 25) {
                 ArrayList<AbstractCard> blackCards = new ArrayList<>();
 
                 if (hasHubris) {
@@ -223,13 +225,13 @@ public class StealCardAction extends AbstractGameAction {
             mysticCards.add(cantripsGroup.get(AbstractDungeon.cardRandomRng.random(cantripsGroup.size() - 1)));
 
             // Rare:
-            if (roll < 75) {
+            if (rollBlack < 75) {
                 customMysticCards.add(new stolenMysticalOrb());
             }
 
             for (AbstractCard c : mysticCards) {
                 if (c != null) {
-                    c.name = "Stolen " + c.name;
+                    c.name = STEAL_STRINGS[5] + c.name;
                     stolenCards.addToTop(c);
                 }
             }
@@ -240,9 +242,6 @@ public class StealCardAction extends AbstractGameAction {
         }
 
         //---
-
-        // TODO: Test whether you really need this?
-        stolenCards.sortAlphabetically(false);
     }
 
 
@@ -268,18 +267,18 @@ public class StealCardAction extends AbstractGameAction {
         }
     }
 
-    // Generates random stolen cards
+    // Grab random stolen cards
     private ArrayList<AbstractCard> getRandomStolenCards(int amount, boolean allowDuplicates) {
 
         ArrayList<AbstractCard> randomCards = new ArrayList<>();
 
-        while (randomCards.size() < amount) {
-            AbstractCard card = allStolenCards().getRandomCard(true);
-            if (allowDuplicates || !randomCards.contains(card)) {
+        while (randomCards.size() < amount) { // Grab only the amount specified. While we don't have 'amount'
+            AbstractCard card = allStolenCards().getRandomCard(true); // Get a random upgraded/non-upgraded card.
+            if (allowDuplicates || !randomCards.contains(card)) { // So long as we can get duplicates OR the card isn't a duplicate.
                 if (!card.hasTag(ThiefCardTags.STOLEN)) {
-                    card.tags.add(ThiefCardTags.STOLEN);
+                    card.tags.add(ThiefCardTags.STOLEN); // Add the stolen card tag
                 }
-                randomCards.add(card);
+                randomCards.add(card); // And add it to the array
             }
         }
         return randomCards;
