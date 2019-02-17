@@ -25,27 +25,27 @@ public class BouqetOKnivesAction extends AbstractGameAction {
     }
 
     public void update() {
-        if (this.target == null) {
-            this.isDone = true;
+        if (target == null) {
+            isDone = true;
         } else if (AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {
             AbstractDungeon.actionManager.clearPostCombatActions();
-            this.isDone = true;
+            isDone = true;
         } else {
-            if (this.target.currentHealth > 0) {
-                this.target.damageFlash = true;
-                this.target.damageFlashFrames = 4;
-                AbstractDungeon.effectList.add(new FlashAtkImgEffect(this.target.hb.cX, this.target.hb.cY, this.attackEffect));
-                this.info.applyPowers(this.info.owner, this.target);
-                this.target.damage(this.info);
-                if (this.numTimes > 1 && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-                    --this.numTimes;
-                    AbstractDungeon.actionManager.addToTop(new BouqetOKnivesAction(AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster) null, true, AbstractDungeon.cardRandomRng), this.info, this.numTimes));
+            if (target.currentHealth > 0) {
+                target.damageFlash = true;
+                target.damageFlashFrames = 4;
+                AbstractDungeon.effectList.add(new FlashAtkImgEffect(target.hb.cX, target.hb.cY, attackEffect));
+                info.applyPowers(info.owner, target);
+                target.damage(info);
+                if (numTimes > 1 && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
+                    --numTimes;
+                    AbstractDungeon.actionManager.addToTop(new BouqetOKnivesAction(AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster) null, true, AbstractDungeon.cardRandomRng), info, numTimes));
                 }
 
                 AbstractDungeon.actionManager.addToTop(new WaitAction(0.2F));
             }
 
-            this.isDone = true;
+            isDone = true;
         }
     }
 }
