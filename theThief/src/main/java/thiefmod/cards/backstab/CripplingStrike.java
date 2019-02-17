@@ -88,7 +88,7 @@ public class CripplingStrike extends AbstractBackstabCard {
     public void applyPowers() {
         super.applyPowers();
 
-        if (AbstractDungeon.player.cardsPlayedThisTurn == 0 || AbstractDungeon.player.hasPower(BackstabPower.POWER_ID)) {
+        if (canBackstab()) {
             rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[2];
         } else {
             rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[3];

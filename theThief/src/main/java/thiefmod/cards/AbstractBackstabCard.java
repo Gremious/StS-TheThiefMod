@@ -50,7 +50,7 @@ public abstract class AbstractBackstabCard extends CustomCard {
         upgradedBackstabNumber = true;
     }
 
-    public boolean canBackstab() {
+    public static boolean canBackstab() {
         if (AbstractDungeon.player.cardsPlayedThisTurn <= 1) {
             return true;
         } else if (AbstractDungeon.player.hasPower(BackstabPower.POWER_ID)) {
