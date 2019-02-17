@@ -79,7 +79,7 @@
     "DESCRIPTION": "For the rest of this combat, all Stolen cards you gain are Upgraded.",
     "UPGRADE_DESCRIPTION": "Innate. NL For the rest of this combat, all Stolen cards you gain are Upgraded.",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]Flavor[] [#88888]Text[]"
+      "[#FEE130]Flavor[] [#FEE130]Text[]"
     ]
   },
   "theThief:SimilarSkills": {
@@ -87,14 +87,14 @@
     "DESCRIPTION": "At the start of your turn, add a random Green card to your deck. It costs 0 this combat.",
     "UPGRADE_DESCRIPTION": "At the start of your turn, add a random Upgraded Green card to your deck. It costs 0 this combat.",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]Flavor[] [#88888]Text[]"
+      "[#FEE130]A[] [#FEE130]knife[] [#FEE130]for[] [#FEE130]a[] [#FEE130]shiv.[]"
     ]
   },
   "theThief:DramaticFeign": {
     "NAME": "Dramatic Feign",
     "DESCRIPTION": "Stun and apply 2 Vulnerable to all enemies. NL You cannot play cards for the rest of this turn. NL The first card you play next turn is refunded.",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]Flavor[] [#88888]Text[]"
+      "[#FEE130]Flavor[] [#FEE130]Text[]"
     ]
   },
   "theThief:Shadowstep": {
@@ -252,7 +252,7 @@
     "DESCRIPTION": "Add !M! Void to your draw pile. NL Deal damage equal to 20% of a monster's current HP (!D!). NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Add !M! Void to your draw pile. NL Deal damage equal to  30% of a monster's current HP (!D!). NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]Flavor[] [#88888]Text[]"
+      "[#FEE130]Flavor[] [#FEE130]Text[]"
     ]
   },
   "theThief:ShadowCalamity": {
@@ -260,7 +260,7 @@
     "DESCRIPTION": "Startup: Add !M! Void to your draw pile. NL Deal !D! damage to all enemies. NL Grave NL Exhaustive !stslib:ex!.",
     "UPGRADE_DESCRIPTION": "Startup: Add !M! Voids to your draw pile. NL Deal !D! damage to all enemies. NL Grave. NL Exhaustive !stslib:ex!.",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]Flavor[] [#88888]Text[]"
+      "[#FEE130]Flavor[] [#FEE130]Text[]"
     ]
   },
   "theThief:HeartBreaker": {
@@ -276,7 +276,7 @@
     "DESCRIPTION": "The next card you play is refunded. NL Add !M! void to your draw pile. NL Exhaustive !stslib:ex!.",
     "UPGRADE_DESCRIPTION": "The next card you play is refunded. NL Add !M! void to your draw pile. NL Exhaustive !stslib:ex!.",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]Flavor[] [#88888]Text[]"
+      "[#FEE130]Flavor[] [#FEE130]Text[]"
     ]
   },
   "theThief:ShadowReserves": {
@@ -350,7 +350,7 @@
     "DESCRIPTION": "Shadowstep X times.",
     "UPGRADE_DESCRIPTION": "Shadowstep X times for each enemy in combat.",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]Now[] [#88888]you're[] [#88888]just[] [#88888]showing[] [#88888]off.[]"
+      "[#FEE130]Now[] [#FEE130]you're[] [#FEE130]just[] [#FEE130]showing[] [#FEE130]off.[]"
     ]
   },
   "theThief:MurderousIntent": {
@@ -406,7 +406,7 @@
     "DESCRIPTION": "Discard your hand, then, steal that many cards. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Discard your hand, then, steal that many cards. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]An[] [#88888]over-calculated[] [#88888]gamble[]"
+      "[#FEE130]An[] [#FEE130]over-calculated[] [#FEE130]gamble[]"
     ]
   },
   "theThief:Liar": {
@@ -430,7 +430,7 @@
     "DESCRIPTION": "Whenever you draw a Void, gain !M! [E]. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Whenever you draw a Void, gain !M! [E]. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]Embrace[] [#88888]the[] [#88888]abyss.[]"
+      "[#800080]Embrace[] [#800080]the[] [#800080]abyss.[]"
     ]
   },
   "theThief:PrecisePositioning": {
@@ -438,7 +438,7 @@
     "DESCRIPTION": "Shadowstep !M! time. Next turn your attack damage is doubled. NL Refund !stslib:refund!. NL Ethereal.",
     "UPGRADE_DESCRIPTION": "NL Shadowstep !M! time. Next turn your attack damage is doubled. NL Refund !stslib:refund!.",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]A[] [#88888]VERY[] [#88888]precise[] [#88888]position.[]",
+      "[#FEE130]A[] [#FEE130]VERY[] [#FEE130]precise[] [#FEE130]position.[]",
       "Shadowstep !M!",
       " time. Next turn your attack damage is doubled. NL Refund !stslib:refund!. NL Ethereal.",
       " times. Next turn your attack damage is doubled. NL Refund !stslib:refund!. NL Ethereal.",
@@ -451,7 +451,7 @@
     "DESCRIPTION": "At the start of each turn, play the last card you've played (Does not re-play Shadow Clone). NL Ethereal.",
     "UPGRADE_DESCRIPTION": "At the start of each turn, play the last card you've played (Does not re-play Shadow Clone).",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]Flavor[] [#88888]Text[]"
+      "[#FEE130]Flavor[] [#FEE130]Text[]"
     ]
   },
   "theThief:DissoluteSatisfaction": {
