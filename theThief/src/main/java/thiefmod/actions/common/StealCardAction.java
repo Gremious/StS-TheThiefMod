@@ -63,9 +63,12 @@ public class StealCardAction extends AbstractGameAction {
 
             if (random) {
                 cardsToAdd = getRandomStolenCards(amount, true);
+                for (int i = 0; i < amount; i++) {
+                    curseCounter();
+                }
 
                 for (int i = 0; i < copies; i++) {
-                    curseCounter();
+
                     addStolenCards();
                 }
 
@@ -286,9 +289,9 @@ public class StealCardAction extends AbstractGameAction {
 
 
     private void curseCounter() {
-        for (int i = 0; i < amount; i++) {
-            actionManager.addToBottom(new ApplyPowerAction(player, source,
-                    new FleetingGuiltPower(player, source, 1), 1));
-        }
+
+        actionManager.addToBottom(new ApplyPowerAction(player, source,
+                new FleetingGuiltPower(player, source, 1), 1));
+
     }
 }

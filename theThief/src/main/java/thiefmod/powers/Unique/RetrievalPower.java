@@ -12,14 +12,10 @@ import org.apache.logging.log4j.Logger;
 import thiefmod.ThiefMod;
 import thiefmod.actions.unique.RetrievalAction;
 
-import java.util.ArrayList;
-import java.util.Collections;
-
 
 public class RetrievalPower extends AbstractPower {
     private static final Logger logger = LogManager.getLogger(ThiefMod.class.getName());
 
-    private ArrayList<AbstractCard> lastCardsPlayed = new ArrayList<>();
 
     public AbstractCreature source;
     private int returnAmount;
@@ -33,7 +29,6 @@ public class RetrievalPower extends AbstractPower {
 
 
     public RetrievalPower(final AbstractCreature owner, final AbstractCreature source, final int amount, final int returnAmount) {
-
         name = NAME;
         ID = POWER_ID;
 
@@ -53,30 +48,17 @@ public class RetrievalPower extends AbstractPower {
 
     @Override
     public void onAfterCardPlayed(AbstractCard cardPlayed) {
-        logger.info("Ayo a " + cardPlayed + " was just played." +
-                " Currently, count is " + count + " and the whole list is " + lastCardsPlayed);
         count++;
-        //    lastCardsPlayed.add(cardPlayed);
-
-        logger.info("Update: the card that was played is still " + cardPlayed +
-                "Count++ is " + count + " and the whole list is " + lastCardsPlayed);
 
         if (count == 3) {
-            logger.info("Count is 3, do your thing.");
-
-            lastCardsPlayed = AbstractDungeon.actionManager.cardsPlayedThisCombat;
-            Collections.reverse(lastCardsPlayed);
-            logger.info("lastCardsPlayed reversed is: " + lastCardsPlayed);
-            AbstractDungeon.actionManager.addToBottom(new RetrievalAction(lastCardsPlayed, returnAmount));
-            logger.info("Action completed.");
-
+            AbstractDungeon.actionManager.addToBottom(new RetrievalAction(returnAmount));
         }
 
     }
 
+
     @Override
     public void atStartOfTurn() {
-        lastCardsPlayed.clear();
         count = 0;
     }
 

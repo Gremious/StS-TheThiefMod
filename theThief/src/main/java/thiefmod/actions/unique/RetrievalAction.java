@@ -1,73 +1,49 @@
 package thiefmod.actions.unique;
 
-import basemod.BaseMod;
+import com.evacipated.cardcrawl.mod.stslib.actions.common.MoveCardsAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.DiscardToHandAction;
-import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import thiefmod.ThiefMod;
 import thiefmod.actions.Util.DrawPileToHandAction;
 import thiefmod.actions.Util.ExhaustToHandAction;
 import thiefmod.actions.Util.LimboToHandAction;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class RetrievalAction extends AbstractGameAction {
-
-    private static final Logger logger = LogManager.getLogger(ThiefMod.class.getName());
-
-    private ArrayList<AbstractCard> cardsToReturn;
     private int returnAmount;
 
-    public RetrievalAction(final ArrayList<AbstractCard> cardsToReturn, final int returnAmount) {
-        this.cardsToReturn = cardsToReturn;
+    public RetrievalAction(final int returnAmount) {
         this.returnAmount = returnAmount;
     }
 
     @Override
     public void update() {
+        AbstractPlayer p = AbstractDungeon.player;
 
-        logger.info("Update start");
-        AbstractDungeon.actionManager.addToBottom(new WaitAction(0.1f));
-        AbstractDungeon.actionManager.addToBottom(new WaitAction(0.1f));
-        logger.info("Waited out");
+        List<AbstractCard> cardsToReturn = AbstractDungeon.actionManager.cardsPlayedThisTurn.subList(-returnAmount, AbstractDungeon.actionManager.cardsPlayedThisTurn.size());
 
-        logger.info("cardsToRetun inside the action is " + cardsToReturn);
+        System.out.println("There are " + returnAmount + " cards to return: " + cardsToReturn);
 
-        for (AbstractCard iterateCard : cardsToReturn) {
-            logger.info("returnAmount is " + returnAmount);
+        for (AbstractCard c : cardsToReturn) {
 
-            for (int i = 0; i <= returnAmount; i++) {
-                if (i == returnAmount) {
-                    logger.info("RetrievalAction is done via i check.");
-                    isDone = true;
-                }
-                // I was now told StSlib has a MoveCardsAction. It is too late. I made all these actions. I don't wanna redo em.
-                stopCheck();
-                AbstractDungeon.actionManager.addToBottom(new DiscardToHandAction(iterateCard));
-                logger.info("Discard to hand added.");
-                stopCheck();
-                AbstractDungeon.actionManager.addToBottom(new DrawPileToHandAction(iterateCard));
-                logger.info("Draw to hand added.");
-                stopCheck();
-                AbstractDungeon.actionManager.addToBottom(new ExhaustToHandAction(iterateCard));
-                logger.info("Exhaust to hand added.");
-                stopCheck();
-                AbstractDungeon.actionManager.addToBottom(new LimboToHandAction(iterateCard));
-                logger.info("Limbo to hand added.");
-            }
-            isDone = true; // Do i need this idk
+            // I was now told StSlib has a MoveCardsAction. It is too late. I made all these actions. I don't wanna redo em.
+
+            AbstractDungeon.actionManager.addToBottom(new DiscardToHandAction(c));
+
+            System.out.println("Discard to hand added.");
+
+            AbstractDungeon.actionManager.addToBottom(new DrawPileToHandAction(c));
+            System.out.println("Draw to hand added.");
+
+            AbstractDungeon.actionManager.addToBottom(new ExhaustToHandAction(c));
+            System.out.println("Exhaust to hand added.");
+
+            AbstractDungeon.actionManager.addToBottom(new LimboToHandAction(c));
+            System.out.println("Limbo to hand added.");
         }
-        isDone = true;
-    }
-
-    private void stopCheck() {
-        if (AbstractDungeon.player.hand.size() >= BaseMod.MAX_HAND_SIZE) {
-            AbstractDungeon.player.createHandIsFullDialog();
-            isDone = true;
-        }
+        isDone = true; // Do i need this idk
     }
 }
