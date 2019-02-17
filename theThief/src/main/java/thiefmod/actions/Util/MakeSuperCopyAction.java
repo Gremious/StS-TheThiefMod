@@ -24,15 +24,11 @@ public class MakeSuperCopyAction extends AbstractGameAction {
     private AbstractCard c;
     private CardGroup addLocation;
     private String keyword;
+    private Integer setCost;
     private boolean removeKeyword;
     public static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:MakeSuperCopyAction");
     public static final String KEYWORD_STRINGS[] = uiStrings.TEXT;
 
-    /*
-     * Will not add/remove the keyword if card already has it/doesn't have it, respectively.
-     * keywords:  "Exhaust", "Ethereal", "Unplayable". Use KEYWORD_STRINGS[].
-     * addLocation: Hand, Draw, Discard piles from Abdun.player
-     */
     public MakeSuperCopyAction(AbstractCard c, final CardGroup addLocation) {
         this(c, null, false, addLocation);
     }
@@ -50,6 +46,25 @@ public class MakeSuperCopyAction extends AbstractGameAction {
         this.removeKeyword = removeKeyword;
     }
 
+    /**
+     * Will not change the card if it already has/doesn't have the keyword, respectively of what you're using the action for.
+     *
+     * @param c the card that needs to be Copied.
+     * @param keyword can be "Exhaust", "Ethereal", "Unplayable". Use KEYWORD_STRINGS[] from theThief:MakeSuperCopyAction in UIString;
+     * @param setCost Will change the card cost.
+     * @param removeKeyword Will remove the keyword instead of adding it.
+     * @param addLocation Hand, Draw and Discard pile groups from AbstractDungeon.player
+     */
+    public MakeSuperCopyAction(AbstractCard c, final String keyword, Integer setCost, boolean removeKeyword, final CardGroup addLocation) {
+        actionType = ActionType.CARD_MANIPULATION;
+        duration = Settings.ACTION_DUR_FAST;
+        this.c = c.makeStatEquivalentCopy();
+        this.addLocation = addLocation;
+        this.keyword = keyword;
+        this.setCost = setCost;
+        this.removeKeyword = removeKeyword;
+    }
+
     public void update() {
         if (duration == Settings.ACTION_DUR_FAST) {
             if (keyword != null) {
@@ -57,12 +72,14 @@ public class MakeSuperCopyAction extends AbstractGameAction {
                     if (removeKeyword) {
                         if (c.exhaust) {
                             c.exhaust = false;
+                            if (setCost != null) c.cost = setCost;
                             c.rawDescription = c.rawDescription.replaceAll(KEYWORD_STRINGS[1], "");
                             logger.info("Adding " + c + " with REMOVED Exhaust.");
                         }
                     } else {
                         if (!c.exhaust) {
                             c.exhaust = true;
+                            if (setCost != null) c.cost = setCost;
                             c.rawDescription = c.rawDescription + KEYWORD_STRINGS[2];
                             logger.info("Adding " + c + " with Exhaust.");
                         }
@@ -71,12 +88,14 @@ public class MakeSuperCopyAction extends AbstractGameAction {
                     if (removeKeyword) {
                         if (c.isEthereal) {
                             c.isEthereal = false;
+                            if (setCost != null) c.cost = setCost;
                             c.rawDescription = c.rawDescription.replaceAll(KEYWORD_STRINGS[4], "");
                             logger.info("Adding " + c + " with REMOVED Ethereal.");
                         }
                     } else {
                         if (!c.isEthereal) {
                             c.isEthereal = true;
+                            if (setCost != null) c.cost = setCost;
                             c.rawDescription = c.rawDescription + KEYWORD_STRINGS[5];
                             logger.info("Adding " + c + " with Ethereal.");
                         }
@@ -84,7 +103,11 @@ public class MakeSuperCopyAction extends AbstractGameAction {
                 } else if (keyword.equals(KEYWORD_STRINGS[6])) {
                     if (removeKeyword) {
                         if (c.cost == -2) {
-                            c.cost = 1;
+                            if (setCost != null) {
+                                c.cost = setCost;
+                            } else {
+                                c.cost = 1;
+                            }
                             c.rawDescription = c.rawDescription.replaceAll(KEYWORD_STRINGS[7], "");
                             logger.info("Adding " + c + " with REMOVED Unplayable.");
                         }
