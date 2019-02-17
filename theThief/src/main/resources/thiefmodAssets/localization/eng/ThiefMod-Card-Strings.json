@@ -421,7 +421,7 @@
   "theThief:PrecisePositioning": {
     "NAME": "Precise Positioning",
     "DESCRIPTION": "Shadowstep !M! time. Next turn your attack damage is doubled. NL Refund !stslib:refund!. NL Ethereal.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Shadowstep !M! time. Next turn your attack damage is doubled. NL Refund !stslib:refund!.",
+    "UPGRADE_DESCRIPTION": "NL Shadowstep !M! time. Next turn your attack damage is doubled. NL Refund !stslib:refund!.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]A[] [#88888]VERY[] [#88888]precise[] [#88888]position.[]",
       "Shadowstep !M!",

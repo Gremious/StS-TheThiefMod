@@ -55,7 +55,7 @@ public class PrecisePositioning extends AbstractBackstabCard {
 
         RefundVariable.setBaseValue(this, 2);
 
-        isEthereal = !upgraded;
+        isEthereal = true;
 
         magicNumber = baseMagicNumber = MAGIC;
 
@@ -108,7 +108,8 @@ public class PrecisePositioning extends AbstractBackstabCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-//          rawDescription = UPGRADE_DESCRIPTION;
+            isEthereal = false;
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

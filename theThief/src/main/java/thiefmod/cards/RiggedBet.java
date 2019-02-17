@@ -52,7 +52,7 @@ public class RiggedBet extends AbstractBackstabCard {
 
     public RiggedBet() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-
+        exhaust = true;
         magicNumber = baseMagicNumber = MAGIC;
 
     }

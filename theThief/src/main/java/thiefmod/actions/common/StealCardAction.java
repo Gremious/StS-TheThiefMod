@@ -287,8 +287,9 @@ public class StealCardAction extends AbstractGameAction {
 
 
     private void curseCounter() {
-        actionManager.addToBottom(new ApplyPowerAction(player, source,
-                new FleetingGuiltPower(player, source, 1), 1));
+        for (int i = 0; i < amount; i++) {
+            actionManager.addToBottom(new ApplyPowerAction(player, source,
+                    new FleetingGuiltPower(player, source, 1), 1));
+        }
     }
-
 }
