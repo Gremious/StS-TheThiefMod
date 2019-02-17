@@ -77,7 +77,7 @@ public class AttackOfOpportunity extends AbstractBackstabCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        final int count = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
+
 
         // Deal 16 Damage
         AbstractDungeon.actionManager.addToBottom(new DamageAction(
@@ -90,7 +90,7 @@ public class AttackOfOpportunity extends AbstractBackstabCard {
         }
 
         // Backstab - Draw 1 card.
-        if (count <= 1) {
+        if (canBackstab()) {
             AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, magicNumber));
         }
 

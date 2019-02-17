@@ -63,9 +63,9 @@ public class Stab extends AbstractBackstabCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        final int count = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
 
-        if (count <= 1 || p.hasPower(BackstabPower.POWER_ID)) {
+
+        if (canBackstab()) {
 
             AbstractDungeon.actionManager.addToBottom(new DamageAction(m,
                     new DamageInfo(p, damage * backstabNumber, damageTypeForTurn),

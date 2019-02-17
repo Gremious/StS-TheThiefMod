@@ -2,6 +2,7 @@ package thiefmod.events;
 
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
@@ -43,7 +44,7 @@ public class LouseAbuseEvent extends AbstractImageEvent {
                     case 0:
                     case 1:
                     case 2:
-                        AbstractDungeon.player.relics.add(new LouseBounty().makeCopy());
+                        AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float)(Settings.WIDTH / 2), (float)(Settings.HEIGHT / 2), new LouseBounty().makeCopy());
                         imageEventText.updateBodyText(DESCRIPTIONS[1]);
                         imageEventText.updateDialogOption(0, OPTIONS[4]);
                         imageEventText.clearRemainingOptions();

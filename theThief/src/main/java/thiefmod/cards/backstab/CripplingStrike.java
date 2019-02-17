@@ -67,13 +67,13 @@ public class CripplingStrike extends AbstractBackstabCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        final int count = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
+
 
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m,
                 new DamageInfo(p, damage, damageTypeForTurn),
                 AbstractGameAction.AttackEffect.SLASH_VERTICAL));
 
-        if (count <= 1) {
+        if (canBackstab()) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
                     m, p, new VulnerablePower(m, magicNumber, false), magicNumber));
 

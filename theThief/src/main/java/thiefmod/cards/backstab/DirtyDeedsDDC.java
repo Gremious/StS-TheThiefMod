@@ -72,9 +72,9 @@ public class DirtyDeedsDDC extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        final int count = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
 
-        if (count <= 1) {
+
+        if (canBackstab()) {
             AbstractDungeon.actionManager.addToBottom(
                     new GreedAction(m, new DamageInfo(p, damage, damageTypeForTurn), backstabNumber));
         } else {

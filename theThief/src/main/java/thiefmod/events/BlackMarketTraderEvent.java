@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import thiefmod.ThiefMod;
 import thiefmod.relics.BottledHand;
+import thiefmod.relics.LouseBounty;
 
 public class BlackMarketTraderEvent extends AbstractImageEvent {
 
@@ -93,8 +94,7 @@ public class BlackMarketTraderEvent extends AbstractImageEvent {
                         CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.MED, false);
                         CardCrawlGame.sound.play("ATTACK_DAGGER_6");
                         CardCrawlGame.sound.play("BLOOD_SPLAT");
-
-                        AbstractDungeon.player.relics.add(new BottledHand().makeCopy());
+                        AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float)(Settings.WIDTH / 2), (float)(Settings.HEIGHT / 2), new BottledHand().makeCopy());
                         this.imageEventText.updateBodyText(DESCRIPTIONS[1]);
                         this.imageEventText.updateDialogOption(0, OPTIONS[7]);
                         this.imageEventText.clearRemainingOptions();
