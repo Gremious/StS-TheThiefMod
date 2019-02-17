@@ -1,9 +1,7 @@
 package thiefmod.actions.unique;
 
-import basemod.BaseMod;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.colorless.Shiv;
@@ -45,8 +43,6 @@ public class StolenArsenalAction extends AbstractGameAction {
         if (duration == Settings.ACTION_DUR_FAST) {
             logger.info("Action duration is fast");
 
-            int maximumHand = BaseMod.MAX_HAND_SIZE;
-            int currentHand = AbstractDungeon.player.hand.group.size();
 
             handCards.addAll(player.hand.group);
             drawCards.addAll(player.drawPile.group);
@@ -54,41 +50,33 @@ public class StolenArsenalAction extends AbstractGameAction {
             exhaustCards.addAll(player.exhaustPile.group);
 
             AbstractDungeon.effectList.add(new BorderFlashEffect(Color.GREEN));
-            AbstractDungeon.actionManager.addToBottom(new SFXAction("TINGSHA"));
 
             for (AbstractCard c : handCards) {
                 AbstractDungeon.effectList.add(new ExhaustEmberEffect(c.current_x, c.current_y));
                 AbstractDungeon.effectList.add(new CardFlashVfx(c, Color.GOLD));
 
-                AbstractDungeon.player.hand.removeCard(c);
+                player.hand.removeCard(c);
                 AbstractDungeon.actionManager.addToTop(new MakeSuperCopyAction(new Shiv(), KEYWORD_STRINGS[0], true, AbstractDungeon.player.hand));
             }
             for (AbstractCard c : drawCards) {
-                AbstractDungeon.player.drawPile.removeCard(c);
+                player.drawPile.removeCard(c);
                 AbstractDungeon.actionManager.addToTop(new MakeSuperCopyAction(new Shiv(), KEYWORD_STRINGS[0], true, AbstractDungeon.player.drawPile));
             }
             for (AbstractCard c : discardCards) {
-                AbstractDungeon.player.discardPile.removeCard(c);
+                player.discardPile.removeCard(c);
                 AbstractDungeon.actionManager.addToTop(new MakeSuperCopyAction(new Shiv(), KEYWORD_STRINGS[0], true, AbstractDungeon.player.discardPile));
             }
 
             for (AbstractCard c : exhaustCards) {
-                AbstractDungeon.player.exhaustPile.removeCard(c);
+                player.exhaustPile.removeCard(c);
                 AbstractDungeon.actionManager.addToBottom(new SFXAction("CARD_OBTAIN"));
-                AbstractDungeon.player.exhaustPile.addToTop(new Shiv());
+                player.exhaustPile.addToTop(new Shiv());
             }
 
-            do {
-                AbstractDungeon.actionManager.addToTop(new DrawCardAction(player, 1));
-                if (AbstractDungeon.player.drawPile.isEmpty() && AbstractDungeon.player.discardPile.isEmpty()) {
-                    break;
-                }
-                currentHand++;
-            }
-            while (currentHand != maximumHand);
+            player.hand.refreshHandLayout();
+            player.hand.glowCheck();
 
-            AbstractDungeon.player.hand.refreshHandLayout();
-            AbstractDungeon.player.hand.glowCheck();
+            AbstractDungeon.actionManager.addToTop(new SFXAction("TINGSHA"));
 
             tickDuration();
         }

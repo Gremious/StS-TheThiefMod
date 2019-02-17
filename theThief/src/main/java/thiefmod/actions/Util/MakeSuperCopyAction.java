@@ -49,11 +49,11 @@ public class MakeSuperCopyAction extends AbstractGameAction {
     /**
      * Will not change the card if it already has/doesn't have the keyword, respectively of what you're using the action for.
      *
-     * @param c the card that needs to be Copied.
-     * @param keyword can be "Exhaust", "Ethereal", "Unplayable". Use KEYWORD_STRINGS[] from theThief:MakeSuperCopyAction in UIString;
-     * @param setCost Will change the card cost.
+     * @param c             the card that needs to be Copied.
+     * @param keyword       can be "Exhaust", "Ethereal", "Unplayable". Use KEYWORD_STRINGS[] from theThief:MakeSuperCopyAction in UIString;
+     * @param setCost       Will change the card cost.
      * @param removeKeyword Will remove the keyword instead of adding it.
-     * @param addLocation Hand, Draw and Discard pile groups from AbstractDungeon.player
+     * @param addLocation   Hand, Draw and Discard pile groups from AbstractDungeon.player
      */
     public MakeSuperCopyAction(AbstractCard c, final String keyword, Integer setCost, boolean removeKeyword, final CardGroup addLocation) {
         actionType = ActionType.CARD_MANIPULATION;
@@ -123,23 +123,20 @@ public class MakeSuperCopyAction extends AbstractGameAction {
             }
             c.initializeDescription();
 
-            AbstractDungeon.actionManager.addToBottom(new SFXAction("CARD_OBTAIN"));
+            AbstractDungeon.actionManager.addToTop(new SFXAction("CARD_OBTAIN"));
 
             if (addLocation == AbstractDungeon.player.hand) {
                 AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(c));
-                if (c.hasTag(ThiefCardTags.RARE_FIND)) {
-                    AbstractDungeon.effectList.add(new CardFlashVfx(c, Color.GOLD));
-                }
+                if (c.hasTag(ThiefCardTags.RARE_FIND)) AbstractDungeon.effectList.add(new CardFlashVfx(c, Color.GOLD));
+
             } else if (addLocation == AbstractDungeon.player.drawPile) {
                 AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(c, true, false));
-                if (c.hasTag(ThiefCardTags.RARE_FIND)) {
-                    AbstractDungeon.effectList.add(new CardFlashVfx(c, Color.GOLD));
-                }
+                if (c.hasTag(ThiefCardTags.RARE_FIND)) AbstractDungeon.effectList.add(new CardFlashVfx(c, Color.GOLD));
+
             } else if (addLocation == AbstractDungeon.player.discardPile) {
                 AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(c));
-                if (c.hasTag(ThiefCardTags.RARE_FIND)) {
-                    AbstractDungeon.effectList.add(new CardFlashVfx(c, Color.GOLD));
-                }
+                if (c.hasTag(ThiefCardTags.RARE_FIND)) AbstractDungeon.effectList.add(new CardFlashVfx(c, Color.GOLD));
+
             } else {
                 logger.info("The Super Duper Copy Action didn't find ether hand, deck or discard.");
             }
@@ -147,7 +144,7 @@ public class MakeSuperCopyAction extends AbstractGameAction {
             AbstractDungeon.player.hand.refreshHandLayout();
             AbstractDungeon.player.hand.glowCheck();
             logger.info("Final log. Super Copy Action should be done.");
-            tickDuration();
+            //    tickDuration();
         }
         tickDuration();
     }
