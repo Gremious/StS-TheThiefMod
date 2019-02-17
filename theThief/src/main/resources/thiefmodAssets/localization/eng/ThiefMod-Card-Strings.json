@@ -430,7 +430,7 @@
     "DESCRIPTION": "Whenever you draw a Void, gain !M! [E]. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Whenever you draw a Void, gain !M! [E]. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
-      "[#800080]Embrace[] [#800080]the[] [#800080]abyss.[]"
+      "[#ee82ee]Embrace[] [#ee82ee]the[] [#ee82ee]abyss.[]"
     ]
   },
   "theThief:PrecisePositioning": {
