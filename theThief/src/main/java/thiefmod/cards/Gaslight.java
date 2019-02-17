@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.GainStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import thiefmod.ThiefMod;
 import thiefmod.patches.character.AbstractCardEnum;
@@ -64,7 +63,8 @@ public class Gaslight extends AbstractBackstabCard {
                 m, p, new StrengthPower(m, -magicNumber), -magicNumber));
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
-                m, p, new GainStrengthPower(p, magicNumber), magicNumber));
+                p, p, new StrengthPower(p, magicNumber), magicNumber));
+
 
     }
 

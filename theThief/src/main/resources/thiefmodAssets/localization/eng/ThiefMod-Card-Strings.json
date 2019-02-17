@@ -100,8 +100,8 @@
   },
   "theThief:Murder.": {
     "NAME": "Murder.",
-    "DESCRIPTION": "Deal !D! damage. Fleeting.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. Fleeting.",
+    "DESCRIPTION": "Deal !D! damage. NL Fleeting.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Fleeting.",
     "EXTENDED_DESCRIPTION": [
       "[#fa5555]Die.[]"
     ]
@@ -526,8 +526,8 @@
   },
   "theThief:GuiltTrip": {
     "NAME": "Guilt Trip",
-    "DESCRIPTION": "If an enemy intends to attack, apply !M! Weak and it loses !theThief:Magic! strength. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "If an enemy intends to attack, apply !M! Weak and it loses !theThief:Magic! strength. NL Exhaust.",
+    "DESCRIPTION": "If an enemy intends to attack, apply !M! Weak and it loses !theThief:Magic! Strength. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "If an enemy intends to attack, apply !M! Weak and it loses !theThief:Magic! Strength. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]
