@@ -78,7 +78,6 @@ public class ViciousAssault extends AbstractBackstabCard {
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(
                         m, new DamageInfo(p, damage, damageTypeForTurn),
                         AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-
             }
         } else {
             for (int i = 0; i < magicNumber; i++) {
