@@ -103,7 +103,7 @@
     "DESCRIPTION": "Deal !D! damage. Fleeting.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage. Fleeting.",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]Die.[]"
+      "[#fa5555]Die.[]"
     ]
   },
   "theThief:BeautifulLies": {
