@@ -1,6 +1,5 @@
 package thiefmod.actions.unique;
 
-import com.evacipated.cardcrawl.mod.stslib.actions.common.MoveCardsAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.DiscardToHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -23,7 +22,7 @@ public class RetrievalAction extends AbstractGameAction {
     public void update() {
         AbstractPlayer p = AbstractDungeon.player;
 
-        List<AbstractCard> cardsToReturn = AbstractDungeon.actionManager.cardsPlayedThisTurn.subList(-returnAmount, AbstractDungeon.actionManager.cardsPlayedThisTurn.size());
+        List<AbstractCard> cardsToReturn = AbstractDungeon.actionManager.cardsPlayedThisTurn.subList(AbstractDungeon.actionManager.cardsPlayedThisTurn.size() - returnAmount, AbstractDungeon.actionManager.cardsPlayedThisTurn.size());
 
         System.out.println("There are " + returnAmount + " cards to return: " + cardsToReturn);
 
@@ -32,7 +31,6 @@ public class RetrievalAction extends AbstractGameAction {
             // I was now told StSlib has a MoveCardsAction. It is too late. I made all these actions. I don't wanna redo em.
 
             AbstractDungeon.actionManager.addToBottom(new DiscardToHandAction(c));
-
             System.out.println("Discard to hand added.");
 
             AbstractDungeon.actionManager.addToBottom(new DrawPileToHandAction(c));
@@ -41,7 +39,7 @@ public class RetrievalAction extends AbstractGameAction {
             AbstractDungeon.actionManager.addToBottom(new ExhaustToHandAction(c));
             System.out.println("Exhaust to hand added.");
 
-            AbstractDungeon.actionManager.addToBottom(new LimboToHandAction(c));
+            AbstractDungeon.actionManager.addToBottom(new LimboToHandAction(c)); // ? Who knows.
             System.out.println("Limbo to hand added.");
         }
         isDone = true; // Do i need this idk
