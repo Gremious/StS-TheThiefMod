@@ -1,30 +1,30 @@
-package thiefmod.cards.stolen.RareFind;
+package thiefmod.cards.stolen.rareFind;
 
 import basemod.helpers.TooltipInfo;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.utility.SFXAction;
+import com.megacrit.cardcrawl.actions.defect.IncreaseMaxOrbAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.CardFlashVfx;
 import thiefmod.ThiefMod;
 import thiefmod.cards.AbstractBackstabCard;
 import thiefmod.patches.character.ThiefCardTags;
+import thiefmod.powers.Unique.StolenCorePower;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class StolenBlood extends AbstractBackstabCard {
+public class StolenCore extends AbstractBackstabCard {
 
 
     // TEXT DECLARATION
 
-    public static final String ID = ThiefMod.makeID("StolenBlood");
+    public static final String ID = ThiefMod.makeID("StolenCore");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     public static final String IMG = "thiefmodAssets/images/cards/beta/Attack.png";
@@ -48,28 +48,48 @@ public class StolenBlood extends AbstractBackstabCard {
     private static final int UPGRADE_COST = 1;
 
 
-    private static final int MAGIC = 8;
+    private static final int MAGIC = 1;
+    private static final int ORB_SLOTS = 3;
 
     // /STAT DECLARATION/
 
 
-    public StolenBlood() {
+    public StolenCore() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+
+        magicNumber = baseMagicNumber = MAGIC;
+        backstabNumber = baseBackstabNumber = ORB_SLOTS;
+
+
      /* Straight up just doesn't work. But maybe one day it will. And when that happens, I'll be waiting. And I will uncomment this code. And my rare cards will look cool.
 
-        setBackgroundTexture("thiefmodAssets/images/512/special/red_rare_skill_bg.png",
-                "thiefmodAssets/images/1024/special/red_rare_skill_bg.png");
+        setBackgroundTexture("thiefmodAssets/images/512/special/blue_rare_skill_bg.png",
+                "thiefmodAssets/images/1024/special/blue_rare_skill_bg.png");
 
         setOrbTexture("thiefmodAssets/images/512/card_thief_gray_orb.png",
                 "thiefmodAssets/images/1024/card_thief_gray_orb.png");
+
     */
+
         setBannerTexture("thiefmodAssets/images/512/special/rare_skill_banner.png",
                 "thiefmodAssets/images/1024/special/rare_skill_banner.png");
 
-        magicNumber = baseMagicNumber = MAGIC;
         tags.add(ThiefCardTags.STOLEN);
         tags.add(ThiefCardTags.RARE_FIND);
         exhaust = true;
+
+    }
+
+    @Override
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        AbstractDungeon.effectList.add(new BorderFlashEffect(Color.ROYAL));
+
+        AbstractDungeon.actionManager.addToBottom(
+                new IncreaseMaxOrbAction(backstabNumber));
+
+        AbstractDungeon.actionManager.addToBottom(
+                new ApplyPowerAction(p, p, new StolenCorePower(p, p, magicNumber), 1));
+
     }
 
     @Override
@@ -86,15 +106,17 @@ public class StolenBlood extends AbstractBackstabCard {
     }
 
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.effectList.add(new BorderFlashEffect(Color.GOLD));
-        AbstractDungeon.actionManager.addToBottom(new SFXAction("RAGE"));
-        AbstractDungeon.actionManager.addToBottom(new SFXAction("CEILING_BOOM_1"));
-        AbstractDungeon.actionManager.addToBottom(
-                new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber), magicNumber));
+    public void applyPowers() {
+        super.applyPowers();
 
+        if (magicNumber == 1) {
+            rawDescription = DESCRIPTION;
+        } else {
+            rawDescription = UPGRADE_DESCRIPTION;
+        }
+
+        initializeDescription();
     }
-
 
     @Override
     public List<TooltipInfo> getCustomTooltips() {

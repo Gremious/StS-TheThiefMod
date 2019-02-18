@@ -14,12 +14,13 @@ import org.apache.logging.log4j.Logger;
 import thiefmod.ThiefMod;
 import thiefmod.actions.Util.DiscoverAndExhaustCard;
 import thiefmod.actions.Util.MakeSuperCopyAction;
-import thiefmod.cards.stolen.RareFind.StolenArsenal;
-import thiefmod.cards.stolen.RareFind.StolenBlood;
-import thiefmod.cards.stolen.RareFind.StolenCore;
-import thiefmod.cards.stolen.RareFind.StolenShadow;
+import thiefmod.cards.stolen.halation.rareFind.StolenMail;
+import thiefmod.cards.stolen.rareFind.StolenArsenal;
+import thiefmod.cards.stolen.rareFind.StolenBlood;
+import thiefmod.cards.stolen.rareFind.StolenCore;
+import thiefmod.cards.stolen.rareFind.StolenShadow;
 import thiefmod.cards.stolen.*;
-import thiefmod.cards.stolen.mystic.RareFind.stolenMysticalOrb;
+import thiefmod.cards.stolen.mystic.rareFind.stolenMysticalOrb;
 import thiefmod.cards.stolen.mystic.*;
 import thiefmod.patches.character.ThiefCardTags;
 import thiefmod.powers.Unique.FleetingGuiltPower;
@@ -106,6 +107,10 @@ public class StealCardAction extends AbstractGameAction {
 
     static {
         stolenCards = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+        int rollBlack = AbstractDungeon.cardRandomRng.random(99);
+        int rollRare = AbstractDungeon.cardRandomRng.random(99);
+
+        //-
         stolenCards.addToTop(new StolenShieldGenerator());
         stolenCards.addToTop(new StolenCode());
         stolenCards.addToTop(new StolenMegaphone());
@@ -131,8 +136,6 @@ public class StealCardAction extends AbstractGameAction {
         stolenCards.addToTop(new StolenToxins());
 
         // Rares:
-        int rollBlack = AbstractDungeon.cardRandomRng.random(99);
-        int rollRare = AbstractDungeon.cardRandomRng.random(99);
 
         if (rollRare < 75) {
             stolenCards.addToTop(new StolenShadow());
@@ -140,6 +143,7 @@ public class StealCardAction extends AbstractGameAction {
             stolenCards.addToTop(new StolenBlood());
             stolenCards.addToTop(new StolenCore());
         }
+
         //---
 
         if (hasConspire) {
@@ -158,12 +162,17 @@ public class StealCardAction extends AbstractGameAction {
         }
 
         //---
+
         if (hasHalation){
             ArrayList<AbstractCard> halationCards = new ArrayList<>();
 
             halationCards.add(CardLibrary.getCopy("halation:LetterOfAdmiration"));
             halationCards.add(CardLibrary.getCopy("halation:LetterOfRespect"));
             halationCards.add(CardLibrary.getCopy("halation:LetterOfLove"));
+
+            if (rollRare < 75) {
+                stolenCards.addToTop(new StolenMail());
+            }
 
             for (AbstractCard c : halationCards) {
                 if (c != null) {
@@ -224,8 +233,6 @@ public class StealCardAction extends AbstractGameAction {
 
         //---
 
-//        stolenCards.addToTop(CardLibrary.getColorSpecificCard(AbstractCardEnum.THIEF_GRAY, relicRng));
-
         if (hasMysticMod) {
             ArrayList<AbstractCard> customMysticCards = new ArrayList<>();
             ArrayList<AbstractCard> mysticCards = new ArrayList<>();
@@ -240,7 +247,7 @@ public class StealCardAction extends AbstractGameAction {
             mysticCards.add(cantripsGroup.get(AbstractDungeon.cardRandomRng.random(cantripsGroup.size() - 1)));
 
             // Rare:
-            if (rollBlack < 75) {
+            if (rollRare < 75) {
                 customMysticCards.add(new stolenMysticalOrb());
             }
 
@@ -252,7 +259,6 @@ public class StealCardAction extends AbstractGameAction {
             }
             for (AbstractCard c : customMysticCards) {
                 stolenCards.addToTop(c);
-
             }
         }
 

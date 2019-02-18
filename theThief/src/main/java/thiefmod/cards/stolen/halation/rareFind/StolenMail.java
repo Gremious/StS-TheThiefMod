@@ -1,9 +1,11 @@
-package thiefmod.cards.stolen.RareFind;
+package thiefmod.cards.stolen.halation.rareFind;
 
+import HalationCode.cards.LetterOfAdmiration;
+import HalationCode.cards.LetterOfLove;
+import HalationCode.cards.LetterOfRespect;
 import basemod.helpers.TooltipInfo;
 import com.badlogic.gdx.graphics.Color;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.defect.IncreaseMaxOrbAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -11,29 +13,29 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.CardFlashVfx;
+import com.megacrit.cardcrawl.vfx.combat.WeakParticleEffect;
 import thiefmod.ThiefMod;
+import thiefmod.actions.Util.MakeSuperCopyAction;
 import thiefmod.cards.AbstractBackstabCard;
 import thiefmod.patches.character.ThiefCardTags;
-import thiefmod.powers.Unique.StolenCorePower;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class StolenCore extends AbstractBackstabCard {
+public class StolenMail extends AbstractBackstabCard {
 
 
     // TEXT DECLARATION
 
-    public static final String ID = ThiefMod.makeID("StolenCore");
+    public static final String ID = ThiefMod.makeID("StolenMail");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
-    public static final String IMG = "thiefmodAssets/images/cards/beta/Attack.png";
+    public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_COMMON_ATTACK);
 
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String EXTENDED_DESCRIPTION[] = cardStrings.EXTENDED_DESCRIPTION;
-
     // /TEXT DECLARATION/
 
 
@@ -48,74 +50,47 @@ public class StolenCore extends AbstractBackstabCard {
     private static final int UPGRADE_COST = 1;
 
 
-    private static final int MAGIC = 1;
-    private static final int ORB_SLOTS = 3;
+    private static final int MAGIC = 3;
 
+    private static ArrayList<AbstractCard> letterCards = new ArrayList<>();
     // /STAT DECLARATION/
 
 
-    public StolenCore() {
+    public StolenMail() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        this.exhaust = true;
+        this.magicNumber = this.baseMagicNumber = MAGIC;
 
-        magicNumber = baseMagicNumber = MAGIC;
-        backstabNumber = baseBackstabNumber = ORB_SLOTS;
-
-
-     /* Straight up just doesn't work. But maybe one day it will. And when that happens, I'll be waiting. And I will uncomment this code. And my rare cards will look cool.
-
-        setBackgroundTexture("thiefmodAssets/images/512/special/blue_rare_skill_bg.png",
-                "thiefmodAssets/images/1024/special/blue_rare_skill_bg.png");
-
-        setOrbTexture("thiefmodAssets/images/512/card_thief_gray_orb.png",
-                "thiefmodAssets/images/1024/card_thief_gray_orb.png");
-
-    */
-
-        setBannerTexture("thiefmodAssets/images/512/special/rare_skill_banner.png",
-                "thiefmodAssets/images/1024/special/rare_skill_banner.png");
+        if (letterCards.size() == 0) {
+            letterCards.add(new LetterOfAdmiration());
+            letterCards.add(new LetterOfLove());
+            letterCards.add(new LetterOfRespect());
+        }
 
         tags.add(ThiefCardTags.STOLEN);
         tags.add(ThiefCardTags.RARE_FIND);
-        exhaust = true;
-
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.effectList.add(new BorderFlashEffect(Color.ROYAL));
+        AbstractDungeon.effectList.add(new BorderFlashEffect(Color.PINK));
+        AbstractDungeon.effectList.add(new WeakParticleEffect(this.current_x, this.current_y, 1.0f, 1.0f));
 
-        AbstractDungeon.actionManager.addToBottom(
-                new IncreaseMaxOrbAction(backstabNumber));
-
-        AbstractDungeon.actionManager.addToBottom(
-                new ApplyPowerAction(p, p, new StolenCorePower(p, p, magicNumber), 1));
-
+        for (AbstractCard c : letterCards) {
+            AbstractDungeon.actionManager.addToBottom(new MakeSuperCopyAction(c, p.hand));
+            AbstractDungeon.actionManager.addToBottom(new MakeSuperCopyAction(c, p.drawPile));
+            AbstractDungeon.actionManager.addToBottom(new MakeSuperCopyAction(c, p.discardPile));
+        }
     }
 
     @Override
     public void triggerWhenDrawn() {
-
         AbstractDungeon.effectList.add(new CardFlashVfx(this, Color.GOLD));
-
     }
 
     @Override
     public void triggerWhenCopied() {
-
         AbstractDungeon.effectList.add(new CardFlashVfx(this, Color.GOLD));
-    }
-
-    @Override
-    public void applyPowers() {
-        super.applyPowers();
-
-        if (magicNumber == 1) {
-            rawDescription = DESCRIPTION;
-        } else {
-            rawDescription = UPGRADE_DESCRIPTION;
-        }
-
-        initializeDescription();
     }
 
     @Override
@@ -127,12 +102,11 @@ public class StolenCore extends AbstractBackstabCard {
 
     @Override
     public void upgrade() {
-        if (!upgraded) {
-            upgradeName();
-
+        if (!this.upgraded) {
+            this.upgradeName();
             upgradeBaseCost(UPGRADE_COST);
-
-            initializeDescription();
+            rawDescription = UPGRADE_DESCRIPTION;
+            this.initializeDescription();
         }
     }
 }

@@ -1,4 +1,4 @@
-package thiefmod.cards.stolen.mystic.RareFind;
+package thiefmod.cards.stolen.mystic.rareFind;
 
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.AbstractCard;

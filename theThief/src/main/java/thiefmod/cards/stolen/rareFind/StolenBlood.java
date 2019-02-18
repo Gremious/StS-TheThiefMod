@@ -1,28 +1,30 @@
-package thiefmod.cards.stolen.RareFind;
+package thiefmod.cards.stolen.rareFind;
 
 import basemod.helpers.TooltipInfo;
 import com.badlogic.gdx.graphics.Color;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.CardFlashVfx;
 import thiefmod.ThiefMod;
-import thiefmod.actions.unique.StolenShadowAction;
 import thiefmod.cards.AbstractBackstabCard;
 import thiefmod.patches.character.ThiefCardTags;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class StolenShadow extends AbstractBackstabCard {
+public class StolenBlood extends AbstractBackstabCard {
 
 
     // TEXT DECLARATION
 
-    public static final String ID = ThiefMod.makeID("StolenShadow");
+    public static final String ID = ThiefMod.makeID("StolenBlood");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     public static final String IMG = "thiefmodAssets/images/cards/beta/Attack.png";
@@ -31,6 +33,7 @@ public class StolenShadow extends AbstractBackstabCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String EXTENDED_DESCRIPTION[] = cardStrings.EXTENDED_DESCRIPTION;
+
     // /TEXT DECLARATION/
 
 
@@ -44,29 +47,31 @@ public class StolenShadow extends AbstractBackstabCard {
     private static final int COST = 2;
     private static final int UPGRADE_COST = 1;
 
-    private static final int MAGIC = 1;
+
+    private static final int MAGIC = 8;
+
     // /STAT DECLARATION/
 
 
-    public StolenShadow() {
+    public StolenBlood() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+     /* Straight up just doesn't work. But maybe one day it will. And when that happens, I'll be waiting. And I will uncomment this code. And my rare cards will look cool.
 
-        magicNumber = baseMagicNumber = MAGIC;
+        setBackgroundTexture("thiefmodAssets/images/512/special/red_rare_skill_bg.png",
+                "thiefmodAssets/images/1024/special/red_rare_skill_bg.png");
 
+        setOrbTexture("thiefmodAssets/images/512/card_thief_gray_orb.png",
+                "thiefmodAssets/images/1024/card_thief_gray_orb.png");
+    */
         setBannerTexture("thiefmodAssets/images/512/special/rare_skill_banner.png",
                 "thiefmodAssets/images/1024/special/rare_skill_banner.png");
 
+        magicNumber = baseMagicNumber = MAGIC;
         tags.add(ThiefCardTags.STOLEN);
         tags.add(ThiefCardTags.RARE_FIND);
         exhaust = true;
     }
 
-    @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.effectList.add(new BorderFlashEffect(Color.BLACK));
-        AbstractDungeon.actionManager.addToBottom(new StolenShadowAction(p, magicNumber));
-
-    }
     @Override
     public void triggerWhenDrawn() {
 
@@ -79,6 +84,18 @@ public class StolenShadow extends AbstractBackstabCard {
 
         AbstractDungeon.effectList.add(new CardFlashVfx(this, Color.GOLD));
     }
+
+    @Override
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        AbstractDungeon.effectList.add(new BorderFlashEffect(Color.GOLD));
+        AbstractDungeon.actionManager.addToBottom(new SFXAction("RAGE"));
+        AbstractDungeon.actionManager.addToBottom(new SFXAction("CEILING_BOOM_1"));
+        AbstractDungeon.actionManager.addToBottom(
+                new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber), magicNumber));
+
+    }
+
+
     @Override
     public List<TooltipInfo> getCustomTooltips() {
         List<TooltipInfo> tips = new ArrayList<>();
@@ -93,7 +110,6 @@ public class StolenShadow extends AbstractBackstabCard {
 
             upgradeBaseCost(UPGRADE_COST);
 
-            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

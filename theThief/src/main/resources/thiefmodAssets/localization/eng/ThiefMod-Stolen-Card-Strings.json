@@ -197,5 +197,14 @@
       "[#FEE130]Rare[] [#FEE130]Find:[]",
       "[#FEE130]A[] [#FEE130]mystical[] [#FEE130]item[] [#FEE130]of[] [#FEE130]great[] [#FEE130]power[], [#FEE130]entirely[] [#FEE130]in[] [#FEE130]the[] [#FEE130]wrong[] [#FEE130]hands.[]"
     ]
+  },
+  "theThief:StolenMail": {
+    "NAME": "Stolen Mail",
+    "DESCRIPTION": "Add all 3 letters to your hand, draw, and discard pile.",
+    "UPGRADE_DESCRIPTION": "Add all 3 letters to your hand, draw, and discard pile.",
+    "EXTENDED_DESCRIPTION": [
+      "[#FEE130]Rare[] [#FEE130]Find:[]",
+      "[#FEE130]These[] [#FEE130]are[] [#FEE130]addressed[] [#FEE130]to[] [#FEE130]someone[] [#FEE130]very[] [#FEE130]important...[]"
+    ]
   }
 }
