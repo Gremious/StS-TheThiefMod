@@ -7,7 +7,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import thiefmod.actions.common.addRandomCardToHandAction;
+import thiefmod.actions.Util.MakeSuperCopyAction;
+import thiefmod.actions.Util.getRandomCardFromAnyColor;
 import thiefmod.patches.character.ThiefCardTags;
 
 public class StolenTechnique extends CustomCard {
@@ -62,7 +63,9 @@ public class StolenTechnique extends CustomCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new addRandomCardToHandAction(magicNumber));
+        new getRandomCardFromAnyColor(1, false);
+
+        AbstractDungeon.actionManager.addToBottom(new MakeSuperCopyAction(getRandomCardFromAnyColor.getRandomCard().get(0), p.hand));
 
     }
 

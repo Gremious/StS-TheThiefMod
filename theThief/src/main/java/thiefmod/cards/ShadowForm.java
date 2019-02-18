@@ -11,7 +11,6 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.patches.character.AbstractCardEnum;
 import thiefmod.patches.character.ThiefCardTags;
-import thiefmod.powers.Common.BackstabPower;
 import thiefmod.powers.Unique.ShadowFormPower;
 
 import java.util.ArrayList;
@@ -58,9 +57,8 @@ public class ShadowForm extends AbstractBackstabCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        final int count = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
 
-        if (count <= 1 || p.hasPower(BackstabPower.POWER_ID)) {
+        if (canBackstab()) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
                     new ShadowFormPower(p, backstabNumber), backstabNumber));
         } else {
