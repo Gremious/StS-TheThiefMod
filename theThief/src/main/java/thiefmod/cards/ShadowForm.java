@@ -77,10 +77,19 @@ public class ShadowForm extends AbstractBackstabCard {
     @Override
     public void applyPowers() {
         super.applyPowers();
-        if (AbstractDungeon.player.cardsPlayedThisTurn == 0) {
-            rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[2];
+        if (canBackstab()) {
+            if (upgraded) {
+                rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[2];
+            } else {
+                rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[4];
+            }
         } else {
-            rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[3];
+            if (upgraded) {
+                rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[3];
+            } else {
+                rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[5];
+            }
+
         }
         initializeDescription();
     }
