@@ -14,14 +14,12 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import thiefmod.actions.unique.QueueCardFrontAction;
-import thiefmod.actions.unique.ShadowFormPlayAction;
 import thiefmod.util.TextureLoader;
 
 import java.util.ArrayList;
 
+@Deprecated
 public class ShadowFormPower extends AbstractPower {
-    // Yep, this is literally crazy rituals. I think it's both a super fun mechanic and extremely fitting for the character,
-    // so thank you Beaked Mod for adding this, letting people use it, and commenting it!
 
     public static final String POWER_ID = thiefmod.ThiefMod.makeID("ShadowFormPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);

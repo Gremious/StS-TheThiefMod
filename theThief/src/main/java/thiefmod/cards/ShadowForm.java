@@ -18,7 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ShadowForm extends AbstractBackstabCard {
-//TODO: The strings don't display ethereal. Maybe upgrade should add backstab.
 
     // TEXT DECLARATION
 
@@ -63,8 +62,7 @@ public class ShadowForm extends AbstractBackstabCard {
 
         if (count <= 1 || p.hasPower(BackstabPower.POWER_ID)) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
-                    new ShadowFormPower(p, magicNumber * backstabNumber),
-                    magicNumber * backstabNumber));
+                    new ShadowFormPower(p, backstabNumber), backstabNumber));
         } else {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
                     new ShadowFormPower(p, magicNumber), magicNumber));

@@ -319,7 +319,7 @@ public class StealCardAction extends AbstractGameAction {
             } else {
                 return rareFinds;
             }
-        } else if (rollBlack < 10) {
+        } else if (rollBlack < 8) {
             if (upgraded || AbstractDungeon.player.hasPower(IllGottenGainsPower.POWER_ID)) {
                 return blackCardsUpgraded;
             } else {
