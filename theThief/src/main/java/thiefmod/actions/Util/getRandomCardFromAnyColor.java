@@ -29,16 +29,17 @@ public class getRandomCardFromAnyColor {
     public static ArrayList<AbstractCard> getListOfRandomCards() {
         ArrayList<AbstractCard> cardList = new ArrayList<>();
 
-        oneCard.freeToPlayOnce = freeToPlayOnce;
-
-        if (freeThisCombat) {
-            if (oneCard.cost != -2 && oneCard.cost != -1) {
-                oneCard.cost = 0;
-            }
-        }
-
         for (int i = 0; i < amount; i++) {
             cardList.add(generateRandomCard());
+        }
+        for (AbstractCard c : cardList) {
+            c.freeToPlayOnce = freeToPlayOnce;
+
+            if (freeThisCombat) {
+                if (c.cost != -2 && c.cost != -1) {
+                    c.cost = 0;
+                }
+            }
         }
 
         return cardList;
