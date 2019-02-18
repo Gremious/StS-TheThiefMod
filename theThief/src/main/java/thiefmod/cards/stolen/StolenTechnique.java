@@ -1,6 +1,7 @@
 package thiefmod.cards.stolen;
 
 import basemod.abstracts.CustomCard;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -10,6 +11,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.actions.Util.MakeSuperCopyAction;
 import thiefmod.actions.Util.getRandomCardFromAnyColor;
 import thiefmod.patches.character.ThiefCardTags;
+
+import java.util.ArrayList;
 
 public class StolenTechnique extends CustomCard {
 
@@ -62,8 +65,13 @@ public class StolenTechnique extends CustomCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        getRandomCardFromAnyColor randomCards = new getRandomCardFromAnyColor(1, true, false);
-        AbstractDungeon.actionManager.addToBottom(new MakeSuperCopyAction(randomCards.getListOfRandomCards().get(0), p.hand));
+        getRandomCardFromAnyColor randomCards = new getRandomCardFromAnyColor(1);
+
+        ArrayList<AbstractCard> cards = new ArrayList<>(randomCards.getListOfRandomCards());
+        AbstractCard card = cards.get(0);
+        card.freeToPlayOnce = true;
+
+        AbstractDungeon.actionManager.addToBottom(new MakeSuperCopyAction(card, p.hand));
 
     }
 

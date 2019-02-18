@@ -1,5 +1,6 @@
 package thiefmod.actions.Util;
 
+import basemod.BaseMod;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
@@ -126,8 +127,13 @@ public class MakeSuperCopyAction extends AbstractGameAction {
             AbstractDungeon.actionManager.addToTop(new SFXAction("CARD_OBTAIN"));
 
             if (addLocation == AbstractDungeon.player.hand) {
-                AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(c));
-                if (c.hasTag(ThiefCardTags.RARE_FIND)) AbstractDungeon.effectList.add(new CardFlashVfx(c, Color.GOLD));
+                if (AbstractDungeon.player.hand.size() < BaseMod.MAX_HAND_SIZE) {
+                    AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(c));
+                    if (c.hasTag(ThiefCardTags.RARE_FIND)) AbstractDungeon.effectList.add(new CardFlashVfx(c, Color.GOLD));
+                } else {
+                    AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(c));
+                    if (c.hasTag(ThiefCardTags.RARE_FIND)) AbstractDungeon.effectList.add(new CardFlashVfx(c, Color.GOLD));
+                }
 
             } else if (addLocation == AbstractDungeon.player.drawPile) {
                 AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(c, true, false));

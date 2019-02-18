@@ -12,18 +12,14 @@ import java.util.ArrayList;
 public class getRandomCardFromAnyColor {
     // Blatantly stolen (with permission) from the Beaked's Crazy rituals. Thank you very much guys!
     public static int amount;
-    public static boolean freeToPlayOnce;
-    public static boolean freeThisCombat;
 
     public static final Logger logger = LogManager.getLogger(ThiefMod.class.getName());
 
     private static ArrayList<AbstractCard> allCards;
     private static AbstractCard oneCard;
 
-    public getRandomCardFromAnyColor(int amount, boolean freeToPlayOnce, boolean freeThisCombat) {
+    public getRandomCardFromAnyColor(int amount) {
         this.amount = amount;
-        this.freeToPlayOnce = freeToPlayOnce;
-        this.freeThisCombat = freeThisCombat;
     }
 
     public static ArrayList<AbstractCard> getListOfRandomCards() {
@@ -32,16 +28,6 @@ public class getRandomCardFromAnyColor {
         for (int i = 0; i < amount; i++) {
             cardList.add(generateRandomCard());
         }
-        for (AbstractCard c : cardList) {
-            c.freeToPlayOnce = freeToPlayOnce;
-
-            if (freeThisCombat) {
-                if (c.cost != -2 && c.cost != -1) {
-                    c.cost = 0;
-                }
-            }
-        }
-
         return cardList;
     }
 

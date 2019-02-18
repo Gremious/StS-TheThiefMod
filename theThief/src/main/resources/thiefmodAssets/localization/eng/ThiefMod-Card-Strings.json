@@ -140,7 +140,10 @@
   "theThief:Exploit": {
     "NAME": "Exploit",
     "DESCRIPTION": "Deal !D! damage. If the enemy has any Debuff, gain [R] and draw !M! card next turn.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. If the enemy has any Debuff, gain [R] and draw !M! card next turn."
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. If the enemy has any Debuff, gain [R] and draw !M! card next turn.",
+    "EXTENDED_DESCRIPTION": [
+      "[#88888]Flavor[] [#88888]Text[]"
+    ]
   },
   "theThief:Follow-up": {
     "NAME": "Follow-up",

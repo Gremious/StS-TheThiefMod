@@ -53,6 +53,7 @@ public class DiscoverRandomFromArrayAction extends AbstractGameAction {
             tickDuration();
             return;
         }
+
         if (!retrieveCard) {
             if (AbstractDungeon.cardRewardScreen.discoveryCard != null) {
                 AbstractCard disCard = AbstractDungeon.cardRewardScreen.discoveryCard.makeStatEquivalentCopy();
