@@ -63,14 +63,10 @@ public class StealCardAction extends AbstractGameAction {
 
             if (random) {
                 cardsToAdd = getRandomStolenCards(amount, true);
-                for (int i = 0; i < amount; i++) {
-                    curseCounter();
-                }
 
-                for (int i = 0; i < copies; i++) {
+                for (int i = 0; i < amount; i++) curseCounter();
 
-                    addStolenCards();
-                }
+                for (int i = 0; i < copies; i++) addStolenCards();
 
                 cardsToAdd.clear();
             } else /*Discover*/ {
@@ -159,6 +155,22 @@ public class StealCardAction extends AbstractGameAction {
                 }
             }
 
+        }
+
+        //---
+        if (hasHalation){
+            ArrayList<AbstractCard> halationCards = new ArrayList<>();
+
+            halationCards.add(CardLibrary.getCopy("halation:LetterOfAdmiration"));
+            halationCards.add(CardLibrary.getCopy("halation:LetterOfRespect"));
+            halationCards.add(CardLibrary.getCopy("halation:LetterOfLove"));
+
+            for (AbstractCard c : halationCards) {
+                if (c != null) {
+                    c.name = STEAL_STRINGS[5] + c.name;
+                    stolenCards.addToTop(c);
+                }
+            }
         }
 
         //---

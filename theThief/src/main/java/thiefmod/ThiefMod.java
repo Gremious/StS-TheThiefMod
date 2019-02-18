@@ -54,18 +54,31 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
 
     // Check for crossover mods.
     public static final boolean hasConspire;
+    public static final boolean hasMysticMod;
+
+    public static final boolean hasHalation;
+
     public static final boolean hasHubris;
     public static final boolean hasReplayTheSpire;
     public static final boolean hasInfiniteSpire;
-    public static final boolean hasMysticMod;
-//  public static final boolean hasDisciple;
-//  public static final boolean hasBeaked;
+
 
     static {
         hasConspire = Loader.isModLoaded("conspire");
         if (hasConspire) {
             logger.info("Detected Replay The Spire");
         }
+        hasMysticMod = Loader.isModLoaded("MysticMod");
+        if (hasMysticMod) {
+            logger.info("Detected Mystic Mod");
+        }
+        hasHalation = Loader.isModLoaded("Halation");
+        if (hasHalation) {
+            logger.info("Detected Halation");
+        }
+
+
+
         hasReplayTheSpire = Loader.isModLoaded("ReplayTheSpireMod");
         if (hasReplayTheSpire) {
             logger.info("Detected Replay The Spire");
@@ -74,19 +87,9 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         if (hasHubris) {
             logger.info("Detected Hubris");
         }
-      /*
-       hasDisciple = Loader.isModLoaded("constructmod");
-        if (hasDisciple) {
-            logger.info("Detected ConstructMod");
-        }
-      */
         hasInfiniteSpire = Loader.isModLoaded("infinitespire");
         if (hasInfiniteSpire) {
             logger.info("Detected Infinite Spire");
-        }
-        hasMysticMod = Loader.isModLoaded("MysticMod");
-        if (hasMysticMod) {
-            logger.info("Detected Mystic Mod");
         }
     }
 
@@ -145,7 +148,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
 
     // =============== MAKE IMAGE PATHS =================
 
-     public static String makePowerPath(String resourcePath) {
+    public static String makePowerPath(String resourcePath) {
         return "thiefmodAssets/images/powers/" + resourcePath;
     }
 
