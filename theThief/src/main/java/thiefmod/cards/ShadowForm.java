@@ -53,11 +53,11 @@ public class ShadowForm extends AbstractBackstabCard {
         baseBackstabNumber = backstabNumber = BACKSTAB;
         tags.add(ThiefCardTags.BACKSTAB);
         tags.add(BaseModCardTags.FORM);
+        initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-
         if (canBackstab()) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
                     new ShadowFormPower(p, backstabNumber), backstabNumber));
@@ -72,6 +72,25 @@ public class ShadowForm extends AbstractBackstabCard {
         List<TooltipInfo> tips = new ArrayList<>();
         tips.add(new TooltipInfo(FLAVOR_STRINGS[0], EXTENDED_DESCRIPTION[0]));
         return tips;
+    }
+
+    @Override
+    public void initializeDescription() {
+        super.initializeDescription();
+
+        if (magicNumber == 1) {
+            if (!upgraded) {
+                rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[3];
+            } else {
+                rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[5];
+            }
+        } else {
+            if (!upgraded) {
+                rawDescription = EXTENDED_DESCRIPTION[2] + EXTENDED_DESCRIPTION[3];
+            } else {
+                rawDescription = EXTENDED_DESCRIPTION[2] + EXTENDED_DESCRIPTION[5];
+            }
+        }
     }
 
     @Override

@@ -39,16 +39,17 @@ public class ShadowFormPower extends AbstractPower {
 
     @Override
     public void atStartOfTurn() {
-        getRandomCardFromAnyColor randomCards = new getRandomCardFromAnyColor(3, false, true);
-
-       AbstractDungeon.actionManager.addToBottom(new DiscoverRandomFromArrayAction(randomCards.getListOfRandomCards(), 3));
+        for (int i = 0; i < amount; i++) {
+            getRandomCardFromAnyColor randomCards = new getRandomCardFromAnyColor(3, false, true);
+            AbstractDungeon.actionManager.addToBottom(new DiscoverRandomFromArrayAction(randomCards.getListOfRandomCards(), 3));
+        }
     }
 
     @Override
     public void updateDescription() {
         if (amount == 1) {
             description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
-        } else if (amount > 1) {
+        } else {
             description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
         }
     }
