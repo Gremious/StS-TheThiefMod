@@ -50,16 +50,12 @@ public class StolenMail extends AbstractBackstabCard {
     private static final int UPGRADE_COST = 1;
 
 
-    private static final int MAGIC = 3;
-
     private static ArrayList<AbstractCard> letterCards = new ArrayList<>();
     // /STAT DECLARATION/
 
 
     public StolenMail() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.exhaust = true;
-        this.magicNumber = this.baseMagicNumber = MAGIC;
 
         if (letterCards.size() == 0) {
             letterCards.add(new LetterOfAdmiration());
@@ -69,6 +65,8 @@ public class StolenMail extends AbstractBackstabCard {
 
         tags.add(ThiefCardTags.STOLEN);
         tags.add(ThiefCardTags.RARE_FIND);
+
+        this.exhaust = true;
     }
 
     @Override

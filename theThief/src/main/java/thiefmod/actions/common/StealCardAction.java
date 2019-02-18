@@ -14,14 +14,14 @@ import org.apache.logging.log4j.Logger;
 import thiefmod.ThiefMod;
 import thiefmod.actions.Util.DiscoverAndExhaustCard;
 import thiefmod.actions.Util.MakeSuperCopyAction;
+import thiefmod.cards.stolen.*;
 import thiefmod.cards.stolen.halation.rareFind.StolenMail;
+import thiefmod.cards.stolen.mystic.rareFind.stolenMysticalOrb;
+import thiefmod.cards.stolen.mystic.*;
 import thiefmod.cards.stolen.rareFind.StolenArsenal;
 import thiefmod.cards.stolen.rareFind.StolenBlood;
 import thiefmod.cards.stolen.rareFind.StolenCore;
 import thiefmod.cards.stolen.rareFind.StolenShadow;
-import thiefmod.cards.stolen.*;
-import thiefmod.cards.stolen.mystic.rareFind.stolenMysticalOrb;
-import thiefmod.cards.stolen.mystic.*;
 import thiefmod.patches.character.ThiefCardTags;
 import thiefmod.powers.Unique.FleetingGuiltPower;
 import thiefmod.powers.Unique.IllGottenGainsPower;
@@ -40,10 +40,12 @@ public class StealCardAction extends AbstractGameAction {
     public static final String KEYWORD_STRINGS[] = uiKeywordStrings.TEXT;
     public static final String STEAL_STRINGS[] = uiStealStrings.TEXT;
 
-    private boolean random;
-    private boolean upgraded;
-    private CardGroup location;
-    private int copies;
+    public boolean random;
+    public boolean upgraded;
+    public CardGroup location;
+    public int copies;
+
+    private static int rollRare = AbstractDungeon.cardRandomRng.random(99);
 
     private ArrayList<AbstractCard> cardsToAdd = new ArrayList<>();
 
@@ -102,47 +104,45 @@ public class StealCardAction extends AbstractGameAction {
 
 // ========================
 
-    // Cardpool of non-upgraded cards.
+    // Cardpool of stolen cards.
     private static CardGroup stolenCards;
 
     static {
         stolenCards = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
         int rollBlack = AbstractDungeon.cardRandomRng.random(99);
-        int rollRare = AbstractDungeon.cardRandomRng.random(99);
 
-        //-
+        //--
+
+        // Silent:
+        stolenCards.addToTop(new StolenBlades());
+        stolenCards.addToTop(new StolenWire());
+        stolenCards.addToTop(new StolenTrap());
+        stolenCards.addToTop(new StolenToxins());
+        stolenCards.addToTop(new StolenMoves());
+        stolenCards.addToTop(new StolenMomentum());
+
+        // Ironclad:
+        stolenCards.addToTop(new StolenArmor());
+        stolenCards.addToTop(new StolenWeapon());
+        stolenCards.addToTop(new StolenAttitude());
+        stolenCards.addToTop(new StolenMastery());
+        stolenCards.addToTop(new StolenChaos());
+
+        //Defect:
         stolenCards.addToTop(new StolenShieldGenerator());
         stolenCards.addToTop(new StolenCode());
         stolenCards.addToTop(new StolenMegaphone());
         stolenCards.addToTop(new StolenTV());
         stolenCards.addToTop(new StolenClaws());
         stolenCards.addToTop(new StolenOrb());
-        stolenCards.addToTop(new StolenArmor());
-        stolenCards.addToTop(new StolenWeapon());
-        stolenCards.addToTop(new StolenAttitude());
-        stolenCards.addToTop(new StolenMastery());
-        stolenCards.addToTop(new StolenChaos());
-        stolenCards.addToTop(new StolenMoves());
+
+        // Thief
         stolenCards.addToTop(new StolenGold());
         stolenCards.addToTop(new StolenCandy());
-        stolenCards.addToTop(new StolenMomentum());
         stolenCards.addToTop(new StolenArtifice());
         stolenCards.addToTop(new StolenTechnique());
         stolenCards.addToTop(new StolenChange());
         stolenCards.addToTop(new StolenRitual());
-        stolenCards.addToTop(new StolenBlades());
-        stolenCards.addToTop(new StolenWire());
-        stolenCards.addToTop(new StolenTrap());
-        stolenCards.addToTop(new StolenToxins());
-
-        // Rares:
-
-        if (rollRare < 75) {
-            stolenCards.addToTop(new StolenShadow());
-            stolenCards.addToTop(new StolenArsenal());
-            stolenCards.addToTop(new StolenBlood());
-            stolenCards.addToTop(new StolenCore());
-        }
 
         //---
 
@@ -163,16 +163,38 @@ public class StealCardAction extends AbstractGameAction {
 
         //---
 
-        if (hasHalation){
+        if (hasMysticMod) {
+            ArrayList<AbstractCard> customMysticCards = new ArrayList<>();
+            ArrayList<AbstractCard> mysticCards = new ArrayList<>();
+
+            customMysticCards.add(new stolenSpellScroll());
+            customMysticCards.add(new stolenArteScroll());
+            customMysticCards.add(new stolenMysticalSpellbook());
+            customMysticCards.add(new stolenBookOfArte());
+            customMysticCards.add(new stolenMagicCantrip());
+            customMysticCards.add(new stolenBagOfMagicCantrips());
+            mysticCards.add(CardLibrary.getCopy("mysticmod:MagicMissile"));
+            mysticCards.add(cantripsGroup.get(AbstractDungeon.cardRandomRng.random(cantripsGroup.size() - 1)));
+
+            for (AbstractCard c : mysticCards) {
+                if (c != null) {
+                    c.name = STEAL_STRINGS[5] + c.name;
+                    stolenCards.addToTop(c);
+                }
+            }
+            for (AbstractCard c : customMysticCards) {
+                stolenCards.addToTop(c);
+            }
+        }
+
+        //---
+
+        if (hasHalation) {
             ArrayList<AbstractCard> halationCards = new ArrayList<>();
 
             halationCards.add(CardLibrary.getCopy("halation:LetterOfAdmiration"));
             halationCards.add(CardLibrary.getCopy("halation:LetterOfRespect"));
             halationCards.add(CardLibrary.getCopy("halation:LetterOfLove"));
-
-            if (rollRare < 75) {
-                stolenCards.addToTop(new StolenMail());
-            }
 
             for (AbstractCard c : halationCards) {
                 if (c != null) {
@@ -232,44 +254,11 @@ public class StealCardAction extends AbstractGameAction {
         }
 
         //---
-
-        if (hasMysticMod) {
-            ArrayList<AbstractCard> customMysticCards = new ArrayList<>();
-            ArrayList<AbstractCard> mysticCards = new ArrayList<>();
-
-            customMysticCards.add(new stolenSpellScroll());
-            customMysticCards.add(new stolenArteScroll());
-            customMysticCards.add(new stolenMysticalSpellbook());
-            customMysticCards.add(new stolenBookOfArte());
-            customMysticCards.add(new stolenMagicCantrip());
-            customMysticCards.add(new stolenBagOfMagicCantrips());
-            mysticCards.add(CardLibrary.getCopy("mysticmod:MagicMissile"));
-            mysticCards.add(cantripsGroup.get(AbstractDungeon.cardRandomRng.random(cantripsGroup.size() - 1)));
-
-            // Rare:
-            if (rollRare < 75) {
-                customMysticCards.add(new stolenMysticalOrb());
-            }
-
-            for (AbstractCard c : mysticCards) {
-                if (c != null) {
-                    c.name = STEAL_STRINGS[5] + c.name;
-                    stolenCards.addToTop(c);
-                }
-            }
-            for (AbstractCard c : customMysticCards) {
-                stolenCards.addToTop(c);
-            }
-        }
-
-        //---
     }
 
-
-    // Card pool of upgraded cards.
+    // Card pool of upgraded stolen cards.
     private static CardGroup stolenCardsUpgraded;
-
-    {
+    static {
         stolenCardsUpgraded = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
         for (AbstractCard c : stolenCards.group) {
             AbstractCard upgradedCopy = c.makeCopy();
@@ -279,12 +268,48 @@ public class StealCardAction extends AbstractGameAction {
     }
 
 
+    // Card pool of rare find stolen cards
+    private static CardGroup rareFinds;
+    static {
+        rareFinds = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+
+        rareFinds.addToTop(new StolenArsenal());
+        // Silent Rare Card Idea: Add a copy of every silent unplayable discard card to your hand/deck/draw.
+        // At the start of each turn, discard and redraw your hand.
+        rareFinds.addToTop(new StolenBlood());
+        rareFinds.addToTop(new StolenCore());
+        rareFinds.addToTop(new StolenShadow());
+
+        if (hasMysticMod) rareFinds.addToTop(new stolenMysticalOrb());
+        if (hasHalation) rareFinds.addToTop(new StolenMail());
+    }
+
+
+    // Card pool of rare find stolen cards
+    private static CardGroup rareFindsUpgraded;
+    static {
+        rareFindsUpgraded = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+        for (AbstractCard c : rareFinds.group) {
+            AbstractCard upgradedCopy = c.makeCopy();
+            upgradedCopy.upgrade();
+            rareFindsUpgraded.addToTop(upgradedCopy);
+        }
+    }
+
     // CardGroup to be called that decides whether the stolen cards to add are upgraded or not.
     private CardGroup allStolenCards() {
-        if (upgraded || AbstractDungeon.player.hasPower(IllGottenGainsPower.POWER_ID)) {
-            return stolenCardsUpgraded;
+        if (rollRare < 25) {
+            if (upgraded || AbstractDungeon.player.hasPower(IllGottenGainsPower.POWER_ID)) {
+                return rareFindsUpgraded;
+            } else {
+                return rareFinds;
+            }
         } else {
-            return stolenCards;
+            if (upgraded || AbstractDungeon.player.hasPower(IllGottenGainsPower.POWER_ID)) {
+                return stolenCardsUpgraded;
+            } else {
+                return stolenCards;
+            }
         }
     }
 
