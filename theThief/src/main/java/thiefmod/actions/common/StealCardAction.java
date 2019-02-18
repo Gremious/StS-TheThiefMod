@@ -46,6 +46,7 @@ public class StealCardAction extends AbstractGameAction {
     public int copies;
 
     private static int rollRare = AbstractDungeon.cardRandomRng.random(99);
+    private static int rollBlack = AbstractDungeon.cardRandomRng.random(99);
 
     private ArrayList<AbstractCard> cardsToAdd = new ArrayList<>();
 
@@ -109,9 +110,6 @@ public class StealCardAction extends AbstractGameAction {
 
     static {
         stolenCards = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-        int rollBlack = AbstractDungeon.cardRandomRng.random(99);
-
-        //--
 
         // Silent:
         stolenCards.addToTop(new StolenBlades());
@@ -205,6 +203,54 @@ public class StealCardAction extends AbstractGameAction {
         }
 
         //---
+    }
+
+    // Card pool of upgraded stolen cards.
+    private static CardGroup stolenCardsUpgraded;
+
+    static {
+        stolenCardsUpgraded = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+        for (AbstractCard c : stolenCards.group) {
+            AbstractCard upgradedCopy = c.makeCopy();
+            upgradedCopy.upgrade();
+            stolenCardsUpgraded.addToTop(upgradedCopy);
+        }
+    }
+
+
+    // Card pool of rare find stolen cards
+    private static CardGroup rareFinds;
+
+    static {
+        rareFinds = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+
+        rareFinds.addToTop(new StolenArsenal());
+        // Silent Rare Card Idea: Add a copy of every silent unplayable discard card to your hand/deck/draw.
+        // At the start of each turn, discard and redraw your hand.
+        rareFinds.addToTop(new StolenBlood());
+        rareFinds.addToTop(new StolenCore());
+        rareFinds.addToTop(new StolenShadow());
+
+        if (hasMysticMod) rareFinds.addToTop(new stolenMysticalOrb());
+        if (hasHalation) rareFinds.addToTop(new StolenMail());
+    }
+
+    // Card pool of upgraded rare finds
+    private static CardGroup rareFindsUpgraded;
+
+    static {
+        rareFindsUpgraded = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+        for (AbstractCard c : rareFinds.group) {
+            AbstractCard upgradedCopy = c.makeCopy();
+            upgradedCopy.upgrade();
+            rareFindsUpgraded.addToTop(upgradedCopy);
+        }
+    }
+
+    private static CardGroup blackCards;
+
+    static {
+        blackCards = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
 
         if (hasHubris || hasInfiniteSpire || hasReplayTheSpire) {
             if (rollBlack < 25) {
@@ -252,57 +298,32 @@ public class StealCardAction extends AbstractGameAction {
                 }
             }
         }
-
-        //---
     }
 
-    // Card pool of upgraded stolen cards.
-    private static CardGroup stolenCardsUpgraded;
+    private static CardGroup blackCardsUpgraded;
+
     static {
-        stolenCardsUpgraded = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-        for (AbstractCard c : stolenCards.group) {
+        blackCardsUpgraded = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+        for (AbstractCard c : blackCards.group) {
             AbstractCard upgradedCopy = c.makeCopy();
             upgradedCopy.upgrade();
-            stolenCardsUpgraded.addToTop(upgradedCopy);
-        }
-    }
-
-
-    // Card pool of rare find stolen cards
-    private static CardGroup rareFinds;
-    static {
-        rareFinds = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-
-        rareFinds.addToTop(new StolenArsenal());
-        // Silent Rare Card Idea: Add a copy of every silent unplayable discard card to your hand/deck/draw.
-        // At the start of each turn, discard and redraw your hand.
-        rareFinds.addToTop(new StolenBlood());
-        rareFinds.addToTop(new StolenCore());
-        rareFinds.addToTop(new StolenShadow());
-
-        if (hasMysticMod) rareFinds.addToTop(new stolenMysticalOrb());
-        if (hasHalation) rareFinds.addToTop(new StolenMail());
-    }
-
-
-    // Card pool of rare find stolen cards
-    private static CardGroup rareFindsUpgraded;
-    static {
-        rareFindsUpgraded = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-        for (AbstractCard c : rareFinds.group) {
-            AbstractCard upgradedCopy = c.makeCopy();
-            upgradedCopy.upgrade();
-            rareFindsUpgraded.addToTop(upgradedCopy);
+            blackCardsUpgraded.addToTop(upgradedCopy);
         }
     }
 
     // CardGroup to be called that decides whether the stolen cards to add are upgraded or not.
     private CardGroup allStolenCards() {
-        if (rollRare < 25) {
+        if (rollRare < 15) {
             if (upgraded || AbstractDungeon.player.hasPower(IllGottenGainsPower.POWER_ID)) {
                 return rareFindsUpgraded;
             } else {
                 return rareFinds;
+            }
+        } else if (rollBlack < 10) {
+            if (upgraded || AbstractDungeon.player.hasPower(IllGottenGainsPower.POWER_ID)) {
+                return blackCardsUpgraded;
+            } else {
+                return blackCards;
             }
         } else {
             if (upgraded || AbstractDungeon.player.hasPower(IllGottenGainsPower.POWER_ID)) {
@@ -315,10 +336,10 @@ public class StealCardAction extends AbstractGameAction {
 
     // Grab random stolen cards
     private ArrayList<AbstractCard> getRandomStolenCards(int amount, boolean allowDuplicates) {
-
         ArrayList<AbstractCard> randomCards = new ArrayList<>();
 
         while (randomCards.size() < amount) { // Grab only the amount specified. While we don't have 'amount'
+
             AbstractCard card = allStolenCards().getRandomCard(true); // Get a random upgraded/non-upgraded card.
             if (allowDuplicates || !randomCards.contains(card)) { // So long as we can get duplicates OR the card isn't a duplicate.
                 if (!card.hasTag(ThiefCardTags.STOLEN)) {
