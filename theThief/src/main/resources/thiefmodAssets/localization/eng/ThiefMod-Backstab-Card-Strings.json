@@ -139,16 +139,16 @@
   },
   "theThief:ShadowForm": {
     "NAME": "Shadow Form",
-    "DESCRIPTION": "At the start of your turn, Discover !M! random card from any color. NL It costs 0 this combat. NL Backstab: Play !theThief:Magic! instead. NL Ethereal.",
-    "UPGRADE_DESCRIPTION": "At the start of your turn, play a random card from any color. NL Backstab: Play !theThief:Magic! instead.",
+    "DESCRIPTION": "At the start of your turn, Discover !M! random card from any color. NL It costs 0 this combat. NL Backstab: Discover !theThief:Magic! instead. NL Ethereal.",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, Discover !M! random card from any color. NL It costs 0 this combat. NL Backstab: Discover !theThief:Magic! instead.",
     "EXTENDED_DESCRIPTION": [
       "[#FEE130]Embrace[] [#FEE130]your[] [#FEE130]true[] [#FEE130]form.[]",
       "At the start of each turn, Discover !M! random card from any color. NL It costs 0 this combat. ",
       "At the start of each turn, Discover !M! random cards from any color. NL They costs 0 this combat. ",
-      " NL Backstab: Discover !theThief:Magic! instead",
-      " NL Backstab: [#fa5555]Discover[] !theThief:Magic! [#fa5555]instead.[]",
       " NL Backstab: Discover !theThief:Magic! instead NL Ethereal.",
-      " NL Backstab: [#fa5555]Discover[] !theThief:Magic! [#fa5555]instead.[] NL Ethereal."
+      " NL Backstab: [#fa5555]Discover[] !theThief:Magic! [#fa5555]instead.[] NL Ethereal.",
+      " NL Backstab: Discover !theThief:Magic! instead",
+      " NL Backstab: [#fa5555]Discover[] !theThief:Magic! [#fa5555]instead.[]"
     ]
   }
 }

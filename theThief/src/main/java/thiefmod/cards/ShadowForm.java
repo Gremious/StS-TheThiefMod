@@ -74,41 +74,38 @@ public class ShadowForm extends AbstractBackstabCard {
         return tips;
     }
 
-    @Override
-    public void initializeDescription() {
-        super.initializeDescription();
-
-        if (magicNumber == 1) {
-            if (!upgraded) {
-                rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[3];
-            } else {
-                rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[5];
-            }
-        } else {
-            if (!upgraded) {
-                rawDescription = EXTENDED_DESCRIPTION[2] + EXTENDED_DESCRIPTION[3];
-            } else {
-                rawDescription = EXTENDED_DESCRIPTION[2] + EXTENDED_DESCRIPTION[5];
-            }
-        }
-    }
 
     @Override
     public void applyPowers() {
         super.applyPowers();
         if (canBackstab()) {
-            if (upgraded) {
-                rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[2];
+            if (magicNumber == 1) {
+                if (!upgraded) {
+                    rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[3];
+                } else {
+                    rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[5];
+                }
             } else {
-                rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[4];
+                if (!upgraded) {
+                    rawDescription = EXTENDED_DESCRIPTION[2] + EXTENDED_DESCRIPTION[3];
+                } else {
+                    rawDescription = EXTENDED_DESCRIPTION[2] + EXTENDED_DESCRIPTION[5];
+                }
             }
         } else {
-            if (upgraded) {
-                rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[3];
+            if (magicNumber == 1) {
+                if (!upgraded) {
+                    rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[4];
+                } else {
+                    rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[6];
+                }
             } else {
-                rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[5];
+                if (!upgraded) {
+                    rawDescription = EXTENDED_DESCRIPTION[2] + EXTENDED_DESCRIPTION[4];
+                } else {
+                    rawDescription = EXTENDED_DESCRIPTION[2] + EXTENDED_DESCRIPTION[6];
+                }
             }
-
         }
         initializeDescription();
     }
@@ -120,6 +117,7 @@ public class ShadowForm extends AbstractBackstabCard {
         if (!upgraded) {
             isEthereal = false;
             upgradeName();
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }
