@@ -101,7 +101,7 @@ public class MakeSuperCopyAction extends AbstractGameAction {
                             logger.info("Adding " + c + " with Ethereal.");
                         }
                     }
-                } else if (keyword.equals(KEYWORD_STRINGS[6])) {
+                } else if (keyword.equals(KEYWORD_STRINGS[6])) { // makeStatEquivCopy does preserve cost, but not "Unplayable." description.
                     if (removeKeyword) {
                         if (c.cost == -2) {
                             if (setCost != null) {
