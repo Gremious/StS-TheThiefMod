@@ -32,7 +32,7 @@ public class Murder extends AbstractBackstabCard {
 // TEXT DECLARATION
 
     public static final String ID = ThiefMod.makeID("Murder.");
-    public static final String IMG = "thiefmodAssets/images/cards/beta/Attack.png";
+    public static final String IMG = "thiefmodAssets/images/cards/beta/Attack.png"; // The art should be a detailed super close-up on the mask with red evil eyes.
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
