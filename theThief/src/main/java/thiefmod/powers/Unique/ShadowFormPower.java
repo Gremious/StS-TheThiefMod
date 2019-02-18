@@ -17,6 +17,7 @@ public class ShadowFormPower extends AbstractPower {
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
+    private getRandomCardFromAnyColor randomCards = new getRandomCardFromAnyColor(3, false, true);
 
 
     private static final Texture tex84 = TextureLoader.getTexture("thiefmodAssets/images/powers/84/ShadowFormPower.png");
@@ -42,7 +43,7 @@ public class ShadowFormPower extends AbstractPower {
     public void atStartOfTurn() {
         new getRandomCardFromAnyColor(3, false, false);
 
-        AbstractDungeon.actionManager.addToBottom(new DiscoverRandomFromArrayAction(getRandomCardFromAnyColor.getRandomCard(), 3));
+        AbstractDungeon.actionManager.addToBottom(new DiscoverRandomFromArrayAction(randomCards.getRandomCard(), 3));
     }
 
     @Override
