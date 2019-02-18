@@ -20,18 +20,14 @@ public class getRandomCardFromAnyColor {
     private static ArrayList<AbstractCard> allCards;
     private static AbstractCard oneCard;
 
-    public getRandomCardFromAnyColor(int amount, boolean freeToPlayOnce) {
-        this(amount, freeToPlayOnce, false);
-    }
-
     public getRandomCardFromAnyColor(int amount, boolean freeToPlayOnce, boolean freeThisCombat) {
         this.amount = amount;
         this.freeToPlayOnce = freeToPlayOnce;
         this.freeThisCombat = freeThisCombat;
     }
 
-    public static ArrayList<AbstractCard> getRandomCard() {
-        ArrayList<AbstractCard> handCards = new ArrayList<>();
+    public static ArrayList<AbstractCard> getListOfRandomCards() {
+        ArrayList<AbstractCard> cardList = new ArrayList<>();
 
         oneCard.freeToPlayOnce = freeToPlayOnce;
 
@@ -42,10 +38,10 @@ public class getRandomCardFromAnyColor {
         }
 
         for (int i = 0; i < amount; i++) {
-            handCards.add(generateRandomCard());
+            cardList.add(generateRandomCard());
         }
 
-        return handCards;
+        return cardList;
     }
 
     public static AbstractCard generateRandomCard() {

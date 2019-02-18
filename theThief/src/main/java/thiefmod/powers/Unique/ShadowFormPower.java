@@ -2,6 +2,7 @@ package thiefmod.powers.Unique;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -10,6 +11,8 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import thiefmod.actions.Util.DiscoverRandomFromArrayAction;
 import thiefmod.actions.Util.getRandomCardFromAnyColor;
 import thiefmod.util.TextureLoader;
+
+import java.util.ArrayList;
 
 public class ShadowFormPower extends AbstractPower {
 
@@ -41,7 +44,9 @@ public class ShadowFormPower extends AbstractPower {
     public void atStartOfTurn() {
         getRandomCardFromAnyColor randomCards = new getRandomCardFromAnyColor(3, false, true);
 
-        AbstractDungeon.actionManager.addToBottom(new DiscoverRandomFromArrayAction(randomCards.getRandomCard(), 3));
+        ArrayList<AbstractCard> cards = new ArrayList<>(randomCards.getListOfRandomCards());
+
+        AbstractDungeon.actionManager.addToBottom(new DiscoverRandomFromArrayAction(cards, 3));
     }
 
     @Override

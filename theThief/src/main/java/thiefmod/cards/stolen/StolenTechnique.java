@@ -48,7 +48,6 @@ public class StolenTechnique extends CustomCard {
     private static final int UPGRADED_PLUS_MAGIC = 1;
 
     // /STAT DECLARATION/
-    private getRandomCardFromAnyColor randomCards = new getRandomCardFromAnyColor(1, false);
 
     public StolenTechnique() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
@@ -63,8 +62,8 @@ public class StolenTechnique extends CustomCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-
-        AbstractDungeon.actionManager.addToBottom(new MakeSuperCopyAction(randomCards.getRandomCard().get(0), p.hand));
+        getRandomCardFromAnyColor randomCards = new getRandomCardFromAnyColor(1, true, false);
+        AbstractDungeon.actionManager.addToBottom(new MakeSuperCopyAction(randomCards.getListOfRandomCards().get(0), p.hand));
 
     }
 
