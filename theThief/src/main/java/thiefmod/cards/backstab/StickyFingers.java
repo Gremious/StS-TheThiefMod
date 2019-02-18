@@ -1,5 +1,6 @@
 package thiefmod.cards.backstab;
 
+import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -13,6 +14,9 @@ import thiefmod.cards.AbstractBackstabCard;
 import thiefmod.patches.character.AbstractCardEnum;
 import thiefmod.patches.character.ThiefCardTags;
 import thiefmod.powers.Common.BackstabPower;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class StickyFingers extends AbstractBackstabCard {
 
@@ -85,6 +89,12 @@ public class StickyFingers extends AbstractBackstabCard {
         }
 
         initializeDescription();
+    }
+    @Override
+    public List<TooltipInfo> getCustomTooltips() {
+        List<TooltipInfo> tips = new ArrayList<>();
+        tips.add(new TooltipInfo(FLAVOR_STRINGS[0], EXTENDED_DESCRIPTION[0]));
+        return tips;
     }
 
     //Upgraded stats.

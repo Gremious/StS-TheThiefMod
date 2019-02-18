@@ -1,5 +1,6 @@
 package thiefmod.cards;
 
+import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
@@ -13,7 +14,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
 import thiefmod.patches.character.AbstractCardEnum;
 
-public class SwiftSlash extends AbstractBackstabCard {
+import java.util.ArrayList;
+import java.util.List;
+
+public class  SwiftSlash extends AbstractBackstabCard {
 
 
 // TEXT DECLARATION
@@ -67,6 +71,12 @@ public class SwiftSlash extends AbstractBackstabCard {
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, magicNumber));
     }
 
+    @Override
+    public List<TooltipInfo> getCustomTooltips() {
+        List<TooltipInfo> tips = new ArrayList<>();
+        tips.add(new TooltipInfo(FLAVOR_STRINGS[0], EXTENDED_DESCRIPTION[0]));
+        return tips;
+    }
 
     @Override
     public void applyPowers() {

@@ -5,7 +5,9 @@ import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.StartupCard;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.GraveField;
 import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
@@ -15,6 +17,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
 import thiefmod.ThiefMod;
 import thiefmod.patches.character.AbstractCardEnum;
 
@@ -52,7 +55,7 @@ public class ShadowCalamity extends AbstractBackstabCard implements StartupCard 
 
     private static final int MAGIC = 1;
     private static final int DAMAGE = 30;
-    private static final int UPGRADE_PLUS_DAMAGE = 40;
+    private static final int UPGRADE_PLUS_DAMAGE = 10;
 
 // /STAT DECLARATION/
 
@@ -64,6 +67,7 @@ public class ShadowCalamity extends AbstractBackstabCard implements StartupCard 
 
         magicNumber = baseMagicNumber = MAGIC;
         baseDamage = DAMAGE;
+        isMultiDamage = true;
     }
 
     // Actions the card should do.
@@ -77,10 +81,10 @@ public class ShadowCalamity extends AbstractBackstabCard implements StartupCard 
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        AbstractDungeon.actionManager.addToBottom(
+                new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_HEAVY));
 
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(
-                m, new DamageInfo(p, damage, damageTypeForTurn),
-                AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+
     }
 
     @Override
