@@ -23,7 +23,7 @@ public class ShadowForm extends AbstractBackstabCard {
     // TEXT DECLARATION
 
     public static final String ID = thiefmod.ThiefMod.makeID("ShadowForm");
-    public static final String IMG = "thiefmodAssets/images/cards/beta/ShadowForm.png";
+    public static final String IMG = "thiefmodAssets/images/cards/ShadowForm2.png";
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:TooltipNames");
