@@ -13,6 +13,9 @@ import com.megacrit.cardcrawl.powers.PoisonPower;
 import thiefmod.ThiefMod;
 import thiefmod.patches.character.ThiefCardTags;
 
+import thiefmod.CardNoSeen;
+
+@CardNoSeen
 public class StolenToxins extends CustomCard {
 
     // TEXT DECLARATION 

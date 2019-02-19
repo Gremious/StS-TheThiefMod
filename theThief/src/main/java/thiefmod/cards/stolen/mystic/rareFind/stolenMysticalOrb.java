@@ -17,7 +17,10 @@ import thiefmod.patches.character.ThiefCardTags;
 
 import java.util.ArrayList;
 
-public class stolenMysticalOrb extends AbstractBackstabCard {
+import thiefmod.CardNoSeen;
+
+@CardNoSeen
+public class StolenMysticalOrb extends AbstractBackstabCard {
 
     // TEXT DECLARATION
     private Color mysticPurple = new Color(152.0F, 34.0F, 171.0F, 1.0F);

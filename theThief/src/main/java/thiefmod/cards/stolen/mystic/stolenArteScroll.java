@@ -14,6 +14,9 @@ import thiefmod.patches.character.ThiefCardTags;
 
 import java.util.ArrayList;
 
+import thiefmod.CardNoSeen;
+
+@CardNoSeen
 public class stolenArteScroll extends AbstractBackstabCard {
 
     // TEXT DECLARATION

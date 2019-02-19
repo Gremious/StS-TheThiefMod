@@ -8,11 +8,14 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import thiefmod.CardNoSeen;
 import thiefmod.ThiefMod;
 import thiefmod.actions.unique.StolenArmorAction;
 import thiefmod.cards.AbstractBackstabCard;
 import thiefmod.patches.character.ThiefCardTags;
 
+
+@CardNoSeen
 public class StolenArmor extends AbstractBackstabCard {
 
 

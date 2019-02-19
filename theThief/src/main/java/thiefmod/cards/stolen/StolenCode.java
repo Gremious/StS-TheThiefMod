@@ -11,6 +11,9 @@ import thiefmod.cards.AbstractBackstabCard;
 import thiefmod.patches.character.ThiefCardTags;
 import thiefmod.powers.Unique.StolenCodeButWaitPower;
 
+import thiefmod.CardNoSeen;
+
+@CardNoSeen
 public class StolenCode extends AbstractBackstabCard {
 
 

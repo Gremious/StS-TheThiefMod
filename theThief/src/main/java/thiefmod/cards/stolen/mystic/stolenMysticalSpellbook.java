@@ -10,6 +10,9 @@ import thiefmod.ThiefMod;
 import thiefmod.cards.AbstractBackstabCard;
 import thiefmod.patches.character.ThiefCardTags;
 
+import thiefmod.CardNoSeen;
+
+@CardNoSeen
 public class stolenMysticalSpellbook extends AbstractBackstabCard {
 
     // TEXT DECLARATION

@@ -12,6 +12,9 @@ import com.megacrit.cardcrawl.powers.EnergizedPower;
 import thiefmod.ThiefMod;
 import thiefmod.patches.character.ThiefCardTags;
 
+import thiefmod.CardNoSeen;
+
+@CardNoSeen
 public class StolenArtifice extends CustomCard {
 
 // TEXT DECLARATION 

@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.CardFlashVfx;
 import com.megacrit.cardcrawl.vfx.combat.WeakParticleEffect;
+import thiefmod.CardNoSeen;
 import thiefmod.ThiefMod;
 import thiefmod.actions.Util.MakeSuperCopyAction;
 import thiefmod.cards.AbstractBackstabCard;
@@ -22,6 +23,9 @@ import thiefmod.patches.character.ThiefCardTags;
 import java.util.ArrayList;
 import java.util.List;
 
+import thiefmod.CardNoSeen;
+
+@CardNoSeen
 public class StolenMail extends AbstractBackstabCard {
 
 

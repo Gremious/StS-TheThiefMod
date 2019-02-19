@@ -15,6 +15,9 @@ import java.util.ArrayList;
 
 import static mysticmod.MysticMod.cantripsGroup;
 
+import thiefmod.CardNoSeen;
+
+@CardNoSeen
 public class stolenBagOfMagicCantrips extends AbstractBackstabCard {
 
     // TEXT DECLARATION

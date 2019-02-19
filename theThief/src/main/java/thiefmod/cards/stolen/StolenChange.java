@@ -12,6 +12,9 @@ import thiefmod.ThiefMod;
 import thiefmod.patches.character.ThiefCardTags;
 import thiefmod.powers.Common.RefundCardCostPower;
 
+import thiefmod.CardNoSeen;
+
+@CardNoSeen
 public class StolenChange extends CustomCard {
 
 

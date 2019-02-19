@@ -11,6 +11,9 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
 import thiefmod.patches.character.ThiefCardTags;
 
+import thiefmod.CardNoSeen;
+
+@CardNoSeen
 public class StolenTrap extends CustomCard {
 
 

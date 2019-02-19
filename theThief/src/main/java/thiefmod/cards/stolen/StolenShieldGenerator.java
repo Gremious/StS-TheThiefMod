@@ -13,6 +13,9 @@ import thiefmod.patches.character.ThiefCardTags;
 
 import java.util.Iterator;
 
+import thiefmod.CardNoSeen;
+
+@CardNoSeen
 public class StolenShieldGenerator extends AbstractBackstabCard {
 
 

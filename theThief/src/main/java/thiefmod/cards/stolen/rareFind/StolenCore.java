@@ -19,6 +19,9 @@ import thiefmod.powers.Unique.StolenCorePower;
 import java.util.ArrayList;
 import java.util.List;
 
+import thiefmod.CardNoSeen;
+
+@CardNoSeen
 public class StolenCore extends AbstractBackstabCard {
 
 
