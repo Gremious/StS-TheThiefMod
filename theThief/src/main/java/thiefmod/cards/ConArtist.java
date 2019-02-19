@@ -22,7 +22,7 @@ public class ConArtist extends AbstractBackstabCard {
 // TEXT DECLARATION
 
     public static final String ID = ThiefMod.makeID("Liar");
-    public static final String IMG = "thiefmodAssets/images/cards/beta/Attack.png";
+    public static final String IMG = "thiefmodAssets/images/cards/beta/ConArtist.png";
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -53,9 +53,7 @@ public class ConArtist extends AbstractBackstabCard {
 
     public ConArtist() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-
-        isInnate = false;
-        magicNumber = baseMagicNumber = MAGIC;
+          magicNumber = baseMagicNumber = MAGIC;
     }
 
     // Actions the card should do.
