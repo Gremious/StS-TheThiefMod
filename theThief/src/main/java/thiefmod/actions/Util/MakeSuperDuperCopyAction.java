@@ -6,11 +6,9 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.localization.Keyword;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.vfx.cardManip.CardFlashVfx;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDiscardEffect;
@@ -21,10 +19,13 @@ import org.apache.logging.log4j.Logger;
 import thiefmod.ThiefMod;
 import thiefmod.patches.character.ThiefCardTags;
 
-public class MakeSuperCopyAction extends AbstractGameAction {
+@Deprecated
+public class MakeSuperDuperCopyAction extends AbstractGameAction {
     public static final Logger logger = LogManager.getLogger(ThiefMod.class.getName());
 
     private AbstractCard c;
+    private int amount;
+
     private CardGroup addLocation;
     private String keyword;
     private Integer setCost;
@@ -32,40 +33,32 @@ public class MakeSuperCopyAction extends AbstractGameAction {
     public static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:MakeSuperCopyAction");
     public static final String KEYWORD_STRINGS[] = uiStrings.TEXT;
 
-    public MakeSuperCopyAction(AbstractCard c, final CardGroup addLocation) {
-        this(c, null, false, addLocation);
-    }
-
-    public MakeSuperCopyAction(AbstractCard c, final String keyword, final CardGroup addLocation) {
-        this(c, keyword, false, addLocation);
-    }
-
-    public MakeSuperCopyAction(AbstractCard c, final String keyword, boolean removeKeyword, final CardGroup addLocation) {
-        actionType = ActionType.CARD_MANIPULATION;
-        duration = Settings.ACTION_DUR_FAST;
-        this.c = c.makeStatEquivalentCopy();
-        this.addLocation = addLocation;
-        this.keyword = keyword;
-        this.removeKeyword = removeKeyword;
-    }
 
     /**
      * Will not change the card if it already has/doesn't have the keyword, respectively of what you're using the action for.
      *
      * @param c             the card that needs to be Copied.
-     * @param keyword       can be "Exhaust", "Ethereal", "Unplayable". Use KEYWORD_STRINGS[] from theThief:MakeSuperCopyAction in UIString;
+     * @param keyword       use KeywordEnums
      * @param setCost       Will change the card cost.
      * @param removeKeyword Will remove the keyword instead of adding it.
+     * @param randomSpot    If adding to deck or discard, should it add to a random spot or to the top?
+     * @param amount        How many copies this action will add.
      * @param addLocation   Hand, Draw and Discard pile groups from AbstractDungeon.player
      */
-    public MakeSuperCopyAction(AbstractCard c, final String keyword, Integer setCost, boolean removeKeyword, final CardGroup addLocation) {
-        actionType = ActionType.CARD_MANIPULATION;
+    public MakeSuperDuperCopyAction(AbstractCard c, final String keyword, boolean removeKeyword, Integer setCost, int amount, final CardGroup addLocation, boolean randomSpot) {
         duration = Settings.ACTION_DUR_FAST;
+        actionType = ActionType.CARD_MANIPULATION;
+
         this.c = c.makeStatEquivalentCopy();
-        this.addLocation = addLocation;
         this.keyword = keyword;
-        this.setCost = setCost;
         this.removeKeyword = removeKeyword;
+        this.setCost = setCost;
+        this.amount = amount;
+        this.addLocation = addLocation;
+    }
+
+    public static class KeywordEnums {
+        public static enum KEYWORD {Exhaust, Ethereal, Unplayable, Innate,}
     }
 
     public void update() {
