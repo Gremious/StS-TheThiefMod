@@ -47,7 +47,7 @@ public class Pickpocket extends CustomCard {
     private static final int UPGRADE_PLUS_DAMAGE = 2;
 
     private static final int MAGIC = 7;
-    private static final int UPGRADED_PLUS_MAGIC = 11;
+    private static final int UPGRADED_PLUS_MAGIC = 4;
 
 
 // /STAT DECLARATION/

@@ -37,6 +37,9 @@ public class RetrievalAction extends AbstractGameAction {
 
             AbstractDungeon.actionManager.addToBottom(new MoveCardsAction(p.hand, p.limbo, Predicate.isEqual(c))); // ? Who knows.
             System.out.println("Limbo to hand added.");
+
+            AbstractDungeon.player.hand.refreshHandLayout();
+            AbstractDungeon.player.hand.glowCheck();
         }
         isDone = true;
     }

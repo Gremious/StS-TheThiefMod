@@ -66,6 +66,7 @@ public class RetrievalPower extends AbstractPower {
     @Override
     public void atStartOfTurn() {
         count = 0;
+        updateDescription();
     }
 
     @Override
