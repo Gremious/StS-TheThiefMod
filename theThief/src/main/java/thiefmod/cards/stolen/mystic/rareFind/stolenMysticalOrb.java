@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import thiefmod.CardNoSeen;
 
 @CardNoSeen
-public class StolenMysticalOrb extends AbstractBackstabCard {
+public class stolenMysticalOrb extends AbstractBackstabCard {
 
     // TEXT DECLARATION
     private Color mysticPurple = new Color(152.0F, 34.0F, 171.0F, 1.0F);

@@ -1,5 +1,6 @@
 package thiefmod.actions.common;
 
+import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -98,18 +99,21 @@ public class StealCardAction extends AbstractGameAction {
 
             AbstractDungeon.actionManager.actions.add(new MakeSuperCopyAction(c, KEYWORD_STRINGS[0], location));
 
-
-            //TODO: Test whether or not having a full hand breaks this.
         }
     }
 
 // ========================
 
+    public static class StolenEnum {
+        @SpireEnum
+        public static CardGroup.CardGroupType STOLEN_CARDS;
+    }
+
     // Cardpool of stolen cards.
     private static CardGroup stolenCards;
 
     static {
-        stolenCards = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+        stolenCards = new CardGroup(StolenEnum.STOLEN_CARDS);
 
         // Silent:
         stolenCards.addToTop(new StolenBlades());
@@ -209,7 +213,7 @@ public class StealCardAction extends AbstractGameAction {
     private static CardGroup stolenCardsUpgraded;
 
     static {
-        stolenCardsUpgraded = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+        stolenCardsUpgraded = new CardGroup(StolenEnum.STOLEN_CARDS);
         for (AbstractCard c : stolenCards.group) {
             AbstractCard upgradedCopy = c.makeCopy();
             upgradedCopy.upgrade();
@@ -222,7 +226,7 @@ public class StealCardAction extends AbstractGameAction {
     private static CardGroup rareFinds;
 
     static {
-        rareFinds = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+        rareFinds = new CardGroup(StolenEnum.STOLEN_CARDS);
 
         rareFinds.addToTop(new StolenArsenal());
         // Silent Rare Card Idea: Add a copy of every silent unplayable discard card to your hand/deck/draw.
@@ -239,7 +243,7 @@ public class StealCardAction extends AbstractGameAction {
     private static CardGroup rareFindsUpgraded;
 
     static {
-        rareFindsUpgraded = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+        rareFindsUpgraded = new CardGroup(StolenEnum.STOLEN_CARDS);
         for (AbstractCard c : rareFinds.group) {
             AbstractCard upgradedCopy = c.makeCopy();
             upgradedCopy.upgrade();
@@ -250,7 +254,7 @@ public class StealCardAction extends AbstractGameAction {
     private static CardGroup blackCards;
 
     static {
-        blackCards = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+        blackCards = new CardGroup(StolenEnum.STOLEN_CARDS);
 
         if (hasHubris || hasInfiniteSpire || hasReplayTheSpire) {
             if (rollBlack < 25) {
@@ -303,7 +307,7 @@ public class StealCardAction extends AbstractGameAction {
     private static CardGroup blackCardsUpgraded;
 
     static {
-        blackCardsUpgraded = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+        blackCardsUpgraded = new CardGroup(StolenEnum.STOLEN_CARDS);
         for (AbstractCard c : blackCards.group) {
             AbstractCard upgradedCopy = c.makeCopy();
             upgradedCopy.upgrade();

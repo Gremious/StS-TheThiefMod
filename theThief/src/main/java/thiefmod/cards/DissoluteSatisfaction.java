@@ -23,7 +23,7 @@ public class DissoluteSatisfaction extends AbstractBackstabCard {
 // TEXT DECLARATION
 
     public static final String ID = ThiefMod.makeID("DissoluteSatisfaction");
-    public static final String IMG = "thiefmodAssets/images/cards/beta/DissoluteSatisfaction.png";
+    public static final String IMG = "thiefmodAssets/images/cards/DissoluteSatisfaction.png";
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
