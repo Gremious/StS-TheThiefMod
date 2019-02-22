@@ -1,7 +1,6 @@
 package thiefmod.cards;
 
 import basemod.helpers.TooltipInfo;
-import com.evacipated.cardcrawl.mod.hubris.patches.PiercingPatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -64,7 +63,7 @@ public class SerratedDagger extends AbstractBackstabCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         AbstractDungeon.actionManager.addToBottom(new DamageAction(
-                m, new DamageInfo(p, damage, PiercingPatch.PIERCING), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+                m, new DamageInfo(p, damage, thiefmod.patches.PiercingPatch.PIERCING), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
 
         CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.LOW, ScreenShake.ShakeDur.SHORT, true); // Screen Effect
 
