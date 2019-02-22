@@ -61,26 +61,21 @@ public class StealCardAction extends AbstractGameAction {
         this.copies = copies;
     }
 
-
     @Override
     public void update() {
         if (duration == Settings.ACTION_DUR_FAST) {
 
             if (random) {
                 cardsToAdd = getRandomStolenCards(amount, true);
-
                 for (int i = 0; i < amount; i++) curseCounter();
-
                 for (int i = 0; i < copies; i++) addStolenCards();
 
                 cardsToAdd.clear();
             } else /*Discover*/ {
                 if (amount > 0) {
                     amount--;
-
                     AbstractDungeon.actionManager.addToBottom(
                             new DiscoverAndExhaustCard(getRandomStolenCards(3, false), 3, copies));
-
                     curseCounter();
                     return; // Don't tickDuration, So that we can keep spamming the discover screen == amount of cards requested.
                 }
@@ -92,11 +87,8 @@ public class StealCardAction extends AbstractGameAction {
 
     // Add the stolen cards to whatever location your heart desires.
     private void addStolenCards() {
-
         for (AbstractCard c : cardsToAdd) {
             logger.info("addStolenCards() adding card " + c + " to " + location.toString());
-            //    c.unhover();
-
             AbstractDungeon.actionManager.actions.add(new MakeSuperCopyAction(c, KEYWORD_STRINGS[0], location));
 
         }
@@ -175,6 +167,7 @@ public class StealCardAction extends AbstractGameAction {
             customMysticCards.add(new stolenBookOfArte());
             customMysticCards.add(new stolenMagicCantrip());
             customMysticCards.add(new stolenBagOfMagicCantrips());
+
             mysticCards.add(CardLibrary.getCopy("mysticmod:MagicMissile"));
             mysticCards.add(cantripsGroup.get(AbstractDungeon.cardRandomRng.random(cantripsGroup.size() - 1)));
 
@@ -201,6 +194,31 @@ public class StealCardAction extends AbstractGameAction {
             for (AbstractCard c : halationCards) {
                 if (c != null) {
                     c.name = STEAL_STRINGS[5] + c.name;
+                    stolenCards.addToTop(c);
+                }
+            }
+        }
+
+        if (hasDisciple) {
+            ArrayList<AbstractCard> discipleCards = new ArrayList<>();
+            ArrayList<AbstractCard> customDiscipleCards = new ArrayList<>();
+            discipleCards.add(CardLibrary.getCopy("Echoward"));
+            discipleCards.add(CardLibrary.getCopy("SlimeSpray"));
+            discipleCards.add(CardLibrary.getCopy("Accruing"));
+
+            customDiscipleCards.add(CardLibrary.getCopy("halation:LetterOfLove"));
+
+            for (AbstractCard c : discipleCards) {
+                if (c != null) {
+
+                    if (!c.cardID.equals("Accruing")) {
+                        c.name = STEAL_STRINGS[5] + c.name;
+                    }
+
+                    if (c.cardID.equals("Accruing")) {
+                        c.name = STEAL_STRINGS[6];
+                    }
+
                     stolenCards.addToTop(c);
                 }
             }
@@ -315,7 +333,9 @@ public class StealCardAction extends AbstractGameAction {
         }
     }
 
-    // CardGroup to be called that decides whether the stolen cards to add are upgraded or not.
+    // ========================
+
+    // A final group of the cards to return.
     private CardGroup allStolenCards() {
         if (rollRare < 15) {
             if (upgraded || AbstractDungeon.player.hasPower(IllGottenGainsPower.POWER_ID)) {
@@ -323,7 +343,7 @@ public class StealCardAction extends AbstractGameAction {
             } else {
                 return rareFinds;
             }
-        } else if (rollBlack < 8) {
+        } else if ((hasHubris || hasInfiniteSpire || hasReplayTheSpire) && rollBlack < 8) {
             if (upgraded || AbstractDungeon.player.hasPower(IllGottenGainsPower.POWER_ID)) {
                 return blackCardsUpgraded;
             } else {
@@ -342,7 +362,7 @@ public class StealCardAction extends AbstractGameAction {
     private ArrayList<AbstractCard> getRandomStolenCards(int amount, boolean allowDuplicates) {
         ArrayList<AbstractCard> randomCards = new ArrayList<>();
 
-        while (randomCards.size() < amount) { // Grab only the amount specified. While we don't have 'amount'
+        while (randomCards.size() < amount) { // Grab only the amount specified. While we don't have 'amount'...
 
             AbstractCard card = allStolenCards().getRandomCard(true); // Get a random upgraded/non-upgraded card.
             if (allowDuplicates || !randomCards.contains(card)) { // So long as we can get duplicates OR the card isn't a duplicate.

@@ -55,8 +55,14 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
     // Check for crossover mods.
     public static final boolean hasConspire;
     public static final boolean hasMysticMod;
-
     public static final boolean hasHalation;
+    public static final boolean hasDisciple;
+    //public static final boolean hasGatherer;
+    //public static final boolean hasServant;
+    //public static final boolean hasSlimebound;
+
+    //public static final boolean hasClockwork;
+    //public static final boolean hasMarisa?;
 
     public static final boolean hasHubris;
     public static final boolean hasReplayTheSpire;
@@ -75,6 +81,10 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         hasHalation = Loader.isModLoaded("Halation");
         if (hasHalation) {
             logger.info("Detected Halation");
+        }
+        hasDisciple = Loader.isModLoaded("chronomuncher");
+        if (hasDisciple) {
+            logger.info("Detected the Disciple");
         }
 
 

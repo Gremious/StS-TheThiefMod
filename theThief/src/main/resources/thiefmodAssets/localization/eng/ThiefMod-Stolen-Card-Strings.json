@@ -206,5 +206,14 @@
       "[#FEE130]Rare[] [#FEE130]Find:[]",
       "[#FEE130]These[] [#FEE130]are[] [#FEE130]addressed[] [#FEE130]to[] [#FEE130]someone[] [#FEE130]very[] [#FEE130]important...[]"
     ]
+  },
+  "theThief:StolenClock": {
+    "NAME": "Stolen Clock",
+    "DESCRIPTION": "Add a #yPattern #yShift to your hand. NL It cannot leave your hand.",
+    "UPGRADE_DESCRIPTION": "Add a #yPattern #yShift to your hand. NL It cannot leave your hand.",
+    "EXTENDED_DESCRIPTION": [
+      "[#FEE130]Rare[] [#FEE130]Find:[]",
+      "[#FEE130]You[] [#FEE130]can[] [#FEE130]feel[] [#FEE130]the[] [#FEE130]waves[] [#FEE130]of[] [#FEE130]time[] [#FEE130]flowing[] [#FEE130]through[] [#FEE130]it.[]"
+    ]
   }
 }
