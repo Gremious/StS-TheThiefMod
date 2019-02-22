@@ -242,5 +242,11 @@
       "When you draw a void, gain ",
       " [E]"
     ]
+  },
+  "theThief:StolenClockPower": {
+    "NAME": "StolenClockPower",
+    "DESCRIPTIONS": [
+      "You shouldn't be seeing this. This is a hidden power. Add #yPattern #yShift to your hand all the time."
+    ]
   }
 }

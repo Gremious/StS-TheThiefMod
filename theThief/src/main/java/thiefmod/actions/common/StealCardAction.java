@@ -16,6 +16,7 @@ import thiefmod.ThiefMod;
 import thiefmod.actions.Util.DiscoverAndExhaustCard;
 import thiefmod.actions.Util.MakeSuperCopyAction;
 import thiefmod.cards.stolen.*;
+import thiefmod.cards.stolen.disciple.rareFind.StolenClock;
 import thiefmod.cards.stolen.halation.rareFind.StolenMail;
 import thiefmod.cards.stolen.mystic.rareFind.stolenMysticalOrb;
 import thiefmod.cards.stolen.mystic.*;
@@ -201,12 +202,10 @@ public class StealCardAction extends AbstractGameAction {
 
         if (hasDisciple) {
             ArrayList<AbstractCard> discipleCards = new ArrayList<>();
-            ArrayList<AbstractCard> customDiscipleCards = new ArrayList<>();
+
             discipleCards.add(CardLibrary.getCopy("Echoward"));
             discipleCards.add(CardLibrary.getCopy("SlimeSpray"));
             discipleCards.add(CardLibrary.getCopy("Accruing"));
-
-            customDiscipleCards.add(CardLibrary.getCopy("halation:LetterOfLove"));
 
             for (AbstractCard c : discipleCards) {
                 if (c != null) {
@@ -255,6 +254,7 @@ public class StealCardAction extends AbstractGameAction {
 
         if (hasMysticMod) rareFinds.addToTop(new stolenMysticalOrb());
         if (hasHalation) rareFinds.addToTop(new StolenMail());
+        if (hasDisciple) rareFinds.addToTop(new StolenClock());
     }
 
     // Card pool of upgraded rare finds

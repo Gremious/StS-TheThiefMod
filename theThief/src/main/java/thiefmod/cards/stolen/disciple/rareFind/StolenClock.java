@@ -1,17 +1,21 @@
 package thiefmod.cards.stolen.disciple.rareFind;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import basemod.helpers.TooltipInfo;
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
+import com.megacrit.cardcrawl.vfx.cardManip.CardFlashVfx;
 import thiefmod.ThiefMod;
 import thiefmod.cards.AbstractBackstabCard;
-import thiefmod.powers.Unique.SimilarSkillsPower;
+import thiefmod.powers.Unique.StolenClockPower;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class StolenClock extends AbstractBackstabCard {
 
@@ -26,6 +30,7 @@ public class StolenClock extends AbstractBackstabCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+    public static final String EXTENDED_DESCRIPTION[] = cardStrings.EXTENDED_DESCRIPTION;
 
     // /TEXT DECLARATION/
 
@@ -38,9 +43,7 @@ public class StolenClock extends AbstractBackstabCard {
     public static final CardColor COLOR = CardColor.COLORLESS;
 
     private static final int COST = 1;
-
-    private static final int MAGIC = 5;
-    private static final int UPGRADED_PLUS_MAGIC = 7;
+    private static final int UPGRADED_COST = 0;
 
 
     // /STAT DECLARATION/
@@ -48,27 +51,41 @@ public class StolenClock extends AbstractBackstabCard {
 
     public StolenClock() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = MAGIC;
+        this.exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        AbstractDungeon.effectList.add(new BorderFlashEffect(Color.BROWN));
 
         AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+                new ApplyPowerAction(p, p, new StolenClockPower(p, 1), 0));
+    }
 
-        AbstractDungeon.actionManager.addToBottom(
-                new ApplyPowerAction(p, p, new SimilarSkillsPower(p, this.magicNumber), this.magicNumber));
+    @Override
+    public void triggerWhenDrawn() {
+        AbstractDungeon.effectList.add(new CardFlashVfx(this, Color.BROWN));
+    }
 
+    @Override
+    public void triggerWhenCopied() {
+        AbstractDungeon.effectList.add(new CardFlashVfx(this, Color.BROWN));
+    }
+
+    @Override
+    public List<TooltipInfo> getCustomTooltips() {
+        List<TooltipInfo> tips = new ArrayList<>();
+        tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[0], EXTENDED_DESCRIPTION[1]));
+        return tips;
     }
 
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
-//          rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+        if (!upgraded) {
+            upgradeName();
+            upgradeBaseCost(UPGRADED_COST);
+            rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }
