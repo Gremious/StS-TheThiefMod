@@ -3,6 +3,7 @@ package thiefmod.cards.stolen.disciple.rareFind;
 import basemod.helpers.TooltipInfo;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -57,7 +58,7 @@ public class StolenClock extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.effectList.add(new BorderFlashEffect(Color.BROWN));
-
+        AbstractDungeon.actionManager.addToTop(new SFXAction("POWER_TIME_WARP"));
         AbstractDungeon.actionManager.addToBottom(
                 new ApplyPowerAction(p, p, new StolenClockPower(p, 1), 0));
     }

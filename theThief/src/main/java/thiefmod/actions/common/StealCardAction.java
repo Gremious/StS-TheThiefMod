@@ -315,6 +315,30 @@ public class StealCardAction extends AbstractGameAction {
                 }
                 for (AbstractCard c : blackCards) {
                     if (c != null) {
+
+                        if (!c.cardID.equals("infinitespire:Collect")
+                                && !c.cardID.equals("infinitespire:Fortify")
+                                && !c.cardID.equals("infinitespire:Gouge")
+                                && !c.cardID.equals("infinitespire:Menacing")
+                                && !c.cardID.equals("infinitespire:TheBestDefense")
+                                && !c.cardID.equals("ReplayTheSpireMod:Echoes of Time")) {
+                            c.name = STEAL_STRINGS[5] + c.name;
+                        }
+
+                        if (c.cardID.equals("infinitespire:Collect")) {
+                            c.name = STEAL_STRINGS[5] + STEAL_STRINGS[7];
+                        } else if (c.cardID.equals("infinitespire:Fortify")) {
+                            c.name = STEAL_STRINGS[5] + STEAL_STRINGS[8];
+                        } else if (c.cardID.equals("infinitespire:Gouge")) {
+                            c.name = STEAL_STRINGS[5] + STEAL_STRINGS[9];
+                        } else if (c.cardID.equals("infinitespire:Menacing")) {
+                            c.name = STEAL_STRINGS[5] + STEAL_STRINGS[10];
+                        } else if (c.cardID.equals("infinitespire:TheBestDefense")) {
+                            c.name = STEAL_STRINGS[5] + STEAL_STRINGS[11];
+                        } else if (c.cardID.equals("ReplayTheSpireMod:Echoes of Time")) {
+                            c.name = STEAL_STRINGS[5] + STEAL_STRINGS[12];
+                        }
+
                         stolenCards.addToTop(c);
                     }
                 }
