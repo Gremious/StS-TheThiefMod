@@ -79,6 +79,15 @@
             <systemPath>C:/My Stuff/Games/Steam/steamapps/workshop/content/646570/1609846039/TheDisciple.jar</systemPath>
         </dependency>
         <dependency>
+            <groupId>BlackRuseMods</groupId>
+            <artifactId>StS-BlackRuse</artifactId>
+            <version>0.9.3</version>
+            <scope>system</scope>
+            <systemPath>C:/My Stuff/Games/Steam/steamapps/workshop/content/646570/1615745539/BlackRuseMod.jar</systemPath>
+        </dependency>
+
+
+        <dependency>
             <groupId>ReplayTheSpireMod</groupId>
             <artifactId>ReplayTheSpireMod</artifactId>
             <version>4.0.0</version>

@@ -131,7 +131,7 @@ public class StealCardAction extends AbstractGameAction {
         stolenCards.addToTop(new StolenClaws());
         stolenCards.addToTop(new StolenOrb());
 
-        // Thief
+        // Thief/General
         stolenCards.addToTop(new StolenGold());
         stolenCards.addToTop(new StolenCandy());
         stolenCards.addToTop(new StolenArtifice());
@@ -212,17 +212,31 @@ public class StealCardAction extends AbstractGameAction {
 
                     if (!c.cardID.equals("Accruing")) {
                         c.name = STEAL_STRINGS[5] + c.name;
-                    }
-
-                    if (c.cardID.equals("Accruing")) {
-                        c.name = STEAL_STRINGS[6];
+                    } else {
+                        c.name = STEAL_STRINGS[5] + STEAL_STRINGS[6];
                     }
 
                     stolenCards.addToTop(c);
                 }
             }
         }
+        if (hasServant) {
+            ArrayList<AbstractCard> servantCards = new ArrayList<>();
 
+            servantCards.add(CardLibrary.getCopy("Contraction"));
+            servantCards.add(CardLibrary.getCopy("Deadline"));
+            servantCards.add(CardLibrary.getCopy("Misdirection"));
+            servantCards.add(CardLibrary.getCopy("Moondial"));
+
+            for (AbstractCard c : servantCards) {
+                if (c != null) {
+                    if (!c.cardID.equals("Misdirection")) {
+                        c.name = STEAL_STRINGS[5] + c.name;
+                    }
+                    stolenCards.addToTop(c);
+                }
+            }
+        }
         //---
     }
 
@@ -255,6 +269,7 @@ public class StealCardAction extends AbstractGameAction {
         if (hasMysticMod) rareFinds.addToTop(new stolenMysticalOrb());
         if (hasHalation) rareFinds.addToTop(new StolenMail());
         if (hasDisciple) rareFinds.addToTop(new StolenClock());
+        if (hasServant) rareFinds.addToTop(new StolenClock());
     }
 
     // Card pool of upgraded rare finds

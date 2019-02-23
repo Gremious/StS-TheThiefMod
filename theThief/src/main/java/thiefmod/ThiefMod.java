@@ -57,8 +57,8 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
     public static final boolean hasMysticMod;
     public static final boolean hasHalation;
     public static final boolean hasDisciple;
+    public static final boolean hasServant;
     //public static final boolean hasGatherer;
-    //public static final boolean hasServant;
     //public static final boolean hasSlimebound;
 
     //public static final boolean hasClockwork;
@@ -72,7 +72,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
     static {
         hasConspire = Loader.isModLoaded("conspire");
         if (hasConspire) {
-            logger.info("Detected Replay The Spire");
+            logger.info("Detected conspire");
         }
         hasMysticMod = Loader.isModLoaded("MysticMod");
         if (hasMysticMod) {
@@ -86,7 +86,10 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         if (hasDisciple) {
             logger.info("Detected the Disciple");
         }
-
+        hasServant = Loader.isModLoaded("StS-BlackRuse");
+        if (hasServant) {
+            logger.info("Detected the Servant");
+        }
 
 
         hasReplayTheSpire = Loader.isModLoaded("ReplayTheSpireMod");
@@ -123,23 +126,17 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
     private static final String ENERGY_ORB_DEAFULT_GRAY = "512/card_thief_gray_orb.png";
     private static final String CARD_ENERGY_ORB = "512/card_small_orb.png";
 
-    private static final String ATTACK_DEAFULT_GRAY_PORTRAIT = "1024/bg_attack_thief_gray.png";
-    private static final String POWER_DEAFULT_GRAY_PORTRAIT = "1024/bg_power_thief_gray.png";
-    private static final String SKILL_DEAFULT_GRAY_PORTRAIT = "1024/bg_skill_thief_gray.png";
-    private static final String ENERGY_ORB_DEAFULT_GRAY_PORTRAIT = "1024/card_thief_gray_orb.png";
+    private static final String ATTACK_BG_THIEF_GRAY = "1024/bg_attack_thief_gray.png";
+    private static final String POWER_BG_THIEF_GRAY = "1024/bg_power_thief_gray.png";
+    private static final String SKILL_BG_THIEF_GRAY = "1024/bg_skill_thief_gray.png";
+    private static final String ENERY_ORB_BIG_THIEF = "1024/card_thief_gray_orb.png";
 
     // Card images
-
     public static final String DEFAULT_COMMON_ATTACK = "cards/beta/Attack.png";
-    public static final String DEFAULT_COMMON_SKILL = "cards/beta/Skill.png";
-    public static final String DEFAULT_UNCOMMON_ATTACK = "cards/beta/Attack.png";
     public static final String DEFAULT_UNCOMMON_SKILL = "cards/beta/Skill.png";
-    public static final String DEFAULT_UNCOMMON_POWER = "cards/beta/Power.png";
-
 
     // Power images
     public static final String COMMON_POWER = "powers/placeholder_power.png";
-    public static final String RARE_POWER = "powers/placeholder_power.png";
 
 
     // character assets
@@ -191,8 +188,8 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
 
         BaseMod.addColor(AbstractCardEnum.THIEF_GRAY, THIEF_GRAY, THIEF_GRAY, THIEF_GRAY, THIEF_GRAY, THIEF_GRAY, THIEF_GRAY, THIEF_GRAY,
                 makePath(ATTACK_DEAFULT_GRAY), makePath(SKILL_DEAFULT_GRAY), makePath(POWER_DEAFULT_GRAY), makePath(ENERGY_ORB_DEAFULT_GRAY),
-                makePath(ATTACK_DEAFULT_GRAY_PORTRAIT), makePath(SKILL_DEAFULT_GRAY_PORTRAIT), makePath(POWER_DEAFULT_GRAY_PORTRAIT),
-                makePath(ENERGY_ORB_DEAFULT_GRAY_PORTRAIT), makePath(CARD_ENERGY_ORB));
+                makePath(ATTACK_BG_THIEF_GRAY), makePath(SKILL_BG_THIEF_GRAY), makePath(POWER_BG_THIEF_GRAY),
+                makePath(ENERY_ORB_BIG_THIEF), makePath(CARD_ENERGY_ORB));
 
         logger.info("Done Creating the color");
     }

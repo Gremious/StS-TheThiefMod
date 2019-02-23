@@ -20,7 +20,8 @@
       "Shadowstep",
       "shadowstep",
       "Shadowstepping",
-      "non-Shadowstep"
+      "non-Shadowstep",
+      "Non-Shadowstep"
     ],
     "DESCRIPTION": "Become #yElusive, reducing incoming damage by #b10% per stack, but breaks if you play ANY #ynon-Shadowstep card."
   },

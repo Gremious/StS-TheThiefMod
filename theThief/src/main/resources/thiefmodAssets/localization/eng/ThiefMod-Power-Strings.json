@@ -244,9 +244,20 @@
     ]
   },
   "theThief:StolenClockPower": {
-    "NAME": "StolenClockPower",
+    "NAME": "Stolen Clock",
     "DESCRIPTIONS": [
       "You shouldn't be seeing this. This is a hidden power. Add #yPattern #yShift to your hand all the time."
+    ]
+  },
+  "theThief:StolenKnivesPower": {
+    "NAME": "Stolen Knives",
+    "DESCRIPTIONS": [
+      "Whenever you play a card, throw ",
+      " #yKnife ",
+      " knives ",
+      "that deals ",
+      " that deal ",
+      " damage to a random enemy and apply 1 #yBlight."
     ]
   }
 }

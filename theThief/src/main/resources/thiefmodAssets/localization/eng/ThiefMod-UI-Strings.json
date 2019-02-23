@@ -13,8 +13,13 @@
       " stolen cards to add to your draw pile.",
       " stolen cards to add to your discard pile.",
       "Stolen ",
-      "Stolen Math",
-      ""
+      "Math",
+      "Collection",
+      "Fortification",
+      "Brutality",
+      "Menace",
+      "Defense",
+      "Time Echo"
     ]
   },
   "theThief:MakeSuperCopyAction": {

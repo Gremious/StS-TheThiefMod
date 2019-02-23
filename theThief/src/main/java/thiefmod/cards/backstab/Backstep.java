@@ -4,6 +4,7 @@ import basemod.helpers.TooltipInfo;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.FetchAction;
 import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.colorless.Shiv;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -69,11 +70,8 @@ public class Backstep extends AbstractBackstabCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         if (canBackstab()) {
-
             AbstractDungeon.actionManager.addToBottom(new FetchAction(AbstractDungeon.player.discardPile, magicNumber));
-
         } else {
-
             AbstractDungeon.actionManager.addToBottom(new FetchAction(AbstractDungeon.player.discardPile, magicNumber,
                     fetchedCards -> {
                         for (AbstractCard card : fetchedCards) {

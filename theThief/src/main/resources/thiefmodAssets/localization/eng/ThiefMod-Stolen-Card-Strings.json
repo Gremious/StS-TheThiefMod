@@ -215,5 +215,14 @@
       "[#FEE130]Rare[] [#FEE130]Find:[]",
       "[#FEE130]You[] [#FEE130]can[] [#FEE130]feel[] [#FEE130]the[] [#FEE130]waves[] [#FEE130]of[] [#FEE130]time[] [#FEE130]flowing[] [#FEE130]through[] [#FEE130]it.[]"
     ]
+  },
+  "theThief:StolenKnives": {
+    "NAME": "Stolen Knives",
+    "DESCRIPTION": "Gain 99 Knives. NL Whenever you play a card, throw !M! Knife that deals !D! damage and applies 1 Blight to a random enemy.",
+    "UPGRADE_DESCRIPTION": "Gain 99 Knives. NL Whenever you play a card, throw !M Knife that deals !D! damage and applies 1 Blight to a random enemy.",
+    "EXTENDED_DESCRIPTION": [
+      "[#FEE130]Rare[] [#FEE130]Find:[]",
+      "[#FEE130]The[] [#FEE130]cleanest,[] [#FEE130]sharpest[] [#FEE130]arsenal[] [#FEE130]of[] [#FEE130]knives[] [#FEE130]you[] [#FEE130]have[] [#FEE130]ever[] [#FEE130]seen.[]"
+    ]
   }
 }
