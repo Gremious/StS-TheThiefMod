@@ -14,7 +14,6 @@ import thiefmod.ThiefMod;
 import thiefmod.actions.common.GainGoldAction;
 import thiefmod.patches.character.ThiefCardTags;
 
-// Empty Base
 @Deprecated
 public class EmptyPower extends AbstractPower {
     public AbstractCreature source;
@@ -49,8 +48,6 @@ public static final String IMG = "thiefmodAssets/images/cards/beta/Attack.png";
     public void onUseCard(AbstractCard card, UseCardAction action) {
         if (card.hasTag(ThiefCardTags.STEALING)) {
             AbstractDungeon.actionManager.addToBottom(new GainGoldAction(owner, source, amount));
-        } else {
-            return;
         }
     }
 
@@ -63,7 +60,6 @@ public static final String IMG = "thiefmodAssets/images/cards/beta/Attack.png";
 
     }
 
-    // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {
         if (amount == 1) {

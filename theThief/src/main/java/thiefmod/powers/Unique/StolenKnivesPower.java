@@ -20,7 +20,7 @@ import thiefmod.util.TextureLoader;
 
 public class StolenKnivesPower extends AbstractPower {
 
-    public int baseDamage;
+    public int damage;
     public DamageInfo info;
 
     public static final String POWER_ID = ThiefMod.makeID("StolenKnivesPower");
@@ -30,7 +30,7 @@ public class StolenKnivesPower extends AbstractPower {
     private static final Texture tex84 = TextureLoader.getTexture("thiefmodAssets/images/powers/84/StolenCorePower.png");
     private static final Texture tex32 = TextureLoader.getTexture("thiefmodAssets/images/powers/32/StolenCorePower.png");
 
-    public StolenKnivesPower(final AbstractCreature owner, final int amount, int baseDamage, DamageInfo info) {
+    public StolenKnivesPower(final AbstractCreature owner, final int amount, int damage, DamageInfo info) {
         name = NAME;
         ID = POWER_ID;
         region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
@@ -40,7 +40,7 @@ public class StolenKnivesPower extends AbstractPower {
 
         this.owner = owner;
         this.amount = amount;
-        this.baseDamage = baseDamage;
+        this.damage = damage;
         this.info = info;
 
         updateDescription();
@@ -57,9 +57,9 @@ public class StolenKnivesPower extends AbstractPower {
     @Override
     public void updateDescription() {
         if (amount == 1) {
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1] + DESCRIPTIONS[3] + "" + DESCRIPTIONS[5];
+            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1] + DESCRIPTIONS[3] + damage + DESCRIPTIONS[5];
         } else {
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2] + DESCRIPTIONS[4] + "" + DESCRIPTIONS[5];
+            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2] + DESCRIPTIONS[4] + damage + DESCRIPTIONS[5];
         }
     }
 }
