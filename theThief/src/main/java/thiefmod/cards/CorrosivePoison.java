@@ -72,6 +72,7 @@ public class CorrosivePoison extends AbstractBackstabCard {
     public void triggerOnCardPlayed(AbstractCard c) {
         if (c.type == CardType.SKILL) {
             updateCost(-1);
+
         }
     }
 

@@ -53,7 +53,6 @@ public class CallOfTheVoid extends AbstractBackstabCard {
             AbstractDungeon.player.getPower(EvolvePower.POWER_ID).flash();
             AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, AbstractDungeon.player.getPower(EvolvePower.POWER_ID).amount));
         }
-
     }
 
     @Override

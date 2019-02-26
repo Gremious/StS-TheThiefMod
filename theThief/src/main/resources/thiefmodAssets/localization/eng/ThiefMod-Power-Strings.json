@@ -259,5 +259,16 @@
       " that deal ",
       " damage to a random enemy and apply 1 #yBlight."
     ]
+  },
+  "theThief:TestPower": {
+    "NAME": "Test Power",
+    "DESCRIPTIONS": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+    ]
   }
 }

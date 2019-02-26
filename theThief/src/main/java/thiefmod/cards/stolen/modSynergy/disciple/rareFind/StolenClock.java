@@ -1,4 +1,4 @@
-package thiefmod.cards.stolen.disciple.rareFind;
+package thiefmod.cards.stolen.modSynergy.disciple.rareFind;
 
 import basemod.helpers.TooltipInfo;
 import com.badlogic.gdx.graphics.Color;
@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.CardFlashVfx;
+import thiefmod.CardNoSeen;
 import thiefmod.ThiefMod;
 import thiefmod.cards.AbstractBackstabCard;
 import thiefmod.powers.Unique.StolenClockPower;
@@ -18,6 +19,7 @@ import thiefmod.powers.Unique.StolenClockPower;
 import java.util.ArrayList;
 import java.util.List;
 
+@CardNoSeen
 public class StolenClock extends AbstractBackstabCard {
 
 

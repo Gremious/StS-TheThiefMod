@@ -1,4 +1,4 @@
-package thiefmod.cards.stolen.theServant.rareFind;
+package thiefmod.cards.stolen.modSynergy.theServant.rareFind;
 
 import blackrusemod.powers.KnivesPower;
 import com.badlogic.gdx.graphics.Color;
@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.CardFlashVfx;
+import thiefmod.CardNoSeen;
 import thiefmod.ThiefMod;
 import thiefmod.cards.AbstractBackstabCard;
 import thiefmod.patches.character.ThiefCardTags;
@@ -20,6 +21,7 @@ import thiefmod.powers.Unique.StolenKnivesPower;
 
 import static thiefmod.ThiefMod.hasServant;
 
+@CardNoSeen
 public class StolenKnives extends AbstractBackstabCard {
 
 

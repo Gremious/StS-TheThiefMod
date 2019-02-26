@@ -39,7 +39,6 @@ public class ThievesMask extends CustomRelic {
         this.flash();
         AbstractDungeon.actionManager.addToTop(
                 new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new TheThiefThieveryPower(AbstractDungeon.player, AbstractDungeon.player, 3), 3));
-
     }
 
     @Override

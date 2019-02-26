@@ -1,23 +1,19 @@
 package thiefmod.cards;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.green.Neutralize;
-import com.megacrit.cardcrawl.cards.red.DoubleTap;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import thiefmod.CardIgnore;
 import thiefmod.ThiefMod;
-import thiefmod.actions.Util.DiscoverRandomFromArrayAction;
+import thiefmod.actions.common.TestAction;
 import thiefmod.patches.character.AbstractCardEnum;
 
 import java.util.ArrayList;
-@Deprecated
-@CardIgnore // Comment to test, obv
+
+//@Deprecated @CardIgnore // Comment out to test, obv
 public class AAAtestCard extends AbstractBackstabCard {
-    private ArrayList<AbstractCard> cardsToDiscoverFrom = new ArrayList<>();
 
 // TEXT DECLARATION
 
@@ -30,55 +26,30 @@ public class AAAtestCard extends AbstractBackstabCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String EXTENDED_DESCRIPTION[] = cardStrings.EXTENDED_DESCRIPTION;
 
-
-// /TEXT DECLARATION/
-
-    // STAT DECLARATION
-    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    private static final CardRarity RARITY = CardRarity.SPECIAL;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
-    private static final CardType TYPE = CardType.SKILL;
+    private static final CardType TYPE = CardType.ATTACK;
 
-    private static final int COST = 0;
+    private static final int COST = 2;
+    public static final int DAMAGE = 5;
 
-    private static final int MAGIC = 1;
-    private static final int UPGRADED_PLUS_MAGIC = 1;
-
-    private static final int BACKSTAB = 1;
-    private static final int UPGRADED_PLUS_BACKSTAB = 1;
-
-    private static final String ADD_LOCATION = "Hand"; // If stolen card.
-    private static final boolean ADD_RANDOM = true;
-    private static final boolean ADD_UPGRADED = false;
-
-// /STAT DECLARATION/
+    // /STAT DECLARATION/
 
     public AAAtestCard() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-
-        magicNumber = baseMagicNumber = MAGIC;
-        backstabNumber = baseBackstabNumber = BACKSTAB;
-
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        cardsToDiscoverFrom.add(new DoubleTap());
-        cardsToDiscoverFrom.add(new AAAtestCard());
-        cardsToDiscoverFrom.add(new Neutralize());
-
-        AbstractDungeon.actionManager.addToBottom(new DiscoverRandomFromArrayAction(cardsToDiscoverFrom));
+        AbstractDungeon.actionManager.addToBottom(new TestAction(1));
     }
 
-
-    //Upgraded stats.
+    // Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
-            upgradeBackstabNumber(UPGRADED_PLUS_BACKSTAB);
             initializeDescription();
         }
     }

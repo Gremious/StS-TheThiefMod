@@ -24,6 +24,11 @@ import javassist.NotFoundException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.clapper.util.classutil.*;
+import thiefmod.cards.stolen.modSynergy.disciple.rareFind.StolenClock;
+import thiefmod.cards.stolen.modSynergy.halation.rareFind.StolenMail;
+import thiefmod.cards.stolen.modSynergy.mystic.rareFind.stolenMysticalOrb;
+import thiefmod.cards.stolen.modSynergy.mystic.*;
+import thiefmod.cards.stolen.modSynergy.theServant.rareFind.StolenKnives;
 import thiefmod.characters.TheThief;
 import thiefmod.events.BlackMarketTraderEvent;
 import thiefmod.events.LouseAbuseEvent;
@@ -296,13 +301,30 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         BaseMod.addDynamicVariable(new BackstabMagicNumber());
         BaseMod.addDynamicVariable(new BackstabBlock());
         BaseMod.addDynamicVariable(new ThiefSecondMagicNumber());
-
         try {
             autoAddCards();
         } catch (URISyntaxException | IllegalAccessException | InstantiationException | NotFoundException | CannotCompileException e) {
             e.printStackTrace();
         }
 
+        //  BaseMod.addCard(new ());
+        if (hasDisciple) BaseMod.addCard(new StolenClock());
+        if (hasHalation) BaseMod.addCard(new StolenMail());
+        if (hasMysticMod) {
+            BaseMod.addCard(new stolenArteScroll());
+            BaseMod.addCard(new stolenBookOfArte());
+
+            BaseMod.addCard(new stolenMagicCantrip());
+            BaseMod.addCard(new stolenBagOfMagicCantrips());
+
+            BaseMod.addCard(new stolenSpellScroll());
+            BaseMod.addCard(new stolenMysticalSpellbook());
+
+            BaseMod.addCard(new stolenMysticalOrb());
+        }
+        if (hasServant) {
+            BaseMod.addCard(new StolenKnives());
+        }
         logger.info("Cards - added!");
     }
 

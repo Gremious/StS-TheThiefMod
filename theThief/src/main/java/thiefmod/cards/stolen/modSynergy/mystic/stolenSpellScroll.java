@@ -1,4 +1,4 @@
-package thiefmod.cards.stolen.mystic;
+package thiefmod.cards.stolen.modSynergy.mystic;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -17,11 +17,11 @@ import java.util.ArrayList;
 import thiefmod.CardNoSeen;
 
 @CardNoSeen
-public class stolenArteScroll extends AbstractBackstabCard {
+public class stolenSpellScroll extends AbstractBackstabCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = ThiefMod.makeID("stolenArteScroll");
+    public static final String ID = ThiefMod.makeID("stolenSpellScroll");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     public static final String IMG = "thiefmodAssets/images/cards/beta/Attack.png";
@@ -43,11 +43,13 @@ public class stolenArteScroll extends AbstractBackstabCard {
 
     private static final int COST = 0;
 
+    private static final int MAGIC = 1;
     // /STAT DECLARATION/
 
 
-    public stolenArteScroll() {
+    public stolenSpellScroll() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        magicNumber = baseMagicNumber = MAGIC;
         tags.add(ThiefCardTags.STOLEN);
     }
 
@@ -55,13 +57,12 @@ public class stolenArteScroll extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (upgraded) {
-            AbstractDungeon.actionManager.addToTop(new playCardWithRandomTargestAction(true, MysticMod.returnTrulyRandomArte()));
+            AbstractDungeon.actionManager.addToTop(new playCardWithRandomTargestAction(true, MysticMod.returnTrulyRandomSpell()));
         } else {
-            AbstractDungeon.actionManager.addToTop(new playCardWithRandomTargestAction(false, MysticMod.returnTrulyRandomArte()));
+            AbstractDungeon.actionManager.addToTop(new playCardWithRandomTargestAction(false, MysticMod.returnTrulyRandomSpell()));
 
         }
     }
-
 
     // Upgraded stats.
     @Override

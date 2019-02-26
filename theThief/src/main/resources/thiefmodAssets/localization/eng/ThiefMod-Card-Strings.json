@@ -556,7 +556,8 @@
   },
   "theThief:testCard": {
     "NAME": "Test Card",
-    "DESCRIPTION": "Deal 5 damage. NL Apply 1 Mark of Roses."
+    "DESCRIPTION": "a",
+    "UPGRADE_DESCRIPTION": "b"
   },
   "theThief:HotGossip": {
     "NAME": "HOT Gossip",

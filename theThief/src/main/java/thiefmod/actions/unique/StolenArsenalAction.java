@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.ExhaustEmberEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.CardFlashVfx;
@@ -42,7 +43,6 @@ public class StolenArsenalAction extends AbstractGameAction {
         logger.info("Update start");
         if (duration == Settings.ACTION_DUR_FAST) {
             logger.info("Action duration is fast");
-
 
             handCards.addAll(player.hand.group);
             drawCards.addAll(player.drawPile.group);

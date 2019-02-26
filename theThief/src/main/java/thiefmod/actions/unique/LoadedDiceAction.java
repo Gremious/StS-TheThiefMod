@@ -49,6 +49,7 @@ public class LoadedDiceAction extends AbstractGameAction {
 
             this.tickDuration();
         }
+
     }
 
 }

@@ -46,6 +46,7 @@ public abstract class AbstractBackstabCard extends CustomCard {
     }
 
     public void upgradeBackstabNumber(int amount) {
+        super.displayUpgrades();
         baseBackstabNumber += amount;
         backstabNumber = baseBackstabNumber;
         upgradedBackstabNumber = true;

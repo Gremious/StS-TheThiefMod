@@ -1,4 +1,4 @@
-package thiefmod.cards.stolen.halation.rareFind;
+package thiefmod.cards.stolen.modSynergy.halation.rareFind;
 
 import HalationCode.cards.LetterOfAdmiration;
 import HalationCode.cards.LetterOfLove;

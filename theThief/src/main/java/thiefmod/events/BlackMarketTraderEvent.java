@@ -41,14 +41,14 @@ public class BlackMarketTraderEvent extends AbstractImageEvent {
         super(NAME, DESCRIPTIONS[0], "thiefmodAssets/images/events/BlackMarketTraderEvent.png");
 
         if (AbstractDungeon.ascensionLevel >= 15) {
-            damageLow = (int) ((float) AbstractDungeon.player.maxHealth * HEALTH_LOSS_PERCENTAGE_LOW);
-            damageMedium = (int) ((float) AbstractDungeon.player.maxHealth * HEALTH_LOSS_PERCENTAGE_LOW);
-            damageHigh = (int) ((float) AbstractDungeon.player.maxHealth * HEALTH_LOSS_PERCENTAGE_LARGE);
+            damageLow =     (int) ((float) AbstractDungeon.player.maxHealth * HEALTH_LOSS_PERCENTAGE_LOW);
+            damageMedium =  (int) ((float) AbstractDungeon.player.maxHealth * HEALTH_LOSS_PERCENTAGE_LOW);
+            damageHigh =    (int) ((float) AbstractDungeon.player.maxHealth * HEALTH_LOSS_PERCENTAGE_LARGE);
 
         } else {
-            damageLow = (int) ((float) AbstractDungeon.player.maxHealth * HEALTH_LOSS_PERCENTAGE_LOW_ASCENSION);
-            damageMedium = (int) ((float) AbstractDungeon.player.maxHealth * HEALTH_LOSS_PERCENTAGE_MEDIUM_ASCENSION);
-            damageHigh = (int) ((float) AbstractDungeon.player.maxHealth * HEALTH_LOSS_PERCENTAGE_LARGE_ASCENSION);
+            damageLow =     (int) ((float) AbstractDungeon.player.maxHealth * HEALTH_LOSS_PERCENTAGE_LOW_ASCENSION);
+            damageMedium =  (int) ((float) AbstractDungeon.player.maxHealth * HEALTH_LOSS_PERCENTAGE_MEDIUM_ASCENSION);
+            damageHigh =    (int) ((float) AbstractDungeon.player.maxHealth * HEALTH_LOSS_PERCENTAGE_LARGE_ASCENSION);
 
         }
 
