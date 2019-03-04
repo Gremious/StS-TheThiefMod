@@ -27,7 +27,7 @@ public class CloakAndDagger extends AbstractBackstabCard {
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:TooltipNames");
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("archetypeAPI:UI");
 
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String NAME = cardStrings.NAME;

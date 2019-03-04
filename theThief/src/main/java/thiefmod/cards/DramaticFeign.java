@@ -27,7 +27,7 @@ public class DramaticFeign extends CustomCard {
 
     /*
      * 3 (2) Mana, Rare, Skill Apply 2 vulnerable and stun all enemies. You cannot
-     * play cards for the rest of this turn. Next turn, the first card you play is
+     * play archetypes for the rest of this turn. Next turn, the first card you play is
      * free.
      */
 
@@ -81,7 +81,7 @@ public class DramaticFeign extends CustomCard {
                     new VulnerablePower(mo, magicNumber, false), magicNumber));
         }
 
-        // Can't play any more cards this turn.
+        // Can't play any more archetypes this turn.
         AbstractDungeon.actionManager.addToBottom(
                 new ApplyPowerAction(p, p, new DramaticFeignPower(p, p, AMOUNT), AMOUNT));
 

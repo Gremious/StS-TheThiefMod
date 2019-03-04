@@ -6,7 +6,10 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import thiefmod.hooks.CanUsePower;
 
-@SpirePatch(cls = "com.megacrit.cardcrawl.cards.AbstractCard", method = "canPlay")
+@SpirePatch(
+        clz = AbstractCard.class,
+        method = "canPlay")
+
 public class powersCanStopPlay {
 
     public static boolean Postfix(boolean result, AbstractCard __canPlay_instance, AbstractCard card) {

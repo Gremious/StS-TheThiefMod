@@ -64,7 +64,7 @@ public class StolenCore extends AbstractBackstabCard {
         backstabNumber = baseBackstabNumber = ORB_SLOTS;
 
 
-     /* Straight up just doesn't work. But maybe one day it will. And when that happens, I'll be waiting. And I will uncomment this code. And my rare cards will look cool.
+     /* Straight up just doesn't work. But maybe one day it will. And when that happens, I'll be waiting. And I will uncomment this code. And my rare archetypes will look cool.
 
         setBackgroundTexture("thiefmodAssets/images/512/special/blue_rare_skill_bg.png",
                 "thiefmodAssets/images/1024/special/blue_rare_skill_bg.png");
