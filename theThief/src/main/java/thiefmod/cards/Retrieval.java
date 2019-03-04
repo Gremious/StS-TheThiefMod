@@ -67,7 +67,7 @@ public class Retrieval extends AbstractBackstabCard {
 
     }
 
-    //TODO: Add dynamic description "'s" for card/archetypes.
+    //TODO: Add dynamic description "'s" for card/cards.
 
     @Override
     public List<TooltipInfo> getCustomTooltips() {

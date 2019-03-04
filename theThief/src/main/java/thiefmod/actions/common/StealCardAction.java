@@ -78,7 +78,7 @@ public class StealCardAction extends AbstractGameAction {
                     AbstractDungeon.actionManager.addToBottom(
                             new DiscoverAndExhaustCard(getRandomStolenCards(3, false), 3, copies));
                     curseCounter();
-                    return; // Don't tickDuration, So that we can keep spamming the discover screen == amount of archetypes requested.
+                    return; // Don't tickDuration, So that we can keep spamming the discover screen == amount of cards requested.
                 }
                 cardsToAdd.clear();
             }
@@ -86,7 +86,7 @@ public class StealCardAction extends AbstractGameAction {
         tickDuration();
     }
 
-    // Add the stolen archetypes to whatever location your heart desires.
+    // Add the stolen cards to whatever location your heart desires.
     private void addStolenCards() {
         for (AbstractCard c : cardsToAdd) {
             logger.info("addStolenCards() adding card " + c + " to " + location.toString());
@@ -102,7 +102,7 @@ public class StealCardAction extends AbstractGameAction {
         public static CardGroup.CardGroupType STOLEN_CARDS;
     }
 
-    // Cardpool of stolen archetypes.
+    // Cardpool of stolen cards.
     private static CardGroup stolenCards;
 
     static {
@@ -240,7 +240,7 @@ public class StealCardAction extends AbstractGameAction {
         //---
     }
 
-    // Card pool of upgraded stolen archetypes.
+    // Card pool of upgraded stolen cards.
     private static CardGroup stolenCardsUpgraded;
 
     static {
@@ -253,7 +253,7 @@ public class StealCardAction extends AbstractGameAction {
     }
 
 
-    // Card pool of rare find stolen archetypes
+    // Card pool of rare find stolen cards
     private static CardGroup rareFinds;
 
     static {
@@ -374,7 +374,7 @@ public class StealCardAction extends AbstractGameAction {
 
     // ========================
 
-    // A final group of the archetypes to return.
+    // A final group of the cards to return.
     private CardGroup allStolenCards() {
         if (rollRare < 15) {
             if (upgraded || AbstractDungeon.player.hasPower(IllGottenGainsPower.POWER_ID)) {
@@ -397,7 +397,7 @@ public class StealCardAction extends AbstractGameAction {
         }
     }
 
-    // Grab random stolen archetypes
+    // Grab random stolen cards
     private ArrayList<AbstractCard> getRandomStolenCards(int amount, boolean allowDuplicates) {
         ArrayList<AbstractCard> randomCards = new ArrayList<>();
 

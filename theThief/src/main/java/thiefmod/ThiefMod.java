@@ -345,7 +345,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
 
         for (ClassInfo classInfo : foundClasses) {
             CtClass cls = Loader.getClassPool().get(classInfo.getClassName());
-            if (cls.hasAnnotation(CardIgnore.class)) { // Add @CardIgnore to archetypes you want to ignore from being loaded (super special archetypes, options, etc).
+            if (cls.hasAnnotation(CardIgnore.class)) { // Add @CardIgnore to cards you want to ignore from being loaded (super special cards, options, etc).
                 continue;
             }
             boolean isCard = false;
@@ -366,7 +366,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
             System.out.println(classInfo.getClassName());
             AbstractCard card = (AbstractCard) Loader.getClassPool().toClass(cls).newInstance();
             BaseMod.addCard(card);
-            if (cls.hasAnnotation(CardNoSeen.class)) { // By default, all archetypes are seen, If you want to mark a card as unseen use @CardNoSeen
+            if (cls.hasAnnotation(CardNoSeen.class)) { // By default, all cards are seen, If you want to mark a card as unseen use @CardNoSeen
                 UnlockTracker.hardUnlockOverride(card.cardID);
             } else {
                 UnlockTracker.unlockCard(card.cardID);

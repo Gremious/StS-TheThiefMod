@@ -28,7 +28,7 @@ public class ThievesMaskPatch {
         }
     }
 
-    //TODO: If the player has tag-bag, archetypes cost go into negative. We should make sure that doesn't happen.
+    //TODO: If the player has tag-bag, cards cost go into negative. We should make sure that doesn't happen.
     private static class Locator extends SpireInsertLocator {
         @Override
         public int[] Locate(CtBehavior ctMethodToPatch) throws Exception {

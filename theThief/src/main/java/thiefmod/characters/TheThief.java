@@ -29,7 +29,7 @@ import thiefmod.relics.ThievesMask;
 
 import java.util.ArrayList;
 
-public class TheThief extends CustomPlayer  {
+public class TheThief extends CustomPlayer {
     public static final Logger logger = LogManager.getLogger(ThiefMod.class.getName());
 
     // =============== BASE STATS =================
@@ -186,7 +186,7 @@ public class TheThief extends CustomPlayer  {
         return AbstractCardEnum.THIEF_GRAY;
     }
 
-    // Should return a color object to be used to color the trail of moving archetypes
+    // Should return a color object to be used to color the trail of moving cards
     @Override
     public Color getCardTrailColor() {
         return thiefmod.ThiefMod.THIEF_GRAY;

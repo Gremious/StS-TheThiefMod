@@ -22,7 +22,7 @@ public class RetrievalAction extends AbstractGameAction {
 
         List<AbstractCard> cardsToReturn = AbstractDungeon.actionManager.cardsPlayedThisTurn.subList(AbstractDungeon.actionManager.cardsPlayedThisTurn.size() - returnAmount, AbstractDungeon.actionManager.cardsPlayedThisTurn.size());
 
-        System.out.println("There are " + returnAmount + " archetypes to return: " + cardsToReturn);
+        System.out.println("There are " + returnAmount + " cards to return: " + cardsToReturn);
 
         for (AbstractCard c : cardsToReturn) {
 

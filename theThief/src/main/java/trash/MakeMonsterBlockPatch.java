@@ -6,7 +6,7 @@ import javassist.expr.ExprEditor;
 import javassist.expr.MethodCall;
 
 @SpirePatch(
-        cls = "com.megacrit.cardcrawl.archetypeAPI.actions.GameActionManager",
+        cls = "com.megacrit.cardcrawl.actions.GameActionManager",
         method = "getNextAction"
 )
 public class MakeMonsterBlockPatch {
