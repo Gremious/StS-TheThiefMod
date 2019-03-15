@@ -24,7 +24,7 @@ public class CripplingStrike extends AbstractBackstabCard {
 // TEXT DECLARATION
 
     public static final String ID = ThiefMod.makeID("CripplingStrike");
-    public static final String IMG = "thiefmodAssets/images/cards/generic_beta_cards/beta_attack_red_3.png";
+    public static final String IMG = "thiefmodAssets/images/cards/beta/CripplingStrike.png";
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
