@@ -127,7 +127,7 @@ public class TheThief extends CustomPlayer {
     }
 
 
-    // Starting Deck
+    // Startin  g Deck
     @Override
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> retVal = new ArrayList<>();

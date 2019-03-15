@@ -6,13 +6,14 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import thiefmod.CardIgnore;
 import thiefmod.ThiefMod;
 import thiefmod.actions.common.TestAction;
 import thiefmod.patches.character.AbstractCardEnum;
 
 import java.util.ArrayList;
 
-//@Deprecated @CardIgnore // Comment out to test, obv
+@Deprecated @CardIgnore // Comment out to test, obv
 public class AAAtestCard extends AbstractBackstabCard {
 
 // TEXT DECLARATION

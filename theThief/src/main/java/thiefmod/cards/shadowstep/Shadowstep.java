@@ -58,6 +58,7 @@ public class Shadowstep extends AbstractBackstabCard {
     public Shadowstep() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
+        exhaust = true;
         magicNumber = baseMagicNumber = MAGIC;
         backstabNumber = baseBackstabNumber = MAGIC_TWO;
         tags.add(ThiefCardTags.SHADOWSTEP);

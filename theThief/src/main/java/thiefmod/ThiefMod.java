@@ -328,7 +328,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         logger.info("Cards - added!");
     }
 
-    private static void autoAddCards() throws URISyntaxException, IllegalAccessException, InstantiationException, NotFoundException, CannotCompileException {
+    private static void autoAddCards() throws URISyntaxException, IllegalAccessException, InstantiationException, NotFoundException, CannotCompileException, ClassNotFoundException {
         ClassFinder finder = new ClassFinder();
         URL url = ThiefMod.class.getProtectionDomain().getCodeSource().getLocation();
         finder.add(new File(url.toURI()));
@@ -364,7 +364,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
                 continue;
             }
             System.out.println(classInfo.getClassName());
-            AbstractCard card = (AbstractCard) Loader.getClassPool().toClass(cls).newInstance();
+            AbstractCard card = (AbstractCard) Loader.getClassPool().getClassLoader().loadClass(cls.getName()).newInstance();
             BaseMod.addCard(card);
             if (cls.hasAnnotation(CardNoSeen.class)) { // By default, all cards are seen, If you want to mark a card as unseen use @CardNoSeen
                 UnlockTracker.hardUnlockOverride(card.cardID);

@@ -5,9 +5,11 @@ import basemod.helpers.TooltipInfo;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.StunMonsterAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -81,12 +83,9 @@ public class DramaticFeign extends CustomCard {
                     new VulnerablePower(mo, magicNumber, false), magicNumber));
         }
 
-        // Can't play any more cards this turn.
         AbstractDungeon.actionManager.addToBottom(
                 new ApplyPowerAction(p, p, new DramaticFeignPower(p, p, AMOUNT), AMOUNT));
 
-        // Next turn, the first card you play is refunded.
-        // See DramaticFeignPower (it applies powers.RefundCardCostPower).
 
         // VFX
         AbstractDungeon.actionManager.addToBottom(new VFXAction(new GrandFinalEffect(), 1.0f));

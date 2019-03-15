@@ -23,6 +23,8 @@ public class DramaticFeignPower extends AbstractPower implements CanUsePower {
     public static final String POWER_ID = thiefmod.ThiefMod.makeID("DramaticFeignPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
+    public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
+
     private static final Texture tex84 = TextureLoader.getTexture("thiefmodAssets/images/powers/84/DramaticFeignPower.png");
     private static final Texture tex32 = TextureLoader.getTexture("thiefmodAssets/images/powers/32/DramaticFeignPower.png");
 
