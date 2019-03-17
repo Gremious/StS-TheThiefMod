@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.CardFlashVfx;
 import thiefmod.CardNoSeen;
 import thiefmod.ThiefMod;
+import thiefmod.cards.abstracts.AbstractStolenCard;
 import thiefmod.powers.Unique.StolenClockPower;
 
 import java.util.ArrayList;
@@ -50,7 +51,7 @@ public class StolenClock extends AbstractStolenCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.effectList.add(new BorderFlashEffect(Color.BROWN));
         AbstractDungeon.actionManager.addToTop(new SFXAction("POWER_TIME_WARP"));
-        action(new ApplyPowerAction(p, p, new StolenClockPower(p, 1), 0));
+        act(new ApplyPowerAction(p, p, new StolenClockPower(p, 1), 0));
     }
     
     @Override

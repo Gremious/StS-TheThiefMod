@@ -1,12 +1,14 @@
 package thiefmod.cards;
 
 import basemod.helpers.BaseModCardTags;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import thiefmod.cards.abstracts.AbstractBackstabCard;
 import thiefmod.patches.character.AbstractCardEnum;
 
 public class DefendThief extends AbstractBackstabCard {
@@ -34,7 +36,7 @@ public class DefendThief extends AbstractBackstabCard {
     // /STAT DECLARATION/
     
     public DefendThief() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseBlock = BLOCK;
         tags.add(BaseModCardTags.BASIC_DEFEND);
     }
@@ -42,7 +44,7 @@ public class DefendThief extends AbstractBackstabCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.GainBlockAction(p, p, block));
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
     }
     
     @Override

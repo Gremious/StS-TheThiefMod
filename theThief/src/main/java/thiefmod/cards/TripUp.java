@@ -24,7 +24,7 @@ public class TripUp extends AbstractBackstabCard {
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
     
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String[] FLAVOR_STRINGS = uiStrings.TEXT;
     public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
     // /TEXT DECLARATION/

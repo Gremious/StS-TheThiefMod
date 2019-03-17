@@ -13,6 +13,7 @@ import mysticmod.MysticMod;
 import thiefmod.CardNoSeen;
 import thiefmod.ThiefMod;
 import thiefmod.actions.common.playCardWithRandomTargestAction;
+import thiefmod.cards.abstracts.AbstractStolenCard;
 import thiefmod.patches.character.ThiefCardTags;
 
 import java.util.ArrayList;

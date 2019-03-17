@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.vfx.cardManip.CardFlashVfx;
 import thiefmod.CardNoSeen;
 import thiefmod.ThiefMod;
 import thiefmod.actions.unique.StolenShadowAction;
+import thiefmod.cards.abstracts.AbstractStolenCard;
 import thiefmod.patches.character.ThiefCardTags;
 
 import java.util.ArrayList;
@@ -54,7 +55,7 @@ public class StolenShadow extends AbstractStolenCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.effectList.add(new BorderFlashEffect(Color.BLACK));
-        action(new StolenShadowAction(p, magicNumber));
+        act(new StolenShadowAction(p, magicNumber));
     }
     
     @Override

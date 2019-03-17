@@ -9,10 +9,11 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.CardNoSeen;
+import thiefmod.cards.abstracts.AbstractStolenCard;
 import thiefmod.patches.character.ThiefCardTags;
 
 @CardNoSeen
-public class StolenMomentum extends AbstractBackstabCard {
+public class StolenMomentum extends AbstractStolenCard {
     
     /*
      * Empty Base
@@ -48,7 +49,7 @@ public class StolenMomentum extends AbstractBackstabCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        action(new DrawCardAction(p, magicNumber));
+        act(new DrawCardAction(p, magicNumber));
         if (!upgraded) {
             AbstractDungeon.actionManager.addToBottom(new DiscardAction(p, p, magicNumber, false));
         }

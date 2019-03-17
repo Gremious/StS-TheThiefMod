@@ -25,6 +25,7 @@ public class Darts extends AbstractBackstabCard {
     
     public static final String[] FLAVOR_STRINGS = uiStrings.TEXT;
     public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     // /TEXT DECLARATION/
     // STAT DECLARATION
     

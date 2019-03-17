@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.CardFlashVfx;
 import thiefmod.CardNoSeen;
 import thiefmod.ThiefMod;
+import thiefmod.cards.abstracts.AbstractStolenCard;
 import thiefmod.patches.character.ThiefCardTags;
 
 import java.util.ArrayList;
@@ -74,9 +75,9 @@ public class StolenBlood extends AbstractStolenCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.effectList.add(new BorderFlashEffect(Color.GOLD));
-        action(new SFXAction("RAGE"));
-        action(new SFXAction("CEILING_BOOM_1"));
-        action(new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber), magicNumber));
+        act(new SFXAction("RAGE"));
+        act(new SFXAction("CEILING_BOOM_1"));
+        act(new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber), magicNumber));
     }
     
     @Override

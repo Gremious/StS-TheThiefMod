@@ -17,6 +17,7 @@ import com.megacrit.cardcrawl.vfx.combat.WeakParticleEffect;
 import thiefmod.CardNoSeen;
 import thiefmod.ThiefMod;
 import thiefmod.actions.Util.MakeSuperCopyAction;
+import thiefmod.cards.abstracts.AbstractStolenCard;
 import thiefmod.patches.character.ThiefCardTags;
 
 import java.util.ArrayList;
@@ -50,7 +51,7 @@ public class StolenMail extends AbstractStolenCard {
     public StolenMail() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         if (letterCards.size() == 0) {
-            letterCards.add(new LetterOfAdmiration());
+            letterCards.add(new  LetterOfAdmiration());
             letterCards.add(new LetterOfLove());
             letterCards.add(new LetterOfRespect());
         }
@@ -64,9 +65,9 @@ public class StolenMail extends AbstractStolenCard {
         AbstractDungeon.effectList.add(new BorderFlashEffect(Color.PINK));
         AbstractDungeon.effectList.add(new WeakParticleEffect(this.current_x, this.current_y, 1.0f, 1.0f));
         for (AbstractCard c : letterCards) {
-            action(new MakeSuperCopyAction(c, p.hand));
-            action(new MakeSuperCopyAction(c, p.drawPile));
-            action(new MakeSuperCopyAction(c, p.discardPile));
+            act(new MakeSuperCopyAction(c, p.hand));
+            act(new MakeSuperCopyAction(c, p.drawPile));
+            act(new MakeSuperCopyAction(c, p.discardPile));
         }
     }
     

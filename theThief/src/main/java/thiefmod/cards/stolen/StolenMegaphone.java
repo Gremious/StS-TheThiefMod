@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AmplifyPower;
 import thiefmod.CardNoSeen;
 import thiefmod.ThiefMod;
+import thiefmod.cards.abstracts.AbstractStolenCard;
 import thiefmod.patches.character.ThiefCardTags;
 
 @CardNoSeen
@@ -20,6 +21,7 @@ public class StolenMegaphone extends AbstractStolenCard {
     public static final String IMG = "theThiefAssets/images/cards/beta/Attack.png";
     
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     // /TEXT DECLARATION/
     // STAT DECLARATION
     
@@ -43,7 +45,7 @@ public class StolenMegaphone extends AbstractStolenCard {
     
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        action(new ApplyPowerAction(p, p, new AmplifyPower(p, magicNumber), magicNumber));
+        act(new ApplyPowerAction(p, p, new AmplifyPower(p, magicNumber), magicNumber));
     }
     
     @Override

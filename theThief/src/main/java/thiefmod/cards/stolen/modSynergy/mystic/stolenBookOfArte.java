@@ -9,6 +9,7 @@ import mysticmod.MysticMod;
 import thiefmod.CardNoSeen;
 import thiefmod.ThiefMod;
 import thiefmod.actions.Util.DiscoverRandomFromArrayAction;
+import thiefmod.cards.abstracts.AbstractStolenCard;
 import thiefmod.patches.character.ThiefCardTags;
 
 import java.util.ArrayList;
@@ -23,6 +24,7 @@ public class stolenBookOfArte extends AbstractStolenCard {
     public static final String IMG = "theThiefAssets/images/cards/beta/Attack.png";
     
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     // /TEXT DECLARATION/
     // STAT DECLARATION
     
@@ -50,7 +52,7 @@ public class stolenBookOfArte extends AbstractStolenCard {
             threeRandomArtes.add(MysticMod.returnTrulyRandomArte());
             threeRandomArtes.add(MysticMod.returnTrulyRandomArte());
             threeRandomArtes.add(MysticMod.returnTrulyRandomArte());
-            action(new DiscoverRandomFromArrayAction(threeRandomArtes));
+            act(new DiscoverRandomFromArrayAction(threeRandomArtes));
             threeRandomArtes.clear();
         }
     }

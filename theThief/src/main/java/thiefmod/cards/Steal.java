@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.actions.common.StealCardAction;
+import thiefmod.cards.abstracts.AbstractBackstabCard;
 import thiefmod.patches.character.AbstractCardEnum;
 
 public class Steal extends AbstractBackstabCard {
@@ -43,7 +44,7 @@ public class Steal extends AbstractBackstabCard {
     // /STAT DECLARATION/
     
     public Steal() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         magicNumber = baseMagicNumber = MAGIC;
     }
@@ -51,8 +52,8 @@ public class Steal extends AbstractBackstabCard {
     
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        action(new com.megacrit.cardcrawl.actions.common.DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        action(new StealCardAction(magicNumber, ADD_COPIES, ADD_RANDOM, AbstractDungeon.player.hand, ADD_UPGRADED));
+        act(new com.megacrit.cardcrawl.actions.common.DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        act(new StealCardAction(magicNumber, ADD_COPIES, ADD_RANDOM, AbstractDungeon.player.hand, ADD_UPGRADED));
     }
     
     @Override

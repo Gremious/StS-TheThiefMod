@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
+import thiefmod.cards.abstracts.AbstractBackstabCard;
 import thiefmod.patches.character.AbstractCardEnum;
 
 public class Pickpocket extends AbstractBackstabCard {
@@ -39,7 +40,7 @@ public class Pickpocket extends AbstractBackstabCard {
     // /STAT DECLARATION/
     
     public Pickpocket() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         magicNumber = baseMagicNumber = MAGIC;
     }
@@ -47,8 +48,8 @@ public class Pickpocket extends AbstractBackstabCard {
     
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        action(new com.megacrit.cardcrawl.actions.common.DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        action(new thiefmod.actions.common.GainGoldAction(p, p, magicNumber));
+        act(new com.megacrit.cardcrawl.actions.common.DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        act(new thiefmod.actions.common.GainGoldAction(p, p, magicNumber));
     }
     
     @Override

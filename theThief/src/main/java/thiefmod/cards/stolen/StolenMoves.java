@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import thiefmod.CardNoSeen;
 import thiefmod.ThiefMod;
+import thiefmod.cards.abstracts.AbstractStolenCard;
 import thiefmod.patches.character.ThiefCardTags;
 
 @CardNoSeen
@@ -46,8 +47,8 @@ public class StolenMoves extends AbstractStolenCard {
     
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        action(new ApplyPowerAction(p, p, new DexterityPower(p, magicNumber), magicNumber));
-        action(new GainBlockAction(p, p, block));
+        act(new ApplyPowerAction(p, p, new DexterityPower(p, magicNumber), magicNumber));
+        act(new GainBlockAction(p, p, block));
     }
     
     @Override

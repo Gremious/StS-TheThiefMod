@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import thiefmod.CardNoSeen;
 import thiefmod.ThiefMod;
+import thiefmod.cards.abstracts.AbstractStolenCard;
 import thiefmod.patches.character.ThiefCardTags;
 
 @CardNoSeen
@@ -45,17 +46,17 @@ public class StolenOrb extends AbstractStolenCard {
     
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        action(new ChannelAction(AbstractOrb.getRandomOrb(true)));
-        action(new WaitAction(0.1F));
-        action(new EvokeOrbAction(1));
-        action(new WaitAction(0.1F));
-        action(new DecreaseMaxOrbAction(1));
+        act(new ChannelAction(AbstractOrb.getRandomOrb(true)));
+        act(new WaitAction(0.1F));
+        act(new EvokeOrbAction(1));
+        act(new WaitAction(0.1F));
+        act(new DecreaseMaxOrbAction(1));
         if (upgraded) {
-            action(new ChannelAction(AbstractOrb.getRandomOrb(true)));
-            action(new WaitAction(0.1F));
-            action(new EvokeOrbAction(1));
-            action(new WaitAction(0.1F));
-            action(new DecreaseMaxOrbAction(1));
+            act(new ChannelAction(AbstractOrb.getRandomOrb(true)));
+            act(new WaitAction(0.1F));
+            act(new EvokeOrbAction(1));
+            act(new WaitAction(0.1F));
+            act(new DecreaseMaxOrbAction(1));
         }
     }
     

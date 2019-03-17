@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.CardNoSeen;
 import thiefmod.ThiefMod;
+import thiefmod.cards.abstracts.AbstractStolenCard;
 import thiefmod.patches.character.ThiefCardTags;
 
 @CardNoSeen
@@ -40,7 +41,7 @@ public class StolenMastery extends AbstractStolenCard {
     }
     
     public void use(AbstractPlayer p, AbstractMonster m) {
-        action(new DualWieldAction(p, magicNumber));
+        act(new DualWieldAction(p, magicNumber));
     }
     
     @Override

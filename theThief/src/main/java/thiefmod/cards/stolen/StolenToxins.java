@@ -10,10 +10,11 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.PoisonPower;
 import thiefmod.CardNoSeen;
+import thiefmod.cards.abstracts.AbstractStolenCard;
 import thiefmod.patches.character.ThiefCardTags;
 
 @CardNoSeen
-public class StolenToxins extends AbstractBackstabCard {
+public class StolenToxins extends AbstractStolenCard {
     // TEXT DECLARATION
     
     public static final String ID = thiefmod.ThiefMod.makeID("StolenToxins");

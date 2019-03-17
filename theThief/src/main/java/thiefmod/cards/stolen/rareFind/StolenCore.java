@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.CardFlashVfx;
 import thiefmod.CardNoSeen;
 import thiefmod.ThiefMod;
+import thiefmod.cards.abstracts.AbstractStolenCard;
 import thiefmod.patches.character.ThiefCardTags;
 import thiefmod.powers.Unique.StolenCorePower;
 
@@ -29,6 +30,7 @@ public class StolenCore extends AbstractStolenCard {
     public static final String IMG = "theThiefAssets/images/cards/beta/Attack.png";
     
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
     // /TEXT DECLARATION/
     // STAT DECLARATION
@@ -69,8 +71,8 @@ public class StolenCore extends AbstractStolenCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.effectList.add(new BorderFlashEffect(Color.ROYAL));
-        action(new IncreaseMaxOrbAction(backstabNumber));
-        action(new ApplyPowerAction(p, p, new StolenCorePower(p, p, magicNumber), 1));
+        act(new IncreaseMaxOrbAction(backstabNumber));
+        act(new ApplyPowerAction(p, p, new StolenCorePower(p, p, magicNumber), 1));
     }
     
     @Override

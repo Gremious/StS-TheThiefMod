@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.vfx.cardManip.CardFlashVfx;
 import thiefmod.CardNoSeen;
 import thiefmod.ThiefMod;
 import thiefmod.actions.unique.StolenArsenalAction;
+import thiefmod.cards.abstracts.AbstractStolenCard;
 import thiefmod.patches.character.ThiefCardTags;
 
 import java.util.ArrayList;
@@ -64,7 +65,7 @@ public class StolenArsenal extends AbstractStolenCard {
         int currentHand = p.hand.group.size();
         AbstractDungeon.actionManager.addToTop(new StolenArsenalAction(p));
         do {
-            action(new DrawCardAction(p, 1));
+            act(new DrawCardAction(p, 1));
             if (p.drawPile.isEmpty() && p.discardPile.isEmpty()) {
                 break;
             }

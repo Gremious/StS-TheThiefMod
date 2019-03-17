@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.CardNoSeen;
 import thiefmod.ThiefMod;
+import thiefmod.cards.abstracts.AbstractStolenCard;
 import thiefmod.patches.character.ThiefCardTags;
 
 @CardNoSeen
@@ -41,7 +42,7 @@ public class StolenTV extends AbstractStolenCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractCard c = AbstractDungeon.returnTrulyRandomCardInCombat(CardType.POWER).makeCopy();
         c.setCostForTurn(0);
-        action(new MakeTempCardInHandAction(c, true));
+        act(new MakeTempCardInHandAction(c, true));
     }
     
     @Override

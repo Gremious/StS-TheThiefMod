@@ -9,12 +9,13 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.CardNoSeen;
 import thiefmod.actions.Util.MakeSuperCopyAction;
 import thiefmod.actions.Util.getRandomCardFromAnyColor;
+import thiefmod.cards.abstracts.AbstractStolenCard;
 import thiefmod.patches.character.ThiefCardTags;
 
 import java.util.ArrayList;
 
 @CardNoSeen
-public class StolenTechnique extends AbstractBackstabCard {
+public class StolenTechnique extends AbstractStolenCard {
     // TEXT DECLARATION
     
     public static final String ID = thiefmod.ThiefMod.makeID("StolenTechnique");
@@ -60,7 +61,7 @@ public class StolenTechnique extends AbstractBackstabCard {
         ArrayList<AbstractCard> cards = new ArrayList<>(getRandomCardFromAnyColor.getListOfRandomCards());
         AbstractCard card = cards.get(0);
         card.freeToPlayOnce = true;
-        action(new MakeSuperCopyAction(card, p.hand));
+        act(new MakeSuperCopyAction(card, p.hand));
     }
     
     @Override

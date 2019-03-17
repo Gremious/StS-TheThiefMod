@@ -9,10 +9,11 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.CardNoSeen;
+import thiefmod.cards.abstracts.AbstractStolenCard;
 import thiefmod.patches.character.ThiefCardTags;
 
 @CardNoSeen
-public class StolenRitual extends AbstractBackstabCard {
+public class StolenRitual extends AbstractStolenCard {
     // TEXT DECLARATION
     
     public static final String ID = thiefmod.ThiefMod.makeID("StolenRitual");
@@ -49,16 +50,16 @@ public class StolenRitual extends AbstractBackstabCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        action(new LoseHPAction(p, p, damage));
-        action(new thiefmod.actions.common.GainGoldAction(p, p, magicNumber));
+        act(new LoseHPAction(p, p, damage));
+        act(new thiefmod.actions.common.GainGoldAction(p, p, magicNumber));
         CardCrawlGame.sound.playA("VO_CULTIST_1C", 0.3f);
-        action(new TalkAction(true, "CA-CAW", 2.0f, 2.0f));
-        action(new WaitAction(0.1f));
-        action(new WaitAction(0.1f));
-        action(new WaitAction(0.1f));
-        action(new WaitAction(0.1f));
-        action(new WaitAction(0.1f));
-        action(new TalkAction(true, "Cough..", 2.0f, 2.0f));
+        act(new TalkAction(true, "CA-CAW", 2.0f, 2.0f));
+        act(new WaitAction(0.1f));
+        act(new WaitAction(0.1f));
+        act(new WaitAction(0.1f));
+        act(new WaitAction(0.1f));
+        act(new WaitAction(0.1f));
+        act(new TalkAction(true, "Cough..", 2.0f, 2.0f));
     }
     
     @Override

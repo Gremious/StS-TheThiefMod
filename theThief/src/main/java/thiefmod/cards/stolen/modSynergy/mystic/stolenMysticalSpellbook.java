@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import mysticmod.actions.SpellDiscoveryAction;
 import thiefmod.CardNoSeen;
 import thiefmod.ThiefMod;
+import thiefmod.cards.abstracts.AbstractStolenCard;
 import thiefmod.patches.character.ThiefCardTags;
 
 @CardNoSeen
@@ -19,6 +20,7 @@ public class stolenMysticalSpellbook extends AbstractStolenCard {
     public static final String IMG = "theThiefAssets/images/cards/beta/Attack.png";
     
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     // /TEXT DECLARATION/
     // STAT DECLARATION
     
@@ -42,7 +44,7 @@ public class stolenMysticalSpellbook extends AbstractStolenCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (int i = 0; i < magicNumber; i++) {
-            action(new SpellDiscoveryAction());
+            act(new SpellDiscoveryAction());
         }
     }
     

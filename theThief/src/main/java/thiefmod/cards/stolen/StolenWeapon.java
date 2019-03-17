@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import thiefmod.CardNoSeen;
 import thiefmod.ThiefMod;
+import thiefmod.cards.abstracts.AbstractStolenCard;
 import thiefmod.patches.character.ThiefCardTags;
 
 @CardNoSeen
@@ -40,9 +41,10 @@ public class StolenWeapon extends AbstractStolenCard {
     }
     
     public void use(AbstractPlayer p, AbstractMonster m) {
-        action(new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber), magicNumber));
+        act(new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber), magicNumber));
+        
         if (!upgraded) {
-            action(new ApplyPowerAction(p, p, new LoseStrengthPower(p, magicNumber), magicNumber));
+            act(new ApplyPowerAction(p, p, new LoseStrengthPower(p, magicNumber), magicNumber));
         }
     }
     

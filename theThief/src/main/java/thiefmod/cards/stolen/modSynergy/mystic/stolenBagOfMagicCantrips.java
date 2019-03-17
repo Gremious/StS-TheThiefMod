@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.CardNoSeen;
 import thiefmod.ThiefMod;
 import thiefmod.actions.Util.DiscoverRandomFromArrayAction;
+import thiefmod.cards.abstracts.AbstractStolenCard;
 import thiefmod.patches.character.ThiefCardTags;
 
 import java.util.ArrayList;
@@ -25,6 +26,7 @@ public class stolenBagOfMagicCantrips extends AbstractStolenCard {
     public static final String IMG = "theThiefAssets/images/cards/beta/Attack.png";
     
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     // /TEXT DECLARATION/
     // STAT DECLARATION
     
@@ -52,9 +54,9 @@ public class stolenBagOfMagicCantrips extends AbstractStolenCard {
         trinketCards.add(cantripsGroup.get(AbstractDungeon.cardRandomRng.random(cantripsGroup.size() - 1)));
         trinketCards.add(cantripsGroup.get(AbstractDungeon.cardRandomRng.random(cantripsGroup.size() - 1)));
         if (upgraded) {
-            action(new DiscoverRandomFromArrayAction(trinketCards, true));
+            act(new DiscoverRandomFromArrayAction(trinketCards, true));
         }
-        action(new DiscoverRandomFromArrayAction(trinketCards));
+        act(new DiscoverRandomFromArrayAction(trinketCards));
     }
     
     @Override

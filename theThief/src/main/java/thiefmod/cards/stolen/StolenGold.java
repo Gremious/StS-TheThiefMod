@@ -6,10 +6,11 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.CardNoSeen;
+import thiefmod.cards.abstracts.AbstractStolenCard;
 import thiefmod.patches.character.ThiefCardTags;
 
 @CardNoSeen
-public class StolenGold extends AbstractBackstabCard {
+public class StolenGold extends AbstractStolenCard {
     // TEXT DECLARATION
     
     public static final String ID = thiefmod.ThiefMod.makeID("StolenGold");
@@ -42,7 +43,7 @@ public class StolenGold extends AbstractBackstabCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        action(new thiefmod.actions.common.GainGoldAction(p, p, magicNumber));
+        act(new thiefmod.actions.common.GainGoldAction(p, p, magicNumber));
     }
     
     @Override

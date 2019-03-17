@@ -6,10 +6,11 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.CardNoSeen;
+import thiefmod.cards.abstracts.AbstractStolenCard;
 import thiefmod.patches.character.ThiefCardTags;
 
 @CardNoSeen
-public class StolenCandy extends AbstractBackstabCard {
+public class StolenCandy extends AbstractStolenCard {
     
     /*
      * 0: gain 1 (2) energy
@@ -46,7 +47,7 @@ public class StolenCandy extends AbstractBackstabCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        action(new com.megacrit.cardcrawl.actions.common.GainEnergyAction(magicNumber));
+        act(new com.megacrit.cardcrawl.actions.common.GainEnergyAction(magicNumber));
     }
     
     @Override
