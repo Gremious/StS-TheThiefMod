@@ -29,6 +29,9 @@ import thiefmod.relics.ThievesMask;
 
 import java.util.ArrayList;
 
+import static thiefmod.ThiefMod.THE_DEFAULT_SKELETON_ATLAS;
+import static thiefmod.ThiefMod.THE_DEFAULT_SKELETON_JSON;
+
 public class TheThief extends CustomPlayer {
     public static final Logger logger = LogManager.getLogger(ThiefMod.class.getName());
 
@@ -86,9 +89,9 @@ public class TheThief extends CustomPlayer {
         // =============== TEXTURES, ENERGY, LOADOUT =================
 
         initializeClass(null, // required call to load textures and setup energy/loadout
-                thiefmod.ThiefMod.makePath(thiefmod.ThiefMod.THE_THIEF_SHOULDER_1),        // campfire pose
-                thiefmod.ThiefMod.makePath(thiefmod.ThiefMod.THE_THIEF_SHOULDER_2),        // another campfire pose
-                thiefmod.ThiefMod.makePath(thiefmod.ThiefMod.THE_THIEF_CORPSE),            // dead corpse
+                thiefmod.ThiefMod.THE_THIEF_SHOULDER_1,        // campfire pose
+                thiefmod.ThiefMod.THE_THIEF_SHOULDER_2,        // another campfire pose
+                thiefmod.ThiefMod.THE_THIEF_CORPSE,            // dead corpse
                 getLoadout(), 20.0F, -10.0F, 220.0F, 290.0F, new EnergyManager(ENERGY_PER_TURN));    // energy manager
 
         // =============== /TEXTURES, ENERGY, LOADOUT/ =================
@@ -96,8 +99,7 @@ public class TheThief extends CustomPlayer {
 
         // =============== ANIMATIONS =================
 
-        this.loadAnimation(thiefmod.ThiefMod.makePath(thiefmod.ThiefMod.THE_DEFAULT_SKELETON_ATLAS),
-                thiefmod.ThiefMod.makePath(thiefmod.ThiefMod.THE_DEFAULT_SKELETON_JSON), 1.0f);
+        this.loadAnimation(THE_DEFAULT_SKELETON_ATLAS, THE_DEFAULT_SKELETON_JSON, 1.0f);
         AnimationState.TrackEntry e = this.state.setAnimation(0, "animation", true);
         e.setTime(e.getEndTime() * MathUtils.random());
 

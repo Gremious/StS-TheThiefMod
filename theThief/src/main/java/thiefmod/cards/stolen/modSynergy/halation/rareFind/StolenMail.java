@@ -30,7 +30,7 @@ public class StolenMail extends AbstractStolenCard {
     public static final String ID = ThiefMod.makeID("StolenMail");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     
-    public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_COMMON_ATTACK);
+    public static final String IMG = "theThiefAssets/images/cards/beta/Attack.png";
     
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;

@@ -128,62 +128,50 @@ public class ThiefMod implements
     public static final Color THIEF_GRAY = CardHelper.getColor(64.0f, 70.0f, 70.0f);
 
     // Image folder name
-    private static final String THIEF_MOD_ASSETS_FOLDER = "theThiefAssets/images";
+    private static final String THIEF_MOD_ASSETS_FOLDER = "theThiefAssets/images/";
 
     // card backgrounds
-    private static final String ATTACK_DEAFULT_GRAY = "512/bg_attack_thief_gray.png";
-    private static final String POWER_DEAFULT_GRAY = "512/bg_power_thief_gray.png";
-    private static final String SKILL_DEAFULT_GRAY = "512/bg_skill_thief_gray.png";
-    private static final String ENERGY_ORB_DEAFULT_GRAY = "512/card_thief_gray_orb.png";
-    private static final String CARD_ENERGY_ORB = "512/card_small_orb.png";
+    private static final String ATTACK_DEAFULT_GRAY = "theThiefAssets/images/512/bg_attack_thief_gray.png";
+    private static final String POWER_DEAFULT_GRAY = "theThiefAssets/images/512/bg_power_thief_gray.png";
+    private static final String SKILL_DEAFULT_GRAY = "theThiefAssets/images/512/bg_skill_thief_gray.png";
+    private static final String ENERGY_ORB_DEAFULT_GRAY = "theThiefAssets/images/512/card_thief_gray_orb.png";
+    private static final String CARD_ENERGY_ORB = "theThiefAssets/images/512/card_small_orb.png";
 
-    private static final String ATTACK_BG_THIEF_GRAY = "1024/bg_attack_thief_gray.png";
-    private static final String POWER_BG_THIEF_GRAY = "1024/bg_power_thief_gray.png";
-    private static final String SKILL_BG_THIEF_GRAY = "1024/bg_skill_thief_gray.png";
-    private static final String ENERY_ORB_BIG_THIEF = "1024/card_thief_gray_orb.png";
+    private static final String ATTACK_BG_THIEF_GRAY = "theThiefAssets/images/1024/bg_attack_thief_gray.png";
+    private static final String POWER_BG_THIEF_GRAY = "theThiefAssets/images/1024/bg_power_thief_gray.png";
+    private static final String SKILL_BG_THIEF_GRAY = "theThiefAssets/images/1024/bg_skill_thief_gray.png";
+    private static final String ENERY_ORB_BIG_THIEF = "theThiefAssets/images/1024/card_thief_gray_orb.png";
 
     // Card images
-    public static final String DEFAULT_COMMON_ATTACK = "cards/beta/Attack.png";
-    public static final String DEFAULT_UNCOMMON_SKILL = "cards/beta/Skill.png";
+    public static final String DEFAULT_COMMON_ATTACK = "theThiefAssets/images/cards/beta/Attack.png";
+    public static final String DEFAULT_UNCOMMON_SKILL = "theThiefAssets/images/cards/beta/Skill.png";
 
     // Power images
-    public static final String COMMON_POWER = "powers/placeholder_power.png";
+    public static final String COMMON_POWER = "theThiefAssets/images/powers/placeholder_power.png";
 
 
     // character assets
-    private static final String THE_THIEF_BUTTON = "charSelect/thiefCharacterButton.png";
+    private static final String THE_THIEF_BUTTON = "theThiefAssets/images/charSelect/thiefCharacterButton.png";
     private static final String THE_THIEF_PORTRAIT = rollBGImage();
-    public static final String THE_THIEF_SHOULDER_1 = "char/thiefCharacter/shoulder.png";
-    public static final String THE_THIEF_SHOULDER_2 = "char/thiefCharacter/shoulder2.png";
-    public static final String THE_THIEF_CORPSE = "char/thiefCharacter/corpse.png";
+    public static final String THE_THIEF_SHOULDER_1 = "theThiefAssets/images/char/thiefCharacter/shoulder.png";
+    public static final String THE_THIEF_SHOULDER_2 = "theThiefAssets/images/char/thiefCharacter/shoulder2.png";
+    public static final String THE_THIEF_CORPSE = "theThiefAssets/images/char/thiefCharacter/corpse.png";
 
     //Mod Badge
-    public static final String BADGE_IMAGE = "Badge.png";
+    public static final String BADGE_IMAGE = "theThiefAssets/images//Badge.png";
 
     // Animations atlas and JSON files
-    public static final String THE_DEFAULT_SKELETON_ATLAS = "char/thiefCharacter/skeleton.atlas";
-    public static final String THE_DEFAULT_SKELETON_JSON = "char/thiefCharacter/skeleton.json";
+    public static final String THE_DEFAULT_SKELETON_ATLAS = "theThiefAssets/images/char/thiefCharacter/skeleton.atlas";
+    public static final String THE_DEFAULT_SKELETON_JSON = "theThiefAssets/images/char/thiefCharacter/skeleton.json";
 
     // =============== MAKE IMAGE PATHS =================
 
     public static String makePowerPath(String resourcePath) {
-        return "theThiefAssets/images/powers/" + resourcePath;
+        return "theThiefAssets/images//powers/" + resourcePath;
     }
 
     // =============== /MAKE IMAGE PATHS/ =================
-
-
-    // =============== /IMPUT TEXTURE LOCATION/ =================
-
-    /**
-     * Makes a full path for a resource path
-     *
-     * @param resource the resource, must *NOT* have a leading "/"
-     * @return the full path
-     */
-    public static final String makePath(String resource) {
-        return THIEF_MOD_ASSETS_FOLDER + "/" + resource;
-    }
+    
 
     // =============== SUBSCRIBE, CREATE THE COLOR, INITIALIZE =================
 
@@ -198,9 +186,9 @@ public class ThiefMod implements
         logger.info("Creating the color " + AbstractCardEnum.THIEF_GRAY.toString());
 
         BaseMod.addColor(AbstractCardEnum.THIEF_GRAY, THIEF_GRAY, THIEF_GRAY, THIEF_GRAY, THIEF_GRAY, THIEF_GRAY, THIEF_GRAY, THIEF_GRAY,
-                makePath(ATTACK_DEAFULT_GRAY), makePath(SKILL_DEAFULT_GRAY), makePath(POWER_DEAFULT_GRAY), makePath(ENERGY_ORB_DEAFULT_GRAY),
-                makePath(ATTACK_BG_THIEF_GRAY), makePath(SKILL_BG_THIEF_GRAY), makePath(POWER_BG_THIEF_GRAY),
-                makePath(ENERY_ORB_BIG_THIEF), makePath(CARD_ENERGY_ORB));
+                ATTACK_DEAFULT_GRAY, SKILL_DEAFULT_GRAY, POWER_DEAFULT_GRAY, ENERGY_ORB_DEAFULT_GRAY,
+                ATTACK_BG_THIEF_GRAY, SKILL_BG_THIEF_GRAY, POWER_BG_THIEF_GRAY,
+                ENERY_ORB_BIG_THIEF, CARD_ENERGY_ORB);
 
         logger.info("Done Creating the color");
     }
@@ -221,10 +209,10 @@ public class ThiefMod implements
         Random rand = new Random();
         int i = rand.nextInt(99);
         if (i < 90) {
-            return "charSelect/thiefCharacterPortraitBG.png";
+            return "theThiefAssets/images/charSelect/thiefCharacterPortraitBG.png";
         } else {
             logger.info("Spooky.");
-            return "charSelect/thiefCharacterPortraitEvilBG.png";
+            return "theThiefAssets/images/charSelect/thiefCharacterPortraitEvilBG.png";
         }
     }
 
@@ -235,7 +223,7 @@ public class ThiefMod implements
         logger.info("add " + TheThiefEnum.THE_THIEF.toString());
 
         BaseMod.addCharacter(new TheThief("the Thief", TheThiefEnum.THE_THIEF),
-                makePath(THE_THIEF_BUTTON), makePath(THE_THIEF_PORTRAIT), TheThiefEnum.THE_THIEF);
+                THE_THIEF_BUTTON, THE_THIEF_PORTRAIT, TheThiefEnum.THE_THIEF);
 
         logger.info("done editing characters");
     }
@@ -249,7 +237,7 @@ public class ThiefMod implements
     public void receivePostInitialize() {
         logger.info("Load Badge Image and mod options");
 
-        Texture badgeTexture = new Texture(makePath(BADGE_IMAGE));
+        Texture badgeTexture = new Texture(BADGE_IMAGE);
         ModPanel settingsPanel = new ModPanel();
         settingsPanel.addUIElement(new ModLabel("The Thief Mod does not have any settings!", 400.0f, 700.0f, settingsPanel, (me) -> {
         }));
