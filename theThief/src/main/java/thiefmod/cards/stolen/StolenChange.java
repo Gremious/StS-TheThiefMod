@@ -14,7 +14,7 @@ import thiefmod.powers.Common.RefundCardCostPower;
 import thiefmod.CardNoSeen;
 
 @CardNoSeen
-public class StolenChange extends CustomCard {
+public class StolenChange extends AbstractBackstabCard {
 
 
 // TEXT DECLARATION 

@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
-import thiefmod.cards.AbstractBackstabCard;
+import thiefmod.cards.abstracts.AbstractBackstabCard;
 
 
 public class HotGossip extends AbstractBackstabCard {

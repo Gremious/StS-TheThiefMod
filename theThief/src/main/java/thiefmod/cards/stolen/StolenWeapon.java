@@ -3,13 +3,11 @@ package thiefmod.cards.stolen;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import thiefmod.ThiefMod;
-import thiefmod.cards.AbstractBackstabCard;
 import thiefmod.patches.character.ThiefCardTags;
 
 import thiefmod.CardNoSeen;

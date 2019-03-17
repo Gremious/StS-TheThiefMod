@@ -1,6 +1,5 @@
 package thiefmod.cards.backstab;
 
-import basemod.helpers.TooltipInfo;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -10,7 +9,6 @@ import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -18,12 +16,9 @@ import com.megacrit.cardcrawl.vfx.combat.AdditiveSlashImpactEffect;
 import com.megacrit.cardcrawl.vfx.combat.DamageImpactCurvyEffect;
 import com.megacrit.cardcrawl.vfx.combat.DamageImpactLineEffect;
 import thiefmod.ThiefMod;
-import thiefmod.cards.AbstractBackstabCard;
+import thiefmod.cards.abstracts.AbstractBackstabCard;
 import thiefmod.patches.character.AbstractCardEnum;
 import thiefmod.patches.character.ThiefCardTags;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class PerfectDagger extends AbstractBackstabCard {
 

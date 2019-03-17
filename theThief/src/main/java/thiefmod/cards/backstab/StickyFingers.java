@@ -1,6 +1,5 @@
 package thiefmod.cards.backstab;
 
-import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -10,12 +9,9 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
 import thiefmod.actions.common.StealCardAction;
-import thiefmod.cards.AbstractBackstabCard;
+import thiefmod.cards.abstracts.AbstractBackstabCard;
 import thiefmod.patches.character.AbstractCardEnum;
 import thiefmod.patches.character.ThiefCardTags;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class StickyFingers extends AbstractBackstabCard {
 

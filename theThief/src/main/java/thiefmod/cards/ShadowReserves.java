@@ -2,7 +2,6 @@ package thiefmod.cards;
 
 import basemod.helpers.ModalChoice;
 import basemod.helpers.ModalChoiceBuilder;
-import basemod.helpers.TooltipInfo;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.FetchAction;
 import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -12,10 +11,8 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
+import thiefmod.cards.abstracts.AbstractBackstabCard;
 import thiefmod.patches.character.AbstractCardEnum;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class ShadowReserves extends AbstractBackstabCard implements ModalChoice.Callback {
 // implements ModalChoice.Callback

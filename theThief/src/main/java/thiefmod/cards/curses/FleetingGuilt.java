@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.powers.LoseDexterityPower;
 import com.megacrit.cardcrawl.relics.BlueCandle;
 import thiefmod.CardNoSeen;
 import thiefmod.ThiefMod;
-import thiefmod.cards.AbstractBackstabCard;
+import thiefmod.cards.abstracts.AbstractBackstabCard;
 
 @CardNoSeen
 public class FleetingGuilt extends AbstractBackstabCard {

@@ -1,5 +1,6 @@
-package thiefmod.cards;
+package thiefmod.cards.abstracts;
 
+import basemod.abstracts.CustomCard;
 import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -11,10 +12,11 @@ import thiefmod.powers.Common.BackstabPower;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 import static thiefmod.ThiefMod.getModID;
 
 @CardIgnore
-public abstract class AbstractStolenCard extends AbstractThiefCard {
+public abstract class AbstractThiefCard extends CustomCard {
     public int backstabNumber;
     public int baseBackstabNumber;
     public boolean upgradedBackstabNumber;
@@ -23,15 +25,15 @@ public abstract class AbstractStolenCard extends AbstractThiefCard {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:TooltipNames");
     public static final String FLAVOR_STRINGS[] = uiStrings.TEXT;
 
-    public AbstractStolenCard(final String id,
-                              final String img,
-                              final int cost,
-                              final CardType type,
-                              final CardColor color,
-                              final CardRarity rarity,
-                              final CardTarget target) {
+    public AbstractThiefCard(final String id,
+                             final String img,
+                             final int cost,
+                             final CardType type,
+                             final CardColor color,
+                             final CardRarity rarity,
+                             final CardTarget target) {
 
-        super(id, img, cost, type, color, rarity, target);
+        super(id, languagePack.getCardStrings(id).NAME, img, cost, languagePack.getCardStrings(id).DESCRIPTION, type, color, rarity, target);
 
         isBackstabNumberModified = false;
     }
@@ -68,8 +70,5 @@ public abstract class AbstractStolenCard extends AbstractThiefCard {
         return getModID() + "Assets/images/cards/beta";
     }
 
-    public static String flavortext(String EXTENDED_DESCRIPTION) {
-        return EXTENDED_DESCRIPTION;
 
-    }
 }

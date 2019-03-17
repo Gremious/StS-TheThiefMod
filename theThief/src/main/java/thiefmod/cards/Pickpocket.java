@@ -16,7 +16,7 @@ import thiefmod.patches.character.AbstractCardEnum;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Pickpocket extends CustomCard {
+public class Pickpocket extends AbstractBackstabCard {
 
 
 // TEXT DECLARATION

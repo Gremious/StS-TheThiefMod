@@ -11,8 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.CardNoSeen;
 import thiefmod.ThiefMod;
 import thiefmod.actions.unique.StolenArmorAction;
-import thiefmod.cards.AbstractBackstabCard;
-import thiefmod.cards.AbstractStolenCard;
+import thiefmod.cards.abstracts.AbstractStolenCard;
 import thiefmod.patches.character.ThiefCardTags;
 
 

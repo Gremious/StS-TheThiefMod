@@ -1,20 +1,15 @@
-package thiefmod.cards;
+package thiefmod.cards.abstracts;
 
-import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import thiefmod.CardIgnore;
-import thiefmod.powers.Common.BackstabPower;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static thiefmod.ThiefMod.getModID;
 
 @CardIgnore
-public abstract class AbstractBackstabCard extends AbstractThiefCard {
+public abstract class AbstractStolenCard extends AbstractThiefCard {
     public int backstabNumber;
     public int baseBackstabNumber;
     public boolean upgradedBackstabNumber;
@@ -23,13 +18,13 @@ public abstract class AbstractBackstabCard extends AbstractThiefCard {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:TooltipNames");
     public static final String FLAVOR_STRINGS[] = uiStrings.TEXT;
 
-    public AbstractBackstabCard(final String id,
-                                final String img,
-                                final int cost,
-                                final CardType type,
-                                final CardColor color,
-                                final CardRarity rarity,
-                                final CardTarget target) {
+    public AbstractStolenCard(final String id,
+                              final String img,
+                              final int cost,
+                              final CardType type,
+                              final CardColor color,
+                              final CardRarity rarity,
+                              final CardTarget target) {
 
         super(id, img, cost, type, color, rarity, target);
 
@@ -55,13 +50,6 @@ public abstract class AbstractBackstabCard extends AbstractThiefCard {
 
     //==
 
-    public static boolean canBackstab() {
-        if (AbstractDungeon.player.cardsPlayedThisTurn < 2 || AbstractDungeon.player.hasPower(BackstabPower.POWER_ID)) {
-            return true;
-        } else {
-            return false;
-        }
-    }
 
     public void action(AbstractGameAction action) {
         AbstractDungeon.actionManager.addToBottom(action);
@@ -78,18 +66,5 @@ public abstract class AbstractBackstabCard extends AbstractThiefCard {
     public static String flavortext(String EXTENDED_DESCRIPTION) {
         return EXTENDED_DESCRIPTION;
 
-    }
-
-    public abstract String flavortext();
-
-    @Override
-    public List<TooltipInfo> getCustomTooltips() {
-        List<TooltipInfo> tips = new ArrayList<>();
-        if (flavortext() != null) {
-            tips.add(new TooltipInfo(FLAVOR_STRINGS[0], flavortext()));
-        } else {
-            tips.add(new TooltipInfo(FLAVOR_STRINGS[0], FLAVOR_STRINGS[0]));
-        }
-        return tips;
     }
 }

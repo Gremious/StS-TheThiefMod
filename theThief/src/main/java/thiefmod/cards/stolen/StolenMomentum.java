@@ -14,7 +14,7 @@ import thiefmod.patches.character.ThiefCardTags;
 import thiefmod.CardNoSeen;
 
 @CardNoSeen
-public class StolenMomentum extends CustomCard {
+public class StolenMomentum extends AbstractBackstabCard {
 
     /*
      * Empty Base

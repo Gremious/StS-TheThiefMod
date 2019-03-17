@@ -12,7 +12,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.cardManip.CardFlashVfx;
 import thiefmod.ThiefMod;
 import thiefmod.actions.unique.StolenArsenalAction;
-import thiefmod.cards.AbstractBackstabCard;
 import thiefmod.patches.character.ThiefCardTags;
 
 import java.util.ArrayList;

@@ -12,7 +12,7 @@ import thiefmod.patches.character.ThiefCardTags;
 import thiefmod.CardNoSeen;
 
 @CardNoSeen
-public class StolenCandy extends CustomCard {
+public class StolenCandy extends AbstractBackstabCard {
 
     /*
      * 0: gain 1 (2) energy

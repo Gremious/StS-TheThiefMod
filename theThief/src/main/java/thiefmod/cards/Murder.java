@@ -1,6 +1,5 @@
 package thiefmod.cards;
 
-import basemod.helpers.TooltipInfo;
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.FleetingField;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -10,7 +9,6 @@ import com.megacrit.cardcrawl.actions.utility.ShakeScreenAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -18,10 +16,8 @@ import com.megacrit.cardcrawl.vfx.combat.AdditiveSlashImpactEffect;
 import com.megacrit.cardcrawl.vfx.combat.ClashEffect;
 import com.megacrit.cardcrawl.vfx.combat.RoomTintEffect;
 import thiefmod.ThiefMod;
+import thiefmod.cards.abstracts.AbstractBackstabCard;
 import thiefmod.patches.character.AbstractCardEnum;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static com.megacrit.cardcrawl.helpers.ScreenShake.ShakeDur.MED;
 import static com.megacrit.cardcrawl.helpers.ScreenShake.ShakeIntensity.HIGH;

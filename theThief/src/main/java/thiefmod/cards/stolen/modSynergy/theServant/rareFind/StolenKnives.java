@@ -15,7 +15,6 @@ import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.CardFlashVfx;
 import thiefmod.CardNoSeen;
 import thiefmod.ThiefMod;
-import thiefmod.cards.AbstractBackstabCard;
 import thiefmod.patches.character.ThiefCardTags;
 import thiefmod.powers.Unique.StolenKnivesPower;
 

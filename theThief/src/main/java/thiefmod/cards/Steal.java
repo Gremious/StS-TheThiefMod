@@ -16,7 +16,7 @@ import thiefmod.patches.character.AbstractCardEnum;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Steal extends CustomCard {
+public class Steal extends AbstractBackstabCard {
 
     // TEXT DECLARATION
 

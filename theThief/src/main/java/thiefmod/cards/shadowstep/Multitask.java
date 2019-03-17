@@ -1,6 +1,5 @@
 package thiefmod.cards.shadowstep;
 
-import basemod.helpers.TooltipInfo;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.FleetingField;
 import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -13,13 +12,10 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
 import thiefmod.actions.common.StealCardAction;
-import thiefmod.cards.AbstractBackstabCard;
+import thiefmod.cards.abstracts.AbstractBackstabCard;
 import thiefmod.patches.character.AbstractCardEnum;
 import thiefmod.patches.character.ThiefCardTags;
 import thiefmod.powers.Common.ShadowstepPower;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class Multitask extends AbstractBackstabCard {
 //TODO: This one needs a p big description change, since it has many parts that can potentially be =/> 1; Make sure it pluralizes correctly.

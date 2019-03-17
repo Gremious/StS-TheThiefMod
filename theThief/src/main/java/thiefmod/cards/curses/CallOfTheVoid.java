@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.powers.EvolvePower;
 import com.megacrit.cardcrawl.powers.NoDrawPower;
 import thiefmod.CardNoSeen;
 import thiefmod.ThiefMod;
-import thiefmod.cards.AbstractBackstabCard;
+import thiefmod.cards.abstracts.AbstractBackstabCard;
 
 @CardNoSeen
 public class CallOfTheVoid extends AbstractBackstabCard {

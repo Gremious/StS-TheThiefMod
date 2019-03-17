@@ -17,7 +17,6 @@ import com.megacrit.cardcrawl.vfx.combat.WeakParticleEffect;
 import thiefmod.CardNoSeen;
 import thiefmod.ThiefMod;
 import thiefmod.actions.Util.MakeSuperCopyAction;
-import thiefmod.cards.AbstractBackstabCard;
 import thiefmod.patches.character.ThiefCardTags;
 
 import java.util.ArrayList;

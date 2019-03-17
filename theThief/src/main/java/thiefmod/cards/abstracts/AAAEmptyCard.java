@@ -1,6 +1,5 @@
-package thiefmod.cards;
+package thiefmod.cards.abstracts;
 
-import basemod.helpers.TooltipInfo;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.FleetingField;
 import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -21,8 +20,6 @@ import thiefmod.patches.character.AbstractCardEnum;
 import thiefmod.patches.character.ThiefCardTags;
 import thiefmod.powers.Common.ShadowstepPower;
 
-import java.util.ArrayList;
-import java.util.List;
 @Deprecated
 @CardIgnore
 public class AAAEmptyCard extends AbstractBackstabCard {

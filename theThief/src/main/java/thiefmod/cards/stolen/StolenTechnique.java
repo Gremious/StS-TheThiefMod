@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import thiefmod.CardNoSeen;
 
 @CardNoSeen
-public class StolenTechnique extends CustomCard {
+public class StolenTechnique extends AbstractBackstabCard {
 
     // TEXT DECLARATION 
 

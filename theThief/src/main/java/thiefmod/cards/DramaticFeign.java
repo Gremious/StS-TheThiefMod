@@ -5,6 +5,7 @@ import basemod.helpers.TooltipInfo;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.StunMonsterAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -16,13 +17,14 @@ import com.megacrit.cardcrawl.vfx.combat.GrandFinalEffect;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import thiefmod.ThiefMod;
+import thiefmod.cards.abstracts.AbstractBackstabCard;
 import thiefmod.patches.character.AbstractCardEnum;
 import thiefmod.powers.Unique.DramaticFeignPower;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class DramaticFeign extends CustomCard {
+public class DramaticFeign extends AbstractBackstabCard {
     public static final Logger logger = LogManager.getLogger(ThiefMod.class.getName());
 
     /*
@@ -52,7 +54,7 @@ public class DramaticFeign extends CustomCard {
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ALL;
     private static final CardType TYPE = CardType.SKILL;
-    public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
+    public static final AbstractCard.CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
 
     private static final int COST = 3;
     private static final int UPGRADE_COST = 2;
@@ -63,7 +65,7 @@ public class DramaticFeign extends CustomCard {
 // /STAT DECLARATION/
 
     public DramaticFeign() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID,  IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = MAGIC;
 
         logger.info("Initialized Method");

@@ -15,7 +15,7 @@ import thiefmod.patches.character.ThiefCardTags;
 import thiefmod.CardNoSeen;
 
 @CardNoSeen
-public class StolenToxins extends CustomCard {
+public class StolenToxins extends AbstractBackstabCard {
 
     // TEXT DECLARATION 
 

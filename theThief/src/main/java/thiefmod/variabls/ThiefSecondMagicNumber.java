@@ -2,7 +2,7 @@ package thiefmod.variabls;
 
 import basemod.abstracts.DynamicVariable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import thiefmod.cards.AbstractBackstabCard;
+import thiefmod.cards.abstracts.AbstractBackstabCard;
 
 public class ThiefSecondMagicNumber extends DynamicVariable {
 

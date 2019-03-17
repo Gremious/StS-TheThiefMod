@@ -16,7 +16,7 @@ import thiefmod.powers.Unique.SimilarSkillsPowerUpgraded;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SimilarSkills extends CustomCard {
+public class SimilarSkills extends AbstractBackstabCard {
 
 
 // TEXT DECLARATION 

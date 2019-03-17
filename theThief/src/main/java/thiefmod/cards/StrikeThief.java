@@ -1,23 +1,19 @@
 package thiefmod.cards;
 
-import basemod.abstracts.CustomCard;
 import basemod.helpers.BaseModCardTags;
-import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import thiefmod.cards.abstracts.AbstractBackstabCard;
 import thiefmod.patches.character.AbstractCardEnum;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class StrikeThief extends CustomCard {
+public class StrikeThief extends AbstractBackstabCard {
 
 // TEXT DECLARATION 
 
@@ -51,7 +47,7 @@ public class StrikeThief extends CustomCard {
 // /STAT DECLARATION/
 
     public StrikeThief() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID,  IMG, COST,  TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         tags.add(AbstractCard.CardTags.STRIKE);
         tags.add(BaseModCardTags.BASIC_STRIKE);
@@ -60,7 +56,7 @@ public class StrikeThief extends CustomCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        action(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
+        action(new DamageAction(m,
                 new DamageInfo(p, damage, damageTypeForTurn),
                 AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
 
