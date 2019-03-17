@@ -54,7 +54,10 @@ public class ShadowCloak extends AbstractBackstabCard {
         baseBlock = BLOCK;
         magicNumber = baseMagicNumber = MAGIC;
     }
-
+    @Override
+    public String flavortext() {
+        return EXTENDED_DESCRIPTION[0];
+    }
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

@@ -105,4 +105,9 @@ public class CripplingStrike extends AbstractBackstabCard {
             initializeDescription();
         }
     }
+
+    @Override
+    public String flavortext() {
+        return EXTENDED_DESCRIPTION[0];
+    }
 }

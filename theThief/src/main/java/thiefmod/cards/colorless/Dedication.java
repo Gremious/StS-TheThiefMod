@@ -56,7 +56,10 @@ public class Dedication extends AbstractBackstabCard {
 
 
     }
-
+    @Override
+    public String flavortext() {
+        return null;
+    }
 
     //Upgraded stats.
     @Override

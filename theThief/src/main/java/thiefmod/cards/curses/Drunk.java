@@ -53,7 +53,10 @@ public class Drunk extends AbstractBackstabCard {
         action(
                 new MakeTempCardInDiscardAndDeckAction(new Dazed()));
     }
-
+    @Override
+    public String flavortext() {
+        return null;
+    }
     @Override
     public void upgrade() {
     }

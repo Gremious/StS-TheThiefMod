@@ -4,7 +4,6 @@ import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.GraveField;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -58,6 +57,11 @@ public class Patience extends AbstractBackstabCard {
         action(new GainBlockAction(
                 p, p, block));
 
+    }
+
+    @Override
+    public String flavortext() {
+        return EXTENDED_DESCRIPTION[0];
     }
 
     //Upgraded stats.

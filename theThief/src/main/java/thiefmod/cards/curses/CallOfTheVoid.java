@@ -59,7 +59,10 @@ public class CallOfTheVoid extends AbstractBackstabCard {
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
 
     }
-
+    @Override
+    public String flavortext() {
+        return null;
+    }
     @Override
     public void upgrade() {
     }

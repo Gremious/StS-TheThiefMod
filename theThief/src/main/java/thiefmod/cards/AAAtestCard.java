@@ -42,7 +42,10 @@ public class AAAtestCard extends AbstractBackstabCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         action(new TestAction(1));
     }
-
+    @Override
+    public String flavortext() {
+        return null;
+    }
     // Upgraded stats.
     @Override
     public void upgrade() {

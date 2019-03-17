@@ -83,10 +83,8 @@ public class SteakOut extends AbstractBackstabCard implements StartupCard {
 
 
     @Override
-    public List<TooltipInfo> getCustomTooltips() {
-        List<TooltipInfo> tips = new ArrayList<>();
-        tips.add(new TooltipInfo(FLAVOR_STRINGS[0], EXTENDED_DESCRIPTION[0]));
-        return tips;
+    public String flavortext() {
+        return EXTENDED_DESCRIPTION[0];
     }
 
     //Upgraded stats.

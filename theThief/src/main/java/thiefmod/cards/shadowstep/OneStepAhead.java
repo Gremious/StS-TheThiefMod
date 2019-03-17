@@ -2,7 +2,6 @@ package thiefmod.cards.shadowstep;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -67,6 +66,10 @@ public class OneStepAhead extends AbstractBackstabCard {
         action(new OneStepAheadAction(magicNumber, backstabNumber, damage, m));
     }
 
+    @Override
+    public String flavortext() {
+        return EXTENDED_DESCRIPTION[0];
+    }
 
     //Upgraded stats.
     @Override

@@ -76,7 +76,10 @@ public class FleetingGuilt extends AbstractBackstabCard {
         AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(this, true));
     }
 
-
+    @Override
+    public String flavortext() {
+        return null;
+    }
     //Upgraded stats.
     @Override
     public void upgrade() {

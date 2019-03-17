@@ -25,8 +25,6 @@ public class Ambush extends AbstractBackstabCard {
     public static final String IMG = "theThiefAssets/images/cards/beta/Ambush.png";
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
 
-    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:TooltipNames");
-    public static final String FLAVOR_STRINGS[] = uiStrings.TEXT;
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String EXTENDED_DESCRIPTION[] = cardStrings.EXTENDED_DESCRIPTION;
@@ -61,14 +59,12 @@ public class Ambush extends AbstractBackstabCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         action(new MakeTempCardInDrawPileAction(new VoidCard(), magicNumber, true, true, false));
         action(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
-
     }
 
+
     @Override
-    public List<TooltipInfo> getCustomTooltips() {
-        List<TooltipInfo> tips = new ArrayList<>();
-        tips.add(new TooltipInfo(FLAVOR_STRINGS[0], EXTENDED_DESCRIPTION[0]));
-        return tips;
+    public String flavortext() {
+        return EXTENDED_DESCRIPTION[0];
     }
 
     @Override

@@ -1,5 +1,6 @@
 package thiefmod.cards;
 
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -23,6 +24,7 @@ public class SleightOfHand extends AbstractBackstabCard {
     public static final String FLAVOR_STRINGS[] = uiStrings.TEXT;
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String EXTENDED_DESCRIPTION[] = cardStrings.EXTENDED_DESCRIPTION;
 
 // /TEXT DECLARATION/
 
@@ -55,13 +57,17 @@ public class SleightOfHand extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         final int count = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
-        action(new com.megacrit.cardcrawl.actions.common.GainBlockAction(p, p, block));
+        action(new GainBlockAction(p, p, block));
 
         action(new StealCardAction(
                 magicNumber, 1, ADD_RANDOM, AbstractDungeon.player.hand, ADD_UPGRADED));
 
     }
 
+    @Override
+    public String flavortext() {
+        return EXTENDED_DESCRIPTION[0];
+    }
 
     //Upgraded stats.
     @Override

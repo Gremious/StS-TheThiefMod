@@ -57,7 +57,10 @@ public class HotGossip extends AbstractBackstabCard {
 
     }
 
-
+    @Override
+    public String flavortext() {
+        return null;
+    }
     //Upgraded stats.
     @Override
     public void upgrade() {

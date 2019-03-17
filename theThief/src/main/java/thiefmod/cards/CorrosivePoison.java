@@ -77,6 +77,11 @@ public class CorrosivePoison extends AbstractBackstabCard {
     }
 
     @Override
+    public String flavortext() {
+        return EXTENDED_DESCRIPTION[0];
+    }
+
+    @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractMonster randomMonster = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
         action(new CorrosivePoisonAction(randomMonster, 2, 1, 2, magicNumber));
@@ -88,7 +93,7 @@ public class CorrosivePoison extends AbstractBackstabCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
-          rawDescription = UPGRADE_DESCRIPTION;
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

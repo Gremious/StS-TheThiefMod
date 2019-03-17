@@ -4,7 +4,6 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -67,6 +66,11 @@ public class QuickThinking extends AbstractBackstabCard {
 
         action(new DrawCardAction(p, magicNumber));
 
+    }
+
+    @Override
+    public String flavortext() {
+        return EXTENDED_DESCRIPTION[0];
     }
 
     @Override

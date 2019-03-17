@@ -65,7 +65,10 @@ public class Sidestep extends AbstractBackstabCard {
         action(new ApplyPowerAction(p, p, new NextTurnBlockPower(p, block), block));
 
     }
-
+    @Override
+    public String flavortext() {
+        return EXTENDED_DESCRIPTION[0];
+    }
 
     //Upgraded stats.
     @Override
