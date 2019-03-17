@@ -35,10 +35,10 @@ public class Lie extends AbstractBackstabCard {
     
     private static final int COST = 1;
     
-    private static final int BLOCK = 4;
+    private static final int BLOCK = 5;
+    private static final int UPGRADED_PLUS_BLOCK = 2;
     
     private static final int MAGIC = 1;
-    private static final int UPGRADED_PLUS_MAGIC = 1;
     // /STAT DECLARATION/
     
     public Lie() {
@@ -66,7 +66,7 @@ public class Lie extends AbstractBackstabCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
+            upgradeBlock(UPGRADED_PLUS_BLOCK);
             rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

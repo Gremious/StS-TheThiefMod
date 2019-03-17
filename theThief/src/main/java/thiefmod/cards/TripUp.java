@@ -57,22 +57,6 @@ public class TripUp extends AbstractBackstabCard {
     }
     
     @Override
-    public void applyPowers() {
-        super.applyPowers();
-        if (magicNumber >= 2) {
-            rawDescription = UPGRADE_DESCRIPTION;
-        } else {
-            rawDescription = DESCRIPTION;
-        }
-        if (AbstractDungeon.player.cardsPlayedThisTurn == 0) {
-            rawDescription += EXTENDED_DESCRIPTION[1];
-        } else {
-            rawDescription += EXTENDED_DESCRIPTION[2];
-        }
-        initializeDescription();
-    }
-    
-    @Override
     public String flavortext() {
         return EXTENDED_DESCRIPTION[0];
     }

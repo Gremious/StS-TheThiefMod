@@ -19,13 +19,13 @@ import thiefmod.util.TextureLoader;
 public class Ambush extends AbstractBackstabCard {
     // TEXT DECLARATION
     public static final String ID = ThiefMod.makeID("Ambush");
-    public static final String IMG = "theThiefAssets/images/cards/beta/Ambush.png";
-    private static final Texture BETA_IMG = TextureLoader.getJokeTexture(getCardImageBeta(Ambush.class.getSimpleName()), IMG);
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
     
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
     
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
+    public static final String IMG = "theThiefAssets/images/cards/beta/Ambush.png";
+    private static final Texture BETA_IMG = TextureLoader.getJokeTexture(getCardImageBeta(Ambush.class.getSimpleName()), IMG);
     // /TEXT DECLARATION/
     
     // STAT DECLARATION

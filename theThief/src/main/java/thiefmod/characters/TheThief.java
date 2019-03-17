@@ -147,6 +147,7 @@ public class TheThief extends CustomPlayer {
         retVal.add(DefendThief.ID);
 
         retVal.add(Lie.ID);
+        retVal.add(Lie.ID);
 
         return retVal;
     }
@@ -245,11 +246,10 @@ public class TheThief extends CustomPlayer {
     @Override
     public AbstractGameAction.AttackEffect[] getSpireHeartSlashEffect() {
         return new AbstractGameAction.AttackEffect[]{
-                AbstractGameAction.AttackEffect.SLASH_DIAGONAL,
-                AbstractGameAction.AttackEffect.SLASH_HORIZONTAL,
                 AbstractGameAction.AttackEffect.SLASH_VERTICAL,
-                AbstractGameAction.AttackEffect.BLUNT_HEAVY,
-                AbstractGameAction.AttackEffect.BLUNT_HEAVY,
+                AbstractGameAction.AttackEffect.SLASH_HORIZONTAL,
+                AbstractGameAction.AttackEffect.SLASH_DIAGONAL,
+                AbstractGameAction.AttackEffect.SLASH_DIAGONAL,
                 AbstractGameAction.AttackEffect.BLUNT_HEAVY};
 
     }

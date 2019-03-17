@@ -32,7 +32,7 @@
       "Stolen",
       "stolen"
     ],
-    "DESCRIPTION": "Stolen cards are mostly low energy cards that gain Exhaust when attained through #yStealing. NL After #yStealing #b5 cards, add #b1 #rFleeting #rGuilt to your discard pile."
+    "DESCRIPTION": "#yStolen cards are mostly low energy cards that gain #yExhaust when attained through #yStealing. NL After #yStealing #b5 cards, add #b1 #rFleeting #rGuilt to your discard pile."
   },
   {
     "NAMES": [
@@ -44,6 +44,6 @@
       "Backstab:",
       "BackstabPower"
     ],
-    "DESCRIPTION": "Triggers if this is the first card you play in a turn, or if it's played after a #yShadowstep card."
+    "DESCRIPTION": "Triggers if this is the first card you play in a turn, or if it's played immediately after a #yShadowstep card."
   }
 ]
