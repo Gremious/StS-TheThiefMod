@@ -57,7 +57,7 @@ public class StolenBlood extends AbstractBackstabCard {
 
 
     public StolenBlood() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
      /* Straight up just doesn't work. But maybe one day it will. And when that happens, I'll be waiting. And I will uncomment this code. And my rare cards will look cool.
 
         setBackgroundTexture("theThiefAssets/images/512/special/red_rare_skill_bg.png",

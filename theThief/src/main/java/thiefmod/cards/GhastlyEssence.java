@@ -54,7 +54,7 @@ public class GhastlyEssence extends AbstractBackstabCard {
 // /STAT DECLARATION/
 
     public GhastlyEssence() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
         magicNumber = baseMagicNumber = MAGIC;
     }

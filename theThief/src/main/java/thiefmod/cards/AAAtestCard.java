@@ -34,7 +34,7 @@ public class AAAtestCard extends AbstractBackstabCard {
     // /STAT DECLARATION/
 
     public AAAtestCard() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
     }
 
     // Actions the card should do.

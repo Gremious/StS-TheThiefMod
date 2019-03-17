@@ -27,13 +27,10 @@ public class Ambush extends AbstractBackstabCard {
     public static final String IMG = "theThiefAssets/images/cards/beta/Ambush.png";
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
 
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:TooltipNames");
-
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-
     public static final String FLAVOR_STRINGS[] = uiStrings.TEXT;
+
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String EXTENDED_DESCRIPTION[] = cardStrings.EXTENDED_DESCRIPTION;
 
 
@@ -56,7 +53,7 @@ public class Ambush extends AbstractBackstabCard {
 // /STAT DECLARATION/
 
     public Ambush() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
         damage = DAMAGE;
         magicNumber = baseMagicNumber = MAGIC;

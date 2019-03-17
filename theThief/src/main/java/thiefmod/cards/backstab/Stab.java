@@ -51,7 +51,7 @@ public class Stab extends AbstractBackstabCard {
 // /STAT DECLARATION/
 
     public Stab() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
         baseDamage = DAMAGE;
         baseBackstabNumber = backstabNumber = BACKSTAB;

@@ -56,7 +56,7 @@ public class ShadowCalamity extends AbstractBackstabCard implements StartupCard 
 // /STAT DECLARATION/
 
     public ShadowCalamity() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         ExhaustiveVariable.setBaseValue(this, 2);
         GraveField.grave.set(this, true);
 

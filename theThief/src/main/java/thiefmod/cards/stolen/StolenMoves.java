@@ -50,7 +50,7 @@ public class StolenMoves extends AbstractBackstabCard {
 
 
     public StolenMoves() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
 
         baseBlock = BLOCK;

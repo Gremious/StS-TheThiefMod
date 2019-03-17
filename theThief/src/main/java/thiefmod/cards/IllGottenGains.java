@@ -50,7 +50,7 @@ public class IllGottenGains extends AbstractBackstabCard {
     public IllGottenGains() {
 
 
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
         isInnate = false;
     }

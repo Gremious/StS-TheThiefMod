@@ -54,7 +54,7 @@ public class HeartBreaker extends AbstractBackstabCard {
 // /STAT DECLARATION/
 
     public HeartBreaker() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
         baseDamage = DAMAGE;
     }

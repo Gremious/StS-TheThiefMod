@@ -41,7 +41,7 @@ public class HotGossip extends AbstractBackstabCard {
 // /STAT DECLARATION/
 
     public HotGossip() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
         exhaust = true;
     }

@@ -55,7 +55,7 @@ public class Prep extends AbstractBackstabCard {
 
 
     public Prep() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
         baseBlock = BLOCK;
         magicNumber = baseMagicNumber = MAGIC;

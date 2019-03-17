@@ -54,7 +54,7 @@ public class Backstep extends AbstractBackstabCard {
 // /STAT DECLARATION/
 
     public Backstep() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
         ExhaustiveVariable.setBaseValue(this, 2);
 

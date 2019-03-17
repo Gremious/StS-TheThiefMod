@@ -74,7 +74,7 @@ public class AAAEmptyCard extends AbstractBackstabCard {
 // /STAT DECLARATION/
 
     public AAAEmptyCard() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
         ExhaustiveVariable.setBaseValue(this, 2);
 

@@ -58,7 +58,7 @@ public class Gut extends AbstractBackstabCard {
 // /STAT DECLARATION/
 
     public Gut() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
         baseDamage = DAMAGE;
         magicNumber = baseMagicNumber = MAGIC;

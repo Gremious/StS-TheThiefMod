@@ -46,7 +46,7 @@ public class ShadowForm extends AbstractBackstabCard {
     // /STAT DECLARATION/
 
     public ShadowForm() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
         isEthereal = true;
         magicNumber = baseMagicNumber = MAGIC;

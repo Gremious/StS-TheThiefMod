@@ -57,7 +57,7 @@ public class DirtyDeedsDDC extends AbstractBackstabCard {
 // /STAT DECLARATION/
 
     public DirtyDeedsDDC() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
         baseDamage = DAMAGE;
         magicNumber = baseMagicNumber = MAGIC;

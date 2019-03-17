@@ -53,7 +53,7 @@ public class Bribe extends AbstractBackstabCard {
 // /STAT DECLARATION/
 
     public Bribe() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
 
         ExhaustiveVariable.setBaseValue(this, 3);

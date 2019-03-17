@@ -40,7 +40,7 @@ public class Drunk extends AbstractBackstabCard {
 // /STAT DECLARATION/
 
     public Drunk() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         AutoplayField.autoplay.set(this, true);
     }
 

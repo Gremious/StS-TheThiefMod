@@ -53,7 +53,7 @@ public class CloakAndDagger extends AbstractBackstabCard {
     private static final int BACKSTAB = 2;
 
     public CloakAndDagger() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
         baseDamage = DAMAGE;
         baseBlock = BLOCK;

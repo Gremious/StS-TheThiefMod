@@ -46,7 +46,7 @@ public class FleetingGuilt extends AbstractBackstabCard {
 // /STAT DECLARATION/
 
     public FleetingGuilt() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
         GraveField.grave.set(this, true);
 

@@ -50,7 +50,7 @@ public class ShadowImage extends AbstractBackstabCard {
 // /STAT DECLARATION/
 
     public ShadowImage() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         exhaust = true;
     }
 

@@ -57,7 +57,7 @@ public class StolenMail extends AbstractBackstabCard {
 
 
     public StolenMail() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
         if (letterCards.size() == 0) {
             letterCards.add(new LetterOfAdmiration());

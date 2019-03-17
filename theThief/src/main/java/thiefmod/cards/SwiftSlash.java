@@ -55,7 +55,7 @@ public class  SwiftSlash extends AbstractBackstabCard {
 // /STAT DECLARATION/
 
     public SwiftSlash() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
         baseDamage = DAMAGE;
         magicNumber = baseMagicNumber = MAGIC;

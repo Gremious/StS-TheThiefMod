@@ -45,7 +45,7 @@ public class StolenChaos extends AbstractBackstabCard {
 
 
     public StolenChaos() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
 
         tags.add(ThiefCardTags.STOLEN);

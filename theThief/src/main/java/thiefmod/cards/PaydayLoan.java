@@ -55,7 +55,7 @@ public class PaydayLoan extends AbstractBackstabCard {
 // /STAT DECLARATION/
 
     public PaydayLoan() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
         ExhaustiveVariable.setBaseValue(this, 2);
 

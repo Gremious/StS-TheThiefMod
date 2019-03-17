@@ -48,7 +48,7 @@ public class stolenBookOfArte extends AbstractBackstabCard {
 
 
     public stolenBookOfArte() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
         tags.add(ThiefCardTags.STOLEN);
     }

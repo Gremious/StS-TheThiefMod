@@ -54,7 +54,7 @@ public class RiggedBet extends AbstractBackstabCard {
 // /STAT DECLARATION/
 
     public RiggedBet() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         exhaust = true;
         magicNumber = baseMagicNumber = MAGIC;
 

@@ -390,39 +390,39 @@ public class ThiefMod implements
 
         // Regular Cards CardStrings
         BaseMod.loadCustomStringsFile(CardStrings.class,
-                "theThiefAssets/localization/eng/ThiefMod-Card-Strings.json");
+                getModID() + "Assets/localization/eng/ThiefMod-Card-Strings.json");
 
         // Stolen Cards CardStrings
         BaseMod.loadCustomStringsFile(CardStrings.class,
-                "theThiefAssets/localization/eng/ThiefMod-Stolen-Card-Strings.json");
+                getModID() + "Assets/localization/eng/ThiefMod-Stolen-Card-Strings.json");
 
         // Backstab Cards CardStrings
         BaseMod.loadCustomStringsFile(CardStrings.class,
-                "theThiefAssets/localization/eng/ThiefMod-Backstab-Card-Strings.json");
+                getModID() + "Assets/localization/eng/ThiefMod-Backstab-Card-Strings.json");
 
         // Curse Cards CardStrings
         BaseMod.loadCustomStringsFile(CardStrings.class,
-                "theThiefAssets/localization/eng/ThiefMod-Curse-Card-Strings.json");
+                getModID() + "Assets/localization/eng/ThiefMod-Curse-Card-Strings.json");
 
         // character Strings
         BaseMod.loadCustomStringsFile(CharacterStrings.class,
-                "theThiefAssets/localization/eng/ThiefMod-Character-Strings.json");
+                getModID() + "Assets/localization/eng/ThiefMod-Character-Strings.json");
 
         // Power Strings
         BaseMod.loadCustomStringsFile(PowerStrings.class,
-                "theThiefAssets/localization/eng/ThiefMod-Power-Strings.json");
+                getModID() + "Assets/localization/eng/ThiefMod-Power-Strings.json");
 
         // Relic Strings
         BaseMod.loadCustomStringsFile(RelicStrings.class,
-                "theThiefAssets/localization/eng/ThiefMod-Relic-Strings.json");
+                getModID() + "Assets/localization/eng/ThiefMod-Relic-Strings.json");
 
         // Event Strings
         BaseMod.loadCustomStringsFile(EventStrings.class,
-                "theThiefAssets/localization/eng/ThiefMod-Event-Strings.json");
+                getModID() + "Assets/localization/eng/ThiefMod-Event-Strings.json");
 
         // UI Strings
         BaseMod.loadCustomStringsFile(UIStrings.class,
-                "theThiefAssets/localization/eng/ThiefMod-UI-Strings.json");
+                getModID() + "Assets/localization/eng/ThiefMod-UI-Strings.json");
 
         logger.info("Done Edtting Strings");
     }

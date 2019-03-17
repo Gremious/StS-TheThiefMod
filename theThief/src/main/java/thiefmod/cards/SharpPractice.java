@@ -53,7 +53,7 @@ public class SharpPractice extends AbstractBackstabCard {
 // /STAT DECLARATION/
 
     public SharpPractice() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         isInnate = false;
 
         magicNumber = baseMagicNumber = MAGIC;

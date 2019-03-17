@@ -63,7 +63,7 @@ public class PerfectDagger extends AbstractBackstabCard {
 
 
     public PerfectDagger() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
         misc = MISC;
         baseMagicNumber = MAGIC;

@@ -52,7 +52,7 @@ public class SerratedDagger extends AbstractBackstabCard {
 // /STAT DECLARATION/
 
     public SerratedDagger() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
         baseDamage = DAMAGE;
         tags.add(PiercingTag.THIEF_PIERCING);

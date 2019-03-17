@@ -56,7 +56,7 @@ public class StickyFingers extends AbstractBackstabCard {
 // /STAT DECLARATION/
 
     public StickyFingers() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
         backstabNumber = baseBackstabNumber = STEAL;
 

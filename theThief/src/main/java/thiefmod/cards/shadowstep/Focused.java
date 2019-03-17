@@ -58,7 +58,7 @@ public class Focused extends AbstractBackstabCard {
 // /STAT DECLARATION/
 
     public Focused() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
         misc = POWER;
         magicNumber = baseMagicNumber = MAGIC;

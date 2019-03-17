@@ -59,7 +59,7 @@ public class StolenKnives extends AbstractBackstabCard {
 
 
     public StolenKnives() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.exhaust = true;
         this.baseDamage = DAMAGE;
         this.magicNumber = this.baseMagicNumber = MAGIC;

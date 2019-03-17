@@ -56,7 +56,7 @@ public class SteakOut extends AbstractBackstabCard implements StartupCard {
 // /STAT DECLARATION/
 
     public SteakOut() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         AutoplayField.autoplay.set(this, true);
         magicNumber = baseMagicNumber = MAGIC;
     }

@@ -53,7 +53,7 @@ public class Lie extends AbstractBackstabCard {
 // /STAT DECLARATION/
 
     public Lie() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
         baseBlock = BLOCK;
         magicNumber = baseMagicNumber = MAGIC;

@@ -46,7 +46,7 @@ public class Patience extends AbstractBackstabCard {
 // /STAT DECLARATION/
 
     public Patience() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseBlock = BLOCK;
         GraveField.grave.set(this, true);
     }

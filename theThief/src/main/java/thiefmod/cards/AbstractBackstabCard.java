@@ -1,33 +1,30 @@
 package thiefmod.cards;
 
 import basemod.abstracts.CustomCard;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import thiefmod.CardIgnore;
 import thiefmod.powers.Common.BackstabPower;
 
+import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
+import static thiefmod.ThiefMod.getModID;
+
 @CardIgnore
 public abstract class AbstractBackstabCard extends CustomCard {
-
     public int backstabNumber;
     public int baseBackstabNumber;
     public boolean upgradedBackstabNumber;
     public boolean isBackstabNumberModified;
 
-    public AbstractBackstabCard(final String id, final String name, final String img, final int cost,
-                                final String rawDescription,
-                                final AbstractCard.CardType type,
-                                final AbstractCard.CardColor color,
-                                final AbstractCard.CardRarity rarity,
-                                final AbstractCard.CardTarget target) {
-        super(id, name, img, cost, rawDescription, type, color, rarity, target);
+    public AbstractBackstabCard(final String id,
+                                final String img,
+                                final int cost,
+                                final CardType type,
+                                final CardColor color,
+                                final CardRarity rarity,
+                                final CardTarget target) {
 
-        isCostModified = false;
-        isCostModifiedForTurn = false;
+        super(id, languagePack.getCardStrings(id).NAME, img, cost, languagePack.getCardStrings(id).DESCRIPTION, type, color, rarity, target);
 
-        isDamageModified = false;
-        isBlockModified = false;
-        isMagicNumberModified = false;
         isBackstabNumberModified = false;
     }
 
@@ -49,20 +46,18 @@ public abstract class AbstractBackstabCard extends CustomCard {
     }
 
     public static boolean canBackstab() {
-        if (AbstractDungeon.player.cardsPlayedThisTurn < 2) {
-            return true;
-        } else if (AbstractDungeon.player.hasPower(BackstabPower.POWER_ID)) {
+        if (AbstractDungeon.player.cardsPlayedThisTurn < 2 || AbstractDungeon.player.hasPower(BackstabPower.POWER_ID)) {
             return true;
         } else {
             return false;
         }
     }
 
-    public static String getAssets() {
-        return "theThiefAssets/images/cards/";
+    public static String getCardImage() {
+        return getModID() + "Assets/images/cards/";
     }
 
-    public static String getAssetsBeta() {
-        return "theThiefAssets/images/cards/beta";
+    public static String getCardImageBeta() {
+        return getModID() + "Assets/images/cards/beta";
     }
 }
