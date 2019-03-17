@@ -2,9 +2,7 @@ package thiefmod.cards;
 
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.CardIgnore;
 import thiefmod.powers.Common.BackstabPower;
 
@@ -58,5 +56,13 @@ public abstract class AbstractBackstabCard extends CustomCard {
         } else {
             return false;
         }
+    }
+
+    public static String getAssets() {
+        return "thiefmodAssets/images/cards/";
+    }
+
+    public static String getAssetsBeta() {
+        return "thiefmodAssets/images/cards/beta";
     }
 }
