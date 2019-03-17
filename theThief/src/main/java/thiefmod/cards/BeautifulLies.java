@@ -27,7 +27,7 @@ public class BeautifulLies extends AbstractBackstabCard {
     public static final String ID = ThiefMod.makeID("BeautifulLies");
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:TooltipNames");
 
-    public static final String IMG = "thiefmodAssets/images/cards/BeautifulLies.png";
+    public static final String IMG = "theThiefAssets/images/cards/BeautifulLies.png";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     public static final String NAME = cardStrings.NAME;

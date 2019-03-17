@@ -27,7 +27,7 @@ public class stolenMysticalOrb extends AbstractBackstabCard {
     public static final String ID = ThiefMod.makeID("stolenMysticalOrb");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
-    public static final String IMG = "thiefmodAssets/images/cards/beta/Attack.png";
+    public static final String IMG = "theThiefAssets/images/cards/beta/Attack.png";
 
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
@@ -53,8 +53,8 @@ public class stolenMysticalOrb extends AbstractBackstabCard {
     public stolenMysticalOrb() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
-        setBannerTexture("thiefmodAssets/images/512/special/rare_skill_banner.png",
-                "thiefmodAssets/images/1024/special/rare_skill_banner.png");
+        setBannerTexture("theThiefAssets/images/512/special/rare_skill_banner.png",
+                "theThiefAssets/images/1024/special/rare_skill_banner.png");
 
         magicNumber = baseMagicNumber = MAGIC;
         tags.add(ThiefCardTags.STOLEN);

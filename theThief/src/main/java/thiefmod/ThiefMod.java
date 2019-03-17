@@ -6,6 +6,7 @@ import basemod.ModPanel;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
@@ -36,12 +37,15 @@ import thiefmod.events.MasqueradeEvent;
 import thiefmod.patches.character.AbstractCardEnum;
 import thiefmod.patches.character.TheThiefEnum;
 import thiefmod.relics.*;
+import thiefmod.util.IDCheckDontTouchPls;
 import thiefmod.variabls.BackstabBlock;
 import thiefmod.variabls.BackstabDamage;
 import thiefmod.variabls.BackstabMagicNumber;
 import thiefmod.variabls.ThiefSecondMagicNumber;
 
 import java.io.File;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.lang.reflect.Modifier;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -52,10 +56,15 @@ import java.util.Random;
 
 
 @SpireInitializer
-public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, EditKeywordsSubscriber, EditCharactersSubscriber, PostInitializeSubscriber {
-
-    // Logger
+public class ThiefMod implements
+        EditCardsSubscriber,
+        EditRelicsSubscriber,
+        EditStringsSubscriber,
+        EditKeywordsSubscriber,
+        EditCharactersSubscriber,
+        PostInitializeSubscriber {
     public static final Logger logger = LogManager.getLogger(ThiefMod.class.getName());
+    private static String modID;
 
     // Check for crossover mods.
     public static final boolean hasConspire;
@@ -65,14 +74,11 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
     public static final boolean hasServant;
     //public static final boolean hasGatherer;
     //public static final boolean hasSlimebound;
-
     //public static final boolean hasClockwork;
     //public static final boolean hasMarisa?;
-
     public static final boolean hasHubris;
     public static final boolean hasReplayTheSpire;
     public static final boolean hasInfiniteSpire;
-
 
     static {
         hasConspire = Loader.isModLoaded("conspire");
@@ -122,7 +128,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
     public static final Color THIEF_GRAY = CardHelper.getColor(64.0f, 70.0f, 70.0f);
 
     // Image folder name
-    private static final String THIEF_MOD_ASSETS_FOLDER = "thiefmodAssets/images";
+    private static final String THIEF_MOD_ASSETS_FOLDER = "theThiefAssets/images";
 
     // card backgrounds
     private static final String ATTACK_DEAFULT_GRAY = "512/bg_attack_thief_gray.png";
@@ -161,7 +167,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
     // =============== MAKE IMAGE PATHS =================
 
     public static String makePowerPath(String resourcePath) {
-        return "thiefmodAssets/images/powers/" + resourcePath;
+        return "theThiefAssets/images/powers/" + resourcePath;
     }
 
     // =============== /MAKE IMAGE PATHS/ =================
@@ -185,7 +191,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         logger.info("Subscribe to basemod hooks");
 
         BaseMod.subscribe(this);
-
+        setModID("theThief");
         logger.info("Done subscribing");
 
 
@@ -212,7 +218,6 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
 
     // =============== LOAD THE CHARACTER =================
     private static final String rollBGImage() {
-
         Random rand = new Random();
         int i = rand.nextInt(99);
         if (i < 90) {
@@ -385,39 +390,39 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
 
         // Regular Cards CardStrings
         BaseMod.loadCustomStringsFile(CardStrings.class,
-                "thiefmodAssets/localization/eng/ThiefMod-Card-Strings.json");
+                "theThiefAssets/localization/eng/ThiefMod-Card-Strings.json");
 
         // Stolen Cards CardStrings
         BaseMod.loadCustomStringsFile(CardStrings.class,
-                "thiefmodAssets/localization/eng/ThiefMod-Stolen-Card-Strings.json");
+                "theThiefAssets/localization/eng/ThiefMod-Stolen-Card-Strings.json");
 
         // Backstab Cards CardStrings
         BaseMod.loadCustomStringsFile(CardStrings.class,
-                "thiefmodAssets/localization/eng/ThiefMod-Backstab-Card-Strings.json");
+                "theThiefAssets/localization/eng/ThiefMod-Backstab-Card-Strings.json");
 
         // Curse Cards CardStrings
         BaseMod.loadCustomStringsFile(CardStrings.class,
-                "thiefmodAssets/localization/eng/ThiefMod-Curse-Card-Strings.json");
+                "theThiefAssets/localization/eng/ThiefMod-Curse-Card-Strings.json");
 
         // character Strings
         BaseMod.loadCustomStringsFile(CharacterStrings.class,
-                "thiefmodAssets/localization/eng/ThiefMod-Character-Strings.json");
+                "theThiefAssets/localization/eng/ThiefMod-Character-Strings.json");
 
         // Power Strings
         BaseMod.loadCustomStringsFile(PowerStrings.class,
-                "thiefmodAssets/localization/eng/ThiefMod-Power-Strings.json");
+                "theThiefAssets/localization/eng/ThiefMod-Power-Strings.json");
 
         // Relic Strings
         BaseMod.loadCustomStringsFile(RelicStrings.class,
-                "thiefmodAssets/localization/eng/ThiefMod-Relic-Strings.json");
+                "theThiefAssets/localization/eng/ThiefMod-Relic-Strings.json");
 
         // Event Strings
         BaseMod.loadCustomStringsFile(EventStrings.class,
-                "thiefmodAssets/localization/eng/ThiefMod-Event-Strings.json");
+                "theThiefAssets/localization/eng/ThiefMod-Event-Strings.json");
 
         // UI Strings
         BaseMod.loadCustomStringsFile(UIStrings.class,
-                "thiefmodAssets/localization/eng/ThiefMod-UI-Strings.json");
+                "theThiefAssets/localization/eng/ThiefMod-UI-Strings.json");
 
         logger.info("Done Edtting Strings");
     }
@@ -430,7 +435,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
     @Override
     public void receiveEditKeywords() {
         Gson gson = new Gson();
-        String json = Gdx.files.internal("thiefmodAssets/localization/eng/ThiefMod-Keyword-Strings.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        String json = Gdx.files.internal("theThiefAssets/localization/eng/ThiefMod-Keyword-Strings.json").readString(String.valueOf(StandardCharsets.UTF_8));
         Keyword[] keywords = gson.fromJson(json, Keyword[].class);
 
         if (keywords != null) {
@@ -443,7 +448,46 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
     // ================ /LOAD THE KEYWORDS/ ===================
 
     public static String makeID(String idText) {
-        return "theThief:" + idText;
+        return getModID() + ":" + idText;
     }
 
+    // ====== NO EDIT AREA ======
+    public static void setModID(String ID) { // DON'T EDIT
+        Gson coolG = new Gson(); // EY DON'T EDIT THIS
+        //   String IDjson = Gdx.files.internal("IDCheckStrings.json").readString(String.valueOf(StandardCharsets.UTF_8)); // i hate u Gdx.files
+        InputStream in = ThiefMod.class.getResourceAsStream("/IDCheckStrings.json"); // DON'T EDIT THIS ETHER
+        IDCheckDontTouchPls EXCEPTION_STRINGS = coolG.fromJson(new InputStreamReader(in, StandardCharsets.UTF_8), IDCheckDontTouchPls.class); // OR THIS, DON'T EDIT IT
+
+        if (ID.equals(EXCEPTION_STRINGS.DEFAULTID)) { // DO *NOT* CHANGE THIS ESPECIALLY, TO EDIT YOUR MOD ID, SCROLL UP JUST A LITTLE, IT'S JUST ABOVE
+            throw new RuntimeException(EXCEPTION_STRINGS.EXCEPTION); // THIS ALSO DON'T EDIT
+        } else if (ID.equals(EXCEPTION_STRINGS.DEVID)) { // NO
+            modID = EXCEPTION_STRINGS.DEFAULTID; // DON'T
+        } else { // NO EDIT AREA
+            modID = ID; // DON'T WRITE OR CHANGE THINGS HERE NOT EVEN A LITTLE
+        } // NO
+    } // NO
+
+    public static String getModID() { // NO
+        return modID; // DOUBLE NO
+    } // NU-UH
+
+    private static void pathCheck() { // ALSO NO
+        Gson coolG = new Gson(); // NNOPE DON'T EDIT THIS
+        //   String IDjson = Gdx.files.internal("IDCheckStrings.json").readString(String.valueOf(StandardCharsets.UTF_8)); // i still hate u btw Gdx.files
+        InputStream in = ThiefMod.class.getResourceAsStream("/IDCheckStrings.json"); // DON'T EDIT THISSSSS
+        IDCheckDontTouchPls EXCEPTION_STRINGS = coolG.fromJson(new InputStreamReader(in, StandardCharsets.UTF_8), IDCheckDontTouchPls.class); // NAH, NO EDIT
+
+        String packageName = ThiefMod.class.getPackage().getName(); // STILL NOT EDIT ZONE
+        FileHandle resourcePathExists = Gdx.files.internal(getModID() + "Resources"); // PLEASE DON'T EDIT THINGS HERE, THANKS
+        if (!modID.equals(EXCEPTION_STRINGS.DEVID)) { // LEAVE THIS EDIT-LESS
+            if (!packageName.equals(getModID())) { // NOT HERE ETHER
+                throw new RuntimeException(EXCEPTION_STRINGS.PACKAGE_EXCEPTION + getModID()); // THIS IS A NO-NO
+            } // WHY WOULD U EDIT THIS
+            if (!resourcePathExists.exists()) { // DON'T CHANGE THIS
+                throw new RuntimeException(EXCEPTION_STRINGS.RESOURCE_FOLDER_EXCEPTION + getModID() + "Resources"); // NOT THIS
+            }// NO
+        }// NO
+    }// NO
+    // ====== YOU CAN EDIT AGAIN ======
 }
+

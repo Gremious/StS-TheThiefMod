@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import thiefmod.ThiefMod;
 import thiefmod.actions.common.GainGoldAction;
 import thiefmod.patches.character.ThiefCardTags;
 
@@ -22,7 +21,7 @@ public class EmptyPower extends AbstractPower {
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-public static final String IMG = "thiefmodAssets/images/cards/beta/Attack.png";
+public static final String IMG = "theThiefAssets/images/cards/beta/Attack.png";
 
 
     public EmptyPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {

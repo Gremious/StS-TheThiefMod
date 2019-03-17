@@ -21,7 +21,7 @@ public class DoubleDealing extends AbstractBackstabCard {
 // TEXT DECLARATION
 
     public static final String ID = ThiefMod.makeID("DoubleDealing");
-    public static final String IMG = "thiefmodAssets/images/cards/DoubleDealing.png";
+    public static final String IMG = "theThiefAssets/images/cards/DoubleDealing.png";
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

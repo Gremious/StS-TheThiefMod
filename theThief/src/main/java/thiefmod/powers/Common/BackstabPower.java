@@ -24,8 +24,8 @@ public class BackstabPower extends AbstractPower {
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private static final Texture tex84 = TextureLoader.getTexture("thiefmodAssets/images/powers/84/BackstabPower.png");
-    private static final Texture tex32 = TextureLoader.getTexture("thiefmodAssets/images/powers/32/BackstabPower.png");
+    private static final Texture tex84 = TextureLoader.getTexture("theThiefAssets/images/powers/84/BackstabPower.png");
+    private static final Texture tex32 = TextureLoader.getTexture("theThiefAssets/images/powers/32/BackstabPower.png");
 
 
     public BackstabPower(AbstractCreature owner, AbstractCreature source, final int amount) {

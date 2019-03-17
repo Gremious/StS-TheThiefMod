@@ -18,7 +18,7 @@ public class Drunk extends AbstractBackstabCard {
 // TEXT DECLARATION
 
     public static final String ID = ThiefMod.makeID("Drunk");
-    public static final String IMG = "thiefmodAssets/images/cards/CallOfTheVoid.png";
+    public static final String IMG = "theThiefAssets/images/cards/CallOfTheVoid.png";
     public static final CardColor COLOR = CardColor.CURSE;
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

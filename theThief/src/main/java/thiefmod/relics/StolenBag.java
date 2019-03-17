@@ -13,8 +13,8 @@ import thiefmod.patches.character.AbstractCardEnum;
 public class StolenBag extends CustomRelic {
 
     public static final String ID = thiefmod.ThiefMod.makeID("StolenBag");
-    public static final String IMG = "thiefmodAssets/images/relics/StolenBag.png";
-    public static final String OUTLINE = "thiefmodAssets/images/relics/outline/StolenBag.png";
+    public static final String IMG = "theThiefAssets/images/relics/StolenBag.png";
+    public static final String OUTLINE = "theThiefAssets/images/relics/outline/StolenBag.png";
 
     private boolean usedThisCombat = false;
 

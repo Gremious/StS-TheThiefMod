@@ -9,11 +9,9 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.MawBank;
-import thiefmod.ThiefMod;
 import thiefmod.actions.common.GainGoldAction;
 import thiefmod.relics.PocketChange;
 import thiefmod.util.TextureLoader;
@@ -27,8 +25,8 @@ public class RefundCardCostPower extends AbstractPower {
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private static final Texture tex84 = TextureLoader.getTexture("thiefmodAssets/images/powers/84/RefundCardCostPower.png");
-    private static final Texture tex32 = TextureLoader.getTexture("thiefmodAssets/images/powers/32/RefundCardCostPower.png");
+    private static final Texture tex84 = TextureLoader.getTexture("theThiefAssets/images/powers/84/RefundCardCostPower.png");
+    private static final Texture tex32 = TextureLoader.getTexture("theThiefAssets/images/powers/32/RefundCardCostPower.png");
 
     public RefundCardCostPower(AbstractCreature owner, AbstractCreature source, final int amount) {
         name = NAME;

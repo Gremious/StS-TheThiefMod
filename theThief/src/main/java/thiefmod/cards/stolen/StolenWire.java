@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ChokePower;
-import thiefmod.ThiefMod;
 import thiefmod.patches.character.ThiefCardTags;
 
 import thiefmod.CardNoSeen;
@@ -24,7 +23,7 @@ public class StolenWire extends CustomCard {
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:TooltipNames");
     public static final String FLAVOR_STRINGS[] = uiStrings.TEXT;
-    public static final String IMG = "thiefmodAssets/images/cards/beta/Attack.png";
+    public static final String IMG = "theThiefAssets/images/cards/beta/Attack.png";
 
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;

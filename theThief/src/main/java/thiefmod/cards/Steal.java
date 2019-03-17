@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import thiefmod.ThiefMod;
 import thiefmod.actions.common.StealCardAction;
 import thiefmod.patches.character.AbstractCardEnum;
 
@@ -25,7 +24,7 @@ public class Steal extends CustomCard {
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:TooltipNames");
     public static final String FLAVOR_STRINGS[] = uiStrings.TEXT;
-    public static final String IMG = "thiefmodAssets/images/cards/Steal.png";
+    public static final String IMG = "theThiefAssets/images/cards/Steal.png";
 
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;

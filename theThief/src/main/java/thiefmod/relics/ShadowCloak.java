@@ -17,8 +17,8 @@ import thiefmod.powers.Common.ShadowstepPower;
 public class ShadowCloak extends CustomRelic {
 
     public static final String ID = thiefmod.ThiefMod.makeID("ShadowCloak");
-    public static final String IMG = "thiefmodAssets/images/relics/ShadowCloak.png";
-    public static final String OUTLINE = "thiefmodAssets/images/relics/outline/ShadowCloak.png";
+    public static final String IMG = "theThiefAssets/images/relics/ShadowCloak.png";
+    public static final String OUTLINE = "theThiefAssets/images/relics/outline/ShadowCloak.png";
 
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:TooltipNames");
     public static final String TOOLTIP_STRINGS[] = uiStrings.TEXT;

@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import thiefmod.actions.Util.DiscoverRandomFromArrayAction;
-import thiefmod.actions.Util.MakeSuperCopyAction;
 import thiefmod.actions.Util.getRandomCardFromAnyColor;
 import thiefmod.util.TextureLoader;
 
@@ -23,8 +22,8 @@ public class ShadowFormPower extends AbstractPower {
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private static final Texture tex84 = TextureLoader.getTexture("thiefmodAssets/images/powers/84/ShadowFormPower.png");
-    private static final Texture tex32 = TextureLoader.getTexture("thiefmodAssets/images/powers/32/ShadowFormPower.png");
+    private static final Texture tex84 = TextureLoader.getTexture("theThiefAssets/images/powers/84/ShadowFormPower.png");
+    private static final Texture tex32 = TextureLoader.getTexture("theThiefAssets/images/powers/32/ShadowFormPower.png");
 
     public ShadowFormPower(final AbstractCreature owner, final int amount) {
         name = NAME;

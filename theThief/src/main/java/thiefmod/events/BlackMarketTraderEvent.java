@@ -1,9 +1,7 @@
 package thiefmod.events;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.colorless.JAX;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -13,7 +11,6 @@ import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import thiefmod.ThiefMod;
 import thiefmod.relics.BottledHand;
-import thiefmod.relics.LouseBounty;
 
 public class BlackMarketTraderEvent extends AbstractImageEvent {
 
@@ -38,7 +35,7 @@ public class BlackMarketTraderEvent extends AbstractImageEvent {
     private int damageHigh;
 
     public BlackMarketTraderEvent() {
-        super(NAME, DESCRIPTIONS[0], "thiefmodAssets/images/events/BlackMarketTraderEvent.png");
+        super(NAME, DESCRIPTIONS[0], "theThiefAssets/images/events/BlackMarketTraderEvent.png");
 
         if (AbstractDungeon.ascensionLevel >= 15) {
             damageLow =     (int) ((float) AbstractDungeon.player.maxHealth * HEALTH_LOSS_PERCENTAGE_LOW);

@@ -16,7 +16,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import thiefmod.CardIgnore;
-import thiefmod.ThiefMod;
 import thiefmod.actions.common.StealCardAction;
 import thiefmod.patches.character.AbstractCardEnum;
 import thiefmod.patches.character.ThiefCardTags;
@@ -33,7 +32,7 @@ public class AAAEmptyCard extends AbstractBackstabCard {
 // TEXT DECLARATION 
 
     public static final String ID = thiefmod.ThiefMod.makeID("AAAEmptyCard");
-    public static final String IMG = "thiefmodAssets/images/cards/beta/Attack.png";
+    public static final String IMG = "theThiefAssets/images/cards/beta/Attack.png";
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

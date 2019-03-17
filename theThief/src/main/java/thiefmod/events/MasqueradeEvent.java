@@ -1,7 +1,6 @@
 package thiefmod.events;
 
 import com.megacrit.cardcrawl.actions.common.HealAction;
-import com.megacrit.cardcrawl.cards.colorless.JAX;
 import com.megacrit.cardcrawl.cards.curses.Doubt;
 import com.megacrit.cardcrawl.cards.curses.Normality;
 import com.megacrit.cardcrawl.cards.curses.Shame;
@@ -32,7 +31,7 @@ public class MasqueradeEvent extends AbstractImageEvent {
     private int screenNum = 0;
 
     public MasqueradeEvent() {
-        super(NAME, DESCRIPTIONS[0], "thiefmodAssets/images/events/MasqueradeEvent.png");
+        super(NAME, DESCRIPTIONS[0], "theThiefAssets/images/events/MasqueradeEvent.png");
 
         if (AbstractDungeon.ascensionLevel >= 15) {
             heal = (int) ((float) AbstractDungeon.player.maxHealth * HEALTH_HEAL_PERCENT);

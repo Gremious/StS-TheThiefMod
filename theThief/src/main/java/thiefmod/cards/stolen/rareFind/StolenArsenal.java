@@ -29,7 +29,7 @@ public class StolenArsenal extends AbstractBackstabCard {
     public static final String ID = ThiefMod.makeID("StolenArsenal");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
-    public static final String IMG = "thiefmodAssets/images/cards/beta/Attack.png";
+    public static final String IMG = "theThiefAssets/images/cards/beta/Attack.png";
 
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
@@ -58,14 +58,14 @@ public class StolenArsenal extends AbstractBackstabCard {
 
      /* Straight up just doesn't work. But maybe one day it will. And when that happens, I'll be waiting. And I will uncomment this code. And my rare cards will look cool.
 
-        setBackgroundTexture("thiefmodAssets/images/512/special/red_rare_skill_bg.png",
-                "thiefmodAssets/images/1024/special/red_rare_skill_bg.png");
+        setBackgroundTexture("theThiefAssets/images/512/special/red_rare_skill_bg.png",
+                "theThiefAssets/images/1024/special/red_rare_skill_bg.png");
 
-        setOrbTexture("thiefmodAssets/images/512/card_thief_gray_orb.png",
-                "thiefmodAssets/images/1024/card_thief_gray_orb.png");
+        setOrbTexture("theThiefAssets/images/512/card_thief_gray_orb.png",
+                "theThiefAssets/images/1024/card_thief_gray_orb.png");
     */
-        setBannerTexture("thiefmodAssets/images/512/special/rare_skill_banner.png",
-                "thiefmodAssets/images/1024/special/rare_skill_banner.png");
+        setBannerTexture("theThiefAssets/images/512/special/rare_skill_banner.png",
+                "theThiefAssets/images/1024/special/rare_skill_banner.png");
 
         tags.add(ThiefCardTags.STOLEN);
         tags.add(ThiefCardTags.RARE_FIND);

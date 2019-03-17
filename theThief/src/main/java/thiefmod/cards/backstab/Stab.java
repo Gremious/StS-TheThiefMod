@@ -13,7 +13,6 @@ import thiefmod.ThiefMod;
 import thiefmod.cards.AbstractBackstabCard;
 import thiefmod.patches.character.AbstractCardEnum;
 import thiefmod.patches.character.ThiefCardTags;
-import thiefmod.powers.Common.BackstabPower;
 
 public class Stab extends AbstractBackstabCard {
 
@@ -21,7 +20,7 @@ public class Stab extends AbstractBackstabCard {
 // TEXT DECLARATION
 
     public static final String ID = ThiefMod.makeID("Stab");
-    public static final String IMG = "thiefmodAssets/images/cards/Stab.png";
+    public static final String IMG = "theThiefAssets/images/cards/Stab.png";
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

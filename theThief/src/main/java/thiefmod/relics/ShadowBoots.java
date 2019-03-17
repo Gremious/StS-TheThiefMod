@@ -16,8 +16,8 @@ public class ShadowBoots extends CustomRelic {
     */
 
     public static final String ID = thiefmod.ThiefMod.makeID("PocketChange");
-    public static final String IMG = "thiefmodAssets/images/relics/PocketChange.png";
-    public static final String OUTLINE = "thiefmodAssets/images/relics/outline/PocketChange.png";
+    public static final String IMG = "theThiefAssets/images/relics/PocketChange.png";
+    public static final String OUTLINE = "theThiefAssets/images/relics/outline/PocketChange.png";
 
     private boolean usedThisTurn = false;
 

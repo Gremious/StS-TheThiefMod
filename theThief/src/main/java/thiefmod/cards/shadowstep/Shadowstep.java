@@ -24,7 +24,7 @@ public class Shadowstep extends AbstractBackstabCard {
 // TEXT DECLARATION
 
     public static final String ID = ThiefMod.makeID("Shadowstep");
-    public static final String IMG = "thiefmodAssets/images/cards/Shadowstep.png";
+    public static final String IMG = "theThiefAssets/images/cards/Shadowstep.png";
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

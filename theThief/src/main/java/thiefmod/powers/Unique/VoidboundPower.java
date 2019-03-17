@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import thiefmod.ThiefMod;
@@ -25,8 +24,8 @@ public class VoidboundPower extends AbstractPower implements OnCardDrawPower {
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    private static final Texture tex84 = TextureLoader.getTexture("thiefmodAssets/images/powers/84/VoidboundPower.png");
-    private static final Texture tex32 = TextureLoader.getTexture("thiefmodAssets/images/powers/32/VoidboundPower.png");
+    private static final Texture tex84 = TextureLoader.getTexture("theThiefAssets/images/powers/84/VoidboundPower.png");
+    private static final Texture tex32 = TextureLoader.getTexture("theThiefAssets/images/powers/32/VoidboundPower.png");
 
 
     public VoidboundPower(AbstractPlayer owner, AbstractCreature source, final int amount) {

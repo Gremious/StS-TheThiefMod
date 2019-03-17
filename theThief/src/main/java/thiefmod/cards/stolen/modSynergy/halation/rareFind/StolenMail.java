@@ -23,8 +23,6 @@ import thiefmod.patches.character.ThiefCardTags;
 import java.util.ArrayList;
 import java.util.List;
 
-import thiefmod.CardNoSeen;
-
 @CardNoSeen
 public class StolenMail extends AbstractBackstabCard {
 

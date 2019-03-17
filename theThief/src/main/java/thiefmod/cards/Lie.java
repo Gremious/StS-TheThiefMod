@@ -22,7 +22,7 @@ public class Lie extends AbstractBackstabCard {
 // TEXT DECLARATION
 
     public static final String ID = ThiefMod.makeID("Lie");
-    public static final String IMG = "thiefmodAssets/images/cards/Lie.png";
+    public static final String IMG = "theThiefAssets/images/cards/Lie.png";
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

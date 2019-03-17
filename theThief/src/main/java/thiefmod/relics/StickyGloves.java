@@ -11,8 +11,8 @@ import thiefmod.powers.Unique.IllGottenGainsPower;
 public class StickyGloves extends CustomRelic {
 
     public static final String ID = thiefmod.ThiefMod.makeID("StickyGloves");
-    public static final String IMG = "thiefmodAssets/images/relics/StickyGloves.png";
-    public static final String OUTLINE = "thiefmodAssets/images/relics/outline/StickyGloves.png";
+    public static final String IMG = "theThiefAssets/images/relics/StickyGloves.png";
+    public static final String OUTLINE = "theThiefAssets/images/relics/outline/StickyGloves.png";
 
 
     public StickyGloves() {

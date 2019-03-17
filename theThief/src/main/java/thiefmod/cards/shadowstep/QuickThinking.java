@@ -20,7 +20,7 @@ public class QuickThinking extends AbstractBackstabCard {
 // TEXT DECLARATION
 
     public static final String ID = ThiefMod.makeID("QuickThinking");
-    public static final String IMG = "thiefmodAssets/images/cards/beta/QuickThinking.png";
+    public static final String IMG = "theThiefAssets/images/cards/beta/QuickThinking.png";
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

@@ -17,7 +17,6 @@ import thiefmod.ThiefMod;
 import thiefmod.cards.AbstractBackstabCard;
 import thiefmod.patches.character.AbstractCardEnum;
 import thiefmod.patches.character.ThiefCardTags;
-import thiefmod.powers.Common.BackstabPower;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +27,7 @@ public class AttackOfOpportunity extends AbstractBackstabCard {
     // TEXT DECLARATION
 
     public static final String ID = ThiefMod.makeID("AttackOfOpportunity");
-    public static final String IMG = "thiefmodAssets/images/cards/beta/AttackOfOpportunity.png";
+    public static final String IMG = "theThiefAssets/images/cards/beta/AttackOfOpportunity.png";
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

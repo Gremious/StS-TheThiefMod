@@ -13,8 +13,8 @@ import thiefmod.actions.common.GainGoldAction;
 public class LouseBounty extends CustomRelic {
 
     public static final String ID = thiefmod.ThiefMod.makeID("LouseBounty");
-    public static final String IMG = "thiefmodAssets/images/relics/LouseBounty.png";
-    public static final String OUTLINE = "thiefmodAssets/images/relics/outline/LouseBounty.png";
+    public static final String IMG = "theThiefAssets/images/relics/LouseBounty.png";
+    public static final String OUTLINE = "theThiefAssets/images/relics/outline/LouseBounty.png";
 
     private static boolean used = false;
 

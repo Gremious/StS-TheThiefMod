@@ -1,6 +1,5 @@
 package thiefmod.cards;
 
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -11,15 +10,13 @@ import thiefmod.ThiefMod;
 import thiefmod.actions.common.TestAction;
 import thiefmod.patches.character.AbstractCardEnum;
 
-import java.util.ArrayList;
-
 @Deprecated @CardIgnore // Comment out to test, obv
 public class AAAtestCard extends AbstractBackstabCard {
 
 // TEXT DECLARATION
 
     public static final String ID = ThiefMod.makeID("testCard");
-    public static final String IMG = "thiefmodAssets/images/cards/beta/Attack.png";
+    public static final String IMG = "theThiefAssets/images/cards/beta/Attack.png";
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 

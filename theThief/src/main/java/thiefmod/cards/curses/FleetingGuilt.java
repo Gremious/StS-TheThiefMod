@@ -21,7 +21,7 @@ public class FleetingGuilt extends AbstractBackstabCard {
 // TEXT DECLARATION
 
     public static final String ID = ThiefMod.makeID("FleetingGuilt");
-    public static final String IMG = "thiefmodAssets/images/cards/beta/FleetingGuilt.png";
+    public static final String IMG = "theThiefAssets/images/cards/beta/FleetingGuilt.png";
     public static final CardColor COLOR = CardColor.CURSE;
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 

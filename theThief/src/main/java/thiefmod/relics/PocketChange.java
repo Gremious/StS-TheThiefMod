@@ -17,8 +17,8 @@ import thiefmod.powers.Common.RefundCardCostPower;
 public class PocketChange extends CustomRelic {
 
     public static final String ID = thiefmod.ThiefMod.makeID("PocketChange");
-    public static final String IMG = "thiefmodAssets/images/relics/PocketChange.png";
-    public static final String OUTLINE = "thiefmodAssets/images/relics/outline/PocketChange.png";
+    public static final String IMG = "theThiefAssets/images/relics/PocketChange.png";
+    public static final String OUTLINE = "theThiefAssets/images/relics/outline/PocketChange.png";
 
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:TooltipNames");
     public static final String TOOLTIP_STRINGS[] = uiStrings.TEXT;

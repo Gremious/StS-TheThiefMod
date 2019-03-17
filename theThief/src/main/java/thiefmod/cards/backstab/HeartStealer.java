@@ -16,7 +16,6 @@ import thiefmod.ThiefMod;
 import thiefmod.cards.AbstractBackstabCard;
 import thiefmod.patches.character.AbstractCardEnum;
 import thiefmod.patches.character.ThiefCardTags;
-import thiefmod.powers.Common.BackstabPower;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +27,7 @@ public class HeartStealer extends AbstractBackstabCard {
 // TEXT DECLARATION
 
     public static final String ID = ThiefMod.makeID("HeartStealer");
-    public static final String IMG = "thiefmodAssets/images/cards/generic_beta_cards/purple_attack.png";
+    public static final String IMG = "theThiefAssets/images/cards/generic_beta_cards/purple_attack.png";
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

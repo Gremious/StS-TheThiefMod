@@ -23,7 +23,7 @@ public class  SwiftSlash extends AbstractBackstabCard {
 // TEXT DECLARATION
 
     public static final String ID = ThiefMod.makeID("SwiftSlash");
-    public static final String IMG = "thiefmodAssets/images/cards/SwiftSlash.png";
+    public static final String IMG = "theThiefAssets/images/cards/SwiftSlash.png";
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

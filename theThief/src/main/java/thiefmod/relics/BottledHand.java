@@ -26,8 +26,8 @@ public class BottledHand extends CustomRelic implements CustomBottleRelic, Custo
     private boolean cardSelected = true;
 
     public static final String ID = thiefmod.ThiefMod.makeID("BottledHand");
-    public static final String IMG = "thiefmodAssets/images/relics/BottledHand.png";
-    public static final String OUTLINE = "thiefmodAssets/images/relics/outline/BottledHand.png";
+    public static final String IMG = "theThiefAssets/images/relics/BottledHand.png";
+    public static final String OUTLINE = "theThiefAssets/images/relics/outline/BottledHand.png";
 
     public BottledHand() {
         super(ID, ImageMaster.loadImage(IMG), new Texture(OUTLINE), RelicTier.RARE, LandingSound.CLINK);

@@ -59,10 +59,10 @@ public abstract class AbstractBackstabCard extends CustomCard {
     }
 
     public static String getAssets() {
-        return "thiefmodAssets/images/cards/";
+        return "theThiefAssets/images/cards/";
     }
 
     public static String getAssetsBeta() {
-        return "thiefmodAssets/images/cards/beta";
+        return "theThiefAssets/images/cards/beta";
     }
 }

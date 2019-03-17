@@ -59,19 +59,19 @@ public class TheThief extends CustomPlayer {
 
     public static final String[] orbTextures = {
 
-            "thiefmodAssets/images/char/thiefCharacter/orb/layer5.png",
-            "thiefmodAssets/images/char/thiefCharacter/orb/layer4.png",
-            "thiefmodAssets/images/char/thiefCharacter/orb/layer3.png",
-            "thiefmodAssets/images/char/thiefCharacter/orb/layer2.png",
-            "thiefmodAssets/images/char/thiefCharacter/orb/layer1.png",
+            "theThiefAssets/images/char/thiefCharacter/orb/layer5.png",
+            "theThiefAssets/images/char/thiefCharacter/orb/layer4.png",
+            "theThiefAssets/images/char/thiefCharacter/orb/layer3.png",
+            "theThiefAssets/images/char/thiefCharacter/orb/layer2.png",
+            "theThiefAssets/images/char/thiefCharacter/orb/layer1.png",
 
-            "thiefmodAssets/images/char/thiefCharacter/orb/layer6.png",
+            "theThiefAssets/images/char/thiefCharacter/orb/layer6.png",
 
-            "thiefmodAssets/images/char/thiefCharacter/orb/layer5d.png",
-            "thiefmodAssets/images/char/thiefCharacter/orb/layer4d.png",
-            "thiefmodAssets/images/char/thiefCharacter/orb/layer3d.png",
-            "thiefmodAssets/images/char/thiefCharacter/orb/layer2d.png",
-            "thiefmodAssets/images/char/thiefCharacter/orb/layer1d.png",
+            "theThiefAssets/images/char/thiefCharacter/orb/layer5d.png",
+            "theThiefAssets/images/char/thiefCharacter/orb/layer4d.png",
+            "theThiefAssets/images/char/thiefCharacter/orb/layer3d.png",
+            "theThiefAssets/images/char/thiefCharacter/orb/layer2d.png",
+            "theThiefAssets/images/char/thiefCharacter/orb/layer1d.png",
     };
     // =============== /TEXTURES OF BIG ENERGY ORB/ ===============
 
@@ -79,8 +79,8 @@ public class TheThief extends CustomPlayer {
 // =============== CHARACTER CLASS START =================
 
     public TheThief(String name, PlayerClass setClass) {
-        super(name, setClass, orbTextures, "thiefmodAssets/images/char/thiefCharacter/orb/vfx.png", LAYERSPEED,
-                new SpriterAnimation("thiefmodAssets/images/char/thiefCharacter/Spriter/thief8000.scml"));
+        super(name, setClass, orbTextures, "theThiefAssets/images/char/thiefCharacter/orb/vfx.png", LAYERSPEED,
+                new SpriterAnimation("theThiefAssets/images/char/thiefCharacter/Spriter/thief8000.scml"));
 
 
         // =============== TEXTURES, ENERGY, LOADOUT =================

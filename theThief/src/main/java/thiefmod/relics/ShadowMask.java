@@ -15,8 +15,8 @@ import thiefmod.ThiefMod;
 public class ShadowMask extends CustomRelic {
     // ID, images, stats.
     public static final String ID = ThiefMod.makeID("ShadowMask");
-    public static final String IMG = "thiefmodAssets/images/relics/ShadowMask.png";
-    public static final String OUTLINE = "thiefmodAssets/images/relics/outline/ShadowMask.png";
+    public static final String IMG = "theThiefAssets/images/relics/ShadowMask.png";
+    public static final String OUTLINE = "theThiefAssets/images/relics/outline/ShadowMask.png";
     public static final Logger logger = LogManager.getLogger(ThiefMod.class.getName());
 
     public ShadowMask() {

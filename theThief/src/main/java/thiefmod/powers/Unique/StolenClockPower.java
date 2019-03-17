@@ -28,8 +28,8 @@ public class StolenClockPower extends AbstractPower implements InvisiblePower, N
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private static final Texture tex84 = TextureLoader.getTexture("thiefmodAssets/images/ui/missing_texture.png");
-    private static final Texture tex32 = TextureLoader.getTexture("thiefmodAssets/images/ui/missing_texture.png");
+    private static final Texture tex84 = TextureLoader.getTexture("theThiefAssets/images/ui/missing_texture.png");
+    private static final Texture tex32 = TextureLoader.getTexture("theThiefAssets/images/ui/missing_texture.png");
 
     private AbstractCard PatternShift = CardLibrary.getCopy("PatternShift");
     private AbstractPlayer p = AbstractDungeon.player;

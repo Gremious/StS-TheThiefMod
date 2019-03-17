@@ -11,8 +11,8 @@ import thiefmod.actions.unique.LoadedDiceAction;
 public class LoadedDice extends CustomRelic {
 
     public static final String ID = thiefmod.ThiefMod.makeID("LoadedDice");
-    public static final String IMG = "thiefmodAssets/images/relics/LoadedDice.png";
-    public static final String OUTLINE = "thiefmodAssets/images/relics/outline/LoadedDice.png";
+    public static final String IMG = "theThiefAssets/images/relics/LoadedDice.png";
+    public static final String OUTLINE = "theThiefAssets/images/relics/outline/LoadedDice.png";
 
 
     private boolean activated = false;
