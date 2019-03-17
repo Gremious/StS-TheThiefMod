@@ -1,5 +1,7 @@
 package thiefmod.cards;
 
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -10,6 +12,7 @@ import thiefmod.ThiefMod;
 import thiefmod.cards.abstracts.AbstractBackstabCard;
 import thiefmod.patches.character.AbstractCardEnum;
 import thiefmod.powers.Unique.ConArtistPower;
+import thiefmod.util.TextureLoader;
 
 public class ConArtist extends AbstractBackstabCard {
     //implements StartupCard
@@ -19,6 +22,7 @@ public class ConArtist extends AbstractBackstabCard {
     public static final String ID = ThiefMod.makeID("Liar");
     public static final String IMG = "theThiefAssets/images/cards/beta/ConArtist.png";
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
+    private static final Texture BETA_IMG = TextureLoader.getJokeTexture(getCardImageBeta(Ambush.class.getSimpleName()), IMG);
     
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:TooltipNames");
@@ -41,6 +45,7 @@ public class ConArtist extends AbstractBackstabCard {
     
     public ConArtist() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        jokePortrait = new TextureAtlas.AtlasRegion(BETA_IMG, 0, 0, 500, 380);
         magicNumber = baseMagicNumber = MAGIC;
     }
     

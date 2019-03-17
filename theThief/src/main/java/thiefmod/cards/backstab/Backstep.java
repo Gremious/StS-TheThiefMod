@@ -1,5 +1,7 @@
 package thiefmod.cards.backstab;
 
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.FetchAction;
 import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -13,6 +15,7 @@ import thiefmod.ThiefMod;
 import thiefmod.cards.abstracts.AbstractBackstabCard;
 import thiefmod.patches.character.AbstractCardEnum;
 import thiefmod.patches.character.ThiefCardTags;
+import thiefmod.util.TextureLoader;
 
 public class Backstep extends AbstractBackstabCard {
     // TEXT DECLARATION
@@ -20,6 +23,7 @@ public class Backstep extends AbstractBackstabCard {
     public static final String ID = ThiefMod.makeID("Backstep");
     public static final String IMG = "theThiefAssets/images/cards/beta/Backstep.png";
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
+    private static final Texture BETA_IMG = TextureLoader.getJokeTexture(getCardImageBeta(AttackOfOpportunity.class.getSimpleName()), IMG);
     
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:TooltipNames");
@@ -43,6 +47,7 @@ public class Backstep extends AbstractBackstabCard {
     
     public Backstep() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        jokePortrait = new TextureAtlas.AtlasRegion(BETA_IMG, 0, 0, 500, 380);
         ExhaustiveVariable.setBaseValue(this, 2);
         magicNumber = baseMagicNumber = MAGIC;
         tags.add(ThiefCardTags.BACKSTAB);

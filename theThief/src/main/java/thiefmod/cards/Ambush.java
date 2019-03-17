@@ -1,5 +1,7 @@
 package thiefmod.cards;
 
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
@@ -12,11 +14,14 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
 import thiefmod.cards.abstracts.AbstractBackstabCard;
 import thiefmod.patches.character.AbstractCardEnum;
+import thiefmod.util.TextureLoader;
 
 public class Ambush extends AbstractBackstabCard {
     // TEXT DECLARATION
     public static final String ID = ThiefMod.makeID("Ambush");
     public static final String IMG = "theThiefAssets/images/cards/beta/Ambush.png";
+    private static final Texture BETA_IMG = TextureLoader.getJokeTexture(getCardImageBeta(Ambush.class.getSimpleName()), IMG);
+    
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
     
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -37,6 +42,7 @@ public class Ambush extends AbstractBackstabCard {
     
     public Ambush() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        jokePortrait = new TextureAtlas.AtlasRegion(BETA_IMG, 0, 0, 500, 380);
         damage = DAMAGE;
         magicNumber = baseMagicNumber = MAGIC;
         exhaust = true;

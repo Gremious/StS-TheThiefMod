@@ -51,7 +51,7 @@ public abstract class AbstractThiefCard extends CustomCard {
         return getModID() + "Assets/images/cards/";
     }
     
-    public static String getCardImageBeta() {
-        return getModID() + "Assets/images/cards/beta";
+    public static String getCardImageBeta(String className) {
+        return getModID() + "Assets/images/cards/beta" + className + ".png";
     }
 }
