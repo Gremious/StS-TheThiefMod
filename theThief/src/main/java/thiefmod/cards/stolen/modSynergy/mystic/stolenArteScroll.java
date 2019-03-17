@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import thiefmod.CardNoSeen;
 
 @CardNoSeen
-public class stolenArteScroll extends AbstractBackstabCard {
+public class stolenArteScroll extends AbstractStolenCard {
 
     // TEXT DECLARATION
 

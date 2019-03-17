@@ -13,7 +13,7 @@ import thiefmod.patches.character.ThiefCardTags;
 import thiefmod.CardNoSeen;
 
 @CardNoSeen
-public class StolenMastery extends AbstractBackstabCard {
+public class StolenMastery extends AbstractStolenCard {
 
 
     // TEXT DECLARATION

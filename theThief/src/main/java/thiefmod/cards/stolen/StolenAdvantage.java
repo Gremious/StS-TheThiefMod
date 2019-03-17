@@ -8,10 +8,11 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.CardNoSeen;
+import thiefmod.cards.AbstractStolenCard;
 import thiefmod.patches.character.ThiefCardTags;
 
 @CardNoSeen
-public class StolenAdvantage extends CustomCard {
+public class StolenAdvantage extends AbstractStolenCard {
 
 
 // TEXT DECLARATION 
@@ -42,7 +43,7 @@ public class StolenAdvantage extends CustomCard {
 
     // Actions the card should do.
     public StolenAdvantage() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
         magicNumber = baseMagicNumber = MAGIC;
 

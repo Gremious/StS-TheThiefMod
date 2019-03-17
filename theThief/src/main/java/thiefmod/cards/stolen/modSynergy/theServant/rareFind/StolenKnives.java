@@ -22,7 +22,7 @@ import thiefmod.powers.Unique.StolenKnivesPower;
 import static thiefmod.ThiefMod.hasServant;
 
 @CardNoSeen
-public class StolenKnives extends AbstractBackstabCard {
+public class StolenKnives extends AbstractStolenCard {
 
 
     // TEXT DECLARATION

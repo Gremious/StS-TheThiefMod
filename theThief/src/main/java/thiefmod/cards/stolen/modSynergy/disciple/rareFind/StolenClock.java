@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @CardNoSeen
-public class StolenClock extends AbstractBackstabCard {
+public class StolenClock extends AbstractStolenCard {
 
 
     // TEXT DECLARATION

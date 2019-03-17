@@ -21,7 +21,7 @@ import java.util.List;
 import thiefmod.CardNoSeen;
 
 @CardNoSeen
-public class StolenArsenal extends AbstractBackstabCard {
+public class StolenArsenal extends AbstractStolenCard {
 
 
     // TEXT DECLARATION

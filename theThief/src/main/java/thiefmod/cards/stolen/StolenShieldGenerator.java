@@ -16,7 +16,7 @@ import java.util.Iterator;
 import thiefmod.CardNoSeen;
 
 @CardNoSeen
-public class StolenShieldGenerator extends AbstractBackstabCard {
+public class StolenShieldGenerator extends AbstractStolenCard {
 
 
     // TEXT DECLARATION

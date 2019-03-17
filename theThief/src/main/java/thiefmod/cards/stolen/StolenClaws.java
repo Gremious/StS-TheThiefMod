@@ -11,12 +11,13 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
 import thiefmod.cards.AbstractBackstabCard;
+import thiefmod.cards.AbstractStolenCard;
 import thiefmod.patches.character.ThiefCardTags;
 
 import thiefmod.CardNoSeen;
 
 @CardNoSeen
-public class StolenClaws extends AbstractBackstabCard {
+public class StolenClaws extends AbstractStolenCard {
 
 
     // TEXT DECLARATION

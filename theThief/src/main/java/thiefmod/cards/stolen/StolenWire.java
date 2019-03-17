@@ -9,12 +9,13 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ChokePower;
+import thiefmod.cards.AbstractStolenCard;
 import thiefmod.patches.character.ThiefCardTags;
 
 import thiefmod.CardNoSeen;
 
 @CardNoSeen
-public class StolenWire extends CustomCard {
+public class StolenWire extends AbstractStolenCard {
 
 
 // TEXT DECLARATION 
@@ -47,7 +48,7 @@ public class StolenWire extends CustomCard {
 // /STAT DECLARATION/
 
     public StolenWire() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
         magicNumber = baseMagicNumber = MAGIC;
 

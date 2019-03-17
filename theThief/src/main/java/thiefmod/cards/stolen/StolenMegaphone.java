@@ -14,7 +14,7 @@ import thiefmod.patches.character.ThiefCardTags;
 import thiefmod.CardNoSeen;
 
 @CardNoSeen
-public class StolenMegaphone extends AbstractBackstabCard {
+public class StolenMegaphone extends AbstractStolenCard {
 
 
     // TEXT DECLARATION

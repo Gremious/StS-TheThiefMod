@@ -18,7 +18,7 @@ import static mysticmod.MysticMod.cantripsGroup;
 import thiefmod.CardNoSeen;
 
 @CardNoSeen
-public class stolenBagOfMagicCantrips extends AbstractBackstabCard {
+public class stolenBagOfMagicCantrips extends AbstractStolenCard {
 
     // TEXT DECLARATION
 

@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @CardNoSeen
-public class StolenMail extends AbstractBackstabCard {
+public class StolenMail extends AbstractStolenCard {
 
 
     // TEXT DECLARATION

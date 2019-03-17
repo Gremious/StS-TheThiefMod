@@ -8,13 +8,14 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
 import thiefmod.cards.AbstractBackstabCard;
+import thiefmod.cards.AbstractStolenCard;
 import thiefmod.patches.character.ThiefCardTags;
 import thiefmod.powers.Unique.StolenCodeButWaitPower;
 
 import thiefmod.CardNoSeen;
 
 @CardNoSeen
-public class StolenCode extends AbstractBackstabCard {
+public class StolenCode extends AbstractStolenCard {
 
 
     // TEXT DECLARATION

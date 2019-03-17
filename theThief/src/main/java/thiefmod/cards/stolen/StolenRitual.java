@@ -49,7 +49,7 @@ public class StolenRitual extends CustomCard {
     // /STAT DECLARATION/
 
     public StolenRitual() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
 
 
         magicNumber = baseMagicNumber = MAGIC;

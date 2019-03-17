@@ -20,7 +20,7 @@ import java.util.List;
 import thiefmod.CardNoSeen;
 
 @CardNoSeen
-public class StolenShadow extends AbstractBackstabCard {
+public class StolenShadow extends AbstractStolenCard {
 
 
     // TEXT DECLARATION
