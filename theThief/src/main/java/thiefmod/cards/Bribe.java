@@ -23,18 +23,14 @@ public class Bribe extends AbstractBackstabCard {
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
+    // STAT DECLARATION
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:TooltipNames");
 
 
-
-    public static final String FLAVOR_STRINGS[] = uiStrings.TEXT;
-    public static final String EXTENDED_DESCRIPTION[] = cardStrings.EXTENDED_DESCRIPTION;
-
-
-// /TEXT DECLARATION/
-
-    // STAT DECLARATION
-    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+    // /TEXT DECLARATION/
+    public static final String[] FLAVOR_STRINGS = uiStrings.TEXT;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
@@ -61,12 +57,8 @@ public class Bribe extends AbstractBackstabCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-
-        action(
-                new GainGoldAction(p, p, magicNumber));
-
-        action(
-                new StunMonsterAction(m, p));
+        act(new GainGoldAction(p, p, magicNumber));
+        act(new StunMonsterAction(m, p));
     }
 
 

@@ -63,9 +63,6 @@ public abstract class AbstractBackstabCard extends AbstractThiefCard {
         }
     }
 
-    public void action(AbstractGameAction action) {
-        AbstractDungeon.actionManager.addToBottom(action);
-    }
 
     public static String getCardImage() {
         return getModID() + "Assets/images/cards/";

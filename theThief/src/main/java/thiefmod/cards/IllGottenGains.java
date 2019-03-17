@@ -53,7 +53,7 @@ public class IllGottenGains extends AbstractBackstabCard {
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
 
-        action(new ApplyPowerAction(p, p,
+        act(new ApplyPowerAction(p, p,
                 new IllGottenGainsPower(p, magicNumber), magicNumber));
     }
 

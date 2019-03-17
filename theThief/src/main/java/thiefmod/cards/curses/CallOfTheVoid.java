@@ -47,10 +47,10 @@ public class CallOfTheVoid extends AbstractBackstabCard {
 
     @Override
     public void triggerWhenDrawn() {
-        action(new LoseEnergyAction(magicNumber));
+        act(new LoseEnergyAction(magicNumber));
         if (AbstractDungeon.player.hasPower(EvolvePower.POWER_ID) && !AbstractDungeon.player.hasPower(NoDrawPower.POWER_ID)) {
             AbstractDungeon.player.getPower(EvolvePower.POWER_ID).flash();
-            action(new DrawCardAction(AbstractDungeon.player, AbstractDungeon.player.getPower(EvolvePower.POWER_ID).amount));
+            act(new DrawCardAction(AbstractDungeon.player, AbstractDungeon.player.getPower(EvolvePower.POWER_ID).amount));
         }
     }
 

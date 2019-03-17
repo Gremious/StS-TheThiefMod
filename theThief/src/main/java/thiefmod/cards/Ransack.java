@@ -55,7 +55,7 @@ public class Ransack extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        action(new StealCardAction(
+        act(new StealCardAction(
                 1, magicNumber, false, AbstractDungeon.player.hand, false));
 
     }

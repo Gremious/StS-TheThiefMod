@@ -62,12 +62,12 @@ public class PaydayLoan extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        action(new ApplyPowerAction(
+        act(new ApplyPowerAction(
                 p, p, new RefundCardCostPower(
                 p, p, magicNumber), 1));
 
 
-        action(
+        act(
                 new MakeTempCardInDrawPileAction(
                         new VoidCard(), backstabNumber, true, true, false));
 

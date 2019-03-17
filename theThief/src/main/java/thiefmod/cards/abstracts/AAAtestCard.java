@@ -38,7 +38,7 @@ public class AAAtestCard extends AbstractBackstabCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        action(new TestAction(1));
+        act(new TestAction(1));
     }
     @Override
     public String flavortext() {

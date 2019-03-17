@@ -58,7 +58,7 @@ public class FleetingGuilt extends AbstractBackstabCard {
         if (!dontTriggerOnUseCard && p.hasRelic(BlueCandle.ID)) {
             useBlueCandle(p);
         } else {
-            action(new ApplyPowerAction(
+            act(new ApplyPowerAction(
                     p, p, new LoseDexterityPower(p, 1)));
         }
 
@@ -66,7 +66,7 @@ public class FleetingGuilt extends AbstractBackstabCard {
 
     @Override
     public void triggerWhenDrawn() {
-        action(new SetDontTriggerAction(this, false));
+        act(new SetDontTriggerAction(this, false));
     }
 
     @Override

@@ -45,10 +45,10 @@ public class Drunk extends AbstractBackstabCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        action(
+        act(
                 new MakeTempCardInDiscardAndDeckAction(new Dazed()));
 
-        action(
+        act(
                 new MakeTempCardInDiscardAndDeckAction(new Dazed()));
     }
     @Override

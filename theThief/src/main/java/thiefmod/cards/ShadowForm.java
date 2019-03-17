@@ -54,10 +54,10 @@ public class ShadowForm extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (canBackstab()) {
-            action(new ApplyPowerAction(p, p,
+            act(new ApplyPowerAction(p, p,
                     new ShadowFormPower(p, backstabNumber), backstabNumber));
         } else {
-            action(new ApplyPowerAction(p, p,
+            act(new ApplyPowerAction(p, p,
                     new ShadowFormPower(p, magicNumber), magicNumber));
         }
     }

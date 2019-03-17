@@ -53,8 +53,8 @@ public class Ambush extends AbstractBackstabCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        action(new MakeTempCardInDrawPileAction(new VoidCard(), magicNumber, true, true, false));
-        action(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+        act(new MakeTempCardInDrawPileAction(new VoidCard(), magicNumber, true, true, false));
+        act(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
     }
 
 

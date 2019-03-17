@@ -61,7 +61,7 @@ public class Retrieval extends AbstractBackstabCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         // Actions the card should do.
 
-        action(new ApplyPowerAction(
+        act(new ApplyPowerAction(
                 p, p, new RetrievalPower(p, p, backstabNumber, magicNumber), backstabNumber));
 
     }

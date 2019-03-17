@@ -57,7 +57,7 @@ public class SerratedDagger extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        action(new DamageAction(
+        act(new DamageAction(
                 m, new DamageInfo(p, damage, thiefmod.patches.PiercingPatch.PIERCING), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
 
         CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.LOW, ScreenShake.ShakeDur.SHORT, true); // Screen Effect

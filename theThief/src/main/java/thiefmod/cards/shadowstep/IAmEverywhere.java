@@ -57,7 +57,7 @@ public class IAmEverywhere extends AbstractBackstabCard {
             energyOnUse = EnergyPanel.totalCount;
         }
 
-        action(new IAmEverywhereAction(p, magicNumber, freeToPlayOnce, energyOnUse, upgraded));
+        act(new IAmEverywhereAction(p, magicNumber, freeToPlayOnce, energyOnUse, upgraded));
 
 
     }

@@ -58,7 +58,7 @@ public abstract class AbstractThiefCard extends CustomCard {
     //==
 
 
-    public void action(AbstractGameAction action) {
+    public void act(AbstractGameAction action) {
         AbstractDungeon.actionManager.addToBottom(action);
     }
 

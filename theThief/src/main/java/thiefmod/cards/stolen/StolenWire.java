@@ -54,7 +54,7 @@ public class StolenWire extends AbstractStolenCard {
 
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
-        action(new ApplyPowerAction(m, p, new ChokePower(m, magicNumber), magicNumber));
+        act(new ApplyPowerAction(m, p, new ChokePower(m, magicNumber), magicNumber));
     }
 
     @Override

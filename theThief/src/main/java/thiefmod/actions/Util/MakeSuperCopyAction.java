@@ -48,7 +48,7 @@ public class MakeSuperCopyAction extends AbstractGameAction {
     }
 
     /**
-     * Will not change the card if it already has/doesn't have the keyword, respectively of what you're using the action for.
+     * Will not change the card if it already has/doesn't have the keyword, respectively of what you're using the act for.
      *
      * @param c             the card that needs to be Copied.
      * @param keyword       can be "Exhaust", "Ethereal", "Unplayable". Use KEYWORD_STRINGS[] from theThief:MakeSuperCopyAction in UIString;

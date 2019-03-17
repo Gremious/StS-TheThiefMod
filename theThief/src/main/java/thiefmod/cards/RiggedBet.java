@@ -59,7 +59,7 @@ public class RiggedBet extends AbstractBackstabCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        action(new RiggedBetAction(AbstractDungeon.player.hand, ADD_RANDOM, ADD_UPGRADED));
+        act(new RiggedBetAction(AbstractDungeon.player.hand, ADD_RANDOM, ADD_UPGRADED));
 
     }
 

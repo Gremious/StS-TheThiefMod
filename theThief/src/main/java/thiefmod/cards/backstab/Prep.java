@@ -62,11 +62,11 @@ public class Prep extends AbstractBackstabCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
 
-        action(new GainBlockAction(
+        act(new GainBlockAction(
                 p, p, block));
 
         if (canBackstab()) {
-            action(new GainEnergyAction(magicNumber));
+            act(new GainEnergyAction(magicNumber));
         }
     }
 

@@ -60,10 +60,10 @@ public class QuickThinking extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        action(new ApplyPowerAction(
+        act(new ApplyPowerAction(
                 p, p, new ShadowstepPower(p, p, backstabNumber), backstabNumber));
 
-        action(new DrawCardAction(p, magicNumber));
+        act(new DrawCardAction(p, magicNumber));
 
     }
 

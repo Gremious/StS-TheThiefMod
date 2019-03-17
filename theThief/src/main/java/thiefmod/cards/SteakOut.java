@@ -60,17 +60,17 @@ public class SteakOut extends AbstractBackstabCard implements StartupCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        action(new GainEnergyAction(magicNumber));
+        act(new GainEnergyAction(magicNumber));
 
     }
 
     @Override // Startup: Add 1 void to your draw pile.
     public boolean atBattleStartPreDraw() {
 
-        //? action(
+        //? act(
         //?          new MakeTempCardInDrawPileAction(new VoidCard(), magicNumber, true, true, false));
 
-        action(
+        act(
                 new MakeTempCardInDiscardAndDeckAction(new VoidCard()));
 
         return true;

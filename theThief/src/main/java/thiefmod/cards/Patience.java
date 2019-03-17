@@ -54,7 +54,7 @@ public class Patience extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        action(new GainBlockAction(
+        act(new GainBlockAction(
                 p, p, block));
 
     }

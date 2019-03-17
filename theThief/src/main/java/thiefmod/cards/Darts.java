@@ -58,11 +58,11 @@ public class Darts extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        action(
+        act(
                 new DartsAction(new DamageInfo(p, damage, damageTypeForTurn)));
 
         if (upgraded) {
-            action(
+            act(
                     new DartsAction(new DamageInfo(p, damage, damageTypeForTurn)));
         }
 

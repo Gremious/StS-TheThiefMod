@@ -62,10 +62,10 @@ public class StolenClaws extends AbstractStolenCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        action(
+        act(
                 new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
 
-        action(
+        act(
                 new DrawCardAction(p, magicNumber));
 
     }

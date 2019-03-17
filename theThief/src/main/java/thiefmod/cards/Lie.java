@@ -58,11 +58,11 @@ public class Lie extends AbstractBackstabCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        action(new GainBlockAction(
+        act(new GainBlockAction(
                 p, p, block));
 
         for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            action(new ApplyPowerAction(mo, p, new VulnerablePower(
+            act(new ApplyPowerAction(mo, p, new VulnerablePower(
                     mo, magicNumber, false), magicNumber));
         }
 

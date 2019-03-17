@@ -55,7 +55,7 @@ public class StolenCode extends AbstractStolenCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        action(
+        act(
                 new ApplyPowerAction(p, p, new StolenCodeButWaitPower(p, p, magicNumber), magicNumber));
     }
 

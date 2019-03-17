@@ -64,14 +64,14 @@ public class ShadowCalamity extends AbstractBackstabCard implements StartupCard 
 
     @Override // Startup: Add 1 void to your draw pile.
     public boolean atBattleStartPreDraw() {
-        action(
+        act(
                 new MakeTempCardInDrawPileAction(new VoidCard(), magicNumber, true, true, false));
         return true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        action(
+        act(
                 new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_HEAVY));
 
 

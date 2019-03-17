@@ -59,7 +59,7 @@ public class GhastlyPresence extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        action(new ApplyPowerAction(
+        act(new ApplyPowerAction(
                 p, p, new GhastlyEssencePower(p, p, magicNumber), magicNumber));
 
     }

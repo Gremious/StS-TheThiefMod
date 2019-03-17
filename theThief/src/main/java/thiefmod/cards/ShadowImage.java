@@ -53,7 +53,7 @@ public class ShadowImage extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        action(new ApplyPowerAction(
+        act(new ApplyPowerAction(
                 p, p, new ShadowImageButWaitPower(p, p, 1), 1));
 
     }

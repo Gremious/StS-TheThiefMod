@@ -61,12 +61,12 @@ public class Persuasion extends AbstractBackstabCard {
 
 
         if (canBackstab()) {
-            action(new ApplyPowerAction(
+            act(new ApplyPowerAction(
                     p, p, new StrengthPower(
                     p, magicNumber), magicNumber));
 
         } else {
-            action(new ApplyPowerAction(
+            act(new ApplyPowerAction(
                     p, p, new DexterityPower(
                     p, magicNumber), magicNumber));
         }

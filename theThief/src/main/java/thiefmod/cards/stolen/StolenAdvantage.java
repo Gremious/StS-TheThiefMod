@@ -49,7 +49,7 @@ public class StolenAdvantage extends AbstractStolenCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        action(new DrawCardAction(m, magicNumber, true));
+        act(new DrawCardAction(m, magicNumber, true));
     }
 
     @Override

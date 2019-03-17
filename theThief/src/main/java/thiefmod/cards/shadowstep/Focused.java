@@ -64,10 +64,10 @@ public class Focused extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        action(new ApplyPowerAction(
+        act(new ApplyPowerAction(
                 p, p, new ShadowstepPower(p, p, magicNumber), magicNumber));
 
-        action(new ApplyPowerAction(
+        act(new ApplyPowerAction(
                 p, p, new FocusedPower(p, p, magicNumber), magicNumber));
 
     }

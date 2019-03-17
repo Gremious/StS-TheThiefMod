@@ -54,7 +54,7 @@ public class DoubleDealing extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        action(new ApplyPowerAction(
+        act(new ApplyPowerAction(
                 p, p, new DoubleDealingPower(p, p, magicNumber), magicNumber));
 
     }

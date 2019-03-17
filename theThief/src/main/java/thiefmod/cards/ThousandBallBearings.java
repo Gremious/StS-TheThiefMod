@@ -66,9 +66,9 @@ public class ThousandBallBearings extends AbstractBackstabCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            action(new ApplyPowerAction(mo, p, new VulnerablePower(
+            act(new ApplyPowerAction(mo, p, new VulnerablePower(
                     mo, magicNumber, false), magicNumber));
-            action(new ApplyPowerAction(mo, p, new WeakPower(
+            act(new ApplyPowerAction(mo, p, new WeakPower(
                     mo, magicNumber, false), magicNumber));
         }
     }

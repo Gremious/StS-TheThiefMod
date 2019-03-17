@@ -55,7 +55,7 @@ public class ConArtist extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        action(new ApplyPowerAction(
+        act(new ApplyPowerAction(
                 p, p, new ConArtistPower(p, p, magicNumber), magicNumber));
 
     }

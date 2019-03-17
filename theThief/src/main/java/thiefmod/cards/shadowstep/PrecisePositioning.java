@@ -63,8 +63,8 @@ public class PrecisePositioning extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        action(new ApplyPowerAction(p, p, new ShadowstepPower(p, p, magicNumber), magicNumber));
-        action(new ApplyPowerAction(p, p, new PhantasmalPower(p, magicNumber), magicNumber));
+        act(new ApplyPowerAction(p, p, new ShadowstepPower(p, p, magicNumber), magicNumber));
+        act(new ApplyPowerAction(p, p, new PhantasmalPower(p, magicNumber), magicNumber));
 
 
     }

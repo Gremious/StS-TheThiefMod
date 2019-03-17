@@ -63,9 +63,9 @@ public class Backstep extends AbstractBackstabCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         if (canBackstab()) {
-            action(new FetchAction(AbstractDungeon.player.discardPile, magicNumber));
+            act(new FetchAction(AbstractDungeon.player.discardPile, magicNumber));
         } else {
-            action(new FetchAction(AbstractDungeon.player.discardPile, magicNumber,
+            act(new FetchAction(AbstractDungeon.player.discardPile, magicNumber,
                     fetchedCards -> {
                         for (AbstractCard card : fetchedCards) {
                             card.modifyCostForTurn(-1);

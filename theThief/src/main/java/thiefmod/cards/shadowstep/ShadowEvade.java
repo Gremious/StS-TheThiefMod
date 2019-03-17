@@ -60,11 +60,11 @@ public class ShadowEvade extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        action(new ApplyPowerAction(
+        act(new ApplyPowerAction(
                 p, p, new ShadowstepPower(
                 p, p, magicNumber), 1));
 
-        action(new GainBlockAction(
+        act(new GainBlockAction(
                 p, p, block));
 
     }

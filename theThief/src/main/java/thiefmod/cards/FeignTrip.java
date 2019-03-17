@@ -64,10 +64,10 @@ public class FeignTrip extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        action(new GainBlockAction(
+        act(new GainBlockAction(
                 p, p, block));
 
-        action(new ApplyPowerAction(
+        act(new ApplyPowerAction(
                 p, p, new VulnerablePower(p, magicNumber, false), magicNumber));
 
 

@@ -61,9 +61,9 @@ public class Mercy extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        action(new HealAction(m, p, magicNumber));
+        act(new HealAction(m, p, magicNumber));
 
-        action(new DamageAction(
+        act(new DamageAction(
                 m, new DamageInfo(p, damage, damageTypeForTurn),
                 AbstractGameAction.AttackEffect.SLASH_VERTICAL));
 

@@ -105,33 +105,33 @@ public class AAAEmptyCard extends AbstractBackstabCard {
         final int count = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
 
         if (count <= 1) {
-            action(new DamageAction(
+            act(new DamageAction(
                     m, new DamageInfo(p, damage * backstabNumber, damageTypeForTurn),
                     AbstractGameAction.AttackEffect.SLASH_VERTICAL));
         } else {
-            action(new StealCardAction(
+            act(new StealCardAction(
                     magicNumber, 1, ADD_RANDOM, AbstractDungeon.player.hand, ADD_UPGRADED));
         }
 
-        action(new ApplyPowerAction(
+        act(new ApplyPowerAction(
                 p, p, new ShadowstepPower(
                 p, p, magicNumber), magicNumber));
 
-        action(new GainBlockAction(
+        act(new GainBlockAction(
                 p, p, block));
 
         while (backstabNumber-- != 0) {
-            action(
+            act(
                     new MakeTempCardInDrawPileAction(new VoidCard(), backstabNumber, true, true, false));
         }
 
         for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            action(new ApplyPowerAction(mo, p, new VulnerablePower(
+            act(new ApplyPowerAction(mo, p, new VulnerablePower(
                     mo, magicNumber, false), magicNumber));
         }
 
         backstabNumber = baseBackstabNumber;
-        action(new RemoveSpecificPowerAction(p, p, StrengthPower.POWER_ID));
+        act(new RemoveSpecificPowerAction(p, p, StrengthPower.POWER_ID));
 
     }
 
@@ -139,7 +139,7 @@ public class AAAEmptyCard extends AbstractBackstabCard {
 
     @Override // Startup: Add 1 void to your draw pile.
     public boolean atBattleStartPreDraw() {
-        action(
+        act(
                 new MakeTempCardInDrawPileAction(new VoidCard(), magicNumber, true, true, false));
         return true;
     }

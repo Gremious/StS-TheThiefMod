@@ -57,10 +57,10 @@ public class Gaslight extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        action(new ApplyPowerAction(
+        act(new ApplyPowerAction(
                 m, p, new StrengthPower(m, -magicNumber), -magicNumber));
 
-        action(new ApplyPowerAction(
+        act(new ApplyPowerAction(
                 p, p, new StrengthPower(p, magicNumber), magicNumber));
 
 

@@ -69,13 +69,13 @@ public class ViciousAssault extends AbstractBackstabCard {
 
         if (canBackstab()) {
             for (int i = 0; i < backstabNumber; i++) {
-                action(new DamageAction(
+                act(new DamageAction(
                         m, new DamageInfo(p, damage, damageTypeForTurn),
                         AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
             }
         } else {
             for (int i = 0; i < magicNumber; i++) {
-                action(new DamageAction(
+                act(new DamageAction(
                         m, new DamageInfo(p, damage, damageTypeForTurn),
                         AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
             }

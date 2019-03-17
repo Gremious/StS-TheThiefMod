@@ -63,13 +63,13 @@ public class MurderousIntent extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        action(new ApplyPowerAction(
+        act(new ApplyPowerAction(
                 p, p, new ShadowstepPower(p, p, backstabNumber), backstabNumber));
 
-        action(new ApplyPowerAction(
+        act(new ApplyPowerAction(
                 p, p, new StrengthPower(p, magicNumber), magicNumber));
 
-        action(new ApplyPowerAction(
+        act(new ApplyPowerAction(
                 p, p, new LoseStrengthPower(p, magicNumber), magicNumber));
 
     }

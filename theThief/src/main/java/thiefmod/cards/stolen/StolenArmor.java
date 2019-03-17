@@ -65,14 +65,14 @@ public class StolenArmor extends AbstractStolenCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        action(new ArmamentsAction(false));
+        act(new ArmamentsAction(false));
 
         if (AbstractDungeon.player.drawPile.isEmpty()) {
-            action(new EmptyDeckShuffleAction());
+            act(new EmptyDeckShuffleAction());
         }
 
-        action(new StolenArmorAction(block));
-        action(new DrawCardAction(p, magicNumber));
+        act(new StolenArmorAction(block));
+        act(new DrawCardAction(p, magicNumber));
     }
 
     @Override

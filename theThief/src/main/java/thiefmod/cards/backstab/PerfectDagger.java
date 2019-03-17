@@ -78,25 +78,25 @@ public class PerfectDagger extends AbstractBackstabCard {
 
         if (canBackstab()) {
 
-            action(
+            act(
                     new IncreaseMiscAction(uuid, misc, magicNumber));
         }
         if (damage < 19) {
-            action(new DamageAction(
+            act(new DamageAction(
                     m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         } else if (damage >= 19 && damage < 35) {
-            action(new DamageAction(
+            act(new DamageAction(
                     m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-            action(new SFXAction("ATTACK_DAGGER_1"));
-            action(new VFXAction(new DamageImpactCurvyEffect(m.drawX, m.drawY)));
+            act(new SFXAction("ATTACK_DAGGER_1"));
+            act(new VFXAction(new DamageImpactCurvyEffect(m.drawX, m.drawY)));
         } else {
-            action(new DamageAction(
+            act(new DamageAction(
                     m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-            action(new SFXAction("ATTACK_DAGGER_5"));
-            action(new SFXAction("ATTACK_DAGGER_5"));
-            action(new VFXAction(new DamageImpactCurvyEffect(m.drawX, m.drawY)));
-            action(new VFXAction(new DamageImpactLineEffect(m.drawX, m.drawY)));
-            action(new VFXAction(new AdditiveSlashImpactEffect(m.drawX, m.drawY, Color.RED)));
+            act(new SFXAction("ATTACK_DAGGER_5"));
+            act(new SFXAction("ATTACK_DAGGER_5"));
+            act(new VFXAction(new DamageImpactCurvyEffect(m.drawX, m.drawY)));
+            act(new VFXAction(new DamageImpactLineEffect(m.drawX, m.drawY)));
+            act(new VFXAction(new AdditiveSlashImpactEffect(m.drawX, m.drawY, Color.RED)));
         }
     }
 

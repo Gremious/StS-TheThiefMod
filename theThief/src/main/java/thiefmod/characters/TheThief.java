@@ -239,7 +239,7 @@ public class TheThief extends CustomPlayer {
 
     // Should return an AttackEffect array of any size greater than 0. These effects
     // will be played in sequence as your character's finishing combo on the heart.
-    // Attack effects are the same as used in damage action and the like.
+    // Attack effects are the same as used in damage act and the like.
     @Override
     public AbstractGameAction.AttackEffect[] getSpireHeartSlashEffect() {
         return new AbstractGameAction.AttackEffect[]{

@@ -74,13 +74,13 @@ public class Multitask extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        action(
+        act(
                 new DiscardAction(p, p, backstabNumber, false));
 
-        action(new ApplyPowerAction(
+        act(new ApplyPowerAction(
                 p, p, new ShadowstepPower(p, p, magicNumber), 1));
 
-        action(new StealCardAction(
+        act(new StealCardAction(
                 magicNumber, 1, ADD_RANDOM, AbstractDungeon.player.hand, ADD_UPGRADED));
 
     }

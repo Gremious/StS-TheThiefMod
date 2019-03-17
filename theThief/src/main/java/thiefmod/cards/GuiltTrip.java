@@ -57,7 +57,7 @@ public class GuiltTrip extends AbstractBackstabCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        action(new GuiltTripAction(p, m, magicNumber, backstabNumber));
+        act(new GuiltTripAction(p, m, magicNumber, backstabNumber));
     }
 
 

@@ -63,7 +63,7 @@ public class FindersKeepers extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        action(new ApplyPowerAction(
+        act(new ApplyPowerAction(
                 p, p, new FindersKeepersPower(p, p, magicNumber), magicNumber));
     }
 

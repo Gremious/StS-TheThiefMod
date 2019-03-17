@@ -66,16 +66,16 @@ public class CripplingStrike extends AbstractBackstabCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
 
-        action(new DamageAction(m,
+        act(new DamageAction(m,
                 new DamageInfo(p, damage, damageTypeForTurn),
                 AbstractGameAction.AttackEffect.SLASH_VERTICAL));
 
         if (canBackstab()) {
-            action(new ApplyPowerAction(
+            act(new ApplyPowerAction(
                     m, p, new VulnerablePower(m, magicNumber, false), magicNumber));
 
         } else {
-            action(new ApplyPowerAction(
+            act(new ApplyPowerAction(
                     m, p, new WeakPower(m, magicNumber, false), magicNumber));
 
         }

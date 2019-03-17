@@ -67,15 +67,15 @@ public class HeartStealer extends AbstractBackstabCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
 
-        action(new ApplyPowerAction(m, p, new WeakPower(
+        act(new ApplyPowerAction(m, p, new WeakPower(
                 m, magicNumber, false), magicNumber));
-        action(new ApplyPowerAction(m, p, new VulnerablePower(
+        act(new ApplyPowerAction(m, p, new VulnerablePower(
                 m, magicNumber, false), magicNumber));
 
         if (canBackstab()) {
-            action(new StunMonsterAction(m, p, 1));
+            act(new StunMonsterAction(m, p, 1));
 
-            action(new ApplyPowerAction(m, p, new IntangiblePlayerPower(
+            act(new ApplyPowerAction(m, p, new IntangiblePlayerPower(
                     m, 1), 1));
         }
     }

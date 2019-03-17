@@ -62,7 +62,7 @@ public class HideInTheShadows extends AbstractBackstabCard {
             }
         }
 
-        action(new GainBlockAction(
+        act(new GainBlockAction(
                 p, p, block));
     }
 

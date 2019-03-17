@@ -61,8 +61,8 @@ public class ShadowCloak extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        action(new GainBlockAction(p, p, block));
-        action(new ModifyBlockAction(uuid, magicNumber));
+        act(new GainBlockAction(p, p, block));
+        act(new ModifyBlockAction(uuid, magicNumber));
     }
 
     //Upgraded stats.

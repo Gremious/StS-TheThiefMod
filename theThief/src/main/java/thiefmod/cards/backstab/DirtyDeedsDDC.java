@@ -68,10 +68,10 @@ public class DirtyDeedsDDC extends AbstractBackstabCard {
 
 
         if (canBackstab()) {
-            action(
+            act(
                     new GreedAction(m, new DamageInfo(p, damage, damageTypeForTurn), backstabNumber));
         } else {
-            action(
+            act(
                     new GreedAction(m, new DamageInfo(p, damage, damageTypeForTurn), magicNumber));
         }
     }

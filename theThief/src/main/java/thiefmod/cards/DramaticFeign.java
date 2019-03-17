@@ -1,7 +1,5 @@
 package thiefmod.cards;
 
-import basemod.abstracts.CustomCard;
-import basemod.helpers.TooltipInfo;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.StunMonsterAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -20,9 +18,6 @@ import thiefmod.ThiefMod;
 import thiefmod.cards.abstracts.AbstractBackstabCard;
 import thiefmod.patches.character.AbstractCardEnum;
 import thiefmod.powers.Unique.DramaticFeignPower;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class DramaticFeign extends AbstractBackstabCard {
     public static final Logger logger = LogManager.getLogger(ThiefMod.class.getName());
@@ -76,18 +71,18 @@ public class DramaticFeign extends AbstractBackstabCard {
 
         for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
 
-            action(new StunMonsterAction(mo, p));
+            act(new StunMonsterAction(mo, p));
 
-            action(new ApplyPowerAction(mo, p,
+            act(new ApplyPowerAction(mo, p,
                     new VulnerablePower(mo, magicNumber, false), magicNumber));
         }
 
-        action(
+        act(
                 new ApplyPowerAction(p, p, new DramaticFeignPower(p, p, AMOUNT), AMOUNT));
 
 
         // VFX
-        action(new VFXAction(new GrandFinalEffect(), 1.0f));
+        act(new VFXAction(new GrandFinalEffect(), 1.0f));
     }
 
     @Override

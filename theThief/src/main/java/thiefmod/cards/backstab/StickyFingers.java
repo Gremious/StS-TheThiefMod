@@ -65,11 +65,11 @@ public class StickyFingers extends AbstractBackstabCard {
 
 
         if (canBackstab()) {
-            action(new StealCardAction(
+            act(new StealCardAction(
                     backstabNumber, 1, ADD_RANDOM, AbstractDungeon.player.hand, ADD_UPGRADED));
 
         } else {
-            action(new DrawCardAction(p, magicNumber));
+            act(new DrawCardAction(p, magicNumber));
         }
     }
 

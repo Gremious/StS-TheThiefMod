@@ -64,12 +64,12 @@ public class Gut extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         while (backstabNumber-- != 0) {
-            action(
+            act(
                     new MakeTempCardInDrawPileAction(new VoidCard(), 1, true, true, false));
         }
 
         while (magicNumber-- != 0) {
-            action(new DamageAction(m,
+            act(new DamageAction(m,
                     new DamageInfo(p, damage, damageTypeForTurn),
                     AbstractGameAction.AttackEffect.SLASH_HEAVY));
         }

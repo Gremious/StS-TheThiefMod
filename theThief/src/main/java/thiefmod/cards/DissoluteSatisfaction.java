@@ -60,7 +60,7 @@ public class DissoluteSatisfaction extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        action(new ApplyPowerAction(
+        act(new ApplyPowerAction(
                 p, p, new DissoluteSatisfactionPower(p, p, magicNumber), magicNumber));
 
     }

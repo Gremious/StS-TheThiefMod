@@ -64,11 +64,11 @@ public class Stab extends AbstractBackstabCard {
 
         if (canBackstab()) {
 
-            action(new DamageAction(m,
+            act(new DamageAction(m,
                     new DamageInfo(p, damage * backstabNumber, damageTypeForTurn),
                     AbstractGameAction.AttackEffect.SLASH_VERTICAL));
         } else {
-            action(new DamageAction(m,
+            act(new DamageAction(m,
                     new DamageInfo(p, damage, damageTypeForTurn),
                     AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         }

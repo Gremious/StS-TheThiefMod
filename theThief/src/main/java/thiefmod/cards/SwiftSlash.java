@@ -59,11 +59,11 @@ public class  SwiftSlash extends AbstractBackstabCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        action(new DamageAction(m,
+        act(new DamageAction(m,
                 new DamageInfo(p, damage, damageTypeForTurn),
                 AbstractGameAction.AttackEffect.SLASH_VERTICAL));
 
-        action(new DrawCardAction(p, magicNumber));
+        act(new DrawCardAction(p, magicNumber));
     }
 
     @Override
