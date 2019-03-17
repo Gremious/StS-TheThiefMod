@@ -1,6 +1,7 @@
 package thiefmod.cards;
 
 import basemod.abstracts.CustomCard;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import thiefmod.CardIgnore;
 import thiefmod.powers.Common.BackstabPower;
@@ -37,6 +38,9 @@ public abstract class AbstractBackstabCard extends CustomCard {
         }
     }
 
+    public void action(AbstractGameAction action) {
+        AbstractDungeon.actionManager.addToBottom(action);
+    }
 
     public void upgradeBackstabNumber(int amount) {
         super.displayUpgrades();

@@ -20,7 +20,6 @@ import java.util.List;
 
 public class Ambush extends AbstractBackstabCard {
 
-
 // TEXT DECLARATION
 
     public static final String ID = ThiefMod.makeID("Ambush");
@@ -43,9 +42,7 @@ public class Ambush extends AbstractBackstabCard {
     private static final CardType TYPE = CardType.ATTACK;
 
     private static final int COST = 1;
-
     private static final int DAMAGE = 0;
-
     private static final int MAGIC = 1;
     private static final int UPGRADED_PLUS_MAGIC = 1;
 
@@ -63,8 +60,6 @@ public class Ambush extends AbstractBackstabCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-
-
         AbstractDungeon.actionManager.addToBottom(
                 new MakeTempCardInDrawPileAction(new VoidCard(), magicNumber, true, true, false));
 
