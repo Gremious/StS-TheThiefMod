@@ -15,89 +15,73 @@ import thiefmod.patches.character.AbstractCardEnum;
 import thiefmod.patches.character.ThiefCardTags;
 
 public class Backstep extends AbstractBackstabCard {
-
-
-// TEXT DECLARATION
-
+    // TEXT DECLARATION
+    
     public static final String ID = ThiefMod.makeID("Backstep");
     public static final String IMG = "theThiefAssets/images/cards/beta/Backstep.png";
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
-
+    
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:TooltipNames");
-
-
-
-    public static final String EXTENDED_DESCRIPTION[] = cardStrings.EXTENDED_DESCRIPTION;
-    public static final String FLAVOR_STRINGS[] = uiStrings.TEXT;
-
-// /TEXT DECLARATION/
-
-
+    
+    public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
+    public static final String[] FLAVOR_STRINGS = uiStrings.TEXT;
+    // /TEXT DECLARATION/
+    
     // STAT DECLARATION
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
-
+    
     private static final int COST = 1;
     private static final int UPGRADE_COST = 0;
-
-
+    
     private static final int MAGIC = 1;
-
-// /STAT DECLARATION/
-
+    // /STAT DECLARATION/
+    
     public Backstep() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-
         ExhaustiveVariable.setBaseValue(this, 2);
-
         magicNumber = baseMagicNumber = MAGIC;
-
         tags.add(ThiefCardTags.BACKSTAB);
     }
-
+    
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-
         if (canBackstab()) {
             act(new FetchAction(AbstractDungeon.player.discardPile, magicNumber));
         } else {
-            act(new FetchAction(AbstractDungeon.player.discardPile, magicNumber,
-                    fetchedCards -> {
-                        for (AbstractCard card : fetchedCards) {
-                            card.modifyCostForTurn(-1);
-                        }
-                    }));
+            act(new FetchAction(AbstractDungeon.player.discardPile, magicNumber, fetchedCards -> {
+                for (AbstractCard card : fetchedCards) {
+                    card.modifyCostForTurn(-1);
+                }
+            }));
         }
     }
-
+    
     @Override
     public void applyPowers() {
         super.applyPowers();
-
         if (magicNumber >= 2) {
             rawDescription = EXTENDED_DESCRIPTION[4];
         } else {
             rawDescription = DESCRIPTION;
         }
-
         if (canBackstab()) {
             rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[2];
         } else {
             rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[3];
         }
-
         initializeDescription();
     }
-
+    
     @Override
     public String flavortext() {
         return EXTENDED_DESCRIPTION[0];
     }
-
+    
     //Upgraded stats.
     @Override
     public void upgrade() {

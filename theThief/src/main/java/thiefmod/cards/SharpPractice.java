@@ -13,62 +13,50 @@ import thiefmod.patches.character.AbstractCardEnum;
 import thiefmod.powers.Unique.SharpPracticePower;
 
 public class SharpPractice extends AbstractBackstabCard {
-
-
-// TEXT DECLARATION
-
+    // TEXT DECLARATION
+    
     public static final String ID = ThiefMod.makeID("SharpPractice");
     public static final String IMG = "theThiefAssets/images/cards/beta/Attack.png";
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
-
+    
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:TooltipNames");
-
-
-
-    public static final String FLAVOR_STRINGS[] = uiStrings.TEXT;
-    public static final String EXTENDED_DESCRIPTION[] = cardStrings.EXTENDED_DESCRIPTION;
-
-// /TEXT DECLARATION/
-
+    
+    public static final String[] FLAVOR_STRINGS = uiStrings.TEXT;
+    public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
+    // /TEXT DECLARATION/
+    
     // STAT DECLARATION
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
-
+    
     private static final int COST = 2;
-
-
+    
     private static final int MAGIC = 1;
-
-
+    
     private static final boolean ADD_RANDOM = true;
     private static final boolean ADD_UPGRADED = false;
-
-// /STAT DECLARATION/
-
+    // /STAT DECLARATION/
+    
     public SharpPractice() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         isInnate = false;
-
         magicNumber = baseMagicNumber = MAGIC;
     }
-
+    
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        act(new ApplyPowerAction(p, p,
-                new SharpPracticePower(p, p, upgraded, magicNumber, ADD_RANDOM, AbstractDungeon.player.hand, ADD_UPGRADED), magicNumber));
-
+        act(new ApplyPowerAction(p, p, new SharpPracticePower(p, p, upgraded, magicNumber, ADD_RANDOM, AbstractDungeon.player.hand, ADD_UPGRADED), magicNumber));
     }
-
+    
     @Override
     public String flavortext() {
         return EXTENDED_DESCRIPTION[0];
     }
-
-
+    
     //Upgraded stats.
     @Override
     public void upgrade() {

@@ -13,36 +13,31 @@ import thiefmod.patches.character.ThiefCardTags;
 import thiefmod.powers.Unique.ShadowFormPower;
 
 public class ShadowForm extends AbstractBackstabCard {
-
     // TEXT DECLARATION
-
+    
     public static final String ID = thiefmod.ThiefMod.makeID("ShadowForm");
     public static final String IMG = "theThiefAssets/images/cards/ShadowForm2.png";
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:TooltipNames");
-    public static final String FLAVOR_STRINGS[] = uiStrings.TEXT;
-
+    public static final String[] FLAVOR_STRINGS = uiStrings.TEXT;
+    
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String EXTENDED_DESCRIPTION[] = cardStrings.EXTENDED_DESCRIPTION;
-
+    public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
     // /TEXT DECLARATION/
-
     // STAT DECLARATION
-
+    
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
-
+    
     private static final int COST = 3;
     private static final int MAGIC = 1;
     private static final int BACKSTAB = 2;
-
     // /STAT DECLARATION/
-
+    
     public ShadowForm() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-
         isEthereal = true;
         magicNumber = baseMagicNumber = MAGIC;
         baseBackstabNumber = backstabNumber = BACKSTAB;
@@ -50,24 +45,21 @@ public class ShadowForm extends AbstractBackstabCard {
         tags.add(BaseModCardTags.FORM);
         initializeDescription();
     }
-
+    
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (canBackstab()) {
-            act(new ApplyPowerAction(p, p,
-                    new ShadowFormPower(p, backstabNumber), backstabNumber));
+            act(new ApplyPowerAction(p, p, new ShadowFormPower(p, backstabNumber), backstabNumber));
         } else {
-            act(new ApplyPowerAction(p, p,
-                    new ShadowFormPower(p, magicNumber), magicNumber));
+            act(new ApplyPowerAction(p, p, new ShadowFormPower(p, magicNumber), magicNumber));
         }
     }
-
+    
     @Override
     public String flavortext() {
         return EXTENDED_DESCRIPTION[0];
     }
-
-
+    
     @Override
     public void applyPowers() {
         super.applyPowers();
@@ -102,8 +94,7 @@ public class ShadowForm extends AbstractBackstabCard {
         }
         initializeDescription();
     }
-
-
+    
     //Upgraded stats.
     @Override
     public void upgrade() {

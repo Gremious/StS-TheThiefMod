@@ -14,76 +14,56 @@ import thiefmod.cards.abstracts.AbstractBackstabCard;
 import thiefmod.patches.character.AbstractCardEnum;
 
 public class Darts extends AbstractBackstabCard {
-
-
-// TEXT DECLARATION
-
+    // TEXT DECLARATION
+    
     public static final String ID = ThiefMod.makeID("Darts");
     public static final String IMG = "theThiefAssets/images/cards/beta/Darts.png";
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
-
+    
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:TooltipNames");
-
-
-
-    public static final String FLAVOR_STRINGS[] = uiStrings.TEXT;
-    public static final String EXTENDED_DESCRIPTION[] = cardStrings.EXTENDED_DESCRIPTION;
-
-// /TEXT DECLARATION/
-
-
-// STAT DECLARATION
-
+    
+    public static final String[] FLAVOR_STRINGS = uiStrings.TEXT;
+    public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
+    // /TEXT DECLARATION/
+    // STAT DECLARATION
+    
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
-
+    
     private static final int COST = 2;
-
+    
     private static final int DAMAGE = 1;
     private static final int UPGRADED_DAMAGE = 1;
-
-// /STAT DECLARATION/
-
-
+    // /STAT DECLARATION/
+    
     public Darts() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-
         baseDamage = DAMAGE;
     }
-
+    
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-
-        act(
-                new DartsAction(new DamageInfo(p, damage, damageTypeForTurn)));
-
+        act(new DartsAction(new DamageInfo(p, damage, damageTypeForTurn)));
         if (upgraded) {
-            act(
-                    new DartsAction(new DamageInfo(p, damage, damageTypeForTurn)));
+            act(new DartsAction(new DamageInfo(p, damage, damageTypeForTurn)));
         }
-
         rawDescription = DESCRIPTION;
         initializeDescription();
-
-
     }
-
+    
     public void applyPowers() {
         super.applyPowers();
         int count = 0;
-
         for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisCombat) {
             if (c.type == CardType.SKILL) {
                 ++count;
             }
         }
-
         rawDescription = DESCRIPTION;
-
         if (count == 1) {
             rawDescription = rawDescription + EXTENDED_DESCRIPTION[1] + count + EXTENDED_DESCRIPTION[2];
         } else if (count > 1) {
@@ -91,16 +71,14 @@ public class Darts extends AbstractBackstabCard {
         } else {
             rawDescription = rawDescription + EXTENDED_DESCRIPTION[4];
         }
-
         initializeDescription();
     }
-
-
+    
     @Override
     public String flavortext() {
         return EXTENDED_DESCRIPTION[0];
     }
-
+    
     //Upgraded stats.
     @Override
     public void upgrade() {

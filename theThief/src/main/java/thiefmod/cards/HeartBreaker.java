@@ -15,58 +15,44 @@ import thiefmod.cards.abstracts.AbstractBackstabCard;
 import thiefmod.patches.character.AbstractCardEnum;
 
 public class HeartBreaker extends AbstractBackstabCard {
-
-
-// TEXT DECLARATION
-
+    // TEXT DECLARATION
+    
     public static final String ID = ThiefMod.makeID("HeartBreaker");
     public static final String IMG = "theThiefAssets/images/cards/beta/Attack.png";
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
-
+    
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:TooltipNames");
-
-
-
-    public static final String FLAVOR_STRINGS[] = uiStrings.TEXT;
-    public static final String EXTENDED_DESCRIPTION[] = cardStrings.EXTENDED_DESCRIPTION;
-
-
-// /TEXT DECLARATION/
-
+    
+    public static final String[] FLAVOR_STRINGS = uiStrings.TEXT;
+    public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
+    // /TEXT DECLARATION/
+    
     // STAT DECLARATION
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
-
+    
     private static final int COST = 1;
-
+    
     private static final int DAMAGE = 8;
     private static final int UPGRADE_PLUS_DAMAGE = 10;
-
-
-// /STAT DECLARATION/
-
+    // /STAT DECLARATION/
+    
     public HeartBreaker() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-
         baseDamage = DAMAGE;
     }
-
+    
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-
-        act(new DamageAction(
-                m, new DamageInfo(p, damage, damageTypeForTurn),
-                AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+        act(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
     }
-
-
+    
     @Override
     public float calculateModifiedCardDamage(AbstractPlayer player, AbstractMonster mo, float dmg) {
-
         if (mo == null || mo.maxHealth == 0) {
             return dmg;
         } else if (mo.hasPower(VulnerablePower.POWER_ID) && mo.hasPower(WeakPower.POWER_ID)) {
@@ -74,15 +60,13 @@ public class HeartBreaker extends AbstractBackstabCard {
         } else {
             return dmg;
         }
-
     }
-
+    
     @Override
     public String flavortext() {
         return EXTENDED_DESCRIPTION[0];
     }
-
-
+    
     //Upgraded stats.
     @Override
     public void upgrade() {

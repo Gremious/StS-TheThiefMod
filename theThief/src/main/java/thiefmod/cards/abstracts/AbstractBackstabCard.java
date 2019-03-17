@@ -1,7 +1,6 @@
 package thiefmod.cards.abstracts;
 
 import basemod.helpers.TooltipInfo;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
@@ -19,23 +18,15 @@ public abstract class AbstractBackstabCard extends AbstractThiefCard {
     public int baseBackstabNumber;
     public boolean upgradedBackstabNumber;
     public boolean isBackstabNumberModified;
-
+    
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:TooltipNames");
-    public static final String FLAVOR_STRINGS[] = uiStrings.TEXT;
-
-    public AbstractBackstabCard(final String id,
-                                final String img,
-                                final int cost,
-                                final CardType type,
-                                final CardColor color,
-                                final CardRarity rarity,
-                                final CardTarget target) {
-
+    public static final String[] FLAVOR_STRINGS = uiStrings.TEXT;
+    
+    public AbstractBackstabCard(final String id, final String img, final int cost, final CardType type, final CardColor color, final CardRarity rarity, final CardTarget target) {
         super(id, img, cost, type, color, rarity, target);
-
         isBackstabNumberModified = false;
     }
-
+    
     // Second Magic Number
     @Override
     public void displayUpgrades() {
@@ -45,40 +36,33 @@ public abstract class AbstractBackstabCard extends AbstractThiefCard {
             isBackstabNumberModified = true;
         }
     }
-
+    
     public void upgradeBackstabNumber(int amount) {
         super.displayUpgrades();
         baseBackstabNumber += amount;
         backstabNumber = baseBackstabNumber;
         upgradedBackstabNumber = true;
     }
-
     //==
-
+    
     public static boolean canBackstab() {
-        if (AbstractDungeon.player.cardsPlayedThisTurn < 2 || AbstractDungeon.player.hasPower(BackstabPower.POWER_ID)) {
-            return true;
-        } else {
-            return false;
-        }
+        return AbstractDungeon.player.cardsPlayedThisTurn < 2 || AbstractDungeon.player.hasPower(BackstabPower.POWER_ID);
     }
-
-
+    
     public static String getCardImage() {
         return getModID() + "Assets/images/cards/";
     }
-
+    
     public static String getCardImageBeta() {
         return getModID() + "Assets/images/cards/beta";
     }
-
+    
     public static String flavortext(String EXTENDED_DESCRIPTION) {
         return EXTENDED_DESCRIPTION;
-
     }
-
+    
     public abstract String flavortext();
-
+    
     @Override
     public List<TooltipInfo> getCustomTooltips() {
         List<TooltipInfo> tips = new ArrayList<>();

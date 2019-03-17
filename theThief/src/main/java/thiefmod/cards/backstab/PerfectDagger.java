@@ -21,77 +21,56 @@ import thiefmod.patches.character.AbstractCardEnum;
 import thiefmod.patches.character.ThiefCardTags;
 
 public class PerfectDagger extends AbstractBackstabCard {
-
-
     // TEXT DECLARATION
-
+    
     public static final String ID = ThiefMod.makeID("PerfectDagger");
     public static final String IMG = "theThiefAssets/images/cards/generic_beta_cards/purple_attack.png";
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
-
+    
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:TooltipNames");
-
-
-
-    public static final String FLAVOR_STRINGS[] = uiStrings.TEXT;
-    public static final String EXTENDED_DESCRIPTION[] = cardStrings.EXTENDED_DESCRIPTION;
-
-
+    
+    public static final String[] FLAVOR_STRINGS = uiStrings.TEXT;
+    public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
     // /TEXT DECLARATION/
-
+    
     // STAT DECLARATION
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
-
+    
     private static final int COST = 1;
-
+    
     private static int MISC = 1;
     private static final int MAGIC = 1;
     private static final int UPGRADED_PLUS_MAGIC = 1;
-
-
-// /STAT DECLARATION/
-
-
+    // /STAT DECLARATION/
+    
     public PerfectDagger() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-
         misc = MISC;
         baseMagicNumber = MAGIC;
-
         magicNumber = baseMagicNumber;
         damage = baseDamage = misc;
-
         tags.add(ThiefCardTags.BACKSTAB);
-
         initializeDescription();
     }
-
-
+    
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-
-
         if (canBackstab()) {
-
-            act(
-                    new IncreaseMiscAction(uuid, misc, magicNumber));
+            act(new IncreaseMiscAction(uuid, misc, magicNumber));
         }
         if (damage < 19) {
-            act(new DamageAction(
-                    m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+            act(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         } else if (damage >= 19 && damage < 35) {
-            act(new DamageAction(
-                    m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+            act(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
             act(new SFXAction("ATTACK_DAGGER_1"));
             act(new VFXAction(new DamageImpactCurvyEffect(m.drawX, m.drawY)));
         } else {
-            act(new DamageAction(
-                    m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+            act(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
             act(new SFXAction("ATTACK_DAGGER_5"));
             act(new SFXAction("ATTACK_DAGGER_5"));
             act(new VFXAction(new DamageImpactCurvyEffect(m.drawX, m.drawY)));
@@ -99,35 +78,30 @@ public class PerfectDagger extends AbstractBackstabCard {
             act(new VFXAction(new AdditiveSlashImpactEffect(m.drawX, m.drawY, Color.RED)));
         }
     }
-
-
+    
     @Override
     public void applyPowers() {
         baseDamage = misc;
         super.applyPowers();
-
         if (canBackstab()) {
             rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[2];
         } else {
             rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[3];
         }
-
         initializeDescription();
     }
-
-
+    
     @Override
     public String flavortext() {
         return EXTENDED_DESCRIPTION[0];
     }
-
+    
     @Override
     public void initializeDescription() {
         rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[2];
         super.initializeDescription();
-
     }
-
+    
     //Upgraded stats.
     @Override
     public void upgrade() {

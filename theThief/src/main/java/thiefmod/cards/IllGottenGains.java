@@ -12,56 +12,46 @@ import thiefmod.patches.character.AbstractCardEnum;
 import thiefmod.powers.Unique.IllGottenGainsPower;
 
 public class IllGottenGains extends AbstractBackstabCard {
-
-
-// TEXT DECLARATION
-
+    // TEXT DECLARATION
+    
     public static final String ID = ThiefMod.makeID("IllGottenGains");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:TooltipNames");
-    public static final String FLAVOR_STRINGS[] = uiStrings.TEXT;
+    public static final String[] FLAVOR_STRINGS = uiStrings.TEXT;
     public static final String IMG = "theThiefAssets/images/cards/beta/Attack.png";
-
-
+    
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String EXTENDED_DESCRIPTION[] = cardStrings.EXTENDED_DESCRIPTION;
-
-// /TEXT DECLARATION/
-
-// STAT DECLARATION
-
+    public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
+    // /TEXT DECLARATION/
+    // STAT DECLARATION
+    
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
-
+    
     private static final int COST = 2;
     private static final int UPGRADE_COST = 1;
-
+    
     private static final int MAGIC = 1;
-
-// /STAT DECLARATION/
-
+    // /STAT DECLARATION/
+    
     public IllGottenGains() {
-
-
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
         isInnate = false;
     }
-
+    
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
-
-        act(new ApplyPowerAction(p, p,
-                new IllGottenGainsPower(p, magicNumber), magicNumber));
+        act(new ApplyPowerAction(p, p, new IllGottenGainsPower(p, magicNumber), magicNumber));
     }
-
+    
     @Override
     public String flavortext() {
         return EXTENDED_DESCRIPTION[0];
     }
-
+    
     //Upgraded stats.
     @Override
     public void upgrade() {

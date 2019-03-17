@@ -17,71 +17,60 @@ import thiefmod.cards.abstracts.AbstractBackstabCard;
 
 @CardNoSeen
 public class FleetingGuilt extends AbstractBackstabCard {
-
-// TEXT DECLARATION
-
+    // TEXT DECLARATION
+    
     public static final String ID = ThiefMod.makeID("FleetingGuilt");
     public static final String IMG = "theThiefAssets/images/cards/beta/FleetingGuilt.png";
     public static final CardColor COLOR = CardColor.CURSE;
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-
-
-
-
-
-// /TEXT DECLARATION/
-
+    // /TEXT DECLARATION/
+    
     // STAT DECLARATION
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     private static final CardRarity RARITY = CardRarity.CURSE;
     private static final CardTarget TARGET = CardTarget.NONE;
     private static final CardType TYPE = CardType.CURSE;
-
+    
     private static final int COST = -2;
-
-
+    
     private static final int MAGIC = 1;
-
-// /STAT DECLARATION/
-
+    // /STAT DECLARATION/
+    
     public FleetingGuilt() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
         GraveField.grave.set(this, true);
-
         isEthereal = true; // I'll be honest idk which one I need I can't be bothered to check. I think exhaust.
         exhaust = true;
     }
-
+    
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (!dontTriggerOnUseCard && p.hasRelic(BlueCandle.ID)) {
             useBlueCandle(p);
         } else {
-            act(new ApplyPowerAction(
-                    p, p, new LoseDexterityPower(p, 1)));
+            act(new ApplyPowerAction(p, p, new LoseDexterityPower(p, 1)));
         }
-
     }
-
+    
     @Override
     public void triggerWhenDrawn() {
         act(new SetDontTriggerAction(this, false));
     }
-
+    
     @Override
     public void triggerOnEndOfTurnForPlayingCard() {
         dontTriggerOnUseCard = true;
         AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(this, true));
     }
-
+    
     @Override
     public String flavortext() {
         return null;
     }
+    
     //Upgraded stats.
     @Override
     public void upgrade() {
     }
-
 }

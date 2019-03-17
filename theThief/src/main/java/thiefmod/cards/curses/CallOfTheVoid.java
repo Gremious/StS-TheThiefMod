@@ -15,36 +15,31 @@ import thiefmod.cards.abstracts.AbstractBackstabCard;
 
 @CardNoSeen
 public class CallOfTheVoid extends AbstractBackstabCard {
-
-// TEXT DECLARATION
-
+    // TEXT DECLARATION
+    
     public static final String ID = ThiefMod.makeID("CallOfTheVoid");
     public static final String IMG = "theThiefAssets/images/cards/CallOfTheVoid.png";
     public static final CardColor COLOR = CardColor.CURSE;
-
+    
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-
-
-
-// /TEXT DECLARATION/
-
+    // /TEXT DECLARATION/
+    
     // STAT DECLARATION
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     private static final CardRarity RARITY = CardRarity.CURSE;
     private static final CardTarget TARGET = CardTarget.NONE;
     private static final CardType TYPE = CardType.CURSE;
-
+    
     private static final int COST = -2;
-
+    
     private static final int MAGIC = 1;
-
-// /STAT DECLARATION/
-
+    // /STAT DECLARATION/
+    
     public CallOfTheVoid() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
     }
-
+    
     @Override
     public void triggerWhenDrawn() {
         act(new LoseEnergyAction(magicNumber));
@@ -53,15 +48,16 @@ public class CallOfTheVoid extends AbstractBackstabCard {
             act(new DrawCardAction(AbstractDungeon.player, AbstractDungeon.player.getPower(EvolvePower.POWER_ID).amount));
         }
     }
-
+    
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-
     }
+    
     @Override
     public String flavortext() {
         return null;
     }
+    
     @Override
     public void upgrade() {
     }

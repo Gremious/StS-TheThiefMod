@@ -13,48 +13,40 @@ import thiefmod.cards.abstracts.AbstractBackstabCard;
 
 @CardNoSeen
 public class Drunk extends AbstractBackstabCard {
-
-// TEXT DECLARATION
-
+    // TEXT DECLARATION
+    
     public static final String ID = ThiefMod.makeID("Drunk");
     public static final String IMG = "theThiefAssets/images/cards/CallOfTheVoid.png";
     public static final CardColor COLOR = CardColor.CURSE;
-
+    
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-
-
-
-// /TEXT DECLARATION/
-
+    // /TEXT DECLARATION/
+    
     // STAT DECLARATION
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     private static final CardRarity RARITY = CardRarity.CURSE;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.CURSE;
-
+    
     private static final int COST = 0;
-
-
-// /STAT DECLARATION/
-
+    // /STAT DECLARATION/
+    
     public Drunk() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         AutoplayField.autoplay.set(this, true);
     }
-
-
+    
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        act(
-                new MakeTempCardInDiscardAndDeckAction(new Dazed()));
-
-        act(
-                new MakeTempCardInDiscardAndDeckAction(new Dazed()));
+        act(new MakeTempCardInDiscardAndDeckAction(new Dazed()));
+        act(new MakeTempCardInDiscardAndDeckAction(new Dazed()));
     }
+    
     @Override
     public String flavortext() {
         return null;
     }
+    
     @Override
     public void upgrade() {
     }

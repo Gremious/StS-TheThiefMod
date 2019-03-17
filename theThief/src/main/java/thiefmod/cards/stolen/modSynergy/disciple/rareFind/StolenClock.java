@@ -20,66 +20,56 @@ import java.util.List;
 
 @CardNoSeen
 public class StolenClock extends AbstractStolenCard {
-
-
     // TEXT DECLARATION
-
+    
     public static final String ID = ThiefMod.makeID("StolenClock");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-
+    
     public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_COMMON_ATTACK);
-
-
+    
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String EXTENDED_DESCRIPTION[] = cardStrings.EXTENDED_DESCRIPTION;
-
+    public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
     // /TEXT DECLARATION/
-
-
     // STAT DECLARATION
-
+    
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = CardColor.COLORLESS;
-
+    
     private static final int COST = 1;
     private static final int UPGRADED_COST = 0;
-
-
     // /STAT DECLARATION/
-
-
+    
     public StolenClock() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.exhaust = true;
     }
-
+    
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.effectList.add(new BorderFlashEffect(Color.BROWN));
         AbstractDungeon.actionManager.addToTop(new SFXAction("POWER_TIME_WARP"));
-        action(
-                new ApplyPowerAction(p, p, new StolenClockPower(p, 1), 0));
+        action(new ApplyPowerAction(p, p, new StolenClockPower(p, 1), 0));
     }
-
+    
     @Override
     public void triggerWhenDrawn() {
         AbstractDungeon.effectList.add(new CardFlashVfx(this, Color.BROWN));
     }
-
+    
     @Override
     public void triggerWhenCopied() {
         AbstractDungeon.effectList.add(new CardFlashVfx(this, Color.BROWN));
     }
-
+    
     @Override
     public List<TooltipInfo> getCustomTooltips() {
         List<TooltipInfo> tips = new ArrayList<>();
         tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[0], EXTENDED_DESCRIPTION[1]));
         return tips;
     }
-
+    
     @Override
     public void upgrade() {
         if (!upgraded) {

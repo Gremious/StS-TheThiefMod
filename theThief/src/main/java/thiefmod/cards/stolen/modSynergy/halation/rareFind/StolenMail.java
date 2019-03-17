@@ -24,80 +24,69 @@ import java.util.List;
 
 @CardNoSeen
 public class StolenMail extends AbstractStolenCard {
-
-
     // TEXT DECLARATION
-
+    
     public static final String ID = ThiefMod.makeID("StolenMail");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-
+    
     public static final String IMG = ThiefMod.makePath(ThiefMod.DEFAULT_COMMON_ATTACK);
-
-
+    
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String EXTENDED_DESCRIPTION[] = cardStrings.EXTENDED_DESCRIPTION;
+    public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
     // /TEXT DECLARATION/
-
-
     // STAT DECLARATION
-
+    
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = CardColor.COLORLESS;
-
+    
     private static final int COST = 2;
     private static final int UPGRADE_COST = 1;
-
-
+    
     private static ArrayList<AbstractCard> letterCards = new ArrayList<>();
     // /STAT DECLARATION/
-
-
+    
     public StolenMail() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-
         if (letterCards.size() == 0) {
             letterCards.add(new LetterOfAdmiration());
             letterCards.add(new LetterOfLove());
             letterCards.add(new LetterOfRespect());
         }
-
         tags.add(ThiefCardTags.STOLEN);
         tags.add(ThiefCardTags.RARE_FIND);
-
         this.exhaust = true;
     }
-
+    
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.effectList.add(new BorderFlashEffect(Color.PINK));
         AbstractDungeon.effectList.add(new WeakParticleEffect(this.current_x, this.current_y, 1.0f, 1.0f));
-
         for (AbstractCard c : letterCards) {
             action(new MakeSuperCopyAction(c, p.hand));
             action(new MakeSuperCopyAction(c, p.drawPile));
             action(new MakeSuperCopyAction(c, p.discardPile));
         }
     }
-
+    
     @Override
     public void triggerWhenDrawn() {
         AbstractDungeon.effectList.add(new CardFlashVfx(this, Color.GOLD));
     }
-
+    
     @Override
     public void triggerWhenCopied() {
         AbstractDungeon.effectList.add(new CardFlashVfx(this, Color.GOLD));
     }
-
+    
     @Override
     public List<TooltipInfo> getCustomTooltips() {
         List<TooltipInfo> tips = new ArrayList<>();
         tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[0], EXTENDED_DESCRIPTION[1]));
         return tips;
     }
-
+    
     @Override
     public void upgrade() {
         if (!this.upgraded) {
