@@ -21,8 +21,7 @@ public class Drunk extends AbstractBackstabCard {
     public static final CardColor COLOR = CardColor.CURSE;
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+
 
 
 // /TEXT DECLARATION/

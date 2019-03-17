@@ -24,8 +24,7 @@ public class StolenWire extends AbstractStolenCard {
     public static final String FLAVOR_STRINGS[] = uiStrings.TEXT;
     public static final String IMG = "theThiefAssets/images/cards/beta/Attack.png";
 
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
 // /TEXT DECLARATION/

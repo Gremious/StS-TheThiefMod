@@ -27,8 +27,7 @@ public class Pickpocket extends AbstractBackstabCard {
     public static final String FLAVOR_STRINGS[] = uiStrings.TEXT;
     public static final String IMG = "theThiefAssets/images/cards/beta/Pickpocket.png";
 
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String EXTENDED_DESCRIPTION[] = cardStrings.EXTENDED_DESCRIPTION;
 

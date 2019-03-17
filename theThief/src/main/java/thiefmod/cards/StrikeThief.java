@@ -24,8 +24,6 @@ public class StrikeThief extends AbstractBackstabCard {
     private static final CardStrings flavortextStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String IMG = "theThiefAssets/images/cards/Strike.png";
 
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String EXTENDED_DESCRIPTION[] = cardStrings.EXTENDED_DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
