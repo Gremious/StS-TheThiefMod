@@ -64,10 +64,10 @@ public class StolenClaws extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        AbstractDungeon.actionManager.addToBottom(
+        action(
                 new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
 
-        AbstractDungeon.actionManager.addToBottom(
+        action(
                 new DrawCardAction(p, magicNumber));
 
     }

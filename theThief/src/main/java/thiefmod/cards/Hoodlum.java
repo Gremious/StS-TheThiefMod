@@ -61,7 +61,7 @@ public class Hoodlum extends AbstractBackstabCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new HoodlumPower(p, p, magicNumber), magicNumber));
+        action(new ApplyPowerAction(p, p, new HoodlumPower(p, p, magicNumber), magicNumber));
 
     }
 

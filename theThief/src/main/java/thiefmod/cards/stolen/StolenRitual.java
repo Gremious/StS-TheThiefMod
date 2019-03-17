@@ -61,20 +61,20 @@ public class StolenRitual extends CustomCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new LoseHPAction(p, p, damage));
-        AbstractDungeon.actionManager.addToBottom(new thiefmod.actions.common.GainGoldAction(p, p, magicNumber));
+        action(new LoseHPAction(p, p, damage));
+        action(new thiefmod.actions.common.GainGoldAction(p, p, magicNumber));
 
         CardCrawlGame.sound.playA("VO_CULTIST_1C", 0.3f);
 
-        AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "CA-CAW", 2.0f, 2.0f));
+        action(new TalkAction(true, "CA-CAW", 2.0f, 2.0f));
 
-        AbstractDungeon.actionManager.addToBottom(new WaitAction(0.1f));
-        AbstractDungeon.actionManager.addToBottom(new WaitAction(0.1f));
-        AbstractDungeon.actionManager.addToBottom(new WaitAction(0.1f));
-        AbstractDungeon.actionManager.addToBottom(new WaitAction(0.1f));
-        AbstractDungeon.actionManager.addToBottom(new WaitAction(0.1f));
+        action(new WaitAction(0.1f));
+        action(new WaitAction(0.1f));
+        action(new WaitAction(0.1f));
+        action(new WaitAction(0.1f));
+        action(new WaitAction(0.1f));
 
-        AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "Cough..", 2.0f, 2.0f));
+        action(new TalkAction(true, "Cough..", 2.0f, 2.0f));
 
     }
 

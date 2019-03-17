@@ -57,7 +57,7 @@ public class StolenCode extends AbstractBackstabCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(
+        action(
                 new ApplyPowerAction(p, p, new StolenCodeButWaitPower(p, p, magicNumber), magicNumber));
     }
 

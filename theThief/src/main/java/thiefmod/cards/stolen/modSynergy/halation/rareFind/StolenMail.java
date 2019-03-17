@@ -77,9 +77,9 @@ public class StolenMail extends AbstractBackstabCard {
         AbstractDungeon.effectList.add(new WeakParticleEffect(this.current_x, this.current_y, 1.0f, 1.0f));
 
         for (AbstractCard c : letterCards) {
-            AbstractDungeon.actionManager.addToBottom(new MakeSuperCopyAction(c, p.hand));
-            AbstractDungeon.actionManager.addToBottom(new MakeSuperCopyAction(c, p.drawPile));
-            AbstractDungeon.actionManager.addToBottom(new MakeSuperCopyAction(c, p.discardPile));
+            action(new MakeSuperCopyAction(c, p.hand));
+            action(new MakeSuperCopyAction(c, p.drawPile));
+            action(new MakeSuperCopyAction(c, p.discardPile));
         }
     }
 

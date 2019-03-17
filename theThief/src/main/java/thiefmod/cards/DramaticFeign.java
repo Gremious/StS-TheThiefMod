@@ -75,18 +75,18 @@ public class DramaticFeign extends CustomCard {
 
         for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
 
-            AbstractDungeon.actionManager.addToBottom(new StunMonsterAction(mo, p));
+            action(new StunMonsterAction(mo, p));
 
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p,
+            action(new ApplyPowerAction(mo, p,
                     new VulnerablePower(mo, magicNumber, false), magicNumber));
         }
 
-        AbstractDungeon.actionManager.addToBottom(
+        action(
                 new ApplyPowerAction(p, p, new DramaticFeignPower(p, p, AMOUNT), AMOUNT));
 
 
         // VFX
-        AbstractDungeon.actionManager.addToBottom(new VFXAction(new GrandFinalEffect(), 1.0f));
+        action(new VFXAction(new GrandFinalEffect(), 1.0f));
     }
 
     @Override

@@ -62,11 +62,11 @@ public class Darts extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        AbstractDungeon.actionManager.addToBottom(
+        action(
                 new DartsAction(new DamageInfo(p, damage, damageTypeForTurn)));
 
         if (upgraded) {
-            AbstractDungeon.actionManager.addToBottom(
+            action(
                     new DartsAction(new DamageInfo(p, damage, damageTypeForTurn)));
         }
 

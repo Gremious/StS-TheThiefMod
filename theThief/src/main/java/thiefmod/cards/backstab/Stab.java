@@ -66,11 +66,11 @@ public class Stab extends AbstractBackstabCard {
 
         if (canBackstab()) {
 
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(m,
+            action(new DamageAction(m,
                     new DamageInfo(p, damage * backstabNumber, damageTypeForTurn),
                     AbstractGameAction.AttackEffect.SLASH_VERTICAL));
         } else {
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(m,
+            action(new DamageAction(m,
                     new DamageInfo(p, damage, damageTypeForTurn),
                     AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         }

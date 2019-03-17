@@ -71,18 +71,18 @@ public class Murder extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        AbstractDungeon.actionManager.addToBottom(new VFXAction(
+        action(new VFXAction(
                 new RoomTintEffect(Color.RED, 0.2f), 1.0f));
 
-        AbstractDungeon.actionManager.addToBottom(new ShakeScreenAction(1.0f, MED, HIGH));
+        action(new ShakeScreenAction(1.0f, MED, HIGH));
 
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m,
+        action(new DamageAction(m,
                 new DamageInfo(p, damage, damageTypeForTurn)));
 
         for (int i = 0; i < 3; i++) {
-            AbstractDungeon.actionManager.addToBottom(new SFXAction("ATTACK_HEAVY"));
-            AbstractDungeon.actionManager.addToBottom(new VFXAction(new AdditiveSlashImpactEffect(m.drawX, m.drawY, Color.RED)));
-            AbstractDungeon.actionManager.addToBottom(new VFXAction(new ClashEffect(m.drawX, m.drawY)));
+            action(new SFXAction("ATTACK_HEAVY"));
+            action(new VFXAction(new AdditiveSlashImpactEffect(m.drawX, m.drawY, Color.RED)));
+            action(new VFXAction(new ClashEffect(m.drawX, m.drawY)));
         }
     }
 

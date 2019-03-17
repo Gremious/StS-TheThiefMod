@@ -56,7 +56,7 @@ public class StolenWire extends CustomCard {
 
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new ChokePower(m, magicNumber), magicNumber));
+        action(new ApplyPowerAction(m, p, new ChokePower(m, magicNumber), magicNumber));
     }
 
     @Override

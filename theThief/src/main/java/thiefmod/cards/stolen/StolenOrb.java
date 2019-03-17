@@ -61,18 +61,18 @@ public class StolenOrb extends AbstractBackstabCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ChannelAction(AbstractOrb.getRandomOrb(true)));
-        AbstractDungeon.actionManager.addToBottom(new WaitAction(0.1F));
-        AbstractDungeon.actionManager.addToBottom(new EvokeOrbAction(1));
-        AbstractDungeon.actionManager.addToBottom(new WaitAction(0.1F));
-        AbstractDungeon.actionManager.addToBottom(new DecreaseMaxOrbAction(1));
+        action(new ChannelAction(AbstractOrb.getRandomOrb(true)));
+        action(new WaitAction(0.1F));
+        action(new EvokeOrbAction(1));
+        action(new WaitAction(0.1F));
+        action(new DecreaseMaxOrbAction(1));
 
         if (upgraded) {
-            AbstractDungeon.actionManager.addToBottom(new ChannelAction(AbstractOrb.getRandomOrb(true)));
-            AbstractDungeon.actionManager.addToBottom(new WaitAction(0.1F));
-            AbstractDungeon.actionManager.addToBottom(new EvokeOrbAction(1));
-            AbstractDungeon.actionManager.addToBottom(new WaitAction(0.1F));
-            AbstractDungeon.actionManager.addToBottom(new DecreaseMaxOrbAction(1));
+            action(new ChannelAction(AbstractOrb.getRandomOrb(true)));
+            action(new WaitAction(0.1F));
+            action(new EvokeOrbAction(1));
+            action(new WaitAction(0.1F));
+            action(new DecreaseMaxOrbAction(1));
         }
     }
 

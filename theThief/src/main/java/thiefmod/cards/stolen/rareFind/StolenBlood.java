@@ -91,9 +91,9 @@ public class StolenBlood extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.effectList.add(new BorderFlashEffect(Color.GOLD));
-        AbstractDungeon.actionManager.addToBottom(new SFXAction("RAGE"));
-        AbstractDungeon.actionManager.addToBottom(new SFXAction("CEILING_BOOM_1"));
-        AbstractDungeon.actionManager.addToBottom(
+        action(new SFXAction("RAGE"));
+        action(new SFXAction("CEILING_BOOM_1"));
+        action(
                 new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber), magicNumber));
 
     }

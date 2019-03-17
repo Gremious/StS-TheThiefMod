@@ -39,7 +39,7 @@ public abstract class AbstractBackstabCard extends CustomCard {
     }
 
     public void action(AbstractGameAction action) {
-        AbstractDungeon.actionManager.addToBottom(action);
+        action(action);
     }
 
     public void upgradeBackstabNumber(int amount) {

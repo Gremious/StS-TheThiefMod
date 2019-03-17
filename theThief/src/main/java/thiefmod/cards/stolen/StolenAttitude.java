@@ -63,8 +63,8 @@ public class StolenAttitude extends AbstractBackstabCard {
 
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
-        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, magicNumber));
+        action(new GainBlockAction(p, p, block));
+        action(new DrawCardAction(p, magicNumber));
     }
 
     @Override

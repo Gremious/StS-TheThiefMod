@@ -61,7 +61,7 @@ public class StolenClock extends AbstractBackstabCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.effectList.add(new BorderFlashEffect(Color.BROWN));
         AbstractDungeon.actionManager.addToTop(new SFXAction("POWER_TIME_WARP"));
-        AbstractDungeon.actionManager.addToBottom(
+        action(
                 new ApplyPowerAction(p, p, new StolenClockPower(p, 1), 0));
     }
 

@@ -66,7 +66,7 @@ public class HideInTheShadows extends AbstractBackstabCard {
             }
         }
 
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(
+        action(new GainBlockAction(
                 p, p, block));
     }
 

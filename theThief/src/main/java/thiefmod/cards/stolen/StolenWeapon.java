@@ -57,9 +57,9 @@ public class StolenWeapon extends AbstractBackstabCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber), magicNumber));
+        action(new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber), magicNumber));
         if (!upgraded) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LoseStrengthPower(p, magicNumber), magicNumber));
+            action(new ApplyPowerAction(p, p, new LoseStrengthPower(p, magicNumber), magicNumber));
         }
     }
 

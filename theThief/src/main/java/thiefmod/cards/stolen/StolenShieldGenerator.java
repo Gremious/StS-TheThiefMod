@@ -84,7 +84,7 @@ public class StolenShieldGenerator extends AbstractBackstabCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
+        action(new GainBlockAction(p, p, block));
     }
 
     @Override

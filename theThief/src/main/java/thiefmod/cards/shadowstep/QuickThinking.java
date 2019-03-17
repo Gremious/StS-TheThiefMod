@@ -62,10 +62,10 @@ public class QuickThinking extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
+        action(new ApplyPowerAction(
                 p, p, new ShadowstepPower(p, p, backstabNumber), backstabNumber));
 
-        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, magicNumber));
+        action(new DrawCardAction(p, magicNumber));
 
     }
 

@@ -51,7 +51,7 @@ public class HotGossip extends AbstractBackstabCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new StunMonsterPower(mo, 1), 1));
+            action(new ApplyPowerAction(mo, p, new StunMonsterPower(mo, 1), 1));
         }
 
 

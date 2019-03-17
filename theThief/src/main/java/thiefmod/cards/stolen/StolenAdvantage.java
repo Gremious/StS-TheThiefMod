@@ -51,7 +51,7 @@ public class StolenAdvantage extends CustomCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(m, magicNumber, true));
+        action(new DrawCardAction(m, magicNumber, true));
     }
 
     @Override

@@ -56,7 +56,7 @@ public class StolenTV extends AbstractBackstabCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractCard c = AbstractDungeon.returnTrulyRandomCardInCombat(CardType.POWER).makeCopy();
         c.setCostForTurn(0);
-        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(c, true));
+        action(new MakeTempCardInHandAction(c, true));
     }
 
     @Override

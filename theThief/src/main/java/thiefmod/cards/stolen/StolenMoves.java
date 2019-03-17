@@ -64,10 +64,10 @@ public class StolenMoves extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        AbstractDungeon.actionManager.addToBottom(
+        action(
                 new ApplyPowerAction(p, p, new DexterityPower(p, magicNumber), magicNumber));
 
-        AbstractDungeon.actionManager.addToBottom(
+        action(
                 new GainBlockAction(p, p, block));
     }
 

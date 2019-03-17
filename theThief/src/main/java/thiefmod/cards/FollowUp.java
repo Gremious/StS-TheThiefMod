@@ -61,10 +61,10 @@ public class FollowUp extends AbstractBackstabCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
+        action(new ApplyPowerAction(
                 p, p, new DealDamageToAllNextTurnPower(p, p, p, damage, 1), 1));
 
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(
+        action(new DamageAction(
                 m, new DamageInfo(p, damage, damageTypeForTurn),
                 AbstractGameAction.AttackEffect.SLASH_VERTICAL));
 

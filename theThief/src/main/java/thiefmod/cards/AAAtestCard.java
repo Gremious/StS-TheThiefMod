@@ -40,7 +40,7 @@ public class AAAtestCard extends AbstractBackstabCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new TestAction(1));
+        action(new TestAction(1));
     }
 
     // Upgraded stats.

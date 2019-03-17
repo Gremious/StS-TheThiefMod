@@ -52,7 +52,7 @@ public class StolenTrap extends CustomCard {
 
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new SetupAction());
+        action(new SetupAction());
     }
 
     @Override

@@ -63,7 +63,7 @@ public class IAmEverywhere extends AbstractBackstabCard {
             energyOnUse = EnergyPanel.totalCount;
         }
 
-        AbstractDungeon.actionManager.addToBottom(new IAmEverywhereAction(p, magicNumber, freeToPlayOnce, energyOnUse, upgraded));
+        action(new IAmEverywhereAction(p, magicNumber, freeToPlayOnce, energyOnUse, upgraded));
 
 
     }

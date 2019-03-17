@@ -81,18 +81,18 @@ public class AttackOfOpportunity extends AbstractBackstabCard {
 
 
         // Deal 16 Damage
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(
+        action(new DamageAction(
                 m, new DamageInfo(p, damage, damageTypeForTurn),
                 AbstractGameAction.AttackEffect.SLASH_VERTICAL));
 
         // Add voids to your draw pile
         if (backstabNumber != 0) {
-            AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new VoidCard(), backstabNumber, true, true));
+            action(new MakeTempCardInDrawPileAction(new VoidCard(), backstabNumber, true, true));
         }
 
         // Backstab - Draw 1 card.
         if (canBackstab()) {
-            AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, magicNumber));
+            action(new DrawCardAction(p, magicNumber));
         }
 
     }

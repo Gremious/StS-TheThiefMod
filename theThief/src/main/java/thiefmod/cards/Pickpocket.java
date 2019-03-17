@@ -63,11 +63,11 @@ public class Pickpocket extends CustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
+        action(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
                 new DamageInfo(p, damage, damageTypeForTurn),
                 AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
 
-        AbstractDungeon.actionManager.addToBottom(new thiefmod.actions.common.GainGoldAction(p, p, magicNumber));
+        action(new thiefmod.actions.common.GainGoldAction(p, p, magicNumber));
 
 
     }

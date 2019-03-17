@@ -55,7 +55,7 @@ public class StolenBlades extends CustomCard {
 
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(new Shiv(), magicNumber));
+        action(new MakeTempCardInHandAction(new Shiv(), magicNumber));
     }
 
     @Override

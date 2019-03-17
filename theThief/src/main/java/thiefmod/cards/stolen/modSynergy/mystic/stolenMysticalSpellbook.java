@@ -53,7 +53,7 @@ public class stolenMysticalSpellbook extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (int i = 0; i < magicNumber; i++) {
-            AbstractDungeon.actionManager.addToBottom(new SpellDiscoveryAction());
+            action(new SpellDiscoveryAction());
         }
     }
 

@@ -57,7 +57,7 @@ public class StolenMastery extends AbstractBackstabCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new DualWieldAction(p, magicNumber));
+        action(new DualWieldAction(p, magicNumber));
     }
 
     @Override

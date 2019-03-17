@@ -52,7 +52,7 @@ public class StolenArtifice extends CustomCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
+        action(new ApplyPowerAction(p, p,
                 new EnergizedPower(p, magicNumber), magicNumber));
     }
 

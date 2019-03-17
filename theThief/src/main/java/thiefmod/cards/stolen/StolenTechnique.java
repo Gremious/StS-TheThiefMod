@@ -74,7 +74,7 @@ public class StolenTechnique extends CustomCard {
         AbstractCard card = cards.get(0);
         card.freeToPlayOnce = true;
 
-        AbstractDungeon.actionManager.addToBottom(new MakeSuperCopyAction(card, p.hand));
+        action(new MakeSuperCopyAction(card, p.hand));
 
     }
 

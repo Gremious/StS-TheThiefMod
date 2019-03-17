@@ -47,10 +47,10 @@ public class Drunk extends AbstractBackstabCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(
+        action(
                 new MakeTempCardInDiscardAndDeckAction(new Dazed()));
 
-        AbstractDungeon.actionManager.addToBottom(
+        action(
                 new MakeTempCardInDiscardAndDeckAction(new Dazed()));
     }
 

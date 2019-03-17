@@ -67,7 +67,7 @@ public class StolenShadow extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.effectList.add(new BorderFlashEffect(Color.BLACK));
-        AbstractDungeon.actionManager.addToBottom(new StolenShadowAction(p, magicNumber));
+        action(new StolenShadowAction(p, magicNumber));
 
     }
     @Override

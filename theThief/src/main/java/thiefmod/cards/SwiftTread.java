@@ -58,8 +58,8 @@ public class SwiftTread extends AbstractBackstabCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, magicNumber));
-        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new VoidCard(), 1));
+        action(new DrawCardAction(p, magicNumber));
+        action(new MakeTempCardInDiscardAction(new VoidCard(), 1));
     }
 
     @Override

@@ -58,7 +58,7 @@ public class IllGottenGains extends AbstractBackstabCard {
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
 
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
+        action(new ApplyPowerAction(p, p,
                 new IllGottenGainsPower(p, magicNumber), magicNumber));
     }
 

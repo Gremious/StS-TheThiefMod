@@ -84,25 +84,25 @@ public class PerfectDagger extends AbstractBackstabCard {
 
         if (canBackstab()) {
 
-            AbstractDungeon.actionManager.addToBottom(
+            action(
                     new IncreaseMiscAction(uuid, misc, magicNumber));
         }
         if (damage < 19) {
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(
+            action(new DamageAction(
                     m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         } else if (damage >= 19 && damage < 35) {
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(
+            action(new DamageAction(
                     m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-            AbstractDungeon.actionManager.addToBottom(new SFXAction("ATTACK_DAGGER_1"));
-            AbstractDungeon.actionManager.addToBottom(new VFXAction(new DamageImpactCurvyEffect(m.drawX, m.drawY)));
+            action(new SFXAction("ATTACK_DAGGER_1"));
+            action(new VFXAction(new DamageImpactCurvyEffect(m.drawX, m.drawY)));
         } else {
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(
+            action(new DamageAction(
                     m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-            AbstractDungeon.actionManager.addToBottom(new SFXAction("ATTACK_DAGGER_5"));
-            AbstractDungeon.actionManager.addToBottom(new SFXAction("ATTACK_DAGGER_5"));
-            AbstractDungeon.actionManager.addToBottom(new VFXAction(new DamageImpactCurvyEffect(m.drawX, m.drawY)));
-            AbstractDungeon.actionManager.addToBottom(new VFXAction(new DamageImpactLineEffect(m.drawX, m.drawY)));
-            AbstractDungeon.actionManager.addToBottom(new VFXAction(new AdditiveSlashImpactEffect(m.drawX, m.drawY, Color.RED)));
+            action(new SFXAction("ATTACK_DAGGER_5"));
+            action(new SFXAction("ATTACK_DAGGER_5"));
+            action(new VFXAction(new DamageImpactCurvyEffect(m.drawX, m.drawY)));
+            action(new VFXAction(new DamageImpactLineEffect(m.drawX, m.drawY)));
+            action(new VFXAction(new AdditiveSlashImpactEffect(m.drawX, m.drawY, Color.RED)));
         }
     }
 

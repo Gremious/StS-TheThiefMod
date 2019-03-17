@@ -63,7 +63,7 @@ public class Liar extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
+        action(new ApplyPowerAction(
                 p, p, new LiarPower(p, p, upgraded, misc, magicNumber), misc));
 
     }

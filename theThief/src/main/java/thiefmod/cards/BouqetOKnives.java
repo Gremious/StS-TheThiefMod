@@ -65,9 +65,9 @@ public class BouqetOKnives extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        AbstractDungeon.actionManager.addToBottom(new SFXAction("ATTACK_DAGGER_6"));
-        AbstractDungeon.actionManager.addToBottom(new VFXAction(new DaggerSprayEffect(false)));
-        AbstractDungeon.actionManager.addToBottom(new SwordBoomerangAction(
+        action(new SFXAction("ATTACK_DAGGER_6"));
+        action(new VFXAction(new DaggerSprayEffect(false)));
+        action(new SwordBoomerangAction(
                 AbstractDungeon.getMonsters().getRandomMonster(
                         null, true, AbstractDungeon.cardRandomRng),
                 new DamageInfo(p, baseDamage), magicNumber));

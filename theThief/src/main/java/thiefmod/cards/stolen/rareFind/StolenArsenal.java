@@ -81,7 +81,7 @@ public class StolenArsenal extends AbstractBackstabCard {
         AbstractDungeon.actionManager.addToTop(new StolenArsenalAction(p));
 
         do {
-            AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 1));
+            action(new DrawCardAction(p, 1));
             if (p.drawPile.isEmpty() && p.discardPile.isEmpty()) {
                 break;
             }

@@ -64,13 +64,13 @@ public class BeautifulLies extends AbstractBackstabCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m,
+        action(new DamageAction(m,
                 new DamageInfo(p, damage, damageTypeForTurn),
                 AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
 
         AbstractDungeon.effectList.add(new PetalEffect());
 
-        AbstractDungeon.actionManager.addToBottom(new AddCardToDeckAction(makeStatEquivalentCopy()));
+        action(new AddCardToDeckAction(makeStatEquivalentCopy()));
 
     }
 

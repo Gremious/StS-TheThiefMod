@@ -70,10 +70,10 @@ public class Focused extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
+        action(new ApplyPowerAction(
                 p, p, new ShadowstepPower(p, p, magicNumber), magicNumber));
 
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
+        action(new ApplyPowerAction(
                 p, p, new FocusedPower(p, p, magicNumber), magicNumber));
 
     }

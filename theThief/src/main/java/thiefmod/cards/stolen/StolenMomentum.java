@@ -59,7 +59,7 @@ public class StolenMomentum extends CustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, magicNumber));
+        action(new DrawCardAction(p, magicNumber));
 
         if (!upgraded) {
             AbstractDungeon.actionManager

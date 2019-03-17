@@ -72,8 +72,8 @@ public class StolenKnives extends AbstractBackstabCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.effectList.add(new BorderFlashEffect(Color.BLUE));
 
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new KnivesPower(p, 99), 99));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
+        action(new ApplyPowerAction(p, p, new KnivesPower(p, 99), 99));
+        action(new ApplyPowerAction(p, p,
                 new StolenKnivesPower(p, magicNumber, damage, new DamageInfo(p, damage, damageTypeForTurn)), magicNumber));
     }
 

@@ -63,11 +63,11 @@ public class Steal extends CustomCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
+        action(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
                 new DamageInfo(p, damage, damageTypeForTurn),
                 AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
 
-        AbstractDungeon.actionManager.addToBottom(new StealCardAction(
+        action(new StealCardAction(
                 magicNumber, ADD_COPIES, ADD_RANDOM, AbstractDungeon.player.hand, ADD_UPGRADED));
     }
 

@@ -59,7 +59,7 @@ public class StolenChange extends CustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
+        action(new ApplyPowerAction(p, p,
                 new RefundCardCostPower(p, p, magicNumber), magicNumber));
 
     }

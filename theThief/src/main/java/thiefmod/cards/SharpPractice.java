@@ -62,7 +62,7 @@ public class SharpPractice extends AbstractBackstabCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
+        action(new ApplyPowerAction(p, p,
                 new SharpPracticePower(p, p, upgraded, magicNumber, ADD_RANDOM, AbstractDungeon.player.hand, ADD_UPGRADED), magicNumber));
 
     }

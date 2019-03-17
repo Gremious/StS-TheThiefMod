@@ -67,12 +67,12 @@ public class Persuasion extends AbstractBackstabCard {
 
 
         if (canBackstab()) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
+            action(new ApplyPowerAction(
                     p, p, new StrengthPower(
                     p, magicNumber), magicNumber));
 
         } else {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
+            action(new ApplyPowerAction(
                     p, p, new DexterityPower(
                     p, magicNumber), magicNumber));
         }

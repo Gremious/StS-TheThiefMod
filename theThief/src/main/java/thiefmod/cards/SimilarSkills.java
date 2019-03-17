@@ -57,11 +57,11 @@ public class SimilarSkills extends CustomCard {
     @Override
     public void use(final AbstractPlayer p, final AbstractMonster m) {
         if (!upgraded) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
+            action(new ApplyPowerAction(p, p,
                     new SimilarSkillsPower(p, magicNumber), magicNumber));
         }
         if (upgraded) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
+            action(new ApplyPowerAction(p, p,
                     new SimilarSkillsPowerUpgraded(p, magicNumber), magicNumber));
         }
     }

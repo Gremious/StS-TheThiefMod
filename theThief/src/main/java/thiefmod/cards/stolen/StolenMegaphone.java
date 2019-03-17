@@ -59,7 +59,7 @@ public class StolenMegaphone extends AbstractBackstabCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new AmplifyPower(p, magicNumber), magicNumber));
+        action(new ApplyPowerAction(p, p, new AmplifyPower(p, magicNumber), magicNumber));
     }
 
 

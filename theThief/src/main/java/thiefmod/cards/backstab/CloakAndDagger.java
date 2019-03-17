@@ -66,11 +66,11 @@ public class CloakAndDagger extends AbstractBackstabCard {
 
 
         if (canBackstab()) {
-            AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
+            action(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
                     new DamageInfo(p, damage, damageTypeForTurn),
                     AbstractGameAction.AttackEffect.SLASH_VERTICAL));
         } else {
-            AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.GainBlockAction(
+            action(new com.megacrit.cardcrawl.actions.common.GainBlockAction(
                     p, p, block));
         }
     }

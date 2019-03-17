@@ -74,10 +74,10 @@ public class DirtyDeedsDDC extends AbstractBackstabCard {
 
 
         if (canBackstab()) {
-            AbstractDungeon.actionManager.addToBottom(
+            action(
                     new GreedAction(m, new DamageInfo(p, damage, damageTypeForTurn), backstabNumber));
         } else {
-            AbstractDungeon.actionManager.addToBottom(
+            action(
                     new GreedAction(m, new DamageInfo(p, damage, damageTypeForTurn), magicNumber));
         }
     }

@@ -109,33 +109,33 @@ public class AAAEmptyCard extends AbstractBackstabCard {
         final int count = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
 
         if (count <= 1) {
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(
+            action(new DamageAction(
                     m, new DamageInfo(p, damage * backstabNumber, damageTypeForTurn),
                     AbstractGameAction.AttackEffect.SLASH_VERTICAL));
         } else {
-            AbstractDungeon.actionManager.addToBottom(new StealCardAction(
+            action(new StealCardAction(
                     magicNumber, 1, ADD_RANDOM, AbstractDungeon.player.hand, ADD_UPGRADED));
         }
 
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
+        action(new ApplyPowerAction(
                 p, p, new ShadowstepPower(
                 p, p, magicNumber), magicNumber));
 
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(
+        action(new GainBlockAction(
                 p, p, block));
 
         while (backstabNumber-- != 0) {
-            AbstractDungeon.actionManager.addToBottom(
+            action(
                     new MakeTempCardInDrawPileAction(new VoidCard(), backstabNumber, true, true, false));
         }
 
         for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new VulnerablePower(
+            action(new ApplyPowerAction(mo, p, new VulnerablePower(
                     mo, magicNumber, false), magicNumber));
         }
 
         backstabNumber = baseBackstabNumber;
-        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, StrengthPower.POWER_ID));
+        action(new RemoveSpecificPowerAction(p, p, StrengthPower.POWER_ID));
 
     }
 
@@ -143,7 +143,7 @@ public class AAAEmptyCard extends AbstractBackstabCard {
 
     @Override // Startup: Add 1 void to your draw pile.
     public boolean atBattleStartPreDraw() {
-        AbstractDungeon.actionManager.addToBottom(
+        action(
                 new MakeTempCardInDrawPileAction(new VoidCard(), magicNumber, true, true, false));
         return true;
     }

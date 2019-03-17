@@ -59,10 +59,10 @@ public class Sidestep extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
+        action(new ApplyPowerAction(
                 AbstractDungeon.player, AbstractDungeon.player, new EnergizedPower(p, magicNumber), 1));
 
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new NextTurnBlockPower(p, block), block));
+        action(new ApplyPowerAction(p, p, new NextTurnBlockPower(p, block), block));
 
     }
 

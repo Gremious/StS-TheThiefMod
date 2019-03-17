@@ -71,7 +71,7 @@ public class LieInWait extends AbstractBackstabCard implements StartupCard {
 
     @Override // Startup: Add 1 void to your draw pile.
     public boolean atBattleStartPreDraw() {
-        AbstractDungeon.actionManager.addToBottom(
+        action(
                 new MakeTempCardInDrawPileAction(new VoidCard(), magicNumber, true, true, false));
         return true;
     }
@@ -79,7 +79,7 @@ public class LieInWait extends AbstractBackstabCard implements StartupCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(
+        action(new GainBlockAction(
                 p, p, block));
 
     }

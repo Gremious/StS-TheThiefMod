@@ -66,14 +66,14 @@ public class StolenArmor extends AbstractBackstabCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ArmamentsAction(false));
+        action(new ArmamentsAction(false));
 
         if (AbstractDungeon.player.drawPile.isEmpty()) {
-            AbstractDungeon.actionManager.addToBottom(new EmptyDeckShuffleAction());
+            action(new EmptyDeckShuffleAction());
         }
 
-        AbstractDungeon.actionManager.addToBottom(new StolenArmorAction(block));
-        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, magicNumber));
+        action(new StolenArmorAction(block));
+        action(new DrawCardAction(p, magicNumber));
     }
 
     @Override

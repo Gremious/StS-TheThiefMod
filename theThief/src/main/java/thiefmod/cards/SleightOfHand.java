@@ -55,9 +55,9 @@ public class SleightOfHand extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         final int count = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
-        AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.GainBlockAction(p, p, block));
+        action(new com.megacrit.cardcrawl.actions.common.GainBlockAction(p, p, block));
 
-        AbstractDungeon.actionManager.addToBottom(new StealCardAction(
+        action(new StealCardAction(
                 magicNumber, 1, ADD_RANDOM, AbstractDungeon.player.hand, ADD_UPGRADED));
 
     }
