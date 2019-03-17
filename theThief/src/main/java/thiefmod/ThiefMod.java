@@ -303,7 +303,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         BaseMod.addDynamicVariable(new ThiefSecondMagicNumber());
         try {
             autoAddCards();
-        } catch (URISyntaxException | IllegalAccessException | InstantiationException | NotFoundException | CannotCompileException e) {
+        } catch (URISyntaxException | IllegalAccessException | InstantiationException | NotFoundException | CannotCompileException | ClassNotFoundException e) {
             e.printStackTrace();
         }
 

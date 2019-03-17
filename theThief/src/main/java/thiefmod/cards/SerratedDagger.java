@@ -47,7 +47,7 @@ public class SerratedDagger extends AbstractBackstabCard {
     private static final int COST = 1;
 
     private static final int DAMAGE = 8;
-    private static final int UPGRADE_PLUS_DAMAGE = 10;
+    private static final int UPGRADE_PLUS_DAMAGE = 2;
 
 // /STAT DECLARATION/
 

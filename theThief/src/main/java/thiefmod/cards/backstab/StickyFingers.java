@@ -13,7 +13,6 @@ import thiefmod.actions.common.StealCardAction;
 import thiefmod.cards.AbstractBackstabCard;
 import thiefmod.patches.character.AbstractCardEnum;
 import thiefmod.patches.character.ThiefCardTags;
-import thiefmod.powers.Common.BackstabPower;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,8 +46,9 @@ public class StickyFingers extends AbstractBackstabCard {
     private static final int COST = 1;
 
     private static final int MAGIC = 2;
-    private static final int STEAL = 2;
+    private static final int STEAL = 1;
     private static final int UPGRADED_PLUS_MAGIC = 1;
+    private static final int UPGRADED_PLUS_STEAL = 1;
 
     private static final boolean ADD_RANDOM = true;
     private static final boolean ADD_UPGRADED = false;
@@ -90,6 +90,7 @@ public class StickyFingers extends AbstractBackstabCard {
 
         initializeDescription();
     }
+
     @Override
     public List<TooltipInfo> getCustomTooltips() {
         List<TooltipInfo> tips = new ArrayList<>();
@@ -103,6 +104,7 @@ public class StickyFingers extends AbstractBackstabCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
+            upgradeBackstabNumber(UPGRADED_PLUS_STEAL);
             rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

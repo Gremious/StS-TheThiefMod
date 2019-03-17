@@ -12,14 +12,13 @@ import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import thiefmod.ThiefMod;
 import thiefmod.actions.Util.DiscoverAndExhaustCard;
 import thiefmod.actions.Util.MakeSuperCopyAction;
 import thiefmod.cards.stolen.*;
 import thiefmod.cards.stolen.modSynergy.disciple.rareFind.StolenClock;
 import thiefmod.cards.stolen.modSynergy.halation.rareFind.StolenMail;
-import thiefmod.cards.stolen.modSynergy.mystic.*;
 import thiefmod.cards.stolen.modSynergy.mystic.rareFind.stolenMysticalOrb;
+import thiefmod.cards.stolen.modSynergy.mystic.*;
 import thiefmod.cards.stolen.rareFind.StolenArsenal;
 import thiefmod.cards.stolen.rareFind.StolenBlood;
 import thiefmod.cards.stolen.rareFind.StolenCore;
@@ -36,7 +35,7 @@ import static mysticmod.MysticMod.cantripsGroup;
 import static thiefmod.ThiefMod.*;
 
 public class StealCardAction extends AbstractGameAction {
-    public static final Logger logger = LogManager.getLogger(ThiefMod.class.getName());
+    public static final Logger logger = LogManager.getLogger(StealCardAction.class.getName());
     public static final UIStrings uiKeywordStrings = CardCrawlGame.languagePack.getUIString("theThief:MakeSuperCopyAction");
     public static final UIStrings uiStealStrings = CardCrawlGame.languagePack.getUIString("theThief:StealCardUtil");
     public static final String KEYWORD_STRINGS[] = uiKeywordStrings.TEXT;
@@ -47,8 +46,8 @@ public class StealCardAction extends AbstractGameAction {
     public CardGroup location;
     public int copies;
 
-    private static int rollRare = AbstractDungeon.cardRandomRng.random(99);
-    private static int rollBlack = AbstractDungeon.cardRandomRng.random(99);
+    private int rollRare = AbstractDungeon.cardRandomRng.random(99);
+    private int rollBlack = AbstractDungeon.cardRandomRng.random(99);
 
     private ArrayList<AbstractCard> cardsToAdd = new ArrayList<>();
 
@@ -220,6 +219,7 @@ public class StealCardAction extends AbstractGameAction {
                 }
             }
         }
+
         if (hasServant) {
             ArrayList<AbstractCard> servantCards = new ArrayList<>();
 
@@ -284,78 +284,65 @@ public class StealCardAction extends AbstractGameAction {
         }
     }
 
+
     private static CardGroup blackCards;
 
     static {
         blackCards = new CardGroup(StolenEnum.STOLEN_CARDS);
 
         if (hasHubris || hasInfiniteSpire || hasReplayTheSpire) {
-            if (rollBlack < 25) {
-                ArrayList<AbstractCard> blackCards = new ArrayList<>();
+            ArrayList<AbstractCard> blackCardsArray = new ArrayList<>();
 
-                if (hasHubris) {
+            if (hasHubris) {
+                blackCardsArray.add(CardLibrary.getCopy("hubris:Fate"));
+                blackCardsArray.add(CardLibrary.getCopy("hubris:InfiniteBlow"));
+                blackCardsArray.add(CardLibrary.getCopy("hubris:Rewind"));
+            }
 
-                    blackCards.add(CardLibrary.getCopy("hubris:Fate"));
-                    blackCards.add(CardLibrary.getCopy("hubris:InfiniteBlow"));
-                    blackCards.add(CardLibrary.getCopy("hubris:Rewind"));
+            if (hasInfiniteSpire) {
+                blackCardsArray.add(CardLibrary.getCopy("infinitespire:Collect"));
+                blackCardsArray.add(CardLibrary.getCopy("infinitespire:DeathsTouch"));
+                blackCardsArray.add(CardLibrary.getCopy("infinitespire:Execution"));
+                blackCardsArray.add(CardLibrary.getCopy("infinitespire:FinalStrike"));
+                blackCardsArray.add(CardLibrary.getCopy("infinitespire:Fortify"));
+                blackCardsArray.add(CardLibrary.getCopy("infinitespire:FutureSight"));
+                blackCardsArray.add(CardLibrary.getCopy("infinitespire:Gouge"));
+                blackCardsArray.add(CardLibrary.getCopy("infinitespire:Menacing"));
+                blackCardsArray.add(CardLibrary.getCopy("infinitespire:NeuralNetwork"));
+                blackCardsArray.add(CardLibrary.getCopy("infinitespire:Punishment"));
+                blackCardsArray.add(CardLibrary.getCopy("infinitespire:TheBestDefense"));
+                blackCardsArray.add(CardLibrary.getCopy("infinitespire:UltimateForm"));
+            }
 
-                }
-                if (hasInfiniteSpire) {
-
-                    blackCards.add(CardLibrary.getCopy("infinitespire:Collect"));
-                    blackCards.add(CardLibrary.getCopy("infinitespire:DeathsTouch"));
-                    blackCards.add(CardLibrary.getCopy("infinitespire:Execution"));
-                    blackCards.add(CardLibrary.getCopy("infinitespire:FinalStrike"));
-                    blackCards.add(CardLibrary.getCopy("infinitespire:Fortify"));
-                    blackCards.add(CardLibrary.getCopy("infinitespire:FutureSight"));
-                    blackCards.add(CardLibrary.getCopy("infinitespire:Gouge"));
-                    blackCards.add(CardLibrary.getCopy("infinitespire:Menacing"));
-                    blackCards.add(CardLibrary.getCopy("infinitespire:NeuralNetwork"));
-                    blackCards.add(CardLibrary.getCopy("infinitespire:Punishment"));
-                    blackCards.add(CardLibrary.getCopy("infinitespire:TheBestDefense"));
-                    blackCards.add(CardLibrary.getCopy("infinitespire:UltimateForm"));
-
-                }
-                if (hasReplayTheSpire) {
-
-                    blackCards.add(CardLibrary.getCopy("ReplayTheSpireMod:Chaos Vortex"));
-                    blackCards.add(CardLibrary.getCopy("Replay:Dark Deal"));
+            if (hasReplayTheSpire) {
+                blackCardsArray.add(CardLibrary.getCopy("ReplayTheSpireMod:Chaos Vortex"));
+                blackCardsArray.add(CardLibrary.getCopy("Replay:Dark Deal"));
 //                    blackCards.add(CardLibrary.getCopy("ReplayTheSpireMod:Dark Transmutation"));
 //                    blackCards.add(CardLibrary.getCopy("ReplayTheSpireMod:Echo Chamber"));
-                    blackCards.add(CardLibrary.getCopy("ReplayTheSpireMod:Echoes of Time"));
-                    blackCards.add(CardLibrary.getCopy("Replay:Fractal Strike"));
-                    blackCards.add(CardLibrary.getCopy("ReplayTheSpireMod:Haul"));
-                    blackCards.add(CardLibrary.getCopy("ReplayTheSpireMod:??????????????????????"));
+                blackCardsArray.add(CardLibrary.getCopy("ReplayTheSpireMod:Echoes of Time"));
+                blackCardsArray.add(CardLibrary.getCopy("Replay:Fractal Strike"));
+                blackCardsArray.add(CardLibrary.getCopy("ReplayTheSpireMod:Haul"));
+                blackCardsArray.add(CardLibrary.getCopy("ReplayTheSpireMod:??????????????????????"));
+            }
 
-                }
-                for (AbstractCard c : blackCards) {
-                    if (c != null) {
-
-                        if (!c.cardID.equals("infinitespire:Collect")
-                                && !c.cardID.equals("infinitespire:Fortify")
-                                && !c.cardID.equals("infinitespire:Gouge")
-                                && !c.cardID.equals("infinitespire:Menacing")
-                                && !c.cardID.equals("infinitespire:TheBestDefense")
-                                && !c.cardID.equals("ReplayTheSpireMod:Echoes of Time")) {
-                            c.name = STEAL_STRINGS[5] + c.name;
-                        }
-
-                        if (c.cardID.equals("infinitespire:Collect")) {
-                            c.name = STEAL_STRINGS[5] + STEAL_STRINGS[7];
-                        } else if (c.cardID.equals("infinitespire:Fortify")) {
-                            c.name = STEAL_STRINGS[5] + STEAL_STRINGS[8];
-                        } else if (c.cardID.equals("infinitespire:Gouge")) {
-                            c.name = STEAL_STRINGS[5] + STEAL_STRINGS[9];
-                        } else if (c.cardID.equals("infinitespire:Menacing")) {
-                            c.name = STEAL_STRINGS[5] + STEAL_STRINGS[10];
-                        } else if (c.cardID.equals("infinitespire:TheBestDefense")) {
-                            c.name = STEAL_STRINGS[5] + STEAL_STRINGS[11];
-                        } else if (c.cardID.equals("ReplayTheSpireMod:Echoes of Time")) {
-                            c.name = STEAL_STRINGS[5] + STEAL_STRINGS[12];
-                        }
-
-                        stolenCards.addToTop(c);
+            for (AbstractCard c : blackCardsArray) {
+                if (c != null) {
+                    if (c.cardID.equals("infinitespire:Collect")) {
+                        c.name = STEAL_STRINGS[5] + STEAL_STRINGS[7];
+                    } else if (c.cardID.equals("infinitespire:Fortify")) {
+                        c.name = STEAL_STRINGS[5] + STEAL_STRINGS[8];
+                    } else if (c.cardID.equals("infinitespire:Gouge")) {
+                        c.name = STEAL_STRINGS[5] + STEAL_STRINGS[9];
+                    } else if (c.cardID.equals("infinitespire:Menacing")) {
+                        c.name = STEAL_STRINGS[5] + STEAL_STRINGS[10];
+                    } else if (c.cardID.equals("infinitespire:TheBestDefense")) {
+                        c.name = STEAL_STRINGS[5] + STEAL_STRINGS[11];
+                    } else if (c.cardID.equals("ReplayTheSpireMod:Echoes of Time")) {
+                        c.name = STEAL_STRINGS[5] + STEAL_STRINGS[12];
+                    } else {
+                        c.name = STEAL_STRINGS[5] + c.name;
                     }
+                    blackCards.addToTop(c);
                 }
             }
         }
@@ -368,14 +355,39 @@ public class StealCardAction extends AbstractGameAction {
         for (AbstractCard c : blackCards.group) {
             AbstractCard upgradedCopy = c.makeCopy();
             upgradedCopy.upgrade();
+
+
+            if (upgradedCopy.cardID.equals("infinitespire:Collect")) {
+                upgradedCopy.name = STEAL_STRINGS[5] + STEAL_STRINGS[7];
+            } else if (upgradedCopy.cardID.equals("infinitespire:Fortify")) {
+                upgradedCopy.name = STEAL_STRINGS[5] + STEAL_STRINGS[8];
+            } else if (upgradedCopy.cardID.equals("infinitespire:Gouge")) {
+                upgradedCopy.name = STEAL_STRINGS[5] + STEAL_STRINGS[9];
+            } else if (upgradedCopy.cardID.equals("infinitespire:Menacing")) {
+                upgradedCopy.name = STEAL_STRINGS[5] + STEAL_STRINGS[10];
+            } else if (upgradedCopy.cardID.equals("infinitespire:TheBestDefense")) {
+                upgradedCopy.name = STEAL_STRINGS[5] + STEAL_STRINGS[11];
+            } else if (upgradedCopy.cardID.equals("ReplayTheSpireMod:Echoes of Time")) {
+                upgradedCopy.name = STEAL_STRINGS[5] + STEAL_STRINGS[12];
+            } else {
+                upgradedCopy.name = STEAL_STRINGS[5] + upgradedCopy.name;
+            }
+
             blackCardsUpgraded.addToTop(upgradedCopy);
+
         }
     }
+
 
     // ========================
 
     // A final group of the cards to return.
     private CardGroup allStolenCards() {
+        logger.info("Rare fnd roll: " + rollRare + " - " + (rollRare < 15));
+        logger.info("Do you have super secret strong card mods? " + (hasHubris || hasInfiniteSpire || hasReplayTheSpire));
+        logger.info("Did you roll low enough to get them? " + rollBlack + " - " + (rollBlack < 8));
+        logger.info("Standard Checks: upgraded or has power? " + (upgraded || AbstractDungeon.player.hasPower(IllGottenGainsPower.POWER_ID)));
+
         if (rollRare < 15) {
             if (upgraded || AbstractDungeon.player.hasPower(IllGottenGainsPower.POWER_ID)) {
                 return rareFindsUpgraded;
@@ -416,7 +428,6 @@ public class StealCardAction extends AbstractGameAction {
 
 
     private void curseCounter() {
-
         actionManager.addToBottom(new ApplyPowerAction(player, source,
                 new FleetingGuiltPower(player, source, 1), 1));
 

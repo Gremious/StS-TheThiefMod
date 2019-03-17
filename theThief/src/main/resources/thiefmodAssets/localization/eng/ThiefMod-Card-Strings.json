@@ -17,8 +17,8 @@
   },
   "theThief:Lie": {
     "NAME": "Lie",
-    "DESCRIPTION": "Gain !B! Block. Apply !M! vulnerable to all enemies.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. Apply !M! vulnerable to all enemies.",
+    "DESCRIPTION": "Gain !B! Block. Apply !M! vulnerable to ALL enemies.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. Apply !M! vulnerable to ALL enemies.",
     "EXTENDED_DESCRIPTION": [
       "[#fa5555]As[] [#fa5555]fundamental[] [#fa5555]as[] [#fa5555]it[] [#fa5555]gets?[]"
     ]
@@ -92,7 +92,7 @@
   },
   "theThief:DramaticFeign": {
     "NAME": "Dramatic Feign",
-    "DESCRIPTION": "Stun and apply 2 Vulnerable to all enemies. NL You cannot play cards for the rest of this turn. NL The first card you play next turn is refunded.",
+    "DESCRIPTION": "Stun and apply 2 Vulnerable to ALL enemies. NL You cannot play cards for the rest of this turn. NL The first card you play next turn is refunded.",
     "EXTENDED_DESCRIPTION": [
       "[#FEE130]Flavor[] [#FEE130]Text[]"
     ]
@@ -131,8 +131,8 @@
   },
   "theThief:SerratedDagger": {
     "NAME": "Serrated Dagger",
-    "DESCRIPTION": "Deal !D! damage. Goes through Block.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. Goes through Block.",
+    "DESCRIPTION": "Deal !D! damage. NL Goes through Block.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Goes through Block.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Always[] [#88888]serrate[] [#88888]your[] [#88888]daggers,[] [#88888]it's[] [#88888]good[] [#88888]practice.[]"
     ]
@@ -147,10 +147,10 @@
   },
   "theThief:Follow-up": {
     "NAME": "Follow-up",
-    "DESCRIPTION": "Deal !D! damage to an enemy. Next turn, to all enemies.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage to an enemy. Next turn, to all enemies.",
+    "DESCRIPTION": "Deal !D! damage. NL Next turn deal !D! damage to ALL enemies.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Next turn deal !D! damage to ALL enemies.",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]Flavor[] [#88888]Text[]"
+      "[#88888]And[] [#88888]a[] [#88888]one,[] [#88888]and[] [#88888]a[] [#88888]two...[]"
     ]
   },
   "theThief:OneStepAhead": {
@@ -264,8 +264,8 @@
   },
   "theThief:ShadowCalamity": {
     "NAME": "Shadow Calamity",
-    "DESCRIPTION": "Startup: Add !M! Void to your draw pile. NL Deal !D! damage to all enemies. NL Grave NL Exhaustive !stslib:ex!.",
-    "UPGRADE_DESCRIPTION": "Startup: Add !M! Voids to your draw pile. NL Deal !D! damage to all enemies. NL Grave. NL Exhaustive !stslib:ex!.",
+    "DESCRIPTION": "Startup: Add !M! Void to your draw pile. NL Deal !D! damage to ALL enemies. NL Grave NL Exhaustive !stslib:ex!.",
+    "UPGRADE_DESCRIPTION": "Startup: Add !M! Voids to your draw pile. NL Deal !D! damage to ALL enemies. NL Grave. NL Exhaustive !stslib:ex!.",
     "EXTENDED_DESCRIPTION": [
       "[#FEE130]Flavor[] [#FEE130]Text[]"
     ]
@@ -362,8 +362,8 @@
   },
   "theThief:MurderousIntent": {
     "NAME": "Murderous Intent",
-    "DESCRIPTION": "Shadowstep !theThief:Magic! time. NL Gain !M! Strenght. NL At the end of your turn, lose !M! Strenght.",
-    "UPGRADE_DESCRIPTION": "Shadowstep !theThief:Magic! time. NL Gain !M! Strenght. NL At the end of your turn, lose !M! Strenght.",
+    "DESCRIPTION": "Shadowstep !theThief:Magic! time. NL Gain !M! Strength. NL At the end of your turn, lose !M! Strength.",
+    "UPGRADE_DESCRIPTION": "Shadowstep !theThief:Magic! time. NL Gain !M! Strength. NL At the end of your turn, lose !M! Strength.",
     "EXTENDED_DESCRIPTION": [
       "[#fa5555]You[] [#fa5555]are[] [#fa5555]walking[] [#fa5555]a[] [#fa5555]thin[] [#fa5555]line.[]"
     ]
@@ -561,7 +561,7 @@
   },
   "theThief:HotGossip": {
     "NAME": "HOT Gossip",
-    "DESCRIPTION": "Stun all monsters. NL Exhaust."
+    "DESCRIPTION": "Stun ALL enemies. NL Exhaust."
   },
   "theThief:Dedication": {
     "NAME": "Dedication",

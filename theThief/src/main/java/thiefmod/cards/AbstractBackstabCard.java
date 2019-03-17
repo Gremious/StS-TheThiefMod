@@ -33,17 +33,15 @@ public abstract class AbstractBackstabCard extends CustomCard {
         isBackstabNumberModified = false;
     }
 
+    @Override
     public void displayUpgrades() {
+        super.displayUpgrades();
         if (upgradedBackstabNumber) {
             backstabNumber = baseBackstabNumber;
             isBackstabNumberModified = true;
         }
     }
 
-    @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
-
-    }
 
     public void upgradeBackstabNumber(int amount) {
         super.displayUpgrades();
@@ -53,7 +51,7 @@ public abstract class AbstractBackstabCard extends CustomCard {
     }
 
     public static boolean canBackstab() {
-        if (AbstractDungeon.player.cardsPlayedThisTurn < 1) {
+        if (AbstractDungeon.player.cardsPlayedThisTurn < 2) {
             return true;
         } else if (AbstractDungeon.player.hasPower(BackstabPower.POWER_ID)) {
             return true;

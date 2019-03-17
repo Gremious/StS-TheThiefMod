@@ -11,6 +11,8 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.GainPennyEffect;
 import thiefmod.ThiefMod;
 
+import static com.megacrit.cardcrawl.core.CardCrawlGame.sound;
+
 // Empty Base
 
 public class TheThiefThieveryPower extends AbstractPower {
@@ -36,13 +38,14 @@ public class TheThiefThieveryPower extends AbstractPower {
 
     @Override
     public void onAttack(DamageInfo info, int damageAmount, AbstractCreature attackTarget) {
-
-        com.megacrit.cardcrawl.core.CardCrawlGame.sound.play("GOLD_JINGLE");
-        AbstractDungeon.player.gainGold(amount);
-        for (int i = 0; i < amount; ++i) {
-            AbstractDungeon.effectList.add(new GainPennyEffect(source, attackTarget.hb.cX, attackTarget.hb.cY, source.hb.cX, source.hb.cY, true));
+        if (info.type != DamageInfo.DamageType.THORNS) {
+            sound.play("GOLD_JINGLE");
+            AbstractDungeon.player.gainGold(amount);
+            for (int i = 0; i < amount; ++i) {
+                AbstractDungeon.effectList.add(new GainPennyEffect(source, attackTarget.hb.cX, attackTarget.hb.cY, source.hb.cX, source.hb.cY, true));
+            }
+            //    AbstractDungeon.actionManager.addToBottom(new GainGoldAction(owner, source, amount, attackTarget, info));
         }
-        //    AbstractDungeon.actionManager.addToBottom(new GainGoldAction(owner, source, amount, attackTarget, info));
     }
 
     @Override

@@ -62,7 +62,7 @@ public class FollowUp extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
-                p, p, new DealDamageToAllNextTurnPower(p, p, p, 1, 1), 1));
+                p, p, new DealDamageToAllNextTurnPower(p, p, p, damage, 1), 1));
 
         AbstractDungeon.actionManager.addToBottom(new DamageAction(
                 m, new DamageInfo(p, damage, damageTypeForTurn),

@@ -41,9 +41,10 @@ public class QuickThinking extends AbstractBackstabCard {
     private static final CardType TYPE = CardType.SKILL;
 
     private static final int COST = 1;
+    private static final int UPGRADED_COST = 0;
 
     private static final int MAGIC = 1;
-    private static final int UPGRADED_PLUS_MAGIC = 1;
+    //private static final int UPGRADED_PLUS_MAGIC = 1;
 
     private static final int MAGIC_TWO = 1;
 // /STAT DECLARATION/
@@ -89,7 +90,8 @@ public class QuickThinking extends AbstractBackstabCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
+            upgradeBaseCost(UPGRADED_COST);
+            // upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
             rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
