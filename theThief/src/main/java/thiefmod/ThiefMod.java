@@ -168,6 +168,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
     
     // ============== /SUBSCRIBE, CREATE THE COLOR, INITIALIZE/ =================
     
+    
     // =============== LOAD THE CHARACTER =================
     
     @Override
