@@ -26,22 +26,22 @@
   "theThief:CunningPower": {
     "NAME": "Cunning",
     "DESCRIPTIONS": [
-      "The next",
-      " stolen card you play this turn is played twice.",
-      " stolen cards you play this turn are played twice."
+      "The next #b",
+      " #ystolen card you play this turn is played twice.",
+      " #ystolen cards you play this turn are played twice."
     ]
   },
   "theThief:DealDamageToAllNextTurnPower": {
     "NAME": "Deal Damage To All",
     "DESCRIPTIONS": [
-      "At the start of your next turn, you will deal ",
+      "At the start of your next turn, you will deal #b",
       " damage to all enemies."
     ]
   },
   "theThief:DissoluteSatisfactionPower": {
     "NAME": "Dissolute Satisfaction",
     "DESCRIPTIONS": [
-      "Whenever you deal damage, you will heal for ",
+      "Whenever you deal damage, you will heal for #b",
       " HP."
     ]
   },
@@ -56,7 +56,7 @@
   "theThief:DramaticFeignPower": {
     "NAME": "Feign",
     "DESCRIPTIONS": [
-      "You cannot use any cards this turn. NL You are feigning death for ",
+      "You cannot use any cards this turn. NL You are feigning death for #b",
       " turn",
       " turns"
     ]
@@ -64,7 +64,7 @@
   "theThief:FindersKeepersPower": {
     "NAME": "Finders Keepers!",
     "DESCRIPTIONS": [
-      "Add the next ",
+      "Add the next #b",
       " non-gray card you play to your deck.",
       " non-gray cards you play to your deck."
     ]
