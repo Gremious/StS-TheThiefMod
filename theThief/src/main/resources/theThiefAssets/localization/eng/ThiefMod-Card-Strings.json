@@ -296,16 +296,16 @@
   },
   "theThief:SteakOut": {
     "NAME": "Steak Out",
-    "DESCRIPTION": "Startup: Add 1 void to your draw and discard piles. NL Autoplay: Gain !M! energy.",
-    "UPGRADE_DESCRIPTION": "Startup: Add 1 void to your draw and discard piles. NL Autoplay: Gain !M! energy.",
+    "DESCRIPTION": "Startup: Add 1 Void to your draw and discard piles. NL Autoplay: Gain !M! energy.",
+    "UPGRADE_DESCRIPTION": "Startup: Add 1 Void to your draw and discard piles. NL Autoplay: Gain !M! energy.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]
   },
   "theThief:Gaslight": {
     "NAME": "Gaslight",
-    "DESCRIPTION": "Enemy loses !M! strenght. You gain !M! strenght. NL Exhaustive !stslib:ex!.",
-    "UPGRADE_DESCRIPTION": "Enemy loses !M! strenght. You gain !M! strenght. NL Exhaustive !stslib:ex!.",
+    "DESCRIPTION": "Enemy loses !M! strength. You gain !M! strength. NL Exhaustive !stslib:ex!.",
+    "UPGRADE_DESCRIPTION": "Enemy loses !M! strength. You gain !M! strength. NL Exhaustive !stslib:ex!.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Louse,[][#88888]you're[][#88888]just[][#88888]being[][#88888]crazy.[]"
     ]
@@ -408,8 +408,8 @@
       "[#88888][] [#88888]Text[]"
     ]
   },
-  "theThief:RiggedBet": {
-    "NAME": "Rigged Bet",
+  "theThief:StormOfSteal": {
+    "NAME": "Storm Of Steal",
     "DESCRIPTION": "Discard your hand, then, steal that many cards. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Discard your hand, then, steal that many cards. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [

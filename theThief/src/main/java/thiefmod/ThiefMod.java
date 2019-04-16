@@ -215,7 +215,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
     
     @Override
     public void receiveEditRelics() {
-        logger.info("Add relics");
+        logger.info("Add kotlin.gremsReliquary.relics");
         
         // Thief-Specific:
         BaseMod.addRelicToCustomPool(new ThievesMask(), AbstractCardEnum.THIEF_GRAY);
@@ -232,7 +232,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         BaseMod.addRelic(new LouseBounty(), RelicType.SHARED);
         BaseMod.addRelic(new BottledHand(), RelicType.SHARED);
         
-        logger.info("done adding relics!");
+        logger.info("done adding kotlin.gremsReliquary.relics!");
     }
     
     // ================ /ADD RELICS/ ===================

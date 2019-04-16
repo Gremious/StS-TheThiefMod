@@ -11,12 +11,14 @@ import thiefmod.actions.unique.RiggedBetAction;
 import thiefmod.cards.abstracts.AbstractBackstabCard;
 import thiefmod.patches.character.AbstractCardEnum;
 
-public class RiggedBet extends AbstractBackstabCard {
+public class StormOfSteal extends AbstractBackstabCard {
     //implements StartupCard
     //implements ModalChoice.Callback
     // TEXT DECLARATION
     
-    public static final String ID = ThiefMod.makeID("RiggedBet"); // I really wish I could name this Overcalculated Gamble :C
+    public static final String ID = ThiefMod.makeID("StormOfSteal");
+    // I really wish I could name this Overcalculated Gamble :C
+    // Comment Update: STORM OF STEAL IS GREAT THANKS KIO
     public static final String IMG = "theThiefAssets/images/cards/beta/Attack.png";
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
     
@@ -43,7 +45,7 @@ public class RiggedBet extends AbstractBackstabCard {
     private static final boolean ADD_UPGRADED = false;
     // /STAT DECLARATION/
     
-    public RiggedBet() {
+    public StormOfSteal() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         exhaust = true;
         magicNumber = baseMagicNumber = MAGIC;
