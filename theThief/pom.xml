@@ -48,7 +48,13 @@
             <scope>system</scope>
             <systemPath>C:/My Stuff/Games/Steam/steamapps/workshop/content/646570/1609158507/StSLib.jar</systemPath>
         </dependency>
-
+        <dependency>
+            <groupId>archetypeapi</groupId>
+            <artifactId>ArchetypeAPI</artifactId>
+            <version>2.0.0</version>
+            <scope>system</scope>
+            <systemPath>C:/My Stuff/Games/Steam/steamapps/common/SlayTheSpire/mods/ArchetypeAPI.jar</systemPath>
+        </dependency>
         <!--mods-->
         <dependency>
             <groupId>mysticmod</groupId>

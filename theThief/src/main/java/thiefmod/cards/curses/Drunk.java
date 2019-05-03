@@ -1,6 +1,7 @@
 package thiefmod.cards.curses;
 
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.AutoplayField;
+import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAndDeckAction;
 import com.megacrit.cardcrawl.cards.status.Dazed;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -34,6 +35,7 @@ public class Drunk extends AbstractBackstabCard {
     public Drunk() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         AutoplayField.autoplay.set(this, true);
+        ExhaustiveVariable.setBaseValue(this, 2);
     }
     
     @Override

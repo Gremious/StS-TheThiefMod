@@ -1,0 +1,32 @@
+{
+  "CHARACTER": "THE_THIEF",
+  "NAME": "Void",
+  "ARCHETYPE_NAME": "theThief:Void",
+  "CARD_TYPE": "SKILL",
+  "IMG": "theThiefAssets/images/cards/CallOfTheVoid.png",
+  "TAGS": [
+    "SINGLE"
+  ],
+  "FEATURES": [
+    "theThief:Shadowstep",
+    "theThief:Gut",
+    "theThief:ShadowCalamity"
+  ],
+  "CARD_IDS": [
+    "theThief:SwiftTread",
+    "theThief:Gut",
+    "theThief:Ambush",
+    "theThief:ShadowCalamity",
+    "theThief:PaydayLoan",
+    "theThief:SteakOut",
+    "theThief:LieInWait",
+    "theThief:HuntersInstinct",
+    "theThief:Voidbound",
+    "theThief:Shadowstep",
+    "theThief:Shadowstep",
+    "theThief:Shadowstep",
+    "theThief:Shadowstep",
+    "theThief:Shadowstep",
+    "theThief:Shadowstep"
+  ]
+}

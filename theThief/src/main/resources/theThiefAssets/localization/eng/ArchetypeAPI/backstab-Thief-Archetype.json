@@ -1,0 +1,30 @@
+{
+  "CHARACTER": "THE_THIEF",
+  "NAME": "Backstab",
+  "ARCHETYPE_NAME": "theThief:Backstab",
+  "CARD_TYPE": "ATTACK",
+  "IMG": "theThiefAssets/images/cards/beta/AttackOfOpportunity.png",
+  "TAGS": [
+    "SINGLE"
+  ],
+  "FEATURES": [
+    "theThief:Stab",
+    "theThief:Prep",
+    "theThief:PerfectDagger"
+  ],
+  "CARD_IDS": [
+    "theThief:Stab",
+    "theThief:HeartStealer",
+    "theThief:Persuasion",
+    "theThief:Backstep",
+    "theThief:AttackOfOpportunity",
+    "theThief:DirtyDeedsDDC",
+    "theThief:ViciousAssault",
+    "theThief:Prep",
+    "theThief:CripplingStrike",
+    "theThief:StickyFingers",
+    "theThief:CloakAndDagger",
+    "theThief:PerfectDagger",
+    "theThief:ShadowForm"
+  ]
+}

@@ -15,12 +15,10 @@ import thiefmod.powers.Unique.ConArtistPower;
 import thiefmod.util.TextureLoader;
 
 public class ConArtist extends AbstractBackstabCard {
-    //implements StartupCard
-    //implements ModalChoice.Callback
-    // TEXT DECLARATION
     
-    public static final String ID = ThiefMod.makeID("Liar");
-    public static final String IMG = "theThiefAssets/images/cards/beta/ConArtist.png";
+    // TEXT DECLARATION
+    public static final String ID = ThiefMod.makeID("ConArtist");
+    public static final String IMG = "theThiefAssets/images/cards/ConArtist.png";
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
     private static final Texture BETA_IMG = TextureLoader.getJokeTexture(getCardImageBeta(Ambush.class.getSimpleName()), IMG);
     

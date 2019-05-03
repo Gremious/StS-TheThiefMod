@@ -4,6 +4,7 @@
   "author_list": [
     "Gremious"
   ],
+  "credits": "Kio: Moral support",
   "description": "A mod that adds The Thief as a playable character, as well as relics and events!",
   "version": "${project.version}",
   "sts_version": "${SlayTheSpire.version}",

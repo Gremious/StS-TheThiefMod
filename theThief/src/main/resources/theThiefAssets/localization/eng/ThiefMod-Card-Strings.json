@@ -17,8 +17,8 @@
   },
   "theThief:Lie": {
     "NAME": "Lie",
-    "DESCRIPTION": "Gain !B! Block. Apply !M! vulnerable to ALL enemies.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. Apply !M! vulnerable to ALL enemies.",
+    "DESCRIPTION": "Gain !B! Block. NL Apply !M! vulnerable to ALL enemies.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Apply !M! vulnerable to ALL enemies.",
     "EXTENDED_DESCRIPTION": [
       "[#fa5555]As[] [#fa5555]fundamental[] [#fa5555]as[] [#fa5555]it[] [#fa5555]gets?[]"
     ]
@@ -139,8 +139,8 @@
   },
   "theThief:Exploit": {
     "NAME": "Exploit",
-    "DESCRIPTION": "Deal !D! damage. If the enemy has any Debuff, gain [R] and draw !M! card next turn.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. If the enemy has any Debuff, gain [R] and draw !M! card next turn.",
+    "DESCRIPTION": "Deal !D! damage. If the enemy has any Debuff, gain 1 [E] and draw !M! card next turn.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. If the enemy has any Debuff, gain 1 [E] and draw !M! card next turn.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]
@@ -565,6 +565,7 @@
   },
   "theThief:Dedication": {
     "NAME": "Dedication",
-    "DESCRIPTION": "Deal !D! damage."
+    "DESCRIPTION": "Deal !D! damage. NL Draw !M! card.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Draw !M! cards."
   }
 }

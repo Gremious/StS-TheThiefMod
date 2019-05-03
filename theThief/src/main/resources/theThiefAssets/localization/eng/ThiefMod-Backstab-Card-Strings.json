@@ -60,7 +60,7 @@
   },
   "theThief:DirtyDeedsDDC": {
     "NAME": "Dirty Deeds DDC",
-    "DESCRIPTION": "Deal !D! damage. If this kills a non-minion enemy, gain !M! gold. NL Backstab: Gain !theThief:Magic! gold instead.  NL Exhaust.",
+    "DESCRIPTION": "Deal !D! damage. If this kills a non-minion enemy, gain !M! gold. NL Backstab: Gain !theThief:Magic! gold instead. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage. If this kills a non-minion enemy, gain !M! gold. NL Backstab: Gain !theThief:Magic! gold instead.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Filthy[] [#88888]acts[] [#88888]at[] [#88888]a[] [#88888]reasonable[] [#88888]price.[]",
@@ -85,7 +85,7 @@
   "theThief:Prep": {
     "NAME": "Prep",
     "DESCRIPTION": "Gain !B! Block. NL Backstab: Also gain !M! [E].",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block.",
+    "UPGRADE_DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Strike[] [#88888]>[] [#88888]Prep[] [#88888]>[] [#88888]Abandon[] [#88888]Run.[]",
       "Gain !B! Block. ",
