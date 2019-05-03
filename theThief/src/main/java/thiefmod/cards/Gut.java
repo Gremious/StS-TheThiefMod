@@ -15,8 +15,8 @@ import thiefmod.cards.abstracts.AbstractBackstabCard;
 import thiefmod.patches.character.AbstractCardEnum;
 
 public class Gut extends AbstractBackstabCard {
-    // TEXT DECLARATION
     
+    // TEXT DECLARATION
     public static final String ID = ThiefMod.makeID("Gut");
     public static final String IMG = "theThiefAssets/images/cards/Gut.png";
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
