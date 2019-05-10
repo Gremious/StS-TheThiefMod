@@ -123,8 +123,8 @@
   },
   "theThief:BeautifulLies": {
     "NAME": "Beautiful Lies",
-    "DESCRIPTION": "Deal !D! damage. NL Add a copy of this card to your deck. NL Exhaust. NL Soulbound.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Add a copy of this card to your deck. NL Exhaust. NL Soulbound.",
+    "DESCRIPTION": "Deal !D! damage. NL Add a copy of this card to your deck, permanently. NL Exhaust. NL Soulbound.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Add a copy of this card to your deck, permanently. NL Exhaust. NL Soulbound.",
     "EXTENDED_DESCRIPTION": [
       "[#EE130]Raining[] [#EE130]down[] [#EE130]like[] [#EE130]petals.[]"
     ]
@@ -312,8 +312,8 @@
   },
   "theThief:Multitask": {
     "NAME": "Multitask",
-    "DESCRIPTION": "Discard !theThief:Magic! cards. Shadowstep 1 time and Steal !M! cards.",
-    "UPGRADE_DESCRIPTION": "Discard !theThief:Magic! cards. Shadowstep 1 time and Steal !M! cards.",
+    "DESCRIPTION": "Discard !theThief:Magic! cards. Shadowstep 1 time and Steal !M! card.",
+    "UPGRADE_DESCRIPTION": "Discard !theThief:Magic! cards. Shadowstep 1 time and Steal !M! card.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]
@@ -490,7 +490,7 @@
   "theThief:ShadowMastery": {
     "NAME": "Shadow Mastery",
     "DESCRIPTION": "Shadowstepping reduces damage taken by 20% instead of 10.",
-    "UPGRADE_DESCRIPTION": "Shadowstepping reduces damage taken by 20% instead of 10.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Shadowstepping reduces damage taken by 20% instead of 10.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]

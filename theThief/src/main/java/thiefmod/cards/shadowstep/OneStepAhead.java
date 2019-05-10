@@ -53,7 +53,7 @@ public class OneStepAhead extends AbstractBackstabCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        act(new OneStepAheadAction(magicNumber, backstabNumber, damage, m));
+        act(new OneStepAheadAction(magicNumber, damage, backstabNumber, m));
     }
     
     @Override

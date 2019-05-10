@@ -39,12 +39,12 @@ public class Multitask extends AbstractBackstabCard {
     private static final CardType TYPE = CardType.SKILL;
     
     private static final int COST = 1;
-    private static final int UPGRADE_COST = 0;
+    // private static final int UPGRADE_COST = 0;
     
     private static final int MAGIC = 1;
     private static final int UPGRADED_PLUS_MAGIC = 1;
     
-    private static final int BACKSTAB = 3;
+    private static final int BACKSTAB = 2;
     private static final int UPGRADED_PLUS_BACKSTAB = -1;
     // /STAT DECLARATION/
     
@@ -79,7 +79,7 @@ public class Multitask extends AbstractBackstabCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADE_COST);
+         //   upgradeBaseCost(UPGRADE_COST);
             upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
             upgradeBackstabNumber(UPGRADED_PLUS_BACKSTAB);
             rawDescription = UPGRADE_DESCRIPTION;
