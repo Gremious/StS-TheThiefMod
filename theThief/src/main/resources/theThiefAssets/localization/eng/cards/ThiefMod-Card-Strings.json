@@ -43,8 +43,8 @@
   },
   "theThief:Steal": {
     "NAME": "Steal",
-    "DESCRIPTION": "Deal !D! damage. Steal !M! card.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. Steal !M! cards.",
+    "DESCRIPTION": "Deal !D! damage. thethief:Steal !M! card.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. thethief:Steal !M! cards.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]
@@ -59,25 +59,25 @@
   },
   "theThief:SharpPractice": {
     "NAME": "Sharp Practice",
-    "DESCRIPTION": "At the start of each turn add !M! random Stolen card to your hand.",
-    "UPGRADE_DESCRIPTION": "Innate. NL At the start of each turn add !M! random Stolen card to your hand.",
+    "DESCRIPTION": "At the start of each turn add !M! random thethief:Stolen card to your hand.",
+    "UPGRADE_DESCRIPTION": "Innate. NL At the start of each turn add !M! random thethief:Stolen card to your hand.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Ow![] [#88888]Practice-cut![]"
     ]
   },
   "theThief:Ransack": {
     "NAME": "Ransack",
-    "DESCRIPTION": "Choose 1 out of 3 stolen cards and add !M! copies of it to your hand.",
-    "UPGRADE_DESCRIPTION": "Choose 1 out of 3 stolen cards and add !M! copies of it to your hand.",
+    "DESCRIPTION": "Choose 1 out of 3 thethief:Stolen cards and add !M! copies of it to your hand.",
+    "UPGRADE_DESCRIPTION": "Choose 1 out of 3 thethief:Stolen cards and add !M! copies of it to your hand.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]ransack[]",
-      "Choose 1 out of 3 stolen cards and add !M! copy of it to your hand."
+      "Choose 1 out of 3 thethief:Stolen cards and add !M! copy of it to your hand."
     ]
   },
   "theThief:IllGottenGains": {
     "NAME": "Ill Gotten Gains",
-    "DESCRIPTION": "For the rest of this combat, all Stolen cards you gain are Upgraded.",
-    "UPGRADE_DESCRIPTION": "Innate. NL For the rest of this combat, all Stolen cards you gain are Upgraded.",
+    "DESCRIPTION": "For the rest of this combat, all thethief:Stolen cards you gain are Upgraded.",
+    "UPGRADE_DESCRIPTION": "Innate. NL For the rest of this combat, all thethief:Stolen cards you gain are Upgraded.",
     "EXTENDED_DESCRIPTION": [
       "[#FEE130]Flavor[] [#FEE130]Text[]"
     ]
@@ -196,8 +196,8 @@
   },
   "theThief:SleightOfHand": {
     "NAME": "Sleight of Hand",
-    "DESCRIPTION": "Gain !B! block. Steal !M! card.",
-    "UPGRADE_DESCRIPTION": "Gain !B! block. Steal !M! cards.",
+    "DESCRIPTION": "Gain !B! block. thethief:Steal !M! card.",
+    "UPGRADE_DESCRIPTION": "Gain !B! block. thethief:Steal !M! cards.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Is[] [#88888]*this*[] [#88888]your[] [#88888]watch?[] "
     ]
@@ -312,8 +312,8 @@
   },
   "theThief:Multitask": {
     "NAME": "Multitask",
-    "DESCRIPTION": "Discard !theThief:Magic! cards. Shadowstep 1 time and Steal !M! cards.",
-    "UPGRADE_DESCRIPTION": "Discard !theThief:Magic! cards. Shadowstep 1 time and Steal !M! cards.",
+    "DESCRIPTION": "Discard !theThief:Magic! cards. Shadowstep 1 time and thethief:Steal !M! cards.",
+    "UPGRADE_DESCRIPTION": "Discard !theThief:Magic! cards. Shadowstep 1 time and thethief:Steal !M! cards.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]
@@ -349,7 +349,7 @@
     "EXTENDED_DESCRIPTION": [
       "[#88888]What's[][#88888]yours[][#88888]is[][#88888]mine.[]",
       "Tip.",
-      "If you keep a Gray Stolen card, unless it's a [#FEE130]Rare[] [#FEE130]Find,[] it will lose Exhaust."
+      "If you keep a Gray thethief:Stolen card, unless it's a [#FEE130]Rare[] [#FEE130]Find,[] it will lose Exhaust."
     ]
   },
   "theThief:IAmEverywhere": {
@@ -402,16 +402,16 @@
   },
   "theThief:Cunning": {
     "NAME": "Cunning",
-    "DESCRIPTION": "The next !M! Stolen card you play this turn is played twice.",
-    "UPGRADE_DESCRIPTION": "The next !M! Stolen cards you play this turn are played twice.",
+    "DESCRIPTION": "The next !M! thethief:Stolen card you play this turn is played twice.",
+    "UPGRADE_DESCRIPTION": "The next !M! thethief:Stolen cards you play this turn are played twice.",
     "EXTENDED_DESCRIPTION": [
       "[#88888][] [#88888]Text[]"
     ]
   },
   "theThief:RiggedBet": {
     "NAME": "Rigged Bet",
-    "DESCRIPTION": "Discard your hand, then, steal that many cards. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Discard your hand, then, steal that many cards. NL Exhaust.",
+    "DESCRIPTION": "Discard your hand, then, thethief:Steal that many cards. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Discard your hand, then, thethief:Steal that many cards. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "[#FEE130]An[] [#FEE130]over-calculated[] [#FEE130]gamble[]"
     ]
@@ -426,8 +426,8 @@
   },
   "theThief:ConArtist": {
     "NAME": "Con Artist",
-    "DESCRIPTION": "Whenever you steal a card, gain !M! gold.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you steal a card, gain !M! gold.",
+    "DESCRIPTION": "Whenever you thethief:Steal a card, gain !M! gold.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you thethief:Steal a card, gain !M! gold.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]
@@ -497,8 +497,8 @@
   },
   "theThief:Hoodlum": {
     "NAME": "Hoodlum",
-    "DESCRIPTION": "Whenever you trigger a thethief:Backstab or Steal a card, draw !M! card and discard !M! card.",
-    "UPGRADE_DESCRIPTION": "Innate. Whenever you trigger a thethief:Backstab or Steal a card, draw !M! card and discard !M! card.",
+    "DESCRIPTION": "Whenever you trigger a thethief:Backstab or thethief:Steal a card, draw !M! card and discard !M! card.",
+    "UPGRADE_DESCRIPTION": "Innate. Whenever you trigger a thethief:Backstab or thethief:Steal a card, draw !M! card and discard !M! card.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]

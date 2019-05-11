@@ -1,6 +1,6 @@
 {
-  "theThief:thethief:BackstabPower": {
-    "NAME": "thethief:Backstab!",
+  "theThief:BackstabPower": {
+    "NAME": "Backstab!",
     "DESCRIPTIONS": [
       "The next ",
       " thethief:Backstab card you play gains it's thethief:Backstab effect. NL If you play any other card, remove this power.",

@@ -326,16 +326,16 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         logger.info("Begin Editing Strings");
         
         // Regular Cards CardStrings
-        BaseMod.loadCustomStringsFile(CardStrings.class, getModID() + "Assets/localization/eng/ThiefMod-Card-Strings.json");
+        BaseMod.loadCustomStringsFile(CardStrings.class, getModID() + "Assets/localization/eng/cards/ThiefMod-Card-Strings.json");
         
         // Stolen Cards CardStrings
-        BaseMod.loadCustomStringsFile(CardStrings.class, getModID() + "Assets/localization/eng/ThiefMod-Stolen-Card-Strings.json");
+        BaseMod.loadCustomStringsFile(CardStrings.class, getModID() + "Assets/localization/eng/cards/ThiefMod-Stolen-Card-Strings.json");
         
         // Backstab Cards CardStrings
-        BaseMod.loadCustomStringsFile(CardStrings.class, getModID() + "Assets/localization/eng/ThiefMod-Backstab-Card-Strings.json");
+        BaseMod.loadCustomStringsFile(CardStrings.class, getModID() + "Assets/localization/eng/cards/ThiefMod-Backstab-Card-Strings.json");
         
         // Curse Cards CardStrings
-        BaseMod.loadCustomStringsFile(CardStrings.class, getModID() + "Assets/localization/eng/ThiefMod-Curse-Card-Strings.json");
+        BaseMod.loadCustomStringsFile(CardStrings.class, getModID() + "Assets/localization/eng/cards/ThiefMod-Curse-Card-Strings.json");
         
         // character Strings
         BaseMod.loadCustomStringsFile(CharacterStrings.class, getModID() + "Assets/localization/eng/ThiefMod-Character-Strings.json");
