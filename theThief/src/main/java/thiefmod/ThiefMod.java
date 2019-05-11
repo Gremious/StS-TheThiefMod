@@ -362,17 +362,25 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
     
     @Override
     public void receiveEditKeywords() {
+        // Keywords on cards are supposed to be Capitalized, while in Keyword-String.json they're lowercase
+        //
+        // Multiword keywords on cards are done With_Underscores
+        //
+        // If you're using multiword keywords, the first element in your NAMES array in your keywords-strings.json has to be the same as the PROPER_NAME.
+        // That is, in Card-Strings.json you would have #yA_Long_Keyword (#y highlights the keyword in yellow).
+        // In Keyword-Strings.json you would have PROPER_NAME as A Long Keyword and the first element in NAMES be a long keyword, and the second element be a_long_keyword
+        
         Gson gson = new Gson();
         String json = Gdx.files.internal("theThiefAssets/localization/eng/ThiefMod-Keyword-Strings.json").readString(String.valueOf(StandardCharsets.UTF_8));
-        Keyword[] keywords = gson.fromJson(json, Keyword[].class);
+        com.evacipated.cardcrawl.mod.stslib.Keyword[] keywords = gson.fromJson(json, com.evacipated.cardcrawl.mod.stslib.Keyword[].class);
         
         if (keywords != null) {
             for (Keyword keyword : keywords) {
-                BaseMod.addKeyword(keyword.NAMES, keyword.DESCRIPTION);
+                BaseMod.addKeyword(getModID().toLowerCase(), keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);
+                //  getModID().toLowerCase() makes your keyword mod specific (it won't show up in other cards that use that word)
             }
         }
     }
-    
     // ================ /LOAD THE KEYWORDS/ ===================
     
     private static final String rollBGImage() {

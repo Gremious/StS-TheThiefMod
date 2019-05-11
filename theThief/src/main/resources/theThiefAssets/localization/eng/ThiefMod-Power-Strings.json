@@ -171,18 +171,26 @@
   "theThief:ShadowMasteryPower": {
     "NAME": "Shadow Mastery",
     "DESCRIPTIONS": [
-      "Shadowstepping reduces damage taken by 20% instead of 10."
+      "The first time you thethief:Shadowstep in a turn, shadowstep twice. ",
+      "The first",
+      "times you thethief:Shadowstep in a turn, thethief:Shadowstep twice."
     ]
   },
   "theThief:ShadowstepPower": {
+    "NAME": "Shadowstep ERROR",
+    "DESCRIPTIONS": [
+      "You should not be seeing this power. It does nothing."
+    ]
+  },
+  "theThief:ElusivePower": {
     "NAME": "Elusive",
     "DESCRIPTIONS": [
       "You are harder to hit! Take ",
-      "0% reduced damage. If you play any card, remove this power."
+      "0% reduced damage."
     ]
   },
   "theThief:SharpPracticePower": {
-    "NAME": "Sharp Practice Power",
+    "NAME": "Sharp Practice",
     "DESCRIPTIONS": [
       "At the start of each turn, add ",
       " Stolen card to your hand.",

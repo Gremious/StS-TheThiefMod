@@ -12,7 +12,7 @@ import thiefmod.ThiefMod;
 import thiefmod.cards.abstracts.AbstractBackstabCard;
 import thiefmod.patches.character.AbstractCardEnum;
 import thiefmod.patches.character.ThiefCardTags;
-import thiefmod.powers.Common.ShadowstepPower;
+import thiefmod.powers.Common.ElusivePower;
 
 public class Shadowstep extends AbstractBackstabCard {
     // TEXT DECLARATION
@@ -53,7 +53,7 @@ public class Shadowstep extends AbstractBackstabCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new ShadowstepPower(p, p, magicNumber), magicNumber));
+        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new ElusivePower(p, p, magicNumber), magicNumber));
         AbstractDungeon.actionManager.addToTop(new MakeTempCardInDrawPileAction(new Shadowstep(), backstabNumber, true, true));
     }
     

@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.localization.UIStrings;
-import thiefmod.powers.Common.ShadowstepPower;
+import thiefmod.powers.Common.ElusivePower;
 
 public class ShadowCloak extends CustomRelic {
 
@@ -45,13 +45,13 @@ public class ShadowCloak extends CustomRelic {
         if (!usedThisTurn) {
             if (AbstractDungeon.player.hasRelic(ShadowMask.ID) && AbstractDungeon.player.hasRelic(ShadowBoots.ID)) {
                 AbstractDungeon.actionManager.addToBottom(
-                        new ApplyPowerAction(p, p, new ShadowstepPower(p, p, 1), 1));
+                        new ApplyPowerAction(p, p, new ElusivePower(p, p, 1), 1));
             } else {
                 if (count != 2) {
                     count++;
                 } else {
                     AbstractDungeon.actionManager.addToBottom(
-                            new ApplyPowerAction(p, p, new ShadowstepPower(p, p, 1), 1));
+                            new ApplyPowerAction(p, p, new ElusivePower(p, p, 1), 1));
                 }
             }
         }

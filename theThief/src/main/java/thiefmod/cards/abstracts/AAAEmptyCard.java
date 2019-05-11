@@ -18,7 +18,7 @@ import thiefmod.CardIgnore;
 import thiefmod.actions.common.StealCardAction;
 import thiefmod.patches.character.AbstractCardEnum;
 import thiefmod.patches.character.ThiefCardTags;
-import thiefmod.powers.Common.ShadowstepPower;
+import thiefmod.powers.Common.ElusivePower;
 
 @Deprecated
 @CardIgnore
@@ -98,7 +98,7 @@ public class AAAEmptyCard extends AbstractBackstabCard {
         } else {
             act(new StealCardAction(magicNumber, 1, ADD_RANDOM, AbstractDungeon.player.hand, ADD_UPGRADED));
         }
-        act(new ApplyPowerAction(p, p, new ShadowstepPower(p, p, magicNumber), magicNumber));
+        act(new ApplyPowerAction(p, p, new ElusivePower(p, p, magicNumber), magicNumber));
         act(new GainBlockAction(p, p, block));
         while (backstabNumber-- != 0) {
             act(new MakeTempCardInDrawPileAction(new VoidCard(), backstabNumber, true, true, false));

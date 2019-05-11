@@ -23,7 +23,7 @@
       "non-Shadowstep",
       "Non-Shadowstep"
     ],
-    "DESCRIPTION": "Become #yElusive, reducing incoming damage by #b10% per stack, but breaks if you play ANY #ynon-Shadowstep card."
+    "DESCRIPTION": "Become #yElusive, reducing incoming damage by #b20% per stack. Trigger the next #yBackstab card you play."
   },
   {
     "NAMES": [

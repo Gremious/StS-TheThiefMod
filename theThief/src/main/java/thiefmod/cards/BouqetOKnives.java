@@ -31,16 +31,15 @@ public class BouqetOKnives extends AbstractBackstabCard {
     
     // STAT DECLARATION
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     
     private static final int COST = 2;
     private static final int UPGRADE_COST = 1;
     
-    private static final int DAMAGE = 4;
-    
-    private static final int MAGIC = 4;
+    private static final int DAMAGE = 3;
+    private static final int MAGIC = 5;
     // /STAT DECLARATION/
     
     public BouqetOKnives() {

@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import thiefmod.ThiefMod;
 import thiefmod.patches.character.ThiefCardTags;
 import thiefmod.powers.Common.BackstabPower;
-import thiefmod.powers.Common.ShadowstepPower;
+import thiefmod.powers.Common.ElusivePower;
 import thiefmod.util.TextureLoader;
 
 // Empty Base
@@ -51,7 +51,7 @@ public class GhastlyPresencePower extends AbstractPower {
                 || AbstractDungeon.player.hasPower(BackstabPower.POWER_ID)
                 && card.hasTag(ThiefCardTags.BACKSTAB)) {
 
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, source, new ShadowstepPower(owner, source, amount), amount));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, source, new ElusivePower(owner, source, amount), amount));
 
         }
     }

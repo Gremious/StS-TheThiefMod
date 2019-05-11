@@ -35,7 +35,7 @@
   },
   "theThief:BouqetOKnives": {
     "NAME": "Bouqet-O-Knives",
-    "DESCRIPTION": "Deal !D! damage to a random enemy !M! times.",
+    "DESCRIPTION": "Deal !D! damage to a random enemy !M! times. ",
     "UPGRADE_DESCRIPTION": "Deal !D! damage to a random enemy !M! times.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]An[] [#88888]odd[] [#88888]number[] [#88888]of[] [#88888]flowers[] [#88888]signify[] [#88888]death.[] [#88888]So[] [#88888]do[] [#88888]knives.[]"
