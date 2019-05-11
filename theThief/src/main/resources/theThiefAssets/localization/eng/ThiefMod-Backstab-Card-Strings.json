@@ -1,154 +1,154 @@
 {
   "theThief:Stab": {
     "NAME": "Stab",
-    "DESCRIPTION": "Deal !D! Damage. NL Backstab: Deal !theThief:BackstabTimesDamage! instead.",
-    "UPGRADE_DESCRIPTION": "Deal !D! Damage. NL Backstab: Deal !theThief:BackstabTimesDamage! instead.",
+    "DESCRIPTION": "Deal !D! Damage. NL thethief:Backstab: Deal !theThief:thethief:BackstabTimesDamage! instead.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage. NL thethief:Backstab: Deal !theThief:thethief:BackstabTimesDamage! instead.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]",
       "Deal !D! Damage.",
-      " NL Backstab: Deal !theThief:BackstabTimesDamage! instead.",
-      " NL Backstab: [#fa5555]Deal[] !theThief:BackstabTimesDamage! [#fa5555]instead.[]"
+      " NL thethief:Backstab: Deal !theThief:thethief:BackstabTimesDamage! instead.",
+      " NL thethief:Backstab: [#fa5555]Deal[] !theThief:thethief:BackstabTimesDamage! [#fa5555]instead.[]"
     ]
   },
   "theThief:HeartStealer": {
     "NAME": "Heart Stealer",
-    "DESCRIPTION": "Apply !M! Weak and Vulnerable. NL Backstab: Stun an enemy and give it 2 Intangible.",
-    "UPGRADE_DESCRIPTION": "Apply !M! Weak and Vulnerable next turn. Backstab: Stun an enemy and give it 2 Intangible.",
+    "DESCRIPTION": "Apply !M! Weak and Vulnerable. NL thethief:Backstab: Stun an enemy and give it 2 Intangible.",
+    "UPGRADE_DESCRIPTION": "Apply !M! Weak and Vulnerable next turn. thethief:Backstab: Stun an enemy and give it 2 Intangible.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]A[] [#88888]PHANTOM[] [#88888]THIEF[] NL [#88888]OF[] [#88888]HEARTS.[]",
       "Apply !M! Weak and Vulnerable.",
-      " NL Backstab: Stun an enemy and give it 2 Intangible.",
-      " NL Backstab: [#fa5555]Stun[] [#fa5555]an[] [#fa5555]enemy[] [#fa5555]and[] [#fa5555]give[] [#fa5555]it[] 2 [#fa5555]Intangible.[]"
+      " NL thethief:Backstab: Stun an enemy and give it 2 Intangible.",
+      " NL thethief:Backstab: [#fa5555]Stun[] [#fa5555]an[] [#fa5555]enemy[] [#fa5555]and[] [#fa5555]give[] [#fa5555]it[] 2 [#fa5555]Intangible.[]"
     ]
   },
   "theThief:Persuasion": {
     "NAME": "Persuasion",
-    "DESCRIPTION": "Gain !M! Dexterity. NL Backstab: Gain !M! Strength instead.",
-    "UPGRADE_DESCRIPTION": "Gain !M! Dexterity. NL Backstab: Gain !M! Strength instead.",
+    "DESCRIPTION": "Gain !M! Dexterity. NL thethief:Backstab: Gain !M! Strength instead.",
+    "UPGRADE_DESCRIPTION": "Gain !M! Dexterity. NL thethief:Backstab: Gain !M! Strength instead.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]",
       "Gain !M! Dexterity. ",
-      " NL Backstab: Gain !M! Strength instead.",
-      " NL Backstab: [#fa5555]Gain[] !M! [#fa5555]Strength[] [#fa5555]instead.[]"
+      " NL thethief:Backstab: Gain !M! Strength instead.",
+      " NL thethief:Backstab: [#fa5555]Gain[] !M! [#fa5555]Strength[] [#fa5555]instead.[]"
     ]
   },
   "theThief:Backstep": {
     "NAME": "Backstep",
-    "DESCRIPTION": "Fetch !M! card from your discard pile. NL Backstab: It also costs !M! less. NL Exhaustive !stslib:ex!.",
-    "UPGRADE_DESCRIPTION": "Fetch !M! card from your discard pile. NL Backstab: It also costs !M! less. NL Exhaustive !stslib:ex!.",
+    "DESCRIPTION": "Fetch !M! card from your discard pile. NL thethief:Backstab: It also costs !M! less. NL Exhaustive !stslib:ex!.",
+    "UPGRADE_DESCRIPTION": "Fetch !M! card from your discard pile. NL thethief:Backstab: It also costs !M! less. NL Exhaustive !stslib:ex!.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]",
       "Fetch !M! card from your discard pile. ",
-      " NL Backstab: It also costs !M! less. NL Exhaustive !stslib:ex!.",
-      " NL Backstab: [#fa5555]It[] [#fa5555]also[] [#fa5555]costs[] !M! [#fa5555]less.[] NL Exhaustive !stslib:ex!.",
-      "Fetch !M! cards from your discard pile. NL Backstab: They also costs !M! less. NL Exhaustive !stslib:ex!."
+      " NL thethief:Backstab: It also costs !M! less. NL Exhaustive !stslib:ex!.",
+      " NL thethief:Backstab: [#fa5555]It[] [#fa5555]also[] [#fa5555]costs[] !M! [#fa5555]less.[] NL Exhaustive !stslib:ex!.",
+      "Fetch !M! cards from your discard pile. NL thethief:Backstab: They also costs !M! less. NL Exhaustive !stslib:ex!."
     ]
   },
   "theThief:AttackOfOpportunity": {
     "NAME": "Attack Of Opportunity",
-    "DESCRIPTION": "Deal !D! damage. NL Add !theThief:Magic! Voids to your discard pile. NL Backstab: Draw !theThief:Magic! cards.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Add !theThief:Magic! Void to your discard pile. NL Backstab: Draw !theThief:Magic! cards.",
+    "DESCRIPTION": "Deal !D! damage. NL Add !theThief:Magic! Voids to your discard pile. NL thethief:Backstab: Draw !theThief:Magic! cards.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Add !theThief:Magic! Void to your discard pile. NL thethief:Backstab: Draw !theThief:Magic! cards.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Your[] [#88888]one[] [#88888]free*[] [#88888]attack[] [#88888]per[] [#88888]turn![]",
       "Deal !D! damage. NL Add !theThief:Magic! Void to your discard pile. ",
       "Deal !D! damage. NL Add !theThief:Magic! Voids to your discard pile. ",
-      " NL Backstab: Draw !M! card.",
-      " NL Backstab: [#fa5555]Draw[] !M! [#fa5555]card.[]",
-      " NL Backstab: Draw !M! cards.",
-      " NL Backstab: [#fa5555]Draw[] !M! [#fa5555]cards.[]"
+      " NL thethief:Backstab: Draw !M! card.",
+      " NL thethief:Backstab: [#fa5555]Draw[] !M! [#fa5555]card.[]",
+      " NL thethief:Backstab: Draw !M! cards.",
+      " NL thethief:Backstab: [#fa5555]Draw[] !M! [#fa5555]cards.[]"
     ]
   },
   "theThief:DirtyDeedsDDC": {
     "NAME": "Dirty Deeds DDC",
-    "DESCRIPTION": "Deal !D! damage. If this kills a non-minion enemy, gain !M! gold. NL Backstab: Gain !theThief:Magic! gold instead.  NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. If this kills a non-minion enemy, gain !M! gold. NL Backstab: Gain !theThief:Magic! gold instead.",
+    "DESCRIPTION": "Deal !D! damage. If this kills a non-minion enemy, gain !M! gold. NL thethief:Backstab: Gain !theThief:Magic! gold instead.  NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. If this kills a non-minion enemy, gain !M! gold. NL thethief:Backstab: Gain !theThief:Magic! gold instead.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Filthy[] [#88888]acts[] [#88888]at[] [#88888]a[] [#88888]reasonable[] [#88888]price.[]",
       "Deal !D! damage. NL If this kills a non-minion enemy, gain !M! gold. ",
-      " NL Backstab: Gain !theThief:Magic! gold instead.",
-      " NL Backstab: Gain !theThief:Magic! gold instead. NL Exhaust.",
-      " NL Backstab: [#fa5555]Gain[] !theThief:Magic! [#fa5555]gold[] [#fa5555]instead.[]",
-      " NL Backstab: [#fa5555]Gain[] !theThief:Magic! [#fa5555]gold[] [#fa5555]instead.[] NL Exhaust."
+      " NL thethief:Backstab: Gain !theThief:Magic! gold instead.",
+      " NL thethief:Backstab: Gain !theThief:Magic! gold instead. NL Exhaust.",
+      " NL thethief:Backstab: [#fa5555]Gain[] !theThief:Magic! [#fa5555]gold[] [#fa5555]instead.[]",
+      " NL thethief:Backstab: [#fa5555]Gain[] !theThief:Magic! [#fa5555]gold[] [#fa5555]instead.[] NL Exhaust."
     ]
   },
   "theThief:ViciousAssault": {
     "NAME": "Vicious Assault",
-    "DESCRIPTION": "Deal !D! damage !M! times. NL Backstab: !theThief:Magic! times instead",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage !M! times. NL Backstab: !theThief:Magic! times instead",
+    "DESCRIPTION": "Deal !D! damage !M! times. NL thethief:Backstab: !theThief:Magic! times instead",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage !M! times. NL thethief:Backstab: !theThief:Magic! times instead",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]",
       "Deal !D! damage !M! times.",
-      " NL Backstab: !theThief:Magic! times instead",
-      " NL Backstab: !theThief:Magic! [#fa5555]times[] [#fa5555]instead.[]"
+      " NL thethief:Backstab: !theThief:Magic! times instead",
+      " NL thethief:Backstab: !theThief:Magic! [#fa5555]times[] [#fa5555]instead.[]"
     ]
   },
   "theThief:Prep": {
     "NAME": "Prep",
-    "DESCRIPTION": "Gain !B! Block. NL Backstab: Also gain !M! [E].",
+    "DESCRIPTION": "Gain !B! Block. NL thethief:Backstab: Also gain !M! [E].",
     "UPGRADE_DESCRIPTION": "Gain !B! Block.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Strike[] [#88888]>[] [#88888]Prep[] [#88888]>[] [#88888]Abandon[] [#88888]Run.[]",
       "Gain !B! Block. ",
-      " NL Backstab: Also gain !M! [E].",
-      " NL Backstab: [#fa5555]Also[] [#fa5555]gain[] !M! [E]."
+      " NL thethief:Backstab: Also gain !M! [E].",
+      " NL thethief:Backstab: [#fa5555]Also[] [#fa5555]gain[] !M! [E]."
     ]
   },
   "theThief:CripplingStrike": {
     "NAME": "Crippling Strike",
-    "DESCRIPTION": "Deal !D! damage and apply !M! Weak. NL Backstab: Apply !M! Vulnerable instead.",
+    "DESCRIPTION": "Deal !D! damage and apply !M! Weak. NL thethief:Backstab: Apply !M! Vulnerable instead.",
     "UPGRADE_DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]",
       "Deal !D! damage and apply !M! Weak. ",
-      " NL Backstab: Apply !M! Vulnerable instead.",
-      " NL Backstab: [#fa5555]Apply[] !M! [#fa5555]Vulnerable[] [#fa5555]instead.[]"
+      " NL thethief:Backstab: Apply !M! Vulnerable instead.",
+      " NL thethief:Backstab: [#fa5555]Apply[] !M! [#fa5555]Vulnerable[] [#fa5555]instead.[]"
     ]
   },
   "theThief:StickyFingers": {
     "NAME": "Sticky Fingers",
-    "DESCRIPTION": "Draw !M! cards. NL Backstab: Steal !theThief:Magic! cards instead.",
-    "UPGRADE_DESCRIPTION": "Draw !M! cards. NL Backstab: Steal !theThief:Magic! cards instead.",
+    "DESCRIPTION": "Draw !M! cards. NL thethief:Backstab: Steal !theThief:Magic! cards instead.",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards. NL thethief:Backstab: Steal !theThief:Magic! cards instead.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]They[] [#88888]make[] [#88888]wearing[] [#88888]gloves[] [#88888]very[][#88888]uncomfortable.[]",
       "Draw !M! cards. ",
-      "NL Backstab: Steal !theThief:Magic! cards instead.",
-      "NL Backstab: [#fa5555]Steal[] !theThief:Magic! [#fa5555]cards[] [#fa5555]instead.[]"
+      "NL thethief:Backstab: Steal !theThief:Magic! cards instead.",
+      "NL thethief:Backstab: [#fa5555]Steal[] !theThief:Magic! [#fa5555]cards[] [#fa5555]instead.[]"
     ]
   },
   "theThief:CloakAndDagger": {
     "NAME": "Cloak and Dagger",
-    "DESCRIPTION": "Gain !B! block. NL Backstab: Deal !D! Damage instead",
-    "UPGRADE_DESCRIPTION": "Gain !B! block. NL Backstab: Deal !D! Damage instead",
+    "DESCRIPTION": "Gain !B! block. NL thethief:Backstab: Deal !D! Damage instead",
+    "UPGRADE_DESCRIPTION": "Gain !B! block. NL thethief:Backstab: Deal !D! Damage instead",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]",
       "Gain !B! block. ",
-      "NL Backstab: Deal !D! Damage instead",
-      "NL Backstab: [#fa5555]Deal[] !D! [#fa5555]Damage[] [#fa5555]instead.[]"
+      "NL thethief:Backstab: Deal !D! Damage instead",
+      "NL thethief:Backstab: [#fa5555]Deal[] !D! [#fa5555]Damage[] [#fa5555]instead.[]"
     ]
   },
   "theThief:PerfectDagger": {
     "NAME": "Perfect Dagger",
-    "DESCRIPTION": "Deal !D! damage. NL Backstab: Also increase this card's damage by !M! permanently.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Backstab: Also increase this card's damage by !M! permanently.",
+    "DESCRIPTION": "Deal !D! damage. NL thethief:Backstab: Also increase this card's damage by !M! permanently.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL thethief:Backstab: Also increase this card's damage by !M! permanently.",
     "EXTENDED_DESCRIPTION": [
       "[#FEE130]A[] [#FEE130]great[] [#FEE130]artifact,[] [#FEE130]re-forged[] [#FEE130]re-lost[] [#FEE130]re-found[] [#FEE130]and[] [#FEE130]re-stolen[] [#FEE130]time[] [#FEE130]and[] [#FEE130]time[] [#FEE130]again,[] [#FEE130]by[] [#FEE130]clans[] [#FEE130]of[] [#FEE130]silence[] [#FEE130]and[] [#FEE130]burning[] [#FEE130]blood[] [#FEE130]alike.[]",
       "Deal !D! damage. ",
-      " NL Backstab: Also increase this card's damage by !M! permanently.",
-      " NL Backstab: [#fa5555]Also[] [#fa5555]increase[] [#fa5555]this[] [#fa5555]card's[] [#fa5555]damage[] [#fa5555]by[] !M! [#fa5555]permanently.[]"
+      " NL thethief:Backstab: Also increase this card's damage by !M! permanently.",
+      " NL thethief:Backstab: [#fa5555]Also[] [#fa5555]increase[] [#fa5555]this[] [#fa5555]card's[] [#fa5555]damage[] [#fa5555]by[] !M! [#fa5555]permanently.[]"
     ]
   },
   "theThief:ShadowForm": {
     "NAME": "Shadow Form",
-    "DESCRIPTION": "At the start of your turn, Discover !M! random card from any color. NL It costs 0 this combat. NL Backstab: Discover !theThief:Magic! instead. NL Ethereal.",
-    "UPGRADE_DESCRIPTION": "At the start of your turn, Discover !M! random card from any color. NL It costs 0 this combat. NL Backstab: Discover !theThief:Magic! instead.",
+    "DESCRIPTION": "At the start of your turn, Discover !M! random card from any color. NL It costs 0 this combat. NL thethief:Backstab: Discover !theThief:Magic! instead. NL Ethereal.",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, Discover !M! random card from any color. NL It costs 0 this combat. NL thethief:Backstab: Discover !theThief:Magic! instead.",
     "EXTENDED_DESCRIPTION": [
       "[#FEE130]Embrace[] [#FEE130]your[] [#FEE130]true[] [#FEE130]form.[]",
       "At the start of each turn, Discover !M! random card from any color. NL It costs 0 this combat. ",
       "At the start of each turn, Discover !M! random cards from any color. NL They costs 0 this combat. ",
-      " NL Backstab: Discover !theThief:Magic! instead NL Ethereal.",
-      " NL Backstab: [#fa5555]Discover[] !theThief:Magic! [#fa5555]instead.[] NL Ethereal.",
-      " NL Backstab: Discover !theThief:Magic! instead",
-      " NL Backstab: [#fa5555]Discover[] !theThief:Magic! [#fa5555]instead.[]"
+      " NL thethief:Backstab: Discover !theThief:Magic! instead NL Ethereal.",
+      " NL thethief:Backstab: [#fa5555]Discover[] !theThief:Magic! [#fa5555]instead.[] NL Ethereal.",
+      " NL thethief:Backstab: Discover !theThief:Magic! instead",
+      " NL thethief:Backstab: [#fa5555]Discover[] !theThief:Magic! [#fa5555]instead.[]"
     ]
   }
 }

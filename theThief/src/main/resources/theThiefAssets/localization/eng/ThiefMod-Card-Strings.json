@@ -481,7 +481,7 @@
   },
   "theThief:Focused": {
     "NAME": "Focused",
-    "DESCRIPTION": "Shadowstep 1 time. NL Non - Backstab cards no longer break Elusive.",
+    "DESCRIPTION": "Shadowstep 1 time. NL Non - thethief:Backstab cards no longer break Elusive.",
     "UPGRADE_DESCRIPTION": "Gain !M! [E]. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
@@ -497,27 +497,27 @@
   },
   "theThief:Hoodlum": {
     "NAME": "Hoodlum",
-    "DESCRIPTION": "Whenever you trigger a Backstab or Steal a card, draw !M! card and discard !M! card.",
-    "UPGRADE_DESCRIPTION": "Innate. Whenever you trigger a Backstab or Steal a card, draw !M! card and discard !M! card.",
+    "DESCRIPTION": "Whenever you trigger a thethief:Backstab or Steal a card, draw !M! card and discard !M! card.",
+    "UPGRADE_DESCRIPTION": "Innate. Whenever you trigger a thethief:Backstab or Steal a card, draw !M! card and discard !M! card.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]
   },
   "theThief:DoubleDealing": {
     "NAME": "Double Dealing",
-    "DESCRIPTION": "The next !M! Backstab attack you play this turn will deal double damage.",
-    "UPGRADE_DESCRIPTION": "The next !M! Backstab attacks you play this turn will deal double damage.",
+    "DESCRIPTION": "The next !M! thethief:Backstab attack you play this turn will deal double damage.",
+    "UPGRADE_DESCRIPTION": "The next !M! thethief:Backstab attacks you play this turn will deal double damage.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Full[] [#88888]house![]"
     ]
   },
   "theThief:GhastlyPresence": {
     "NAME": "Ghastly Presence",
-    "DESCRIPTION": "If you trigger 2 Backstabs in a turn, Shadowstep !M! times",
-    "UPGRADE_DESCRIPTION": "If you trigger 2 Backstabs in a turn, Shadowstep !M! times.",
+    "DESCRIPTION": "If you trigger 2 thethief:Backstabs in a turn, Shadowstep !M! times",
+    "UPGRADE_DESCRIPTION": "If you trigger 2 thethief:Backstabs in a turn, Shadowstep !M! times.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Ghastly[] [#88888]Essence?[]",
-      "If you trigger 2 Backstabs in a turn, Shadowstep !M! ",
+      "If you trigger 2 thethief:Backstabs in a turn, Shadowstep !M! ",
       " time.",
       " times."
     ]
