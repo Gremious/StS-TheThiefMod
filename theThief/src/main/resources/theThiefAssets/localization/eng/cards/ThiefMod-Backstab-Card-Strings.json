@@ -106,13 +106,13 @@
   },
   "theThief:StickyFingers": {
     "NAME": "Sticky Fingers",
-    "DESCRIPTION": "Draw !M! cards. NL thethief:Backstab: Steal !theThief:Magic! cards instead.",
-    "UPGRADE_DESCRIPTION": "Draw !M! cards. NL thethief:Backstab: Steal !theThief:Magic! cards instead.",
+    "DESCRIPTION": "Draw !M! cards. NL thethief:Backstab: thethief:Steal !theThief:Magic! cards instead.",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards. NL thethief:Backstab: thethief:Steal !theThief:Magic! cards instead.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]They[] [#88888]make[] [#88888]wearing[] [#88888]gloves[] [#88888]very[][#88888]uncomfortable.[]",
       "Draw !M! cards. ",
-      "NL thethief:Backstab: Steal !theThief:Magic! cards instead.",
-      "NL thethief:Backstab: [#fa5555]Steal[] !theThief:Magic! [#fa5555]cards[] [#fa5555]instead.[]"
+      "NL thethief:Backstab: thethief:Steal !theThief:Magic! cards instead.",
+      "NL thethief:Backstab: [#fa5555]thethief:Steal[] !theThief:Magic! [#fa5555]cards[] [#fa5555]instead.[]"
     ]
   },
   "theThief:CloakAndDagger": {
@@ -139,16 +139,16 @@
   },
   "theThief:ShadowForm": {
     "NAME": "Shadow Form",
-    "DESCRIPTION": "At the start of your turn, Discover !M! random card from any color. NL It costs 0 this combat. NL thethief:Backstab: Discover !theThief:Magic! instead. NL Ethereal.",
-    "UPGRADE_DESCRIPTION": "At the start of your turn, Discover !M! random card from any color. NL It costs 0 this combat. NL thethief:Backstab: Discover !theThief:Magic! instead.",
+    "DESCRIPTION": "At the start of your turn, thethief:Discover !M! random card from any color. NL It costs 0 this combat. NL thethief:Backstab: thethief:Discover !theThief:Magic! instead. NL Ethereal.",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, thethief:Discover !M! random card from any color. NL It costs 0 this combat. NL thethief:Backstab: thethief:Discover !theThief:Magic! instead.",
     "EXTENDED_DESCRIPTION": [
       "[#FEE130]Embrace[] [#FEE130]your[] [#FEE130]true[] [#FEE130]form.[]",
-      "At the start of each turn, Discover !M! random card from any color. NL It costs 0 this combat. ",
-      "At the start of each turn, Discover !M! random cards from any color. NL They costs 0 this combat. ",
-      " NL thethief:Backstab: Discover !theThief:Magic! instead NL Ethereal.",
-      " NL thethief:Backstab: [#fa5555]Discover[] !theThief:Magic! [#fa5555]instead.[] NL Ethereal.",
-      " NL thethief:Backstab: Discover !theThief:Magic! instead",
-      " NL thethief:Backstab: [#fa5555]Discover[] !theThief:Magic! [#fa5555]instead.[]"
+      "At the start of each turn, thethief:Discover !M! random card from any color. NL It costs 0 this combat. ",
+      "At the start of each turn, thethief:Discover !M! random cards from any color. NL They costs 0 this combat. ",
+      " NL thethief:Backstab: thethief:Discover !theThief:Magic! instead NL Ethereal.",
+      " NL thethief:Backstab: [#fa5555]thethief:Discover[] !theThief:Magic! [#fa5555]instead.[] NL Ethereal.",
+      " NL thethief:Backstab: thethief:Discover !theThief:Magic! instead",
+      " NL thethief:Backstab: [#fa5555]thethief:Discover[] !theThief:Magic! [#fa5555]instead.[]"
     ]
   }
 }
