@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster.Intent;
 import com.megacrit.cardcrawl.vfx.ThoughtBubble;
-import thiefmod.powers.Common.ShadowstepPower;
+import thiefmod.powers.Common.ElusivePower;
 
 public class OneStepAheadAction extends AbstractGameAction {
     private int magicNum;
@@ -41,7 +41,7 @@ public class OneStepAheadAction extends AbstractGameAction {
         } else if (targetMonster.intent == Intent.ATTACK || targetMonster.intent == Intent.ATTACK_BUFF || targetMonster.intent == Intent.ATTACK_DEBUFF || targetMonster.intent == Intent.ATTACK_DEFEND) {
             {
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
-                        AbstractDungeon.player, AbstractDungeon.player, new ShadowstepPower(AbstractDungeon.player, AbstractDungeon.player, magicNum), magicNum));
+                        AbstractDungeon.player, AbstractDungeon.player, new ElusivePower(AbstractDungeon.player, AbstractDungeon.player, magicNum), magicNum));
 
             }
         } else {

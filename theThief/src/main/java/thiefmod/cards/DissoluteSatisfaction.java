@@ -32,19 +32,19 @@ public class DissoluteSatisfaction extends AbstractBackstabCard {
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
-    private static final CardType TYPE = CardType.POWER;
+    private static final CardType TYPE = CardType.SKILL;
     
     private static final int COST = 2;
     private static final int UPGRADED_COST = 1;
     
     private static final int MAGIC = 1;
-    private static final int UPGRADED_PLUS_MAGIC = 1;
     // /STAT DECLARATION/
     
     public DissoluteSatisfaction() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
         tags.add(ThiefCardTags.SHADOWSTEP);
+        exhaust = true;
     }
     
     // Actions the card should do.
@@ -63,7 +63,6 @@ public class DissoluteSatisfaction extends AbstractBackstabCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
             upgradeBaseCost(UPGRADED_COST);
             rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();

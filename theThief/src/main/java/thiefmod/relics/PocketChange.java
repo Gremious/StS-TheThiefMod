@@ -11,27 +11,27 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.relics.MawBank;
-import com.megacrit.cardcrawl.relics.SmilingMask;
 import thiefmod.powers.Common.RefundCardCostPower;
 
 public class PocketChange extends CustomRelic {
-
+    
     public static final String ID = thiefmod.ThiefMod.makeID("PocketChange");
     public static final String IMG = "theThiefAssets/images/relics/PocketChange.png";
     public static final String OUTLINE = "theThiefAssets/images/relics/outline/PocketChange.png";
-
+    
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:TooltipNames");
     public static final String TOOLTIP_STRINGS[] = uiStrings.TEXT;
+    
     public PocketChange() {
         super(ID, ImageMaster.loadImage(IMG), new Texture(OUTLINE), RelicTier.UNCOMMON, LandingSound.CLINK);
-
+        
         tips.clear();
         tips.add(new PowerTip(name, description));
         tips.add(new PowerTip(TOOLTIP_STRINGS[1],
-                DESCRIPTIONS[1] + FontHelper.colorString(new SmilingMask().name, "y") + DESCRIPTIONS[2]));
+                DESCRIPTIONS[1] + FontHelper.colorString(new MawBank().name, "y") + DESCRIPTIONS[2]));
         initializeTips();
     }
-
+    
     @Override
     public void atBattleStart() {
         flash();
@@ -39,12 +39,10 @@ public class PocketChange extends CustomRelic {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
                 AbstractDungeon.player, AbstractDungeon.player, new RefundCardCostPower(AbstractDungeon.player, AbstractDungeon.player, 1), 1));
     }
-
-
+    
     // Description
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0] + new MawBank().name + ".";
+        return DESCRIPTIONS[1] + FontHelper.colorString(new MawBank().name, "y") + DESCRIPTIONS[2];
     }
-
 }

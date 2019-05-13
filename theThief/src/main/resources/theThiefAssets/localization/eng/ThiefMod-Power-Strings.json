@@ -3,8 +3,8 @@
     "NAME": "Backstab!",
     "DESCRIPTIONS": [
       "The next ",
-      " Backstab card you play gains it's Backstab effect. NL If you play any other card, remove this power.",
-      " Backstab cards you play gains their Backstab effect. NL If you play any other card, remove this power."
+      " #yBackstab card you play gains it's #yBackstab effect. NL If you play any other card, lose all stacks of this power.",
+      " #yBackstab cards you play gains their #yBackstab effect. NL If you play any other card,lose all stacks of this power."
     ]
   },
   "theThief:CommonPower": {
@@ -49,8 +49,8 @@
     "NAME": "Double Dealing",
     "DESCRIPTIONS": [
       "This turn, the next ",
-      " Backstab attack you play will deal double damage.",
-      " Backstab attacks you play will deal double damage."
+      " #yBackstab attack you play will deal double damage.",
+      " #yBackstab attacks you play will deal double damage."
     ]
   },
   "theThief:DramaticFeignPower": {
@@ -80,7 +80,7 @@
   "theThief:FocusedPower": {
     "NAME": "Focused",
     "DESCRIPTIONS": [
-      "Non - Backstab cards no longer break Elusive."
+      "Non - #yBackstab cards no longer break Elusive."
     ]
   },
   "theThief:GhastlyEssencePower": {
@@ -93,7 +93,7 @@
   "theThief:GhastlyPresencePower": {
     "NAME": "Ghastly Presence",
     "DESCRIPTIONS": [
-      "If you trigger 2 Backstabs in a turn, Shadowstep ",
+      "If you trigger 2 #yBackstabs in a turn, Shadowstep ",
       " time.",
       " times."
     ]
@@ -101,7 +101,7 @@
   "theThief:HoodlumPower": {
     "NAME": "Hoodlum",
     "DESCRIPTIONS": [
-      "Whenever you trigger a #bBackstab card or #bSteal a card, draw then discard ",
+      "Whenever you trigger a #b#yBackstab card or #bSteal a card, draw then discard ",
       " card.",
       " cards."
     ]
@@ -171,18 +171,26 @@
   "theThief:ShadowMasteryPower": {
     "NAME": "Shadow Mastery",
     "DESCRIPTIONS": [
-      "Shadowstepping reduces damage taken by 20% instead of 10."
+      "The first time you #yShadowstep in a turn, you #yShadowstep ",
+      " additional time.",
+      " additional times."
     ]
   },
   "theThief:ShadowstepPower": {
+    "NAME": "Shadowstep ERROR",
+    "DESCRIPTIONS": [
+      "You should not be seeing this power. It does nothing."
+    ]
+  },
+  "theThief:ElusivePower": {
     "NAME": "Elusive",
     "DESCRIPTIONS": [
-      "You are harder to hit! Take ",
-      "0% reduced damage. If you play any card, remove this power."
+      "You are harder to hit! NL Take ",
+      "0% reduced attack damage."
     ]
   },
   "theThief:SharpPracticePower": {
-    "NAME": "Sharp Practice Power",
+    "NAME": "Sharp Practice",
     "DESCRIPTIONS": [
       "At the start of each turn, add ",
       " Stolen card to your hand.",

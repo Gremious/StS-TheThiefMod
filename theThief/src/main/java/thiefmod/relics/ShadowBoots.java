@@ -15,11 +15,10 @@ public class ShadowBoots extends CustomRelic {
     thanks robbo!
     */
 
-    public static final String ID = thiefmod.ThiefMod.makeID("PocketChange");
+    public static final String ID = thiefmod.ThiefMod.makeID("ShadowBoots");
     public static final String IMG = "theThiefAssets/images/relics/PocketChange.png";
     public static final String OUTLINE = "theThiefAssets/images/relics/outline/PocketChange.png";
 
-    private boolean usedThisTurn = false;
 
     public ShadowBoots() {
         super(ID, ImageMaster.loadImage(IMG), new Texture(OUTLINE), RelicTier.BOSS, LandingSound.MAGICAL);

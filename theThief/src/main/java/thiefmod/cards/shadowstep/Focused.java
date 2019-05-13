@@ -10,7 +10,7 @@ import thiefmod.ThiefMod;
 import thiefmod.cards.abstracts.AbstractBackstabCard;
 import thiefmod.patches.character.AbstractCardEnum;
 import thiefmod.patches.character.ThiefCardTags;
-import thiefmod.powers.Common.ShadowstepPower;
+import thiefmod.powers.Common.ElusivePower;
 import thiefmod.powers.Unique.FocusedPower;
 
 public class Focused extends AbstractBackstabCard {
@@ -54,7 +54,7 @@ public class Focused extends AbstractBackstabCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        act(new ApplyPowerAction(p, p, new ShadowstepPower(p, p, magicNumber), magicNumber));
+        act(new ApplyPowerAction(p, p, new ElusivePower(p, p, magicNumber), magicNumber));
         act(new ApplyPowerAction(p, p, new FocusedPower(p, p, magicNumber), magicNumber));
     }
     

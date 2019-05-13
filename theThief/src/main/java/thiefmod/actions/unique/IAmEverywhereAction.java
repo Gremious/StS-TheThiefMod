@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import com.megacrit.cardcrawl.vfx.FastDarkSmoke;
-import thiefmod.powers.Common.ShadowstepPower;
+import thiefmod.powers.Common.ElusivePower;
 
 public class IAmEverywhereAction extends AbstractGameAction {
 
@@ -49,13 +49,13 @@ public class IAmEverywhereAction extends AbstractGameAction {
                         new FastDarkSmoke(p.drawX, p.drawY);
 
                         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
-                                p, p, new ShadowstepPower(
+                                p, p, new ElusivePower(
                                 p, p, amount), amount));
                     }
 
                 } else {
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
-                            p, p, new ShadowstepPower(
+                            p, p, new ElusivePower(
                             p, p, amount), amount));
                 }
             }

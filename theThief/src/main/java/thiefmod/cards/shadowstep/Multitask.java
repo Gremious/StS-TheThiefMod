@@ -15,7 +15,7 @@ import thiefmod.actions.common.StealCardAction;
 import thiefmod.cards.abstracts.AbstractBackstabCard;
 import thiefmod.patches.character.AbstractCardEnum;
 import thiefmod.patches.character.ThiefCardTags;
-import thiefmod.powers.Common.ShadowstepPower;
+import thiefmod.powers.Common.ElusivePower;
 
 public class Multitask extends AbstractBackstabCard {
     //TODO: This one needs a p big description change, since it has many parts that can potentially be =/> 1; Make sure it pluralizes correctly.
@@ -44,7 +44,7 @@ public class Multitask extends AbstractBackstabCard {
     private static final int MAGIC = 1;
     private static final int UPGRADED_PLUS_MAGIC = 1;
     
-    private static final int BACKSTAB = 3;
+    private static final int BACKSTAB = 2;
     private static final int UPGRADED_PLUS_BACKSTAB = -1;
     // /STAT DECLARATION/
     
@@ -65,7 +65,7 @@ public class Multitask extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         act(new DiscardAction(p, p, backstabNumber, false));
-        act(new ApplyPowerAction(p, p, new ShadowstepPower(p, p, magicNumber), 1));
+        act(new ApplyPowerAction(p, p, new ElusivePower(p, p, magicNumber), 1));
         act(new StealCardAction(magicNumber, 1, ADD_RANDOM, AbstractDungeon.player.hand, ADD_UPGRADED));
     }
     
