@@ -408,8 +408,8 @@
       "[#88888][] [#88888]Text[]"
     ]
   },
-  "theThief:RiggedBet": {
-    "NAME": "Rigged Bet",
+  "theThief:StormOfSteal": {
+    "NAME": "Storm Of Steal",
     "DESCRIPTION": "Discard your hand, then, thethief:Steal that many cards. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Discard your hand, then, thethief:Steal that many cards. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [

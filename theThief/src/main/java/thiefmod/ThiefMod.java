@@ -97,7 +97,6 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
             logger.info("Detected the Servant");
         }
         // TODO: Add Gatherer
-        // TODO: Add Vexmod
         // TODO: Add Bard
         // TODO: Add spell scribe
         
