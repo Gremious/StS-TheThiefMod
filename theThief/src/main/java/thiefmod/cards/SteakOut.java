@@ -1,5 +1,7 @@
 package thiefmod.cards;
 
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.StartupCard;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.AutoplayField;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
@@ -12,13 +14,17 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
 import thiefmod.cards.abstracts.AbstractBackstabCard;
+import thiefmod.cards.backstab.AttackOfOpportunity;
 import thiefmod.patches.character.AbstractCardEnum;
+import thiefmod.util.TextureLoader;
 
 public class SteakOut extends AbstractBackstabCard implements StartupCard {
     // TEXT DECLARATION
     
     public static final String ID = ThiefMod.makeID("SteakOut");
-    public static final String IMG = "theThiefAssets/images/cards/beta/Attack.png";
+    public static final String IMG = "theThiefAssets/images/cards/SteakOut.png";
+    private static final Texture BETA_IMG = TextureLoader.getJokeTexture(getCardImageBeta(SteakOut.class.getSimpleName()), IMG);
+    
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
     
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -45,6 +51,7 @@ public class SteakOut extends AbstractBackstabCard implements StartupCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         AutoplayField.autoplay.set(this, true);
         magicNumber = baseMagicNumber = MAGIC;
+        jokePortrait = new TextureAtlas.AtlasRegion(BETA_IMG, 0, 0, 500, 380);
     }
     
     // Actions the card should do.

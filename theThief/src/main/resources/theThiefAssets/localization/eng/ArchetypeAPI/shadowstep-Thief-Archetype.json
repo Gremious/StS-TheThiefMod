@@ -1,0 +1,28 @@
+{
+  "CHARACTER": "THE_THIEF",
+  "NAME": "Shadowstep",
+  "ARCHETYPE_NAME": "theThief:Shadowstep",
+  "CARD_TYPE": "SKILL",
+  "IMG": "theThiefAssets/images/cards/Shadowstep.png",
+  "TAGS": [
+    "SINGLE"
+  ],
+  "FEATURES": [
+    "theThief:Shadowstep",
+    "theThief:ShadowMastery",
+    "theThief:IAmEverywhere"
+  ],
+  "CARD_IDS": [
+    "theThief:Focused",
+    "theThief:GhastlyPresence",
+    "theThief:IAmEverywhere",
+    "theThief:Multitask",
+    "theThief:MurderousIntent",
+    "theThief:OneStepAhead",
+    "theThief:PrecisePositioning",
+    "theThief:QuickThinking",
+    "theThief:ShadowEvade",
+    "theThief:ShadowMastery",
+    "theThief:Shadowstep"
+  ]
+}

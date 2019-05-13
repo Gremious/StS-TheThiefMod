@@ -44,6 +44,7 @@ public class DissoluteSatisfaction extends AbstractBackstabCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
         tags.add(ThiefCardTags.SHADOWSTEP);
+        tags.add(CardTags.HEALING);
         exhaust = true;
     }
     

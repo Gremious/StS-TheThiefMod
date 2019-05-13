@@ -1,0 +1,51 @@
+{
+  "CHARACTER": "THE_THIEF",
+  "NAME": "Basic",
+  "ARCHETYPE_NAME": "theThief:Basic",
+  "CARD_TYPE": "SKILL",
+  "IMG": "theThiefAssets/images/cards/Lie.png",
+  "TAGS": [
+    "SINGLE",
+    "BASIC"
+  ],
+  "FEATURES": [
+    "theThief:Shadowstep",
+    "theThief:ShadowMastery",
+    "theThief:IAmEverywhere"
+  ],
+  "CARD_IDS": [
+    "theThief:SwiftSlash",
+    "theThief:BouqetOKnives",
+    "theThief:SimilarSkills",
+    "theThief:DramaticFeign",
+    "theThief:Murder.",
+    "theThief:BeautifulLies",
+    "theThief:SerratedDagger",
+    "theThief:Exploit",
+    "theThief:Follow-up",
+    "theThief:OneStepAhead",
+    "theThief:Sidestep",
+    "theThief:HideInTheShadows",
+    "theThief:ShadowCloak",
+    "theThief:Patience",
+    "theThief:Darts",
+    "theThief:Mercy",
+    "theThief:HeartBreaker",
+    "theThief:ShadowReserves",
+    "theThief:Gaslight",
+    "theThief:ThousandBallBearings",
+    "theThief:FeignTrip",
+    "theThief:CorrosivePoison",
+    "theThief:Bribe",
+    "theThief:ShadowImage",
+    "theThief:Liar",
+    "theThief:ShadowClone",
+    "theThief:DissoluteSatisfaction",
+    "theThief:Retrieval",
+    "theThief:TripUp",
+    "theThief:GuiltTrip",
+    "theThief:SwiftSlash",
+    "theThief:SwiftSlash",
+    "theThief:SwiftSlash"
+  ]
+}

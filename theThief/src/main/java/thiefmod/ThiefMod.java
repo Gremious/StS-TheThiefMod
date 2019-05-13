@@ -54,6 +54,9 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Random;
 
+import static archetypeAPI.ArchetypeAPI.loadArchetypes;
+import static archetypeAPI.ArchetypeAPI.setCharacterDefaultNumOfCards;
+
 @SpireInitializer
 public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, EditKeywordsSubscriber, EditCharactersSubscriber, PostInitializeSubscriber {
     public static final Logger logger = LogManager.getLogger(ThiefMod.class.getName());
@@ -68,7 +71,6 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
     //public static final boolean hasGatherer;
     //public static final boolean hasSlimebound;
     //public static final boolean hasClockwork;
-    //public static final boolean hasMarisa?;
     public static final boolean hasHubris;
     public static final boolean hasReplayTheSpire;
     public static final boolean hasInfiniteSpire;
@@ -94,7 +96,10 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         if (hasServant) {
             logger.info("Detected the Servant");
         }
-        
+        // TODO: Add Gatherer
+        // TODO: Add Vexmod
+        // TODO: Add Bard
+        // TODO: Add spell scribe
         
         hasReplayTheSpire = Loader.isModLoaded("ReplayTheSpireMod");
         if (hasReplayTheSpire) {
@@ -108,12 +113,13 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         if (hasInfiniteSpire) {
             logger.info("Detected Infinite Spire");
         }
+        // TODO: Apparently slimebound also adds black cards?
     }
     
     //This is for the in-game mod settings pannel.
     private static final String MODNAME = "Thief Mod";
     private static final String AUTHOR = "Gremious";
-    private static final String DESCRIPTION = "A mod for Slay the Spire that adds the Thief as a playable character!";
+    private static final String DESCRIPTION = "A mod for Slay the Spire that adds the Thief as a playable character! \n Shadowstep! Backstab! Steal from all your friends, enemies and acquaintances! Commit louse abuse! And many more! \n \n More than anything: Have fun!";
     
     // Color
     public static final Color THIEF_GRAY = CardHelper.getColor(64.0f, 70.0f, 70.0f);
@@ -206,6 +212,11 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         BaseMod.addEvent(MasqueradeEvent.ID, MasqueradeEvent.class, TheCity.ID);
         
         logger.info("Done Adding Events!");
+        
+        if (Loader.isModLoaded("archetypeapi")) {
+            setCharacterDefaultNumOfCards(TheThiefEnum.THE_THIEF, 72);
+            loadArchetypes("theThiefAssets/localization/eng/ArchetypeAPI/");
+        }
     }
     
     // =============== /LOAD THE MOD BADGE AND MENU/ =================

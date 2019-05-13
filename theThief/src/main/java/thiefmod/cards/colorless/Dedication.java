@@ -2,6 +2,7 @@ package thiefmod.cards.colorless;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -31,18 +32,21 @@ public class Dedication extends AbstractBackstabCard {
     
     private static final int COST = 0;
     private static final int DAMAGE = 5;
-    private static final int UPGRADE_DAMAGE = 7;
+    private static final int MAGIC = 1;
+    private static final int UPGRADE_PLUS_MAGIC = 1;
     // /STAT DECLARATION/
     
     public Dedication() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
+        magicNumber = baseMagicNumber = MAGIC;
     }
     
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         act(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        act(new DrawCardAction(p,magicNumber));
     }
     
     @Override
@@ -55,6 +59,7 @@ public class Dedication extends AbstractBackstabCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
             initializeDescription();
         }
     }

@@ -43,13 +43,11 @@ public class CripplingStrike extends AbstractBackstabCard {
     private static final int MAGIC = 1;
     private static final int UPGRADED_PLUS_MAGIC = 1;
     
-    private static final int BACKSTAB = 1;
     
     public CripplingStrike() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         magicNumber = baseMagicNumber = MAGIC;
-        backstabNumber = baseBackstabNumber = BACKSTAB;
         tags.add(ThiefCardTags.BACKSTAB);
     }
     

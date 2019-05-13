@@ -17,8 +17,8 @@
   },
   "theThief:Lie": {
     "NAME": "Lie",
-    "DESCRIPTION": "Gain !B! Block. Apply !M! vulnerable to ALL enemies.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. Apply !M! vulnerable to ALL enemies.",
+    "DESCRIPTION": "Gain !B! Block. NL Apply !M! vulnerable to ALL enemies.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Apply !M! vulnerable to ALL enemies.",
     "EXTENDED_DESCRIPTION": [
       "[#fa5555]As[] [#fa5555]fundamental[] [#fa5555]as[] [#fa5555]it[] [#fa5555]gets?[]"
     ]
@@ -123,8 +123,8 @@
   },
   "theThief:BeautifulLies": {
     "NAME": "Beautiful Lies",
-    "DESCRIPTION": "Deal !D! damage. NL Add a copy of this card to your deck. NL Exhaust. NL Soulbound.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Add a copy of this card to your deck. NL Exhaust. NL Soulbound.",
+    "DESCRIPTION": "Deal !D! damage. NL Add a copy of this card to your deck, permanently. NL Exhaust. NL Soulbound.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Add a copy of this card to your deck, permanently. NL Exhaust. NL Soulbound.",
     "EXTENDED_DESCRIPTION": [
       "[#EE130]Raining[] [#EE130]down[] [#EE130]like[] [#EE130]petals.[]"
     ]
@@ -139,8 +139,8 @@
   },
   "theThief:Exploit": {
     "NAME": "Exploit",
-    "DESCRIPTION": "Deal !D! damage. If the enemy has any Debuff, gain [R] and draw !M! card next turn.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. If the enemy has any Debuff, gain [R] and draw !M! card next turn.",
+    "DESCRIPTION": "Deal !D! damage. If the enemy has any Debuff, gain 1 [E] and draw !M! card next turn.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. If the enemy has any Debuff, gain 1 [E] and draw !M! card next turn.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]
@@ -296,16 +296,16 @@
   },
   "theThief:SteakOut": {
     "NAME": "Steak Out",
-    "DESCRIPTION": "Startup: Add 1 void to your draw and discard piles. NL Autoplay: Gain !M! energy.",
-    "UPGRADE_DESCRIPTION": "Startup: Add 1 void to your draw and discard piles. NL Autoplay: Gain !M! energy.",
+    "DESCRIPTION": "Startup: Add 1 Void to your draw and discard piles. NL Autoplay: Gain !M! energy.",
+    "UPGRADE_DESCRIPTION": "Startup: Add 1 Void to your draw and discard piles. NL Autoplay: Gain !M! energy.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]
   },
   "theThief:Gaslight": {
     "NAME": "Gaslight",
-    "DESCRIPTION": "Enemy loses !M! strenght. You gain !M! strenght. NL Exhaustive !stslib:ex!.",
-    "UPGRADE_DESCRIPTION": "Enemy loses !M! strenght. You gain !M! strenght. NL Exhaustive !stslib:ex!.",
+    "DESCRIPTION": "Enemy loses !M! strength. You gain !M! strength. NL Exhaustive !stslib:ex!.",
+    "UPGRADE_DESCRIPTION": "Enemy loses !M! strength. You gain !M! strength. NL Exhaustive !stslib:ex!.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Louse,[][#88888]you're[][#88888]just[][#88888]being[][#88888]crazy.[]"
     ]
@@ -519,7 +519,7 @@
       "[#88888]Ghastly[] [#88888]Essence?[]",
       "If you trigger 2 thethief:Backstabs in a turn, Shadowstep !M! ",
       " time.",
-      " times."d
+      " times."
     ]
   },
   "theThief:GhastlyEssence": {
@@ -565,6 +565,7 @@
   },
   "theThief:Dedication": {
     "NAME": "Dedication",
-    "DESCRIPTION": "Deal !D! damage."
+    "DESCRIPTION": "Deal !D! damage. NL Draw !M! card.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Draw !M! cards."
   }
 }

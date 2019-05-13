@@ -1,0 +1,28 @@
+{
+  "CHARACTER": "THE_THIEF",
+  "NAME": "Steal",
+  "ARCHETYPE_NAME": "theThief:Steal",
+  "CARD_TYPE": "ATTACK",
+  "IMG": "theThiefAssets/images/cards/Steal.png",
+  "TAGS": [
+    "SINGLE"
+  ],
+  "FEATURES": [
+    "theThief:Steal",
+    "theThief:Ransack",
+    "theThief:SleightOfHand"
+  ],
+  "CARD_IDS": [
+    "theThief:Steal",
+    "theThief:SleightOfHand",
+    "theThief:Multitask",
+    "theThief:StormOfSteal",
+    "theThief:ConArtist",
+    "theThief:Hoodlum",
+    "theThief:SharpPractice",
+    "theThief:Ransack",
+    "theThief:IllGottenGains",
+    "theThief:FindersKeepers",
+    "theThief:Cunning"
+  ]
+}
