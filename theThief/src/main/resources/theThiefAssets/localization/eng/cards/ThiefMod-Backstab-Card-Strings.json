@@ -1,13 +1,13 @@
 {
   "theThief:Stab": {
     "NAME": "Stab",
-    "DESCRIPTION": "Deal !D! Damage. NL thethief:Backstab: Deal !theThief:thethief:BackstabTimesDamage! instead.",
-    "UPGRADE_DESCRIPTION": "Deal !D! Damage. NL thethief:Backstab: Deal !theThief:thethief:BackstabTimesDamage! instead.",
+    "DESCRIPTION": "Deal !D! Damage. NL thethief:Backstab: Deal !theThief:BackstabTimesDamage! instead.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage. NL thethief:Backstab: Deal !theThief:BackstabTimesDamage! instead.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]",
       "Deal !D! Damage.",
-      " NL thethief:Backstab: Deal !theThief:thethief:BackstabTimesDamage! instead.",
-      " NL thethief:Backstab: [#fa5555]Deal[] !theThief:thethief:BackstabTimesDamage! [#fa5555]instead.[]"
+      " NL thethief:Backstab: Deal !theThief:BackstabTimesDamage! instead.",
+      " NL thethief:Backstab: [#fa5555]Deal[] !theThief:BackstabTimesDamage! [#fa5555]instead.[]"
     ]
   },
   "theThief:HeartStealer": {
@@ -145,6 +145,7 @@
       "[#FEE130]Embrace[] [#FEE130]your[] [#FEE130]true[] [#FEE130]form.[]",
       "At the start of each turn, thethief:Discover !M! random card from any color. NL It costs 0 this combat. ",
       "At the start of each turn, thethief:Discover !M! random cards from any color. NL They costs 0 this combat. ",
+      " NL thethief:Backstab: thethief:Discover !theThief:Magic! instead NL Ethereal.",
       " NL thethief:Backstab: thethief:Discover !theThief:Magic! instead NL Ethereal.",
       " NL thethief:Backstab: [#fa5555]thethief:Discover[] !theThief:Magic! [#fa5555]instead.[] NL Ethereal.",
       " NL thethief:Backstab: thethief:Discover !theThief:Magic! instead",

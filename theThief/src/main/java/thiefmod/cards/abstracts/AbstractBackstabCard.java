@@ -21,7 +21,7 @@ public abstract class AbstractBackstabCard extends AbstractThiefCard {
     }
     
     public static boolean canBackstab() {
-        return AbstractDungeon.player.cardsPlayedThisTurn < 2 || AbstractDungeon.player.hasPower(BackstabPower.POWER_ID);
+        return AbstractDungeon.player.cardsPlayedThisTurn < 1 || AbstractDungeon.player.hasPower(BackstabPower.POWER_ID);
     }
     
     public abstract String flavortext();

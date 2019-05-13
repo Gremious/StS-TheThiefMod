@@ -44,7 +44,7 @@ public class Multitask extends AbstractBackstabCard {
     private static final int MAGIC = 1;
     private static final int UPGRADED_PLUS_MAGIC = 1;
     
-    private static final int BACKSTAB = 3;
+    private static final int BACKSTAB = 2;
     private static final int UPGRADED_PLUS_BACKSTAB = -1;
     // /STAT DECLARATION/
     

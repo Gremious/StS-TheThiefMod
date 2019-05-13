@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.OnReceivePowerPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -87,7 +88,11 @@ public class ElusivePower extends AbstractPower implements OnReceivePowerPower {
     
     @Override
     public void atStartOfTurn() {
-        actionManager.addToBottom(new RemoveSpecificPowerAction(owner, source, ID));
+        if (AbstractDungeon.player.hasPower(ElusivePower.POWER_ID)) {
+            actionManager.addToBottom(new ReducePowerAction(owner, source, ID, (AbstractDungeon.player.getPower(ElusivePower.POWER_ID).amount - amount)));
+        } else {
+            actionManager.addToBottom(new RemoveSpecificPowerAction(owner, source, ID));
+        }
     }
     
     @Override
