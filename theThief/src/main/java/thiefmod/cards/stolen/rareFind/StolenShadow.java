@@ -13,6 +13,7 @@ import thiefmod.CardNoSeen;
 import thiefmod.ThiefMod;
 import thiefmod.actions.unique.StolenShadowAction;
 import thiefmod.cards.abstracts.AbstractStolenCard;
+import thiefmod.patches.character.TheThiefEnum;
 import thiefmod.patches.character.ThiefCardTags;
 
 import java.util.ArrayList;
@@ -44,9 +45,8 @@ public class StolenShadow extends AbstractStolenCard {
     // /STAT DECLARATION/
     
     public StolenShadow() {
-        super(ID, IMG, COST, TYPE, COLOR, TARGET);
+        super(ID, IMG, COST, TYPE, TARGET, CardRarity.RARE, TheThiefEnum.THE_THIEF);
         magicNumber = baseMagicNumber = MAGIC;
-        setBannerTexture("theThiefAssets/images/cardui/512/special/rare_skill_banner.png", "theThiefAssets/images/cardui/1024/special/rare_skill_banner.png");
         tags.add(ThiefCardTags.STOLEN);
         tags.add(ThiefCardTags.RARE_FIND);
         exhaust = true;
@@ -56,16 +56,6 @@ public class StolenShadow extends AbstractStolenCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.effectList.add(new BorderFlashEffect(Color.BLACK));
         act(new StolenShadowAction(p, magicNumber));
-    }
-    
-    @Override
-    public void triggerWhenDrawn() {
-        AbstractDungeon.effectList.add(new CardFlashVfx(this, Color.GOLD));
-    }
-    
-    @Override
-    public void triggerWhenCopied() {
-        AbstractDungeon.effectList.add(new CardFlashVfx(this, Color.GOLD));
     }
     
     @Override

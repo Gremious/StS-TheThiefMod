@@ -39,7 +39,7 @@ public class StolenOrb extends AbstractStolenCard {
     // /STAT DECLARATION/
     
     public StolenOrb() {
-        super(ID, IMG, COST, TYPE, COLOR, TARGET);
+        super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON,AbstractPlayer.PlayerClass.DEFECT );
         magicNumber = baseMagicNumber = MAGIC;
         tags.add(ThiefCardTags.STOLEN);
     }

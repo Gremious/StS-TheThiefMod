@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.CardFlashVfx;
 import mysticmod.MysticMod;
+import mysticmod.patches.MysticEnum;
 import thiefmod.CardNoSeen;
 import thiefmod.ThiefMod;
 import thiefmod.actions.common.playCardWithRandomTargestAction;
@@ -44,8 +45,7 @@ public class stolenMysticalOrb extends AbstractStolenCard {
     // /STAT DECLARATION/
     
     public stolenMysticalOrb() {
-        super(ID, IMG, COST, TYPE, COLOR, TARGET);
-        setBannerTexture("theThiefAssets/images/cardui/512/special/rare_skill_banner.png", "theThiefAssets/images/cardui/1024/special/rare_skill_banner.png");
+        super(ID, IMG, COST, TYPE, TARGET, CardRarity.RARE, MysticEnum.MYSTIC_CLASS);
         magicNumber = baseMagicNumber = MAGIC;
         tags.add(ThiefCardTags.STOLEN);
         tags.add(ThiefCardTags.RARE_FIND);
@@ -59,16 +59,6 @@ public class stolenMysticalOrb extends AbstractStolenCard {
             AbstractDungeon.actionManager.addToTop(new playCardWithRandomTargestAction(false, MysticMod.returnTrulyRandomSpell()));
             AbstractDungeon.actionManager.addToTop(new playCardWithRandomTargestAction(false, MysticMod.returnTrulyRandomArte()));
         }
-    }
-    
-    @Override
-    public void triggerWhenDrawn() {
-        AbstractDungeon.effectList.add(new CardFlashVfx(this, mysticPurple));
-    }
-    
-    @Override
-    public void triggerWhenCopied() {
-        AbstractDungeon.effectList.add(new CardFlashVfx(this, mysticPurple));
     }
     
     // Upgraded stats.

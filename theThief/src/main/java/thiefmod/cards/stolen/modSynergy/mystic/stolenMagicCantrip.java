@@ -41,7 +41,7 @@ public class stolenMagicCantrip extends AbstractStolenCard {
     // /STAT DECLARATION/
     
     public stolenMagicCantrip() {
-        super(ID, IMG, COST, TYPE, COLOR, TARGET);
+        super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, );
         magicNumber = baseMagicNumber = MAGIC;
         tags.add(ThiefCardTags.STOLEN);
     }

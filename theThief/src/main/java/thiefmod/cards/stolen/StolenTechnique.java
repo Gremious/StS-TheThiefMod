@@ -10,6 +10,7 @@ import thiefmod.CardNoSeen;
 import thiefmod.actions.Util.MakeSuperCopyAction;
 import thiefmod.actions.Util.getRandomCardFromAnyColor;
 import thiefmod.cards.abstracts.AbstractStolenCard;
+import thiefmod.patches.character.TheThiefEnum;
 import thiefmod.patches.character.ThiefCardTags;
 
 import java.util.ArrayList;
@@ -47,7 +48,7 @@ public class StolenTechnique extends AbstractStolenCard {
     // /STAT DECLARATION/
     
     public StolenTechnique() {
-        super(ID, IMG, COST, TYPE, COLOR, TARGET);
+        super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, TheThiefEnum.THE_THIEF);
         baseDamage = DAMAGE;
         baseBlock = BLOCK;
         magicNumber = baseMagicNumber = MAGIC;

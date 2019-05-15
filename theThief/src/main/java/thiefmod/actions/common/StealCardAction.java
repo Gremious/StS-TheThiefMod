@@ -19,6 +19,7 @@ import thiefmod.cards.stolen.modSynergy.disciple.rareFind.StolenClock;
 import thiefmod.cards.stolen.modSynergy.halation.rareFind.StolenMail;
 import thiefmod.cards.stolen.modSynergy.mystic.rareFind.stolenMysticalOrb;
 import thiefmod.cards.stolen.modSynergy.mystic.*;
+import thiefmod.cards.stolen.modSynergy.theServant.rareFind.StolenKnives;
 import thiefmod.cards.stolen.rareFind.StolenArsenal;
 import thiefmod.cards.stolen.rareFind.StolenBlood;
 import thiefmod.cards.stolen.rareFind.StolenCore;
@@ -137,6 +138,7 @@ public class StealCardAction extends AbstractGameAction {
         stolenCards.addToTop(new StolenTechnique());
         stolenCards.addToTop(new StolenChange());
         stolenCards.addToTop(new StolenRitual());
+        stolenCards.addToTop(new StolenAdvantage());
 
         //---
 
@@ -269,7 +271,7 @@ public class StealCardAction extends AbstractGameAction {
         if (hasMysticMod) rareFinds.addToTop(new stolenMysticalOrb());
         if (hasHalation) rareFinds.addToTop(new StolenMail());
         if (hasDisciple) rareFinds.addToTop(new StolenClock());
-        if (hasServant) rareFinds.addToTop(new StolenClock());
+        if (hasServant) rareFinds.addToTop(new StolenKnives());
     }
 
     // Card pool of upgraded rare finds

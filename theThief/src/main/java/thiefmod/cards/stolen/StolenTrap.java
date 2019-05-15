@@ -34,7 +34,7 @@ public class StolenTrap extends AbstractStolenCard {
     // /STAT DECLARATION/
     
     public StolenTrap() {
-        super(ID, IMG, COST, TYPE, COLOR, TARGET);
+        super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, AbstractPlayer.PlayerClass.THE_SILENT);
         tags.add(ThiefCardTags.STOLEN);
     }
     

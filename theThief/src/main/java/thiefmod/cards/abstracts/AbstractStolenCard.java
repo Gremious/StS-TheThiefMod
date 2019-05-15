@@ -1,24 +1,29 @@
 package thiefmod.cards.abstracts;
 
 import blackrusemod.patches.TheServantEnum;
+import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.bard.characters.Bard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
+import com.megacrit.cardcrawl.vfx.cardManip.CardFlashVfx;
 import mysticmod.patches.MysticEnum;
 import thiefmod.CardIgnore;
 import thiefmod.ThiefMod;
+import thiefmod.patches.character.ThiefCardTags;
 
 @CardIgnore
 public abstract class AbstractStolenCard extends AbstractThiefCard {
-    
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:TooltipNames");
     public static final String[] FLAVOR_STRINGS = uiStrings.TEXT;
+    private CardRarity subRarity;
     
     public AbstractStolenCard(final String id, final String img, final int cost, final CardType type, final CardTarget target,
-                              final CardRarity subRarity, final AbstractPlayer.PlayerClass character) {
+                              CardRarity subRarity, AbstractPlayer.PlayerClass character) {
         super(id, img, cost, type, CardColor.COLORLESS, CardRarity.SPECIAL, target);
-        
+        this.subRarity = subRarity;
+        //tags.//add(ThiefCardTags.STOLEN);
         setBgImage(character, type, subRarity);
     }
     
@@ -90,8 +95,18 @@ public abstract class AbstractStolenCard extends AbstractThiefCard {
         }
     }
     
-    public AbstractStolenCard(final String id, final String img, final int cost, final CardType type, final CardColor color, final CardTarget target) {
-        super(id, img, cost, type, color, CardRarity.SPECIAL, target);
+    @Override
+    public void triggerWhenDrawn() {
+        if (subRarity == CardRarity.RARE) {
+            AbstractDungeon.effectList.add(new CardFlashVfx(this, Color.GOLD));
+        }
+    }
+    
+    @Override
+    public void triggerWhenCopied() {
+        if (subRarity == CardRarity.RARE) {
+            AbstractDungeon.effectList.add(new CardFlashVfx(this, Color.GOLD));
+        }
     }
     
     //==

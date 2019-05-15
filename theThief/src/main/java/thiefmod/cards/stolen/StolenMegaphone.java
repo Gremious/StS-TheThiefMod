@@ -37,7 +37,7 @@ public class StolenMegaphone extends AbstractStolenCard {
     // /STAT DECLARATION/
     
     public StolenMegaphone() {
-        super(ID, IMG, COST, TYPE, COLOR, TARGET);
+        super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, AbstractPlayer.PlayerClass.DEFECT);
         exhaust = true;
         magicNumber = baseMagicNumber = MAGIC;
         tags.add(ThiefCardTags.STOLEN);

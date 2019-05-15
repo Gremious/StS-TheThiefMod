@@ -1,5 +1,6 @@
 package thiefmod.cards.stolen.modSynergy.theServant.rareFind;
 
+import blackrusemod.patches.TheServantEnum;
 import blackrusemod.powers.KnivesPower;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -50,10 +51,10 @@ public class StolenKnives extends AbstractStolenCard {
     // /STAT DECLARATION/
     
     public StolenKnives() {
-        super(ID, IMG, COST, TYPE, COLOR, TARGET);
-        this.exhaust = true;
-        this.baseDamage = DAMAGE;
-        this.magicNumber = this.baseMagicNumber = MAGIC;
+        super(ID, IMG, COST, TYPE, TARGET, CardRarity.RARE, TheServantEnum.THE_SERVANT);
+        exhaust = true;
+        baseDamage = DAMAGE;
+        magicNumber = baseMagicNumber = MAGIC;
         tags.add(ThiefCardTags.STOLEN);
     }
     
@@ -71,16 +72,6 @@ public class StolenKnives extends AbstractStolenCard {
         } else {
             return super.makeCopy();
         }
-    }
-    
-    @Override
-    public void triggerWhenDrawn() {
-        AbstractDungeon.effectList.add(new CardFlashVfx(this, Color.GOLD));
-    }
-    
-    @Override
-    public void triggerWhenCopied() {
-        AbstractDungeon.effectList.add(new CardFlashVfx(this, Color.GOLD));
     }
     
     @Override

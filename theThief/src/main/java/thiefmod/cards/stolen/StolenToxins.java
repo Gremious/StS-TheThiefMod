@@ -39,7 +39,7 @@ public class StolenToxins extends AbstractStolenCard {
     // /STAT DECLARATION/
     
     public StolenToxins() {
-        super(ID, IMG, COST, TYPE, COLOR, TARGET);
+        super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON,AbstractPlayer.PlayerClass.THE_SILENT );
         magicNumber = baseMagicNumber = MAGIC;
         tags.add(ThiefCardTags.STOLEN);
     }

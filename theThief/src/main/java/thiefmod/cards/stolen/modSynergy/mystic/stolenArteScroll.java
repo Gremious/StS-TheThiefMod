@@ -38,7 +38,7 @@ public class stolenArteScroll extends AbstractStolenCard {
     // /STAT DECLARATION/
     
     public stolenArteScroll() {
-        super(ID, IMG, COST, TYPE, COLOR, TARGET);
+        super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, );
         tags.add(ThiefCardTags.STOLEN);
     }
     

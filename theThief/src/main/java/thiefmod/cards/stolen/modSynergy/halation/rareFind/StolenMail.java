@@ -18,6 +18,7 @@ import thiefmod.CardNoSeen;
 import thiefmod.ThiefMod;
 import thiefmod.actions.Util.MakeSuperCopyAction;
 import thiefmod.cards.abstracts.AbstractStolenCard;
+import thiefmod.patches.character.TheThiefEnum;
 import thiefmod.patches.character.ThiefCardTags;
 
 import java.util.ArrayList;
@@ -49,7 +50,7 @@ public class StolenMail extends AbstractStolenCard {
     // /STAT DECLARATION/
     
     public StolenMail() {
-        super(ID, IMG, COST, TYPE, COLOR, TARGET);
+        super(ID, IMG, COST, TYPE, TARGET, CardRarity.RARE, TheThiefEnum.THE_THIEF);
         if (letterCards.size() == 0) {
             letterCards.add(new  LetterOfAdmiration());
             letterCards.add(new LetterOfLove());
@@ -69,16 +70,6 @@ public class StolenMail extends AbstractStolenCard {
             act(new MakeSuperCopyAction(c, p.drawPile));
             act(new MakeSuperCopyAction(c, p.discardPile));
         }
-    }
-    
-    @Override
-    public void triggerWhenDrawn() {
-        AbstractDungeon.effectList.add(new CardFlashVfx(this, Color.GOLD));
-    }
-    
-    @Override
-    public void triggerWhenCopied() {
-        AbstractDungeon.effectList.add(new CardFlashVfx(this, Color.GOLD));
     }
     
     @Override

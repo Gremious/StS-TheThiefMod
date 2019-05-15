@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.EnergizedPower;
 import thiefmod.CardNoSeen;
 import thiefmod.cards.abstracts.AbstractStolenCard;
+import thiefmod.patches.character.TheThiefEnum;
 import thiefmod.patches.character.ThiefCardTags;
 
 @CardNoSeen
@@ -36,7 +37,7 @@ public class StolenArtifice extends AbstractStolenCard {
     // /STAT DECLARATION/
     
     public StolenArtifice() {
-        super(ID, IMG, COST, TYPE, COLOR, TARGET);
+        super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, TheThiefEnum.THE_THIEF);
         magicNumber = baseMagicNumber = MAGIC;
         tags.add(ThiefCardTags.STOLEN);
     }

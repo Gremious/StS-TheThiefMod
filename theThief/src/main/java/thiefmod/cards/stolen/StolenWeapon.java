@@ -35,7 +35,7 @@ public class StolenWeapon extends AbstractStolenCard {
     // /STAT DECLARATION/
     
     public StolenWeapon() {
-        super(ID, IMG, COST, TYPE, COLOR, TARGET);
+        super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, AbstractPlayer.PlayerClass.IRONCLAD);
         magicNumber = baseMagicNumber = MAGIC;
         tags.add(ThiefCardTags.STOLEN);
     }

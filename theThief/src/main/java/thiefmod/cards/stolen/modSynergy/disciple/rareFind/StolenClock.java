@@ -1,6 +1,7 @@
 package thiefmod.cards.stolen.modSynergy.disciple.rareFind;
 
 import basemod.helpers.TooltipInfo;
+import blackrusemod.patches.TheServantEnum;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
@@ -43,7 +44,7 @@ public class StolenClock extends AbstractStolenCard {
     // /STAT DECLARATION/
     
     public StolenClock() {
-        super(ID, IMG, COST, TYPE, COLOR, TARGET);
+        super(ID, IMG, COST, TYPE, TARGET, CardRarity.RARE, chronomuncher.patches.Enum.CHRONO_CLASS );
         this.exhaust = true;
     }
     
@@ -52,16 +53,6 @@ public class StolenClock extends AbstractStolenCard {
         AbstractDungeon.effectList.add(new BorderFlashEffect(Color.BROWN));
         AbstractDungeon.actionManager.addToTop(new SFXAction("POWER_TIME_WARP"));
         act(new ApplyPowerAction(p, p, new StolenClockPower(p, 1), 0));
-    }
-    
-    @Override
-    public void triggerWhenDrawn() {
-        AbstractDungeon.effectList.add(new CardFlashVfx(this, Color.BROWN));
-    }
-    
-    @Override
-    public void triggerWhenCopied() {
-        AbstractDungeon.effectList.add(new CardFlashVfx(this, Color.BROWN));
     }
     
     @Override

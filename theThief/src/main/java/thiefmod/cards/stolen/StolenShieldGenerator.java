@@ -39,7 +39,7 @@ public class StolenShieldGenerator extends AbstractStolenCard {
     // /STAT DECLARATION/
     
     public StolenShieldGenerator() {
-        super(ID, IMG, COST, TYPE, COLOR, TARGET);
+        super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, AbstractPlayer.PlayerClass.DEFECT);
         baseBlock = BLOCK;
         if (CardCrawlGame.dungeon != null) {
             configureCostsOnNewCard();

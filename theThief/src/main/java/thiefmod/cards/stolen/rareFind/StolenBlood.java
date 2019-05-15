@@ -46,30 +46,11 @@ public class StolenBlood extends AbstractStolenCard {
     // /STAT DECLARATION/
     
     public StolenBlood() {
-        super(ID, IMG, COST, TYPE, COLOR, TARGET);
-     /* Straight up just doesn't work. But maybe one day it will. And when that happens, I'll be waiting. And I will uncomment this code. And my rare cards will look cool.
-
-        setBackgroundTexture("theThiefAssets/images/512/special/red_rare_skill_bg.png",
-                "theThiefAssets/images/1024/special/red_rare_skill_bg.png");
-
-        setOrbTexture("theThiefAssets/images/512/card_thief_gray_orb.png",
-                "theThiefAssets/images/1024/card_thief_gray_orb.png");
-    */
-        setBannerTexture("theThiefAssets/images/cardui/512/special/rare_skill_banner.png", "theThiefAssets/images/cardui/1024/special/rare_skill_banner.png");
+        super(ID, IMG, COST, TYPE, TARGET, CardRarity.RARE, AbstractPlayer.PlayerClass.IRONCLAD);
         magicNumber = baseMagicNumber = MAGIC;
         tags.add(ThiefCardTags.STOLEN);
         tags.add(ThiefCardTags.RARE_FIND);
         exhaust = true;
-    }
-    
-    @Override
-    public void triggerWhenDrawn() {
-        AbstractDungeon.effectList.add(new CardFlashVfx(this, Color.GOLD));
-    }
-    
-    @Override
-    public void triggerWhenCopied() {
-        AbstractDungeon.effectList.add(new CardFlashVfx(this, Color.GOLD));
     }
     
     @Override

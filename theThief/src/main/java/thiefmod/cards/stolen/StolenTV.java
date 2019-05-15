@@ -35,7 +35,7 @@ public class StolenTV extends AbstractStolenCard {
     // /STAT DECLARATION/
     
     public StolenTV() {
-        super(ID, IMG, COST, TYPE, COLOR, TARGET);
+        super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, AbstractPlayer.PlayerClass.DEFECT);
         tags.add(ThiefCardTags.STOLEN);
     }
     

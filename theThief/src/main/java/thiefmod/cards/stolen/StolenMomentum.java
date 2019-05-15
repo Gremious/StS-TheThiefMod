@@ -41,7 +41,7 @@ public class StolenMomentum extends AbstractStolenCard {
     // /STAT DECLARATION/
     
     public StolenMomentum() {
-        super(ID, IMG, COST, TYPE, COLOR, TARGET);
+        super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, AbstractPlayer.PlayerClass.THE_SILENT);
         magicNumber = baseMagicNumber = MAGIC;
         tags.add(ThiefCardTags.STOLEN);
     }
