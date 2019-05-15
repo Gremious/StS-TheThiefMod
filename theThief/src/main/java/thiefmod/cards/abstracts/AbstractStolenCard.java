@@ -10,8 +10,8 @@ public abstract class AbstractStolenCard extends AbstractThiefCard {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:TooltipNames");
     public static final String[] FLAVOR_STRINGS = uiStrings.TEXT;
     
-    public AbstractStolenCard(final String id, final String img, final int cost, final CardType type, final CardColor color, final CardRarity rarity, final CardTarget target) {
-        super(id, img, cost, type, color, rarity, target);
+    public AbstractStolenCard(final String id, final String img, final int cost, final CardType type, final CardColor color, final CardTarget target) {
+        super(id, img, cost, type, color, CardRarity.SPECIAL, target);
         
     }
     //==

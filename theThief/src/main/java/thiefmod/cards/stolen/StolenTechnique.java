@@ -47,7 +47,7 @@ public class StolenTechnique extends AbstractStolenCard {
     // /STAT DECLARATION/
     
     public StolenTechnique() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, TARGET);
         baseDamage = DAMAGE;
         baseBlock = BLOCK;
         magicNumber = baseMagicNumber = MAGIC;

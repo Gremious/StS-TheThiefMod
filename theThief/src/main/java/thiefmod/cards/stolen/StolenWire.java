@@ -37,7 +37,7 @@ public class StolenWire extends AbstractStolenCard {
     // /STAT DECLARATION/
     
     public StolenWire() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
         tags.add(ThiefCardTags.STOLEN);
     }

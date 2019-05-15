@@ -44,7 +44,7 @@ public class StolenShadow extends AbstractStolenCard {
     // /STAT DECLARATION/
     
     public StolenShadow() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
         setBannerTexture("theThiefAssets/images/512/special/rare_skill_banner.png", "theThiefAssets/images/1024/special/rare_skill_banner.png");
         tags.add(ThiefCardTags.STOLEN);

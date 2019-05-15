@@ -43,7 +43,7 @@ public class StolenClock extends AbstractStolenCard {
     // /STAT DECLARATION/
     
     public StolenClock() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, TARGET);
         this.exhaust = true;
     }
     

@@ -49,7 +49,7 @@ public class StolenMail extends AbstractStolenCard {
     // /STAT DECLARATION/
     
     public StolenMail() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, TARGET);
         if (letterCards.size() == 0) {
             letterCards.add(new  LetterOfAdmiration());
             letterCards.add(new LetterOfLove());

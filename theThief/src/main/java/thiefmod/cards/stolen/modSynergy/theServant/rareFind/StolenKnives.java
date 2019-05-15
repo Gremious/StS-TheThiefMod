@@ -50,7 +50,7 @@ public class StolenKnives extends AbstractStolenCard {
     // /STAT DECLARATION/
     
     public StolenKnives() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, TARGET);
         this.exhaust = true;
         this.baseDamage = DAMAGE;
         this.magicNumber = this.baseMagicNumber = MAGIC;

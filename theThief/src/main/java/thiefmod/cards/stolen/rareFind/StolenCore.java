@@ -48,7 +48,7 @@ public class StolenCore extends AbstractStolenCard {
     // /STAT DECLARATION/
     
     public StolenCore() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
         backstabNumber = baseBackstabNumber = ORB_SLOTS;
 

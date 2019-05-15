@@ -44,7 +44,7 @@ public class StolenArmor extends AbstractStolenCard {
     // /STAT DECLARATION/
     
     public StolenArmor() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, TARGET);
         baseBlock = BLOCK;
         magicNumber = baseMagicNumber = MAGIC;
         tags.add(ThiefCardTags.STOLEN);

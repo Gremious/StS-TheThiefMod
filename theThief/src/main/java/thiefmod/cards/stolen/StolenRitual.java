@@ -41,7 +41,7 @@ public class StolenRitual extends AbstractStolenCard {
     // /STAT DECLARATION/
     
     public StolenRitual() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, COLOR, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
         damage = baseDamage = DAMAGE;
         tags.add(ThiefCardTags.STOLEN);
