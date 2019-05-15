@@ -56,7 +56,7 @@ public class StolenMail extends AbstractStolenCard {
             letterCards.add(new LetterOfLove());
             letterCards.add(new LetterOfRespect());
         }
-        tags.add(ThiefCardTags.STOLEN);
+        
         tags.add(ThiefCardTags.RARE_FIND);
         this.exhaust = true;
     }

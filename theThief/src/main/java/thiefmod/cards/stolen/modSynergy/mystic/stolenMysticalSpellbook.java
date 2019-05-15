@@ -38,7 +38,7 @@ public class stolenMysticalSpellbook extends AbstractStolenCard {
     public stolenMysticalSpellbook() {
         super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, );
         magicNumber = baseMagicNumber = MAGIC;
-        tags.add(ThiefCardTags.STOLEN);
+        
     }
     
     @Override

@@ -47,7 +47,7 @@ public class StolenShadow extends AbstractStolenCard {
     public StolenShadow() {
         super(ID, IMG, COST, TYPE, TARGET, CardRarity.RARE, TheThiefEnum.THE_THIEF);
         magicNumber = baseMagicNumber = MAGIC;
-        tags.add(ThiefCardTags.STOLEN);
+        
         tags.add(ThiefCardTags.RARE_FIND);
         exhaust = true;
     }

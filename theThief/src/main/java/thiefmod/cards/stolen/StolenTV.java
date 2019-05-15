@@ -36,7 +36,7 @@ public class StolenTV extends AbstractStolenCard {
     
     public StolenTV() {
         super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, AbstractPlayer.PlayerClass.DEFECT);
-        tags.add(ThiefCardTags.STOLEN);
+        
     }
     
     public void use(AbstractPlayer p, AbstractMonster m) {

@@ -41,7 +41,7 @@ public class StolenAttitude extends AbstractStolenCard {
         super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, AbstractPlayer.PlayerClass.IRONCLAD);
         baseBlock = BLOCK;
         magicNumber = baseMagicNumber = MAGIC;
-        tags.add(ThiefCardTags.STOLEN);
+        
     }
     
     public void use(AbstractPlayer p, AbstractMonster m) {

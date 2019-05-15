@@ -55,7 +55,7 @@ public class StolenKnives extends AbstractStolenCard {
         exhaust = true;
         baseDamage = DAMAGE;
         magicNumber = baseMagicNumber = MAGIC;
-        tags.add(ThiefCardTags.STOLEN);
+        
     }
     
     @Override

@@ -52,7 +52,7 @@ public class StolenTechnique extends AbstractStolenCard {
         baseDamage = DAMAGE;
         baseBlock = BLOCK;
         magicNumber = baseMagicNumber = MAGIC;
-        tags.add(ThiefCardTags.STOLEN);
+        
     }
     
     // Actions the card should do.

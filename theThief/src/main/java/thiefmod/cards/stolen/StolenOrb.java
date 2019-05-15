@@ -41,7 +41,7 @@ public class StolenOrb extends AbstractStolenCard {
     public StolenOrb() {
         super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON,AbstractPlayer.PlayerClass.DEFECT );
         magicNumber = baseMagicNumber = MAGIC;
-        tags.add(ThiefCardTags.STOLEN);
+        
     }
     
     @Override

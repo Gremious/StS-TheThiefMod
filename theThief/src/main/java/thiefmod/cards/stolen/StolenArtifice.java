@@ -39,7 +39,7 @@ public class StolenArtifice extends AbstractStolenCard {
     public StolenArtifice() {
         super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, TheThiefEnum.THE_THIEF);
         magicNumber = baseMagicNumber = MAGIC;
-        tags.add(ThiefCardTags.STOLEN);
+        
     }
     
     // Actions the card should do.

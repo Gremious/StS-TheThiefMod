@@ -23,7 +23,7 @@ public abstract class AbstractStolenCard extends AbstractThiefCard {
                               CardRarity subRarity, AbstractPlayer.PlayerClass character) {
         super(id, img, cost, type, CardColor.COLORLESS, CardRarity.SPECIAL, target);
         this.subRarity = subRarity;
-        //tags.//add(ThiefCardTags.STOLEN);
+        tags.add(ThiefCardTags.STOLEN);
         setBgImage(character, type, subRarity);
     }
     

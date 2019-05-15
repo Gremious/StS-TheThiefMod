@@ -39,7 +39,7 @@ public class stolenArteScroll extends AbstractStolenCard {
     
     public stolenArteScroll() {
         super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, );
-        tags.add(ThiefCardTags.STOLEN);
+        
     }
     
     @Override

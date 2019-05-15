@@ -48,7 +48,7 @@ public class StolenBlood extends AbstractStolenCard {
     public StolenBlood() {
         super(ID, IMG, COST, TYPE, TARGET, CardRarity.RARE, AbstractPlayer.PlayerClass.IRONCLAD);
         magicNumber = baseMagicNumber = MAGIC;
-        tags.add(ThiefCardTags.STOLEN);
+        
         tags.add(ThiefCardTags.RARE_FIND);
         exhaust = true;
     }

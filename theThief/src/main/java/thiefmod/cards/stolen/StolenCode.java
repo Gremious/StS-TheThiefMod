@@ -38,7 +38,7 @@ public class StolenCode extends AbstractStolenCard {
     public StolenCode() {
         super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, AbstractPlayer.PlayerClass.DEFECT);
         magicNumber = baseMagicNumber = MAGIC;
-        tags.add(ThiefCardTags.STOLEN);
+        
     }
     
     @Override

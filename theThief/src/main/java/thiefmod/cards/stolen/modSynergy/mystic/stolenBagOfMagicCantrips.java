@@ -44,7 +44,7 @@ public class stolenBagOfMagicCantrips extends AbstractStolenCard {
     public stolenBagOfMagicCantrips() {
         super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, );
         magicNumber = baseMagicNumber = MAGIC;
-        tags.add(ThiefCardTags.STOLEN);
+        
     }
     
     @Override

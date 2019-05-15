@@ -44,7 +44,7 @@ public class StolenArsenal extends AbstractStolenCard {
     
     public StolenArsenal() {
         super(ID, IMG, COST, TYPE, TARGET, CardRarity.RARE, AbstractPlayer.PlayerClass.THE_SILENT);
-        tags.add(ThiefCardTags.STOLEN);
+        
         tags.add(ThiefCardTags.RARE_FIND);
         exhaust = true;
     }

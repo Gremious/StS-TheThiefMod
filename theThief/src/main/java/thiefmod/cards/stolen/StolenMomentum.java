@@ -43,7 +43,7 @@ public class StolenMomentum extends AbstractStolenCard {
     public StolenMomentum() {
         super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, AbstractPlayer.PlayerClass.THE_SILENT);
         magicNumber = baseMagicNumber = MAGIC;
-        tags.add(ThiefCardTags.STOLEN);
+        
     }
     
     // Actions the card should do.

@@ -40,7 +40,7 @@ public class StolenChange extends AbstractStolenCard {
     public StolenChange() {
         super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, TheThiefEnum.THE_THIEF);
         magicNumber = baseMagicNumber = MAGIC;
-        tags.add(ThiefCardTags.STOLEN);
+        
     }
     
     // Actions the card should do.

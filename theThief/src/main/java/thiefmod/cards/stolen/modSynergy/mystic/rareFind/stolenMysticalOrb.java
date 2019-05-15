@@ -47,7 +47,7 @@ public class stolenMysticalOrb extends AbstractStolenCard {
     public stolenMysticalOrb() {
         super(ID, IMG, COST, TYPE, TARGET, CardRarity.RARE, MysticEnum.MYSTIC_CLASS);
         magicNumber = baseMagicNumber = MAGIC;
-        tags.add(ThiefCardTags.STOLEN);
+        
         tags.add(ThiefCardTags.RARE_FIND);
         exhaust = true;
     }

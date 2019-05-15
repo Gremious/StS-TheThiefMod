@@ -45,7 +45,7 @@ public class StolenRitual extends AbstractStolenCard {
         super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, TheThiefEnum.THE_THIEF);
         magicNumber = baseMagicNumber = MAGIC;
         damage = baseDamage = DAMAGE;
-        tags.add(ThiefCardTags.STOLEN);
+        
     }
     
     // Actions the card should do.

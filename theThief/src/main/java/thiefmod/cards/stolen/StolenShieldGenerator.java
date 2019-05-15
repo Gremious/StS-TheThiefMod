@@ -44,7 +44,7 @@ public class StolenShieldGenerator extends AbstractStolenCard {
         if (CardCrawlGame.dungeon != null) {
             configureCostsOnNewCard();
         }
-        tags.add(ThiefCardTags.STOLEN);
+        
     }
     
     public void configureCostsOnNewCard() {

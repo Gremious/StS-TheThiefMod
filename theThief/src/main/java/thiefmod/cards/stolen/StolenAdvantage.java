@@ -37,7 +37,7 @@ public class StolenAdvantage extends AbstractStolenCard {
     public StolenAdvantage() {
         super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, TheThiefEnum.THE_THIEF);
         magicNumber = baseMagicNumber = MAGIC;
-        tags.add(ThiefCardTags.STOLEN);
+        
     }
     
     @Override

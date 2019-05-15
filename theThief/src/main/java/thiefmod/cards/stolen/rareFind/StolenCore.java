@@ -51,7 +51,7 @@ public class StolenCore extends AbstractStolenCard {
         super(ID, IMG, COST, TYPE, TARGET, CardRarity.RARE, AbstractPlayer.PlayerClass.DEFECT);
         magicNumber = baseMagicNumber = MAGIC;
         backstabNumber = baseBackstabNumber = ORB_SLOTS;
-        tags.add(ThiefCardTags.STOLEN);
+        
         tags.add(ThiefCardTags.RARE_FIND);
         exhaust = true;
     }
