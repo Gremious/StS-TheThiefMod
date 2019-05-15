@@ -1,5 +1,7 @@
 package thiefmod.cards.abstracts;
 
+import blackrusemod.patches.TheServantEnum;
+import com.evacipated.cardcrawl.mod.bard.characters.Bard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.UIStrings;
@@ -33,8 +35,8 @@ public abstract class AbstractStolenCard extends AbstractThiefCard {
                                         "theThiefAssets/images/cardui/1024/bg_attack_stolen_silent.png");
                                 break;
                             case SKILL:
-                                setBackgroundTexture("theThiefAssets/images/cardui/512/bg_skill_stolen_silent.png",
-                                        "theThiefAssets/images/cardui/1024/bg_skill_stolen_silent.png");
+                                setBackgroundTexture("theThiefAssets/images/cardui/512/bg_skill_stolen_silent_rare.png",
+                                        "theThiefAssets/images/cardui/1024/bg_skill_stolen_silent_rare.png");
                                 break;
                             case POWER:
                                 setBackgroundTexture("theThiefAssets/images/cardui/512/bg_power_stolen_silent.png",
@@ -46,15 +48,15 @@ public abstract class AbstractStolenCard extends AbstractThiefCard {
                         switch (type) {
                             case ATTACK:
                                 setBackgroundTexture("theThiefAssets/images/cardui/512/bg_attack_stolen_silent.png",
-                                        "theThiefAssets/images/debug/1024CardBG.png");
+                                        "theThiefAssets/images/cardui/1024/bg_attack_stolen_silent.png");
                                 break;
                             case SKILL:
                                 setBackgroundTexture("theThiefAssets/images/cardui/512/bg_skill_stolen_silent.png",
-                                        "theThiefAssets/images/debug/1024CardBG.png");
+                                        "theThiefAssets/images/cardui/1024/bg_skill_stolen_silent.png");
                                 break;
                             case POWER:
                                 setBackgroundTexture("theThiefAssets/images/cardui/512/bg_power_stolen_silent.png",
-                                        "theThiefAssets/images/debug/1024CardBG.png");
+                                        "theThiefAssets/images/cardui/1024/bg_power_stolen_silent.png");
                                 break;
                         }
                         break;
@@ -72,12 +74,17 @@ public abstract class AbstractStolenCard extends AbstractThiefCard {
             }
         }
         if (ThiefMod.hasServant) {
-            if (character == MysticEnum.MYSTIC_CLASS) {
+            if (character == TheServantEnum.THE_SERVANT) {
             
             }
         }
         if (ThiefMod.hasDisciple) {
-            if (character == MysticEnum.MYSTIC_CLASS) {
+            if (character == chronomuncher.patches.Enum.CHRONO_CLASS) {
+            
+            }
+        }
+        if (ThiefMod.hasBard) {
+            if (character == Bard.Enums.BARD) {
             
             }
         }

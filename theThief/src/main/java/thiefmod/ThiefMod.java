@@ -68,6 +68,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
     public static final boolean hasHalation;
     public static final boolean hasDisciple;
     public static final boolean hasServant;
+    public static final boolean hasBard;
     //public static final boolean hasGatherer;
     //public static final boolean hasSlimebound;
     //public static final boolean hasClockwork;
@@ -95,6 +96,10 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         hasServant = Loader.isModLoaded("StS-BlackRuse");
         if (hasServant) {
             logger.info("Detected the Servant");
+        }
+        hasBard = Loader.isModLoaded("bard");
+        if (hasBard) {
+            logger.info("Detected the Bard");
         }
         // TODO: Add Gatherer
         // TODO: Add Bard
