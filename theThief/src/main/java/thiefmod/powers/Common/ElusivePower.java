@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import thiefmod.ThiefMod;
+import thiefmod.powers.Unique.GhastlyEssencePower;
 import thiefmod.util.TextureLoader;
 import thiefmod.vfx.ShadowstepSmokeBoofEffect;
 
@@ -88,8 +89,8 @@ public class ElusivePower extends AbstractPower implements OnReceivePowerPower {
     
     @Override
     public void atStartOfTurn() {
-        if (AbstractDungeon.player.hasPower(ElusivePower.POWER_ID)) {
-            actionManager.addToBottom(new ReducePowerAction(owner, source, ID, (AbstractDungeon.player.getPower(ElusivePower.POWER_ID).amount - amount)));
+        if (AbstractDungeon.player.hasPower(GhastlyEssencePower.POWER_ID)) {
+            actionManager.addToBottom(new ReducePowerAction(owner, source, ID, (AbstractDungeon.player.getPower(GhastlyEssencePower.POWER_ID).amount - amount)));
         } else {
             actionManager.addToBottom(new RemoveSpecificPowerAction(owner, source, ID));
         }

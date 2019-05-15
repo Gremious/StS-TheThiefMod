@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -59,6 +60,11 @@ public class Prep extends AbstractBackstabCard {
     @Override
     public void applyPowers() {
         super.applyPowers();
+        System.out.println("APPLY POWERS TRIGGERED IN PREP");
+        System.out.println("canBackstab: " + canBackstab());
+        System.out.println("Cards played: " + AbstractDungeon.player.cardsPlayedThisTurn);
+        System.out.println("They are: " + AbstractDungeon.actionManager.cardsPlayedThisTurn);
+        
         if (canBackstab()) {
             rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[2];
         } else {

@@ -61,7 +61,7 @@ public class CloakAndDagger extends AbstractBackstabCard {
             act(new com.megacrit.cardcrawl.actions.common.GainBlockAction(p, p, block));
         }
     }
-    
+  
     @Override
     public void applyPowers() {
         super.applyPowers();

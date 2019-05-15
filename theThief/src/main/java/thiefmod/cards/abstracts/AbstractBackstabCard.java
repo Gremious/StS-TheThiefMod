@@ -4,6 +4,7 @@ import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.CardIgnore;
 import thiefmod.powers.Common.BackstabPower;
 
@@ -25,6 +26,11 @@ public abstract class AbstractBackstabCard extends AbstractThiefCard {
     }
     
     public abstract String flavortext();
+    
+    @Override
+    public void calculateCardDamage(AbstractMonster mo) {
+    super.calculateCardDamage(mo);
+    }
     
     @Override
     public List<TooltipInfo> getCustomTooltips() {

@@ -12,6 +12,7 @@ public abstract class AbstractStolenCard extends AbstractThiefCard {
     
     public AbstractStolenCard(final String id, final String img, final int cost, final CardType type, final CardColor color, final CardRarity rarity, final CardTarget target) {
         super(id, img, cost, type, color, rarity, target);
+        
     }
     //==
     

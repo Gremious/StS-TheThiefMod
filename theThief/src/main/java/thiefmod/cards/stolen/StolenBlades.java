@@ -7,12 +7,16 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import thiefmod.CardNoSeen;
 import thiefmod.cards.abstracts.AbstractStolenCard;
 import thiefmod.patches.character.ThiefCardTags;
 
 @CardNoSeen
 public class StolenBlades extends AbstractStolenCard {
+    public static final Logger logger = LogManager.getLogger(StolenBlades.class.getName());
+    
     // TEXT DECLARATION
     
     public static final String ID = thiefmod.ThiefMod.makeID("StolenBlades");
@@ -34,7 +38,7 @@ public class StolenBlades extends AbstractStolenCard {
     
     private static final int MAGIC = 2;
     private static final int UPGRADED_PLUS_MAGIC = 1;
-    // /STAT DECLARATION/
+    // /STAT DECLARATION/F
     
     public StolenBlades() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

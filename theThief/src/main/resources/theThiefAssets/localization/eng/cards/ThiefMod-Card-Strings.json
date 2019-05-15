@@ -296,8 +296,8 @@
   },
   "theThief:SteakOut": {
     "NAME": "Steak Out",
-    "DESCRIPTION": "Startup: Add 1 Void to your draw and discard piles. NL Autoplay: Gain !M! energy.",
-    "UPGRADE_DESCRIPTION": "Startup: Add 1 Void to your draw and discard piles. NL Autoplay: Gain !M! energy.",
+    "DESCRIPTION": "Startup: Add 1 Void to your draw and discard piles. NL Autoplay: Gain !M! [E] .",
+    "UPGRADE_DESCRIPTION": "Startup: Add 1 Void to your draw and discard piles. NL Autoplay: Gain !M! [E] .",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]
