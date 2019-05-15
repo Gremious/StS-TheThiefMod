@@ -45,7 +45,7 @@ public class stolenMysticalOrb extends AbstractStolenCard {
     
     public stolenMysticalOrb() {
         super(ID, IMG, COST, TYPE, COLOR, TARGET);
-        setBannerTexture("theThiefAssets/images/512/special/rare_skill_banner.png", "theThiefAssets/images/1024/special/rare_skill_banner.png");
+        setBannerTexture("theThiefAssets/images/cardui/512/special/rare_skill_banner.png", "theThiefAssets/images/cardui/1024/special/rare_skill_banner.png");
         magicNumber = baseMagicNumber = MAGIC;
         tags.add(ThiefCardTags.STOLEN);
         tags.add(ThiefCardTags.RARE_FIND);

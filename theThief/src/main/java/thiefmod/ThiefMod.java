@@ -124,17 +124,17 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
     public static final Color THIEF_GRAY = CardHelper.getColor(64.0f, 70.0f, 70.0f);
     
     // Card backgrounds
-    private static final String THIEF_GRAY_ATTACK_BG_SMALL = "theThiefAssets/images/512/bg_attack_thief_gray.png";
-    private static final String THIEF_GRAY_SKILL_BG_SMALL = "theThiefAssets/images/512/bg_skill_thief_gray.png";
-    private static final String THIEF_GRAY_POWER_BG_SMALL = "theThiefAssets/images/512/bg_power_thief_gray.png";
-    private static final String THIEF_GRAY_ENERGY_ORB_SMALL = "theThiefAssets/images/512/card_thief_gray_orb.png";
+    private static final String THIEF_GRAY_ATTACK_BG_SMALL = "theThiefAssets/images/cardui/512/bg_attack_thief_gray.png";
+    private static final String THIEF_GRAY_SKILL_BG_SMALL = "theThiefAssets/images/cardui/512/bg_skill_thief_gray.png";
+    private static final String THIEF_GRAY_POWER_BG_SMALL = "theThiefAssets/images/cardui/512/bg_power_thief_gray.png";
+    private static final String THIEF_GRAY_ENERGY_ORB_SMALL = "theThiefAssets/images/cardui/512/card_thief_gray_orb.png";
     
-    private static final String THIEF_GRAY_ATTACK_BG_LARGE = "theThiefAssets/images/1024/bg_attack_thief_gray.png";
-    private static final String THIEF_GRAY_SKILL_BG_LARGE = "theThiefAssets/images/1024/bg_skill_thief_gray.png";
-    private static final String THIEF_GRAY_POWER_BG_LARGE = "theThiefAssets/images/1024/bg_power_thief_gray.png";
-    private static final String THIEF_GRAY_ENERGY_ORB_LARGE = "theThiefAssets/images/1024/card_thief_gray_orb.png";
+    private static final String THIEF_GRAY_ATTACK_BG_LARGE = "theThiefAssets/images/cardui/1024/bg_attack_thief_gray.png";
+    private static final String THIEF_GRAY_SKILL_BG_LARGE = "theThiefAssets/images/cardui/1024/bg_skill_thief_gray.png";
+    private static final String THIEF_GRAY_POWER_BG_LARGE = "theThiefAssets/images/cardui/1024/bg_power_thief_gray.png";
+    private static final String THIEF_GRAY_ENERGY_ORB_LARGE = "theThiefAssets/images/cardui/1024/card_thief_gray_orb.png";
     
-    private static final String THIEF_GRAY_CARD_ENERGY_ORB = "theThiefAssets/images/512/card_small_orb.png";
+    private static final String THIEF_GRAY_CARD_ENERGY_ORB = "theThiefAssets/images/cardui/512/card_small_orb.png";
     
     // Character assets
     private static final String THE_THIEF_BUTTON = "theThiefAssets/images/charSelect/thiefCharacterButton.png";

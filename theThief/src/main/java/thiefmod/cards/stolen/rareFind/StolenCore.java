@@ -62,7 +62,7 @@ public class StolenCore extends AbstractStolenCard {
                 "theThiefAssets/images/1024/card_thief_gray_orb.png");
 
     */
-        setBannerTexture("theThiefAssets/images/512/special/rare_skill_banner.png", "theThiefAssets/images/1024/special/rare_skill_banner.png");
+        setBannerTexture("theThiefAssets/images/cardui/512/special/rare_skill_banner.png", "theThiefAssets/images/cardui/1024/special/rare_skill_banner.png");
         tags.add(ThiefCardTags.STOLEN);
         tags.add(ThiefCardTags.RARE_FIND);
         exhaust = true;

@@ -55,7 +55,7 @@ public class StolenBlood extends AbstractStolenCard {
         setOrbTexture("theThiefAssets/images/512/card_thief_gray_orb.png",
                 "theThiefAssets/images/1024/card_thief_gray_orb.png");
     */
-        setBannerTexture("theThiefAssets/images/512/special/rare_skill_banner.png", "theThiefAssets/images/1024/special/rare_skill_banner.png");
+        setBannerTexture("theThiefAssets/images/cardui/512/special/rare_skill_banner.png", "theThiefAssets/images/cardui/1024/special/rare_skill_banner.png");
         magicNumber = baseMagicNumber = MAGIC;
         tags.add(ThiefCardTags.STOLEN);
         tags.add(ThiefCardTags.RARE_FIND);
