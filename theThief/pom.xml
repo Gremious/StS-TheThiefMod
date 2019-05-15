@@ -14,6 +14,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <SlayTheSpire.version>01-03-2019</SlayTheSpire.version>
         <ModTheSpire.version>3.6.3</ModTheSpire.version>
+        <Steam.path>C:/My Stuff/Games/Steam/steamapps</Steam.path>
         <alt.build.dir>C:/My Stuff/Games/Steam/steamapps/common/SlayTheSpire/mods</alt.build.dir>
     </properties>
 
@@ -24,29 +25,28 @@
             <artifactId>slaythespire</artifactId>
             <version>${SlayTheSpire.version}</version>
             <scope>system</scope>
-            <systemPath>C:/My Stuff/Games/Steam/steamapps/common/SlayTheSpire/desktop-1.0.jar</systemPath>
+            <systemPath>${Steam.path}/common/SlayTheSpire/desktop-1.0.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>com.evacipated.cardcrawl</groupId>
             <artifactId>modthespire</artifactId>
             <version>${ModTheSpire.version}</version>
             <scope>system</scope>
-            <systemPath>C:/My Stuff/Games/Steam/steamapps/workshop/content/646570/1605060445/ModTheSpire.jar
-            </systemPath>
+            <systemPath>${Steam.path}/workshop/content/646570/1605060445/ModTheSpire.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>basemod</groupId>
             <artifactId>basemod</artifactId>
             <version>5.0.0</version>
             <scope>system</scope>
-            <systemPath>C:/My Stuff/Games/Steam/steamapps/workshop/content/646570/1605833019/BaseMod.jar</systemPath>
+            <systemPath>${Steam.path}/workshop/content/646570/1605833019/BaseMod.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>com.evacipated.cardcrawl.mod</groupId>
             <artifactId>StSLib</artifactId>
             <version>1.3.2</version>
             <scope>system</scope>
-            <systemPath>C:/My Stuff/Games/Steam/steamapps/workshop/content/646570/1609158507/StSLib.jar</systemPath>
+            <systemPath>${Steam.path}/workshop/content/646570/1609158507/StSLib.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>archetypeapi</groupId>
@@ -61,35 +61,35 @@
             <artifactId>MysticMod</artifactId>
             <version>4.0.0</version>
             <scope>system</scope>
-            <systemPath>C:/My Stuff/Games/Steam/steamapps/workshop/content/646570/1609848111/TheMystic.jar</systemPath>
+            <systemPath>${Steam.path}/workshop/content/646570/1609848111/TheMystic.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>com.evacipated.cardcrawl.mod</groupId>
             <artifactId>hubris</artifactId>
             <version>0.18.0</version>
             <scope>system</scope>
-            <systemPath>C:/My Stuff/Games/Steam/steamapps/workshop/content/646570/1609159603/Hubris.jar</systemPath>
+            <systemPath>${Steam.path}/workshop/content/646570/1609159603/Hubris.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>Halation</groupId>
             <artifactId>Halation</artifactId>
             <version>0.0.18</version>
             <scope>system</scope>
-            <systemPath>C:/My Stuff/Games/Steam/steamapps/workshop/content/646570/1609810237/Halation.jar</systemPath>
+            <systemPath>${Steam.path}/workshop/content/646570/1609810237/Halation.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>chronomuncher</groupId>
             <artifactId>TheDisciple</artifactId>
             <version>0.1.4</version>
             <scope>system</scope>
-            <systemPath>C:/My Stuff/Games/Steam/steamapps/workshop/content/646570/1609846039/TheDisciple.jar</systemPath>
+            <systemPath>${Steam.path}/workshop/content/646570/1609846039/TheDisciple.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>BlackRuseMods</groupId>
             <artifactId>StS-BlackRuse</artifactId>
             <version>0.9.3</version>
             <scope>system</scope>
-            <systemPath>C:/My Stuff/Games/Steam/steamapps/workshop/content/646570/1615745539/BlackRuseMod.jar</systemPath>
+            <systemPath>${Steam.path}/workshop/content/646570/1615745539/BlackRuseMod.jar</systemPath>
         </dependency>
 
 
@@ -98,7 +98,7 @@
             <artifactId>ReplayTheSpireMod</artifactId>
             <version>4.0.0</version>
             <scope>system</scope>
-            <systemPath>C:/My Stuff/Games/Steam/steamapps/workshop/content/646570/1610173938/ReplayTheSpireMod.jar
+            <systemPath>${Steam.path}/workshop/content/646570/1610173938/ReplayTheSpireMod.jar
             </systemPath>
         </dependency>
         <dependency>
@@ -106,7 +106,7 @@
             <artifactId>InfiniteSpire</artifactId>
             <version>0.9.0</version>
             <scope>system</scope>
-            <systemPath>C:/My Stuff/Games/Steam/steamapps/workshop/content/646570/1610128058/InfiniteSpire.jar
+            <systemPath>${Steam.path}/workshop/content/646570/1610128058/InfiniteSpire.jar
             </systemPath>
         </dependency>
     </dependencies>

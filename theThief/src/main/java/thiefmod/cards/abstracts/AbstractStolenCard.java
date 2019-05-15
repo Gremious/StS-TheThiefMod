@@ -3,7 +3,9 @@ package thiefmod.cards.abstracts;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.UIStrings;
+import mysticmod.patches.MysticEnum;
 import thiefmod.CardIgnore;
+import thiefmod.ThiefMod;
 
 @CardIgnore
 public abstract class AbstractStolenCard extends AbstractThiefCard {
@@ -14,11 +16,71 @@ public abstract class AbstractStolenCard extends AbstractThiefCard {
     public AbstractStolenCard(final String id, final String img, final int cost, final CardType type, final CardTarget target,
                               final CardRarity subRarity, final AbstractPlayer.PlayerClass character) {
         super(id, img, cost, type, CardColor.COLORLESS, CardRarity.SPECIAL, target);
+        
+        setBgImage(character, type, subRarity);
+    }
     
-        setBackgroundTexture("theThiefAssets/images/debug/512CardBG.png", "theThiefAssets/images/debug/1024CardBG.png");
-        setBannerTexture("theThiefAssets/images/debug/512CardBanner.png", "theThiefAssets/images/debug/1024CardBanner.png");
-        setOrbTexture("theThiefAssets/images/debug/SmallEnergyOrb.png", "theThiefAssets/images/debug/LargeEnergyOrb.png");
-    
+    private void setBgImage(AbstractPlayer.PlayerClass character, CardType type, CardRarity subRarity) {
+        switch (character) {
+            case THE_SILENT:
+                switch (subRarity) {
+                    case RARE:
+                        setBannerTexture("theThiefAssets/images/cardui/512/banner_rare.png",
+                                "theThiefAssets/images/cardui/1024/banner_rare.png");
+                        switch (type) {
+                            case ATTACK:
+                                setBackgroundTexture("theThiefAssets/images/cardui/512/bg_attack_stolen_silent.png",
+                                        "theThiefAssets/images/cardui/1024/bg_attack_stolen_silent.png");
+                                break;
+                            case SKILL:
+                                setBackgroundTexture("theThiefAssets/images/cardui/512/bg_skill_stolen_silent.png",
+                                        "theThiefAssets/images/cardui/1024/bg_skill_stolen_silent.png");
+                                break;
+                            case POWER:
+                                setBackgroundTexture("theThiefAssets/images/cardui/512/bg_power_stolen_silent.png",
+                                        "theThiefAssets/images/cardui/1024/bg_power_stolen_silent.png");
+                                break;
+                        }
+                        break;
+                    default:
+                        switch (type) {
+                            case ATTACK:
+                                setBackgroundTexture("theThiefAssets/images/cardui/512/bg_attack_stolen_silent.png",
+                                        "theThiefAssets/images/debug/1024CardBG.png");
+                                break;
+                            case SKILL:
+                                setBackgroundTexture("theThiefAssets/images/cardui/512/bg_skill_stolen_silent.png",
+                                        "theThiefAssets/images/debug/1024CardBG.png");
+                                break;
+                            case POWER:
+                                setBackgroundTexture("theThiefAssets/images/cardui/512/bg_power_stolen_silent.png",
+                                        "theThiefAssets/images/debug/1024CardBG.png");
+                                break;
+                        }
+                        break;
+                }
+                break;
+            case IRONCLAD:
+                break;
+            case DEFECT:
+                break;
+        }
+        
+        if (ThiefMod.hasMysticMod) {
+            if (character == MysticEnum.MYSTIC_CLASS) {
+            
+            }
+        }
+        if (ThiefMod.hasServant) {
+            if (character == MysticEnum.MYSTIC_CLASS) {
+            
+            }
+        }
+        if (ThiefMod.hasDisciple) {
+            if (character == MysticEnum.MYSTIC_CLASS) {
+            
+            }
+        }
     }
     
     public AbstractStolenCard(final String id, final String img, final int cost, final CardType type, final CardColor color, final CardTarget target) {
