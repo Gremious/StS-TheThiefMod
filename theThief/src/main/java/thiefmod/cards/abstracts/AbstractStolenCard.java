@@ -143,24 +143,161 @@ public abstract class AbstractStolenCard extends AbstractThiefCard {
                 }
                 break;
         }
+        
         if (ThiefMod.hasMysticMod) {
             if (character == MysticEnum.MYSTIC_CLASS) {
-            
+                switch (subRarity) {
+                    case RARE:
+                        setBannerTexture("theThiefAssets/images/cardui/512/banner_rare.png",
+                                "theThiefAssets/images/cardui/1024/banner_rare.png");
+                        switch (type) {
+                            case ATTACK:
+                                setBackgroundTexture("theThiefAssets/images/cardui/512/bg_attack_stolen_mystic.png",
+                                        "theThiefAssets/images/cardui/1024/bg_attack_stolen_mystic.png");
+                                break;
+                            case SKILL:
+                                setBackgroundTexture("theThiefAssets/images/cardui/512/bg_skill_stolen_mystic.png",
+                                        "theThiefAssets/images/cardui/1024/bg_skill_stolen_mystic.png");
+                                break;
+                            case POWER:
+                                setBackgroundTexture("theThiefAssets/images/cardui/512/bg_power_stolen_mystic.png",
+                                        "theThiefAssets/images/cardui/1024/bg_power_stolen_mystic.png");
+                                break;
+                        }
+                        break;
+                    default:
+                        switch (type) {
+                            case ATTACK:
+                                setBackgroundTexture("theThiefAssets/images/cardui/512/bg_attack_stolen_mystic.png",
+                                        "theThiefAssets/images/cardui/1024/bg_attack_stolen_mystic.png");
+                                break;
+                            case SKILL:
+                                setBackgroundTexture("theThiefAssets/images/cardui/512/bg_skill_stolen_mystic.png",
+                                        "theThiefAssets/images/cardui/1024/bg_skill_stolen_mystic.png");
+                                break;
+                            case POWER:
+                                setBackgroundTexture("theThiefAssets/images/cardui/512/bg_power_stolen_mystic.png",
+                                        "theThiefAssets/images/cardui/1024/bg_power_stolen_mystic.png");
+                                break;
+                        }
+                }
             }
         }
         if (ThiefMod.hasServant) {
             if (character == TheServantEnum.THE_SERVANT) {
-            
+                switch (subRarity) {
+                    case RARE:
+                        setBannerTexture("theThiefAssets/images/cardui/512/banner_rare.png",
+                                "theThiefAssets/images/cardui/1024/banner_rare.png");
+                        switch (type) {
+                            case ATTACK:
+                                setBackgroundTexture("theThiefAssets/images/cardui/512/bg_attack_stolen_servant.png",
+                                        "theThiefAssets/images/cardui/1024/bg_attack_stolen_servant.png");
+                                break;
+                            case SKILL:
+                                setBackgroundTexture("theThiefAssets/images/cardui/512/bg_skill_stolen_servant.png",
+                                        "theThiefAssets/images/cardui/1024/bg_skill_stolen_servant.png");
+                                break;
+                            case POWER:
+                                setBackgroundTexture("theThiefAssets/images/cardui/512/bg_power_stolen_servant.png",
+                                        "theThiefAssets/images/cardui/1024/bg_power_stolen_servant.png");
+                                break;
+                        }
+                        break;
+                    default:
+                        switch (type) {
+                            case ATTACK:
+                                setBackgroundTexture("theThiefAssets/images/cardui/512/bg_attack_stolen_servant.png",
+                                        "theThiefAssets/images/cardui/1024/bg_attack_stolen_servant.png");
+                                break;
+                            case SKILL:
+                                setBackgroundTexture("theThiefAssets/images/cardui/512/bg_skill_stolen_servant.png",
+                                        "theThiefAssets/images/cardui/1024/bg_skill_stolen_servant.png");
+                                break;
+                            case POWER:
+                                setBackgroundTexture("theThiefAssets/images/cardui/512/bg_power_stolen_servant.png",
+                                        "theThiefAssets/images/cardui/1024/bg_power_stolen_servant.png");
+                                break;
+                        }
+                }
             }
         }
         if (ThiefMod.hasDisciple) {
             if (character == chronomuncher.patches.Enum.CHRONO_CLASS) {
-            
+                switch (subRarity) {
+                    case RARE:
+                        setBannerTexture("theThiefAssets/images/cardui/512/banner_rare.png",
+                                "theThiefAssets/images/cardui/1024/banner_rare.png");
+                        switch (type) {
+                            case ATTACK:
+                                setBackgroundTexture("theThiefAssets/images/cardui/512/bg_attack_stolen_disciple.png",
+                                        "theThiefAssets/images/cardui/1024/bg_attack_stolen_disciple.png");
+                                break;
+                            case SKILL:
+                                setBackgroundTexture("theThiefAssets/images/cardui/512/bg_skill_stolen_disciple.png",
+                                        "theThiefAssets/images/cardui/1024/bg_skill_stolen_disciple.png");
+                                break;
+                            case POWER:
+                                setBackgroundTexture("theThiefAssets/images/cardui/512/bg_power_stolen_disciple.png",
+                                        "theThiefAssets/images/cardui/1024/bg_power_stolen_disciple.png");
+                                break;
+                        }
+                        break;
+                    default:
+                        switch (type) {
+                            case ATTACK:
+                                setBackgroundTexture("theThiefAssets/images/cardui/512/bg_attack_stolen_disciple.png",
+                                        "theThiefAssets/images/cardui/1024/bg_attack_stolen_disciple.png");
+                                break;
+                            case SKILL:
+                                setBackgroundTexture("theThiefAssets/images/cardui/512/bg_skill_stolen_disciple.png",
+                                        "theThiefAssets/images/cardui/1024/bg_skill_stolen_disciple.png");
+                                break;
+                            case POWER:
+                                setBackgroundTexture("theThiefAssets/images/cardui/512/bg_power_stolen_disciple.png",
+                                        "theThiefAssets/images/cardui/1024/bg_power_stolen_disciple.png");
+                                break;
+                        }
+                }
             }
         }
         if (ThiefMod.hasBard) {
             if (character == Bard.Enums.BARD) {
-            
+                switch (subRarity) {
+                    case RARE:
+                        setBannerTexture("theThiefAssets/images/cardui/512/banner_rare.png",
+                                "theThiefAssets/images/cardui/1024/banner_rare.png");
+                        switch (type) {
+                            case ATTACK:
+                                setBackgroundTexture("theThiefAssets/images/cardui/512/bg_attack_stolen_bard.png",
+                                        "theThiefAssets/images/cardui/1024/bg_attack_stolen_bard.png");
+                                break;
+                            case SKILL:
+                                setBackgroundTexture("theThiefAssets/images/cardui/512/bg_skill_stolen_bard.png",
+                                        "theThiefAssets/images/cardui/1024/bg_skill_stolen_bard.png");
+                                break;
+                            case POWER:
+                                setBackgroundTexture("theThiefAssets/images/cardui/512/bg_power_stolen_bard.png",
+                                        "theThiefAssets/images/cardui/1024/bg_power_stolen_bard.png");
+                                break;
+                        }
+                        break;
+                    default:
+                        switch (type) {
+                            case ATTACK:
+                                setBackgroundTexture("theThiefAssets/images/cardui/512/bg_attack_stolen_bard.png",
+                                        "theThiefAssets/images/cardui/1024/bg_attack_stolen_bard.png");
+                                break;
+                            case SKILL:
+                                setBackgroundTexture("theThiefAssets/images/cardui/512/bg_skill_stolen_bard.png",
+                                        "theThiefAssets/images/cardui/1024/bg_skill_stolen_bard.png");
+                                break;
+                            case POWER:
+                                setBackgroundTexture("theThiefAssets/images/cardui/512/bg_power_stolen_bard.png",
+                                        "theThiefAssets/images/cardui/1024/bg_power_stolen_bard.png");
+                                break;
+                        }
+                }
             }
         }
     }
