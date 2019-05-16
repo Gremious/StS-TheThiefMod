@@ -1,6 +1,5 @@
 package thiefmod.cards.stolen.modSynergy.mystic;
 
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -14,19 +13,13 @@ import thiefmod.ThiefMod;
 import thiefmod.actions.common.playCardWithRandomTargestAction;
 import thiefmod.cards.abstracts.AbstractStolenCard;
 
-import java.util.ArrayList;
-
 @CardNoSeen
 public class stolenArteScroll extends AbstractStolenCard {
     // TEXT DECLARATION
     
     public static final String ID = ThiefMod.makeID("stolenArteScroll");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    
-    public static final String IMG = (ThiefMod.hasMysticMod ? Snowball.IMG_PATH : null);
-    
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    private ArrayList<AbstractCard> artesGroup = new ArrayList<>();
     // /TEXT DECLARATION/
     
     // STAT DECLARATION
@@ -34,6 +27,8 @@ public class stolenArteScroll extends AbstractStolenCard {
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardTarget TARGET = CardTarget.ALL;
     // /STAT DECLARATION/
+    
+    public static final String IMG = (ThiefMod.hasMysticMod ? Snowball.IMG_PATH : loadLockedCardImage(TYPE));
     
     public stolenArteScroll() {
         super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, MysticEnum.MYSTIC_CLASS);

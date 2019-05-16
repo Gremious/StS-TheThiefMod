@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import thiefmod.actions.util.DiscoverAndExhaustCard;
+import thiefmod.actions.util.MakeStolenCardAction;
 import thiefmod.actions.util.MakeSuperCopyAction;
 import thiefmod.cards.stolen.*;
 import thiefmod.cards.stolen.modSynergy.disciple.rareFind.StolenClock;
@@ -88,8 +89,7 @@ public class StealCardAction extends AbstractGameAction {
     private void addStolenCards() {
         for (AbstractCard c : cardsToAdd) {
             logger.info("addStolenCards() adding card " + c + " to " + location.toString());
-            AbstractDungeon.actionManager.actions.add(new MakeSuperCopyAction(c, KEYWORD_STRINGS[0], location));
-
+            AbstractDungeon.actionManager.actions.add(new MakeStolenCardAction(c, KEYWORD_STRINGS[0], location));
         }
     }
 

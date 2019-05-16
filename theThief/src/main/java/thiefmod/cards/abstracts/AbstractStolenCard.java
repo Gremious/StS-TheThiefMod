@@ -19,7 +19,7 @@ import static com.megacrit.cardcrawl.characters.AbstractPlayer.PlayerClass.*;
 public abstract class AbstractStolenCard extends AbstractThiefCard {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:TooltipNames");
     public static final String[] FLAVOR_STRINGS = uiStrings.TEXT;
-    private CardRarity subRarity;
+    public CardRarity subRarity;
     
     public AbstractStolenCard(final String id, final String img, final int cost, final CardType type, final CardTarget target,
                               CardRarity subRarity, AbstractPlayer.PlayerClass character) {
@@ -337,7 +337,7 @@ public abstract class AbstractStolenCard extends AbstractThiefCard {
         }
     }
     
-    protected String loadLockedCardImage(CardType type) {
+    protected static String loadLockedCardImage(CardType type) {
         switch (type) {
             case ATTACK:
                 return "theThiefAssets/images/cards/locked_attack.png";
