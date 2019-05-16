@@ -1,7 +1,6 @@
 package thiefmod.actions.util;
 
 import basemod.BaseMod;
-import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -10,14 +9,12 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
-import com.megacrit.cardcrawl.vfx.cardManip.CardFlashVfx;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDiscardEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDrawPileEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import thiefmod.ThiefMod;
-import thiefmod.cards.abstracts.AbstractStolenCard;
 import thiefmod.patches.character.ThiefCardTags;
 
 public class MakeStolenCardAction extends AbstractGameAction {
@@ -69,6 +66,11 @@ public class MakeStolenCardAction extends AbstractGameAction {
     
     public void update() {
         if (duration == Settings.ACTION_DUR_FAST) {
+            
+            if (!c.hasTag(ThiefCardTags.STOLEN)) {
+                c.tags.add(ThiefCardTags.STOLEN);
+            }
+            
             if (keyword != null) {
                 if (keyword.equals(KEYWORD_STRINGS[0])) {
                     if (removeKeyword) {

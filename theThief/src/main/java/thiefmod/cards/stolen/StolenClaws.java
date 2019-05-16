@@ -26,10 +26,8 @@ public class StolenClaws extends AbstractStolenCard {
     // /TEXT DECLARATION/
     // STAT DECLARATION
     
-    private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
-    public static final CardColor COLOR = CardColor.COLORLESS;
     
     private static final int COST = 1;
     private static final int UPGRADE_COST = 0;
@@ -40,7 +38,7 @@ public class StolenClaws extends AbstractStolenCard {
     // /STAT DECLARATION/
     
     public StolenClaws() {
-        super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON,AbstractPlayer.PlayerClass.DEFECT );
+        super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, AbstractPlayer.PlayerClass.DEFECT);
         baseDamage = DAMAGE;
         magicNumber = baseMagicNumber = MAGIC;
         

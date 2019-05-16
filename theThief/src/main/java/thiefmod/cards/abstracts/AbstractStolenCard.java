@@ -1,12 +1,14 @@
 package thiefmod.cards.abstracts;
 
 import blackrusemod.patches.TheServantEnum;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.bard.characters.Bard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
+import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.CardFlashVfx;
 import mysticmod.patches.MysticEnum;
 import thiefmod.CardIgnore;
@@ -20,10 +22,13 @@ public abstract class AbstractStolenCard extends AbstractThiefCard {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:TooltipNames");
     public static final String[] FLAVOR_STRINGS = uiStrings.TEXT;
     public CardRarity subRarity;
+    private float flashTimer;
     
     public AbstractStolenCard(final String id, final String img, final int cost, final CardType type, final CardTarget target,
                               CardRarity subRarity, AbstractPlayer.PlayerClass character) {
+        
         super(id, img, cost, type, CardColor.COLORLESS, CardRarity.SPECIAL, target);
+        flashTimer = 0.0F;
         this.subRarity = subRarity;
         tags.add(ThiefCardTags.STOLEN);
         setBgImage(character, type, subRarity);
@@ -59,8 +64,8 @@ public abstract class AbstractStolenCard extends AbstractThiefCard {
                                             "theThiefAssets/images/cardui/1024/bg_attack_stolen_silent.png");
                                     break;
                                 case SKILL:
-                                    setBackgroundTexture("theThiefAssets/images/cardui/512/bg_skill_stolen_silent_rare.png",
-                                            "theThiefAssets/images/cardui/1024/bg_skill_stolen_silent_rare.png");
+                                    setBackgroundTexture("theThiefAssets/images/cardui/512/bg_skill_stolen_silent.png",
+                                            "theThiefAssets/images/cardui/1024/bg_skill_stolen_silent.png");
                                     break;
                                 case POWER:
                                     setBackgroundTexture("theThiefAssets/images/cardui/512/bg_power_stolen_silent.png",
@@ -143,6 +148,7 @@ public abstract class AbstractStolenCard extends AbstractThiefCard {
                                             "theThiefAssets/images/cardui/1024/bg_power_stolen_defect.png");
                                     break;
                             }
+                            break;
                     }
                     break;
             }
@@ -345,6 +351,16 @@ public abstract class AbstractStolenCard extends AbstractThiefCard {
                 return "theThiefAssets/images/cards/locked_power.png";
             default:
                 return "theThiefAssets/images/cards/locked_skill.png";
+        }
+    }
+    
+    @Override
+    public void update() {
+        super.update();
+        flashTimer -= Gdx.graphics.getDeltaTime();
+        if (flashTimer < 0.0F) {
+            flashTimer = 5.0F;
+            AbstractDungeon.effectList.add(new CardFlashVfx(this));
         }
     }
     

@@ -129,22 +129,15 @@ public class MakeSuperCopyAction extends AbstractGameAction {
             if (addLocation == AbstractDungeon.player.hand) {
                 if (AbstractDungeon.player.hand.size() < BaseMod.MAX_HAND_SIZE) {
                     AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(c));
-                    if (c.hasTag(ThiefCardTags.RARE_FIND))
-                        AbstractDungeon.effectList.add(new CardFlashVfx(c, Color.GOLD));
                 } else {
                     AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(c));
-                    if (c.hasTag(ThiefCardTags.RARE_FIND))
-                        AbstractDungeon.effectList.add(new CardFlashVfx(c, Color.GOLD));
                 }
 
             } else if (addLocation == AbstractDungeon.player.drawPile) {
                 AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(c, true, false));
-                if (c.hasTag(ThiefCardTags.RARE_FIND)) AbstractDungeon.effectList.add(new CardFlashVfx(c, Color.GOLD));
 
             } else if (addLocation == AbstractDungeon.player.discardPile) {
                 AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(c));
-                if (c.hasTag(ThiefCardTags.RARE_FIND)) AbstractDungeon.effectList.add(new CardFlashVfx(c, Color.GOLD));
-
             } else {
                 logger.info("The Super Duper Copy Action didn't find ether hand, deck or discard.");
             }

@@ -295,8 +295,14 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         URL url = ThiefMod.class.getProtectionDomain().getCodeSource().getLocation();
         finder.add(new File(url.toURI()));
         
-        ClassFilter filter = new AndClassFilter(new NotClassFilter(new InterfaceOnlyClassFilter()), new NotClassFilter(new AbstractClassFilter()), new ClassModifiersClassFilter(Modifier.PUBLIC), new CardFilter() // Make sure to edit the card filter to your own packaging structure. Cards outside of the filter will not be loaded.
+        ClassFilter filter = new AndClassFilter(
+                new NotClassFilter(new InterfaceOnlyClassFilter()),
+                new NotClassFilter(new AbstractClassFilter()),
+                new ClassModifiersClassFilter(Modifier.PUBLIC),
+                new CardFilter()
         );
+        // Make sure to edit the card filter to your own packaging structure.
+        // Cards outside of the filter will not be loaded.
         Collection<ClassInfo> foundClasses = new ArrayList<>();
         finder.findClasses(foundClasses, filter);
         
