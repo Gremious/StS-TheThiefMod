@@ -559,7 +559,7 @@
     "DESCRIPTION": "Flash green. NL thethief:Backstab: Flash red instead.",
     "UPGRADE_DESCRIPTION": "Flash green. NL thethief:Backstab: Flash red instead.",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]Test[] [#88888]Card,[] [#88888]for[] [#88888]testing[] [#88888]purposes[] [#88888]only.[]",
+      "[#FFEC79]Test[] [#FFEC79]Card,[] [#FFEC79]for[] [#FFEC79]testing[] [#FFEC79]purposes[] [#FFEC79]only.[]",
       "Flash green.",
       " NL thethief:Backstab: Flash red instead.",
       " NL thethief:Backstab: [#fa5555]Flash[] [#fa5555]red[] [#fa5555]instead.[]"
