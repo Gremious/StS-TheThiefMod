@@ -52,12 +52,12 @@ public abstract class AbstractStolenCard extends AbstractThiefCard {
                     default:
                         switch (type) {
                             case ATTACK:
-                                setBackgroundTexture("theThiefAssets/images/cardui/512/bg_attack_stolen_ironclad.png",
+                                setBackgroundTexture("theThiefAssets/images/cardui/512/bg_attack_stolen_silent.png",
                                         "theThiefAssets/images/cardui/1024/bg_attack_stolen_silent.png");
                                 break;
                             case SKILL:
-                                setBackgroundTexture("theThiefAssets/images/cardui/512/bg_skill_stolen_silent.png",
-                                        "theThiefAssets/images/cardui/1024/bg_skill_stolen_silent.png");
+                                setBackgroundTexture("theThiefAssets/images/cardui/512/bg_skill_stolen_silent_rare.png",
+                                        "theThiefAssets/images/cardui/1024/bg_skill_stolen_silent_rare.png");
                                 break;
                             case POWER:
                                 setBackgroundTexture("theThiefAssets/images/cardui/512/bg_power_stolen_silent.png",
@@ -68,11 +68,81 @@ public abstract class AbstractStolenCard extends AbstractThiefCard {
                 }
                 break;
             case IRONCLAD:
+                switch (subRarity) {
+                    case RARE:
+                        setBannerTexture("theThiefAssets/images/cardui/512/banner_rare.png",
+                                "theThiefAssets/images/cardui/1024/banner_rare.png");
+                        switch (type) {
+                            case ATTACK:
+                                setBackgroundTexture("theThiefAssets/images/cardui/512/bg_attack_stolen_ironclad.png",
+                                        "theThiefAssets/images/cardui/1024/bg_attack_stolen_ironclad.png");
+                                break;
+                            case SKILL:
+                                setBackgroundTexture("theThiefAssets/images/cardui/512/bg_skill_stolen_ironclad.png",
+                                        "theThiefAssets/images/cardui/1024/bg_skill_stolen_ironclad.png");
+                                break;
+                            case POWER:
+                                setBackgroundTexture("theThiefAssets/images/cardui/512/bg_power_stolen_ironclad.png",
+                                        "theThiefAssets/images/cardui/1024/bg_power_stolen_ironclad.png");
+                                break;
+                        }
+                        break;
+                    default:
+                        switch (type) {
+                            case ATTACK:
+                                setBackgroundTexture("theThiefAssets/images/cardui/512/bg_attack_stolen_ironclad.png",
+                                        "theThiefAssets/images/cardui/1024/bg_attack_stolen_ironclad.png");
+                                break;
+                            case SKILL:
+                                setBackgroundTexture("theThiefAssets/images/cardui/512/bg_skill_stolen_ironclad.png",
+                                        "theThiefAssets/images/cardui/1024/bg_skill_stolen_ironclad.png");
+                                break;
+                            case POWER:
+                                setBackgroundTexture("theThiefAssets/images/cardui/512/bg_power_stolen_ironclad.png",
+                                        "theThiefAssets/images/cardui/1024/bg_power_stolen_ironclad.png");
+                                break;
+                        }
+                        break;
+                }
                 break;
             case DEFECT:
+                switch (subRarity) {
+                    case RARE:
+                        setBannerTexture("theThiefAssets/images/cardui/512/banner_rare.png",
+                                "theThiefAssets/images/cardui/1024/banner_rare.png");
+                        switch (type) {
+                            case ATTACK:
+                                setBackgroundTexture("theThiefAssets/images/cardui/512/bg_attack_stolen_defect.png",
+                                        "theThiefAssets/images/cardui/1024/bg_attack_stolen_defect.png");
+                                break;
+                            case SKILL:
+                                setBackgroundTexture("theThiefAssets/images/cardui/512/bg_skill_stolen_defect.png",
+                                        "theThiefAssets/images/cardui/1024/bg_skill_stolen_defect.png");
+                                break;
+                            case POWER:
+                                setBackgroundTexture("theThiefAssets/images/cardui/512/bg_power_stolen_defect.png",
+                                        "theThiefAssets/images/cardui/1024/bg_power_stolen_defect.png");
+                                break;
+                        }
+                        break;
+                    default:
+                        switch (type) {
+                            case ATTACK:
+                                setBackgroundTexture("theThiefAssets/images/cardui/512/bg_attack_stolen_defect.png",
+                                        "theThiefAssets/images/cardui/1024/bg_attack_stolen_defect.png");
+                                break;
+                            case SKILL:
+                                setBackgroundTexture("theThiefAssets/images/cardui/512/bg_skill_stolen_defect.png",
+                                        "theThiefAssets/images/cardui/1024/bg_skill_stolen_defect.png");
+                                break;
+                            case POWER:
+                                setBackgroundTexture("theThiefAssets/images/cardui/512/bg_power_stolen_defect.png",
+                                        "theThiefAssets/images/cardui/1024/bg_power_stolen_defect.png");
+                                break;
+                        }
+                }
                 break;
         }
-        
         if (ThiefMod.hasMysticMod) {
             if (character == MysticEnum.MYSTIC_CLASS) {
             
