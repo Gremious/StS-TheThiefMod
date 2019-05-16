@@ -1,14 +1,12 @@
 package thiefmod.cards.abstracts;
 
 import blackrusemod.patches.TheServantEnum;
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.bard.characters.Bard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
-import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.CardFlashVfx;
 import mysticmod.patches.MysticEnum;
 import thiefmod.CardIgnore;
@@ -351,16 +349,6 @@ public abstract class AbstractStolenCard extends AbstractThiefCard {
                 return "theThiefAssets/images/cards/locked_power.png";
             default:
                 return "theThiefAssets/images/cards/locked_skill.png";
-        }
-    }
-    
-    @Override
-    public void update() {
-        super.update();
-        flashTimer -= Gdx.graphics.getDeltaTime();
-        if (flashTimer < 0.0F) {
-            flashTimer = 5.0F;
-            AbstractDungeon.effectList.add(new CardFlashVfx(this));
         }
     }
     
