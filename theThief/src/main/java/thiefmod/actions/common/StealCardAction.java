@@ -12,8 +12,8 @@ import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import thiefmod.actions.Util.DiscoverAndExhaustCard;
-import thiefmod.actions.Util.MakeSuperCopyAction;
+import thiefmod.actions.util.DiscoverAndExhaustCard;
+import thiefmod.actions.util.MakeSuperCopyAction;
 import thiefmod.cards.stolen.*;
 import thiefmod.cards.stolen.modSynergy.disciple.rareFind.StolenClock;
 import thiefmod.cards.stolen.modSynergy.halation.rareFind.StolenMail;
@@ -237,6 +237,19 @@ public class StealCardAction extends AbstractGameAction {
             }
         }
         //---
+        if (hasBard) {
+            /*
+            Stolen Credit: 1 (0) Mana: Gain 1 inspiration 100. (Ether Studied strike art or magnum opus art)
+            Stolen Song: 1 Choose any (non-4) note melody. Add a 0 cost card that plays that melody into your hand. Exhaust. (Inspiring song art)
+            Stolen Flute: 0 Apply 1 (2) Weak and 1 (2) Vulenrable to ALL enemies. (You can't play the flute very well.) (Doot art)
+            Stolen Life(?): 1 Gain 8 (10) temporary HP (Life Drain Art)
+            Gamble? : (Just gamble)
+    
+            //--
+            Rare:
+            Stolen Great Horn: Whenever you play a card, queue a wildcard note.
+            */
+        }
     }
 
     // Card pool of upgraded stolen cards.

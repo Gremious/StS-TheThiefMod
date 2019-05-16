@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import thiefmod.actions.Util.MakeSuperCopyAction;
+import thiefmod.actions.util.MakeSuperCopyAction;
 import thiefmod.util.TextureLoader;
 
 // Empty Base

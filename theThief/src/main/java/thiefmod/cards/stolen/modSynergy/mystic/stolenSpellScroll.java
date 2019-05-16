@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import mysticmod.MysticMod;
+import mysticmod.patches.MysticEnum;
 import thiefmod.CardNoSeen;
 import thiefmod.ThiefMod;
 import thiefmod.actions.common.playCardWithRandomTargestAction;
@@ -40,7 +41,7 @@ public class stolenSpellScroll extends AbstractStolenCard {
     // /STAT DECLARATION/
     
     public stolenSpellScroll() {
-        super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, );
+        super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, MysticEnum.MYSTIC_CLASS);
         magicNumber = baseMagicNumber = MAGIC;
         
     }

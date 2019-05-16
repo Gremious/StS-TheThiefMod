@@ -1,4 +1,4 @@
-package thiefmod.actions.Util;
+package thiefmod.actions.util;
 
 import basemod.BaseMod;
 import com.badlogic.gdx.graphics.Color;

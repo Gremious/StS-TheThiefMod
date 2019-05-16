@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import mysticmod.actions.SpellDiscoveryAction;
+import mysticmod.patches.MysticEnum;
 import thiefmod.CardNoSeen;
 import thiefmod.ThiefMod;
 import thiefmod.cards.abstracts.AbstractStolenCard;
@@ -36,7 +37,7 @@ public class stolenMysticalSpellbook extends AbstractStolenCard {
     // /STAT DECLARATION/
     
     public stolenMysticalSpellbook() {
-        super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, );
+        super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, MysticEnum.MYSTIC_CLASS);
         magicNumber = baseMagicNumber = MAGIC;
         
     }

@@ -6,11 +6,11 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import mysticmod.MysticMod;
+import mysticmod.patches.MysticEnum;
 import thiefmod.CardNoSeen;
 import thiefmod.ThiefMod;
-import thiefmod.actions.Util.DiscoverRandomFromArrayAction;
+import thiefmod.actions.util.DiscoverRandomFromArrayAction;
 import thiefmod.cards.abstracts.AbstractStolenCard;
-import thiefmod.patches.character.ThiefCardTags;
 
 import java.util.ArrayList;
 
@@ -40,7 +40,7 @@ public class stolenBookOfArte extends AbstractStolenCard {
     // /STAT DECLARATION/
     
     public stolenBookOfArte() {
-        super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, );
+        super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, MysticEnum.MYSTIC_CLASS);
         magicNumber = baseMagicNumber = MAGIC;
         
     }

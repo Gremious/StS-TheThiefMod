@@ -7,11 +7,10 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.CardNoSeen;
-import thiefmod.actions.Util.MakeSuperCopyAction;
-import thiefmod.actions.Util.getRandomCardFromAnyColor;
+import thiefmod.actions.util.MakeSuperCopyAction;
+import thiefmod.actions.util.getRandomCardFromAnyColor;
 import thiefmod.cards.abstracts.AbstractStolenCard;
 import thiefmod.patches.character.TheThiefEnum;
-import thiefmod.patches.character.ThiefCardTags;
 
 import java.util.ArrayList;
 

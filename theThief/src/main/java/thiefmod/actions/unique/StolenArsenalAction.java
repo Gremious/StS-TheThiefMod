@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.vfx.cardManip.CardFlashVfx;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import thiefmod.ThiefMod;
-import thiefmod.actions.Util.MakeSuperCopyAction;
+import thiefmod.actions.util.MakeSuperCopyAction;
 
 import java.util.ArrayList;
 
