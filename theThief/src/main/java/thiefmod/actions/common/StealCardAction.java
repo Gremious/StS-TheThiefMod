@@ -39,8 +39,8 @@ public class StealCardAction extends AbstractGameAction {
     public static final Logger logger = LogManager.getLogger(StealCardAction.class.getName());
     public static final UIStrings uiKeywordStrings = CardCrawlGame.languagePack.getUIString("theThief:MakeSuperCopyAction");
     public static final UIStrings uiStealStrings = CardCrawlGame.languagePack.getUIString("theThief:StealCardUtil");
-    public static final String KEYWORD_STRINGS[] = uiKeywordStrings.TEXT;
-    public static final String STEAL_STRINGS[] = uiStealStrings.TEXT;
+    private static final String[] KEYWORD_STRINGS = uiKeywordStrings.TEXT;
+    private static final String[] STEAL_STRINGS = uiStealStrings.TEXT;
 
     public boolean random;
     public boolean upgraded;
@@ -69,7 +69,6 @@ public class StealCardAction extends AbstractGameAction {
                 cardsToAdd = getRandomStolenCards(amount, true);
                 for (int i = 0; i < amount; i++) curseCounter();
                 for (int i = 0; i < copies; i++) addStolenCards();
-
                 cardsToAdd.clear();
             } else /*Discover*/ {
                 if (amount > 0) {

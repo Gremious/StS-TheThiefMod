@@ -337,6 +337,17 @@ public abstract class AbstractStolenCard extends AbstractThiefCard {
         }
     }
     
+    protected String loadLockedCardImage(CardType type) {
+        switch (type) {
+            case ATTACK:
+                return "theThiefAssets/images/cards/locked_attack.png";
+            case POWER:
+                return "theThiefAssets/images/cards/locked_power.png";
+            default:
+                return "theThiefAssets/images/cards/locked_skill.png";
+        }
+    }
+    
     @Override
     public void triggerWhenDrawn() {
         if (subRarity == CardRarity.RARE) {
