@@ -24,7 +24,7 @@ public class StolenAdvantage extends AbstractStolenCard {
     
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
-    public static final CardColor COLOR = CardColor.COLORLESS;
+    
     
     private static final int COST = 0;
     

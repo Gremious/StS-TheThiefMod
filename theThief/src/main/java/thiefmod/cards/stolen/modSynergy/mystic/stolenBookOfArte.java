@@ -31,7 +31,7 @@ public class stolenBookOfArte extends AbstractStolenCard {
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.ATTACK;
-    public static final CardColor COLOR = CardColor.COLORLESS;
+    
     
     private static final int COST = 2;
     
