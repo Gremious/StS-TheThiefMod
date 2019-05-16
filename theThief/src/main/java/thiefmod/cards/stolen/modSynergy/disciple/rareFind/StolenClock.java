@@ -44,6 +44,7 @@ public class StolenClock extends AbstractStolenCard {
     
     public StolenClock() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        setBannerTexture("theThiefAssets/images/512/special/rare_skill_banner.png", "theThiefAssets/images/1024/special/rare_skill_banner.png");
         this.exhaust = true;
     }
     

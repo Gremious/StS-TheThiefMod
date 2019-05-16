@@ -21,7 +21,7 @@ import thiefmod.patches.character.ThiefCardTags;
 
 public class MakeSuperCopyAction extends AbstractGameAction {
     public static final Logger logger = LogManager.getLogger(ThiefMod.class.getName());
-
+    
     private AbstractCard c;
     private CardGroup addLocation;
     private String keyword;
@@ -29,15 +29,26 @@ public class MakeSuperCopyAction extends AbstractGameAction {
     private boolean removeKeyword;
     public static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:MakeSuperCopyAction");
     public static final String KEYWORD_STRINGS[] = uiStrings.TEXT;
-
+    boolean tagStolen;
+    
     public MakeSuperCopyAction(AbstractCard c, final CardGroup addLocation) {
         this(c, null, false, addLocation);
     }
-
+    
     public MakeSuperCopyAction(AbstractCard c, final String keyword, final CardGroup addLocation) {
         this(c, keyword, false, addLocation);
     }
-
+    
+    public MakeSuperCopyAction(AbstractCard c, final String keyword, final CardGroup addLocation, boolean tagStolen) {
+        actionType = ActionType.CARD_MANIPULATION;
+        duration = Settings.ACTION_DUR_FAST;
+        
+        this.c = c.makeStatEquivalentCopy();
+        this.keyword = keyword;
+        this.addLocation = addLocation;
+        this.tagStolen = tagStolen;
+    }
+    
     public MakeSuperCopyAction(AbstractCard c, final String keyword, boolean removeKeyword, final CardGroup addLocation) {
         actionType = ActionType.CARD_MANIPULATION;
         duration = Settings.ACTION_DUR_FAST;
@@ -46,7 +57,7 @@ public class MakeSuperCopyAction extends AbstractGameAction {
         this.keyword = keyword;
         this.removeKeyword = removeKeyword;
     }
-
+    
     /**
      * Will not change the card if it already has/doesn't have the keyword, respectively of what you're using the act for.
      *
@@ -65,7 +76,7 @@ public class MakeSuperCopyAction extends AbstractGameAction {
         this.setCost = setCost;
         this.removeKeyword = removeKeyword;
     }
-
+    
     public void update() {
         if (duration == Settings.ACTION_DUR_FAST) {
             if (keyword != null) {
@@ -119,36 +130,35 @@ public class MakeSuperCopyAction extends AbstractGameAction {
                             logger.info("Adding " + c + " with Unplayable.");
                         }
                     }
-
                 }
             }
             c.initializeDescription();
-
+            
             AbstractDungeon.actionManager.addToTop(new SFXAction("CARD_OBTAIN"));
-
+            if (tagStolen) {
+                if (!c.hasTag(ThiefCardTags.STOLEN)) {
+                    c.tags.add(ThiefCardTags.STOLEN); // Add the stolen card tag
+                }
+            }
+            
             if (addLocation == AbstractDungeon.player.hand) {
                 if (AbstractDungeon.player.hand.size() < BaseMod.MAX_HAND_SIZE) {
                     AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(c));
-                    if (c.hasTag(ThiefCardTags.RARE_FIND))
-                        AbstractDungeon.effectList.add(new CardFlashVfx(c, Color.GOLD));
+                    if (c.hasTag(ThiefCardTags.RARE_FIND)) AbstractDungeon.effectList.add(new CardFlashVfx(c, Color.GOLD));
                 } else {
                     AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(c));
-                    if (c.hasTag(ThiefCardTags.RARE_FIND))
-                        AbstractDungeon.effectList.add(new CardFlashVfx(c, Color.GOLD));
+                    if (c.hasTag(ThiefCardTags.RARE_FIND)) AbstractDungeon.effectList.add(new CardFlashVfx(c, Color.GOLD));
                 }
-
             } else if (addLocation == AbstractDungeon.player.drawPile) {
                 AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(c, true, false));
                 if (c.hasTag(ThiefCardTags.RARE_FIND)) AbstractDungeon.effectList.add(new CardFlashVfx(c, Color.GOLD));
-
             } else if (addLocation == AbstractDungeon.player.discardPile) {
                 AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(c));
                 if (c.hasTag(ThiefCardTags.RARE_FIND)) AbstractDungeon.effectList.add(new CardFlashVfx(c, Color.GOLD));
-
             } else {
                 logger.info("The Super Duper Copy Action didn't find ether hand, deck or discard.");
             }
-
+            
             AbstractDungeon.player.hand.refreshHandLayout();
             AbstractDungeon.player.hand.glowCheck();
             logger.info("Final log. Super Copy Action should be done.");

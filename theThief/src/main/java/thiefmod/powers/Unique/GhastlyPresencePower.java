@@ -20,15 +20,15 @@ import thiefmod.util.TextureLoader;
 
 public class GhastlyPresencePower extends AbstractPower {
     public AbstractCreature source;
-
+    
     public static final String POWER_ID = ThiefMod.makeID("GhastlyPresencePower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     private static final Texture tex84 = TextureLoader.getTexture("theThiefAssets/images/powers/84/GhastlyPresencePower.png");
     private static final Texture tex32 = TextureLoader.getTexture("theThiefAssets/images/powers/32/GhastlyPresencePower.png");
-
-
+    private static int count;
+    
     public GhastlyPresencePower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         name = NAME;
         ID = POWER_ID;
@@ -36,15 +36,15 @@ public class GhastlyPresencePower extends AbstractPower {
         region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
         type = PowerType.BUFF;
         isTurnBased = false;
-
+        
         this.owner = owner;
         this.source = source;
-
+        
         this.amount = amount;
-
+        
         updateDescription();
     }
-
+    
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
         if (AbstractDungeon.player.cardsPlayedThisTurn <= 1
@@ -52,10 +52,14 @@ public class GhastlyPresencePower extends AbstractPower {
                 && card.hasTag(ThiefCardTags.BACKSTAB)) {
 
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, source, new ElusivePower(owner, source, amount), amount));
-
         }
     }
-
+    
+    @Override
+    public void atStartOfTurn() {
+        count = 0;
+    }
+    
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {

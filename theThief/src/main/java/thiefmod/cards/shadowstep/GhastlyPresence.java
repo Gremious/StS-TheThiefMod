@@ -10,6 +10,7 @@ import thiefmod.ThiefMod;
 import thiefmod.cards.abstracts.AbstractBackstabCard;
 import thiefmod.patches.character.AbstractCardEnum;
 import thiefmod.powers.Unique.GhastlyEssencePower;
+import thiefmod.powers.Unique.GhastlyPresencePower;
 
 public class GhastlyPresence extends AbstractBackstabCard {
     //implements StartupCard
@@ -47,7 +48,7 @@ public class GhastlyPresence extends AbstractBackstabCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        act(new ApplyPowerAction(p, p, new GhastlyEssencePower(p, p, magicNumber), magicNumber));
+        act(new ApplyPowerAction(p, p, new GhastlyPresencePower(p, p, magicNumber), magicNumber));
     }
     
     @Override
