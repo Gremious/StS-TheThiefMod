@@ -44,7 +44,6 @@ public class LouseAbuseEvent extends AbstractImageEvent {
                     case 0:
                     case 1:
                     case 2:
-                        AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float)(Settings.WIDTH / 2), (float)(Settings.HEIGHT / 2), new LouseBounty().makeCopy());
                         imageEventText.updateBodyText(DESCRIPTIONS[1]);
                         imageEventText.updateDialogOption(0, OPTIONS[4]);
                         imageEventText.clearRemainingOptions();
@@ -57,14 +56,18 @@ public class LouseAbuseEvent extends AbstractImageEvent {
                         imageEventText.updateBodyText(DESCRIPTIONS[4]);
                         imageEventText.updateDialogOption(0, OPTIONS[8]);
                         imageEventText.clearRemainingOptions();
-                        screenNum = 1;
+                        screenNum = 2;
                         break;
                 }
-                break;
             case 1:
+                AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float)(Settings.WIDTH / 2), (float)(Settings.HEIGHT / 2), new LouseBounty().makeCopy());
+            case 2:
                 if (i == 0) {
                     openMap();
                 }
+                break;
+            
+                
         }
     }
 }

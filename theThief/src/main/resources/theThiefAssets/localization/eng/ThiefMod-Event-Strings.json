@@ -18,7 +18,7 @@
   "theThief:BlackMarketTraderEvent": {
     "NAME": "Dark Market Trader",
     "DESCRIPTIONS": [
-      "@\"Psst.@ @Hey,@ @you.\"@ NL You see a hooded figure, masked in the shadows of an alleyway beckons you. NL #p\"You #plook #plike #pa #pflla' #pthat'd #pbe... #pinterested #pin #pmy #rgoods... #p@yeah.@ @.@ @.@ \"",
+      "@\"Psst.@ @Hey,@ @you.\"@ NL You see a hooded figure, masked in the shadows of an alleyway beckons you. NL #p@\"You@ #p@look@ #p@like@ #p@a@ #p@flla'@ #p@that'd@ #p@be...@ #p@interested@ #p@in@ #p@my@ #r@goods...@ #p@yeah.@ @.@ @.@ \"",
       "@Yesss,@ @yesss,@ @thank@ @youuuu.@ @.@ @.@",
       "You don't trust this shady figure, so you decide to leave."
     ],

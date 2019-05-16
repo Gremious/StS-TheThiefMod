@@ -65,7 +65,6 @@ public class StealCardAction extends AbstractGameAction {
     @Override
     public void update() {
         if (duration == Settings.ACTION_DUR_FAST) {
-
             if (random) {
                 cardsToAdd = getRandomStolenCards(amount, true);
                 for (int i = 0; i < amount; i++) curseCounter();
@@ -78,7 +77,7 @@ public class StealCardAction extends AbstractGameAction {
                     AbstractDungeon.actionManager.addToBottom(
                             new DiscoverAndExhaustCard(getRandomStolenCards(3, false), 3, copies));
                     curseCounter();
-                    return; // Don't tickDuration, So that we can keep spamming the discover screen == amount of cards requested.
+                    return; // Don't tickDuration, so that we can keep spamming the discover screen == amount of cards requested.
                 }
                 cardsToAdd.clear();
             }
@@ -210,13 +209,11 @@ public class StealCardAction extends AbstractGameAction {
 
             for (AbstractCard c : discipleCards) {
                 if (c != null) {
-
                     if (!c.cardID.equals("Accruing")) {
                         c.name = STEAL_STRINGS[5] + c.name;
                     } else {
                         c.name = STEAL_STRINGS[5] + STEAL_STRINGS[6];
                     }
-
                     stolenCards.addToTop(c);
                 }
             }
@@ -414,9 +411,7 @@ public class StealCardAction extends AbstractGameAction {
     // Grab random stolen cards
     private ArrayList<AbstractCard> getRandomStolenCards(int amount, boolean allowDuplicates) {
         ArrayList<AbstractCard> randomCards = new ArrayList<>();
-
         while (randomCards.size() < amount) { // Grab only the amount specified. While we don't have 'amount'...
-
             AbstractCard card = allStolenCards().getRandomCard(true); // Get a random upgraded/non-upgraded card.
             if (allowDuplicates || !randomCards.contains(card)) { // So long as we can get duplicates OR the card isn't a duplicate.
                 if (!card.hasTag(ThiefCardTags.STOLEN)) {
