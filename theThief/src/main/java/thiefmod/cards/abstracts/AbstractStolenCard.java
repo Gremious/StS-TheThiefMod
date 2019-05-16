@@ -52,7 +52,7 @@ public abstract class AbstractStolenCard extends AbstractThiefCard {
                     default:
                         switch (type) {
                             case ATTACK:
-                                setBackgroundTexture("theThiefAssets/images/cardui/512/bg_attack_stolen_silent.png",
+                                setBackgroundTexture("theThiefAssets/images/cardui/512/bg_attack_stolen_ironclad.png",
                                         "theThiefAssets/images/cardui/1024/bg_attack_stolen_silent.png");
                                 break;
                             case SKILL:
