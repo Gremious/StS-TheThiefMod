@@ -1,6 +1,7 @@
 package thiefmod.cards.abstracts;
 
 import basemod.helpers.TooltipInfo;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
@@ -22,14 +23,15 @@ public abstract class AbstractBackstabCard extends AbstractThiefCard {
     }
     
     public static boolean canBackstab() {
-        return AbstractDungeon.player.cardsPlayedThisTurn < 1 || AbstractDungeon.player.hasPower(BackstabPower.POWER_ID);
+        return AbstractDungeon.player.cardsPlayedThisTurn == 1 || AbstractDungeon.player.hasPower(BackstabPower.POWER_ID);
     }
     
     public abstract String flavortext();
     
+    
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
-    super.calculateCardDamage(mo);
+        super.calculateCardDamage(mo);
     }
     
     @Override

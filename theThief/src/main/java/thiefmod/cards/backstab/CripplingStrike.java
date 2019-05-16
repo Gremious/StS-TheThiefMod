@@ -11,6 +11,8 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import thiefmod.ThiefMod;
 import thiefmod.cards.abstracts.AbstractBackstabCard;
 import thiefmod.patches.character.AbstractCardEnum;
@@ -18,6 +20,7 @@ import thiefmod.patches.character.ThiefCardTags;
 
 public class CripplingStrike extends AbstractBackstabCard {
     // TEXT DECLARATION
+    public static final Logger logger = LogManager.getLogger(CripplingStrike.class.getName());
     
     public static final String ID = ThiefMod.makeID("CripplingStrike");
     public static final String IMG = "theThiefAssets/images/cards/beta/CripplingStrike.png";

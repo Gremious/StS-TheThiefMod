@@ -99,8 +99,8 @@
   },
   "theThief:Shadowstep": {
     "NAME": "Shadowstep",
-    "DESCRIPTION": "Shadowstep !M! time. NL Shuffle a copy of this card into your deck. Exhaust.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Shadowstep !M! time. NL Shuffle a copy of this card into your deck. Exhaust.",
+    "DESCRIPTION": "thethief:Shadowstep !M! time. NL Shuffle a copy of this card into your deck. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Innate. NL thethief:Shadowstep !M! time. NL Shuffle a copy of this card into your deck. Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]
@@ -155,8 +155,8 @@
   },
   "theThief:OneStepAhead": {
     "NAME": "One Step Ahead",
-    "DESCRIPTION": "If an enemy intends to attack, Shadowstep !M! time. If it intends to block, deal !D! damage !theThief:Magic! times instead.",
-    "UPGRADE_DESCRIPTION": "If an enemy intends to attack, Shadowstep !M! times. If it intends to block, deal !D! damage !theThief:Magic! times instead.",
+    "DESCRIPTION": "If an enemy intends to attack, thethief:Shadowstep !M! time. If it intends to block, deal !D! damage !theThief:Magic! times instead.",
+    "UPGRADE_DESCRIPTION": "If an enemy intends to attack, thethief:Shadowstep !M! times. If it intends to block, deal !D! damage !theThief:Magic! times instead.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]
@@ -204,20 +204,20 @@
   },
   "theThief:QuickThinking": {
     "NAME": "Quick Thinking",
-    "DESCRIPTION": "Shadowstep !theThief:Magic! time and draw !M! card.",
-    "UPGRADE_DESCRIPTION": "Shadowstep !theThief:Magic! time and draw !M! cards.",
+    "DESCRIPTION": "thethief:Shadowstep !theThief:Magic! time and draw !M! card.",
+    "UPGRADE_DESCRIPTION": "thethief:Shadowstep !theThief:Magic! time and draw !M! cards.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]",
-      "Shadowstep !theThief:Magic! time and draw !M! card.",
-      "Shadowstep !theThief:Magic! time and draw !M! cards.",
-      "Shadowstep !theThief:Magic! times and draw !M! card.",
-      "Shadowstep !theThief:Magic! times and draw !M! cards."
+      "thethief:Shadowstep !theThief:Magic! time and draw !M! card.",
+      "thethief:Shadowstep !theThief:Magic! time and draw !M! cards.",
+      "thethief:Shadowstep !theThief:Magic! times and draw !M! card.",
+      "thethief:Shadowstep !theThief:Magic! times and draw !M! cards."
     ]
   },
   "theThief:ShadowEvade": {
     "NAME": "Shadow Evade",
-    "DESCRIPTION": "Shadowstep !M! time. NL Gain !B! Block.",
-    "UPGRADE_DESCRIPTION": "Shadowstep !M! time. NL Gain !B! Block",
+    "DESCRIPTION": "thethief:Shadowstep !M! time. NL Gain !B! Block.",
+    "UPGRADE_DESCRIPTION": "thethief:Shadowstep !M! time. NL Gain !B! Block",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Nope![]"
     ]
@@ -312,8 +312,8 @@
   },
   "theThief:Multitask": {
     "NAME": "Multitask",
-    "DESCRIPTION": "Discard !theThief:Magic! cards. Shadowstep 1 time. NL thethief:Steal !M! cards.",
-    "UPGRADE_DESCRIPTION": "Discard !theThief:Magic! card. Shadowstep 1 time. NL thethief:Steal !M! cards.",
+    "DESCRIPTION": "Discard !theThief:Magic! cards. thethief:Shadowstep 1 time. NL thethief:Steal !M! cards.",
+    "UPGRADE_DESCRIPTION": "Discard !theThief:Magic! card. thethief:Shadowstep 1 time. NL thethief:Steal !M! cards.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]
@@ -354,16 +354,16 @@
   },
   "theThief:IAmEverywhere": {
     "NAME": "I Am Everywhere",
-    "DESCRIPTION": "Shadowstep X times.",
-    "UPGRADE_DESCRIPTION": "Shadowstep X times for each enemy in combat.",
+    "DESCRIPTION": "thethief:Shadowstep X times.",
+    "UPGRADE_DESCRIPTION": "thethief:Shadowstep X times for each enemy in combat.",
     "EXTENDED_DESCRIPTION": [
       "[#FEE130]Now[] [#FEE130]you're[] [#FEE130]just[] [#FEE130]showing[] [#FEE130]off.[]"
     ]
   },
   "theThief:MurderousIntent": {
     "NAME": "Murderous Intent",
-    "DESCRIPTION": "Shadowstep !theThief:Magic! time. NL Gain !M! Strength. NL At the end of your turn, lose !M! Strength.",
-    "UPGRADE_DESCRIPTION": "Shadowstep !theThief:Magic! time. NL Gain !M! Strength. NL At the end of your turn, lose !M! Strength.",
+    "DESCRIPTION": "thethief:Shadowstep !theThief:Magic! time. NL Gain !M! Strength. NL At the end of your turn, lose !M! Strength.",
+    "UPGRADE_DESCRIPTION": "thethief:Shadowstep !theThief:Magic! time. NL Gain !M! Strength. NL At the end of your turn, lose !M! Strength.",
     "EXTENDED_DESCRIPTION": [
       "[#fa5555]You[] [#fa5555]are[] [#fa5555]walking[] [#fa5555]a[] [#fa5555]thin[] [#fa5555]line.[]"
     ]
@@ -442,11 +442,11 @@
   },
   "theThief:PrecisePositioning": {
     "NAME": "Precise Positioning",
-    "DESCRIPTION": "Shadowstep !M! time. Next turn your attack damage is doubled. NL Refund !stslib:refund!. NL Ethereal.",
-    "UPGRADE_DESCRIPTION": "NL Shadowstep !M! time. Next turn your attack damage is doubled. NL Refund !stslib:refund!.",
+    "DESCRIPTION": "thethief:Shadowstep !M! time. Next turn your attack damage is doubled. NL Refund !stslib:refund!. NL Ethereal.",
+    "UPGRADE_DESCRIPTION": "NL thethief:Shadowstep !M! time. Next turn your attack damage is doubled. NL Refund !stslib:refund!.",
     "EXTENDED_DESCRIPTION": [
       "[#FEE130]A[] [#FEE130]VERY[] [#FEE130]precise[] [#FEE130]position.[]",
-      "Shadowstep !M!",
+      "thethief:Shadowstep !M!",
       " time. Next turn your attack damage is doubled. NL Refund !stslib:refund!. NL Ethereal.",
       " times. Next turn your attack damage is doubled. NL Refund !stslib:refund!. NL Ethereal.",
       " time. Next turn your attack damage is doubled. NL Refund !stslib:refund!.",
@@ -481,16 +481,16 @@
   },
   "theThief:Focused": {
     "NAME": "Focused",
-    "DESCRIPTION": "Shadowstep !M! time. NL thethief:Non-Backstab cards no longer break Elusive.",
-    "UPGRADE_DESCRIPTION": "Shadowstep !M! times. NL thethief:Non-Backstab cards no longer break Elusive.",
+    "DESCRIPTION": "thethief:Shadowstep !M! time. NL thethief:Non-Backstab cards no longer break Elusive.",
+    "UPGRADE_DESCRIPTION": "thethief:Shadowstep !M! times. NL thethief:Non-Backstab cards no longer break Elusive.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]
   },
   "theThief:ShadowMastery": {
     "NAME": "Shadow Mastery",
-    "DESCRIPTION": "The first time you thethief:Shadowstep in a turn, shadowstep twice.",
-    "UPGRADE_DESCRIPTION": "Innate. NL The first time you thethief:Shadowstep in a turn, shadowstep twice.",
+    "DESCRIPTION": "The first time you thethief:thethief:Shadowstep in a turn, thethief:Shadowstep twice.",
+    "UPGRADE_DESCRIPTION": "Innate. NL The first time you thethief:thethief:Shadowstep in a turn, thethief:Shadowstep twice.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]
@@ -513,11 +513,11 @@
   },
   "theThief:GhastlyPresence": {
     "NAME": "Ghastly Presence",
-    "DESCRIPTION": "If you trigger 2 thethief:Backstabs in a turn, Shadowstep !M! time",
-    "UPGRADE_DESCRIPTION": "If you trigger 2 thethief:Backstabs in a turn, Shadowstep !M! times.",
+    "DESCRIPTION": "If you trigger 2 thethief:Backstabs in a turn, thethief:Shadowstep !M! time",
+    "UPGRADE_DESCRIPTION": "If you trigger 2 thethief:Backstabs in a turn, thethief:Shadowstep !M! times.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Ghastly[] [#88888]Essence?[]",
-      "If you trigger 2 thethief:Backstabs in a turn, Shadowstep !M! ",
+      "If you trigger 2 thethief:Backstabs in a turn, thethief:Shadowstep !M! ",
       " time.",
       " times."
     ]
@@ -556,8 +556,14 @@
   },
   "theThief:testCard": {
     "NAME": "Test Card",
-    "DESCRIPTION": "a",
-    "UPGRADE_DESCRIPTION": "b"
+    "DESCRIPTION": "Flash green. NL thethief:Backstab: Flash red instead.",
+    "UPGRADE_DESCRIPTION": "Flash green. NL thethief:Backstab: Flash red instead.",
+    "EXTENDED_DESCRIPTION": [
+      "[#88888]Test[] [#88888]Card,[] [#88888]for[] [#88888]testing[] [#88888]purposes[] [#88888]only.[]",
+      "Flash green.",
+      " NL thethief:Backstab: Flash red instead.",
+      " NL thethief:Backstab: [#fa5555]Flash[] [#fa5555]red[] [#fa5555]instead.[]"
+    ]
   },
   "theThief:HotGossip": {
     "NAME": "HOT Gossip",
