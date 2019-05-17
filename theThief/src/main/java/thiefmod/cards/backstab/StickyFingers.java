@@ -55,7 +55,7 @@ public class StickyFingers extends AbstractBackstabCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (canBackstab()) {
+        if (canBackstabDesc()) {
             act(new StealCardAction(backstabNumber, 1, ADD_RANDOM, AbstractDungeon.player.hand, ADD_UPGRADED));
         } else {
             act(new DrawCardAction(p, magicNumber));

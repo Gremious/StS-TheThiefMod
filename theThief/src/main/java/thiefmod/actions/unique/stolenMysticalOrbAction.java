@@ -6,13 +6,10 @@ import com.megacrit.cardcrawl.actions.utility.QueueCardAction;
 import com.megacrit.cardcrawl.actions.utility.UnlimboAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.CardQueueItem;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import mysticmod.MysticMod;
-
-import java.util.Iterator;
 
 public class stolenMysticalOrbAction extends AbstractGameAction {
     private AbstractCard card;
@@ -58,9 +55,7 @@ public class stolenMysticalOrbAction extends AbstractGameAction {
             AbstractDungeon.actionManager.addToTop(new ExhaustSpecificCardAction(card, AbstractDungeon.player.limbo));
         } else {
             card.applyPowers();
-            if (!this.queueContains(this.card)) {// 32
-                AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(this.card, (AbstractMonster)this.target));// 33
-            }
+            AbstractDungeon.actionManager.addToTop(new QueueCardAction(card, target));
             AbstractDungeon.actionManager.addToTop(new UnlimboAction(card));
             if (!Settings.FAST_MODE) {
                 AbstractDungeon.actionManager.addToTop(new WaitAction(Settings.ACTION_DUR_MED));
@@ -69,23 +64,5 @@ public class stolenMysticalOrbAction extends AbstractGameAction {
                 AbstractDungeon.actionManager.addToTop(new WaitAction(Settings.ACTION_DUR_FAST));
             }
         }
-    }
-    
-    
-    private boolean queueContains(AbstractCard card) {
-        Iterator var2 = AbstractDungeon.actionManager.cardQueue.iterator();// 41
-        
-        CardQueueItem i;
-        do {
-            if (!var2.hasNext()) {
-                return false;// 46
-            }
-            
-            i = (CardQueueItem)var2.next();
-        } while(i.card != card);// 42
-        
-        return true;// 43
-        
-        // Yea that's how lazy I am.
     }
 }

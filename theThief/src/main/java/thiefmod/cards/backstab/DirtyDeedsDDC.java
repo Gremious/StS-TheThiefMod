@@ -54,7 +54,7 @@ public class DirtyDeedsDDC extends AbstractBackstabCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (canBackstab()) {
+        if (canBackstabDesc()) {
             act(new GreedAction(m, new DamageInfo(p, damage, damageTypeForTurn), backstabNumber));
         } else {
             act(new GreedAction(m, new DamageInfo(p, damage, damageTypeForTurn), magicNumber));

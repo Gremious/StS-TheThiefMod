@@ -2,8 +2,10 @@ package thiefmod.cards.abstracts;
 
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
+import com.megacrit.cardcrawl.actions.utility.UpdateCardDescriptionAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -60,13 +62,18 @@ public class AAAtestCard extends AbstractBackstabCard {
     
     @Override
     public void applyPowers() {
+        logger.info("Apply Powers triggered for text card. Calling super.");
         super.applyPowers();
-        if (canBackstab()) {
+        if (canBackstabDesc()) {
+            logger.info("Apply Powers triggered for canBackstab == true. It is " + canBackstabDesc());
             rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[2];
         } else {
+            logger.info("Apply Powers triggered for canBackstab == false. It is " + canBackstabDesc());
             rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[3];
         }
+        logger.info("Initialising description: " +  rawDescription);
         initializeDescription();
+        
     }
     
     @Override

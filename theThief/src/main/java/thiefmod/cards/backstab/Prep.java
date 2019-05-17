@@ -60,12 +60,7 @@ public class Prep extends AbstractBackstabCard {
     @Override
     public void applyPowers() {
         super.applyPowers();
-        System.out.println("APPLY POWERS TRIGGERED IN PREP");
-        System.out.println("canBackstab: " + canBackstab());
-        System.out.println("Cards played: " + AbstractDungeon.player.cardsPlayedThisTurn);
-        System.out.println("They are: " + AbstractDungeon.actionManager.cardsPlayedThisTurn);
-        
-        if (canBackstab()) {
+        if (canBackstabDesc()) {
             rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[2];
         } else {
             rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[3];

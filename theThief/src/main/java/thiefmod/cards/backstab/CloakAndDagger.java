@@ -65,7 +65,7 @@ public class CloakAndDagger extends AbstractBackstabCard {
     @Override
     public void applyPowers() {
         super.applyPowers();
-        if (canBackstab()) {
+        if (canBackstabDesc()) {
             target = CardTarget.ENEMY;
             rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[2];
         } else {
