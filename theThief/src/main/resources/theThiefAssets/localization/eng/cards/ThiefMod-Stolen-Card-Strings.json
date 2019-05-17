@@ -191,8 +191,8 @@
   },
   "theThief:stolenMysticalOrb": {
     "NAME": "Stolen Mystical Orb",
-    "DESCRIPTION": "Play a random Arte, then, a random Spell. NL Repeat 3 more times.",
-    "UPGRADE_DESCRIPTION": "Play a random Arte, then, a random Spell. NL Repeat 3 more times.",
+    "DESCRIPTION": "Play a random Spell, then, a random Arte !M! times.",
+    "UPGRADE_DESCRIPTION": "Play a random Spell, then, a random Arte !M! times.",
     "EXTENDED_DESCRIPTION": [
       "[#FEE130]Rare[] [#FEE130]Find:[]",
       "[#FEE130]A[] [#FEE130]mystical[] [#FEE130]item[] [#FEE130]of[] [#FEE130]great[] [#FEE130]power[], [#FEE130]entirely[] [#FEE130]in[] [#FEE130]the[] [#FEE130]wrong[] [#FEE130]hands.[]"

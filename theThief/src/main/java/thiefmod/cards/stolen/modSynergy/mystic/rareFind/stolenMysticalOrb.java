@@ -8,12 +8,10 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
-import com.megacrit.cardcrawl.vfx.cardManip.CardFlashVfx;
-import mysticmod.MysticMod;
 import mysticmod.patches.MysticEnum;
 import thiefmod.CardNoSeen;
 import thiefmod.ThiefMod;
-import thiefmod.actions.common.playCardWithRandomTargestAction;
+import thiefmod.actions.unique.stolenMysticalOrbAction;
 import thiefmod.cards.abstracts.AbstractStolenCard;
 import thiefmod.patches.character.ThiefCardTags;
 
@@ -38,10 +36,10 @@ public class stolenMysticalOrb extends AbstractStolenCard {
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
     private static final CardType TYPE = CardType.SKILL;
     
-    
     private static final int COST = 1;
     
     private static final int MAGIC = 4;
+    private static final int UPGRADE_MAGIC = 1;
     // /STAT DECLARATION/
     
     public stolenMysticalOrb() {
@@ -55,16 +53,14 @@ public class stolenMysticalOrb extends AbstractStolenCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.effectList.add(new BorderFlashEffect(mysticPurple));
-        for (int i = 0; i < magicNumber; i++) {
-            AbstractDungeon.actionManager.addToTop(new playCardWithRandomTargestAction(false, MysticMod.returnTrulyRandomSpell()));
-            AbstractDungeon.actionManager.addToTop(new playCardWithRandomTargestAction(false, MysticMod.returnTrulyRandomArte()));
-        }
+        AbstractDungeon.actionManager.addToTop(new stolenMysticalOrbAction(magicNumber));
     }
     
     // Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {
+            upgradeMagicNumber(UPGRADE_MAGIC);
             rawDescription = UPGRADE_DESCRIPTION;
             upgradeName();
             initializeDescription();
