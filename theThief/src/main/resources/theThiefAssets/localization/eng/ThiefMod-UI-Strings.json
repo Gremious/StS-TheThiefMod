@@ -2,7 +2,7 @@
   "theThief:TooltipNames": {
     "TEXT": [
       "Flavor Text",
-      "Synergy"
+      "#ySynergy"
     ]
   },
   "theThief:StealCardUtil": {

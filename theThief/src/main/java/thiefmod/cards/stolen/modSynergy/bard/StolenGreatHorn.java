@@ -3,6 +3,7 @@ package thiefmod.cards.stolen.modSynergy.bard;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.bard.cards.AbstractBardCard;
 import com.evacipated.cardcrawl.mod.bard.cards.GreaterMagicWeapon;
+import com.evacipated.cardcrawl.mod.bard.characters.Bard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -41,7 +42,7 @@ public class StolenGreatHorn extends AbstractStolenCard {
     public static final String IMG = loadLockedCardImage(TYPE);
     
     public StolenGreatHorn() {
-        super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, TheThiefEnum.THE_THIEF);
+        super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, Bard.Enums.BARD);
         magicNumber = baseMagicNumber = MAGIC;
         if (ThiefMod.hasBard) {
             portrait = new GreaterMagicWeapon().portrait;

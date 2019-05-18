@@ -24,6 +24,7 @@ public class PocketChange extends CustomRelic {
     
     public PocketChange() {
         super(ID, ImageMaster.loadImage(IMG), new Texture(OUTLINE), RelicTier.UNCOMMON, LandingSound.CLINK);
+        description = DESCRIPTIONS[0];
         
         tips.clear();
         tips.add(new PowerTip(name, description));
@@ -40,9 +41,9 @@ public class PocketChange extends CustomRelic {
                 AbstractDungeon.player, AbstractDungeon.player, new RefundCardCostPower(AbstractDungeon.player, AbstractDungeon.player, 1), 1));
     }
     
-    // Description
+  /*  // Description
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[1] + FontHelper.colorString(new MawBank().name, "y") + DESCRIPTIONS[2];
-    }
+        return DESCRIPTIONS[0] + FontHelper.colorString(new MawBank().name, "y") + DESCRIPTIONS[2];
+    }*/
 }
