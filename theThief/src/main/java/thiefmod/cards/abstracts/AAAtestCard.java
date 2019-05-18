@@ -2,6 +2,7 @@ package thiefmod.cards.abstracts;
 
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
+import com.megacrit.cardcrawl.actions.unique.AddCardToDeckAction;
 import com.megacrit.cardcrawl.actions.utility.UpdateCardDescriptionAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -12,6 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import thiefmod.ThiefMod;
+import thiefmod.cards.stolen.modSynergy.bard.StolenCredit;
 import thiefmod.patches.character.AbstractCardEnum;
 
 @Deprecated
@@ -56,7 +58,7 @@ public class AAAtestCard extends AbstractBackstabCard {
             logger.info("Can Backstab: " + canBackstab());
             flash(Color.RED);
         }
-        
+        act(new AddCardToDeckAction(new StolenCredit()));
         act(new MakeTempCardInHandAction(this.makeStatEquivalentCopy()));
     }
     

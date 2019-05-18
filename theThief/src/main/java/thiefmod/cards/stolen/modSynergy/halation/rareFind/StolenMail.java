@@ -41,7 +41,6 @@ public class StolenMail extends AbstractStolenCard {
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     
-    
     private static final int COST = 2;
     private static final int UPGRADE_COST = 1;
     
@@ -50,20 +49,21 @@ public class StolenMail extends AbstractStolenCard {
     
     public StolenMail() {
         super(ID, IMG, COST, TYPE, TARGET, CardRarity.RARE, TheThiefEnum.THE_THIEF);
-        if (letterCards.size() == 0) {
-            letterCards.add(new  LetterOfAdmiration());
-            letterCards.add(new LetterOfLove());
-            letterCards.add(new LetterOfRespect());
+        if (ThiefMod.hasHalation) {
+            if (letterCards.size() == 0) {
+                letterCards.add(new LetterOfAdmiration());
+                letterCards.add(new LetterOfLove());
+                letterCards.add(new LetterOfRespect());
+            }
         }
-        
         tags.add(ThiefCardTags.RARE_FIND);
-        this.exhaust = true;
+        exhaust = true;
     }
     
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.effectList.add(new BorderFlashEffect(Color.PINK));
-        AbstractDungeon.effectList.add(new WeakParticleEffect(this.current_x, this.current_y, 1.0f, 1.0f));
+        //AbstractDungeon.effectList.add(new WeakParticleEffect(this.current_x, this.current_y, 1.0f, 1.0f));
         for (AbstractCard c : letterCards) {
             act(new MakeSuperCopyAction(c, p.hand));
             act(new MakeSuperCopyAction(c, p.drawPile));

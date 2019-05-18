@@ -198,6 +198,11 @@
       "[#FEE130]A[] [#FEE130]mystical[] [#FEE130]item[] [#FEE130]of[] [#FEE130]great[] [#FEE130]power[], [#FEE130]entirely[] [#FEE130]in[] [#FEE130]the[] [#FEE130]wrong[] [#FEE130]hands.[]"
     ]
   },
+  "theThief:StolenCredit": {
+    "NAME": "Stolen Credit",
+    "DESCRIPTION": "Gain bard:Inspiration !theThief:Magic!",
+    "UPGRADE_DESCRIPTION": "Gain bard:Inspiration !theThief:Magic!"
+  },
   "theThief:StolenMail": {
     "NAME": "Stolen Mail",
     "DESCRIPTION": "Add all 3 letters to your hand, draw, and discard pile.",
@@ -209,8 +214,8 @@
   },
   "theThief:StolenClock": {
     "NAME": "Stolen Clock",
-    "DESCRIPTION": "Add a #yPattern #yShift to your hand. NL It cannot leave your hand.",
-    "UPGRADE_DESCRIPTION": "Add a #yPattern #yShift to your hand. NL It cannot leave your hand.",
+    "DESCRIPTION": "Add a thethief:pattern_shift to your hand. NL It cannot leave your hand.",
+    "UPGRADE_DESCRIPTION": "Add a thethief:pattern_shift to your hand. NL It cannot leave your hand.",
     "EXTENDED_DESCRIPTION": [
       "[#FEE130]Rare[] [#FEE130]Find:[]",
       "[#FEE130]You[] [#FEE130]can[] [#FEE130]feel[] [#FEE130]the[] [#FEE130]waves[] [#FEE130]of[] [#FEE130]time[] [#FEE130]flowing[] [#FEE130]through[] [#FEE130]it.[]"
