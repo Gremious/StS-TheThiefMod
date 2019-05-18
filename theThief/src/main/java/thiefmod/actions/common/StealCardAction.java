@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.UIStrings;
-import infinitespire.InfiniteSpire;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import thiefmod.actions.util.DiscoverAndExhaustCard;
@@ -38,7 +37,6 @@ import java.util.ArrayList;
 
 import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager;
 import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.player;
-import static infinitespire.patches.CardColorEnumPatch.CardColorPatch.INFINITE_BLACK;
 import static mysticmod.MysticMod.cantripsGroup;
 import static thiefmod.ThiefMod.*;
 
@@ -169,7 +167,7 @@ public class StealCardAction extends AbstractGameAction {
             customMysticCards.add(new stolenSpellScroll());
             customMysticCards.add(new stolenArteScroll());
             customMysticCards.add(new stolenMysticalSpellbook());
-            customMysticCards.add(new stolenBookOfArte());
+            customMysticCards.add(new stolenBoxOfWeapons());
             customMysticCards.add(new stolenMagicCantrip());
             customMysticCards.add(new stolenBagOfMagicCantrips());
             

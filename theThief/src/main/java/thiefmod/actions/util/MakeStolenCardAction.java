@@ -1,6 +1,7 @@
 package thiefmod.actions.util;
 
 import basemod.BaseMod;
+import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -125,6 +126,25 @@ public class MakeStolenCardAction extends AbstractGameAction {
                 }
             }
             c.initializeDescription();
+            
+            if (c instanceof CustomCard){
+                ((CustomCard) c).setOrbTexture("theThiefAssets/images/cardui/512/card_thief_gray_orb.png",
+                        "theThiefAssets/images/cardui/1024/card_thief_gray_orb.png");;
+                switch (c.type) {
+                    case ATTACK:
+                        ((CustomCard) c).setBackgroundTexture("theThiefAssets/images/cardui/512/bg_attack_stolen_thief.png",
+                                "theThiefAssets/images/cardui/1024/bg_attack_stolen_thief.png");
+                        break;
+                    case SKILL:
+                        ((CustomCard) c).setBackgroundTexture("theThiefAssets/images/cardui/512/bg_skill_stolen_thief.png",
+                                "theThiefAssets/images/cardui/1024/bg_skill_stolen_thief.png");
+                        break;
+                    case POWER:
+                        ((CustomCard) c).setBackgroundTexture("theThiefAssets/images/cardui/512/bg_power_stolen_thief.png",
+                                "theThiefAssets/images/cardui/1024/bg_power_stolen_thief.png");
+                        break;
+                }
+            }
             
             AbstractDungeon.actionManager.addToTop(new SFXAction("CARD_OBTAIN"));
             

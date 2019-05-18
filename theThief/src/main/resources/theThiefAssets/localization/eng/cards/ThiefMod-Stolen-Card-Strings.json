@@ -174,10 +174,10 @@
     "DESCRIPTION": "Discover !M! random Spell. NL It costs 0 this turn.",
     "UPGRADE_DESCRIPTION": "Discover !M! random Spells. NL They costs 0 this turn."
   },
-  "theThief:stolenBookOfArte": {
-    "NAME": "Stolen Book of Arte",
-    "DESCRIPTION": "Discover !M! random Arte.",
-    "UPGRADE_DESCRIPTION": "Discover !M! random Artes."
+  "theThief:stolenBoxOfWeapons": {
+    "NAME": "Stolen Box of Weapons",
+    "DESCRIPTION": "Discover !M! random Arte. NL It costs 0 this turn.",
+    "UPGRADE_DESCRIPTION": "Discover !M! random Artes. NL They costs 0 this turn."
   },
   "theThief:stolenMagicCantrip": {
     "NAME": "Stolen Magic Cantrip",

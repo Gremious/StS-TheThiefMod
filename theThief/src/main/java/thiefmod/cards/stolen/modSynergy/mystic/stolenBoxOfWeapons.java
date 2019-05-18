@@ -6,6 +6,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import mysticmod.MysticMod;
+import mysticmod.cards.BladeMaster;
+import mysticmod.cards.Snowball;
 import mysticmod.patches.MysticEnum;
 import thiefmod.CardNoSeen;
 import thiefmod.ThiefMod;
@@ -15,13 +17,11 @@ import thiefmod.cards.abstracts.AbstractStolenCard;
 import java.util.ArrayList;
 
 @CardNoSeen
-public class stolenBookOfArte extends AbstractStolenCard {
+public class stolenBoxOfWeapons extends AbstractStolenCard {
     // TEXT DECLARATION
     
-    public static final String ID = ThiefMod.makeID("stolenBookOfArte");
+    public static final String ID = ThiefMod.makeID("stolenBoxOfWeapons");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    
-    public static final String IMG = "theThiefAssets/images/cards/beta/Attack.png";
     
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
@@ -32,17 +32,17 @@ public class stolenBookOfArte extends AbstractStolenCard {
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.ATTACK;
     
-    
     private static final int COST = 2;
     
     private static final int MAGIC = 1;
     private static final int UPGRADED_MAGIC = 2;
     // /STAT DECLARATION/
     
-    public stolenBookOfArte() {
+    public static final String IMG = (ThiefMod.hasMysticMod ? BladeMaster.IMG_PATH : loadLockedCardImage(TYPE));
+    
+    public stolenBoxOfWeapons() {
         super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, MysticEnum.MYSTIC_CLASS);
         magicNumber = baseMagicNumber = MAGIC;
-        
     }
     
     @Override
@@ -52,7 +52,7 @@ public class stolenBookOfArte extends AbstractStolenCard {
             threeRandomArtes.add(MysticMod.returnTrulyRandomArte());
             threeRandomArtes.add(MysticMod.returnTrulyRandomArte());
             threeRandomArtes.add(MysticMod.returnTrulyRandomArte());
-            act(new DiscoverRandomFromArrayAction(threeRandomArtes));
+            act(new DiscoverRandomFromArrayAction(threeRandomArtes, false, 3, true));
             threeRandomArtes.clear();
         }
     }

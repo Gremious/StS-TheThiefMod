@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
+import mysticmod.cards.Snowball;
 import mysticmod.patches.MysticEnum;
 import thiefmod.CardNoSeen;
 import thiefmod.ThiefMod;
@@ -24,8 +25,6 @@ public class stolenMagicCantrip extends AbstractStolenCard {
     public static final String ID = ThiefMod.makeID("stolenMagicCantrip");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     
-    public static final String IMG = "theThiefAssets/images/cards/beta/Attack.png";
-    
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     private ArrayList<AbstractCard> artesGroup = new ArrayList<>();
     // /TEXT DECLARATION/
@@ -40,6 +39,8 @@ public class stolenMagicCantrip extends AbstractStolenCard {
     
     private static final int MAGIC = 1;
     // /STAT DECLARATION/
+    
+    public static final String IMG = (ThiefMod.hasMysticMod ? Snowball.IMG_PATH : loadLockedCardImage(TYPE));
     
     public stolenMagicCantrip() {
         super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, MysticEnum.MYSTIC_CLASS);

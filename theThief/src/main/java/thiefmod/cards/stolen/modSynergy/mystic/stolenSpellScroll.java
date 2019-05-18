@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import mysticmod.MysticMod;
+import mysticmod.cards.Fireball;
 import mysticmod.cards.Snowball;
 import mysticmod.patches.MysticEnum;
 import thiefmod.CardNoSeen;
@@ -35,7 +36,7 @@ public class stolenSpellScroll extends AbstractStolenCard {
     private static final int MAGIC = 1;
     // /STAT DECLARATION/
     
-    public static final String IMG = (ThiefMod.hasMysticMod ? Snowball.IMG_PATH : loadLockedCardImage(TYPE));
+    public static final String IMG = (ThiefMod.hasMysticMod ? Fireball.ALTERNATE_IMG_PATH : loadLockedCardImage(TYPE));
     
     public stolenSpellScroll() {
         super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, MysticEnum.MYSTIC_CLASS);

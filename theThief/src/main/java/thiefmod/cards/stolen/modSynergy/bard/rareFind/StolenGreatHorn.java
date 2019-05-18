@@ -32,15 +32,12 @@ public class StolenGreatHorn extends AbstractStolenCard {
     
     
     // STAT DECLARATION
-    
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
     
     private static final int COST = 2;
     private static final int UPGRADE_COST = 1;
-    
     private static final int MAGIC = 2;
-    
     // /STAT DECLARATION/
     
     public static final String IMG = loadLockedCardImage(TYPE);

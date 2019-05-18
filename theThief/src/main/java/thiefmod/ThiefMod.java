@@ -274,7 +274,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         if (hasHalation) BaseMod.addCard(new StolenMail());
         if (hasMysticMod) {
             BaseMod.addCard(new stolenArteScroll());
-            BaseMod.addCard(new stolenBookOfArte());
+            BaseMod.addCard(new stolenBoxOfWeapons());
             
             BaseMod.addCard(new stolenMagicCantrip());
             BaseMod.addCard(new stolenBagOfMagicCantrips());
