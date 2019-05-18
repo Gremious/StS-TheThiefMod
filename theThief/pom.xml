@@ -83,7 +83,7 @@
             <artifactId>bard</artifactId>
             <version>1.0.0</version>
             <scope>system</scope>
-            <systemPath>${Steam.path}/common/SlayTheSpire/mods/Bard.jar</systemPath>
+            <systemPath>${Steam.path}/workshop/content/646570/1744254855/Bard.jar</systemPath>
         </dependency>
         <!--black cards-->
         <dependency>

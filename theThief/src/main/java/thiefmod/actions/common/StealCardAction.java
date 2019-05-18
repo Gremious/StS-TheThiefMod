@@ -17,6 +17,9 @@ import thiefmod.actions.util.MakeStolenCardAction;
 import thiefmod.actions.util.MakeSuperCopyAction;
 import thiefmod.cards.stolen.*;
 import thiefmod.cards.stolen.modSynergy.bard.StolenCredit;
+import thiefmod.cards.stolen.modSynergy.bard.StolenEssence;
+import thiefmod.cards.stolen.modSynergy.bard.StolenFlute;
+import thiefmod.cards.stolen.modSynergy.bard.StolenSong;
 import thiefmod.cards.stolen.modSynergy.disciple.rareFind.StolenClock;
 import thiefmod.cards.stolen.modSynergy.halation.rareFind.StolenMail;
 import thiefmod.cards.stolen.modSynergy.mystic.rareFind.stolenMysticalOrb;
@@ -240,11 +243,14 @@ public class StealCardAction extends AbstractGameAction {
         //---
         if (hasBard) {
             stolenCards.addToTop(new StolenCredit());
+            stolenCards.addToTop(new StolenEssence());
+            stolenCards.addToTop(new StolenFlute());
+            stolenCards.addToTop(new StolenSong());
             
             /*
             Stolen Song: 1 Choose any (non-4) note melody. Add a 0 cost card that plays that melody into your hand. Exhaust. (Inspiring song art)
             Stolen Flute: 0 Apply 1 (2) Weak and 1 (2) Vulenrable to ALL enemies. (You can't play the flute very well.) (Doot art)
-            Stolen Life(?): 1 Gain 8 (10) temporary HP (Life Drain Art)
+            Stolen Essence(?): 1 Gain 8 (10) temporary HP (Life Drain Art)
             Gamble? : (Just gamble)
     
             //--

@@ -203,10 +203,30 @@
     "DESCRIPTION": "Gain bard:Inspiration !theThief:Magic!",
     "UPGRADE_DESCRIPTION": "Gain bard:Inspiration !theThief:Magic!"
   },
+  "theThief:StolenVestments": {
+    "NAME": "Stolen Vestments",
+    "DESCRIPTION": "Gain !M! Temporary_HP",
+    "UPGRADE_DESCRIPTION": "Gain !M! Temporary_HP"
+  },
+  "theThief:StolenFlute": {
+    "NAME": "Stolen Flute",
+    "DESCRIPTION": "Apply !M! Weak and !M! Vulnerable to ALL enemies.",
+    "UPGRADE_DESCRIPTION": "Apply !M! Weak and !M! Vulnerable to ALL enemies."
+  },
+  "theThief:StolenSong": {
+    "NAME": "Stolen Song",
+    "DESCRIPTION": "Perform any bard:Melody.",
+    "UPGRADE_DESCRIPTION": "Perform any bard:Melody."
+  },
+  "theThief:StolenGreatHorn": {
+    "NAME": "Stolen Great Horn",
+    "DESCRIPTION": "At the start of each turn, bard:Queue !M! [WildNote] .",
+    "UPGRADE_DESCRIPTION": "At the start of each turn, bard:Queue !M! [WildNote] ."
+  },
   "theThief:StolenMail": {
     "NAME": "Stolen Mail",
-    "DESCRIPTION": "Add all 3 letters to your hand, draw, and discard pile.",
-    "UPGRADE_DESCRIPTION": "Add all 3 letters to your hand, draw, and discard pile.",
+    "DESCRIPTION": "Add the letters of admiration, love and respect to your hand, draw, and discard piles.",
+    "UPGRADE_DESCRIPTION": "Add the letters of admiration, love and respect to your hand, draw, and discard piles.",
     "EXTENDED_DESCRIPTION": [
       "[#FEE130]Rare[] [#FEE130]Find:[]",
       "[#FEE130]These[] [#FEE130]are[] [#FEE130]addressed[] [#FEE130]to[] [#FEE130]someone[] [#FEE130]very[] [#FEE130]important...[]"
