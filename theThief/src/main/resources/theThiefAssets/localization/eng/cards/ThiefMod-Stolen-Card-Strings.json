@@ -165,7 +165,7 @@
     "UPGRADE_DESCRIPTION": "Play a random Spell."
   },
   "theThief:stolenArteScroll": {
-    "NAME": "Stolen Arte",
+    "NAME": "Stolen Magical Weapon",
     "DESCRIPTION": "Play a random Arte and Exhaust it.",
     "UPGRADE_DESCRIPTION": "Play a random Arte."
   },

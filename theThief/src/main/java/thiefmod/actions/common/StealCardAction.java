@@ -165,7 +165,7 @@ public class StealCardAction extends AbstractGameAction {
             ArrayList<AbstractCard> mysticCards = new ArrayList<>();
             
             customMysticCards.add(new stolenSpellScroll());
-            customMysticCards.add(new stolenArteScroll());
+            customMysticCards.add(new stolenMagicalWeapon());
             customMysticCards.add(new stolenMysticalSpellbook());
             customMysticCards.add(new stolenBoxOfWeapons());
             customMysticCards.add(new stolenMagicCantrip());
