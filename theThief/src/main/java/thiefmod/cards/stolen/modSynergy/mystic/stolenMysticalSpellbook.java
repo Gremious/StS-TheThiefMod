@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import mysticmod.actions.SpellDiscoveryAction;
 import mysticmod.cards.Snowball;
+import mysticmod.cards.TomeOfSpells;
 import mysticmod.patches.MysticEnum;
 import thiefmod.CardNoSeen;
 import thiefmod.ThiefMod;
@@ -35,7 +36,7 @@ public class stolenMysticalSpellbook extends AbstractStolenCard {
     private static final int UPGRADED_MAGIC = 2;
     // /STAT DECLARATION/
     
-    public static final String IMG = (ThiefMod.hasMysticMod ? Snowball.IMG_PATH : loadLockedCardImage(TYPE));
+    public static final String IMG = (ThiefMod.hasMysticMod ? TomeOfSpells.IMG_PATH : loadLockedCardImage(TYPE));
     
     public stolenMysticalSpellbook() {
         super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, MysticEnum.MYSTIC_CLASS);
