@@ -41,6 +41,6 @@
       "Pattern Shift",
       "pattern_shift"
     ],
-    "DESCRIPTION": "Make sure the first element in the NAMES is the same as your PROPER_NAME. The rest is to match keywords like the single word keyword."
+    "DESCRIPTION": "A 0 cost card which shifts the enemy to their next turn."
   }
 ]

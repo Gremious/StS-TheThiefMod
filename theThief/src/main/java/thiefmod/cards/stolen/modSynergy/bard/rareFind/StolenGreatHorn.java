@@ -1,5 +1,6 @@
-package thiefmod.cards.stolen.modSynergy.bard;
+package thiefmod.cards.stolen.modSynergy.bard.rareFind;
 
+import basemod.helpers.TooltipInfo;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.bard.cards.AbstractBardCard;
 import com.evacipated.cardcrawl.mod.bard.cards.GreaterMagicWeapon;
@@ -14,6 +15,9 @@ import thiefmod.cards.abstracts.AbstractStolenCard;
 import thiefmod.patches.character.TheThiefEnum;
 import thiefmod.powers.Unique.StolenGreatHornPower;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class StolenGreatHorn extends AbstractStolenCard {
     
     // TEXT DECLARATION
@@ -23,7 +27,7 @@ public class StolenGreatHorn extends AbstractStolenCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    
+    public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
     // /TEXT DECLARATION/
     
     
@@ -42,7 +46,7 @@ public class StolenGreatHorn extends AbstractStolenCard {
     public static final String IMG = loadLockedCardImage(TYPE);
     
     public StolenGreatHorn() {
-        super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, Bard.Enums.BARD);
+        super(ID, IMG, COST, TYPE, TARGET, CardRarity.RARE, Bard.Enums.BARD);
         magicNumber = baseMagicNumber = MAGIC;
         if (ThiefMod.hasBard) {
             portrait = new GreaterMagicWeapon().portrait;
@@ -61,6 +65,13 @@ public class StolenGreatHorn extends AbstractStolenCard {
         } else {
             return super.getPortraitImage();
         }
+    }
+    
+    @Override
+    public List<TooltipInfo> getCustomTooltips() {
+        List<TooltipInfo> tips = new ArrayList<>();
+        tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[0], EXTENDED_DESCRIPTION[1]));
+        return tips;
     }
     
     @Override

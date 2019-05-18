@@ -11,7 +11,7 @@
   },
   "theThief:StolenMomentum": {
     "NAME": "Stolen Momentum",
-    "DESCRIPTION": "Draw !M! cards, then choose 1 card to discard.",
+    "DESCRIPTION": "Draw !M! cards. NL Choose 1 card to discard.",
     "UPGRADE_DESCRIPTION": "Draw !M! cards."
   },
   "theThief:StolenArtifice": {
@@ -26,17 +26,17 @@
   },
   "theThief:StolenRitual": {
     "NAME": "Stolen Ritual",
-    "DESCRIPTION": "Lose 2 hp, gain !M! gold.",
-    "UPGRADE_DESCRIPTION": "Lose 2 hp, gain !M! gold.",
+    "DESCRIPTION": "Lose 2 hp. NL Gain !M! Gold.",
+    "UPGRADE_DESCRIPTION": "Lose 2 hp. NL Gain !M! Gold.",
     "EXTENDED_DESCRIPTION[]": [
       "CA-CAW!",
       "Cough."
     ]
   },
   "theThief:StolenTechnique": {
-    "NAME": "Stolen Technique",
-    "DESCRIPTION": "Add a random card to your hand from any color. It costs 0 this turn.",
-    "UPGRADE_DESCRIPTION": "Add a random card to your hand from any color. It costs 0 this turn."
+    "NAME": "Stolen Identity",
+    "DESCRIPTION": "Add a random card to your hand from any color. NL It costs 0 this turn.",
+    "UPGRADE_DESCRIPTION": "Add a random card to your hand from any color. NL It costs 0 this turn."
   },
   "theThief:StolenChange": {
     "NAME": "Stolen Change",
@@ -45,8 +45,8 @@
   },
   "theThief:StolenBlades": {
     "NAME": "Stolen Blades",
-    "DESCRIPTION": "Add !M! shivs to your hand.",
-    "UPGRADE_DESCRIPTION": "Add !M! shivs to your hand."
+    "DESCRIPTION": "Add !M! Shivs to your hand.",
+    "UPGRADE_DESCRIPTION": "Add !M! Shivs to your hand."
   },
   "theThief:StolenWire": {
     "NAME": "Stolen Wire",
@@ -221,7 +221,11 @@
   "theThief:StolenGreatHorn": {
     "NAME": "Stolen Great Horn",
     "DESCRIPTION": "At the start of each turn, bard:Queue !M! [WildNote] .",
-    "UPGRADE_DESCRIPTION": "At the start of each turn, bard:Queue !M! [WildNote] ."
+    "UPGRADE_DESCRIPTION": "At the start of each turn, bard:Queue !M! [WildNote] .",
+    "EXTENDED_DESCRIPTION": [
+      "[#FEE130]Rare[] [#FEE130]Find:[]",
+      "[#FEE130]A[] [#FEE130]magical[] [#FEE130]weapon[] [#FEE130]of[] [#FEE130]immense[] [#FEE130]magnitude.[] [#FEE130]Capable[] [#FEE130]of[] [#FEE130]creating[] [#FEE130]very[] [#fa5555]physical[] [#FEE130]songs.[]"
+    ]
   },
   "theThief:StolenMail": {
     "NAME": "Stolen Mail",

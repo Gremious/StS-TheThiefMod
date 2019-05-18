@@ -1,5 +1,6 @@
 package thiefmod.cards.stolen.modSynergy.mystic.rareFind;
 
+import basemod.helpers.TooltipInfo;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -16,6 +17,7 @@ import thiefmod.cards.abstracts.AbstractStolenCard;
 import thiefmod.patches.character.ThiefCardTags;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @CardNoSeen
 public class stolenMysticalOrb extends AbstractStolenCard {
@@ -28,7 +30,7 @@ public class stolenMysticalOrb extends AbstractStolenCard {
     public static final String IMG = "theThiefAssets/images/cards/beta/Attack.png";
     
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    private ArrayList<AbstractCard> artesGroup = new ArrayList<>();
+    public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
     // /TEXT DECLARATION/
     // STAT DECLARATION
     
@@ -54,6 +56,13 @@ public class stolenMysticalOrb extends AbstractStolenCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.effectList.add(new BorderFlashEffect(mysticPurple));
         AbstractDungeon.actionManager.addToTop(new stolenMysticalOrbAction(magicNumber));
+    }
+    
+    @Override
+    public List<TooltipInfo> getCustomTooltips() {
+        List<TooltipInfo> tips = new ArrayList<>();
+        tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[0], EXTENDED_DESCRIPTION[1]));
+        return tips;
     }
     
     // Upgraded stats.

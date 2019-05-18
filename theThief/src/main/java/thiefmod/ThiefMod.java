@@ -93,7 +93,7 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
         if (hasDisciple) {
             logger.info("Detected the Disciple");
         }
-        hasServant = Loader.isModLoaded("StS-BlackRuse");
+        hasServant = Loader.isModLoaded("BlackRuseMod");
         if (hasServant) {
             logger.info("Detected the Servant");
         }

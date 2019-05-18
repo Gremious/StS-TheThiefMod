@@ -32,9 +32,9 @@ public class StolenToxins extends AbstractStolenCard {
     private static final CardType TYPE = CardType.SKILL;
     
     
-    private static final int COST = 1;
+    private static final int COST = 0;
     
-    private static final int MAGIC = 5;
+    private static final int MAGIC = 4;
     private static final int UPGRADED_PLUS_MAGIC = 2;
     // /STAT DECLARATION/
     
