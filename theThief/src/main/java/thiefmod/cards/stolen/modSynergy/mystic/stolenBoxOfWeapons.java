@@ -30,7 +30,7 @@ public class stolenBoxOfWeapons extends AbstractStolenCard {
     
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.SELF;
-    private static final CardType TYPE = CardType.ATTACK;
+    private static final CardType TYPE = CardType.SKILL;
     
     private static final int COST = 2;
     

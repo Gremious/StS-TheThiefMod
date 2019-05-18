@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
+import mysticmod.cards.Daze;
 import mysticmod.patches.MysticEnum;
 import thiefmod.CardNoSeen;
 import thiefmod.ThiefMod;
@@ -26,9 +27,6 @@ public class stolenMysticalOrb extends AbstractStolenCard {
     private Color mysticPurple = new Color(152.0F, 34.0F, 171.0F, 1.0F);
     public static final String ID = ThiefMod.makeID("stolenMysticalOrb");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    
-    public static final String IMG = "theThiefAssets/images/cards/beta/Attack.png";
-    
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
     // /TEXT DECLARATION/
@@ -44,6 +42,7 @@ public class stolenMysticalOrb extends AbstractStolenCard {
     private static final int UPGRADE_MAGIC = 1;
     // /STAT DECLARATION/
     
+    public static final String IMG = (ThiefMod.hasMysticMod ? Daze.ALTERNATE_IMG_PATH : loadLockedCardImage(TYPE));
     public stolenMysticalOrb() {
         super(ID, IMG, COST, TYPE, TARGET, CardRarity.RARE, MysticEnum.MYSTIC_CLASS);
         magicNumber = baseMagicNumber = MAGIC;

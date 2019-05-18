@@ -7,13 +7,11 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
-import mysticmod.cards.Daze;
-import mysticmod.cards.Snowball;
+import mysticmod.cards.ComboCaster;
 import mysticmod.patches.MysticEnum;
 import thiefmod.CardNoSeen;
 import thiefmod.ThiefMod;
 import thiefmod.cards.abstracts.AbstractStolenCard;
-import thiefmod.patches.character.ThiefCardTags;
 
 import java.util.ArrayList;
 
@@ -33,20 +31,18 @@ public class stolenMagicCantrip extends AbstractStolenCard {
     
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.SELF;
-    private static final CardType TYPE = CardType.ATTACK;
-    
+    private static final CardType TYPE = CardType.SKILL;
     
     private static final int COST = 0;
     
     private static final int MAGIC = 1;
     // /STAT DECLARATION/
     
-    public static final String IMG = (ThiefMod.hasMysticMod ? Daze.ALTERNATE_IMG_PATH : loadLockedCardImage(TYPE));
+    public static final String IMG = (ThiefMod.hasMysticMod ? ComboCaster.IMG_PATH : loadLockedCardImage(TYPE));
     
     public stolenMagicCantrip() {
         super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, MysticEnum.MYSTIC_CLASS);
         magicNumber = baseMagicNumber = MAGIC;
-        
     }
     
     @Override
