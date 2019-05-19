@@ -192,11 +192,15 @@ public class DiscoverCardAction extends AbstractGameAction {
                 discoveredCards.addToTop(disCard);
                 disCard.current_x = -1000.0f * Settings.scale;
                 if (costForTurn != null) disCard.setCostForTurn(costForTurn);
-                if (AbstractDungeon.player.hand.size() < BaseMod.MAX_HAND_SIZE) {
-                    AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(disCard, Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f));
-                } else {
-                    AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(disCard, Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f));
+                
+                for (int i = 0; i < copies; i++) {
+                    if (AbstractDungeon.player.hand.size() < BaseMod.MAX_HAND_SIZE) {
+                        AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(disCard.makeStatEquivalentCopy(), Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f));
+                    } else {
+                        AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(disCard.makeStatEquivalentCopy(), Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f));
+                    }
                 }
+                
                 AbstractDungeon.cardRewardScreen.discoveryCard = null;
             }
             retrieveCard = true;
