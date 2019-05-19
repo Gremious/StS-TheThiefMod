@@ -45,7 +45,6 @@ public class StealCardAction extends AbstractGameAction {
     public int copies;
     
     private int rollRare = AbstractDungeon.cardRandomRng.random(99);
-    //private int rollBlack = AbstractDungeon.cardRandomRng.random(99);
     
     private CardGroup cardsToAdd = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
     
@@ -239,105 +238,6 @@ public class StealCardAction extends AbstractGameAction {
             rareFindsUpgraded.addToTop(upgradedCopy);
         }
     }
-    /*
-    private static CardGroup blackCards;
-    
-    static {
-        blackCards = new CardGroup(StolenEnum.STOLEN_CARDS);
-        
-        if (hasHubris || hasInfiniteSpire || hasReplayTheSpire) {
-            ArrayList<AbstractCard> blackCardsArray = new ArrayList<>();
-            for (AbstractCard c : CardLibrary.getAllCards()) {
-                if (c.color == INFINITE_BLACK){
-                
-                }
-            }
-            if (hasHubris) {
-                blackCardsArray.add(CardLibrary.getCopy("hubris:Fate"));
-                blackCardsArray.add(CardLibrary.getCopy("hubris:InfiniteBlow"));
-                blackCardsArray.add(CardLibrary.getCopy("hubris:Rewind"));
-            }
-            
-            if (hasInfiniteSpire) {
-                blackCardsArray.add(CardLibrary.getCopy("infinitespire:Collect"));
-                blackCardsArray.add(CardLibrary.getCopy("infinitespire:DeathsTouch"));
-                blackCardsArray.add(CardLibrary.getCopy("infinitespire:Execution"));
-                blackCardsArray.add(CardLibrary.getCopy("infinitespire:FinalStrike"));
-                blackCardsArray.add(CardLibrary.getCopy("infinitespire:Fortify"));
-                blackCardsArray.add(CardLibrary.getCopy("infinitespire:FutureSight"));
-                blackCardsArray.add(CardLibrary.getCopy("infinitespire:Gouge"));
-                blackCardsArray.add(CardLibrary.getCopy("infinitespire:Menacing"));
-                blackCardsArray.add(CardLibrary.getCopy("infinitespire:NeuralNetwork"));
-                blackCardsArray.add(CardLibrary.getCopy("infinitespire:Punishment"));
-                blackCardsArray.add(CardLibrary.getCopy("infinitespire:TheBestDefense"));
-                blackCardsArray.add(CardLibrary.getCopy("infinitespire:UltimateForm"));
-            }
-            
-            if (hasReplayTheSpire) {
-                blackCardsArray.add(CardLibrary.getCopy("ReplayTheSpireMod:Chaos Vortex"));
-                blackCardsArray.add(CardLibrary.getCopy("Replay:Dark Deal"));
-                //                    blackCards.add(CardLibrary.getCopy("ReplayTheSpireMod:Dark Transmutation"));
-                //                    blackCards.add(CardLibrary.getCopy("ReplayTheSpireMod:Echo Chamber"));
-                blackCardsArray.add(CardLibrary.getCopy("ReplayTheSpireMod:Echoes of Time"));
-                blackCardsArray.add(CardLibrary.getCopy("Replay:Fractal Strike"));
-                blackCardsArray.add(CardLibrary.getCopy("ReplayTheSpireMod:Haul"));
-                blackCardsArray.add(CardLibrary.getCopy("ReplayTheSpireMod:??????????????????????"));
-            }
-            
-            for (AbstractCard c : blackCardsArray) {
-                if (c != null) {
-                    if (c.cardID.equals("infinitespire:Collect")) {
-                        c.name = STEAL_STRINGS[5] + STEAL_STRINGS[7];
-                    } else if (c.cardID.equals("infinitespire:Fortify")) {
-                        c.name = STEAL_STRINGS[5] + STEAL_STRINGS[8];
-                    } else if (c.cardID.equals("infinitespire:Gouge")) {
-                        c.name = STEAL_STRINGS[5] + STEAL_STRINGS[9];
-                    } else if (c.cardID.equals("infinitespire:Menacing")) {
-                        c.name = STEAL_STRINGS[5] + STEAL_STRINGS[10];
-                    } else if (c.cardID.equals("infinitespire:TheBestDefense")) {
-                        c.name = STEAL_STRINGS[5] + STEAL_STRINGS[11];
-                    } else if (c.cardID.equals("ReplayTheSpireMod:Echoes of Time")) {
-                        c.name = STEAL_STRINGS[5] + STEAL_STRINGS[12];
-                    } else {
-                        c.name = STEAL_STRINGS[5] + c.name;
-                    }
-                    blackCards.addToTop(c);
-                }
-            }
-        }
-    }
-    
-    private static CardGroup blackCardsUpgraded;
-    
-    static {
-        blackCardsUpgraded = new CardGroup(StolenEnum.STOLEN_CARDS);
-        for (AbstractCard c : blackCards.group) {
-            AbstractCard upgradedCopy = c.makeCopy();
-            upgradedCopy.upgrade();
-            
-            
-            if (upgradedCopy.cardID.equals("infinitespire:Collect")) {
-                upgradedCopy.name = STEAL_STRINGS[5] + STEAL_STRINGS[7];
-            } else if (upgradedCopy.cardID.equals("infinitespire:Fortify")) {
-                upgradedCopy.name = STEAL_STRINGS[5] + STEAL_STRINGS[8];
-            } else if (upgradedCopy.cardID.equals("infinitespire:Gouge")) {
-                upgradedCopy.name = STEAL_STRINGS[5] + STEAL_STRINGS[9];
-            } else if (upgradedCopy.cardID.equals("infinitespire:Menacing")) {
-                upgradedCopy.name = STEAL_STRINGS[5] + STEAL_STRINGS[10];
-            } else if (upgradedCopy.cardID.equals("infinitespire:TheBestDefense")) {
-                upgradedCopy.name = STEAL_STRINGS[5] + STEAL_STRINGS[11];
-            } else if (upgradedCopy.cardID.equals("ReplayTheSpireMod:Echoes of Time")) {
-                upgradedCopy.name = STEAL_STRINGS[5] + STEAL_STRINGS[12];
-            } else {
-                upgradedCopy.name = STEAL_STRINGS[5] + upgradedCopy.name;
-            }
-            
-            blackCardsUpgraded.addToTop(upgradedCopy);
-        }
-    }
-    
-    */
-    // ========================
     
     // A final group of the cards to return.
     private CardGroup allStolenCards() {
@@ -352,12 +252,6 @@ public class StealCardAction extends AbstractGameAction {
             } else {
                 return rareFinds;
             }
-       /* } else if ((hasHubris || hasInfiniteSpire || hasReplayTheSpire) && rollBlack < 8) {
-            if (upgraded || AbstractDungeon.player.hasPower(IllGottenGainsPower.POWER_ID)) {
-                return blackCardsUpgraded;
-            } else {
-                return blackCards;
-            }*/
         } else {
             if (upgraded || AbstractDungeon.player.hasPower(IllGottenGainsPower.POWER_ID)) {
                 return stolenCardsUpgraded;
