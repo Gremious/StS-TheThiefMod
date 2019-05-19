@@ -29,40 +29,23 @@ public class MakeStolenCardAction extends AbstractGameAction {
     public static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:MakeSuperCopyAction");
     public static final String KEYWORD_STRINGS[] = uiStrings.TEXT;
     
+    public static final UIStrings uiStealStrings = CardCrawlGame.languagePack.getUIString("theThief:StealCardUtil");
+    private static final String[] STEAL_STRINGS = uiStealStrings.TEXT;
+    
     public MakeStolenCardAction(AbstractCard c, final CardGroup addLocation) {
-        this(c, null, false, addLocation);
-    }
-    
-    public MakeStolenCardAction(AbstractCard c, final String keyword, final CardGroup addLocation) {
-        this(c, keyword, false, addLocation);
-    }
-    
-    public MakeStolenCardAction(AbstractCard c, final String keyword, boolean removeKeyword, final CardGroup addLocation) {
-        actionType = ActionType.CARD_MANIPULATION;
-        duration = Settings.ACTION_DUR_FAST;
-        this.c = c.makeStatEquivalentCopy();
-        this.addLocation = addLocation;
-        this.keyword = keyword;
-        this.removeKeyword = removeKeyword;
-    }
-    
-    /**
-     * Will not change the card if it already has/doesn't have the keyword, respectively of what you're using the act for.
-     *
-     * @param c             the card that needs to be Copied.
-     * @param keyword       can be "Exhaust", "Ethereal", "Unplayable". Use KEYWORD_STRINGS[] from theThief:MakeSuperCopyAction in UIString;
-     * @param setCost       Will change the card cost.
-     * @param removeKeyword Will remove the keyword instead of adding it.
-     * @param addLocation   Hand, Draw and Discard pile groups from AbstractDungeon.player
-     */
-    public MakeStolenCardAction(AbstractCard c, final String keyword, Integer setCost, boolean removeKeyword, final CardGroup addLocation) {
         actionType = ActionType.CARD_MANIPULATION;
         duration = Settings.ACTION_DUR_FAST;
         this.c = c;
         this.addLocation = addLocation;
-        this.keyword = keyword;
+    }
+    
+    public MakeStolenCardAction(AbstractCard c, Integer setCost, final CardGroup addLocation) {
+        actionType = ActionType.CARD_MANIPULATION;
+        duration = Settings.ACTION_DUR_FAST;
+        this.c = c;
+        this.addLocation = addLocation;
+        
         this.setCost = setCost;
-        this.removeKeyword = removeKeyword;
     }
     
     public void update() {
@@ -72,64 +55,22 @@ public class MakeStolenCardAction extends AbstractGameAction {
                 c.tags.add(ThiefCardTags.STOLEN);
             }
             
-            if (keyword != null) {
-                if (keyword.equals(KEYWORD_STRINGS[0])) {
-                    if (removeKeyword) {
-                        if (c.exhaust) {
-                            c.exhaust = false;
-                            if (setCost != null) c.cost = setCost;
-                            c.rawDescription = c.rawDescription.replaceAll(KEYWORD_STRINGS[1], "");
-                            logger.info("Adding " + c + " with REMOVED Exhaust.");
-                        }
-                    } else {
-                        if (!c.exhaust) {
-                            c.exhaust = true;
-                            if (setCost != null) c.cost = setCost;
-                            c.rawDescription = c.rawDescription + KEYWORD_STRINGS[2];
-                            logger.info("Adding " + c + " with Exhaust.");
-                        }
-                    }
-                } else if (keyword.equals(KEYWORD_STRINGS[3])) {
-                    if (removeKeyword) {
-                        if (c.isEthereal) {
-                            c.isEthereal = false;
-                            if (setCost != null) c.cost = setCost;
-                            c.rawDescription = c.rawDescription.replaceAll(KEYWORD_STRINGS[4], "");
-                            logger.info("Adding " + c + " with REMOVED Ethereal.");
-                        }
-                    } else {
-                        if (!c.isEthereal) {
-                            c.isEthereal = true;
-                            if (setCost != null) c.cost = setCost;
-                            c.rawDescription = c.rawDescription + KEYWORD_STRINGS[5];
-                            logger.info("Adding " + c + " with Ethereal.");
-                        }
-                    }
-                } else if (keyword.equals(KEYWORD_STRINGS[6])) { // makeStatEquivCopy does preserve cost, but not "Unplayable." description.
-                    if (removeKeyword) {
-                        if (c.cost == -2) {
-                            if (setCost != null) {
-                                c.cost = setCost;
-                            } else {
-                                c.cost = 1;
-                            }
-                            c.rawDescription = c.rawDescription.replaceAll(KEYWORD_STRINGS[7], "");
-                            logger.info("Adding " + c + " with REMOVED Unplayable.");
-                        }
-                    } else {
-                        if (c.cost != -2) {
-                            c.cost = -2;
-                            c.rawDescription = KEYWORD_STRINGS[8] + c.rawDescription;
-                            logger.info("Adding " + c + " with Unplayable.");
-                        }
-                    }
-                }
+            if (!c.exhaust) {
+                c.exhaust = true;
+                if (setCost != null) c.cost = setCost;
+                c.rawDescription = c.rawDescription + KEYWORD_STRINGS[2];
+                logger.info("Adding " + c + " with Exhaust.");
             }
+            
+            if (!c.name.startsWith(STEAL_STRINGS[5])) {
+                c.name = STEAL_STRINGS[5] + c.name;
+            }
+            
             c.initializeDescription();
             
-            if (c instanceof CustomCard){
+            if (c instanceof CustomCard) {
                 ((CustomCard) c).setOrbTexture("theThiefAssets/images/cardui/512/card_thief_gray_orb.png",
-                        "theThiefAssets/images/cardui/1024/card_thief_gray_orb.png");;
+                        "theThiefAssets/images/cardui/1024/card_thief_gray_orb.png");
                 switch (c.type) {
                     case ATTACK:
                         ((CustomCard) c).setBackgroundTexture("theThiefAssets/images/cardui/512/bg_attack_stolen_thief.png",
@@ -146,6 +87,10 @@ public class MakeStolenCardAction extends AbstractGameAction {
                 }
             }
             
+            if (!c.hasTag(ThiefCardTags.STOLEN)) {
+                c.tags.add(ThiefCardTags.STOLEN);
+            }
+            
             AbstractDungeon.actionManager.addToTop(new SFXAction("CARD_OBTAIN"));
             
             if (addLocation == AbstractDungeon.player.hand) {
@@ -158,6 +103,9 @@ public class MakeStolenCardAction extends AbstractGameAction {
                 AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(c, true, false));
             } else if (addLocation == AbstractDungeon.player.discardPile) {
                 AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(c));
+            } else if (addLocation != null) {
+                addLocation.addToTop(c);
+                logger.info("Adding to a custom array");
             } else {
                 logger.info("The Super Duper Copy (Steal) Action didn't find ether hand, deck or discard.");
             }

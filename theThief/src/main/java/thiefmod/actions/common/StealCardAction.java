@@ -5,11 +5,9 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
-import com.megacrit.cardcrawl.localization.UIStrings;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import thiefmod.actions.util.DiscoverAndAddExhaustToCardAction;
@@ -28,7 +26,6 @@ import thiefmod.cards.stolen.rareFind.StolenArsenal;
 import thiefmod.cards.stolen.rareFind.StolenBlood;
 import thiefmod.cards.stolen.rareFind.StolenCore;
 import thiefmod.cards.stolen.rareFind.StolenShadow;
-import thiefmod.patches.character.ThiefCardTags;
 import thiefmod.powers.Unique.FleetingGuiltPower;
 import thiefmod.powers.Unique.IllGottenGainsPower;
 
@@ -41,10 +38,6 @@ import static thiefmod.ThiefMod.*;
 
 public class StealCardAction extends AbstractGameAction {
     public static final Logger logger = LogManager.getLogger(StealCardAction.class.getName());
-    public static final UIStrings uiKeywordStrings = CardCrawlGame.languagePack.getUIString("theThief:MakeSuperCopyAction");
-    public static final UIStrings uiStealStrings = CardCrawlGame.languagePack.getUIString("theThief:StealCardUtil");
-    private static final String[] KEYWORD_STRINGS = uiKeywordStrings.TEXT;
-    private static final String[] STEAL_STRINGS = uiStealStrings.TEXT;
     
     public boolean random;
     public boolean upgraded;
@@ -52,9 +45,9 @@ public class StealCardAction extends AbstractGameAction {
     public int copies;
     
     private int rollRare = AbstractDungeon.cardRandomRng.random(99);
-    private int rollBlack = AbstractDungeon.cardRandomRng.random(99);
+    //private int rollBlack = AbstractDungeon.cardRandomRng.random(99);
     
-    private ArrayList<AbstractCard> cardsToAdd = new ArrayList<>();
+    private CardGroup cardsToAdd = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
     
     public StealCardAction(int amount, int copies, boolean random, CardGroup location, boolean upgraded) {
         actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
@@ -78,7 +71,7 @@ public class StealCardAction extends AbstractGameAction {
                 if (amount > 0) {
                     amount--;
                     AbstractDungeon.actionManager.addToBottom(
-                            new DiscoverAndAddExhaustToCardAction(getRandomStolenCards(3, false), 3, copies));
+                            new DiscoverAndAddExhaustToCardAction(getRandomStolenCards(3, false).group, 3, copies));
                     curseCounter();
                     return; // Don't tickDuration, so that we can keep spamming the discover screen == amount of cards requested.
                 }
@@ -90,9 +83,9 @@ public class StealCardAction extends AbstractGameAction {
     
     // Add the stolen cards to whatever location your heart desires.
     private void addStolenCards() {
-        for (AbstractCard c : cardsToAdd) {
+        for (AbstractCard c : cardsToAdd.group) {
             logger.info("addStolenCards() adding card " + c + " to " + location.toString());
-            AbstractDungeon.actionManager.actions.add(new MakeStolenCardAction(c, KEYWORD_STRINGS[0], location));
+            AbstractDungeon.actionManager.actions.add(new MakeStolenCardAction(c, location));
         }
     }
     
@@ -144,99 +137,50 @@ public class StealCardAction extends AbstractGameAction {
         //---
         
         if (hasConspire) {
-            ArrayList<AbstractCard> conspireCards = new ArrayList<>();
-            
-            conspireCards.add(CardLibrary.getCopy("conspire:Banana"));
-            conspireCards.add(CardLibrary.getCopy("conspire:Treasure"));
-            
-            for (AbstractCard c : conspireCards) {
-                if (c != null) {
-                    c.name = STEAL_STRINGS[5] + c.name;
-                    stolenCards.addToTop(c);
-                }
-            }
+            stolenCards.addToTop(CardLibrary.getCopy("conspire:Banana"));
+            stolenCards.addToTop(CardLibrary.getCopy("conspire:Treasure"));
         }
         
         //---
         
         if (hasMysticMod) {
-            ArrayList<AbstractCard> customMysticCards = new ArrayList<>();
-            ArrayList<AbstractCard> mysticCards = new ArrayList<>();
+            stolenCards.addToTop(new stolenSpellScroll());
+            stolenCards.addToTop(new stolenMagicalWeapon());
+            stolenCards.addToTop(new stolenMysticalSpellbook());
+            stolenCards.addToTop(new stolenBoxOfWeapons());
+            stolenCards.addToTop(new stolenMagicCantrip());
+            stolenCards.addToTop(new stolenBagOfMagicCantrips());
             
-            customMysticCards.add(new stolenSpellScroll());
-            customMysticCards.add(new stolenMagicalWeapon());
-            customMysticCards.add(new stolenMysticalSpellbook());
-            customMysticCards.add(new stolenBoxOfWeapons());
-            customMysticCards.add(new stolenMagicCantrip());
-            customMysticCards.add(new stolenBagOfMagicCantrips());
-            
-            mysticCards.add(CardLibrary.getCopy("mysticmod:MagicMissile"));
-            mysticCards.add(cantripsGroup.get(AbstractDungeon.cardRandomRng.random(cantripsGroup.size() - 1)));
-            
-            for (AbstractCard c : mysticCards) {
-                if (c != null) {
-                    c.name = STEAL_STRINGS[5] + c.name;
-                    stolenCards.addToTop(c);
-                }
-            }
-            for (AbstractCard c : customMysticCards) {
-                stolenCards.addToTop(c);
-            }
+            stolenCards.addToTop(CardLibrary.getCopy("mysticmod:MagicMissile"));
+            stolenCards.addToTop(cantripsGroup.get(AbstractDungeon.cardRandomRng.random(cantripsGroup.size() - 1)));
         }
         
         //---
         
         if (hasHalation) {
-            ArrayList<AbstractCard> halationCards = new ArrayList<>();
-            
-            halationCards.add(CardLibrary.getCopy("halation:LetterOfAdmiration"));
-            halationCards.add(CardLibrary.getCopy("halation:LetterOfRespect"));
-            halationCards.add(CardLibrary.getCopy("halation:LetterOfLove"));
-            
-            for (AbstractCard c : halationCards) {
-                if (c != null) {
-                    c.name = STEAL_STRINGS[5] + c.name;
-                    stolenCards.addToTop(c);
-                }
-            }
+            stolenCards.addToTop(CardLibrary.getCopy("halation:LetterOfAdmiration"));
+            stolenCards.addToTop(CardLibrary.getCopy("halation:LetterOfRespect"));
+            stolenCards.addToTop(CardLibrary.getCopy("halation:LetterOfLove"));
         }
+        
+        //---
         
         if (hasDisciple) {
-            ArrayList<AbstractCard> discipleCards = new ArrayList<>();
-            
-            discipleCards.add(CardLibrary.getCopy("Echoward"));
-            discipleCards.add(CardLibrary.getCopy("SlimeSpray"));
-            discipleCards.add(CardLibrary.getCopy("Accruing"));
-            
-            for (AbstractCard c : discipleCards) {
-                if (c != null) {
-                    if (!c.cardID.equals("Accruing")) {
-                        c.name = STEAL_STRINGS[5] + c.name;
-                    } else {
-                        c.name = STEAL_STRINGS[5] + STEAL_STRINGS[6];
-                    }
-                    stolenCards.addToTop(c);
-                }
-            }
+            stolenCards.addToTop(CardLibrary.getCopy("Echoward"));
+            stolenCards.addToTop(CardLibrary.getCopy("SlimeSpray"));
+            stolenCards.addToTop(CardLibrary.getCopy("Accruing"));
         }
         
+        //---
+        
         if (hasServant) {
-            ArrayList<AbstractCard> servantCards = new ArrayList<>();
-            
-            servantCards.add(CardLibrary.getCopy("Contraction"));
-            servantCards.add(CardLibrary.getCopy("Deadline"));
-            servantCards.add(CardLibrary.getCopy("Misdirection"));
-            servantCards.add(CardLibrary.getCopy("Moondial"));
-            
-            for (AbstractCard c : servantCards) {
-                if (c != null) {
-                    if (!c.cardID.equals("Misdirection")) {
-                        c.name = STEAL_STRINGS[5] + c.name;
-                    }
-                    stolenCards.addToTop(c);
-                }
-            }
+            stolenCards.addToTop(CardLibrary.getCopy("Contraction"));
+            stolenCards.addToTop(CardLibrary.getCopy("Deadline"));
+            stolenCards.addToTop(CardLibrary.getCopy("Misdirection"));
+            stolenCards.addToTop(CardLibrary.getCopy("Moondial"));
         }
+        
+        //---
         
         if (hasBard) {
             stolenCards.addToTop(new StolenCredit());
@@ -281,6 +225,7 @@ public class StealCardAction extends AbstractGameAction {
         if (hasHalation) rareFinds.addToTop(new StolenMail());
         if (hasDisciple) rareFinds.addToTop(new StolenClock());
         if (hasServant) rareFinds.addToTop(new StolenKnives());
+        if (hasBard) rareFinds.addToTop(new StolenGreatHorn());
     }
     
     // Card pool of upgraded rare finds
@@ -398,7 +343,7 @@ public class StealCardAction extends AbstractGameAction {
     private CardGroup allStolenCards() {
         logger.info("Rare fnd roll: " + rollRare + " - " + (rollRare < 15));
         logger.info("Do you have super secret strong card mods? " + (hasHubris || hasInfiniteSpire || hasReplayTheSpire));
-        logger.info("Did you roll low enough to get them? " + rollBlack + " - " + (rollBlack < 8));
+        //    logger.info("Did you roll low enough to get them? " + rollBlack + " - " + (rollBlack < 8));
         logger.info("Standard Checks: upgraded or has power? " + (upgraded || AbstractDungeon.player.hasPower(IllGottenGainsPower.POWER_ID)));
         
         if (rollRare < 15) {
@@ -423,17 +368,21 @@ public class StealCardAction extends AbstractGameAction {
     }
     
     // Grab random stolen cards
-    private ArrayList<AbstractCard> getRandomStolenCards(int amount, boolean allowDuplicates) {
-        ArrayList<AbstractCard> randomCards = new ArrayList<>();
-        while (randomCards.size() < amount) { // Grab only the amount specified. While we don't have 'amount'...
+    private CardGroup getRandomStolenCards(int amount, boolean allowDuplicates) {
+        ArrayList<AbstractCard> temp = new ArrayList<>();
+        CardGroup randomCards = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+        
+        while (temp.size() < amount) { // Grab only the amount specified. While we don't have 'amount'...
             AbstractCard card = allStolenCards().getRandomCard(true); // Get a random upgraded/non-upgraded card.
-            if (allowDuplicates || !randomCards.contains(card)) { // So long as we can get duplicates OR the card isn't a duplicate.
-                if (!card.hasTag(ThiefCardTags.STOLEN)) {
-                    card.tags.add(ThiefCardTags.STOLEN); // Add the stolen card tag
-                }
-                randomCards.add(card); // And add it to the array
+            if (allowDuplicates || !temp.contains(card)) { // So long as we can get duplicates OR the card isn't a duplicate.
+                temp.add(card); // And add it to the array
             }
         }
+        
+        for (AbstractCard c : temp) {
+            actionManager.addToBottom(new MakeStolenCardAction(c, randomCards));
+        }
+        
         return randomCards;
     }
     
