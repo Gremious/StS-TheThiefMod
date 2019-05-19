@@ -67,8 +67,8 @@
   },
   "theThief:Ransack": {
     "NAME": "Ransack",
-    "DESCRIPTION": "Choose 1 out of 3 thethief:Stolen cards and add !M! copies of it to your hand.",
-    "UPGRADE_DESCRIPTION": "Choose 1 out of 3 thethief:Stolen cards and add !M! copies of it to your hand.",
+    "DESCRIPTION": "thethief:Discover a thethief:Stolen card. NL Add !M! copies of it to your hand.",
+    "UPGRADE_DESCRIPTION": "thethief:Discover a thethief:Stolen card. NL Add !M! copies of it to your hand.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]ransack[]",
       "Choose 1 out of 3 thethief:Stolen cards and add !M! copy of it to your hand."

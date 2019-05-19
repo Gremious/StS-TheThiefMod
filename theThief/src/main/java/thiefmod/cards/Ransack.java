@@ -1,5 +1,6 @@
 package thiefmod.cards;
 
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -8,6 +9,7 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
 import thiefmod.actions.common.StealCardAction;
+import thiefmod.actions.util.DiscoverCardAction;
 import thiefmod.cards.abstracts.AbstractBackstabCard;
 import thiefmod.patches.character.AbstractCardEnum;
 

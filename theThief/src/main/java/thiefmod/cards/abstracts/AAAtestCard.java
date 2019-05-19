@@ -62,7 +62,7 @@ public class AAAtestCard extends AbstractBackstabCard {
         discoveryGroup.group.addAll(CardLibrary.getAllCards());
         discoveryGroup.group.removeIf(c -> c.color != CardColor.GREEN);
         
-        act(new DiscoverCardAction(discoveryGroup, 7));
+        act(new DiscoverCardAction(discoveryGroup, 3));
         
         act(new MakeTempCardInHandAction(this.makeStatEquivalentCopy()));
     }

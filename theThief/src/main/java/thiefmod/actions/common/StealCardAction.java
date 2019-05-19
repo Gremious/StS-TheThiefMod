@@ -68,7 +68,7 @@ public class StealCardAction extends AbstractGameAction {
                 if (amount > 0) {
                     amount--;
                     cardsToAdd = getRandomStolenCards(3, false);
-                    AbstractDungeon.actionManager.addToBottom(new DiscoverCardAction(cardsToAdd));
+                    AbstractDungeon.actionManager.addToBottom(new DiscoverCardAction(cardsToAdd, 3, upgraded, copies));
                     curseCounter();
                     return; // Don't tickDuration, so that we can keep spamming the discover screen == amount of cards requested.
                 }

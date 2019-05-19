@@ -14,9 +14,11 @@ import java.util.ArrayList;
 
 public class DiscoverCardAction extends AbstractGameAction {
     private boolean retrieveCard = false;
+    private static CardGroup discoveredCards = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
     
     private CardGroup cardList;
     private int amount;
+    private int copies;
     private boolean upgraded;
     private Integer costForTurn;
     private AbstractCard.CardType type;
@@ -24,52 +26,72 @@ public class DiscoverCardAction extends AbstractGameAction {
     private AbstractCard.CardRarity rarity;
     
     public DiscoverCardAction(final CardGroup cardList) {
-        this(cardList, 3, false, null, null, null, null);
+        this(cardList, 3, false, null, null, null, null, 1);
     }
     
     public DiscoverCardAction(final CardGroup cardList, final int amount) {
-        this(cardList, amount, false, null, null, null, null);
+        this(cardList, amount, false, null, null, null, null, 1);
+    }
+    
+    public DiscoverCardAction(final CardGroup cardList, final int amount, int copies) {
+        this(cardList, amount, false, null, null, null, null, copies);
     }
     
     public DiscoverCardAction(final CardGroup cardList, final boolean upgraded) {
-        this(cardList, 3, upgraded, null, null, null, null);
+        this(cardList, 3, upgraded, null, null, null, null, 1);
+    }
+    
+    public DiscoverCardAction(final CardGroup cardList, final int amount, final boolean upgraded) {
+        this(cardList, amount, upgraded, null, null, null, null, 1);
+    }
+    
+    public DiscoverCardAction(final CardGroup cardList, final boolean upgraded, final int copies) {
+        this(cardList, 3, upgraded, null, null, null, null, copies);
+    }
+    
+    public DiscoverCardAction(final CardGroup cardList, final int amount, final boolean upgraded, final int copies) {
+        this(cardList, amount, upgraded, null, null, null, null, copies);
     }
     
     public DiscoverCardAction(final CardGroup cardList, final Integer costForTurn) {
-        this(cardList, 3, false, costForTurn, null, null, null);
+        this(cardList, 3, false, costForTurn, null, null, null, 1);
     }
     
     public DiscoverCardAction(final CardGroup cardList, final AbstractCard.CardType type) {
-        this(cardList, 3, false, null, type, null, null);
+        this(cardList, 3, false, null, type, null, null, 1);
     }
     
     public DiscoverCardAction(final CardGroup cardList, final AbstractCard.CardColor color) {
-        this(cardList, 3, false, null, null, color, null);
+        this(cardList, 3, false, null, null, color, null, 1);
     }
     
     public DiscoverCardAction(final CardGroup cardList, final AbstractCard.CardRarity rarity) {
-        this(cardList, 3, false, null, null, null, rarity);
+        this(cardList, 3, false, null, null, null, rarity, 1);
     }
     
     public DiscoverCardAction(final CardGroup cardList, final AbstractCard.CardType type, final AbstractCard.CardColor color) {
-        this(cardList, 3, false, null, type, color, null);
+        this(cardList, 3, false, null, type, color, null, 1);
+    }
+    
+    public DiscoverCardAction(final CardGroup cardList, final AbstractCard.CardType type, final AbstractCard.CardRarity rarity) {
+        this(cardList, 3, false, null, type, null, rarity, 1);
     }
     
     public DiscoverCardAction(final CardGroup cardList,
                               final AbstractCard.CardType type,
                               final AbstractCard.CardColor color,
                               final AbstractCard.CardRarity rarity) {
-        this(cardList, 3, false, null, type, color, rarity);
+        this(cardList, 3, false, null, type, color, rarity, 1);
     }
     
     /**
-     * @param cardList    Group of cards to discover from
-     * @param amount      Amount of cards to discover from
-     * @param upgraded    Whether the cards should be upgraded
+     * @param cardList    Group of cards to discover from.
+     * @param amount      Amount of cards to discover from.
+     * @param upgraded    Whether the cards should be upgraded.
      * @param costForTurn Sets the cost of the card for the turn. Pass null to keep it unchanged.
-     * @param type        The type of cards to discover.
-     * @param color       The color to discover.
-     * @param rarity      The rarity to discover.
+     * @param type        Only discovers the specified type from the given list or group.
+     * @param color       Only discovers the specified color from the given list or group.
+     * @param rarity      Only discovers the specified color from the given list or group.
      */
     public DiscoverCardAction(final CardGroup cardList,
                               final int amount,
@@ -77,7 +99,8 @@ public class DiscoverCardAction extends AbstractGameAction {
                               final Integer costForTurn,
                               final AbstractCard.CardType type,
                               final AbstractCard.CardColor color,
-                              final AbstractCard.CardRarity rarity) {
+                              final AbstractCard.CardRarity rarity,
+                              final int copies) {
         actionType = ActionType.CARD_MANIPULATION;
         duration = Settings.ACTION_DUR_FAST;
         
@@ -88,16 +111,17 @@ public class DiscoverCardAction extends AbstractGameAction {
         this.type = type;
         this.color = color;
         this.rarity = rarity;
+        this.copies = copies;
     }
     
     /**
-     * @param cardList    Array list of cards to discover from
-     * @param amount      Amount of cards to discover from
-     * @param upgraded    Whether the cards should be upgraded
+     * @param cardList    Array list of cards to discover from.
+     * @param amount      Amount of cards to discover from.
+     * @param upgraded    Whether the cards should be upgraded.
      * @param costForTurn Sets the cost of the card for the turn. Pass null to keep it unchanged.
-     * @param type        The type of cards to discover.
-     * @param color       The color to discover.
-     * @param rarity      The rarity to discover.
+     * @param type        Only discovers the specified type from the given list or group.
+     * @param color       Only discovers the specified color from the given list or group.
+     * @param rarity      Only discovers the specified rarity from the given list or group.
      */
     public DiscoverCardAction(final ArrayList<AbstractCard> cardList,
                               final int amount,
@@ -105,7 +129,8 @@ public class DiscoverCardAction extends AbstractGameAction {
                               final Integer costForTurn,
                               final AbstractCard.CardType type,
                               final AbstractCard.CardColor color,
-                              final AbstractCard.CardRarity rarity) {
+                              final AbstractCard.CardRarity rarity,
+                              final int copies) {
         actionType = ActionType.CARD_MANIPULATION;
         duration = Settings.ACTION_DUR_FAST;
         
@@ -117,6 +142,7 @@ public class DiscoverCardAction extends AbstractGameAction {
         this.type = type;
         this.color = color;
         this.rarity = rarity;
+        this.copies = copies;
     }
     
     @Override
@@ -163,6 +189,7 @@ public class DiscoverCardAction extends AbstractGameAction {
         if (!retrieveCard) {
             if (AbstractDungeon.cardRewardScreen.discoveryCard != null) {
                 AbstractCard disCard = AbstractDungeon.cardRewardScreen.discoveryCard.makeStatEquivalentCopy();
+                discoveredCards.addToTop(disCard);
                 disCard.current_x = -1000.0f * Settings.scale;
                 if (costForTurn != null) disCard.setCostForTurn(costForTurn);
                 if (AbstractDungeon.player.hand.size() < BaseMod.MAX_HAND_SIZE) {
@@ -176,5 +203,9 @@ public class DiscoverCardAction extends AbstractGameAction {
         }
         
         tickDuration();
+    }
+    
+    public static AbstractCard getLastCard() {
+        return discoveredCards.getTopCard();
     }
 }
