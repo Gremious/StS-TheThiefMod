@@ -1,13 +1,11 @@
 package thiefmod.cards.abstracts;
 
 import com.badlogic.gdx.graphics.Color;
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.AlwaysRetainField;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.characters.TheSilent;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
@@ -15,7 +13,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import thiefmod.ThiefMod;
-import thiefmod.actions.common.StealCardAction;
 import thiefmod.actions.util.DiscoverCardAction;
 import thiefmod.patches.character.AbstractCardEnum;
 
@@ -28,11 +25,9 @@ public class AAAtestCard extends AbstractBackstabCard {
     public static final String IMG = "theThiefAssets/images/cards/Test.png";
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:TooltipNames");
-    
     public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:TooltipNames");
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
@@ -43,7 +38,7 @@ public class AAAtestCard extends AbstractBackstabCard {
     public AAAtestCard() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         isInnate = true;
-        retain = true;
+        AlwaysRetainField.alwaysRetain.set(this, true);
         purgeOnUse = true;
     }
     
@@ -67,7 +62,7 @@ public class AAAtestCard extends AbstractBackstabCard {
         discoveryGroup.group.addAll(CardLibrary.getAllCards());
         discoveryGroup.group.removeIf(c -> c.color != CardColor.GREEN);
         
-        act(new DiscoverCardAction(discoveryGroup));
+        act(new DiscoverCardAction(discoveryGroup, 7));
         
         act(new MakeTempCardInHandAction(this.makeStatEquivalentCopy()));
     }

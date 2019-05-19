@@ -10,6 +10,8 @@ import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDiscardEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
 import thiefmod.patches.DiscoveryPatch;
 
+import java.util.ArrayList;
+
 public class DiscoverCardAction extends AbstractGameAction {
     private boolean retrieveCard = false;
     
@@ -80,6 +82,35 @@ public class DiscoverCardAction extends AbstractGameAction {
         duration = Settings.ACTION_DUR_FAST;
         
         this.cardList = cardList;
+        this.amount = amount;
+        this.upgraded = upgraded;
+        this.costForTurn = costForTurn;
+        this.type = type;
+        this.color = color;
+        this.rarity = rarity;
+    }
+    
+    /**
+     * @param cardList    Array list of cards to discover from
+     * @param amount      Amount of cards to discover from
+     * @param upgraded    Whether the cards should be upgraded
+     * @param costForTurn Sets the cost of the card for the turn. Pass null to keep it unchanged.
+     * @param type        The type of cards to discover.
+     * @param color       The color to discover.
+     * @param rarity      The rarity to discover.
+     */
+    public DiscoverCardAction(final ArrayList<AbstractCard> cardList,
+                              final int amount,
+                              final boolean upgraded,
+                              final Integer costForTurn,
+                              final AbstractCard.CardType type,
+                              final AbstractCard.CardColor color,
+                              final AbstractCard.CardRarity rarity) {
+        actionType = ActionType.CARD_MANIPULATION;
+        duration = Settings.ACTION_DUR_FAST;
+        
+        this.cardList = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+        this.cardList.group.addAll(cardList);
         this.amount = amount;
         this.upgraded = upgraded;
         this.costForTurn = costForTurn;
