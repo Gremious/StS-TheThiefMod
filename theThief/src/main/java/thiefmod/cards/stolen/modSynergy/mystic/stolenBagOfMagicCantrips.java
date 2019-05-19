@@ -1,6 +1,6 @@
 package thiefmod.cards.stolen.modSynergy.mystic;
 
-import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -10,11 +10,8 @@ import mysticmod.cards.Fly;
 import mysticmod.patches.MysticEnum;
 import thiefmod.CardNoSeen;
 import thiefmod.ThiefMod;
-import thiefmod.actions.util.DiscoverRandomFromArrayAction;
-import thiefmod.cards.abstracts.AbstractStolenCard;
+import thiefmod.actions.util.DiscoverCardAction;
 import thiefmod.cards.abstracts.AbstractStolenMysticCard;
-
-import java.util.ArrayList;
 
 import static mysticmod.MysticMod.cantripsGroup;
 
@@ -32,14 +29,11 @@ public class stolenBagOfMagicCantrips extends AbstractStolenMysticCard {
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
-    
+    public static final String IMG = (ThiefMod.hasMysticMod ? Fly.ALTERNATE_IMG_PATH : loadLockedCardImage(TYPE));
     private static final int COST = 1;
     private static final int UPGRADED_COST = 0;
-    
-    private static final int MAGIC = 1;
     // /STAT DECLARATION/
-    
-    public static final String IMG = (ThiefMod.hasMysticMod ? Fly.ALTERNATE_IMG_PATH : loadLockedCardImage(TYPE));
+    private static final int MAGIC = 1;
     
     public stolenBagOfMagicCantrips() {
         super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, MysticEnum.MYSTIC_CLASS);
@@ -48,14 +42,16 @@ public class stolenBagOfMagicCantrips extends AbstractStolenMysticCard {
     
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        ArrayList<AbstractCard> trinketCards = new ArrayList<>();
-        trinketCards.add(cantripsGroup.get(AbstractDungeon.cardRandomRng.random(cantripsGroup.size() - 1)));
-        trinketCards.add(cantripsGroup.get(AbstractDungeon.cardRandomRng.random(cantripsGroup.size() - 1)));
-        trinketCards.add(cantripsGroup.get(AbstractDungeon.cardRandomRng.random(cantripsGroup.size() - 1)));
+        CardGroup trinketCards = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+        trinketCards.addToTop(cantripsGroup.get(AbstractDungeon.cardRandomRng.random(cantripsGroup.size() - 1)));
+        trinketCards.addToTop(cantripsGroup.get(AbstractDungeon.cardRandomRng.random(cantripsGroup.size() - 1)));
+        trinketCards.addToTop(cantripsGroup.get(AbstractDungeon.cardRandomRng.random(cantripsGroup.size() - 1)));
+        
         if (upgraded) {
-            act(new DiscoverRandomFromArrayAction(trinketCards, true));
+            act(new DiscoverCardAction(trinketCards, true));
+        } else {
+            act(new DiscoverCardAction(trinketCards));
         }
-        act(new DiscoverRandomFromArrayAction(trinketCards));
     }
     
     @Override

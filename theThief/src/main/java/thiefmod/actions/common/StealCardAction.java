@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import thiefmod.actions.util.DiscoverAndAddExhaustToCardAction;
+import thiefmod.actions.util.DiscoverCardAction;
 import thiefmod.cards.stolen.*;
 import thiefmod.cards.stolen.modSynergy.bard.StolenCredit;
 import thiefmod.cards.stolen.modSynergy.bard.StolenEssence;
@@ -43,10 +43,8 @@ public class StealCardAction extends AbstractGameAction {
     public boolean upgraded;
     public CardGroup location;
     public int copies;
-    
     private int rollRare = AbstractDungeon.cardRandomRng.random(99);
-    
-    private CardGroup cardsToAdd = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+    private CardGroup cardsToAdd = new CardGroup(StolenEnum.STOLEN_CARDS);
     
     public StealCardAction(int amount, int copies, boolean random, CardGroup location, boolean upgraded) {
         actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
@@ -69,15 +67,22 @@ public class StealCardAction extends AbstractGameAction {
             } else /*Discover*/ {
                 if (amount > 0) {
                     amount--;
-                    AbstractDungeon.actionManager.addToBottom(
-                            new DiscoverAndAddExhaustToCardAction(getRandomStolenCards(3, false).group, 3, copies));
+                    cardsToAdd = getRandomStolenCards(3, false);
+                    AbstractDungeon.actionManager.addToBottom(new DiscoverCardAction(cardsToAdd));
                     curseCounter();
                     return; // Don't tickDuration, so that we can keep spamming the discover screen == amount of cards requested.
                 }
                 cardsToAdd.clear();
             }
+            
+            if (cardsToAdd.isEmpty()) tickDuration();
         }
         tickDuration();
+    }
+    
+    public static class StolenEnum {
+        @SpireEnum
+        public static CardGroup.CardGroupType STOLEN_CARDS;
     }
     
     // Add the stolen cards to whatever location your heart desires.
@@ -89,11 +94,6 @@ public class StealCardAction extends AbstractGameAction {
     }
     
     // ========================
-    
-    public static class StolenEnum {
-        @SpireEnum
-        public static CardGroup.CardGroupType STOLEN_CARDS;
-    }
     
     // Cardpool of stolen cards.
     private static CardGroup stolenCards;
@@ -240,7 +240,7 @@ public class StealCardAction extends AbstractGameAction {
     }
     
     // A final group of the cards to return.
-    private CardGroup allStolenCards() {
+    private CardGroup allStolenCardsToUse() {
         logger.info("Rare fnd roll: " + rollRare + " - " + (rollRare < 15));
         logger.info("Do you have super secret strong card mods? " + (hasHubris || hasInfiniteSpire || hasReplayTheSpire));
         //    logger.info("Did you roll low enough to get them? " + rollBlack + " - " + (rollBlack < 8));
@@ -267,7 +267,7 @@ public class StealCardAction extends AbstractGameAction {
         CardGroup randomCards = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
         
         while (temp.size() < amount) { // Grab only the amount specified. While we don't have 'amount'...
-            AbstractCard card = allStolenCards().getRandomCard(true); // Get a random upgraded/non-upgraded card.
+            AbstractCard card = allStolenCardsToUse().getRandomCard(true); // Get a random upgraded/non-upgraded card.
             if (allowDuplicates || !temp.contains(card)) { // So long as we can get duplicates OR the card isn't a duplicate.
                 temp.add(card); // And add it to the array
             }
@@ -278,6 +278,37 @@ public class StealCardAction extends AbstractGameAction {
         }
         
         return randomCards;
+    }
+    
+    public static CardGroup getAllStolenCards(AbstractCard.CardRarity rarity, boolean upgraded, boolean all) {
+        CardGroup allCards = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+        if (all) {
+            if (upgraded) {
+                allCards.group.addAll(stolenCardsUpgraded.group);
+                allCards.group.addAll(rareFindsUpgraded.group);
+                return allCards;
+            } else {
+                allCards.group.addAll(stolenCards.group);
+                allCards.group.addAll(rareFinds.group);
+                return allCards;
+            }
+        } else if (rarity == AbstractCard.CardRarity.RARE) {
+            if (upgraded) {
+                allCards.group.addAll(rareFindsUpgraded.group);
+                return allCards;
+            } else {
+                allCards.group.addAll(rareFinds.group);
+                return allCards;
+            }
+        } else {
+            if (upgraded) {
+                allCards.group.addAll(stolenCardsUpgraded.group);
+                return allCards;
+            } else {
+                allCards.group.addAll(stolenCards.group);
+                return allCards;
+            }
+        }
     }
     
     private void curseCounter() {

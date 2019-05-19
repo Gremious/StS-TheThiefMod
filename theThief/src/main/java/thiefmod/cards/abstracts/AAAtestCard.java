@@ -2,18 +2,21 @@ package thiefmod.cards.abstracts;
 
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
-import com.megacrit.cardcrawl.actions.unique.AddCardToDeckAction;
-import com.megacrit.cardcrawl.actions.utility.UpdateCardDescriptionAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.characters.TheSilent;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import thiefmod.ThiefMod;
-import thiefmod.cards.stolen.modSynergy.bard.StolenCredit;
+import thiefmod.actions.common.StealCardAction;
+import thiefmod.actions.util.DiscoverCardAction;
 import thiefmod.patches.character.AbstractCardEnum;
 
 @Deprecated
@@ -58,7 +61,14 @@ public class AAAtestCard extends AbstractBackstabCard {
             logger.info("Can Backstab: " + canBackstab());
             flash(Color.RED);
         }
-        act(new AddCardToDeckAction(new StolenCredit()));
+        
+        CardGroup discoveryGroup = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+        
+        discoveryGroup.group.addAll(CardLibrary.getAllCards());
+        discoveryGroup.group.removeIf(c -> c.color != CardColor.GREEN);
+        
+        act(new DiscoverCardAction(discoveryGroup));
+        
         act(new MakeTempCardInHandAction(this.makeStatEquivalentCopy()));
     }
     
@@ -73,9 +83,8 @@ public class AAAtestCard extends AbstractBackstabCard {
             logger.info("Apply Powers triggered for canBackstab == false. It is " + canBackstabDesc());
             rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[3];
         }
-        logger.info("Initialising description: " +  rawDescription);
+        logger.info("Initialising description: " + rawDescription);
         initializeDescription();
-        
     }
     
     @Override
