@@ -220,8 +220,8 @@
   },
   "theThief:StolenGreatHorn": {
     "NAME": "Stolen Great Horn",
-    "DESCRIPTION": "At the start of each turn, bard:Queue !M! [WildNote] .",
-    "UPGRADE_DESCRIPTION": "At the start of each turn, bard:Queue !M! [WildNote] .",
+    "DESCRIPTION": "At the start of each turn, bard:Queue !M! {Wild Note} .",
+    "UPGRADE_DESCRIPTION": "At the start of each turn, bard:Queue !M! {Wild Note} .",
     "EXTENDED_DESCRIPTION": [
       "[#FEE130]Rare[] [#FEE130]Find:[]",
       "[#FEE130]A[] [#FEE130]magical[] [#FEE130]weapon[] [#FEE130]of[] [#FEE130]immense[] [#FEE130]magnitude.[] [#FEE130]Capable[] [#FEE130]of[] [#FEE130]creating[] [#FEE130]very[] [#fa5555]physical[] [#FEE130]songs.[]"

@@ -5,9 +5,11 @@ import com.evacipated.cardcrawl.mod.bard.cards.AbstractBardCard;
 import com.evacipated.cardcrawl.mod.bard.cards.MagnumOpus;
 import com.evacipated.cardcrawl.mod.bard.characters.Bard;
 import com.evacipated.cardcrawl.mod.bard.powers.InspirationPower;
+import com.evacipated.cardcrawl.mod.bard.powers.MantleOfInspirationPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
@@ -44,8 +46,6 @@ public class StolenCredit extends AbstractStolenCard {
     
     public static final String IMG = loadLockedCardImage(TYPE);
     
-    // (Ether Studied strike art or magnum opus art)
-    
     public StolenCredit() {
         super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, Bard.Enums.BARD);
         magicNumber = baseMagicNumber = MAGIC;
@@ -60,14 +60,15 @@ public class StolenCredit extends AbstractStolenCard {
         if (ThiefMod.hasBard) {
             return AbstractBardCard.getPortraitImage(new MagnumOpus());
         } else {
-          return super.getPortraitImage();
+            return super.getPortraitImage();
         }
     }
     
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        act(new ApplyPowerAction(p, p, new InspirationPower(p, 1, 100)));
+        act(new ApplyPowerAction(p, p, new InspirationPower(p, magicNumber, backstabNumber)));
     }
+    
     
     @Override
     public void upgrade() {
