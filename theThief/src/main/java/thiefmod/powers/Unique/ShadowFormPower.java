@@ -53,7 +53,7 @@ public class ShadowFormPower extends AbstractPower {
             ArrayList<AbstractCard> cards = new ArrayList<>(randomCards.getListOfRandomCards());
 
             for (AbstractCard c : cards) {
-                c.modifyCostForCombat(-99);
+                c.freeToPlayOnce = true;
             }
 
             AbstractDungeon.actionManager.addToBottom(new DiscoverRandomFromArrayAction(cards, 3));

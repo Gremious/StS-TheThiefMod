@@ -1,5 +1,6 @@
 package thiefmod.actions.unique;
 
+import com.badlogic.gdx.Gdx;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.actions.utility.QueueCardAction;
@@ -10,31 +11,43 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import mysticmod.MysticMod;
-
-public class stolenMysticalOrbAction extends AbstractGameAction {
-    private AbstractCard card;
-    private int times;
+@Deprecated
+public class deprecatedMysticalOrbAction extends AbstractGameAction {
+    private float waitDuration;
     
-    public stolenMysticalOrbAction(int times) {
+    public deprecatedMysticalOrbAction() {
         duration = Settings.ACTION_DUR_FAST;
+        waitDuration = 0.50F;
         actionType = ActionType.WAIT;
         source = AbstractDungeon.player;
-        this.card = card;
-        this.times = times;
     }
     
     @Override
     public void update() {
-        if (duration == Settings.ACTION_DUR_FAST) {
-            for (int i = 0; i < times; i++) {
-                AbstractCard spell = MysticMod.returnTrulyRandomSpell();
-                AbstractCard arte = MysticMod.returnTrulyRandomArte();
-                playCard(spell);
-                playCard(arte);
-            }
+        if (this.duration == Settings.ACTION_DUR_FAST) {
+            AbstractCard spell = MysticMod.returnTrulyRandomSpell();
+            AbstractCard arte = MysticMod.returnTrulyRandomArte();
+            
+            playCard(spell);
+            
+            waitDuration();
+            waitDuration = 0.50F;
+            
+            playCard(arte);
+            
+            waitDuration();
+            waitDuration = 0.50F;
+            
             tickDuration();
         }
+        
         tickDuration();
+    }
+    
+    private void waitDuration() {
+        while (waitDuration > 0) {
+            waitDuration -= Gdx.graphics.getDeltaTime();
+        }
     }
     
     private void playCard(AbstractCard card) {
@@ -57,12 +70,12 @@ public class stolenMysticalOrbAction extends AbstractGameAction {
             card.applyPowers();
             AbstractDungeon.actionManager.addToTop(new QueueCardAction(card, target));
             AbstractDungeon.actionManager.addToTop(new UnlimboAction(card));
-            if (!Settings.FAST_MODE) {
+      /*      if (!Settings.FAST_MODE) {
                 AbstractDungeon.actionManager.addToTop(new WaitAction(Settings.ACTION_DUR_MED));
             } else {
                 AbstractDungeon.actionManager.addToTop(new WaitAction(Settings.ACTION_DUR_FAST));
                 AbstractDungeon.actionManager.addToTop(new WaitAction(Settings.ACTION_DUR_FAST));
-            }
+            }*/
         }
     }
 }

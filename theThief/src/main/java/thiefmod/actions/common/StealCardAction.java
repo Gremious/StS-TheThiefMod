@@ -12,8 +12,7 @@ import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import thiefmod.actions.util.DiscoverAndExhaustCard;
-import thiefmod.actions.util.MakeStolenCardAction;
+import thiefmod.actions.util.DiscoverAndAddExhaustToCardAction;
 import thiefmod.cards.stolen.*;
 import thiefmod.cards.stolen.modSynergy.bard.StolenCredit;
 import thiefmod.cards.stolen.modSynergy.bard.StolenEssence;
@@ -79,7 +78,7 @@ public class StealCardAction extends AbstractGameAction {
                 if (amount > 0) {
                     amount--;
                     AbstractDungeon.actionManager.addToBottom(
-                            new DiscoverAndExhaustCard(getRandomStolenCards(3, false), 3, copies));
+                            new DiscoverAndAddExhaustToCardAction(getRandomStolenCards(3, false), 3, copies));
                     curseCounter();
                     return; // Don't tickDuration, so that we can keep spamming the discover screen == amount of cards requested.
                 }

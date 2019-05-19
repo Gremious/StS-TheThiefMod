@@ -8,17 +8,19 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
 import mysticmod.cards.ComboCaster;
+import mysticmod.cards.cantrips.Spark;
 import mysticmod.patches.MysticEnum;
 import thiefmod.CardNoSeen;
 import thiefmod.ThiefMod;
 import thiefmod.cards.abstracts.AbstractStolenCard;
+import thiefmod.cards.abstracts.AbstractStolenMysticCard;
 
 import java.util.ArrayList;
 
 import static mysticmod.MysticMod.cantripsGroup;
 
 @CardNoSeen
-public class stolenMagicCantrip extends AbstractStolenCard {
+public class stolenMagicCantrip extends AbstractStolenMysticCard {
     // TEXT DECLARATION
     
     public static final String ID = ThiefMod.makeID("stolenMagicCantrip");
@@ -38,7 +40,7 @@ public class stolenMagicCantrip extends AbstractStolenCard {
     private static final int MAGIC = 1;
     // /STAT DECLARATION/
     
-    public static final String IMG = (ThiefMod.hasMysticMod ? ComboCaster.IMG_PATH : loadLockedCardImage(TYPE));
+    public static final String IMG = (ThiefMod.hasMysticMod ? Spark.IMG_PATH : loadLockedCardImage(TYPE));
     
     public stolenMagicCantrip() {
         super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, MysticEnum.MYSTIC_CLASS);

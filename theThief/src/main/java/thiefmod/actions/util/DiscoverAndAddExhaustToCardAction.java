@@ -10,7 +10,7 @@ import thiefmod.patches.DiscoveryColorPatch;
 
 import java.util.ArrayList;
 
-public class DiscoverAndExhaustCard extends AbstractGameAction {
+public class DiscoverAndAddExhaustToCardAction extends AbstractGameAction {
     private ArrayList<AbstractCard> cardList = new ArrayList<>();
 
     private boolean retrieveCard = false;
@@ -20,23 +20,23 @@ public class DiscoverAndExhaustCard extends AbstractGameAction {
     public static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:MakeSuperCopyAction");
     public static final String KEYWORD_STRINGS[] = uiStrings.TEXT;
 
-    public DiscoverAndExhaustCard(final ArrayList<AbstractCard> cardList) {
+    public DiscoverAndAddExhaustToCardAction(final ArrayList<AbstractCard> cardList) {
         this(cardList, 3, 1);
     }
 
-    public DiscoverAndExhaustCard(final ArrayList<AbstractCard> cardList, boolean upgraded) {
+    public DiscoverAndAddExhaustToCardAction(final ArrayList<AbstractCard> cardList, boolean upgraded) {
         this(cardList, upgraded, 3, 1);
     }
 
-    public DiscoverAndExhaustCard(final ArrayList<AbstractCard> cardList, int amount) {
+    public DiscoverAndAddExhaustToCardAction(final ArrayList<AbstractCard> cardList, int amount) {
         this(cardList, false, amount, 1);
     }
 
-    public DiscoverAndExhaustCard(final ArrayList<AbstractCard> cardList, int amount, int copies) {
+    public DiscoverAndAddExhaustToCardAction(final ArrayList<AbstractCard> cardList, int amount, int copies) {
         this(cardList, false, amount, copies);
     }
 
-    public DiscoverAndExhaustCard(final ArrayList<AbstractCard> cardList, boolean upgraded, int amount, int copies) {
+    public DiscoverAndAddExhaustToCardAction(final ArrayList<AbstractCard> cardList, boolean upgraded, int amount, int copies) {
         actionType = ActionType.CARD_MANIPULATION;
         duration = Settings.ACTION_DUR_FAST;
         this.amount = amount;

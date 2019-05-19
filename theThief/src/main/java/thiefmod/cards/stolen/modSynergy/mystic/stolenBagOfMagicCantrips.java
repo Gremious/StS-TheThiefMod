@@ -12,13 +12,14 @@ import thiefmod.CardNoSeen;
 import thiefmod.ThiefMod;
 import thiefmod.actions.util.DiscoverRandomFromArrayAction;
 import thiefmod.cards.abstracts.AbstractStolenCard;
+import thiefmod.cards.abstracts.AbstractStolenMysticCard;
 
 import java.util.ArrayList;
 
 import static mysticmod.MysticMod.cantripsGroup;
 
 @CardNoSeen
-public class stolenBagOfMagicCantrips extends AbstractStolenCard {
+public class stolenBagOfMagicCantrips extends AbstractStolenMysticCard {
     // TEXT DECLARATION
     
     public static final String ID = ThiefMod.makeID("stolenBagOfMagicCantrips");

@@ -271,7 +271,8 @@
   "theThief:StolenGreatHornPower": {
     "NAME": "Stolen Great Horn",
     "DESCRIPTIONS": [
-      "At the start of your turn, #ybard:Queue 2 [WildNote] [REMOVE_SPACE]."
+      "At the start of your turn, #ybard:Queue ",
+      " [WildNote] [REMOVE_SPACE]."
     ]
   },
   "theThief:TestPower": {

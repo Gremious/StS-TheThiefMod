@@ -1,4 +1,4 @@
-package thiefmod.actions.util;
+package thiefmod.actions.common;
 
 import basemod.BaseMod;
 import basemod.abstracts.CustomCard;

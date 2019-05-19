@@ -9,15 +9,17 @@ import mysticmod.MysticMod;
 import mysticmod.cards.BladeMaster;
 import mysticmod.cards.Snowball;
 import mysticmod.patches.MysticEnum;
+import mysticmod.patches.MysticTags;
 import thiefmod.CardNoSeen;
 import thiefmod.ThiefMod;
 import thiefmod.actions.util.DiscoverRandomFromArrayAction;
 import thiefmod.cards.abstracts.AbstractStolenCard;
+import thiefmod.cards.abstracts.AbstractStolenMysticCard;
 
 import java.util.ArrayList;
 
 @CardNoSeen
-public class stolenBoxOfWeapons extends AbstractStolenCard {
+public class stolenBoxOfWeapons extends AbstractStolenMysticCard {
     // TEXT DECLARATION
     
     public static final String ID = ThiefMod.makeID("stolenBoxOfWeapons");
@@ -43,6 +45,7 @@ public class stolenBoxOfWeapons extends AbstractStolenCard {
     public stolenBoxOfWeapons() {
         super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, MysticEnum.MYSTIC_CLASS);
         magicNumber = baseMagicNumber = MAGIC;
+        if (ThiefMod.hasMysticMod) tags.add(MysticTags.IS_ARTE);
     }
     
     @Override

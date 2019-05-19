@@ -1,21 +1,23 @@
 package thiefmod.cards.stolen.modSynergy.mystic;
 
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import mysticmod.MysticMod;
-import mysticmod.cards.Snowball;
 import mysticmod.cards.Spellstrike;
 import mysticmod.patches.MysticEnum;
+import mysticmod.patches.MysticTags;
 import thiefmod.CardNoSeen;
 import thiefmod.ThiefMod;
 import thiefmod.actions.common.playCardWithRandomTargestAction;
 import thiefmod.cards.abstracts.AbstractStolenCard;
+import thiefmod.cards.abstracts.AbstractStolenMysticCard;
 
 @CardNoSeen
-public class stolenMagicalWeapon extends AbstractStolenCard {
+public class stolenMagicalWeapon extends AbstractStolenMysticCard {
     // TEXT DECLARATION
     
     public static final String ID = ThiefMod.makeID("stolenMagicalWeapon");
@@ -33,15 +35,14 @@ public class stolenMagicalWeapon extends AbstractStolenCard {
     
     public stolenMagicalWeapon() {
         super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, MysticEnum.MYSTIC_CLASS);
+        if (ThiefMod.hasMysticMod) tags.add(MysticTags.IS_ARTE);
     }
     
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (upgraded) {
-            AbstractDungeon.actionManager.addToTop(new playCardWithRandomTargestAction(false, MysticMod.returnTrulyRandomArte()));
-        } else {
-            AbstractDungeon.actionManager.addToTop(new playCardWithRandomTargestAction(true, MysticMod.returnTrulyRandomArte()));
-        }
+        AbstractCard card = MysticMod.returnTrulyRandomArte();
+        if (upgraded) card.upgrade();
+        AbstractDungeon.actionManager.addToTop(new playCardWithRandomTargestAction(true, card));
     }
     
     // Upgraded stats.

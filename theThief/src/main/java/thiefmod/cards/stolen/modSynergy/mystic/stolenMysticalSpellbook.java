@@ -8,13 +8,15 @@ import mysticmod.actions.SpellDiscoveryAction;
 import mysticmod.cards.Snowball;
 import mysticmod.cards.TomeOfSpells;
 import mysticmod.patches.MysticEnum;
+import mysticmod.patches.MysticTags;
 import thiefmod.CardNoSeen;
 import thiefmod.ThiefMod;
 import thiefmod.cards.abstracts.AbstractStolenCard;
+import thiefmod.cards.abstracts.AbstractStolenMysticCard;
 import thiefmod.patches.character.ThiefCardTags;
 
 @CardNoSeen
-public class stolenMysticalSpellbook extends AbstractStolenCard {
+public class stolenMysticalSpellbook extends AbstractStolenMysticCard {
     // TEXT DECLARATION
     
     public static final String ID = ThiefMod.makeID("stolenMysticalSpellbook");
@@ -41,7 +43,7 @@ public class stolenMysticalSpellbook extends AbstractStolenCard {
     public stolenMysticalSpellbook() {
         super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, MysticEnum.MYSTIC_CLASS);
         magicNumber = baseMagicNumber = MAGIC;
-        
+        if (ThiefMod.hasMysticMod) tags.add(MysticTags.IS_SPELL);
     }
     
     @Override
