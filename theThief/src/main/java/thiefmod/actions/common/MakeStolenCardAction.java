@@ -27,43 +27,32 @@ public class MakeStolenCardAction extends AbstractGameAction {
     private Integer setCost;
     private boolean removeKeyword;
     public static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:MakeSuperCopyAction");
-    public static final String KEYWORD_STRINGS[] = uiStrings.TEXT;
-    
     public static final UIStrings uiStealStrings = CardCrawlGame.languagePack.getUIString("theThief:StealCardUtil");
+    public static final String[] KEYWORD_STRINGS = uiStrings.TEXT;
     private static final String[] STEAL_STRINGS = uiStealStrings.TEXT;
     
     public MakeStolenCardAction(AbstractCard c, final CardGroup addLocation) {
-        actionType = ActionType.CARD_MANIPULATION;
-        duration = Settings.ACTION_DUR_FAST;
-        this.c = c;
-        this.addLocation = addLocation;
+        this(c, null, addLocation);
     }
     
     public MakeStolenCardAction(AbstractCard c, Integer setCost, final CardGroup addLocation) {
         actionType = ActionType.CARD_MANIPULATION;
         duration = Settings.ACTION_DUR_FAST;
-        this.c = c;
+        this.c = c.makeStatEquivalentCopy();
         this.addLocation = addLocation;
-        
         this.setCost = setCost;
     }
     
     public void update() {
         if (duration == Settings.ACTION_DUR_FAST) {
-            
-            if (!c.hasTag(ThiefCardTags.STOLEN)) {
-                c.tags.add(ThiefCardTags.STOLEN);
-            }
+            if (!c.hasTag(ThiefCardTags.STOLEN)) c.tags.add(ThiefCardTags.STOLEN);
+            if (!c.name.startsWith(STEAL_STRINGS[5])) c.name = STEAL_STRINGS[5] + c.name;
+            if (setCost != null) c.cost = setCost;
             
             if (!c.exhaust) {
                 c.exhaust = true;
-                if (setCost != null) c.cost = setCost;
                 c.rawDescription = c.rawDescription + KEYWORD_STRINGS[2];
                 logger.info("Adding " + c + " with Exhaust.");
-            }
-            
-            if (!c.name.startsWith(STEAL_STRINGS[5])) {
-                c.name = STEAL_STRINGS[5] + c.name;
             }
             
             c.initializeDescription();
@@ -87,10 +76,6 @@ public class MakeStolenCardAction extends AbstractGameAction {
                 }
             }
             
-            if (!c.hasTag(ThiefCardTags.STOLEN)) {
-                c.tags.add(ThiefCardTags.STOLEN);
-            }
-            
             AbstractDungeon.actionManager.addToTop(new SFXAction("CARD_OBTAIN"));
             
             if (addLocation == AbstractDungeon.player.hand) {
@@ -105,14 +90,13 @@ public class MakeStolenCardAction extends AbstractGameAction {
                 AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(c));
             } else if (addLocation != null) {
                 addLocation.addToTop(c);
-                logger.info("Adding to a custom array");
             } else {
-                logger.info("The Super Duper Copy (Steal) Action didn't find ether hand, deck or discard.");
+                logger.info("The Make Stolen Card Action didn't find ether hand, deck, discard or a custom card group.");
             }
             
             AbstractDungeon.player.hand.refreshHandLayout();
             AbstractDungeon.player.hand.glowCheck();
-            logger.info("Final log. Super Copy (Steal) Action should be done.");
+            logger.info("Final log. Make Stolen Card Action should be done.");
             tickDuration();
         }
         tickDuration();
