@@ -35,7 +35,6 @@ public class stolenMagicalWeapon extends AbstractStolenMysticCard {
     
     public stolenMagicalWeapon() {
         super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, MysticEnum.MYSTIC_CLASS);
-        if (ThiefMod.hasMysticMod) tags.add(MysticTags.IS_ARTE);
     }
     
     @Override

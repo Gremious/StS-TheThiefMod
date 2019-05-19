@@ -42,5 +42,17 @@
       "pattern_shift"
     ],
     "DESCRIPTION": "A 0 cost card which shifts the enemy to their next turn."
+  },
+  {
+    "NAMES": [
+      "Spell"
+    ],
+    "DESCRIPTION": "A card which grants one stack of [#5299DC]Power,[] making your [#FF5252]Artes[] stronger."
+  },
+  {
+    "NAMES": [
+      "Arte"
+    ],
+    "DESCRIPTION": "A card which grants one stack of [#FF5252]Poise,[] making your [#5299DC]Spells[] stronger."
   }
 ]

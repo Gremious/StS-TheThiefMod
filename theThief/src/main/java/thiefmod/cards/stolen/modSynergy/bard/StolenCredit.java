@@ -69,7 +69,6 @@ public class StolenCredit extends AbstractStolenCard {
         act(new ApplyPowerAction(p, p, new InspirationPower(p, magicNumber, backstabNumber)));
     }
     
-    
     @Override
     public void upgrade() {
         if (!this.upgraded) {

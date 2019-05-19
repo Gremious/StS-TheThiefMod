@@ -45,7 +45,6 @@ public class stolenBoxOfWeapons extends AbstractStolenMysticCard {
     public stolenBoxOfWeapons() {
         super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, MysticEnum.MYSTIC_CLASS);
         magicNumber = baseMagicNumber = MAGIC;
-        if (ThiefMod.hasMysticMod) tags.add(MysticTags.IS_ARTE);
     }
     
     @Override

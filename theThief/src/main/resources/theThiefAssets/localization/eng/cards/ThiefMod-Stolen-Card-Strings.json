@@ -238,8 +238,8 @@
   },
   "theThief:StolenClock": {
     "NAME": "Stolen Clock",
-    "DESCRIPTION": "Add a thethief:pattern_shift to your hand. NL It cannot leave your hand.",
-    "UPGRADE_DESCRIPTION": "Add a thethief:pattern_shift to your hand. NL It cannot leave your hand.",
+    "DESCRIPTION": "Add a thethief:Pattern_Shift to your hand. NL It cannot leave your hand.",
+    "UPGRADE_DESCRIPTION": "Add a thethief:Pattern_Shift to your hand. NL It cannot leave your hand.",
     "EXTENDED_DESCRIPTION": [
       "[#FEE130]Rare[] [#FEE130]Find:[]",
       "[#FEE130]You[] [#FEE130]can[] [#FEE130]feel[] [#FEE130]the[] [#FEE130]waves[] [#FEE130]of[] [#FEE130]time[] [#FEE130]flowing[] [#FEE130]through[] [#FEE130]it.[]"

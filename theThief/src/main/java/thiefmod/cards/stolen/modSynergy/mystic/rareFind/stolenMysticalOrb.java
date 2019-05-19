@@ -50,8 +50,6 @@ public class stolenMysticalOrb extends AbstractStolenMysticCard {
         magicNumber = baseMagicNumber = MAGIC;
         
         tags.add(ThiefCardTags.RARE_FIND);
-        if (ThiefMod.hasMysticMod) tags.add(MysticTags.IS_SPELL);
-        if (ThiefMod.hasMysticMod) tags.add(MysticTags.IS_ARTE);
         
         exhaust = true;
     }
