@@ -27,9 +27,6 @@ public class DiscoveryPatch {
     public static CardGroup cardGroupToDiscoverFrom = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
     public static int amount = 3;
     public static boolean upgraded = false;
-    public static AbstractCard.CardType type;
-    public static AbstractCard.CardColor color;
-    public static AbstractCard.CardRarity rarity;
     
     @SpireInsertPatch(
             locator = Locator.class,
@@ -39,33 +36,6 @@ public class DiscoveryPatch {
         if (customDiscovery) {
             ArrayList<AbstractCard> derp = new ArrayList<>();
             CardGroup temp = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-            
-            
-            if (type == null && color == null && rarity == null) {
-                temp.group.addAll(cardGroupToDiscoverFrom.group);
-            } else {
-                if (type != null) {
-                    for (AbstractCard c : cardGroupToDiscoverFrom.group) {
-                        if (c.type == type) {
-                            temp.addToRandomSpot(c);
-                        }
-                    }
-                }
-                if (color != null) {
-                    for (AbstractCard c : cardGroupToDiscoverFrom.group) {
-                        if (c.color == color) {
-                            temp.addToRandomSpot(c);
-                        }
-                    }
-                }
-                if (rarity != null) {
-                    for (AbstractCard c : cardGroupToDiscoverFrom.group) {
-                        if (c.rarity == rarity) {
-                            temp.addToRandomSpot(c);
-                        }
-                    }
-                }
-            }
             
             
             while (derp.size() < amount) {
@@ -82,7 +52,6 @@ public class DiscoveryPatch {
             __instance.rewardGroup = derp;
             AbstractDungeon.isScreenUp = true;
             AbstractDungeon.screen = AbstractDungeon.CurrentScreen.CARD_REWARD;
-            //AbstractDungeon.dynamicBanner.appear(TEXT[1]);
             AbstractDungeon.overlayMenu.showBlackScreen();
             
             try {
@@ -109,8 +78,6 @@ public class DiscoveryPatch {
         amount = 3;
         upgraded = false;
         cardGroupToDiscoverFrom.clear();
-        type = null;
-        color = null;
     }
     
     private static class Locator extends SpireInsertLocator {

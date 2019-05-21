@@ -21,67 +21,45 @@ public class DiscoverCardAction extends AbstractGameAction {
     private int copies;
     private boolean upgraded;
     private Integer costForTurn;
-    private AbstractCard.CardType type;
-    private AbstractCard.CardColor color;
-    private AbstractCard.CardRarity rarity;
     
     public DiscoverCardAction(final CardGroup cardList) {
-        this(cardList, 3, false, null, null, null, null, 1);
+        this(cardList, 3, false, null, 1);
     }
     
     public DiscoverCardAction(final CardGroup cardList, final int amount) {
-        this(cardList, amount, false, null, null, null, null, 1);
+        this(cardList, amount, false, null, 1);
     }
     
     public DiscoverCardAction(final CardGroup cardList, final int amount, int copies) {
-        this(cardList, amount, false, null, null, null, null, copies);
+        this(cardList, amount, false, null, copies);
     }
     
     public DiscoverCardAction(final CardGroup cardList, final boolean upgraded) {
-        this(cardList, 3, upgraded, null, null, null, null, 1);
+        this(cardList, 3, upgraded, null, 1);
     }
     
     public DiscoverCardAction(final CardGroup cardList, final int amount, final boolean upgraded) {
-        this(cardList, amount, upgraded, null, null, null, null, 1);
+        this(cardList, amount, upgraded, null, 1);
     }
     
     public DiscoverCardAction(final CardGroup cardList, final boolean upgraded, final int copies) {
-        this(cardList, 3, upgraded, null, null, null, null, copies);
+        this(cardList, 3, upgraded, null, copies);
     }
     
     public DiscoverCardAction(final CardGroup cardList, final int amount, final boolean upgraded, final int copies) {
-        this(cardList, amount, upgraded, null, null, null, null, copies);
+        this(cardList, amount, upgraded, null, copies);
     }
     
     public DiscoverCardAction(final CardGroup cardList, final Integer costForTurn) {
-        this(cardList, 3, false, costForTurn, null, null, null, 1);
+        this(cardList, 3, false, costForTurn, 1);
     }
     
-    public DiscoverCardAction(final CardGroup cardList, final AbstractCard.CardType type) {
-        this(cardList, 3, false, null, type, null, null, 1);
-    }
-    
-    public DiscoverCardAction(final CardGroup cardList, final AbstractCard.CardColor color) {
-        this(cardList, 3, false, null, null, color, null, 1);
-    }
-    
-    public DiscoverCardAction(final CardGroup cardList, final AbstractCard.CardRarity rarity) {
-        this(cardList, 3, false, null, null, null, rarity, 1);
-    }
-    
-    public DiscoverCardAction(final CardGroup cardList, final AbstractCard.CardType type, final AbstractCard.CardColor color) {
-        this(cardList, 3, false, null, type, color, null, 1);
-    }
-    
-    public DiscoverCardAction(final CardGroup cardList, final AbstractCard.CardType type, final AbstractCard.CardRarity rarity) {
-        this(cardList, 3, false, null, type, null, rarity, 1);
-    }
     
     public DiscoverCardAction(final CardGroup cardList,
                               final AbstractCard.CardType type,
                               final AbstractCard.CardColor color,
                               final AbstractCard.CardRarity rarity) {
-        this(cardList, 3, false, null, type, color, rarity, 1);
+        this(cardList, 3, false, null, 1);
     }
     
     /**
@@ -89,17 +67,11 @@ public class DiscoverCardAction extends AbstractGameAction {
      * @param amount      Amount of cards to discover from.
      * @param upgraded    Whether the cards should be upgraded.
      * @param costForTurn Sets the cost of the card for the turn. Pass null to keep it unchanged.
-     * @param type        Only discovers the specified type from the given list or group.
-     * @param color       Only discovers the specified color from the given list or group.
-     * @param rarity      Only discovers the specified color from the given list or group.
      */
     public DiscoverCardAction(final CardGroup cardList,
                               final int amount,
                               final boolean upgraded,
                               final Integer costForTurn,
-                              final AbstractCard.CardType type,
-                              final AbstractCard.CardColor color,
-                              final AbstractCard.CardRarity rarity,
                               final int copies) {
         actionType = ActionType.CARD_MANIPULATION;
         duration = Settings.ACTION_DUR_FAST;
@@ -108,9 +80,6 @@ public class DiscoverCardAction extends AbstractGameAction {
         this.amount = amount;
         this.upgraded = upgraded;
         this.costForTurn = costForTurn;
-        this.type = type;
-        this.color = color;
-        this.rarity = rarity;
         this.copies = copies;
     }
     
@@ -119,17 +88,11 @@ public class DiscoverCardAction extends AbstractGameAction {
      * @param amount      Amount of cards to discover from.
      * @param upgraded    Whether the cards should be upgraded.
      * @param costForTurn Sets the cost of the card for the turn. Pass null to keep it unchanged.
-     * @param type        Only discovers the specified type from the given list or group.
-     * @param color       Only discovers the specified color from the given list or group.
-     * @param rarity      Only discovers the specified rarity from the given list or group.
      */
     public DiscoverCardAction(final ArrayList<AbstractCard> cardList,
                               final int amount,
                               final boolean upgraded,
                               final Integer costForTurn,
-                              final AbstractCard.CardType type,
-                              final AbstractCard.CardColor color,
-                              final AbstractCard.CardRarity rarity,
                               final int copies) {
         actionType = ActionType.CARD_MANIPULATION;
         duration = Settings.ACTION_DUR_FAST;
@@ -139,9 +102,6 @@ public class DiscoverCardAction extends AbstractGameAction {
         this.amount = amount;
         this.upgraded = upgraded;
         this.costForTurn = costForTurn;
-        this.type = type;
-        this.color = color;
-        this.rarity = rarity;
         this.copies = copies;
     }
     
@@ -154,32 +114,12 @@ public class DiscoverCardAction extends AbstractGameAction {
                 isDone = true;
             }
             
-            if (type != null) {
-                if (DiscoveryPatch.cardUtil.countTypes(cardList.group, type) <= 0) {
-                    isDone = true;
-                }
-            }
-            
-            if (color != null) {
-                if (DiscoveryPatch.cardUtil.countColor(cardList.group, color) <= 0) {
-                    isDone = true;
-                }
-            }
-            
-            if (rarity != null) {
-                if (DiscoveryPatch.cardUtil.countRarity(cardList.group, rarity) <= 0) {
-                    isDone = true;
-                }
-            }
-            
             DiscoveryPatch.customDiscovery = true;
             
             DiscoveryPatch.amount = amount;
             DiscoveryPatch.upgraded = upgraded;
             DiscoveryPatch.cardGroupToDiscoverFrom = cardList;
-            DiscoveryPatch.type = type;
-            DiscoveryPatch.color = color;
-            DiscoveryPatch.rarity = rarity;
+
             
             AbstractDungeon.cardRewardScreen.discoveryOpen();
             tickDuration();
