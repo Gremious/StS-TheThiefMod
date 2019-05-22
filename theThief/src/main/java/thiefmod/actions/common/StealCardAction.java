@@ -4,6 +4,7 @@ import basemod.abstracts.CustomSavable;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.Settings;
@@ -11,6 +12,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import thiefmod.actions.util.DiscoverCardAction;
 import thiefmod.cards.stolen.*;
 import thiefmod.cards.stolen.modSynergy.bard.StolenCredit;
 import thiefmod.cards.stolen.modSynergy.bard.StolenEssence;
@@ -26,6 +28,7 @@ import thiefmod.cards.stolen.rareFind.StolenArsenal;
 import thiefmod.cards.stolen.rareFind.StolenBlood;
 import thiefmod.cards.stolen.rareFind.StolenCore;
 import thiefmod.cards.stolen.rareFind.StolenShadow;
+import thiefmod.patches.DiscoveryPatch;
 import thiefmod.powers.Unique.FleetingGuiltPower;
 import thiefmod.powers.Unique.IllGottenGainsPower;
 
@@ -66,13 +69,20 @@ public class StealCardAction extends AbstractGameAction implements CustomSavable
                     curseCounter();
                     cardsStolenThisCombat++;
                 }
-                for (int i = 0; i < copies; i++) addStolenCards();
+                for (int i = 0; i < copies; i++) {
+                    addStolenCards();
+                    AbstractDungeon.actionManager.addToTop(new SFXAction("CARD_OBTAIN"));
+                }
                 cardsToAdd.clear();
             } else /*Discover*/ {
                 if (amount > 0) {
                     amount--;
                     cardsToAdd = getRandomStolenCards(3, false);
-                    AbstractDungeon.actionManager.addToBottom(new DiscoverStolenCardAction(cardsToAdd, 3, upgraded, null, copies));
+                    for (AbstractCard c : cardsToAdd.group){
+                        MakeStolenCardAction.makeStolenCard(c);
+                    }
+                    //AbstractDungeon.actionManager.addToBottom(new SFXAction("CARD_OBTAIN"));
+                    AbstractDungeon.actionManager.addToBottom(new DiscoverCardAction(cardsToAdd, 3, upgraded, null, copies, true));
                     curseCounter();
                     cardsStolenThisCombat++;
                     return; // Don't tickDuration, so that we can keep spamming the discover screen == amount of cards requested.
@@ -142,7 +152,9 @@ public class StealCardAction extends AbstractGameAction implements CustomSavable
         
         if (hasConspire) {
             stolenCards.addToTop(CardLibrary.getCopy("conspire:Banana"));
-            stolenCards.addToTop(CardLibrary.getCopy("conspire:Treasure"));
+            AbstractCard stolenTreasure = CardLibrary.getCopy("conspire:Treasure");
+            stolenTreasure.cost = 0;
+            stolenCards.addToTop(stolenTreasure);
         }
         
         //---
@@ -205,7 +217,7 @@ public class StealCardAction extends AbstractGameAction implements CustomSavable
     static {
         stolenCardsUpgraded = new CardGroup(StolenEnum.STOLEN_CARDS);
         for (AbstractCard c : stolenCards.group) {
-            AbstractCard upgradedCopy = c.makeCopy();
+            AbstractCard upgradedCopy = c.makeStatEquivalentCopy();
             upgradedCopy.upgrade();
             stolenCardsUpgraded.addToTop(upgradedCopy);
         }
@@ -237,7 +249,7 @@ public class StealCardAction extends AbstractGameAction implements CustomSavable
     static {
         rareFindsUpgraded = new CardGroup(StolenEnum.STOLEN_CARDS);
         for (AbstractCard c : rareFinds.group) {
-            AbstractCard upgradedCopy = c.makeCopy();
+            AbstractCard upgradedCopy = c.makeStatEquivalentCopy();
             upgradedCopy.upgrade();
             rareFindsUpgraded.addToTop(upgradedCopy);
         }
@@ -277,13 +289,13 @@ public class StealCardAction extends AbstractGameAction implements CustomSavable
         
         while (temp.size() < amount) { // Grab only the amount specified. While we don't have 'amount'...
             AbstractCard card = allStolenCardsToUse().getRandomCard(true); // Get a random upgraded/non-upgraded card.
-            if (allowDuplicates || !temp.contains(card)) { // So long as we can get duplicates OR the card isn't a duplicate.
+            if (allowDuplicates || !DiscoveryPatch.cardUtil.containsByID(temp, card)) { // So long as we can get duplicates OR the card isn't a duplicate.
                 temp.add(card); // And add it to the array
             }
         }
         
         for (AbstractCard c : temp) {
-            actionManager.addToBottom(new MakeStolenCardAction(c, randomCards));
+            randomCards.addToTop(MakeStolenCardAction.makeStolenCard(c));
         }
         
         return randomCards;

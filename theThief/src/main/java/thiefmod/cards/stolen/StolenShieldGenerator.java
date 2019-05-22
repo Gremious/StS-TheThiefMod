@@ -48,9 +48,7 @@ public class StolenShieldGenerator extends AbstractStolenCard {
     }
     
     public void configureCostsOnNewCard() {
-        Iterator var1 = AbstractDungeon.actionManager.cardsPlayedThisCombat.iterator();
-        while (var1.hasNext()) {
-            AbstractCard c = (AbstractCard) var1.next();
+        for (AbstractCard c: AbstractDungeon.actionManager.cardsPlayedThisCombat){
             if (c.type == CardType.POWER) {
                 updateCost(-1);
             }

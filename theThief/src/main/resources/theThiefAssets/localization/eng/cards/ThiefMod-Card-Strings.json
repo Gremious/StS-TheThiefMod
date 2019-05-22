@@ -25,8 +25,8 @@
   },
   "theThief:SwiftSlash": {
     "NAME": "Swift Slash",
-    "DESCRIPTION": "Deal !D! damage. Draw !M! card.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. Draw !M! cards.",
+    "DESCRIPTION": "Deal !D! damage. NL Draw !M! card.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Draw !M! cards.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Not[] [#88888]to[] [#88888]be[] [#88888]confused[] [#88888]for[] [#88888]its[] [#88888]identical[] [#88888]twin[] [#88888]cousin[] [#88888]-[] [#88888]Quick[] [#88888]Slash.[]",
       "Deal !D! damage. Draw !M! card.",
@@ -67,8 +67,8 @@
   },
   "theThief:Ransack": {
     "NAME": "Ransack",
-    "DESCRIPTION": "thethief:Discover a thethief:Stolen card. NL Add !M! copies of it to your hand.",
-    "UPGRADE_DESCRIPTION": "thethief:Discover a thethief:Stolen card. NL Add !M! copies of it to your hand.",
+    "DESCRIPTION": "thethief:Discover a thethief:Stolen card. NL thethief:Steal it, and add !M! copies of it to your hand.",
+    "UPGRADE_DESCRIPTION": "thethief:Discover a thethief:Stolen card. NL thethief:Steal it, and add !M! copies of it to your hand.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]ransack[]",
       "Choose 1 out of 3 thethief:Stolen cards and add !M! copy of it to your hand."
@@ -107,8 +107,8 @@
   },
   "theThief:SwiftTread": {
     "NAME": "Swift Tread",
-    "DESCRIPTION": "Draw !M! cards. Shuffle 1 Void into your draw pile.",
-    "UPGRADE_DESCRIPTION": "Draw !M! cards. Shuffle 1 Void into your draw pile.",
+    "DESCRIPTION": "Draw !M! cards. NL Shuffle 1 Void into your draw pile.",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards. NL Shuffle 1 Void into your draw pile.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]
@@ -304,8 +304,8 @@
   },
   "theThief:Gaslight": {
     "NAME": "Gaslight",
-    "DESCRIPTION": "Enemy loses !M! strength. You gain !M! strength. NL Exhaustive !stslib:ex!.",
-    "UPGRADE_DESCRIPTION": "Enemy loses !M! strength. You gain !M! strength. NL Exhaustive !stslib:ex!.",
+    "DESCRIPTION": "Enemy loses !M! Strength. NL You gain !M! Strength. NL Exhaustive !stslib:ex!.",
+    "UPGRADE_DESCRIPTION": "Enemy loses !M! Strength. You gain !M! Strength. NL Exhaustive !stslib:ex!.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Louse,[][#88888]you're[][#88888]just[][#88888]being[][#88888]crazy.[]"
     ]
@@ -327,11 +327,12 @@
     ]
   },
   "theThief:ThousandBallBearings": {
-    "NAME": " Ball Bearings",
+    "NAME": "1000 Ball Bearings",
     "DESCRIPTION": "Apply !M! Weak and Vulnerable. NL Can be upgraded any number of times. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Apply !M! Weak and Vulnerable. NL Can be upgraded any number of times.  NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
-      "[#88888]Flavor[] [#88888]Text[]"
+      "[#88888]Flavor[] [#88888]Text[]",
+      "Ball Bearings"
     ]
   },
   "theThief:FeignTrip": {
@@ -349,7 +350,7 @@
     "EXTENDED_DESCRIPTION": [
       "[#88888]What's[][#88888]yours[][#88888]is[][#88888]mine.[]",
       "Tip.",
-      "If you keep a Gray thethief:Stolen card, unless it's a [#FEE130]Rare[] [#FEE130]Find,[] it will lose Exhaust."
+      "If you keep a thethief:Stolen card, unless it's a [#FEE130]Rare[] [#FEE130]Find,[] it will lose Exhaust."
     ]
   },
   "theThief:IAmEverywhere": {

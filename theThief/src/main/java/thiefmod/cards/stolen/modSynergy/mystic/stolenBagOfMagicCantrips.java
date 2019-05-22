@@ -1,5 +1,6 @@
 package thiefmod.cards.stolen.modSynergy.mystic;
 
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -12,6 +13,7 @@ import thiefmod.CardNoSeen;
 import thiefmod.ThiefMod;
 import thiefmod.actions.util.DiscoverCardAction;
 import thiefmod.cards.abstracts.AbstractStolenMysticCard;
+import thiefmod.patches.DiscoveryPatch;
 
 import static mysticmod.MysticMod.cantripsGroup;
 
@@ -42,15 +44,20 @@ public class stolenBagOfMagicCantrips extends AbstractStolenMysticCard {
     
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        CardGroup trinketCards = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-        trinketCards.addToTop(cantripsGroup.get(AbstractDungeon.cardRandomRng.random(cantripsGroup.size() - 1)));
-        trinketCards.addToTop(cantripsGroup.get(AbstractDungeon.cardRandomRng.random(cantripsGroup.size() - 1)));
-        trinketCards.addToTop(cantripsGroup.get(AbstractDungeon.cardRandomRng.random(cantripsGroup.size() - 1)));
-        
-        if (upgraded) {
-            act(new DiscoverCardAction(trinketCards, true));
-        } else {
-            act(new DiscoverCardAction(trinketCards));
+        for (int i = 0; i < magicNumber; i++) {
+            CardGroup trinketCards = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+            while (trinketCards.size() < 3) {
+                AbstractCard c = cantripsGroup.get(AbstractDungeon.cardRandomRng.random(cantripsGroup.size() - 1));
+                if (!DiscoveryPatch.cardUtil.containsByID(trinketCards.group, c)) {
+                    trinketCards.addToTop(c);
+                }
+            }
+            if (upgraded) {
+                act(new DiscoverCardAction(trinketCards, true));
+            } else {
+                act(new DiscoverCardAction(trinketCards));
+            }
+            cantripsGroup.clear();
         }
     }
     

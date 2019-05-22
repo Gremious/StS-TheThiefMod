@@ -44,7 +44,7 @@ public class DiscoveryPatch {
                     break;
                 }
                 cardGroupToDiscoverFrom.removeCard(c);
-                derp.add(c.makeCopy());
+                derp.add(c);
             }
             
             __instance.rewardGroup = derp;

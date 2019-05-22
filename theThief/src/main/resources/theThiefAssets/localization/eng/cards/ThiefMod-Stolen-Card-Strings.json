@@ -55,8 +55,8 @@
   },
   "theThief:StolenTrap": {
     "NAME": "Stolen Trap",
-    "DESCRIPTION": "Place a card in your hand on top of your draw pile. It cost 0 until it is played. ",
-    "UPGRADE_DESCRIPTION": "Place a card in your hand on top of your draw pile. It cost 0 until it is played."
+    "DESCRIPTION": "Place a card in your hand on top of your draw pile. NL It cost 0 until it is played. ",
+    "UPGRADE_DESCRIPTION": "Place a card in your hand on top of your draw pile. NL It cost 0 until it is played."
   },
   "theThief:StolenToxins": {
     "NAME": "Stolen Toxins",

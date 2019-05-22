@@ -51,7 +51,7 @@ public class stolenBoxOfWeapons extends AbstractStolenMysticCard {
                     threeRandomArtes.addToTop(c);
                 }
             }
-            act(new DiscoverCardAction(threeRandomArtes));
+            act(new DiscoverCardAction(threeRandomArtes, (Integer) 0));
             threeRandomArtes.clear();
         }
     }

@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
+import com.megacrit.cardcrawl.powers.WeakPower;
 import thiefmod.ThiefMod;
 import thiefmod.cards.abstracts.AbstractStolenCard;
 import thiefmod.patches.character.TheThiefEnum;
@@ -56,7 +57,7 @@ public class StolenFlute extends AbstractStolenCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            act(new ApplyPowerAction(mo, p, new VulnerablePower(mo, magicNumber, false), magicNumber));
+            act(new ApplyPowerAction(mo, p, new WeakPower(mo, magicNumber, false), magicNumber));
             act(new ApplyPowerAction(mo, p, new VulnerablePower(mo, magicNumber, false), magicNumber));
         }
     }

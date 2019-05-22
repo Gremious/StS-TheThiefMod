@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.LoseDexterityPower;
 import com.megacrit.cardcrawl.relics.BlueCandle;
 import thiefmod.CardNoSeen;
@@ -49,7 +50,7 @@ public class FleetingGuilt extends AbstractBackstabCard {
         if (!dontTriggerOnUseCard && p.hasRelic(BlueCandle.ID)) {
             useBlueCandle(p);
         } else {
-            act(new ApplyPowerAction(p, p, new LoseDexterityPower(p, 1)));
+            act(new ApplyPowerAction(p, p, new DexterityPower(p, -1)));
         }
     }
     

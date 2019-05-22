@@ -56,6 +56,7 @@ public abstract class AbstractStolenMysticCard extends AbstractStolenCard {
                 tips.add(new TooltipInfo(tooltips[1], tooltips[5]));
             }
         }
+        
         if (hasTag(MysticTags.IS_POWERFUL)) {
             tips.add(new TooltipInfo(tooltips[6], tooltips[8]));
         }

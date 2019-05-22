@@ -39,7 +39,7 @@ public class SleightOfHand extends AbstractBackstabCard {
     private static final int UPGRADED_PLUS_MAGIC = 1;
     
     private static final boolean ADD_RANDOM = true;
-    private boolean ADD_UPGRADED = false;
+    private static final boolean ADD_UPGRADED = false;
     // /STAT DECLARATION/
     
     public SleightOfHand() {
@@ -51,7 +51,6 @@ public class SleightOfHand extends AbstractBackstabCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        final int count = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
         act(new GainBlockAction(p, p, block));
         act(new StealCardAction(magicNumber, 1, ADD_RANDOM, AbstractDungeon.player.hand, ADD_UPGRADED));
     }

@@ -29,12 +29,10 @@ public class StolenClaws extends AbstractStolenCard {
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     
-    private static final int COST = 1;
-    private static final int UPGRADE_COST = 0;
-    
-    private static final int DAMAGE = 4;
-    
-    private static final int MAGIC = 2;
+    private static final int COST = 0;
+    private static final int DAMAGE = 5;
+    private static final int MAGIC = 1;
+    private static final int UPGRADE_MAGIC = 2;
     // /STAT DECLARATION/
     
     public StolenClaws() {
@@ -54,7 +52,7 @@ public class StolenClaws extends AbstractStolenCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADE_COST);
+            upgradeMagicNumber(UPGRADE_MAGIC);
             rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
