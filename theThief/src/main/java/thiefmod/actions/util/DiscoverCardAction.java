@@ -16,15 +16,15 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class DiscoverCardAction extends AbstractGameAction implements CustomSavable<List<String>> {
-    private boolean retrieveCard = false;
+    protected boolean retrieveCard = false;
     public static CardGroup cardsDiscoveredThisCombat = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-    private static List<String> idList;
+    protected static List<String> idList;
     
-    private CardGroup cardList;
-    private int amount;
-    private int copies;
-    private boolean upgraded;
-    private Integer costForTurn;
+    protected CardGroup cardList;
+    protected int amount;
+    protected int copies;
+    protected boolean upgraded;
+    protected Integer costForTurn;
     
     public DiscoverCardAction(final CardGroup cardList) {
         this(cardList, 3, false, null, 1);

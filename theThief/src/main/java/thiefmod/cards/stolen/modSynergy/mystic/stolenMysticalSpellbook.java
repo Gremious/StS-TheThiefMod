@@ -32,7 +32,7 @@ public class stolenMysticalSpellbook extends AbstractStolenMysticCard {
     private static final CardType TYPE = CardType.SKILL;
     
     
-    private static final int COST = 2;
+    private static final int COST = 1;
     
     private static final int MAGIC = 1;
     private static final int UPGRADED_MAGIC = 2;

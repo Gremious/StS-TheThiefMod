@@ -1,5 +1,6 @@
 package thiefmod.cards.stolen.modSynergy.mystic;
 
+import basemod.patches.com.megacrit.cardcrawl.characters.AbstractPlayer.MaxHandSizePatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -52,10 +53,13 @@ public class stolenMagicCantrip extends AbstractStolenMysticCard {
         AbstractCard trinketCard = cantripsGroup.get(AbstractDungeon.cardRandomRng.random(cantripsGroup.size() - 1));
         if (upgraded) {
             trinketCard.upgrade();
-            AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(trinketCard));
+            AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(trinketCard.makeCopy()));
         } else {
-            AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(trinketCard));
+            AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(trinketCard.makeCopy()));
         }
+        
+        AbstractDungeon.player.hand.refreshHandLayout();
+        AbstractDungeon.player.hand.glowCheck();
     }
     
     // Upgraded stats.

@@ -11,7 +11,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import thiefmod.actions.util.DiscoverCardAction;
 import thiefmod.cards.stolen.*;
 import thiefmod.cards.stolen.modSynergy.bard.StolenCredit;
 import thiefmod.cards.stolen.modSynergy.bard.StolenEssence;
@@ -73,7 +72,7 @@ public class StealCardAction extends AbstractGameAction implements CustomSavable
                 if (amount > 0) {
                     amount--;
                     cardsToAdd = getRandomStolenCards(3, false);
-                    AbstractDungeon.actionManager.addToBottom(new DiscoverCardAction(cardsToAdd, 3, upgraded, copies));
+                    AbstractDungeon.actionManager.addToBottom(new DiscoverStolenCardAction(cardsToAdd, 3, upgraded, null, copies));
                     curseCounter();
                     cardsStolenThisCombat++;
                     return; // Don't tickDuration, so that we can keep spamming the discover screen == amount of cards requested.
@@ -192,7 +191,6 @@ public class StealCardAction extends AbstractGameAction implements CustomSavable
             stolenCards.addToTop(new StolenEssence());
             stolenCards.addToTop(new StolenFlute());
             stolenCards.addToTop(new StolenSong());
-            stolenCards.addToTop(new StolenGreatHorn());
             // Gamble?
         }
         
