@@ -1,20 +1,24 @@
 package thiefmod.actions.util;
 
 import basemod.BaseMod;
+import basemod.abstracts.CustomSavable;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDiscardEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
 import thiefmod.patches.DiscoveryPatch;
 
-import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
-public class DiscoverCardAction extends AbstractGameAction {
+public class DiscoverCardAction extends AbstractGameAction implements CustomSavable<List<String>> {
     private boolean retrieveCard = false;
-    private static CardGroup discoveredCards = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+    public static CardGroup cardsDiscoveredThisCombat = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+    private static List<String> idList;
     
     private CardGroup cardList;
     private int amount;
@@ -54,20 +58,6 @@ public class DiscoverCardAction extends AbstractGameAction {
         this(cardList, 3, false, costForTurn, 1);
     }
     
-    
-    public DiscoverCardAction(final CardGroup cardList,
-                              final AbstractCard.CardType type,
-                              final AbstractCard.CardColor color,
-                              final AbstractCard.CardRarity rarity) {
-        this(cardList, 3, false, null, 1);
-    }
-    
-    /**
-     * @param cardList    Group of cards to discover from.
-     * @param amount      Amount of cards to discover from.
-     * @param upgraded    Whether the cards should be upgraded.
-     * @param costForTurn Sets the cost of the card for the turn. Pass null to keep it unchanged.
-     */
     public DiscoverCardAction(final CardGroup cardList,
                               final int amount,
                               final boolean upgraded,
@@ -83,43 +73,18 @@ public class DiscoverCardAction extends AbstractGameAction {
         this.copies = copies;
     }
     
-    /**
-     * @param cardList    Array list of cards to discover from.
-     * @param amount      Amount of cards to discover from.
-     * @param upgraded    Whether the cards should be upgraded.
-     * @param costForTurn Sets the cost of the card for the turn. Pass null to keep it unchanged.
-     */
-    public DiscoverCardAction(final ArrayList<AbstractCard> cardList,
-                              final int amount,
-                              final boolean upgraded,
-                              final Integer costForTurn,
-                              final int copies) {
-        actionType = ActionType.CARD_MANIPULATION;
-        duration = Settings.ACTION_DUR_FAST;
-        
-        this.cardList = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-        this.cardList.group.addAll(cardList);
-        this.amount = amount;
-        this.upgraded = upgraded;
-        this.costForTurn = costForTurn;
-        this.copies = copies;
-    }
-    
     @Override
     public void update() {
         if (duration == Settings.ACTION_DUR_FAST) {
             if (cardList.size() < amount) amount = cardList.size();
+            if (cardList.size() <= 0) isDone = true;
             
-            if (cardList.size() <= 0) {
-                isDone = true;
-            }
             
             DiscoveryPatch.customDiscovery = true;
             
             DiscoveryPatch.amount = amount;
             DiscoveryPatch.upgraded = upgraded;
             DiscoveryPatch.cardGroupToDiscoverFrom = cardList;
-
             
             AbstractDungeon.cardRewardScreen.discoveryOpen();
             tickDuration();
@@ -129,7 +94,7 @@ public class DiscoverCardAction extends AbstractGameAction {
         if (!retrieveCard) {
             if (AbstractDungeon.cardRewardScreen.discoveryCard != null) {
                 AbstractCard disCard = AbstractDungeon.cardRewardScreen.discoveryCard.makeStatEquivalentCopy();
-                discoveredCards.addToTop(disCard);
+                cardsDiscoveredThisCombat.addToTop(disCard);
                 disCard.current_x = -1000.0f * Settings.scale;
                 if (costForTurn != null) disCard.setCostForTurn(costForTurn);
                 
@@ -149,7 +114,26 @@ public class DiscoverCardAction extends AbstractGameAction {
         tickDuration();
     }
     
-    public static AbstractCard getLastCard() {
-        return discoveredCards.getTopCard();
+    public static AbstractCard getLastCardDiscoveredThisCombat() {
+        return cardsDiscoveredThisCombat.getTopCard();
+    }
+    
+    public static CardGroup getAllCardsDiscoveredThisCombat() {
+        return cardsDiscoveredThisCombat;
+    }
+    
+    @Override
+    public List<String> onSave() {
+        idList = cardsDiscoveredThisCombat.group.stream().map(c -> c.cardID).collect(Collectors.toList());
+        return idList;
+    }
+    
+    @Override
+    public void onLoad(List<String> strings) {
+        if (!(idList == null) && !idList.isEmpty()) {
+            for (String id : idList) {
+                cardsDiscoveredThisCombat.addToTop(CardLibrary.getCard(id));
+            }
+        }
     }
 }

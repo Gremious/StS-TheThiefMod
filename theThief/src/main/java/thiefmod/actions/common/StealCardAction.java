@@ -1,5 +1,6 @@
 package thiefmod.actions.common;
 
+import basemod.abstracts.CustomSavable;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -36,7 +37,7 @@ import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.player;
 import static mysticmod.MysticMod.cantripsGroup;
 import static thiefmod.ThiefMod.*;
 
-public class StealCardAction extends AbstractGameAction {
+public class StealCardAction extends AbstractGameAction implements CustomSavable<Integer> {
     public static final Logger logger = LogManager.getLogger(StealCardAction.class.getName());
     
     public boolean random;
@@ -45,6 +46,7 @@ public class StealCardAction extends AbstractGameAction {
     public int copies;
     private int rollRare = AbstractDungeon.cardRandomRng.random(99);
     private CardGroup cardsToAdd = new CardGroup(StolenEnum.STOLEN_CARDS);
+    public static int cardsStolenThisCombat = 0;
     
     public StealCardAction(int amount, int copies, boolean random, CardGroup location, boolean upgraded) {
         actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
@@ -61,7 +63,10 @@ public class StealCardAction extends AbstractGameAction {
         if (duration == Settings.ACTION_DUR_FAST) {
             if (random) {
                 cardsToAdd = getRandomStolenCards(amount, true);
-                for (int i = 0; i < amount; i++) curseCounter();
+                for (int i = 0; i < amount; i++) {
+                    curseCounter();
+                    cardsStolenThisCombat++;
+                }
                 for (int i = 0; i < copies; i++) addStolenCards();
                 cardsToAdd.clear();
             } else /*Discover*/ {
@@ -70,6 +75,7 @@ public class StealCardAction extends AbstractGameAction {
                     cardsToAdd = getRandomStolenCards(3, false);
                     AbstractDungeon.actionManager.addToBottom(new DiscoverCardAction(cardsToAdd, 3, upgraded, copies));
                     curseCounter();
+                    cardsStolenThisCombat++;
                     return; // Don't tickDuration, so that we can keep spamming the discover screen == amount of cards requested.
                 }
                 cardsToAdd.clear();
@@ -241,12 +247,17 @@ public class StealCardAction extends AbstractGameAction {
     
     // A final group of the cards to return.
     private CardGroup allStolenCardsToUse() {
+        logger.info("Cards Stolen This Combat: " + cardsStolenThisCombat);
         logger.info("Rare fnd roll: " + rollRare + " - " + (rollRare < 15));
-        logger.info("Do you have super secret strong card mods? " + (hasHubris || hasInfiniteSpire || hasReplayTheSpire));
-        //    logger.info("Did you roll low enough to get them? " + rollBlack + " - " + (rollBlack < 8));
         logger.info("Standard Checks: upgraded or has power? " + (upgraded || AbstractDungeon.player.hasPower(IllGottenGainsPower.POWER_ID)));
         
-        if (rollRare < 15) {
+        if (cardsStolenThisCombat == 19) {
+            if (upgraded || AbstractDungeon.player.hasPower(IllGottenGainsPower.POWER_ID)) {
+                return rareFindsUpgraded;
+            } else {
+                return rareFinds;
+            }
+        } else if (cardsStolenThisCombat >= 20 && rollRare < 15) {
             if (upgraded || AbstractDungeon.player.hasPower(IllGottenGainsPower.POWER_ID)) {
                 return rareFindsUpgraded;
             } else {
@@ -314,5 +325,15 @@ public class StealCardAction extends AbstractGameAction {
     private void curseCounter() {
         actionManager.addToBottom(new ApplyPowerAction(player, source,
                 new FleetingGuiltPower(player, source, 1), 1));
+    }
+    
+    @Override
+    public Integer onSave() {
+        return cardsStolenThisCombat;
+    }
+    
+    @Override
+    public void onLoad(Integer cardNum) {
+        cardsStolenThisCombat = cardNum;
     }
 }

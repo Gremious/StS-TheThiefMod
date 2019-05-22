@@ -18,6 +18,7 @@ import com.megacrit.cardcrawl.dungeons.Exordium;
 import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import javassist.CannotCompileException;
 import javassist.CtClass;
@@ -25,6 +26,8 @@ import javassist.NotFoundException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.clapper.util.classutil.*;
+import thiefmod.actions.common.StealCardAction;
+import thiefmod.actions.util.DiscoverCardAction;
 import thiefmod.cards.stolen.modSynergy.disciple.rareFind.StolenClock;
 import thiefmod.cards.stolen.modSynergy.halation.rareFind.StolenMail;
 import thiefmod.cards.stolen.modSynergy.mystic.rareFind.stolenMysticalOrb;
@@ -58,7 +61,12 @@ import static archetypeAPI.ArchetypeAPI.loadArchetypes;
 import static archetypeAPI.ArchetypeAPI.setCharacterDefaultNumOfCards;
 
 @SpireInitializer
-public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, EditKeywordsSubscriber, EditCharactersSubscriber, PostInitializeSubscriber {
+public class ThiefMod implements EditCardsSubscriber,
+        EditRelicsSubscriber,
+        EditStringsSubscriber,
+        EditKeywordsSubscriber,
+        EditCharactersSubscriber,
+        PostInitializeSubscriber, OnStartBattleSubscriber {
     public static final Logger logger = LogManager.getLogger(ThiefMod.class.getName());
     private static String modID;
     
@@ -456,6 +464,12 @@ public class ThiefMod implements EditCardsSubscriber, EditRelicsSubscriber, Edit
     
     public static String makeID(String idText) {
         return getModID() + ":" + idText;
+    }
+    
+    @Override
+    public void receiveOnBattleStart(AbstractRoom abstractRoom) {
+        StealCardAction.cardsStolenThisCombat = 0;
+        DiscoverCardAction.cardsDiscoveredThisCombat.clear();
     }
 }
 

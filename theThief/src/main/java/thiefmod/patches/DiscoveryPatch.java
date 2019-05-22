@@ -35,17 +35,15 @@ public class DiscoveryPatch {
     public static SpireReturn DiscoveryInsertPatch(CardRewardScreen __instance, final float CARD_TARGET_Y) {
         if (customDiscovery) {
             ArrayList<AbstractCard> derp = new ArrayList<>();
-            CardGroup temp = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-            
             
             while (derp.size() < amount) {
-                AbstractCard c = temp.getRandomCard(true);
+                AbstractCard c = cardGroupToDiscoverFrom.getRandomCard(true);
                 if (upgraded) c.upgrade();
                 if (cardUtil.containsByID(derp, c)) {
-                    cardUtil.removeByID(temp, c);
+                    cardUtil.removeByID(cardGroupToDiscoverFrom, c);
                     break;
                 }
-                temp.removeCard(c);
+                cardGroupToDiscoverFrom.removeCard(c);
                 derp.add(c.makeCopy());
             }
             
@@ -103,33 +101,6 @@ public class DiscoveryPatch {
                     .map(c -> c.cardID)
                     .collect(Collectors.toList());
             IDsOfBaseGroup.removeIf(id -> id.equals(cardWithID.cardID));
-        }
-        
-        public static int countTypes(ArrayList<AbstractCard> listToCheck, AbstractCard.CardType type) {
-            int count = 0;
-            for (AbstractCard c : listToCheck) {
-                if (c.type == type) ;
-                count++;
-            }
-            return count;
-        }
-        
-        public static int countRarity(ArrayList<AbstractCard> listToCheck, AbstractCard.CardRarity rariry) {
-            int count = 0;
-            for (AbstractCard c : listToCheck) {
-                if (c.rarity == rariry) ;
-                count++;
-            }
-            return count;
-        }
-        
-        public static int countColor(ArrayList<AbstractCard> listToCheck, AbstractCard.CardColor color) {
-            int count = 0;
-            for (AbstractCard c : listToCheck) {
-                if (c.color == color) ;
-                count++;
-            }
-            return count;
         }
     }
 }
