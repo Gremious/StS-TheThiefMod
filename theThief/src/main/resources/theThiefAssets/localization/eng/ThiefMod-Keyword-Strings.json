@@ -25,7 +25,7 @@
       "steal",
       "stolen"
     ],
-    "DESCRIPTION": "#yStolen cards are mostly low energy cards that gain #yExhaust when attained through #yStealing. NL After #yStealing #b5 cards, add #b1 #rFleeting #rGuilt to your discard pile."
+    "DESCRIPTION": "#yStolen cards are mostly low energy cards that gain #yExhaust. NL After #yStealing #b5 cards, add #b1 #rFleeting #rGuilt curse to your discard pile. NL After #yStealing #b20 cards in a combat, you are guaranteed a [#FEE130]Rare[] [#FEE130]Find![]"
   },
   {
     "NAMES": [
@@ -33,6 +33,26 @@
       "backstabs",
       "non-backstab"
     ],
-    "DESCRIPTION": "Triggers if this is the first card you play in a turn, or if it's played immediately after a #yShadowstep card."
+    "DESCRIPTION": "Triggers if this is the first card you play in a turn, or if it's played after a #yShadowstep card."
+  },
+  {
+    "PROPER_NAME": "Pattern Shift",
+    "NAMES": [
+      "Pattern Shift",
+      "pattern_shift"
+    ],
+    "DESCRIPTION": "A 0 cost card which shifts the enemy to their next turn."
+  },
+  {
+    "NAMES": [
+      "Spell"
+    ],
+    "DESCRIPTION": "A card which grants one stack of [#5299DC]Power,[] making your [#FF5252]Artes[] stronger."
+  },
+  {
+    "NAMES": [
+      "Arte"
+    ],
+    "DESCRIPTION": "A card which grants one stack of [#FF5252]Poise,[] making your [#5299DC]Spells[] stronger."
   }
 ]

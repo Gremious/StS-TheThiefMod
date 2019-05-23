@@ -1,47 +1,93 @@
 package thiefmod.cards.abstracts;
 
+import basemod.BaseMod;
+import com.badlogic.gdx.graphics.Color;
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.AlwaysRetainField;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.CardStrings;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import thiefmod.CardIgnore;
+import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import thiefmod.ThiefMod;
-import thiefmod.actions.common.TestAction;
 import thiefmod.patches.character.AbstractCardEnum;
 
-@Deprecated
-@CardIgnore // Comment out to test, obv
+// @CardIgnore // Comment out to test, obv
 public class AAAtestCard extends AbstractBackstabCard {
     // TEXT DECLARATION
-    
+    public static final Logger logger = LogManager.getLogger(AAAtestCard.class.getName());
     public static final String ID = ThiefMod.makeID("testCard");
-    public static final String IMG = "theThiefAssets/images/cards/beta/Attack.png";
+    public static final String IMG = "theThiefAssets/images/cards/Test.png";
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    
     public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
-    
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:TooltipNames");
+    private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.SELF;
-    private static final CardType TYPE = CardType.ATTACK;
+    private static final CardType TYPE = CardType.SKILL;
     
-    private static final int COST = 2;
-    public static final int DAMAGE = 5;
+    private static final int COST = 0;
     // /STAT DECLARATION/
     
     public AAAtestCard() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        isInnate = true;
+        AlwaysRetainField.alwaysRetain.set(this, true);
+        purgeOnUse = true;
     }
     
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        act(new TestAction(1));
+        logger.info(this.name + " use() start");
+        logger.info("Can Backstab: " + canBackstab());
+        if (canBackstab()) {
+            logger.info("Triggered backstab action");
+            logger.info("Can Backstab: " + canBackstab());
+            flash(Color.GREEN);
+        } else {
+            logger.info("Triggered non-backstab action");
+            logger.info("Can Backstab: " + canBackstab());
+            flash(Color.RED);
+        }
+        
+        CardGroup discoveryGroup = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+        
+        discoveryGroup.group.addAll(CardLibrary.getAllCards());
+        discoveryGroup.group.removeIf(c -> c.color != CardColor.GREEN);
+        
+        // act(new DiscoverCardAction(discoveryGroup, 3));
+        
+        
+        act(new MakeTempCardInHandAction(this.makeStatEquivalentCopy()));
+    }
+    
+    @Override
+    public void applyPowers() {
+        logger.info("Apply Powers triggered for text card. Calling super.");
+        super.applyPowers();
+        if (canBackstabDesc()) {
+            logger.info("Apply Powers triggered for canBackstab == true. It is " + canBackstabDesc());
+            rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[2];
+        } else {
+            logger.info("Apply Powers triggered for canBackstab == false. It is " + canBackstabDesc());
+            rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[3];
+        }
+        logger.info("Initialising description: " + rawDescription);
+        initializeDescription();
     }
     
     @Override
     public String flavortext() {
-        return null;
+        return EXTENDED_DESCRIPTION[0];
     }
     
     // Upgraded stats.

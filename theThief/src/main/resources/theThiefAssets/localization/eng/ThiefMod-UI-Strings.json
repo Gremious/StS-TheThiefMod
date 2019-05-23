@@ -2,7 +2,7 @@
   "theThief:TooltipNames": {
     "TEXT": [
       "Flavor Text",
-      "Synergy"
+      "#ySynergy"
     ]
   },
   "theThief:StealCardUtil": {
@@ -39,6 +39,14 @@
     "TEXT": [
       "Steal a card.",
       "Choose cards to discard."
+    ]
+  },
+  "theThief:MysticMod": {
+    "TEXT": [
+      "Spell",
+      "Arte",
+      "A card which grants one stack of [#5299DC]Power,[] making your [#FF5252]Artes[] stronger.",
+      "A card which grants one stack of [#FF5252]Poise,[] making your [#5299DC]Spells[] stronger."
     ]
   }
 }

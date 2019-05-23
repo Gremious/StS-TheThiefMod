@@ -27,7 +27,7 @@ public class StolenCode extends AbstractStolenCard {
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
-    public static final CardColor COLOR = CardColor.COLORLESS;
+    
     
     private static final int COST = 2;
     private static final int UPGRADE_COST = 1;
@@ -36,9 +36,9 @@ public class StolenCode extends AbstractStolenCard {
     // /STAT DECLARATION/
     
     public StolenCode() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, AbstractPlayer.PlayerClass.DEFECT);
         magicNumber = baseMagicNumber = MAGIC;
-        tags.add(ThiefCardTags.STOLEN);
+        
     }
     
     @Override

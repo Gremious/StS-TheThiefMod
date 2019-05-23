@@ -24,6 +24,7 @@ import thiefmod.cards.DefendThief;
 import thiefmod.cards.Lie;
 import thiefmod.cards.Steal;
 import thiefmod.cards.StrikeThief;
+import thiefmod.cards.abstracts.AAAtestCard;
 import thiefmod.patches.character.AbstractCardEnum;
 import thiefmod.relics.ThievesMask;
 
@@ -148,6 +149,8 @@ public class TheThief extends CustomPlayer {
 
         retVal.add(Lie.ID);
         retVal.add(Lie.ID);
+        
+        retVal.add(AAAtestCard.ID);
 
         return retVal;
     }

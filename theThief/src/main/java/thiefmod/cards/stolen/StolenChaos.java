@@ -27,15 +27,15 @@ public class StolenChaos extends AbstractStolenCard {
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
-    public static final CardColor COLOR = CardColor.COLORLESS;
+    
     
     private static final int COST = 1;
     private static final int UPGRADE_COST = 0;
     // /STAT DECLARATION/
     
     public StolenChaos() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        tags.add(ThiefCardTags.STOLEN);
+        super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, AbstractPlayer.PlayerClass.IRONCLAD);
+        
     }
     
     public void use(AbstractPlayer p, AbstractMonster m) {

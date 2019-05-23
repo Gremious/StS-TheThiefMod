@@ -17,7 +17,8 @@ public class Voidbound extends AbstractBackstabCard {
     // TEXT DECLARATION
     
     public static final String ID = ThiefMod.makeID("Voidbound");
-    public static final String IMG = "theThiefAssets/images/cards/beta/Attack.png";
+    public static final String IMG = "theThiefAssets/images/cards/beta/Voidbound.png" +
+            "";
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
     
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

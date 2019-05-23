@@ -11,7 +11,7 @@
   },
   "theThief:StolenMomentum": {
     "NAME": "Stolen Momentum",
-    "DESCRIPTION": "Draw !M! cards, then choose 1 card to discard.",
+    "DESCRIPTION": "Draw !M! cards. NL Choose 1 card to discard.",
     "UPGRADE_DESCRIPTION": "Draw !M! cards."
   },
   "theThief:StolenArtifice": {
@@ -26,17 +26,17 @@
   },
   "theThief:StolenRitual": {
     "NAME": "Stolen Ritual",
-    "DESCRIPTION": "Lose 2 hp, gain !M! gold.",
-    "UPGRADE_DESCRIPTION": "Lose 2 hp, gain !M! gold.",
+    "DESCRIPTION": "Lose 2 hp. NL Gain !M! Gold.",
+    "UPGRADE_DESCRIPTION": "Lose 2 hp. NL Gain !M! Gold.",
     "EXTENDED_DESCRIPTION[]": [
       "CA-CAW!",
       "Cough."
     ]
   },
   "theThief:StolenTechnique": {
-    "NAME": "Stolen Technique",
-    "DESCRIPTION": "Add a random card to your hand from any color. It costs 0 this turn.",
-    "UPGRADE_DESCRIPTION": "Add a random card to your hand from any color. It costs 0 this turn."
+    "NAME": "Stolen Identity",
+    "DESCRIPTION": "Add a random card to your hand from any color. NL It costs 0 this turn.",
+    "UPGRADE_DESCRIPTION": "Add a random card to your hand from any color. NL It costs 0 this turn."
   },
   "theThief:StolenChange": {
     "NAME": "Stolen Change",
@@ -45,8 +45,8 @@
   },
   "theThief:StolenBlades": {
     "NAME": "Stolen Blades",
-    "DESCRIPTION": "Add !M! shivs to your hand.",
-    "UPGRADE_DESCRIPTION": "Add !M! shivs to your hand."
+    "DESCRIPTION": "Add !M! Shivs to your hand.",
+    "UPGRADE_DESCRIPTION": "Add !M! Shivs to your hand."
   },
   "theThief:StolenWire": {
     "NAME": "Stolen Wire",
@@ -55,8 +55,8 @@
   },
   "theThief:StolenTrap": {
     "NAME": "Stolen Trap",
-    "DESCRIPTION": "Place a card in your hand on top of your draw pile. It cost 0 until it is played. ",
-    "UPGRADE_DESCRIPTION": "Place a card in your hand on top of your draw pile. It cost 0 until it is played."
+    "DESCRIPTION": "Place a card in your hand on top of your draw pile. NL It cost 0 until it is played. ",
+    "UPGRADE_DESCRIPTION": "Place a card in your hand on top of your draw pile. NL It cost 0 until it is played."
   },
   "theThief:StolenToxins": {
     "NAME": "Stolen Toxins",
@@ -161,47 +161,76 @@
   },
   "theThief:stolenSpellScroll": {
     "NAME": "Stolen Spell Scroll",
-    "DESCRIPTION": "Play a random Spell and Exhaust it.",
-    "UPGRADE_DESCRIPTION": "Play a random Spell."
+    "DESCRIPTION": "Play a random [#5299DC]Spell.[]",
+    "UPGRADE_DESCRIPTION": "Play a random Upgraded [#5299DC]Spell.[]"
   },
-  "theThief:stolenArteScroll": {
-    "NAME": "Stolen Arte",
-    "DESCRIPTION": "Play a random Arte and Exhaust it.",
-    "UPGRADE_DESCRIPTION": "Play a random Arte."
+  "theThief:stolenMagicalWeapon": {
+    "NAME": "Stolen Magical Weapon",
+    "DESCRIPTION": "Play a random [#FF5252]Arte.[]",
+    "UPGRADE_DESCRIPTION": "Play a random Upgraded [#FF5252]Arte.[]"
   },
   "theThief:stolenMysticalSpellbook": {
     "NAME": "Mystical Spellbook",
-    "DESCRIPTION": "Discover !M! random Spell. NL It costs 0 this turn.",
-    "UPGRADE_DESCRIPTION": "Discover !M! random Spells. NL They costs 0 this turn."
+    "DESCRIPTION": "Discover !M! random [#5299DC]Spell.[] NL It costs 0 this turn.",
+    "UPGRADE_DESCRIPTION": "Discover !M! random [#5299DC]Spells.[] NL They cost 0 this turn."
   },
-  "theThief:stolenBookOfArte": {
-    "NAME": "Stolen Book of Arte",
-    "DESCRIPTION": "Discover !M! random Arte.",
-    "UPGRADE_DESCRIPTION": "Discover !M! random Artes."
+  "theThief:stolenBoxOfWeapons": {
+    "NAME": "Stolen Box of Weapons",
+    "DESCRIPTION": "Discover !M! random [#FF5252]Arte.[] NL It costs 0 this turn.",
+    "UPGRADE_DESCRIPTION": "Discover !M! random [#FF5252]Artes.[] NL They cost 0 this turn."
   },
   "theThief:stolenMagicCantrip": {
     "NAME": "Stolen Magic Cantrip",
-    "DESCRIPTION": "Add a random Cantrip to your hand.",
-    "UPGRADE_DESCRIPTION": "Add a random upgraded Cantrip to your hand."
+    "DESCRIPTION": "Add a random mysticmod:Cantrip to your hand.",
+    "UPGRADE_DESCRIPTION": "Add a random upgraded mysticmod:Cantrip to your hand."
   },
   "theThief:stolenBagOfMagicCantrips": {
     "NAME": "Bag of Magic Cantrips",
-    "DESCRIPTION": "Discover a random Cantrip.",
-    "UPGRADE_DESCRIPTION": "Discover a random upgraded Cantrip."
+    "DESCRIPTION": "Discover a random mysticmod:Cantrip.",
+    "UPGRADE_DESCRIPTION": "Discover a random upgraded mysticmod:Cantrip."
   },
   "theThief:stolenMysticalOrb": {
     "NAME": "Stolen Mystical Orb",
-    "DESCRIPTION": "Play a random Arte, then, a random Spell. NL Repeat 3 more times.",
-    "UPGRADE_DESCRIPTION": "Play a random Arte, then, a random Spell. NL Repeat 3 more times.",
+    "DESCRIPTION": "thethief:Discover a [#5299DC]Spell[] and play it. NL thethief:Discover an [#FF5252]Arte[] and play it. NL Repeat this effect !M! more times.",
+    "UPGRADE_DESCRIPTION": "thethief:Discover a [#5299DC]Spell[] and play it. NL thethief:Discover an [#FF5252]Arte[] and play it. NL Repeat this effect !M! more times.",
     "EXTENDED_DESCRIPTION": [
       "[#FEE130]Rare[] [#FEE130]Find:[]",
-      "[#FEE130]A[] [#FEE130]mystical[] [#FEE130]item[] [#FEE130]of[] [#FEE130]great[] [#FEE130]power[], [#FEE130]entirely[] [#FEE130]in[] [#FEE130]the[] [#FEE130]wrong[] [#FEE130]hands.[]"
+      "[#FEE130]A[] [#FEE130]mystical[] [#FEE130]item[] [#FEE130]of[] [#FEE130]great[] [#FEE130]power,[] [#FEE130]entirely[] [#FEE130]in[] [#FEE130]the[] [#FEE130]wrong[] [#FEE130]hands.[]"
+    ]
+  },
+  "theThief:StolenCredit": {
+    "NAME": "Stolen Credit",
+    "DESCRIPTION": "Gain bard:Inspiration !theThief:Magic!",
+    "UPGRADE_DESCRIPTION": "Gain bard:Inspiration !theThief:Magic!"
+  },
+  "theThief:StolenVestments": {
+    "NAME": "Stolen Vestments",
+    "DESCRIPTION": "Gain !M! Temporary_HP",
+    "UPGRADE_DESCRIPTION": "Gain !M! Temporary_HP"
+  },
+  "theThief:StolenFlute": {
+    "NAME": "Stolen Flute",
+    "DESCRIPTION": "Apply !M! Weak and !M! Vulnerable to ALL enemies.",
+    "UPGRADE_DESCRIPTION": "Apply !M! Weak and !M! Vulnerable to ALL enemies."
+  },
+  "theThief:StolenSong": {
+    "NAME": "Stolen Song",
+    "DESCRIPTION": "Perform any bard:Melody.",
+    "UPGRADE_DESCRIPTION": "Perform any bard:Melody."
+  },
+  "theThief:StolenGreatHorn": {
+    "NAME": "Stolen Great Horn",
+    "DESCRIPTION": "At the start of each turn, bard:Queue !M! {Wild Note} .",
+    "UPGRADE_DESCRIPTION": "At the start of each turn, bard:Queue !M! {Wild Note} .",
+    "EXTENDED_DESCRIPTION": [
+      "[#FEE130]Rare[] [#FEE130]Find:[]",
+      "[#FEE130]A[] [#FEE130]magical[] [#FEE130]weapon[] [#FEE130]of[] [#FEE130]immense[] [#FEE130]magnitude.[] [#FEE130]Capable[] [#FEE130]of[] [#FEE130]creating[] [#FEE130]very[] [#fa5555]physical[] [#FEE130]songs.[]"
     ]
   },
   "theThief:StolenMail": {
     "NAME": "Stolen Mail",
-    "DESCRIPTION": "Add all 3 letters to your hand, draw, and discard pile.",
-    "UPGRADE_DESCRIPTION": "Add all 3 letters to your hand, draw, and discard pile.",
+    "DESCRIPTION": "Add the letters of admiration, love and respect to your hand, draw, and discard piles.",
+    "UPGRADE_DESCRIPTION": "Add the letters of admiration, love and respect to your hand, draw, and discard piles.",
     "EXTENDED_DESCRIPTION": [
       "[#FEE130]Rare[] [#FEE130]Find:[]",
       "[#FEE130]These[] [#FEE130]are[] [#FEE130]addressed[] [#FEE130]to[] [#FEE130]someone[] [#FEE130]very[] [#FEE130]important...[]"
@@ -209,8 +238,8 @@
   },
   "theThief:StolenClock": {
     "NAME": "Stolen Clock",
-    "DESCRIPTION": "Add a [#efc851]Pattern[] [#efc851]Shift[] to your hand. NL It cannot leave your hand.",
-    "UPGRADE_DESCRIPTION": "Add a [#efc851]Pattern[] [#efc851]Shift[] to your hand. NL It cannot leave your hand.",
+    "DESCRIPTION": "Add a thethief:Pattern_Shift to your hand. NL It cannot leave your hand.",
+    "UPGRADE_DESCRIPTION": "Add a thethief:Pattern_Shift to your hand. NL It cannot leave your hand.",
     "EXTENDED_DESCRIPTION": [
       "[#FEE130]Rare[] [#FEE130]Find:[]",
       "[#FEE130]You[] [#FEE130]can[] [#FEE130]feel[] [#FEE130]the[] [#FEE130]waves[] [#FEE130]of[] [#FEE130]time[] [#FEE130]flowing[] [#FEE130]through[] [#FEE130]it.[]"

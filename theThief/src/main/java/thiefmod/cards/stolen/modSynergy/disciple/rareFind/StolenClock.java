@@ -2,6 +2,9 @@ package thiefmod.cards.stolen.modSynergy.disciple.rareFind;
 
 import basemod.helpers.TooltipInfo;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
+import com.evacipated.cardcrawl.mod.bard.cards.AbstractBardCard;
+import com.evacipated.cardcrawl.mod.bard.cards.InspiringSong;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -10,7 +13,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
-import com.megacrit.cardcrawl.vfx.cardManip.CardFlashVfx;
+import mysticmod.cards.Snowball;
 import thiefmod.CardNoSeen;
 import thiefmod.ThiefMod;
 import thiefmod.cards.abstracts.AbstractStolenCard;
@@ -25,27 +28,27 @@ public class StolenClock extends AbstractStolenCard {
     
     public static final String ID = ThiefMod.makeID("StolenClock");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    
-    public static final String IMG = "theThiefAssets/images/cards/beta/Attack.png";
-    
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
     // /TEXT DECLARATION/
-    // STAT DECLARATION
     
-    private static final CardRarity RARITY = CardRarity.SPECIAL;
+    // STAT DECLARATION
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
-    public static final CardColor COLOR = CardColor.COLORLESS;
     
     private static final int COST = 1;
     private static final int UPGRADED_COST = 0;
     // /STAT DECLARATION/
     
+    public static final String IMG = loadLockedCardImage(TYPE);
+    
     public StolenClock() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        setBannerTexture("theThiefAssets/images/512/special/rare_skill_banner.png", "theThiefAssets/images/1024/special/rare_skill_banner.png");
-        this.exhaust = true;
+        super(ID, IMG, COST, TYPE, TARGET, CardRarity.RARE, chronomuncher.patches.Enum.CHRONO_CLASS);
+        exhaust = true;
+        
+        if (ThiefMod.hasDisciple) {
+            portrait = new chronomuncher.cards.SecondHand().portrait;
+        }
     }
     
     @Override
@@ -56,22 +59,21 @@ public class StolenClock extends AbstractStolenCard {
     }
     
     @Override
-    public void triggerWhenDrawn() {
-        AbstractDungeon.effectList.add(new CardFlashVfx(this, Color.BROWN));
+    protected Texture getPortraitImage() {
+        if (ThiefMod.hasDisciple) {
+            return AbstractBardCard.getPortraitImage(new chronomuncher.cards.SecondHand());
+        } else {
+            return super.getPortraitImage();
+        }
     }
     
-    @Override
-    public void triggerWhenCopied() {
-        AbstractDungeon.effectList.add(new CardFlashVfx(this, Color.BROWN));
-    }
-    
-    @Override
+/*    @Override
     public List<TooltipInfo> getCustomTooltips() {
         List<TooltipInfo> tips = new ArrayList<>();
         tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[0], EXTENDED_DESCRIPTION[1]));
         return tips;
     }
-    
+    */
     @Override
     public void upgrade() {
         if (!upgraded) {

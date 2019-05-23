@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.CardNoSeen;
 import thiefmod.cards.abstracts.AbstractStolenCard;
+import thiefmod.patches.character.TheThiefEnum;
 import thiefmod.patches.character.ThiefCardTags;
 import thiefmod.powers.Common.RefundCardCostPower;
 
@@ -28,7 +29,7 @@ public class StolenChange extends AbstractStolenCard {
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
-    public static final CardColor COLOR = CardColor.COLORLESS;
+    
     
     private static final int COST = 1;
     private static final int UPGRADE_COST = 0;
@@ -37,9 +38,9 @@ public class StolenChange extends AbstractStolenCard {
     // /STAT DECLARATION/
     
     public StolenChange() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, TheThiefEnum.THE_THIEF);
         magicNumber = baseMagicNumber = MAGIC;
-        tags.add(ThiefCardTags.STOLEN);
+        
     }
     
     // Actions the card should do.

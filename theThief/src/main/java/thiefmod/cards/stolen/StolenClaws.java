@@ -26,24 +26,20 @@ public class StolenClaws extends AbstractStolenCard {
     // /TEXT DECLARATION/
     // STAT DECLARATION
     
-    private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
-    public static final CardColor COLOR = CardColor.COLORLESS;
     
-    private static final int COST = 1;
-    private static final int UPGRADE_COST = 0;
-    
-    private static final int DAMAGE = 4;
-    
-    private static final int MAGIC = 2;
+    private static final int COST = 0;
+    private static final int DAMAGE = 5;
+    private static final int MAGIC = 1;
+    private static final int UPGRADE_MAGIC = 2;
     // /STAT DECLARATION/
     
     public StolenClaws() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, AbstractPlayer.PlayerClass.DEFECT);
         baseDamage = DAMAGE;
         magicNumber = baseMagicNumber = MAGIC;
-        tags.add(ThiefCardTags.STOLEN);
+        
     }
     
     @Override
@@ -56,7 +52,7 @@ public class StolenClaws extends AbstractStolenCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADE_COST);
+            upgradeMagicNumber(UPGRADE_MAGIC);
             rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

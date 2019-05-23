@@ -69,12 +69,12 @@ public class ThousandBallBearings extends AbstractBackstabCard {
     //Upgraded stats.
     @Override
     public void upgrade() {
-            upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
-            ++timesUpgraded;
-            name = "100" + timesUpgraded + NAME;
-            upgradeName();
-            rawDescription = UPGRADE_DESCRIPTION;
-            initializeDescription();
+        upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
+        ++timesUpgraded;
+        name = "100" + timesUpgraded + " " + EXTENDED_DESCRIPTION[1];
+        upgradeName();
+        rawDescription = UPGRADE_DESCRIPTION;
+        initializeDescription();
     }
     
     public boolean canUpgrade() {

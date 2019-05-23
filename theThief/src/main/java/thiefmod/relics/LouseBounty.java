@@ -20,7 +20,6 @@ public class LouseBounty extends CustomRelic {
 
     public LouseBounty() {
         super(ID, ImageMaster.loadImage(IMG), new Texture(OUTLINE), RelicTier.SPECIAL, LandingSound.MAGICAL);
-
         tips.clear();
         tips.add(new PowerTip(name, description));
 

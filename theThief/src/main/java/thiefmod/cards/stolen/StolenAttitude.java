@@ -27,7 +27,7 @@ public class StolenAttitude extends AbstractStolenCard {
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
-    public static final CardColor COLOR = CardColor.COLORLESS;
+    
     
     private static final int COST = 1;
     
@@ -38,10 +38,10 @@ public class StolenAttitude extends AbstractStolenCard {
     // /STAT DECLARATION/
     
     public StolenAttitude() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, AbstractPlayer.PlayerClass.IRONCLAD);
         baseBlock = BLOCK;
         magicNumber = baseMagicNumber = MAGIC;
-        tags.add(ThiefCardTags.STOLEN);
+        
     }
     
     public void use(AbstractPlayer p, AbstractMonster m) {

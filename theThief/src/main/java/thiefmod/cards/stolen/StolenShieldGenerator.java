@@ -30,7 +30,7 @@ public class StolenShieldGenerator extends AbstractStolenCard {
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
-    public static final CardColor COLOR = CardColor.COLORLESS;
+    
     
     private static final int COST = 3;
     
@@ -39,18 +39,16 @@ public class StolenShieldGenerator extends AbstractStolenCard {
     // /STAT DECLARATION/
     
     public StolenShieldGenerator() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, AbstractPlayer.PlayerClass.DEFECT);
         baseBlock = BLOCK;
         if (CardCrawlGame.dungeon != null) {
             configureCostsOnNewCard();
         }
-        tags.add(ThiefCardTags.STOLEN);
+        
     }
     
     public void configureCostsOnNewCard() {
-        Iterator var1 = AbstractDungeon.actionManager.cardsPlayedThisCombat.iterator();
-        while (var1.hasNext()) {
-            AbstractCard c = (AbstractCard) var1.next();
+        for (AbstractCard c: AbstractDungeon.actionManager.cardsPlayedThisCombat){
             if (c.type == CardType.POWER) {
                 updateCost(-1);
             }

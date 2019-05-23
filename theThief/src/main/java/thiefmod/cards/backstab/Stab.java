@@ -50,7 +50,7 @@ public class Stab extends AbstractBackstabCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (canBackstab()) {
+        if (canBackstabDesc()) {
             act(new DamageAction(m, new DamageInfo(p, damage * backstabNumber, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
         } else {
             act(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));

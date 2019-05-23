@@ -83,7 +83,7 @@ public class PerfectDagger extends AbstractBackstabCard {
     public void applyPowers() {
         baseDamage = misc;
         super.applyPowers();
-        if (canBackstab()) {
+        if (canBackstabDesc()) {
             rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[2];
         } else {
             rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[3];

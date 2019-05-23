@@ -81,13 +81,13 @@ public class AttackOfOpportunity extends AbstractBackstabCard {
         super.applyPowers();
         if (backstabNumber == 1) {
             if (magicNumber == 1) {
-                if (canBackstab()) {
+                if (canBackstabDesc()) {
                     rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[3];
                 } else {
                     rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[4];
                 }
             } else {
-                if (canBackstab()) {
+                if (canBackstabDesc()) {
                     rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[5];
                 } else {
                     rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[6];
@@ -95,13 +95,13 @@ public class AttackOfOpportunity extends AbstractBackstabCard {
             }
         } else {
             if (magicNumber == 1) {
-                if (canBackstab()) {
+                if (canBackstabDesc()) {
                     rawDescription = EXTENDED_DESCRIPTION[2] + EXTENDED_DESCRIPTION[3];
                 } else {
                     rawDescription = EXTENDED_DESCRIPTION[2] + EXTENDED_DESCRIPTION[4];
                 }
             } else {
-                if (canBackstab()) {
+                if (canBackstabDesc()) {
                     rawDescription = EXTENDED_DESCRIPTION[2] + EXTENDED_DESCRIPTION[5];
                 } else {
                     rawDescription = EXTENDED_DESCRIPTION[2] + EXTENDED_DESCRIPTION[6];

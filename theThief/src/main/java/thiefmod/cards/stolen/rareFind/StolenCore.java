@@ -38,7 +38,7 @@ public class StolenCore extends AbstractStolenCard {
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
-    public static final CardColor COLOR = CardColor.COLORLESS;
+    
     
     private static final int COST = 2;
     private static final int UPGRADE_COST = 1;
@@ -48,22 +48,10 @@ public class StolenCore extends AbstractStolenCard {
     // /STAT DECLARATION/
     
     public StolenCore() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, TARGET, CardRarity.RARE, AbstractPlayer.PlayerClass.DEFECT);
         magicNumber = baseMagicNumber = MAGIC;
         backstabNumber = baseBackstabNumber = ORB_SLOTS;
-
-
-     /* Straight up just doesn't work. But maybe one day it will. And when that happens, I'll be waiting. And I will uncomment this code. And my rare cards will look cool.
-
-        setBackgroundTexture("theThiefAssets/images/512/special/blue_rare_skill_bg.png",
-                "theThiefAssets/images/1024/special/blue_rare_skill_bg.png");
-
-        setOrbTexture("theThiefAssets/images/512/card_thief_gray_orb.png",
-                "theThiefAssets/images/1024/card_thief_gray_orb.png");
-
-    */
-        setBannerTexture("theThiefAssets/images/512/special/rare_skill_banner.png", "theThiefAssets/images/1024/special/rare_skill_banner.png");
-        tags.add(ThiefCardTags.STOLEN);
+        
         tags.add(ThiefCardTags.RARE_FIND);
         exhaust = true;
     }
@@ -73,16 +61,6 @@ public class StolenCore extends AbstractStolenCard {
         AbstractDungeon.effectList.add(new BorderFlashEffect(Color.ROYAL));
         act(new IncreaseMaxOrbAction(backstabNumber));
         act(new ApplyPowerAction(p, p, new StolenCorePower(p, p, magicNumber), 1));
-    }
-    
-    @Override
-    public void triggerWhenDrawn() {
-        AbstractDungeon.effectList.add(new CardFlashVfx(this, Color.GOLD));
-    }
-    
-    @Override
-    public void triggerWhenCopied() {
-        AbstractDungeon.effectList.add(new CardFlashVfx(this, Color.GOLD));
     }
     
     @Override

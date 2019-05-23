@@ -1,30 +1,28 @@
 package thiefmod.cards.stolen.modSynergy.mystic;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import mysticmod.cards.Fly;
+import mysticmod.patches.MysticEnum;
 import thiefmod.CardNoSeen;
 import thiefmod.ThiefMod;
-import thiefmod.actions.Util.DiscoverRandomFromArrayAction;
-import thiefmod.cards.abstracts.AbstractStolenCard;
-import thiefmod.patches.character.ThiefCardTags;
-
-import java.util.ArrayList;
+import thiefmod.actions.util.DiscoverCardAction;
+import thiefmod.cards.abstracts.AbstractStolenMysticCard;
+import thiefmod.patches.DiscoveryPatch;
 
 import static mysticmod.MysticMod.cantripsGroup;
 
 @CardNoSeen
-public class stolenBagOfMagicCantrips extends AbstractStolenCard {
+public class stolenBagOfMagicCantrips extends AbstractStolenMysticCard {
     // TEXT DECLARATION
     
     public static final String ID = ThiefMod.makeID("stolenBagOfMagicCantrips");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    
-    public static final String IMG = "theThiefAssets/images/cards/beta/Attack.png";
-    
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     // /TEXT DECLARATION/
@@ -32,31 +30,35 @@ public class stolenBagOfMagicCantrips extends AbstractStolenCard {
     
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.SELF;
-    private static final CardType TYPE = CardType.ATTACK;
-    public static final CardColor COLOR = CardColor.COLORLESS;
-    
+    private static final CardType TYPE = CardType.SKILL;
+    public static final String IMG = (ThiefMod.hasMysticMod ? Fly.ALTERNATE_IMG_PATH : loadLockedCardImage(TYPE));
     private static final int COST = 1;
     private static final int UPGRADED_COST = 0;
-    
-    private static final int MAGIC = 1;
     // /STAT DECLARATION/
+    private static final int MAGIC = 1;
     
     public stolenBagOfMagicCantrips() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, MysticEnum.MYSTIC_CLASS);
         magicNumber = baseMagicNumber = MAGIC;
-        tags.add(ThiefCardTags.STOLEN);
     }
     
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        ArrayList<AbstractCard> trinketCards = new ArrayList<>();
-        trinketCards.add(cantripsGroup.get(AbstractDungeon.cardRandomRng.random(cantripsGroup.size() - 1)));
-        trinketCards.add(cantripsGroup.get(AbstractDungeon.cardRandomRng.random(cantripsGroup.size() - 1)));
-        trinketCards.add(cantripsGroup.get(AbstractDungeon.cardRandomRng.random(cantripsGroup.size() - 1)));
-        if (upgraded) {
-            act(new DiscoverRandomFromArrayAction(trinketCards, true));
+        for (int i = 0; i < magicNumber; i++) {
+            CardGroup trinketCards = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+            while (trinketCards.size() < 3) {
+                AbstractCard c = cantripsGroup.get(AbstractDungeon.cardRandomRng.random(cantripsGroup.size() - 1));
+                if (!DiscoveryPatch.cardUtil.containsByID(trinketCards.group, c)) {
+                    trinketCards.addToTop(c);
+                }
+            }
+            if (upgraded) {
+                act(new DiscoverCardAction(trinketCards, true));
+            } else {
+                act(new DiscoverCardAction(trinketCards));
+            }
+            cantripsGroup.clear();
         }
-        act(new DiscoverRandomFromArrayAction(trinketCards));
     }
     
     @Override

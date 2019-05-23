@@ -28,7 +28,6 @@ public class playCardWithRandomTargestAction extends AbstractGameAction {
     @Override
     public void update() {
         if (duration == Settings.ACTION_DUR_FAST) {
-
             AbstractDungeon.getCurrRoom().souls.remove(card);
             card.freeToPlayOnce = true;
             card.exhaustOnUseOnce = exhaustCards;
@@ -40,6 +39,7 @@ public class playCardWithRandomTargestAction extends AbstractGameAction {
             card.lighten(false);
             card.drawScale = 0.12F;
             card.targetDrawScale = 0.75F;
+            
             if (!card.canUse(AbstractDungeon.player, (AbstractMonster) target)) {
                 if (exhaustCards) {
                     AbstractDungeon.actionManager.addToTop(new ExhaustSpecificCardAction(card, AbstractDungeon.player.limbo));
@@ -58,8 +58,7 @@ public class playCardWithRandomTargestAction extends AbstractGameAction {
                     AbstractDungeon.actionManager.addToTop(new WaitAction(Settings.ACTION_DUR_FASTER));
                 }
             }
-
-
+            
             isDone = true;
         }
 

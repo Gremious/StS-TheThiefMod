@@ -22,14 +22,18 @@ public abstract class AbstractBackstabCard extends AbstractThiefCard {
     }
     
     public static boolean canBackstab() {
-        return AbstractDungeon.player.cardsPlayedThisTurn < 1 || AbstractDungeon.player.hasPower(BackstabPower.POWER_ID);
+        return AbstractDungeon.player.cardsPlayedThisTurn == 1 || AbstractDungeon.player.hasPower(BackstabPower.POWER_ID);
+    }
+    
+    public static boolean canBackstabDesc() {
+        return AbstractDungeon.player.cardsPlayedThisTurn == 0 || AbstractDungeon.player.hasPower(BackstabPower.POWER_ID);
     }
     
     public abstract String flavortext();
     
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
-    super.calculateCardDamage(mo);
+        super.calculateCardDamage(mo);
     }
     
     @Override

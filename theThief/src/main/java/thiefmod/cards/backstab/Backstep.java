@@ -75,7 +75,7 @@ public class Backstep extends AbstractBackstabCard {
         } else {
             rawDescription = DESCRIPTION;
         }
-        if (canBackstab()) {
+        if (canBackstabDesc()) {
             rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[2];
         } else {
             rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[3];

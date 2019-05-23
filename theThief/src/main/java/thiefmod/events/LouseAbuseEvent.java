@@ -12,7 +12,7 @@ import thiefmod.relics.LouseBounty;
 
 public class LouseAbuseEvent extends AbstractImageEvent {
     // Gain a unique relic. If you ever FTK a louse - the relic stops glowing and you get a 150g reward.
-
+    
     public static final String ID = ThiefMod.makeID("LouseAbuseEvent");
     private static final EventStrings eventStrings = CardCrawlGame.languagePack.getEventString(ID);
     private static final String NAME = eventStrings.NAME;
@@ -20,22 +20,22 @@ public class LouseAbuseEvent extends AbstractImageEvent {
     private static final String[] OPTIONS = eventStrings.OPTIONS;
     private int screenNum = 0;
     private int HEALTH_LOSS;
-
+    
     public LouseAbuseEvent() {
         super(NAME, DESCRIPTIONS[0], "theThiefAssets/images/events/LouseAbuseEvent.png");
-
+        
         if (AbstractDungeon.ascensionLevel >= 15) {
             HEALTH_LOSS = 3;
         } else {
             HEALTH_LOSS = 5;
         }
-
+        
         imageEventText.setDialogOption(OPTIONS[0]);
         imageEventText.setDialogOption(OPTIONS[1]);
         imageEventText.setDialogOption(OPTIONS[2]);
         imageEventText.setDialogOption(OPTIONS[3]);
     }
-
+    
     @Override
     protected void buttonEffect(int i) {
         switch (screenNum) {
@@ -44,8 +44,8 @@ public class LouseAbuseEvent extends AbstractImageEvent {
                     case 0:
                     case 1:
                     case 2:
-                        AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float)(Settings.WIDTH / 2), (float)(Settings.HEIGHT / 2), new LouseBounty().makeCopy());
                         imageEventText.updateBodyText(DESCRIPTIONS[1]);
+                        imageEventText.updateDialogOption(1, OPTIONS[5]);
                         imageEventText.updateDialogOption(0, OPTIONS[4]);
                         imageEventText.clearRemainingOptions();
                         screenNum = 1;
@@ -55,16 +55,25 @@ public class LouseAbuseEvent extends AbstractImageEvent {
                         CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.MED, false);
                         CardCrawlGame.sound.play("BLUNT_FAST");
                         imageEventText.updateBodyText(DESCRIPTIONS[4]);
-                        imageEventText.updateDialogOption(0, OPTIONS[8]);
+                        imageEventText.updateDialogOption(0, OPTIONS[5]);
                         imageEventText.clearRemainingOptions();
-                        screenNum = 1;
+                        screenNum = 2;
                         break;
                 }
-                break;
             case 1:
+                switch (i) {
+                    case 0:
+                        break;
+                    case 1:
+                        break;
+                }
+                screenNum = 2;
+                break;
+            case 2:
                 if (i == 0) {
                     openMap();
                 }
+                break;
         }
     }
 }

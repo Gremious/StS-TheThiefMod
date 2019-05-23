@@ -8,6 +8,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.GainPennyEffect;
 
+import static com.megacrit.cardcrawl.core.CardCrawlGame.sound;
+
 public class GainGoldAction extends AbstractGameAction {
     private int goldAmount;
     private DamageInfo info;
@@ -34,7 +36,7 @@ public class GainGoldAction extends AbstractGameAction {
     }
 
     public void update() {
-        com.megacrit.cardcrawl.core.CardCrawlGame.sound.play("GOLD_JINGLE");
+      sound.play("GOLD_JINGLE");
         if (attackTarget != null && (((AbstractMonster) attackTarget).isDying || attackTarget.currentHealth <= 0) && !attackTarget.halfDead) {
             AbstractDungeon.player.gainGold(goldAmount);
 
