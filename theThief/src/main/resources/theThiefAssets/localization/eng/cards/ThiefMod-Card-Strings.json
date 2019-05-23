@@ -51,8 +51,8 @@
   },
   "theThief:Pickpocket": {
     "NAME": "Pickpocket",
-    "DESCRIPTION": "Deal !D! damage. Gain !M! gold.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. Gain !M! gold.",
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! gold.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Gain !M! gold.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Pick[] [#88888]your[] [#88888]pickpocket[] [#88888]pockets[] [#88888]well.[]"
     ]
