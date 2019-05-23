@@ -19,7 +19,7 @@ public class StormOfSteal extends AbstractBackstabCard {
     public static final String ID = ThiefMod.makeID("StormOfSteal");
     // I really wish I could name this Overcalculated Gamble :C
     // Comment Update: STORM OF STEAL IS GREAT THANKS KIO
-    public static final String IMG = "theThiefAssets/images/cards/beta/Attack.png";
+    public static final String IMG = "theThiefAssets/images/cards/beta/StormOfSteal.png";
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
     
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
