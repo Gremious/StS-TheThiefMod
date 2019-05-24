@@ -18,7 +18,7 @@ public class PaydayLoan extends AbstractBackstabCard {
     // TEXT DECLARATION
     
     public static final String ID = ThiefMod.makeID("PaydayLoan");
-    public static final String IMG = "theThiefAssets/images/cards/beta/Attack.png";
+    public static final String IMG = "theThiefAssets/images/cards/PaydayLoan.png";
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
     
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -32,9 +32,9 @@ public class PaydayLoan extends AbstractBackstabCard {
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
-    private static final CardType TYPE = CardType.ATTACK;
+    private static final CardType TYPE = CardType.SKILL;
     
-    private static final int COST = 2;
+    private static final int COST = 1;
     private static final int UPGRADE_COST = 0;
     
     private static final int MAGIC = 1; // Refund Card Power
