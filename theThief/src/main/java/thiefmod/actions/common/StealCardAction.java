@@ -29,6 +29,7 @@ import thiefmod.cards.stolen.modSynergy.theServant.StolenMalice;
 import thiefmod.cards.stolen.modSynergy.theServant.StolenShirts;
 import thiefmod.cards.stolen.modSynergy.theServant.StolenTime;
 import thiefmod.cards.stolen.modSynergy.theServant.rareFind.StolenKnives;
+import thiefmod.cards.stolen.modSynergy.yohane.dab;
 import thiefmod.cards.stolen.rareFind.StolenArsenal;
 import thiefmod.cards.stolen.rareFind.StolenBlood;
 import thiefmod.cards.stolen.rareFind.StolenCore;
@@ -83,7 +84,7 @@ public class StealCardAction extends AbstractGameAction implements CustomSavable
                 if (amount > 0) {
                     amount--;
                     cardsToAdd = getRandomStolenCards(3, false);
-                    for (AbstractCard c : cardsToAdd.group){
+                    for (AbstractCard c : cardsToAdd.group) {
                         MakeStolenCardAction.makeStolenCard(c);
                     }
                     //AbstractDungeon.actionManager.addToBottom(new SFXAction("CARD_OBTAIN"));
@@ -265,6 +266,21 @@ public class StealCardAction extends AbstractGameAction implements CustomSavable
         logger.info("Cards Stolen This Combat: " + cardsStolenThisCombat);
         logger.info("Rare fnd roll: " + rollRare + " - " + (rollRare < 15));
         logger.info("Standard Checks: upgraded or has power? " + (upgraded || AbstractDungeon.player.hasPower(IllGottenGainsPower.POWER_ID)));
+        CardGroup superSecretSpecialGroup = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+        
+        if (cardsStolenThisCombat == 99) {
+            for (int i = 0; i < 69; i++) {
+                superSecretSpecialGroup.addToTop(new dab());
+            }
+            if (upgraded || AbstractDungeon.player.hasPower(IllGottenGainsPower.POWER_ID)) {
+                for (AbstractCard c : superSecretSpecialGroup.group) {
+                    c.upgrade();
+                }
+                return superSecretSpecialGroup;
+            } else {
+                return superSecretSpecialGroup;
+            }
+        }
         
         if (cardsStolenThisCombat == 19) {
             if (upgraded || AbstractDungeon.player.hasPower(IllGottenGainsPower.POWER_ID)) {

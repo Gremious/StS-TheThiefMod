@@ -278,5 +278,10 @@
       "[#FEE130]Rare[] [#FEE130]Find:[]",
       "[#FEE130]The[] [#FEE130]cleanest,[] [#FEE130]sharpest[] [#FEE130]arsenal[] [#FEE130]of[] [#FEE130]knives[] [#FEE130]you[] [#FEE130]have[] [#FEE130]ever[] [#FEE130]seen.[]"
     ]
+  },
+  "theThief:dab": {
+    "NAME": "Dab",
+    "DESCRIPTION": "Dab on them haters",
+    "UPGRADE_DESCRIPTION": "Dab on them haters!"
   }
 }
