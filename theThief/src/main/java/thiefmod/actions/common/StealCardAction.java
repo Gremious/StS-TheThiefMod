@@ -19,6 +19,8 @@ import thiefmod.cards.stolen.modSynergy.bard.StolenEssence;
 import thiefmod.cards.stolen.modSynergy.bard.StolenFlute;
 import thiefmod.cards.stolen.modSynergy.bard.StolenSong;
 import thiefmod.cards.stolen.modSynergy.bard.rareFind.StolenGreatHorn;
+import thiefmod.cards.stolen.modSynergy.disciple.StolenChronowards;
+import thiefmod.cards.stolen.modSynergy.disciple.StolenMaths;
 import thiefmod.cards.stolen.modSynergy.disciple.rareFind.StolenClock;
 import thiefmod.cards.stolen.modSynergy.halation.rareFind.StolenMail;
 import thiefmod.cards.stolen.modSynergy.mystic.rareFind.stolenMysticalOrb;
@@ -182,15 +184,16 @@ public class StealCardAction extends AbstractGameAction implements CustomSavable
         //---
         
         if (hasDisciple) {
-            stolenCards.addToTop(CardLibrary.getCopy("Echoward"));
+            stolenCards.addToTop(new StolenChronowards());
             stolenCards.addToTop(CardLibrary.getCopy("SlimeSpray"));
-            stolenCards.addToTop(CardLibrary.getCopy("Accruing"));
+            stolenCards.addToTop(new StolenMaths());
         }
         
         //---
         
         if (hasServant) {
             stolenCards.addToTop(CardLibrary.getCopy("Contraction"));
+            stolenCards.addToTop(CardLibrary.getCopy("BottledTime"));
             stolenCards.addToTop(CardLibrary.getCopy("Deadline"));
             stolenCards.addToTop(CardLibrary.getCopy("Misdirection"));
             stolenCards.addToTop(CardLibrary.getCopy("Moondial"));
@@ -256,7 +259,7 @@ public class StealCardAction extends AbstractGameAction implements CustomSavable
     }
     
     // A final group of the cards to return.
-    private CardGroup allStolenCardsToUse() {
+    public CardGroup allStolenCardsToUse() {
         logger.info("Cards Stolen This Combat: " + cardsStolenThisCombat);
         logger.info("Rare fnd roll: " + rollRare + " - " + (rollRare < 15));
         logger.info("Standard Checks: upgraded or has power? " + (upgraded || AbstractDungeon.player.hasPower(IllGottenGainsPower.POWER_ID)));
@@ -283,7 +286,7 @@ public class StealCardAction extends AbstractGameAction implements CustomSavable
     }
     
     // Grab random stolen cards
-    private CardGroup getRandomStolenCards(int amount, boolean allowDuplicates) {
+    public CardGroup getRandomStolenCards(int amount, boolean allowDuplicates) {
         ArrayList<AbstractCard> temp = new ArrayList<>();
         CardGroup randomCards = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
         

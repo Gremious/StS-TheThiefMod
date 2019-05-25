@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import mysticmod.MysticMod;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import thiefmod.actions.common.slowerQueueCardAction;
+import thiefmod.actions.util.slowerQueueCardAction;
 
 import static mysticmod.patches.MysticTags.IS_ARTE;
 import static mysticmod.patches.MysticTags.IS_SPELL;
