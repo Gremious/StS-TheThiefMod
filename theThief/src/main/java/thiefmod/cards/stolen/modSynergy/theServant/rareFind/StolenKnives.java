@@ -1,5 +1,7 @@
 package thiefmod.cards.stolen.modSynergy.theServant.rareFind;
 
+import blackrusemod.BlackRuseMod;
+import blackrusemod.cards.Rearm;
 import blackrusemod.patches.TheServantEnum;
 import blackrusemod.powers.KnivesPower;
 import com.badlogic.gdx.graphics.Color;
@@ -14,6 +16,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.CardFlashVfx;
+import mysticmod.cards.BladeMaster;
 import thiefmod.CardNoSeen;
 import thiefmod.ThiefMod;
 import thiefmod.cards.abstracts.AbstractStolenCard;
@@ -29,7 +32,6 @@ public class StolenKnives extends AbstractStolenCard {
     public static final String ID = ThiefMod.makeID("StolenKnives");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     
-    public static final String IMG = "theThiefAssets/images/cards/beta/Attack.png";
     
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     // /TEXT DECLARATION/
@@ -49,6 +51,8 @@ public class StolenKnives extends AbstractStolenCard {
     
     private static final int BACKSTAB = 1;
     // /STAT DECLARATION/
+    
+    public static final String IMG = (hasServant ? BlackRuseMod.makePath(BlackRuseMod.REARM) : loadLockedCardImage(TYPE));
     
     public StolenKnives() {
         super(ID, IMG, COST, TYPE, TARGET, CardRarity.RARE, TheServantEnum.THE_SERVANT);

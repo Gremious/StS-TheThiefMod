@@ -25,6 +25,9 @@ import thiefmod.cards.stolen.modSynergy.disciple.rareFind.StolenClock;
 import thiefmod.cards.stolen.modSynergy.halation.rareFind.StolenMail;
 import thiefmod.cards.stolen.modSynergy.mystic.rareFind.stolenMysticalOrb;
 import thiefmod.cards.stolen.modSynergy.mystic.*;
+import thiefmod.cards.stolen.modSynergy.theServant.StolenMalice;
+import thiefmod.cards.stolen.modSynergy.theServant.StolenShirts;
+import thiefmod.cards.stolen.modSynergy.theServant.StolenTime;
 import thiefmod.cards.stolen.modSynergy.theServant.rareFind.StolenKnives;
 import thiefmod.cards.stolen.rareFind.StolenArsenal;
 import thiefmod.cards.stolen.rareFind.StolenBlood;
@@ -192,10 +195,9 @@ public class StealCardAction extends AbstractGameAction implements CustomSavable
         //---
         
         if (hasServant) {
-            stolenCards.addToTop(CardLibrary.getCopy("Contraction"));
-            stolenCards.addToTop(CardLibrary.getCopy("BottledTime"));
-            stolenCards.addToTop(CardLibrary.getCopy("Deadline"));
-            stolenCards.addToTop(CardLibrary.getCopy("Misdirection"));
+            stolenCards.addToTop(new StolenShirts());
+            stolenCards.addToTop(new StolenMalice());
+            stolenCards.addToTop(new StolenTime());
             stolenCards.addToTop(CardLibrary.getCopy("Moondial"));
         }
         

@@ -255,15 +255,20 @@
       "[#FEE130]You[] [#FEE130]can[] [#FEE130]feel[] [#FEE130]the[] [#FEE130]waves[] [#FEE130]of[] [#FEE130]time[] [#FEE130]flowing[] [#FEE130]through[] [#FEE130]it.[]"
     ]
   },
-  "theThief:StolenMaths": {
-    "NAME": "Stolen Maths",
-    "DESCRIPTION": "Deal !D! Fibonacci damage.",
-    "UPGRADE_DESCRIPTION": "Deal !D! Fibonacci damage."
+  "theThief:StolenShirts": {
+    "NAME": "Stolen Shirts",
+    "DESCRIPTION": "Gain !B! Protection. NL You are not affected by Weak, Vulnerable and Frail for 1 turn.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Protection. NL You are not affected by Weak, Vulnerable and Frail for 1 turn."
   },
-  "theThief:StolenMaths": {
-    "NAME": "Stolen Maths",
-    "DESCRIPTION": "Deal !D! Fibonacci damage.",
-    "UPGRADE_DESCRIPTION": "Deal !D! Fibonacci damage."
+  "theThief:StolenMalice": {
+    "NAME": "Stolen Malice",
+    "DESCRIPTION": "Apply !M! Blight and Vulnerable.",
+    "UPGRADE_DESCRIPTION": "Apply !M! Blight and Vulnerable."
+  },
+  "theThief:StolenTime": {
+    "NAME": "Stolen Time Bottle",
+    "DESCRIPTION": "Apply !M! Blight and Vulnerable.",
+    "UPGRADE_DESCRIPTION": "Apply !M! Blight and Vulnerable."
   },
   "theThief:StolenKnives": {
     "NAME": "Stolen Knives",
