@@ -268,7 +268,7 @@ public class StealCardAction extends AbstractGameAction implements CustomSavable
         logger.info("Standard Checks: upgraded or has power? " + (upgraded || AbstractDungeon.player.hasPower(IllGottenGainsPower.POWER_ID)));
         CardGroup superSecretSpecialGroup = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
         
-        if (cardsStolenThisCombat == 99) {
+        if (cardsStolenThisCombat == 69+69+69) {
             for (int i = 0; i < 69; i++) {
                 superSecretSpecialGroup.addToTop(new dab());
             }

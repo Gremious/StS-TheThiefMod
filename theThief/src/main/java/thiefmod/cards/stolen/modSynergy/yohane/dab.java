@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.RoomTintEffect;
@@ -18,7 +17,9 @@ import thiefmod.ThiefMod;
 import thiefmod.cards.abstracts.AbstractStolenCard;
 import thiefmod.patches.character.TheThiefEnum;
 import yohanemod.cards.Strike_Grey;
-@CardNoSeen @CardIgnore
+
+@CardNoSeen
+@CardIgnore
 public class dab extends AbstractStolenCard {
     
     // TEXT DECLARATION
@@ -64,7 +65,7 @@ public class dab extends AbstractStolenCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            //          rawDescription = UPGRADE_DESCRIPTION;
+            rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }
