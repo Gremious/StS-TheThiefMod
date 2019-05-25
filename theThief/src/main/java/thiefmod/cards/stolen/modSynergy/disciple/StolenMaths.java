@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
 import thiefmod.cards.abstracts.AbstractStolenCard;
-
+// This is Chrono's Accuring card, not mine.
 public class StolenMaths extends AbstractStolenCard {
     
     // TEXT DECLARATION
@@ -29,10 +29,10 @@ public class StolenMaths extends AbstractStolenCard {
     // STAT DECLARATION
     
     private static final CardTarget TARGET = CardTarget.SELF;
-    private static final CardType TYPE = CardType.SKILL;
+    private static final CardType TYPE = CardType.ATTACK;
     
     private static final int COST = 1;
-    private static final int WARDS = 1;
+    private static final int ATTACK_DMG = 0;
     
     // /STAT DECLARATION/
     
@@ -40,7 +40,7 @@ public class StolenMaths extends AbstractStolenCard {
     
     public StolenMaths() {
         super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, chronomuncher.patches.Enum.CHRONO_CLASS);
-        magicNumber = baseMagicNumber = WARDS;
+        baseDamage = ATTACK_DMG;
     }
     
     

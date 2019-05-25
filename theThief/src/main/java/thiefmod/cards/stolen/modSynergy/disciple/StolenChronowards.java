@@ -30,7 +30,7 @@ public class StolenChronowards extends AbstractStolenCard {
     private static final CardType TYPE = CardType.SKILL;
     
     private static final int COST = 1;
-    private static final int WARDS = 1;
+    private static final int WARDS = 4;
     
     // /STAT DECLARATION/
     

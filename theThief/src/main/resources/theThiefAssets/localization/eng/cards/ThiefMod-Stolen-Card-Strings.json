@@ -257,8 +257,8 @@
   },
   "theThief:StolenShirts": {
     "NAME": "Stolen Shirts",
-    "DESCRIPTION": "Gain !B! Protection. NL You are not affected by Weak, Vulnerable and Frail for 1 turn.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Protection. NL You are not affected by Weak, Vulnerable and Frail for 1 turn."
+    "DESCRIPTION": "Gain !M! Protection. NL You are not affected by Weak, Vulnerable and Frail for 1 turn.",
+    "UPGRADE_DESCRIPTION": "Gain !M! Protection. NL You are not affected by Weak, Vulnerable and Frail for 1 turn."
   },
   "theThief:StolenMalice": {
     "NAME": "Stolen Malice",
@@ -267,8 +267,8 @@
   },
   "theThief:StolenTime": {
     "NAME": "Stolen Time Bottle",
-    "DESCRIPTION": "Apply !M! Blight and Vulnerable.",
-    "UPGRADE_DESCRIPTION": "Apply !M! Blight and Vulnerable."
+    "DESCRIPTION": "Draw !M! cards.",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards."
   },
   "theThief:StolenKnives": {
     "NAME": "Stolen Knives",
