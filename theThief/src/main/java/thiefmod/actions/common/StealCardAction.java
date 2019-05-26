@@ -19,11 +19,17 @@ import thiefmod.cards.stolen.modSynergy.bard.StolenEssence;
 import thiefmod.cards.stolen.modSynergy.bard.StolenFlute;
 import thiefmod.cards.stolen.modSynergy.bard.StolenSong;
 import thiefmod.cards.stolen.modSynergy.bard.rareFind.StolenGreatHorn;
+import thiefmod.cards.stolen.modSynergy.disciple.StolenChronowards;
+import thiefmod.cards.stolen.modSynergy.disciple.StolenMaths;
 import thiefmod.cards.stolen.modSynergy.disciple.rareFind.StolenClock;
 import thiefmod.cards.stolen.modSynergy.halation.rareFind.StolenMail;
 import thiefmod.cards.stolen.modSynergy.mystic.rareFind.stolenMysticalOrb;
 import thiefmod.cards.stolen.modSynergy.mystic.*;
+import thiefmod.cards.stolen.modSynergy.theServant.StolenMalice;
+import thiefmod.cards.stolen.modSynergy.theServant.StolenShirts;
+import thiefmod.cards.stolen.modSynergy.theServant.StolenTime;
 import thiefmod.cards.stolen.modSynergy.theServant.rareFind.StolenKnives;
+import thiefmod.cards.stolen.modSynergy.yohane.dab;
 import thiefmod.cards.stolen.rareFind.StolenArsenal;
 import thiefmod.cards.stolen.rareFind.StolenBlood;
 import thiefmod.cards.stolen.rareFind.StolenCore;
@@ -78,7 +84,7 @@ public class StealCardAction extends AbstractGameAction implements CustomSavable
                 if (amount > 0) {
                     amount--;
                     cardsToAdd = getRandomStolenCards(3, false);
-                    for (AbstractCard c : cardsToAdd.group){
+                    for (AbstractCard c : cardsToAdd.group) {
                         MakeStolenCardAction.makeStolenCard(c);
                     }
                     //AbstractDungeon.actionManager.addToBottom(new SFXAction("CARD_OBTAIN"));
@@ -182,17 +188,17 @@ public class StealCardAction extends AbstractGameAction implements CustomSavable
         //---
         
         if (hasDisciple) {
-            stolenCards.addToTop(CardLibrary.getCopy("Echoward"));
+            stolenCards.addToTop(new StolenChronowards());
             stolenCards.addToTop(CardLibrary.getCopy("SlimeSpray"));
-            stolenCards.addToTop(CardLibrary.getCopy("Accruing"));
+            stolenCards.addToTop(new StolenMaths());
         }
         
         //---
         
         if (hasServant) {
-            stolenCards.addToTop(CardLibrary.getCopy("Contraction"));
-            stolenCards.addToTop(CardLibrary.getCopy("Deadline"));
-            stolenCards.addToTop(CardLibrary.getCopy("Misdirection"));
+            stolenCards.addToTop(new StolenShirts());
+            stolenCards.addToTop(new StolenMalice());
+            stolenCards.addToTop(new StolenTime());
             stolenCards.addToTop(CardLibrary.getCopy("Moondial"));
         }
         
@@ -256,10 +262,25 @@ public class StealCardAction extends AbstractGameAction implements CustomSavable
     }
     
     // A final group of the cards to return.
-    private CardGroup allStolenCardsToUse() {
+    public CardGroup allStolenCardsToUse() {
         logger.info("Cards Stolen This Combat: " + cardsStolenThisCombat);
         logger.info("Rare fnd roll: " + rollRare + " - " + (rollRare < 15));
         logger.info("Standard Checks: upgraded or has power? " + (upgraded || AbstractDungeon.player.hasPower(IllGottenGainsPower.POWER_ID)));
+        CardGroup superSecretSpecialGroup = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+        
+        if (cardsStolenThisCombat == 69+69+69) {
+            for (int i = 0; i < 69; i++) {
+                superSecretSpecialGroup.addToTop(new dab());
+            }
+            if (upgraded || AbstractDungeon.player.hasPower(IllGottenGainsPower.POWER_ID)) {
+                for (AbstractCard c : superSecretSpecialGroup.group) {
+                    c.upgrade();
+                }
+                return superSecretSpecialGroup;
+            } else {
+                return superSecretSpecialGroup;
+            }
+        }
         
         if (cardsStolenThisCombat == 19) {
             if (upgraded || AbstractDungeon.player.hasPower(IllGottenGainsPower.POWER_ID)) {
@@ -283,7 +304,7 @@ public class StealCardAction extends AbstractGameAction implements CustomSavable
     }
     
     // Grab random stolen cards
-    private CardGroup getRandomStolenCards(int amount, boolean allowDuplicates) {
+    public CardGroup getRandomStolenCards(int amount, boolean allowDuplicates) {
         ArrayList<AbstractCard> temp = new ArrayList<>();
         CardGroup randomCards = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
         

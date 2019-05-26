@@ -77,6 +77,7 @@ public class ThiefMod implements EditCardsSubscriber,
     public static final boolean hasDisciple;
     public static final boolean hasServant;
     public static final boolean hasBard;
+    public static final boolean hasYohane;
     //public static final boolean hasGatherer;
     //public static final boolean hasSlimebound;
     //public static final boolean hasClockwork;
@@ -108,6 +109,10 @@ public class ThiefMod implements EditCardsSubscriber,
         hasBard = Loader.isModLoaded("bard");
         if (hasBard) {
             logger.info("Detected the Bard");
+        }
+        hasYohane = Loader.isModLoaded("Yohane");
+        if (hasBard) {
+            logger.info("Detected Yohane");
         }
         // TODO: Add Gatherer
         // TODO: Add Bard

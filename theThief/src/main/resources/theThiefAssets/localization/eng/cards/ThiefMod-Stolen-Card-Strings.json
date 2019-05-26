@@ -171,13 +171,13 @@
   },
   "theThief:stolenMysticalSpellbook": {
     "NAME": "Mystical Spellbook",
-    "DESCRIPTION": "Discover !M! random [#5299DC]Spell.[] NL It costs 0 this turn.",
-    "UPGRADE_DESCRIPTION": "Discover !M! random [#5299DC]Spells.[] NL They cost 0 this turn."
+    "DESCRIPTION": "thethief:Discover !M! random [#5299DC]Spell.[] NL It costs 0 this turn.",
+    "UPGRADE_DESCRIPTION": "thethief:Discover !M! random [#5299DC]Spells.[] NL They cost 0 this turn."
   },
   "theThief:stolenBoxOfWeapons": {
     "NAME": "Stolen Box of Weapons",
-    "DESCRIPTION": "Discover !M! random [#FF5252]Arte.[] NL It costs 0 this turn.",
-    "UPGRADE_DESCRIPTION": "Discover !M! random [#FF5252]Artes.[] NL They cost 0 this turn."
+    "DESCRIPTION": "thethief:Discover !M! random [#FF5252]Arte.[] NL It costs 0 this turn.",
+    "UPGRADE_DESCRIPTION": "thethief:Discover !M! random [#FF5252]Artes.[] NL They cost 0 this turn."
   },
   "theThief:stolenMagicCantrip": {
     "NAME": "Stolen Magic Cantrip",
@@ -186,8 +186,8 @@
   },
   "theThief:stolenBagOfMagicCantrips": {
     "NAME": "Bag of Magic Cantrips",
-    "DESCRIPTION": "Discover a random mysticmod:Cantrip.",
-    "UPGRADE_DESCRIPTION": "Discover a random upgraded mysticmod:Cantrip."
+    "DESCRIPTION": "thethief:Discover a random mysticmod:Cantrip.",
+    "UPGRADE_DESCRIPTION": "thethief:Discover a random upgraded mysticmod:Cantrip."
   },
   "theThief:stolenMysticalOrb": {
     "NAME": "Stolen Mystical Orb",
@@ -236,6 +236,16 @@
       "[#FEE130]These[] [#FEE130]are[] [#FEE130]addressed[] [#FEE130]to[] [#FEE130]someone[] [#FEE130]very[] [#FEE130]important...[]"
     ]
   },
+  "theThief:StolenChronowards": {
+    "NAME": "Stolen Chronowards",
+    "DESCRIPTION": "Add !M! Wards to your hand.",
+    "UPGRADE_DESCRIPTION": "Add !M! Upgraded Wards to your hand."
+  },
+  "theThief:StolenMaths": {
+    "NAME": "Stolen Maths",
+    "DESCRIPTION": "Deal !D! Fibonacci damage.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Fibonacci damage."
+  },
   "theThief:StolenClock": {
     "NAME": "Stolen Clock",
     "DESCRIPTION": "Add a thethief:Pattern_Shift to your hand. NL It cannot leave your hand.",
@@ -245,6 +255,21 @@
       "[#FEE130]You[] [#FEE130]can[] [#FEE130]feel[] [#FEE130]the[] [#FEE130]waves[] [#FEE130]of[] [#FEE130]time[] [#FEE130]flowing[] [#FEE130]through[] [#FEE130]it.[]"
     ]
   },
+  "theThief:StolenShirts": {
+    "NAME": "Stolen Shirts",
+    "DESCRIPTION": "Gain !M! Protection. NL You are not affected by Weak, Vulnerable and Frail for 1 turn.",
+    "UPGRADE_DESCRIPTION": "Gain !M! Protection. NL You are not affected by Weak, Vulnerable and Frail for 1 turn."
+  },
+  "theThief:StolenMalice": {
+    "NAME": "Stolen Malice",
+    "DESCRIPTION": "Apply !M! Blight and Vulnerable.",
+    "UPGRADE_DESCRIPTION": "Apply !M! Blight and Vulnerable."
+  },
+  "theThief:StolenTime": {
+    "NAME": "Stolen Time Bottle",
+    "DESCRIPTION": "Draw !M! cards.",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards."
+  },
   "theThief:StolenKnives": {
     "NAME": "Stolen Knives",
     "DESCRIPTION": "Gain 99 Knives. NL Whenever you play a card, throw !M! Knife that deals !D! damage and applies 1 Blight to a random enemy.",
@@ -253,5 +278,10 @@
       "[#FEE130]Rare[] [#FEE130]Find:[]",
       "[#FEE130]The[] [#FEE130]cleanest,[] [#FEE130]sharpest[] [#FEE130]arsenal[] [#FEE130]of[] [#FEE130]knives[] [#FEE130]you[] [#FEE130]have[] [#FEE130]ever[] [#FEE130]seen.[]"
     ]
+  },d
+  "theThief:dab": {
+    "NAME": "Dab",
+    "DESCRIPTION": "Dab on them haters",
+    "UPGRADE_DESCRIPTION": "Dab on them haters!"
   }
 }
