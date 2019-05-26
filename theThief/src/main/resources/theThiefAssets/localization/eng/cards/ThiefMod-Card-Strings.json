@@ -139,8 +139,8 @@
   },
   "theThief:Exploit": {
     "NAME": "Exploit",
-    "DESCRIPTION": "Deal !D! damage. If the enemy has any Debuff, gain 1 [E] and draw !M! card next turn.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. If the enemy has any Debuff, gain 1 [E] and draw !M! card next turn.",
+    "DESCRIPTION": "Deal !D! damage. NL If the enemy has any Debuff, gain 1 [E] and draw !M! card next turn.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL If the enemy has any Debuff, gain 1 [E] and draw !M! card next turn.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]
