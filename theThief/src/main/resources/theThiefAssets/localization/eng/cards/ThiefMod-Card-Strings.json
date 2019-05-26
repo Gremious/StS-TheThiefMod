@@ -155,8 +155,8 @@
   },
   "theThief:OneStepAhead": {
     "NAME": "One Step Ahead",
-    "DESCRIPTION": "If an enemy intends to attack, thethief:Shadowstep !M! time. If it intends to block, deal !D! damage !theThief:Magic! times instead.",
-    "UPGRADE_DESCRIPTION": "If an enemy intends to attack, thethief:Shadowstep !M! times. If it intends to block, deal !D! damage !theThief:Magic! times instead.",
+    "DESCRIPTION": "If an enemy intends to attack, thethief:Shadowstep !M! time. Otherwise, deal !D! damage !theThief:Magic! times instead.",
+    "UPGRADE_DESCRIPTION": "If an enemy intends to attack, thethief:Shadowstep !M! times. Otherwise, deal !D! damage !theThief:Magic! times instead.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]
