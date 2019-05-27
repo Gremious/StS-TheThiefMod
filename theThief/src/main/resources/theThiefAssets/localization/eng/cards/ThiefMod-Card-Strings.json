@@ -320,8 +320,8 @@
   },
   "theThief:LieInWait": {
     "NAME": "Lie In Wait",
-    "DESCRIPTION": "Startup: Add !M! void to your draw pile. Gain !B! block. NL Exhaustive !stslib:ex!.",
-    "UPGRADE_DESCRIPTION": "Startup: Add !M! void to your draw pile. Gain !B! block. NL Exhaustive !stslib:ex!.",
+    "DESCRIPTION": "Startup: Add !M! void to your draw pile. NL Gain !B! block. NL Exhaustive !stslib:ex!.",
+    "UPGRADE_DESCRIPTION": "Startup: Add !M! void to your draw pile. NL Gain !B! block. NL Exhaustive !stslib:ex!.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]
