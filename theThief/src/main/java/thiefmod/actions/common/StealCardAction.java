@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.helpers.CardLibrary;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import thiefmod.actions.util.DiscoverCardAction;
+import thiefmod.cards.curses.CallOfTheVoid;
 import thiefmod.cards.stolen.*;
 import thiefmod.cards.stolen.modSynergy.bard.StolenCredit;
 import thiefmod.cards.stolen.modSynergy.bard.StolenEssence;
@@ -355,7 +356,7 @@ public class StealCardAction extends AbstractGameAction implements CustomSavable
     
     private void curseCounter() {
         actionManager.addToBottom(new ApplyPowerAction(player, source,
-                new FleetingGuiltPower(player, source, 1), 1));
+                new CallOfTheVoid(player, source, 1), 1));
     }
     
     @Override
