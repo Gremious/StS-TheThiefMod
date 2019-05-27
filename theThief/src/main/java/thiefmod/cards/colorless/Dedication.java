@@ -15,7 +15,7 @@ public class Dedication extends AbstractBackstabCard {
     // TEXT DECLARATION
     
     public static final String ID = ThiefMod.makeID("Dedication");
-    public static final String IMG = "theThiefAssets/images/cards/beta/Attack.png";
+    public static final String IMG = "theThiefAssets/images/cards/beta/Dedication.png";
     public static final CardColor COLOR = CardColor.COLORLESS;
     
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
