@@ -17,7 +17,7 @@ public class GuiltTrip extends AbstractBackstabCard {
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("theThief:TooltipNames");
     
-    public static final String IMG = "theThiefAssets/images/cards/beta/Attack.png";
+    public static final String IMG = "theThiefAssets/images/cards/GuiltTrip.png";
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
     
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
