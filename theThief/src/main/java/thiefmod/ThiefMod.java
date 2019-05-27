@@ -171,7 +171,7 @@ public class ThiefMod implements EditCardsSubscriber,
     public static final String THE_THIEF_CORPSE = "theThiefAssets/images/char/thiefCharacter/corpse.png";
     
     // Mod Badge
-    public static final String BADGE_IMAGE = "theThiefAssets/images/Badge.png";
+    public static final String BADGE_IMAGE = "theThiefAssets/images/Badge (2).png";
     
     // Animations atlas and JSON files
     public static final String THE_DEFAULT_SKELETON_ATLAS = "theThiefAssets/images/char/thiefCharacter/skeleton.atlas";
@@ -261,6 +261,8 @@ public class ThiefMod implements EditCardsSubscriber,
                 });
     
         settingsPanel.addUIElement(enableNormalsButton); // Add the button to the settings panel. Button is a go.
+    
+        BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
         logger.info("Done loading badge Image and mod options");
         // Events
         logger.info("Adding Events");
