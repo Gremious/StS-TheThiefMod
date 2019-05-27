@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import thiefmod.ThiefMod;
+import thiefmod.cards.curses.CallOfTheVoid;
 import thiefmod.cards.curses.FleetingGuilt;
 import thiefmod.util.TextureLoader;
 
@@ -49,7 +50,7 @@ public class FleetingGuiltPower extends AbstractPower implements OnReceivePowerP
     @Override
     public boolean onReceivePower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
         if (power.ID.equals(ID) && owner.getPower(ID).amount == 4) {
-            actionManager.addToTop(new MakeTempCardInDiscardAction(new FleetingGuilt(), 1));
+            actionManager.addToTop(new MakeTempCardInDiscardAction(new CallOfTheVoid(), 1));
             actionManager.addToTop(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, ID));
             return false;
         } else {
