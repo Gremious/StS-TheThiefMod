@@ -1,7 +1,7 @@
 package thiefmod;
 
 import basemod.BaseMod;
-import basemod.ModLabel;
+import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
@@ -11,12 +11,15 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.Loader;
+import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.Exordium;
 import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.CardHelper;
+import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
@@ -55,6 +58,7 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Properties;
 import java.util.Random;
 
 import static archetypeAPI.ArchetypeAPI.loadArchetypes;
@@ -138,6 +142,11 @@ public class ThiefMod implements EditCardsSubscriber,
     private static final String AUTHOR = "Gremious";
     private static final String DESCRIPTION = "A mod for Slay the Spire that adds the Thief as a playable character! \n Shadowstep! Backstab! Steal from all your friends, enemies and acquaintances! Commit louse abuse! And many more! \n \n More than anything: Have fun!";
     
+    // Mod-settings settings. This is if you want an on/off savable button
+    public static Properties thiefModProperties = new Properties();
+    public static final String ENABLE_DEBUG_CARD= "enableDebugCard";
+    public static boolean enableDebugCard = false; // The boolean we'll be setting on/off (true/false)
+    
     // Color
     public static final Color THIEF_GRAY = CardHelper.getColor(64.0f, 70.0f, 70.0f);
     
@@ -180,6 +189,20 @@ public class ThiefMod implements EditCardsSubscriber,
         logger.info("Creating the color " + AbstractCardEnum.THIEF_GRAY.toString());
         BaseMod.addColor(AbstractCardEnum.THIEF_GRAY, THIEF_GRAY, THIEF_GRAY, THIEF_GRAY, THIEF_GRAY, THIEF_GRAY, THIEF_GRAY, THIEF_GRAY, THIEF_GRAY_ATTACK_BG_SMALL, THIEF_GRAY_SKILL_BG_SMALL, THIEF_GRAY_POWER_BG_SMALL, THIEF_GRAY_ENERGY_ORB_SMALL, THIEF_GRAY_ATTACK_BG_LARGE, THIEF_GRAY_SKILL_BG_LARGE, THIEF_GRAY_POWER_BG_LARGE, THIEF_GRAY_ENERGY_ORB_LARGE, THIEF_GRAY_CARD_ENERGY_ORB);
         logger.info("Done Creating the color");
+        
+        logger.info("Adding mod settings");
+        // This loads the mod settings.
+        // The actual mod Button is added below in receivePostInitialize()
+        thiefModProperties.setProperty(ENABLE_DEBUG_CARD, "FALSE"); // This is the default setting. It's actually set...
+        try {
+            SpireConfig config = new SpireConfig("thiefMod", "thiefModConfig", thiefModProperties); // ...right here
+            // the "fileName" parameter is the name of the file MTS will create where it will save our setting.
+            config.load(); // Load the setting and set the boolean to equal it
+            enableDebugCard = config.getBool(ENABLE_DEBUG_CARD);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        logger.info("Done adding mod settings");
     }
     
     @SuppressWarnings("unused")
@@ -215,11 +238,29 @@ public class ThiefMod implements EditCardsSubscriber,
         logger.info("Load Badge Image and mod options");
         
         Texture badgeTexture = new Texture(BADGE_IMAGE);
+        // Create the Mod Menu
         ModPanel settingsPanel = new ModPanel();
-        settingsPanel.addUIElement(new ModLabel("The Thief Mod does not have any settings!", 400.0f, 700.0f, settingsPanel, (me) -> {
-        }));
-        BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
-        
+    
+        // Create the on/off button:
+        ModLabeledToggleButton enableNormalsButton = new ModLabeledToggleButton("Enable Starting with the Test Card.",
+                350.0f, 700.0f, Settings.CREAM_COLOR, FontHelper.charDescFont, // Position (trial and error it), color, font
+                enableDebugCard, // Boolean it uses
+                settingsPanel, // The mod panel in which this button will be in
+                (label) -> {}, // thing??????? idk
+                (button) -> { // The actual button:
+    
+                    enableDebugCard = button.enabled; // The boolean true/false will be whether the button is enabled or not
+                    try {
+                        // And based on that boolean, set the settings and save them
+                        SpireConfig config = new SpireConfig("thiefMod", "thiefModConfig", thiefModProperties);
+                        config.setBool(ENABLE_DEBUG_CARD, enableDebugCard);
+                        config.save();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                });
+    
+        settingsPanel.addUIElement(enableNormalsButton); // Add the button to the settings panel. Button is a go.
         logger.info("Done loading badge Image and mod options");
         // Events
         logger.info("Adding Events");
