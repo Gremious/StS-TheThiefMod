@@ -28,7 +28,7 @@ public class StolenMaths extends AbstractStolenCard {
     
     // STAT DECLARATION
     
-    private static final CardTarget TARGET = CardTarget.SELF;
+    private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     
     private static final int COST = 1;
