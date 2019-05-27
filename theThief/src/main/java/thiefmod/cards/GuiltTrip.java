@@ -1,5 +1,6 @@
 package thiefmod.cards;
 
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.ExhaustiveField;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -33,14 +34,16 @@ public class GuiltTrip extends AbstractBackstabCard {
     
     private static final int COST = 1;
     
-    private static final int BACKSTAB = 1;
+    private static final int BACKSTAB = 2;
+    private static final int BACKSTAB_UPGRADED = 3;
     
-    private static final int MAGIC = 2;
-    private static final int UPGRADED_PLUS_MAGIC = 1;
+    private static final int MAGIC = 1;
+    private static final int UPGRADED_PLUS_MAGIC = 2;
     // /STAT DECLARATION/
     
     public GuiltTrip() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        exhaust = true;
         magicNumber = baseMagicNumber = MAGIC;
         backstabNumber = baseBackstabNumber = BACKSTAB;
     }
@@ -62,6 +65,7 @@ public class GuiltTrip extends AbstractBackstabCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
+            upgradeBackstabNumber(BACKSTAB_UPGRADED);
             rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
