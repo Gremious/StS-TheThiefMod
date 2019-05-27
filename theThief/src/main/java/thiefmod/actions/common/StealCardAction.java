@@ -35,7 +35,7 @@ import thiefmod.cards.stolen.rareFind.StolenBlood;
 import thiefmod.cards.stolen.rareFind.StolenCore;
 import thiefmod.cards.stolen.rareFind.StolenShadow;
 import thiefmod.patches.DiscoveryPatch;
-import thiefmod.powers.Unique.FleetingGuiltPower;
+import thiefmod.powers.Unique.StolenRepercussions;
 import thiefmod.powers.Unique.IllGottenGainsPower;
 
 import java.util.ArrayList;
@@ -355,7 +355,7 @@ public class StealCardAction extends AbstractGameAction implements CustomSavable
     
     private void curseCounter() {
         actionManager.addToBottom(new ApplyPowerAction(player, source,
-                new FleetingGuiltPower(player, source, 1), 1));
+                new StolenRepercussions(player, source, 1), 1));
     }
     
     @Override
