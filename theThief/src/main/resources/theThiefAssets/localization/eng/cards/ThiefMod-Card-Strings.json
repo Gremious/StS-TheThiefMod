@@ -549,8 +549,8 @@
   },
   "theThief:GuiltTrip": {
     "NAME": "Guilt Trip",
-    "DESCRIPTION": "If an enemy intends to attack, apply !M! Weak and it loses !theThief:Magic! Strength. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "If an enemy intends to attack, apply !M! Weak and it loses !theThief:Magic! Strength. NL Exhaust.",
+    "DESCRIPTION": "If an enemy intends to attack, apply !M! Weak and it loses !theThief:Magic! Strength this turn. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "If an enemy intends to attack, apply !M! Weak and it loses !theThief:Magic! Strength this turn. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]
