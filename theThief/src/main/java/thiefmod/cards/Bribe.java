@@ -4,6 +4,7 @@ import com.evacipated.cardcrawl.mod.stslib.actions.common.StunMonsterAction;
 import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -49,10 +50,16 @@ public class Bribe extends AbstractBackstabCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        act(new GainGoldAction(p, p, magicNumber));
+     
+        act(new GainGoldAction(p, p, -magicNumber));
         act(new StunMonsterAction(m, p));
     }
-    
+    public void update() {
+        super.update();
+        if(AbstractDungeon.player.gold < magicNumber){
+        this.cost = -2;
+        }
+    }
     @Override
     public String flavortext() {
         return EXTENDED_DESCRIPTION[0];
