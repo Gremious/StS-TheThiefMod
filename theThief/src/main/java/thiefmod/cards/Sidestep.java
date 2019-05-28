@@ -39,7 +39,7 @@ public class Sidestep extends AbstractBackstabCard {
     private static final int UPGRADE_PLUS_BLOCK = 2;
     
     private static final int MAGIC = 1;
-    private static final int UPGRADED_PLUS_MAGIC = 1;
+    //private static final int UPGRADED_PLUS_MAGIC = 1;
     // /STAT DECLARATION/
     
     public Sidestep() {
@@ -65,7 +65,7 @@ public class Sidestep extends AbstractBackstabCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
+     //       upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
             upgradeBlock(UPGRADE_PLUS_BLOCK);
             rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
