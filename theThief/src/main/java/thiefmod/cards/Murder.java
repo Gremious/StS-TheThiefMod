@@ -45,7 +45,7 @@ public class Murder extends AbstractBackstabCard {
     private static final int COST = 3;
     
     private static final int DAMAGE = 100;
-    private static final int UPGRADE_PLUS_DAMAGE = 120;
+    // private static final int UPGRADE_PLUS_DAMAGE = 100;
     // /STAT DECLARATION/
     
     public Murder() {
@@ -77,7 +77,7 @@ public class Murder extends AbstractBackstabCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DAMAGE);
+            upgradeDamage(DAMAGE);
             rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

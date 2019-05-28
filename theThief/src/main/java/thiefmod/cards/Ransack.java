@@ -36,7 +36,7 @@ public class Ransack extends AbstractBackstabCard {
     
     private static final int COST = 1;
     
-    private static final int MAGIC = 2;
+    private static final int MAGIC = 1;
     private static final int UPGRADED_PLUS_MAGIC = 1;
     // /STAT DECLARATION/
     
@@ -48,7 +48,9 @@ public class Ransack extends AbstractBackstabCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        magicNumber++;
         act(new StealCardAction(1, magicNumber, false, AbstractDungeon.player.hand, false));
+        magicNumber--;
     }
     
     @Override

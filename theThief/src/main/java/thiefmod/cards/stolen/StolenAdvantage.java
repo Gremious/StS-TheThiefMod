@@ -1,14 +1,15 @@
 package thiefmod.cards.stolen;
 
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
 import thiefmod.CardNoSeen;
 import thiefmod.cards.abstracts.AbstractStolenCard;
 import thiefmod.patches.character.TheThiefEnum;
-import thiefmod.patches.character.ThiefCardTags;
 
 @CardNoSeen
 public class StolenAdvantage extends AbstractStolenCard {
@@ -31,7 +32,7 @@ public class StolenAdvantage extends AbstractStolenCard {
     
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        act(new DrawCardAction(m, magicNumber, true));
+        act(new ApplyPowerAction(p, p, new DrawCardNextTurnPower(p, magicNumber), 1));
     }
     
     @Override

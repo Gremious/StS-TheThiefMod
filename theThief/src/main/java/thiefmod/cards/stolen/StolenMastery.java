@@ -28,7 +28,7 @@ public class StolenMastery extends AbstractStolenCard {
     private static final CardType TYPE = CardType.SKILL;
     
     
-    private static final int COST = 1;
+    private static final int COST = 0;
     
     private static final int MAGIC = 1;
     private static final int UPGRADED_PLUS_MAGIC = 1;

@@ -30,9 +30,7 @@ public class StolenMegaphone extends AbstractStolenCard {
     private static final CardType TYPE = CardType.SKILL;
     
     
-    private static final int COST = 1;
-    private static final int UPGRADE_COST = 0;
-    
+    private static final int COST = 0;
     private static final int MAGIC = 1;
     // /STAT DECLARATION/
     
@@ -63,7 +61,7 @@ public class StolenMegaphone extends AbstractStolenCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADE_COST);
+            upgradeMagicNumber(MAGIC);
             initializeDescription();
         }
     }

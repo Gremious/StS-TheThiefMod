@@ -67,8 +67,8 @@
   },
   "theThief:Ransack": {
     "NAME": "Ransack",
-    "DESCRIPTION": "thethief:Discover a thethief:Stolen card. NL thethief:Steal it, and add !M! copies of it to your hand.",
-    "UPGRADE_DESCRIPTION": "thethief:Discover a thethief:Stolen card. NL thethief:Steal it, and add !M! copies of it to your hand.",
+    "DESCRIPTION": "thethief:Discover a thethief:Stolen card. NL thethief:Steal it, and add !M! additional copies of it to your hand.",
+    "UPGRADE_DESCRIPTION": "thethief:Discover a thethief:Stolen card. NL thethief:Steal it, and add !M! additional copies of it to your hand.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]ransack[]",
       "Choose 1 out of 3 thethief:Stolen cards and add !M! copy of it to your hand."
@@ -155,8 +155,8 @@
   },
   "theThief:OneStepAhead": {
     "NAME": "One Step Ahead",
-    "DESCRIPTION": "If an enemy intends to attack, thethief:Shadowstep !M! time. Otherwise, deal !D! damage !theThief:Magic! times instead.",
-    "UPGRADE_DESCRIPTION": "If an enemy intends to attack, thethief:Shadowstep !M! times. Otherwise, deal !D! damage !theThief:Magic! times instead.",
+    "DESCRIPTION": "If an enemy intends to attack, thethief:Shadowstep !M! time. NL Otherwise, deal !D! damage !theThief:Magic! times instead.",
+    "UPGRADE_DESCRIPTION": "If an enemy intends to attack, thethief:Shadowstep !M! times. NL Otherwise, deal !D! damage !theThief:Magic! times instead.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]
@@ -350,7 +350,7 @@
     "EXTENDED_DESCRIPTION": [
       "[#88888]What's[][#88888]yours[][#88888]is[][#88888]mine.[]",
       "Tip.",
-      "If you keep a thethief:Stolen card, unless it's a [#FEE130]Rare[] [#FEE130]Find,[] it will lose Exhaust."
+      "If you keep a #yStolen card, unless it's a [#FEE130]Rare[] [#FEE130]Find,[] it will lose Exhaust."
     ]
   },
   "theThief:IAmEverywhere": {
@@ -490,8 +490,8 @@
   },
   "theThief:ShadowMastery": {
     "NAME": "Shadow Mastery",
-    "DESCRIPTION": "The first time you thethief:thethief:Shadowstep in a turn, thethief:Shadowstep twice.",
-    "UPGRADE_DESCRIPTION": "Innate. NL The first time you thethief:thethief:Shadowstep in a turn, thethief:Shadowstep twice.",
+    "DESCRIPTION": "The first time you thethief:Shadowstep in a turn, thethief:Shadowstep twice.",
+    "UPGRADE_DESCRIPTION": "Innate. NL The first time you thethief:Shadowstep in a turn, thethief:Shadowstep twice.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]
@@ -525,8 +525,8 @@
   },
   "theThief:GhastlyEssence": {
     "NAME": "Ghastly Essence",
-    "DESCRIPTION": "Keep !M! #yElusive between turns.",
-    "UPGRADE_DESCRIPTION": "Keep !M! #yElusive between turns.",
+    "DESCRIPTION": "Keep !M! thethief:Elusive between turns.",
+    "UPGRADE_DESCRIPTION": "Keep !M! thethief:Elusive between turns.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Ghastly[] [#88888]Presence?[]"
     ]
