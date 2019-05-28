@@ -61,8 +61,8 @@ public class ApplyBackstabCardPowersMorePatch {
     private static class Locator extends SpireInsertLocator {
         @Override
         public int[] Locate(CtBehavior ctMethodToPatch) throws Exception {
-            Matcher finalMatcher = new Matcher.MethodCallMatcher(AbstractRoom.class, "isBattleOver");
-            return LineFinder.findInOrder(ctMethodToPatch, finalMatcher);
+            Matcher finalMatcher = new Matcher.MethodCallMatcher(AbstractDungeon.class, "getCurrRoom");
+            return new int[]{LineFinder.findAllInOrder(ctMethodToPatch, finalMatcher)[2]};
         }
     }
 }
