@@ -65,16 +65,6 @@ public class LiarPower extends AbstractPower {
         }
     }
 
-
-    public void atEndOfRound() {
-        if (upgraded) {
-            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, ID));
-        } else {
-            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(owner, owner, ID, 1));
-        }
-
-    }
-
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {
