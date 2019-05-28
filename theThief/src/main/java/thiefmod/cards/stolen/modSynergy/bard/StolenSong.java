@@ -8,6 +8,7 @@ import com.evacipated.cardcrawl.mod.bard.characters.Bard;
 import com.evacipated.cardcrawl.mod.bard.helpers.MelodyManager;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
@@ -47,7 +48,7 @@ public class StolenSong extends AbstractStolenCard {
     
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        act(new SelectMelodyAction(MelodyManager.getAllMelodies(), false));
+        AbstractDungeon.actionManager.addToBottom(new SelectMelodyAction(MelodyManager.getAllMelodies(), false));
     }
     
     @Override
@@ -64,7 +65,6 @@ public class StolenSong extends AbstractStolenCard {
         if (!upgraded) {
             upgradeBaseCost(UPGRADE_COST);
             upgradeName();
-            
             //          rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

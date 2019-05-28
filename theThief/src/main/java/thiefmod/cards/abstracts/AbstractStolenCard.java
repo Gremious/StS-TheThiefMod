@@ -1,8 +1,11 @@
 package thiefmod.cards.abstracts;
 
+import basemod.ReflectionHacks;
 import blackrusemod.patches.TheServantEnum;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.mod.bard.characters.Bard;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -359,6 +362,18 @@ public abstract class AbstractStolenCard extends AbstractThiefCard {
                 return "theThiefAssets/images/cards/locked_power.png";
             default:
                 return "theThiefAssets/images/cards/locked_skill.png";
+        }
+    }
+    
+    @Override
+    public void loadCardImage(String img) {
+        TextureAtlas cardAtlas = (TextureAtlas) ReflectionHacks.getPrivateStatic(AbstractCard.class, "cardAtlas");
+        TextureAtlas.AtlasRegion atlasRegion = cardAtlas.findRegion(img);
+        if (atlasRegion != null)     {
+            textureImg = null;
+            ReflectionHacks.setPrivate(this, AbstractCard.class, "portrait", atlasRegion);
+        } else {
+            super.loadCardImage(img);
         }
     }
     
