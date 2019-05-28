@@ -285,5 +285,29 @@
       "5",
       "6"
     ]
+  },
+  "theThief:EmptyPower": {
+    "NAME": "Empty Power",
+    "DESCRIPTIONS": [
+      "This text should not be seen.",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+    ]
+  },
+  "theThief:VoidboundChallengePower": {
+    "NAME": "Enter The Void",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of each turn. NL ",
+      "Whenever you play a card, shuffle ",
+      " #yVoid into your ",
+      " #yVoids into your ",
+      "Discard pile.",
+      "Draw pile.",
+      "Draw and Discard piles."
+    ]
   }
 }

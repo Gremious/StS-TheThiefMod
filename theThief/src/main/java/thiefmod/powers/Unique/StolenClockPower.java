@@ -74,7 +74,7 @@ public class StolenClockPower extends AbstractPower implements InvisiblePower, N
         }
     }
 
-    /*
+    
     @Override
     public void onRemove()
     {
@@ -85,7 +85,7 @@ public class StolenClockPower extends AbstractPower implements InvisiblePower, N
             AbstractDungeon.effectList.remove(AbstractDungeon.effectList.size() - 1);
         }
     }
-    */
+    
 }
 
 
