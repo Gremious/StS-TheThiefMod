@@ -34,7 +34,7 @@ public class DirtyDeedsDDC extends AbstractBackstabCard {
     
     private static final int COST = 1;
     
-    private static final int DAMAGE = 8;
+    private static final int DAMAGE = 9;
     private static final int UPGRADE_PLUS_DAMAGE = 3;
     
     private static final int MAGIC = 5;
@@ -47,7 +47,6 @@ public class DirtyDeedsDDC extends AbstractBackstabCard {
         baseDamage = DAMAGE;
         magicNumber = baseMagicNumber = MAGIC;
         backstabNumber = baseBackstabNumber = BACKSTAB;
-        exhaust = true;
         tags.add(ThiefCardTags.BACKSTAB);
     }
     
@@ -89,7 +88,6 @@ public class DirtyDeedsDDC extends AbstractBackstabCard {
     @Override
     public void upgrade() {
         if (!upgraded) {
-            exhaust = false;
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DAMAGE);
             rawDescription = UPGRADE_DESCRIPTION;

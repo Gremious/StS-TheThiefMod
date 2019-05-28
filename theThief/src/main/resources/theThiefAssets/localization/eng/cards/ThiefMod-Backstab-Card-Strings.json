@@ -60,15 +60,15 @@
   },
   "theThief:DirtyDeedsDDC": {
     "NAME": "Dirty Deeds DDC",
-    "DESCRIPTION": "Deal !D! damage. If this kills a non-minion enemy, gain !M! gold. NL thethief:Backstab: Gain !theThief:Magic! gold instead.  NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. If this kills a non-minion enemy, gain !M! gold. NL thethief:Backstab: Gain !theThief:Magic! gold instead.",
+    "DESCRIPTION": "Deal !D! damage. NL If this kills a non-minion enemy, gain !M! gold. NL thethief:Backstab: Gain !theThief:Magic! gold instead.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL If this kills a non-minion enemy, gain !M! gold. NL thethief:Backstab: Gain !theThief:Magic! gold instead.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Filthy[] [#88888]acts[] [#88888]at[] [#88888]a[] [#88888]reasonable[] [#88888]price.[]",
       "Deal !D! damage. NL If this kills a non-minion enemy, gain !M! gold. ",
       " NL thethief:Backstab: Gain !theThief:Magic! gold instead.",
-      " NL thethief:Backstab: Gain !theThief:Magic! gold instead. NL Exhaust.",
+      " NL thethief:Backstab: Gain !theThief:Magic! gold instead.",
       " NL thethief:Backstab: [#fa5555]Gain[] !theThief:Magic! [#fa5555]gold[] [#fa5555]instead.[]",
-      " NL thethief:Backstab: [#fa5555]Gain[] !theThief:Magic! [#fa5555]gold[] [#fa5555]instead.[] NL Exhaust."
+      " NL thethief:Backstab: [#fa5555]Gain[] !theThief:Magic! [#fa5555]gold[] [#fa5555]instead.[]"
     ]
   },
   "theThief:ViciousAssault": {
