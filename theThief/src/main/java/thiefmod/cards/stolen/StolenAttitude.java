@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.CardNoSeen;
 import thiefmod.ThiefMod;
 import thiefmod.cards.abstracts.AbstractStolenCard;
-import thiefmod.patches.character.ThiefCardTags;
 
 @CardNoSeen
 public class StolenAttitude extends AbstractStolenCard {
@@ -18,7 +17,7 @@ public class StolenAttitude extends AbstractStolenCard {
     public static final String ID = ThiefMod.makeID("StolenAttitude");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     
-    public static final String IMG = "theThiefAssets/images/cards/beta/Attack.png";
+    public static final String IMG = "red/skill/shrug_it_off";
     
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     // /TEXT DECLARATION/
@@ -27,7 +26,6 @@ public class StolenAttitude extends AbstractStolenCard {
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
-    
     
     private static final int COST = 1;
     
@@ -41,7 +39,6 @@ public class StolenAttitude extends AbstractStolenCard {
         super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, AbstractPlayer.PlayerClass.IRONCLAD);
         baseBlock = BLOCK;
         magicNumber = baseMagicNumber = MAGIC;
-        
     }
     
     public void use(AbstractPlayer p, AbstractMonster m) {
