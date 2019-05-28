@@ -27,7 +27,7 @@ public class ShadowImage extends AbstractBackstabCard {
     public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
     // /TEXT DECLARATION/
     
-    // STAT DECLARATION
+    // STAT DECLARATIONs
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;

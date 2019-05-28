@@ -12,41 +12,37 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import thiefmod.ThiefMod;
 import thiefmod.cards.curses.CallOfTheVoid;
-import thiefmod.cards.curses.FleetingGuilt;
 import thiefmod.util.TextureLoader;
 
 import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager;
 
 // Empty Base
 
-public class FleetingGuiltPower extends AbstractPower implements OnReceivePowerPower {
+public class StolenRepercussions extends AbstractPower implements OnReceivePowerPower {
     public AbstractCreature source;
-
-
-    public static final String POWER_ID = ThiefMod.makeID("FleetingGuiltPower");
+    
+    public static final String POWER_ID = ThiefMod.makeID("StolenRepercussions");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     private static final Texture tex84 = TextureLoader.getTexture("theThiefAssets/images/powers/84/FleetingGuiltPower.png");
     private static final Texture tex32 = TextureLoader.getTexture("theThiefAssets/images/powers/32/FleetingGuiltPower.png");
-
-
-    public FleetingGuiltPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
+    
+    public StolenRepercussions(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         name = NAME;
         ID = POWER_ID;
         region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
         type = PowerType.DEBUFF;
         isTurnBased = false;
-
+        
         this.owner = owner;
         this.source = source;
-
+        
         this.amount = amount;
-
         updateDescription();
     }
-
+    
     @Override
     public boolean onReceivePower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
         if (power.ID.equals(ID) && owner.getPower(ID).amount == 4) {
@@ -57,8 +53,7 @@ public class FleetingGuiltPower extends AbstractPower implements OnReceivePowerP
             return true;
         }
     }
-
-
+    
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {
@@ -68,8 +63,4 @@ public class FleetingGuiltPower extends AbstractPower implements OnReceivePowerP
             description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
         }
     }
-
-
 }
-
-

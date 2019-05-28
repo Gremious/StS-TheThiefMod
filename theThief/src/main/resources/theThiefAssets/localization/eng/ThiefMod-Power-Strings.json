@@ -69,12 +69,12 @@
       " non-gray cards you play to your deck."
     ]
   },
-  "theThief:FleetingGuiltPower": {
-    "NAME": "Fleeting Guilt",
+  "theThief:StolenRepercussions": {
+    "NAME": "Stolen Repercussions",
     "DESCRIPTIONS": [
       "You have stolen ",
-      " card. After stealing 5, add a #rFleeting #rGuilt to your discard pile.",
-      " cards. After stealing 5, add a #rFleeting #rGuilt to your discard pile."
+      " card. NL After stealing 5, add a #rCall #rof #rthe #rVoid to your discard pile.",
+      " cards. NL After stealing 5, add a #rCall #rof #rthe #rVoid to your discard pile."
     ]
   },
   "theThief:FocusedPower": {

@@ -1,9 +1,11 @@
 package thiefmod.patches;
 
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import javassist.CtBehavior;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import thiefmod.cards.abstracts.AbstractBackstabCard;
@@ -14,15 +16,25 @@ import thiefmod.cards.abstracts.AbstractBackstabCard;
 )
 public class ApplyBackstabCardPowersMorePatch {
     protected static final Logger logger = LogManager.getLogger(ApplyBackstabCardPowersMorePatch.class.getName());
+    private static boolean triggered = false;
     
     public static void Postfix(GameActionManager __instance) {
-        if (__instance.turnHasEnded && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
+        if (__instance.turnHasEnded && !AbstractDungeon.getMonsters().areMonstersBasicallyDead() && !triggered) {
+            triggered = true;
             logger.info(ApplyBackstabCardPowersMorePatch.class.getSimpleName() + " triggered");
             applyStartOfTurnBackstabCards(__instance);
         }
     }
     
+    @SpireInsertPatch(
+            locator = Locator.class
+    )
+    public static void booleanReset(GameActionManager __instance) {
+        triggered = false;
+    }
+    
     private static void applyStartOfTurnBackstabCards(GameActionManager act) {
+        
         logger.info("Can Backstab is " + AbstractBackstabCard.canBackstab());
         logger.info("Can Backstab for Descriptions is " + AbstractBackstabCard.canBackstabDesc());
         logger.info("These two should always match.");
@@ -43,6 +55,14 @@ public class ApplyBackstabCardPowersMorePatch {
             if (c instanceof AbstractBackstabCard)
                 c.applyPowers();
             logger.info("Applying Powers for " + c);
+        }
+    }
+    
+    private static class Locator extends SpireInsertLocator {
+        @Override
+        public int[] Locate(CtBehavior ctMethodToPatch) throws Exception {
+            Matcher finalMatcher = new Matcher.MethodCallMatcher(AbstractRoom.class, "isBattleOver");
+            return LineFinder.findInOrder(ctMethodToPatch, finalMatcher);
         }
     }
 }

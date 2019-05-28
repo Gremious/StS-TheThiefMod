@@ -75,6 +75,7 @@ public class LieInWait extends AbstractBackstabCard implements StartupCard {
         if (!upgraded) {
             upgradeName();
             upgradeBackstabNumber(UPGRADED_BACKSTAB);
+            ExhaustiveVariable.setBaseValue(this, UPGRADED_BACKSTAB);
             rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
