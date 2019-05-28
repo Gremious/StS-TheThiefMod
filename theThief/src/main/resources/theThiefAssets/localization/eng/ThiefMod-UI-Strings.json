@@ -48,5 +48,11 @@
       "A card which grants one stack of [#5299DC]Power,[] making your [#FF5252]Artes[] stronger.",
       "A card which grants one stack of [#FF5252]Poise,[] making your [#5299DC]Spells[] stronger."
     ]
+  },
+  "theThief:CallOfTheVoid": {
+    "TEXT": [
+      "Call of the Void",
+      "An unplayable curse card which makes you lose [E] when drawn."
+    ]
   }
 }
