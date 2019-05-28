@@ -84,8 +84,8 @@
   },
   "theThief:SimilarSkills": {
     "NAME": "Similar Skills",
-    "DESCRIPTION": "At the start of your turn, add a random Green card to your deck. It costs 0 this combat.",
-    "UPGRADE_DESCRIPTION": "At the start of your turn, add a random Upgraded Green card to your deck. It costs 0 this combat.",
+    "DESCRIPTION": "At the start of your turn, add a random Green card to your draw pile. NL It costs 0 this combat.",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, add a random Upgraded Green card to your draw pile. NL It costs 0 this combat.",
     "EXTENDED_DESCRIPTION": [
       "[#FEE130]A[] [#FEE130]knife[] [#FEE130]for[] [#FEE130]a[] [#FEE130]shiv.[]"
     ]

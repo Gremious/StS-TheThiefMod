@@ -27,9 +27,9 @@ public class renderPowerTipsStolenRepercussionsPatchPatch {
             locator = Locator.class,
             localvars = {"p", "tips"}
     )
-    public static void Insert(AbstractMonster __instance, SpriteBatch sb, @ByRef AbstractPower[] p, @ByRef ArrayList<PowerTip> tips) {
+    public static void Insert(AbstractMonster __instance, SpriteBatch sb, @ByRef AbstractPower[] p, @ByRef ArrayList<PowerTip>[] tips) {
         if (p[0].ID.equals(StolenRepercussions.POWER_ID)) {
-            tips.add(new PowerTip(VOID_STRINGS[0], VOID_STRINGS[1], p[0].img));
+            tips[0].add(new PowerTip(VOID_STRINGS[0], VOID_STRINGS[1], p[0].img));
         }
     }
     

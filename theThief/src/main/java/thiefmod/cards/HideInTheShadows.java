@@ -50,9 +50,9 @@ public class HideInTheShadows extends AbstractBackstabCard {
         for (AbstractCard AttackCheckCard : AbstractDungeon.actionManager.cardsPlayedThisTurn) {
             if (AttackCheckCard.type == CardType.ATTACK) {
                 this.exhaustOnUseOnce = true;
-                return;
             }
         }
+        
         act(new GainBlockAction(p, p, block));
     }
     
