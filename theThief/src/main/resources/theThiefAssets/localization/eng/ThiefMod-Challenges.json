@@ -1,0 +1,6 @@
+{
+  "theThief:EnterTheVoidChallenge": {
+    "NAME": "Enter the Void",
+    "DESCRIPTION": "Gain [E] at the start of your turn. Every time you play a card, shuffle a Void into your discard pile."
+  }
+}
