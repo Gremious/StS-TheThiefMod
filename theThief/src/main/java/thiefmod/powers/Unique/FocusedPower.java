@@ -16,8 +16,6 @@ import thiefmod.cards.abstracts.AbstractBackstabCard;
 import thiefmod.powers.Common.BackstabPower;
 import thiefmod.util.TextureLoader;
 
-// Empty Base
-
 public class FocusedPower extends AbstractPower implements NonStackablePower {
     public AbstractCreature source;
     
@@ -35,10 +33,8 @@ public class FocusedPower extends AbstractPower implements NonStackablePower {
         region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
         type = PowerType.BUFF;
         isTurnBased = false;
-        
         this.owner = owner;
         this.source = source;
-        
         this.amount = amount;
         
         updateDescription();
@@ -50,7 +46,6 @@ public class FocusedPower extends AbstractPower implements NonStackablePower {
         }
     }
     
-    // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {
         description = DESCRIPTIONS[0];
