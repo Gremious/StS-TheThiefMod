@@ -50,7 +50,6 @@ public class GhastlyPresencePower extends AbstractPower {
         if (AbstractDungeon.player.cardsPlayedThisTurn <= 1
                 || AbstractDungeon.player.hasPower(BackstabPower.POWER_ID)
                 && card.hasTag(ThiefCardTags.BACKSTAB)) {
-
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, source, new ElusivePower(owner, source, amount), amount));
         }
     }

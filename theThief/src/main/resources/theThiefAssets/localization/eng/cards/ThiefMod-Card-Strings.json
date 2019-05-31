@@ -515,7 +515,7 @@
   "theThief:GhastlyPresence": {
     "NAME": "Ghastly Presence",
     "DESCRIPTION": "Whenever you trigger a thethief:Backstab, gain !M! thethief:elusive. NL thethief:Shadowstep !M! time.",
-    "UPGRADE_DESCRIPTION": "Whenever you trigger a thethief:Backstab, gain !M! thethief:elusive. NL thethief:Shadowstep !M! time.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you trigger a thethief:Backstab, gain !M! thethief:elusive. NL thethief:Shadowstep !M! time.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Ghastly[] [#88888]Essence?[]",
       "If you trigger 2 thethief:Backstabs in a turn, thethief:Shadowstep !M! ",
