@@ -482,8 +482,8 @@
   },
   "theThief:Focused": {
     "NAME": "Focused",
-    "DESCRIPTION": "Triggering a thethief:Backstab effect does prevent you from triggering your next one.",
-    "UPGRADE_DESCRIPTION": "Innate. Triggering a thethief:Backstab effect does prevent you from triggering your next one.",
+    "DESCRIPTION": "thethief:Backstab effects also trigger after playing a thethief:Backstab card.",
+    "UPGRADE_DESCRIPTION": "Innate. NL thethief:Backstab effects also trigger after playing a thethief:Backstab card.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]
