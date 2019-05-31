@@ -2,6 +2,7 @@ package thiefmod.powers.Common;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.InvisiblePower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -17,7 +18,7 @@ import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager;
 
 // Empty Base
 
-public class ShadowstepPower extends AbstractPower {
+public class ShadowstepPower extends AbstractPower implements InvisiblePower {
     public AbstractCreature source;
     
     public static final String POWER_ID = ThiefMod.makeID("ShadowstepPower");
@@ -45,7 +46,7 @@ public class ShadowstepPower extends AbstractPower {
         AbstractDungeon.effectsQueue.add(new ShadowstepSmokeBoofEffect(AbstractDungeon.player.drawX, AbstractDungeon.player.drawY));
         actionManager.addToBottom(new ApplyPowerAction(owner, source, new ElusivePower(owner, source, amount), amount));
         actionManager.addToBottom(new ApplyPowerAction(owner, source, new BackstabPower(owner, source, amount), amount));
-        actionManager.addToBottom(new RemoveSpecificPowerAction(owner, source, this));
+        actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, this));
     }
     
     @Override
