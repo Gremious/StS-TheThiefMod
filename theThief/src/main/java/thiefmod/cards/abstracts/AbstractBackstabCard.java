@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.CardIgnore;
+import thiefmod.patches.character.ThiefCardTags;
 import thiefmod.powers.Common.BackstabPower;
 
 import java.util.ArrayList;
@@ -19,6 +20,7 @@ public abstract class AbstractBackstabCard extends AbstractThiefCard {
     
     public AbstractBackstabCard(final String id, final String img, final int cost, final CardType type, final CardColor color, final CardRarity rarity, final CardTarget target) {
         super(id, img, cost, type, color, rarity, target);
+        tags.add(ThiefCardTags.BACKSTAB);
     }
     
     public static boolean canBackstab() {

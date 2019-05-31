@@ -49,7 +49,7 @@ public class CloakAndDagger extends AbstractBackstabCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         baseBlock = BLOCK;
-        tags.add(ThiefCardTags.BACKSTAB);
+        
     }
     
     // Actions the card should do.

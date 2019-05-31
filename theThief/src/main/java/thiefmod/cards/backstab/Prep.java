@@ -45,7 +45,7 @@ public class Prep extends AbstractBackstabCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseBlock = BLOCK;
         magicNumber = baseMagicNumber = MAGIC;
-        tags.add(ThiefCardTags.BACKSTAB);
+        
     }
     
     // Actions the card should do.

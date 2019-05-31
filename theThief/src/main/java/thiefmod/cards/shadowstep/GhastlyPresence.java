@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
 import thiefmod.cards.abstracts.AbstractBackstabCard;
 import thiefmod.patches.character.AbstractCardEnum;
-import thiefmod.powers.Unique.GhastlyEssencePower;
 import thiefmod.powers.Unique.GhastlyPresencePower;
 
 public class GhastlyPresence extends AbstractBackstabCard {
@@ -37,7 +36,6 @@ public class GhastlyPresence extends AbstractBackstabCard {
     private static final int COST = 1;
     
     private static final int MAGIC = 1;
-    private static final int UPGRADED_PLUS_MAGIC = 1;
     // /STAT DECLARATION/
     
     public GhastlyPresence() {
@@ -72,7 +70,8 @@ public class GhastlyPresence extends AbstractBackstabCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
+            isInnate = true;
+            this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

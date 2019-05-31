@@ -2,16 +2,22 @@ package thiefmod.powers.Common;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.InvisiblePower;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import thiefmod.ThiefMod;
 import thiefmod.util.TextureLoader;
+import thiefmod.vfx.ShadowstepSmokeBoofEffect;
 
-// Empty Base
+import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager;
 
-public class ShadowstepPower extends AbstractPower {
+@Deprecated
+public class ShadowstepPower extends AbstractPower implements InvisiblePower {
     public AbstractCreature source;
     
     public static final String POWER_ID = ThiefMod.makeID("ShadowstepPower");
@@ -28,22 +34,25 @@ public class ShadowstepPower extends AbstractPower {
         region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
         type = PowerType.BUFF;
         isTurnBased = false;
-        
         this.owner = owner;
         this.source = source;
-        
         this.amount = amount;
-        
         updateDescription();
     }
     
-    // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
+    @Override
+    public void onInitialApplication() {
+        AbstractDungeon.effectsQueue.add(new ShadowstepSmokeBoofEffect(AbstractDungeon.player.drawX, AbstractDungeon.player.drawY));
+        actionManager.addToBottom(new ApplyPowerAction(owner, source, new ElusivePower(owner, source, amount), amount));
+        actionManager.addToBottom(new ApplyPowerAction(owner, source, new BackstabPower(owner, source, amount), amount));
+        actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, this));
+    }
+    
     @Override
     public void updateDescription() {
         if (amount == 1) {
             description = DESCRIPTIONS[0];
-        }
-        else{
+        } else {
             description = DESCRIPTIONS[1] + amount + DESCRIPTIONS[2];
         }
     }

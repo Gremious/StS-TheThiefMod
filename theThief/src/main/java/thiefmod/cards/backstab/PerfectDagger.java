@@ -53,7 +53,7 @@ public class PerfectDagger extends AbstractBackstabCard {
         baseMagicNumber = MAGIC;
         magicNumber = baseMagicNumber;
         damage = baseDamage = misc;
-        tags.add(ThiefCardTags.BACKSTAB);
+        
         initializeDescription();
     }
     

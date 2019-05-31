@@ -10,7 +10,6 @@ import thiefmod.ThiefMod;
 import thiefmod.cards.abstracts.AbstractBackstabCard;
 import thiefmod.patches.character.AbstractCardEnum;
 import thiefmod.patches.character.ThiefCardTags;
-import thiefmod.powers.Common.ElusivePower;
 import thiefmod.powers.Unique.FocusedPower;
 
 public class Focused extends AbstractBackstabCard {
@@ -31,14 +30,11 @@ public class Focused extends AbstractBackstabCard {
     
     // STAT DECLARATION
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
     
     private static final int COST = 1;
-    private static final int UPGRADE_COST = 0;
-    
-    private static final int POWER = 1;
     
     private static final int MAGIC = 1;
     private static final int UPGRADED_PLUS_MAGIC = 1;
@@ -46,7 +42,6 @@ public class Focused extends AbstractBackstabCard {
     
     public Focused() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        misc = POWER;
         magicNumber = baseMagicNumber = MAGIC;
         tags.add(ThiefCardTags.SHADOWSTEP);
     }
@@ -54,7 +49,6 @@ public class Focused extends AbstractBackstabCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        act(new ApplyPowerAction(p, p, new ElusivePower(p, p, magicNumber), magicNumber));
         act(new ApplyPowerAction(p, p, new FocusedPower(p, p, magicNumber), magicNumber));
     }
     

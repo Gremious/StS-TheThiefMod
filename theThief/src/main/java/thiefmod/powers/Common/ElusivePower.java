@@ -22,12 +22,6 @@ import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager;
 // Empty Base
 
 public class ElusivePower extends AbstractPower implements OnReceivePowerPower {
-    /* Order of events:
-     * Play a shadowstep card.
-     * Apply Backstab! power. Apply elusive power.
-     * On play Shadowstep Card: Remove Backstab only.
-     * On play ANY card: Remove all.
-     */
     
     public AbstractCreature source;
     public static final String POWER_ID = ThiefMod.makeID("ElusivePower");
@@ -53,12 +47,6 @@ public class ElusivePower extends AbstractPower implements OnReceivePowerPower {
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
         
         updateDescription();
-    }
-    
-    @Override
-    public void onInitialApplication() {
-        AbstractDungeon.effectsQueue.add(new ShadowstepSmokeBoofEffect(AbstractDungeon.player.drawX, AbstractDungeon.player.drawY));
-        actionManager.addToBottom(new ApplyPowerAction(owner, source, new BackstabPower(owner, source, amount), amount));
     }
     
     @Override

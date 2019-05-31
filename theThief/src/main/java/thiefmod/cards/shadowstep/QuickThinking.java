@@ -1,6 +1,5 @@
 package thiefmod.cards.shadowstep;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -8,10 +7,10 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
+import thiefmod.actions.common.ShadowstepAction;
 import thiefmod.cards.abstracts.AbstractBackstabCard;
 import thiefmod.patches.character.AbstractCardEnum;
 import thiefmod.patches.character.ThiefCardTags;
-import thiefmod.powers.Common.ElusivePower;
 
 public class QuickThinking extends AbstractBackstabCard {
     // TEXT DECLARATION
@@ -52,7 +51,7 @@ public class QuickThinking extends AbstractBackstabCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        act(new ApplyPowerAction(p, p, new ElusivePower(p, p, backstabNumber), backstabNumber));
+        act(new ShadowstepAction(p, p, backstabNumber));
         act(new DrawCardAction(p, magicNumber));
     }
     
@@ -82,7 +81,7 @@ public class QuickThinking extends AbstractBackstabCard {
         if (!upgraded) {
             upgradeName();
             // upgradeBaseCost(UPGRADED_COST);
-             upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
+            upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
             rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

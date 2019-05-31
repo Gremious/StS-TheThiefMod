@@ -44,7 +44,7 @@ public class Stab extends AbstractBackstabCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         baseBackstabNumber = backstabNumber = BACKSTAB;
-        tags.add(ThiefCardTags.BACKSTAB);
+        
     }
     
     // Actions the card should do.

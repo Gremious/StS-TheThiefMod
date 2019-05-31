@@ -49,7 +49,7 @@ public class HeartStealer extends AbstractBackstabCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
         backstabNumber = baseBackstabNumber = BACKSTAB;
-        tags.add(ThiefCardTags.BACKSTAB);
+        
     }
     
     // Actions the card should do.

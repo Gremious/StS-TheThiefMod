@@ -1,6 +1,5 @@
 package thiefmod.cards.shadowstep;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -8,10 +7,10 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
+import thiefmod.actions.common.ShadowstepAction;
 import thiefmod.cards.abstracts.AbstractBackstabCard;
 import thiefmod.patches.character.AbstractCardEnum;
 import thiefmod.patches.character.ThiefCardTags;
-import thiefmod.powers.Common.ElusivePower;
 
 public class ShadowEvade extends AbstractBackstabCard {
     // TEXT DECLARATION
@@ -51,7 +50,7 @@ public class ShadowEvade extends AbstractBackstabCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        act(new ApplyPowerAction(p, p, new ElusivePower(p, p, magicNumber), 1));
+        act(new ShadowstepAction(p, p, magicNumber));
         act(new GainBlockAction(p, p, block));
     }
     
