@@ -34,9 +34,6 @@ public class ShadowClone extends AbstractBackstabCard {
     private static final CardType TYPE = CardType.POWER;
     
     private static final int COST = 1;
-    
-    private static final int POWER = 1;
-    
     private static final int MAGIC = 1;
     private static final int UPGRADED_PLUS_MAGIC = 1;
     // /STAT DECLARATION/
