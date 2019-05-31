@@ -50,7 +50,7 @@ public class LiarPower extends AbstractPower {
 
     @Override
     public void onPlayCard(AbstractCard card, AbstractMonster m) {
-        if (card.type.equals(AbstractCard.CardType.SKILL)) {
+        if (card.type.equals(AbstractCard.CardType.ATTACK)) {
             AbstractMonster randomMonster = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
 
             if (upgraded) {
@@ -63,16 +63,6 @@ public class LiarPower extends AbstractPower {
                         new ApplyPowerAction(randomMonster, source, new WeakPower(randomMonster, debuffAmount, false), debuffAmount));
             }
         }
-    }
-
-
-    public void atEndOfRound() {
-        if (upgraded) {
-            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, ID));
-        } else {
-            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(owner, owner, ID, 1));
-        }
-
     }
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))

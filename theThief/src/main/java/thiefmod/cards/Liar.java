@@ -62,7 +62,7 @@ public class Liar extends AbstractBackstabCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            isInnate = true;
+        //    isInnate = true;
             rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

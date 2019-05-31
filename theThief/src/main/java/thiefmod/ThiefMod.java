@@ -14,12 +14,16 @@ import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.Exordium;
 import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.helpers.ModHelper;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
@@ -42,6 +46,7 @@ import thiefmod.events.LouseAbuseEvent;
 import thiefmod.events.MasqueradeEvent;
 import thiefmod.patches.character.AbstractCardEnum;
 import thiefmod.patches.character.TheThiefEnum;
+import thiefmod.powers.Challenges.EnterTheVoidChallengePower;
 import thiefmod.relics.*;
 import thiefmod.util.IDCheckDontTouchPls;
 import thiefmod.variabls.BackstabBlock;
@@ -70,7 +75,8 @@ public class ThiefMod implements EditCardsSubscriber,
         EditStringsSubscriber,
         EditKeywordsSubscriber,
         EditCharactersSubscriber,
-        PostInitializeSubscriber, OnStartBattleSubscriber {
+        PostInitializeSubscriber,
+        OnStartBattleSubscriber {
     public static final Logger logger = LogManager.getLogger(ThiefMod.class.getName());
     private static String modID;
     
@@ -144,7 +150,7 @@ public class ThiefMod implements EditCardsSubscriber,
     
     // Mod-settings settings. This is if you want an on/off savable button
     public static Properties thiefModProperties = new Properties();
-    public static final String ENABLE_DEBUG_CARD= "enableDebugCard";
+    public static final String ENABLE_DEBUG_CARD = "enableDebugCard";
     public static boolean enableDebugCard = false; // The boolean we'll be setting on/off (true/false)
     
     // Color
@@ -240,15 +246,16 @@ public class ThiefMod implements EditCardsSubscriber,
         Texture badgeTexture = new Texture(BADGE_IMAGE);
         // Create the Mod Menu
         ModPanel settingsPanel = new ModPanel();
-    
+        
         // Create the on/off button:
         ModLabeledToggleButton enableNormalsButton = new ModLabeledToggleButton("Enable Starting with the Test Card.",
                 350.0f, 700.0f, Settings.CREAM_COLOR, FontHelper.charDescFont, // Position (trial and error it), color, font
                 enableDebugCard, // Boolean it uses
                 settingsPanel, // The mod panel in which this button will be in
-                (label) -> {}, // thing??????? idk
+                (label) -> {
+                }, // thing??????? idk
                 (button) -> { // The actual button:
-    
+                    
                     enableDebugCard = button.enabled; // The boolean true/false will be whether the button is enabled or not
                     try {
                         // And based on that boolean, set the settings and save them
@@ -259,9 +266,9 @@ public class ThiefMod implements EditCardsSubscriber,
                         e.printStackTrace();
                     }
                 });
-    
+        
         settingsPanel.addUIElement(enableNormalsButton); // Add the button to the settings panel. Button is a go.
-    
+        
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
         logger.info("Done loading badge Image and mod options");
         // Events
@@ -514,8 +521,16 @@ public class ThiefMod implements EditCardsSubscriber,
         return getModID() + ":" + idText;
     }
     
+    public static boolean isCustomModActive(String ID) {
+        return (CardCrawlGame.trial != null && CardCrawlGame.trial.dailyModIDs().contains(ID)) || ModHelper.isModEnabled(ID);
+    }
+    
     @Override
     public void receiveOnBattleStart(AbstractRoom abstractRoom) {
+        if (isCustomModActive("theThief:EnterTheVoidChallenge")) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new EnterTheVoidChallengePower(), 1));
+        }
+        
         StealCardAction.cardsStolenThisCombat = 0;
         DiscoverCardAction.cardsDiscoveredThisCombat.clear();
     }

@@ -16,7 +16,7 @@ public class DirtyDeedsDDC extends AbstractBackstabCard {
     // TEXT DECLARATION
     
     public static final String ID = ThiefMod.makeID("DirtyDeedsDDC");
-    public static final String IMG = "theThiefAssets/images/cards/generic_beta_cards/purple_attack.png";
+    public static final String IMG = "theThiefAssets/images/cards/beta/DirtyDeedsDDC.png";
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
     
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -34,7 +34,7 @@ public class DirtyDeedsDDC extends AbstractBackstabCard {
     
     private static final int COST = 1;
     
-    private static final int DAMAGE = 8;
+    private static final int DAMAGE = 9;
     private static final int UPGRADE_PLUS_DAMAGE = 3;
     
     private static final int MAGIC = 5;
@@ -47,7 +47,6 @@ public class DirtyDeedsDDC extends AbstractBackstabCard {
         baseDamage = DAMAGE;
         magicNumber = baseMagicNumber = MAGIC;
         backstabNumber = baseBackstabNumber = BACKSTAB;
-        exhaust = true;
         tags.add(ThiefCardTags.BACKSTAB);
     }
     
@@ -89,7 +88,6 @@ public class DirtyDeedsDDC extends AbstractBackstabCard {
     @Override
     public void upgrade() {
         if (!upgraded) {
-            exhaust = false;
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DAMAGE);
             rawDescription = UPGRADE_DESCRIPTION;

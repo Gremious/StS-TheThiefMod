@@ -84,8 +84,8 @@
   },
   "theThief:SimilarSkills": {
     "NAME": "Similar Skills",
-    "DESCRIPTION": "At the start of your turn, add a random Green card to your deck. It costs 0 this combat.",
-    "UPGRADE_DESCRIPTION": "At the start of your turn, add a random Upgraded Green card to your deck. It costs 0 this combat.",
+    "DESCRIPTION": "At the start of your turn, add a random Green card to your draw pile. NL It costs 0 this combat.",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, add a random Upgraded Green card to your draw pile. NL It costs 0 this combat.",
     "EXTENDED_DESCRIPTION": [
       "[#FEE130]A[] [#FEE130]knife[] [#FEE130]for[] [#FEE130]a[] [#FEE130]shiv.[]"
     ]
@@ -419,8 +419,8 @@
   },
   "theThief:Liar": {
     "NAME": "Liar Liar",
-    "DESCRIPTION": "Every time you play a skill, apply !M! Weak to a random enemy.",
-    "UPGRADE_DESCRIPTION": "Innate. Every time you play a skill, apply !M! Weak and Vulnerable to a random enemy.",
+    "DESCRIPTION": "Every time you play an attack, apply !M! Weak to a random enemy.",
+    "UPGRADE_DESCRIPTION": "Every time you play a attack, apply !M! Weak and Vulnerable to a random enemy.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Pants[] [#88888]on[] [#fa9632]fire.[]"
     ]
