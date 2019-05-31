@@ -16,6 +16,7 @@ import thiefmod.cards.abstracts.AbstractBackstabCard;
 import thiefmod.patches.character.AbstractCardEnum;
 import thiefmod.patches.character.ThiefCardTags;
 import thiefmod.powers.Common.ElusivePower;
+import thiefmod.powers.Common.ShadowstepPower;
 
 public class Multitask extends AbstractBackstabCard {
     //TODO: This one needs a p big description change, since it has many parts that can potentially be =/> 1; Make sure it pluralizes correctly.
@@ -65,7 +66,7 @@ public class Multitask extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         act(new DiscardAction(p, p, backstabNumber, false));
-        act(new ApplyPowerAction(p, p, new ElusivePower(p, p, magicNumber), 1));
+        act(new ApplyPowerAction(p, p, new ShadowstepPower(p, p, magicNumber), 1));
         act(new StealCardAction(magicNumber, 1, ADD_RANDOM, AbstractDungeon.player.hand, ADD_UPGRADED));
     }
     

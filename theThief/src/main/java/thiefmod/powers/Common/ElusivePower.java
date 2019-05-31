@@ -56,12 +56,6 @@ public class ElusivePower extends AbstractPower implements OnReceivePowerPower {
     }
     
     @Override
-    public void onInitialApplication() {
-        AbstractDungeon.effectsQueue.add(new ShadowstepSmokeBoofEffect(AbstractDungeon.player.drawX, AbstractDungeon.player.drawY));
-        actionManager.addToBottom(new ApplyPowerAction(owner, source, new BackstabPower(owner, source, amount), amount));
-    }
-    
-    @Override
     public boolean onReceivePower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
         if (power.ID.equals(ID)) {
             AbstractDungeon.effectsQueue.add(new ShadowstepSmokeBoofEffect(AbstractDungeon.player.drawX, AbstractDungeon.player.drawY));

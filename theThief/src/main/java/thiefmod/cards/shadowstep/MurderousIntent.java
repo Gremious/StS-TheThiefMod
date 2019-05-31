@@ -12,7 +12,7 @@ import thiefmod.ThiefMod;
 import thiefmod.cards.abstracts.AbstractBackstabCard;
 import thiefmod.patches.character.AbstractCardEnum;
 import thiefmod.patches.character.ThiefCardTags;
-import thiefmod.powers.Common.ElusivePower;
+import thiefmod.powers.Common.ShadowstepPower;
 
 public class MurderousIntent extends AbstractBackstabCard {
     //implements StartupCard
@@ -54,7 +54,7 @@ public class MurderousIntent extends AbstractBackstabCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        act(new ApplyPowerAction(p, p, new ElusivePower(p, p, backstabNumber), backstabNumber));
+        act(new ApplyPowerAction(p, p, new ShadowstepPower(p, p, backstabNumber), backstabNumber));
         act(new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber), magicNumber));
         act(new ApplyPowerAction(p, p, new LoseStrengthPower(p, magicNumber), magicNumber));
     }

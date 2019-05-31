@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import thiefmod.ThiefMod;
-import thiefmod.cards.abstracts.AbstractBackstabCard;
+import thiefmod.patches.character.ThiefCardTags;
 import thiefmod.powers.Common.BackstabPower;
 import thiefmod.util.TextureLoader;
 
@@ -41,7 +41,7 @@ public class FocusedPower extends AbstractPower implements NonStackablePower {
     }
     
     public void onAfterUseCard(AbstractCard card, UseCardAction action) {
-        if (card instanceof AbstractBackstabCard) {
+        if (card.hasTag(ThiefCardTags.BACKSTAB)) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, source, new BackstabPower(owner, source, amount), amount));
         }
     }
