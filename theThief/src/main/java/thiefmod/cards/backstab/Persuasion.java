@@ -42,7 +42,7 @@ public class Persuasion extends AbstractBackstabCard {
     public Persuasion() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
-        tags.add(ThiefCardTags.BACKSTAB);
+        
     }
     
     // Actions the card should do.

@@ -48,7 +48,7 @@ public class StickyFingers extends AbstractBackstabCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
         backstabNumber = baseBackstabNumber = STEAL;
-        tags.add(ThiefCardTags.BACKSTAB);
+        
         tags.add(ThiefCardTags.STEALING);
     }
     

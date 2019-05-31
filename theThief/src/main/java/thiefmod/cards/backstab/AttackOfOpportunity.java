@@ -57,7 +57,7 @@ public class AttackOfOpportunity extends AbstractBackstabCard {
         baseDamage = DAMAGE;
         magicNumber = baseMagicNumber = MAGIC;
         backstabNumber = baseBackstabNumber = BACKSTAB;
-        tags.add(ThiefCardTags.BACKSTAB);
+        
         initializeDescription();
     }
     

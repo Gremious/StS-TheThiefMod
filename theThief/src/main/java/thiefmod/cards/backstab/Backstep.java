@@ -50,7 +50,7 @@ public class Backstep extends AbstractBackstabCard {
         jokePortrait = new TextureAtlas.AtlasRegion(BETA_IMG, 0, 0, 500, 380);
         ExhaustiveVariable.setBaseValue(this, 2);
         magicNumber = baseMagicNumber = MAGIC;
-        tags.add(ThiefCardTags.BACKSTAB);
+        
     }
     
     // Actions the card should do.

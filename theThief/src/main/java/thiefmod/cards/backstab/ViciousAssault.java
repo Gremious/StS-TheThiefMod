@@ -49,7 +49,7 @@ public class ViciousAssault extends AbstractBackstabCard {
         baseDamage = DAMAGE;
         magicNumber = baseMagicNumber = MAGIC;
         backstabNumber = baseBackstabNumber = BACKSTAB;
-        tags.add(ThiefCardTags.BACKSTAB);
+        
     }
     
     // Actions the card should do.
