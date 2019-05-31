@@ -477,13 +477,13 @@
     "EXTENDED_DESCRIPTION": [
       "[#88888]Which[] [#88888]are[] [#88888]YOUR[] [#88888]top[] [#88888]three?[]",
       "Tip.",
-      "Does not work on cards that purge. NL Does work on cards that Exhaust."
+      "Does not work on cards that purge (including powers). NL Does work on cards that Exhaust."
     ]
   },
   "theThief:Focused": {
     "NAME": "Focused",
-    "DESCRIPTION": "thethief:Shadowstep !M! time. NL thethief:Non-Backstab cards no longer break Elusive.",
-    "UPGRADE_DESCRIPTION": "thethief:Shadowstep !M! times. NL thethief:Non-Backstab cards no longer break Elusive.",
+    "DESCRIPTION": "Triggering a thethief:Backstab effect does prevent you from triggering your next one.",
+    "UPGRADE_DESCRIPTION": "Innate. Triggering a thethief:Backstab effect does prevent you from triggering your next one.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]
@@ -514,8 +514,8 @@
   },
   "theThief:GhastlyPresence": {
     "NAME": "Ghastly Presence",
-    "DESCRIPTION": "If you trigger 2 thethief:Backstabs in a turn, thethief:Shadowstep !M! time",
-    "UPGRADE_DESCRIPTION": "If you trigger 2 thethief:Backstabs in a turn, thethief:Shadowstep !M! times.",
+    "DESCRIPTION": "Whenever you trigger a thethief:Backstab, gain !M! thethief:elusive. NL thethief:Shadowstep !M! time.",
+    "UPGRADE_DESCRIPTION": "Whenever you trigger a thethief:Backstab, gain !M! thethief:elusive. NL thethief:Shadowstep !M! time.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Ghastly[] [#88888]Essence?[]",
       "If you trigger 2 thethief:Backstabs in a turn, thethief:Shadowstep !M! ",

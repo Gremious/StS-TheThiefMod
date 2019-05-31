@@ -30,6 +30,7 @@
   {
     "NAMES": [
       "backstab",
+      "backstab,",
       "backstabs",
       "non-backstab"
     ],
