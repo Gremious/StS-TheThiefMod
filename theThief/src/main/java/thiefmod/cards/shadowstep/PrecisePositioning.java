@@ -9,11 +9,10 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.PhantasmalPower;
 import thiefmod.ThiefMod;
+import thiefmod.actions.common.ShadowstepAction;
 import thiefmod.cards.abstracts.AbstractBackstabCard;
 import thiefmod.patches.character.AbstractCardEnum;
 import thiefmod.patches.character.ThiefCardTags;
-import thiefmod.powers.Common.ElusivePower;
-import thiefmod.powers.Common.ShadowstepPower;
 
 public class PrecisePositioning extends AbstractBackstabCard {
     //implements StartupCard
@@ -53,7 +52,7 @@ public class PrecisePositioning extends AbstractBackstabCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        act(new ApplyPowerAction(p, p, new ShadowstepPower(p, p, magicNumber), magicNumber));
+        act(new ShadowstepAction(p, p, magicNumber));
         act(new ApplyPowerAction(p, p, new PhantasmalPower(p, magicNumber), magicNumber));
     }
     

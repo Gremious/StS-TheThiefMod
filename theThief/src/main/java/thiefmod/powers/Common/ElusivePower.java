@@ -22,12 +22,6 @@ import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager;
 // Empty Base
 
 public class ElusivePower extends AbstractPower implements OnReceivePowerPower {
-    /* Order of events:
-     * Play a shadowstep card.
-     * Apply Backstab! power. Apply elusive power.
-     * On play Shadowstep Card: Remove Backstab only.
-     * On play ANY card: Remove all.
-     */
     
     public AbstractCreature source;
     public static final String POWER_ID = ThiefMod.makeID("ElusivePower");

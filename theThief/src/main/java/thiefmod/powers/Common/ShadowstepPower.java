@@ -16,8 +16,7 @@ import thiefmod.vfx.ShadowstepSmokeBoofEffect;
 
 import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager;
 
-// Empty Base
-
+@Deprecated
 public class ShadowstepPower extends AbstractPower implements InvisiblePower {
     public AbstractCreature source;
     

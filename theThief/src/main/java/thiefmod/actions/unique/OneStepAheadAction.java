@@ -1,7 +1,6 @@
 package thiefmod.actions.unique;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -9,7 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster.Intent;
-import thiefmod.powers.Common.ElusivePower;
+import thiefmod.actions.common.ShadowstepAction;
 
 public class OneStepAheadAction extends AbstractGameAction {
     private int magicNum;
@@ -34,8 +33,7 @@ public class OneStepAheadAction extends AbstractGameAction {
                 || targetMonster.intent == Intent.ATTACK_BUFF
                 || targetMonster.intent == Intent.ATTACK_DEBUFF
                 || targetMonster.intent == Intent.ATTACK_DEFEND) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(
-                    AbstractDungeon.player, AbstractDungeon.player, new ElusivePower(AbstractDungeon.player, AbstractDungeon.player, magicNum), magicNum));
+            AbstractDungeon.actionManager.addToBottom(new ShadowstepAction(AbstractDungeon.player, AbstractDungeon.player, amount));
         } else {
             for (int i = 0; i < timesNum; i++) {
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(targetMonster,

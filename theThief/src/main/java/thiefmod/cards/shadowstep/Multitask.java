@@ -2,7 +2,6 @@ package thiefmod.cards.shadowstep;
 
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.FleetingField;
 import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DiscardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -11,12 +10,11 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
+import thiefmod.actions.common.ShadowstepAction;
 import thiefmod.actions.common.StealCardAction;
 import thiefmod.cards.abstracts.AbstractBackstabCard;
 import thiefmod.patches.character.AbstractCardEnum;
 import thiefmod.patches.character.ThiefCardTags;
-import thiefmod.powers.Common.ElusivePower;
-import thiefmod.powers.Common.ShadowstepPower;
 
 public class Multitask extends AbstractBackstabCard {
     //TODO: This one needs a p big description change, since it has many parts that can potentially be =/> 1; Make sure it pluralizes correctly.
@@ -66,7 +64,7 @@ public class Multitask extends AbstractBackstabCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         act(new DiscardAction(p, p, backstabNumber, false));
-        act(new ApplyPowerAction(p, p, new ShadowstepPower(p, p, magicNumber), 1));
+        act(new ShadowstepAction(p, p, magicNumber));
         act(new StealCardAction(magicNumber, 1, ADD_RANDOM, AbstractDungeon.player.hand, ADD_UPGRADED));
     }
     
@@ -80,7 +78,7 @@ public class Multitask extends AbstractBackstabCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-         //   upgradeBaseCost(UPGRADE_COST);
+            //   upgradeBaseCost(UPGRADE_COST);
             upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
             upgradeBackstabNumber(UPGRADED_PLUS_BACKSTAB);
             rawDescription = UPGRADE_DESCRIPTION;

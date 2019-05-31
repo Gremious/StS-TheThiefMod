@@ -10,7 +10,6 @@ import thiefmod.ThiefMod;
 import thiefmod.cards.abstracts.AbstractBackstabCard;
 import thiefmod.patches.character.AbstractCardEnum;
 import thiefmod.patches.character.ThiefCardTags;
-import thiefmod.powers.Common.ElusivePower;
 import thiefmod.powers.Unique.FocusedPower;
 
 public class Focused extends AbstractBackstabCard {
