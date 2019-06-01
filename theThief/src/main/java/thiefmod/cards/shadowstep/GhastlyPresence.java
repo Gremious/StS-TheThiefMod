@@ -57,10 +57,18 @@ public class GhastlyPresence extends AbstractBackstabCard {
     @Override
     public void applyPowers() {
         super.applyPowers();
-        if (magicNumber == 1) {
-            rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[2];
+        if (!upgraded) {
+            if (magicNumber == 1) {
+                rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[3];
+            } else {
+                rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[4];
+            }
         } else {
-            rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[3];
+            if (magicNumber == 1) {
+                rawDescription = EXTENDED_DESCRIPTION[2] + EXTENDED_DESCRIPTION[3];
+            } else {
+                rawDescription = EXTENDED_DESCRIPTION[2] + EXTENDED_DESCRIPTION[4];
+            }
         }
         initializeDescription();
     }

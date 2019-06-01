@@ -1,5 +1,6 @@
 package thiefmod.cards;
 
+import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -39,6 +40,7 @@ public class DoubleDealing extends AbstractBackstabCard {
     public DoubleDealing() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
+        ExhaustiveVariable.setBaseValue(this, 2);
     }
     
     // Actions the card should do.

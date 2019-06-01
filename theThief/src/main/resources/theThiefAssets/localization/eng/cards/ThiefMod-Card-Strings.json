@@ -506,8 +506,8 @@
   },
   "theThief:DoubleDealing": {
     "NAME": "Double Dealing",
-    "DESCRIPTION": "The next !M! thethief:Backstab attack you play this turn will deal double damage.",
-    "UPGRADE_DESCRIPTION": "The next !M! thethief:Backstab attacks you play this turn will deal double damage.",
+    "DESCRIPTION": "The next !M! thethief:Backstab attack you play this turn will deal double damage. NL Exhaustive !stslib:ex!",
+    "UPGRADE_DESCRIPTION": "The next !M! thethief:Backstab attacks you play this turn will deal double damage. NL Exhaustive !stslib:ex!",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Full[] [#88888]house![]"
     ]
@@ -518,7 +518,8 @@
     "UPGRADE_DESCRIPTION": "Innate. NL Whenever you trigger a thethief:Backstab, gain !M! thethief:elusive. NL thethief:Shadowstep !M! time.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Ghastly[] [#88888]Essence?[]",
-      "If you trigger 2 thethief:Backstabs in a turn, thethief:Shadowstep !M! ",
+      "Whenever you trigger a thethief:Backstab, gain !M! thethief:elusive. NL thethief:Shadowstep !M!",
+      "Innate. NL Whenever you trigger a thethief:Backstab, gain !M! thethief:elusive. NL thethief:Shadowstep !M!",
       " time.",
       " times."
     ]
