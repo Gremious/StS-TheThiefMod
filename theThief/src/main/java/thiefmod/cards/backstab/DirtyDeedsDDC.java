@@ -16,7 +16,7 @@ public class DirtyDeedsDDC extends AbstractBackstabCard {
     // TEXT DECLARATION
     
     public static final String ID = ThiefMod.makeID("DirtyDeedsDDC");
-    public static final String IMG = "theThiefAssets/images/cards/generic_beta_cards/purple_attack.png";
+    public static final String IMG = "theThiefAssets/images/cards/D4C.png";
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
     
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
