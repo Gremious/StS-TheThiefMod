@@ -490,8 +490,8 @@
   },
   "theThief:ShadowMastery": {
     "NAME": "Shadow Mastery",
-    "DESCRIPTION": "The first time you thethief:Shadowstep in a turn, thethief:Shadowstep twice.",
-    "UPGRADE_DESCRIPTION": "Innate. NL The first time you thethief:Shadowstep in a turn, thethief:Shadowstep twice.",
+    "DESCRIPTION": "The first time you thethief:Shadowstep in a turn, thethief:Shadowstep !M! additional time.",
+    "UPGRADE_DESCRIPTION": "Innate. NL The first time you thethief:Shadowstep in a turn, thethief:Shadowstep !M! additional time.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]
