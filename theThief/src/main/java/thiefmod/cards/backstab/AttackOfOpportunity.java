@@ -40,12 +40,9 @@ public class AttackOfOpportunity extends AbstractBackstabCard {
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     
-    private static final int COST = 1;
-    
-    private static final int DAMAGE = 16;
-    
+    private static final int COST = 0;
+    private static final int DAMAGE = 13;
     private static final int MAGIC = 1; // Card draw
-    private static final int UPGRADED_PLUS_MAGIC = 2;
     
     private static final int BACKSTAB = 2; // Voids
     private static final int UPGRADED_PLUS_BACKSTAB = -1;
@@ -66,7 +63,7 @@ public class AttackOfOpportunity extends AbstractBackstabCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         // Deal 16 Damage
         act(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
-        // Add voids to your draw pilem
+        // Add voids to your draw pile
         if (backstabNumber != 0) {
             act(new MakeTempCardInDrawPileAction(new VoidCard(), backstabNumber, true, true));
         }
@@ -121,7 +118,6 @@ public class AttackOfOpportunity extends AbstractBackstabCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
             upgradeBackstabNumber(UPGRADED_PLUS_BACKSTAB);
             rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
