@@ -60,7 +60,7 @@ public class AttackOfOpportunity extends AbstractBackstabCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // Deal 16 Damage
+        // Deal 13 Damage
         act(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
         // Add voids to your draw pile
         if (backstabNumber != 0) {
