@@ -38,7 +38,7 @@ public class getRandomCardFromAnyColor {
         }
 
         do {
-            oneCard = allCards.get(AbstractDungeon.cardRandomRng.random(0, allCards.size() - 1)).makeCopy();
+            oneCard = allCards.get(AbstractDungeon.miscRng.random(0, allCards.size() - 1)).makeCopy();
         } while ((oneCard.rarity == AbstractCard.CardRarity.SPECIAL
                 && oneCard.color.toString() != "INFINITE_BLACK")
                 || oneCard.type == AbstractCard.CardType.CURSE

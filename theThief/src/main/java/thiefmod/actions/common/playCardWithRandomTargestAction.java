@@ -19,7 +19,7 @@ public class playCardWithRandomTargestAction extends AbstractGameAction {
         duration = Settings.ACTION_DUR_FAST;
         actionType = ActionType.WAIT;
         source = AbstractDungeon.player;
-        target = AbstractDungeon.getCurrRoom().monsters.getRandomMonster((AbstractMonster) null, true, AbstractDungeon.cardRandomRng);
+        target = AbstractDungeon.getCurrRoom().monsters.getRandomMonster((AbstractMonster) null, true, AbstractDungeon.miscRng);
 
         exhaustCards = exhausts;
         this.card = card;

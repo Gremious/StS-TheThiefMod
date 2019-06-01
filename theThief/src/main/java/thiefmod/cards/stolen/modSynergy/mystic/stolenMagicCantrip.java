@@ -50,7 +50,7 @@ public class stolenMagicCantrip extends AbstractStolenMysticCard {
     
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractCard trinketCard = cantripsGroup.get(AbstractDungeon.cardRandomRng.random(cantripsGroup.size() - 1));
+        AbstractCard trinketCard = cantripsGroup.get(AbstractDungeon.miscRng.random(cantripsGroup.size() - 1));
         if (upgraded) {
             trinketCard.upgrade();
             AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(trinketCard.makeCopy()));

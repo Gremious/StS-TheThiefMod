@@ -51,7 +51,7 @@ public class deprecatedMysticalOrbAction extends AbstractGameAction {
     }
     
     private void playCard(AbstractCard card) {
-        target = AbstractDungeon.getCurrRoom().monsters.getRandomMonster((AbstractMonster) null, true, AbstractDungeon.cardRandomRng);
+        target = AbstractDungeon.getCurrRoom().monsters.getRandomMonster((AbstractMonster) null, true, AbstractDungeon.miscRng);
         AbstractDungeon.getCurrRoom().souls.remove(card);
         card.freeToPlayOnce = true;
         AbstractDungeon.player.limbo.group.add(card);

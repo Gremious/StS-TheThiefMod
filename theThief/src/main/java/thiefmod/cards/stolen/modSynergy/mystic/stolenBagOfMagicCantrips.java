@@ -47,7 +47,7 @@ public class stolenBagOfMagicCantrips extends AbstractStolenMysticCard {
         for (int i = 0; i < magicNumber; i++) {
             CardGroup trinketCards = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
             while (trinketCards.size() < 3) {
-                AbstractCard c = cantripsGroup.get(AbstractDungeon.cardRandomRng.random(cantripsGroup.size() - 1));
+                AbstractCard c = cantripsGroup.get(AbstractDungeon.miscRng.random(cantripsGroup.size() - 1));
                 if (!DiscoveryPatch.cardUtil.containsByID(trinketCards.group, c)) {
                     trinketCards.addToTop(c);
                 }

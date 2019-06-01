@@ -37,7 +37,7 @@ public class BouqetOKnivesAction extends AbstractGameAction {
                 target.damage(info);
                 if (numTimes > 1 && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
                     --numTimes;
-                    AbstractDungeon.actionManager.addToTop(new BouqetOKnivesAction(AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster) null, true, AbstractDungeon.cardRandomRng), info, numTimes));
+                    AbstractDungeon.actionManager.addToTop(new BouqetOKnivesAction(AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster) null, true, AbstractDungeon.miscRng), info, numTimes));
                 }
 
                 AbstractDungeon.actionManager.addToTop(new WaitAction(0.2F));

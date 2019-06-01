@@ -31,7 +31,7 @@ public class DartsAction extends AbstractGameAction {
             if (c.type == AbstractCard.CardType.SKILL) {
 
                 AbstractMonster randomMonster =
-                        AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster) null, true, AbstractDungeon.cardRandomRng);
+                        AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster) null, true, AbstractDungeon.miscRng);
 
                 AbstractDungeon.actionManager.addToTop(new DamageAction(randomMonster, info, true));
 

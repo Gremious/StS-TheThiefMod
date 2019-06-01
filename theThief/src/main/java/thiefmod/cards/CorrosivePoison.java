@@ -71,7 +71,7 @@ public class CorrosivePoison extends AbstractBackstabCard {
     
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractMonster randomMonster = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
+        AbstractMonster randomMonster = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.miscRng);
         act(new CorrosivePoisonAction(randomMonster, 2, 1, 2, magicNumber));
     }
     

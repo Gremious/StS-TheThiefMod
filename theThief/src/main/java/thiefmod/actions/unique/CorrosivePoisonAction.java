@@ -46,7 +46,7 @@ public class CorrosivePoisonAction extends AbstractGameAction {
 
             if (numTimes > 1 && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
                 --numTimes;
-                AbstractMonster randomMonster = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
+                AbstractMonster randomMonster = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.miscRng);
                 AbstractDungeon.actionManager.addToBottom(new VFXAction(new PotionBounceEffect(target.hb.cX, target.hb.cY, randomMonster.hb.cX, randomMonster.hb.cY), 0.4F));
                 AbstractDungeon.actionManager.addToBottom(new CorrosivePoisonAction(randomMonster, amountFrail, amountVuln, amountPoison, numTimes));
             }

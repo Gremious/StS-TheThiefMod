@@ -39,7 +39,7 @@ public class StolenChaos extends AbstractStolenCard {
     }
     
     public void use(AbstractPlayer p, AbstractMonster m) {
-        act(new PlayTopCardAction(AbstractDungeon.getCurrRoom().monsters.getRandomMonster(null, true, AbstractDungeon.cardRandomRng), true));
+        act(new PlayTopCardAction(AbstractDungeon.getCurrRoom().monsters.getRandomMonster(null, true, AbstractDungeon.miscRng), true));
     }
     
     @Override

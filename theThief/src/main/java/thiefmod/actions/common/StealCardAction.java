@@ -52,7 +52,7 @@ public class StealCardAction extends AbstractGameAction implements CustomSavable
     public boolean upgraded;
     public CardGroup location;
     public int copies;
-    private int rollRare = AbstractDungeon.cardRandomRng.random(99);
+    private int rollRare = AbstractDungeon.miscRng.random(99);
     private CardGroup cardsToAdd = new CardGroup(StolenEnum.STOLEN_CARDS);
     public static int cardsStolenThisCombat = 0;
     
@@ -174,7 +174,7 @@ public class StealCardAction extends AbstractGameAction implements CustomSavable
             stolenCards.addToTop(new stolenBagOfMagicCantrips());
             
             stolenCards.addToTop(CardLibrary.getCopy("mysticmod:MagicMissile"));
-            stolenCards.addToTop(cantripsGroup.get(AbstractDungeon.cardRandomRng.random(cantripsGroup.size() - 1)));
+            stolenCards.addToTop(cantripsGroup.get(AbstractDungeon.miscRng.random(cantripsGroup.size() - 1)));
         }
         
         //---

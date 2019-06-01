@@ -16,7 +16,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thiefmod.ThiefMod;
 import thiefmod.cards.abstracts.AbstractBackstabCard;
 import thiefmod.patches.character.AbstractCardEnum;
-import thiefmod.patches.character.ThiefCardTags;
 import thiefmod.util.TextureLoader;
 
 public class AttackOfOpportunity extends AbstractBackstabCard {
@@ -42,18 +41,18 @@ public class AttackOfOpportunity extends AbstractBackstabCard {
     
     private static final int COST = 0;
     private static final int DAMAGE = 13;
-    private static final int MAGIC = 1; // Card draw
     
-    private static final int BACKSTAB = 2; // Voids
-    private static final int UPGRADED_PLUS_BACKSTAB = -1;
+    private static final int DRAW = 1;
+    private static final int VOIDS = 2;
+    private static final int UPGRADED_VOIDS = -1;
     // /STAT DECLARATION/
     
     public AttackOfOpportunity() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         jokePortrait = new TextureAtlas.AtlasRegion(BETA_IMG, 0, 0, 500, 380);
         baseDamage = DAMAGE;
-        magicNumber = baseMagicNumber = MAGIC;
-        backstabNumber = baseBackstabNumber = BACKSTAB;
+        magicNumber = baseMagicNumber = DRAW;
+        backstabNumber = baseBackstabNumber = VOIDS;
         
         initializeDescription();
     }
@@ -118,7 +117,7 @@ public class AttackOfOpportunity extends AbstractBackstabCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBackstabNumber(UPGRADED_PLUS_BACKSTAB);
+            upgradeBackstabNumber(UPGRADED_VOIDS);
             rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

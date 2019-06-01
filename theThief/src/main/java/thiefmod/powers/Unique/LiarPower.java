@@ -51,7 +51,7 @@ public class LiarPower extends AbstractPower {
     @Override
     public void onPlayCard(AbstractCard card, AbstractMonster m) {
         if (card.type.equals(AbstractCard.CardType.ATTACK)) {
-            AbstractMonster randomMonster = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
+            AbstractMonster randomMonster = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.miscRng);
 
             if (upgraded) {
                 AbstractDungeon.actionManager.addToBottom(

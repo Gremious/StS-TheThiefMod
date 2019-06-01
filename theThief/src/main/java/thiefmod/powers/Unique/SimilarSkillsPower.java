@@ -46,7 +46,7 @@ public class SimilarSkillsPower extends AbstractPower {
         AbstractCard c;
 
         for (int i = 0; i < amount; i++) {
-            c = CardLibrary.getRandomColorSpecificCard(CardColor.GREEN, AbstractDungeon.cardRandomRng);
+            c = CardLibrary.getRandomColorSpecificCard(CardColor.GREEN, AbstractDungeon.miscRng);
             c.modifyCostForCombat(-99);
             AbstractDungeon.actionManager.addToBottom(new MakeSuperCopyAction(c, AbstractDungeon.player.hand));
         }
