@@ -33,7 +33,7 @@ public class OneStepAheadAction extends AbstractGameAction {
                 || targetMonster.intent == Intent.ATTACK_BUFF
                 || targetMonster.intent == Intent.ATTACK_DEBUFF
                 || targetMonster.intent == Intent.ATTACK_DEFEND) {
-            AbstractDungeon.actionManager.addToBottom(new ShadowstepAction(AbstractDungeon.player, AbstractDungeon.player, amount));
+            AbstractDungeon.actionManager.addToBottom(new ShadowstepAction(AbstractDungeon.player, AbstractDungeon.player, magicNum));
         } else {
             for (int i = 0; i < timesNum; i++) {
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(targetMonster,
