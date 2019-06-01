@@ -5,7 +5,7 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -64,7 +64,7 @@ public class AttackOfOpportunity extends AbstractBackstabCard {
         act(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
         // Add voids to your draw pile
         if (backstabNumber != 0) {
-            act(new MakeTempCardInDrawPileAction(new VoidCard(), backstabNumber, true, true));
+            act(new MakeTempCardInDiscardAction(new VoidCard(), backstabNumber));
         }
         // Backstab - Draw 1 card.
         if (canBackstab()) {
