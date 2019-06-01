@@ -20,7 +20,7 @@ public class ShadowCalamity extends AbstractBackstabCard implements StartupCard 
     // TEXT DECLARATION
     
     public static final String ID = ThiefMod.makeID("ShadowCalamity");
-    public static final String IMG = "theThiefAssets/images/cards/beta/ShadowCalamity.png";
+    public static final String IMG = "theThiefAssets/images/cards/ShadowCalamity.png";
     public static final CardColor COLOR = AbstractCardEnum.THIEF_GRAY;
     
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
