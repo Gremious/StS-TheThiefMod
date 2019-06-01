@@ -36,7 +36,7 @@ public class Voidbound extends AbstractBackstabCard {
     
     private static final int COST = 1;
     
-    private static final int STRENGTH_LOSS = 1;
+    private static final int STRENGTH_LOSS = -1;
     
     private static final int ENERGY = 1;
     private static final int UPGRADED_PLUS_ENERGY = 1;
