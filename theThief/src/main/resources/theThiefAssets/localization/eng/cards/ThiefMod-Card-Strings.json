@@ -435,8 +435,8 @@
   },
   "theThief:Voidbound": {
     "NAME": "Voidbound",
-    "DESCRIPTION": "Whenever you draw a Void, gain !M! [E]. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Whenever you draw a Void, gain !M! [E]. NL Exhaust.",
+    "DESCRIPTION": "Lose !theThief:Magic! Strength. NL Whenever you draw a Void, gain !M! [E].",
+    "UPGRADE_DESCRIPTION": "Lose !theThief:Magic! Strength. NL Whenever you draw a Void, gain !M! [E].",
     "EXTENDED_DESCRIPTION": [
       "[#ee82ee]Embrace[] [#ee82ee]the[] [#ee82ee]abyss.[]"
     ]

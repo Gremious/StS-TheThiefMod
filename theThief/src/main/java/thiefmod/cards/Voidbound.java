@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import thiefmod.ThiefMod;
 import thiefmod.cards.abstracts.AbstractBackstabCard;
 import thiefmod.patches.character.AbstractCardEnum;
@@ -35,18 +36,22 @@ public class Voidbound extends AbstractBackstabCard {
     
     private static final int COST = 1;
     
-    private static final int MAGIC = 1;
-    private static final int UPGRADED_PLUS_MAGIC = 1;
+    private static final int STRENGTH_LOSS = 1;
+    
+    private static final int ENERGY = 1;
+    private static final int UPGRADED_PLUS_ENERGY = 1;
     // /STAT DECLARATION/
     
     public Voidbound() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = MAGIC;
+        magicNumber = baseMagicNumber = ENERGY;
+        backstabNumber = baseBackstabNumber = STRENGTH_LOSS;
     }
     
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        act(new ApplyPowerAction(p, p, new StrengthPower(p, backstabNumber), backstabNumber));
         act(new ApplyPowerAction(p, p, new VoidboundPower(p, p, magicNumber), magicNumber));
     }
     
@@ -60,7 +65,7 @@ public class Voidbound extends AbstractBackstabCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADED_PLUS_MAGIC);
+            upgradeMagicNumber(UPGRADED_PLUS_ENERGY);
             rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
