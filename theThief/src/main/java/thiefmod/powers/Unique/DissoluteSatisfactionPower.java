@@ -37,7 +37,6 @@ public class DissoluteSatisfactionPower extends AbstractPower {
 
         this.owner = owner;
         this.source = source;
-
         this.amount = amount;
 
         updateDescription();
@@ -45,7 +44,7 @@ public class DissoluteSatisfactionPower extends AbstractPower {
 
     @Override
     public void onAttack(DamageInfo info, int damageAmount, AbstractCreature target) {
-        AbstractDungeon.actionManager.addToBottom(new HealAction(owner, source, amount));
+        owner.heal(amount);
     }
 
 
