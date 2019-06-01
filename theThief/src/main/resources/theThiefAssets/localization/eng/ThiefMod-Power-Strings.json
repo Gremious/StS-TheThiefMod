@@ -3,8 +3,8 @@
     "NAME": "Backstab!",
     "DESCRIPTIONS": [
       "The next ",
-      " #yBackstab card you play gains it's #yBackstab effect. NL If you play any other card, lose all stacks of this power.",
-      " #yBackstab cards you play gains their #yBackstab effect. NL If you play any other card,lose all stacks of this power."
+      " #yBackstab card you play gains it's #yBackstab effect. NL If you play a non-Backstab card, lose all stacks of this power.",
+      " #yBackstab cards you play gains their #yBackstab effect. NL If you play a non-Backstab card, lose all stacks of this power."
     ]
   },
   "theThief:CommonPower": {

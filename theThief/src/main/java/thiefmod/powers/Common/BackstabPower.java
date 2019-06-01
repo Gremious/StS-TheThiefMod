@@ -15,45 +15,46 @@ import thiefmod.ThiefMod;
 import thiefmod.patches.character.ThiefCardTags;
 import thiefmod.util.TextureLoader;
 
-
 public class BackstabPower extends AbstractPower {
     public AbstractCreature source;
-
+    
     public static final String POWER_ID = ThiefMod.makeID("BackstabPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-
+    
     private static final Texture tex84 = TextureLoader.getTexture("theThiefAssets/images/powers/84/BackstabPower.png");
     private static final Texture tex32 = TextureLoader.getTexture("theThiefAssets/images/powers/32/BackstabPower.png");
-
-
+    
     public BackstabPower(AbstractCreature owner, AbstractCreature source, final int amount) {
         name = NAME;
         ID = POWER_ID;
-
+        
         type = PowerType.BUFF;
         this.owner = owner;
         this.source = source;
         this.amount = amount;
         isTurnBased = false;
-
+        
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
-
+        
         updateDescription();
     }
-
+    
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
-
         if (card.hasTag(ThiefCardTags.BACKSTAB)) {
-            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(owner, source, ID, 1));
+            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(owner, source, this, 1));
         } else {
-            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, source, ID));
+            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, source, this));
         }
     }
-
+    
+    public void atEndOfTurn(boolean isPlayer) {
+        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, source, this));
+    }
+    
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {
@@ -63,8 +64,6 @@ public class BackstabPower extends AbstractPower {
             description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
         }
     }
-
-
 }
 
 

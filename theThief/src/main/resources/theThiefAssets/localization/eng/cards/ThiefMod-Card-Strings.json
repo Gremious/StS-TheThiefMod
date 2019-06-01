@@ -464,8 +464,8 @@
   },
   "theThief:DissoluteSatisfaction": {
     "NAME": "Dissolute Satisfaction",
-    "DESCRIPTION": "Every time you deal damage this turn, restore !M! HP. Exhaust.",
-    "UPGRADE_DESCRIPTION": "Every time you deal damage this turn, restore !M! HP. Exhaust.",
+    "DESCRIPTION": "Every time you deal damage this turn, restore !M! HP. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Every time you deal damage this turn, restore !M! HP. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]
