@@ -99,8 +99,8 @@
   },
   "theThief:Shadowstep": {
     "NAME": "Shadowstep",
-    "DESCRIPTION": "thethief:Shadowstep !M! time. NL Shuffle a copy of this card into your draw pile. Exhaust.",
-    "UPGRADE_DESCRIPTION": "Innate. NL thethief:Shadowstep !M! time. NL Shuffle a copy of this card into your draw pile. Exhaust.",
+    "DESCRIPTION": "thethief:Shadowstep !M! time. NL Shuffle a copy of this card into your draw pile. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Innate. NL thethief:Shadowstep !M! time. NL Shuffle a copy of this card into your draw pile. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "[#88888]Flavor[] [#88888]Text[]"
     ]
