@@ -17,12 +17,12 @@ import static com.megacrit.cardcrawl.core.CardCrawlGame.sound;
 
 public class TheThiefThieveryPower extends AbstractPower {
     private AbstractPlayer source;
-
+    
     public static final String POWER_ID = ThiefMod.makeID("TheThiefThieveryPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-
+    
     public TheThiefThieveryPower(final AbstractPlayer source, final AbstractCreature owner, final int amount) {
         name = NAME;
         ID = POWER_ID;
@@ -32,13 +32,13 @@ public class TheThiefThieveryPower extends AbstractPower {
         this.source = source;
         this.owner = owner;
         this.amount = amount;
-
+        
         updateDescription();
     }
-
+    
     @Override
     public void onAttack(DamageInfo info, int damageAmount, AbstractCreature attackTarget) {
-        if (info.type != DamageInfo.DamageType.THORNS) {
+        if (info.type != DamageInfo.DamageType.THORNS && info.owner == AbstractDungeon.player) {
             sound.play("GOLD_JINGLE");
             AbstractDungeon.player.gainGold(amount);
             for (int i = 0; i < amount; ++i) {
@@ -47,20 +47,17 @@ public class TheThiefThieveryPower extends AbstractPower {
             //    AbstractDungeon.actionManager.addToBottom(new GainGoldAction(owner, source, amount, attackTarget, info));
         }
     }
-
+    
     @Override
     public void atStartOfTurn() {
         AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, source, ID));
     }
-
+    
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {
         description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
-
     }
-
-
 }
 
 
