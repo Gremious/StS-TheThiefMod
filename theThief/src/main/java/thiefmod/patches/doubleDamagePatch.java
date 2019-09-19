@@ -79,7 +79,7 @@ public class doubleDamagePatch {
             @Override
             public int[] Locate(CtBehavior ctMethodToPatch) throws Exception {
                 Matcher finalMatcher = new Matcher.MethodCallMatcher(MathUtils.class, "floor");
-                return new int[]{LineFinder.findAllInOrder(ctMethodToPatch, finalMatcher)[1]};
+                return new int[]{LineFinder.findAllInOrder(ctMethodToPatch, finalMatcher)[2]};
             }
         }
     }
@@ -123,7 +123,7 @@ public class doubleDamagePatch {
             @Override
             public int[] Locate(CtBehavior ctMethodToPatch) throws Exception {
                 Matcher finalMatcher = new Matcher.MethodCallMatcher(MathUtils.class, "floor");
-                return new int[]{LineFinder.findAllInOrder(ctMethodToPatch, finalMatcher)[1]};
+                return new int[]{LineFinder.findAllInOrder(ctMethodToPatch, finalMatcher)[3]};
             }
         }
     }
