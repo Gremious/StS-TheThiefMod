@@ -5,8 +5,11 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractImageEvent;
+import com.megacrit.cardcrawl.helpers.RelicLibrary;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.EventStrings;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.relics.Circlet;
 import thiefmod.ThiefMod;
 import thiefmod.relics.LouseBounty;
 
@@ -20,7 +23,8 @@ public class LouseAbuseEvent extends AbstractImageEvent {
     private static final String[] OPTIONS = eventStrings.OPTIONS;
     private int screenNum = 0;
     private int HEALTH_LOSS;
-    
+    private AbstractRelic relic = null;
+
     public LouseAbuseEvent() {
         super(NAME, DESCRIPTIONS[0], "theThiefAssets/images/events/LouseAbuseEvent.png");
         
@@ -45,28 +49,29 @@ public class LouseAbuseEvent extends AbstractImageEvent {
                     case 1:
                     case 2:
                         imageEventText.updateBodyText(DESCRIPTIONS[1]);
-                        imageEventText.updateDialogOption(1, OPTIONS[5]);
-                        imageEventText.updateDialogOption(0, OPTIONS[4]);
-                        imageEventText.clearRemainingOptions();
+                        imageEventText.clearAllDialogs();
+                        imageEventText.setDialogOption(OPTIONS[4]);
                         screenNum = 1;
                         break;
                     case 4:
                         AbstractDungeon.player.damage(new DamageInfo(AbstractDungeon.player, HEALTH_LOSS));
                         CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.MED, false);
                         CardCrawlGame.sound.play("BLUNT_FAST");
-                        imageEventText.updateBodyText(DESCRIPTIONS[4]);
-                        imageEventText.updateDialogOption(0, OPTIONS[5]);
-                        imageEventText.clearRemainingOptions();
+                        imageEventText.clearAllDialogs();
+                        imageEventText.setDialogOption(OPTIONS[5]);
                         screenNum = 2;
                         break;
                 }
             case 1:
-                switch (i) {
-                    case 0:
-                        break;
-                    case 1:
-                        break;
+                if (AbstractDungeon.player.hasRelic(LouseBounty.ID)) {
+                    relic = RelicLibrary.getRelic(Circlet.ID).makeCopy();
+                } else {
+                    relic = RelicLibrary.getRelic(LouseBounty.ID).makeCopy();
                 }
+                AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float)(Settings.WIDTH / 2), (float)(Settings.HEIGHT / 2), relic);
+
+                imageEventText.clearAllDialogs();
+                imageEventText.setDialogOption(OPTIONS[5]);
                 screenNum = 2;
                 break;
             case 2:
