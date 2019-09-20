@@ -38,7 +38,7 @@ public class stolenBagOfMagicCantrips extends AbstractStolenMysticCard {
     private static final int MAGIC = 1;
     
     public stolenBagOfMagicCantrips() {
-        super(ID, IMG, COST, TYPE, TARGET, CardRarity.COMMON, MysticEnum.MYSTIC_CLASS);
+        super(ID, IMG, COST, TYPE, TARGET, RARITY, MysticEnum.MYSTIC_CLASS);
         magicNumber = baseMagicNumber = MAGIC;
     }
     
@@ -49,7 +49,7 @@ public class stolenBagOfMagicCantrips extends AbstractStolenMysticCard {
             while (trinketCards.size() < 3) {
                 AbstractCard c = cantripsGroup.get(AbstractDungeon.miscRng.random(cantripsGroup.size() - 1));
                 if (!DiscoveryPatch.cardUtil.containsByID(trinketCards.group, c)) {
-                    trinketCards.addToTop(c);
+                    trinketCards.addToTop(c.makeCopy());
                 }
             }
             if (upgraded) {
