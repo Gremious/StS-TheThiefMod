@@ -31,8 +31,6 @@ public class BouqetOKnivesAction extends AbstractGameAction {
             isDone = true;
         } else {
             if (target.currentHealth > 0) {
-                target.damageFlash = true;
-                target.damageFlashFrames = 4;
                 AbstractDungeon.effectList.add(new FlashAtkImgEffect(target.hb.cX, target.hb.cY, attackEffect));
                 target.damage(info);
                 if (numTimes > 1 && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {

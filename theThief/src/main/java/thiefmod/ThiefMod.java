@@ -79,7 +79,7 @@ public class ThiefMod implements EditCardsSubscriber,
         OnStartBattleSubscriber {
     public static final Logger logger = LogManager.getLogger(ThiefMod.class.getName());
     private static String modID;
-    
+
     // Check for crossover mods.
     public static final boolean hasConspire;
     public static final boolean hasMysticMod;
@@ -94,7 +94,7 @@ public class ThiefMod implements EditCardsSubscriber,
     public static final boolean hasHubris;
     public static final boolean hasReplayTheSpire;
     public static final boolean hasInfiniteSpire;
-    
+
     static {
         hasConspire = Loader.isModLoaded("conspire");
         if (hasConspire) {
@@ -127,7 +127,7 @@ public class ThiefMod implements EditCardsSubscriber,
         // TODO: Add Gatherer
         // TODO: Add Bard
         // TODO: Add spell scribe
-        
+
         hasReplayTheSpire = Loader.isModLoaded("ReplayTheSpireMod");
         if (hasReplayTheSpire) {
             logger.info("Detected Replay The Spire");
@@ -142,60 +142,60 @@ public class ThiefMod implements EditCardsSubscriber,
         }
         // TODO: Apparently slimebound also adds black cards?
     }
-    
+
     //This is for the in-game mod settings pannel.
     private static final String MODNAME = "Thief Mod";
     private static final String AUTHOR = "Gremious";
     private static final String DESCRIPTION = "A mod for Slay the Spire that adds the Thief as a playable character! \n Shadowstep! Backstab! Steal from all your friends, enemies and acquaintances! Commit louse abuse! And many more! \n \n More than anything: Have fun!";
-    
+
     // Mod-settings settings. This is if you want an on/off savable button
     public static Properties thiefModProperties = new Properties();
     public static final String ENABLE_DEBUG_CARD = "enableDebugCard";
     public static boolean enableDebugCard = false; // The boolean we'll be setting on/off (true/false)
-    
+
     // Color
-    public static final Color THIEF_GRAY = CardHelper.getColor(64.0f, 70.0f, 70.0f);
-    
+    public static final Color THIEF_GRAY = CardHelper.getColor(64, 70, 70);
+
     // Card backgrounds
     private static final String THIEF_GRAY_ATTACK_BG_SMALL = "theThiefAssets/images/cardui/512/bg_attack_thief_gray.png";
     private static final String THIEF_GRAY_SKILL_BG_SMALL = "theThiefAssets/images/cardui/512/bg_skill_thief_gray.png";
     private static final String THIEF_GRAY_POWER_BG_SMALL = "theThiefAssets/images/cardui/512/bg_power_thief_gray.png";
     private static final String THIEF_GRAY_ENERGY_ORB_SMALL = "theThiefAssets/images/cardui/512/card_thief_gray_orb.png";
-    
+
     private static final String THIEF_GRAY_ATTACK_BG_LARGE = "theThiefAssets/images/cardui/1024/bg_attack_thief_gray.png";
     private static final String THIEF_GRAY_SKILL_BG_LARGE = "theThiefAssets/images/cardui/1024/bg_skill_thief_gray.png";
     private static final String THIEF_GRAY_POWER_BG_LARGE = "theThiefAssets/images/cardui/1024/bg_power_thief_gray.png";
     private static final String THIEF_GRAY_ENERGY_ORB_LARGE = "theThiefAssets/images/cardui/1024/card_thief_gray_orb.png";
-    
+
     private static final String THIEF_GRAY_CARD_ENERGY_ORB = "theThiefAssets/images/cardui/512/card_small_orb.png";
-    
+
     // Character assets
     private static final String THE_THIEF_BUTTON = "theThiefAssets/images/charSelect/thiefCharacterButton.png";
     private static final String THE_THIEF_PORTRAIT = rollBGImage();
     public static final String THE_THIEF_SHOULDER_1 = "theThiefAssets/images/char/thiefCharacter/shoulder.png";
     public static final String THE_THIEF_SHOULDER_2 = "theThiefAssets/images/char/thiefCharacter/shoulder2.png";
     public static final String THE_THIEF_CORPSE = "theThiefAssets/images/char/thiefCharacter/corpse.png";
-    
+
     // Mod Badge
     public static final String BADGE_IMAGE = "theThiefAssets/images/Badge (2).png";
-    
+
     // Animations atlas and JSON files
     public static final String THE_DEFAULT_SKELETON_ATLAS = "theThiefAssets/images/char/thiefCharacter/skeleton.atlas";
     public static final String THE_DEFAULT_SKELETON_JSON = "theThiefAssets/images/char/thiefCharacter/skeleton.json";
-    
+
     // =============== SUBSCRIBE, CREATE THE COLOR, INITIALIZE =================
-    
+
     public ThiefMod() {
         logger.info("Subscribe to basemod hooks");
         BaseMod.subscribe(this);
         logger.info("Done subscribing");
-        
+
         setModID("theThief");
-        
+
         logger.info("Creating the color " + AbstractCardEnum.THIEF_GRAY.toString());
         BaseMod.addColor(AbstractCardEnum.THIEF_GRAY, THIEF_GRAY, THIEF_GRAY, THIEF_GRAY, THIEF_GRAY, THIEF_GRAY, THIEF_GRAY, THIEF_GRAY, THIEF_GRAY_ATTACK_BG_SMALL, THIEF_GRAY_SKILL_BG_SMALL, THIEF_GRAY_POWER_BG_SMALL, THIEF_GRAY_ENERGY_ORB_SMALL, THIEF_GRAY_ATTACK_BG_LARGE, THIEF_GRAY_SKILL_BG_LARGE, THIEF_GRAY_POWER_BG_LARGE, THIEF_GRAY_ENERGY_ORB_LARGE, THIEF_GRAY_CARD_ENERGY_ORB);
         logger.info("Done Creating the color");
-        
+
         logger.info("Adding mod settings");
         // This loads the mod settings.
         // The actual mod Button is added below in receivePostInitialize()
@@ -210,43 +210,43 @@ public class ThiefMod implements EditCardsSubscriber,
         }
         logger.info("Done adding mod settings");
     }
-    
+
     @SuppressWarnings("unused")
     public static void initialize() {
         logger.info("========================= The Thief is sneaking in! =========================");
         ThiefMod thiefmod = new ThiefMod();
         logger.info("========================= /Thief snuk in./ =========================");
     }
-    
+
     // ============== /SUBSCRIBE, CREATE THE COLOR, INITIALIZE/ =================
-    
-    
+
+
     // =============== LOAD THE CHARACTER =================
-    
+
     @Override
     public void receiveEditCharacters() {
         logger.info("begin editing characters");
-        
+
         logger.info("add " + TheThiefEnum.THE_THIEF.toString());
-        
+
         BaseMod.addCharacter(new TheThief("the Thief", TheThiefEnum.THE_THIEF), THE_THIEF_BUTTON, THE_THIEF_PORTRAIT, TheThiefEnum.THE_THIEF);
-        
+
         logger.info("done editing characters");
     }
-    
+
     // =============== /LOAD THE CHARACTER/ =================
-    
-    
+
+
     // =============== LOAD THE MOD BADGE AND MENU =================
-    
+
     @Override
     public void receivePostInitialize() {
         logger.info("Load Badge Image and mod options");
-        
+
         Texture badgeTexture = new Texture(BADGE_IMAGE);
         // Create the Mod Menu
         ModPanel settingsPanel = new ModPanel();
-        
+
         // Create the on/off button:
         ModLabeledToggleButton enableNormalsButton = new ModLabeledToggleButton("Enable Starting with the Test Card.",
                 350.0f, 700.0f, Settings.CREAM_COLOR, FontHelper.charDescFont, // Position (trial and error it), color, font
@@ -255,7 +255,7 @@ public class ThiefMod implements EditCardsSubscriber,
                 (label) -> {
                 }, // thing??????? idk
                 (button) -> { // The actual button:
-                    
+
                     enableDebugCard = button.enabled; // The boolean true/false will be whether the button is enabled or not
                     try {
                         // And based on that boolean, set the settings and save them
@@ -266,35 +266,35 @@ public class ThiefMod implements EditCardsSubscriber,
                         e.printStackTrace();
                     }
                 });
-        
+
         settingsPanel.addUIElement(enableNormalsButton); // Add the button to the settings panel. Button is a go.
-        
+
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
         logger.info("Done loading badge Image and mod options");
         // Events
         logger.info("Adding Events");
-        
+
         BaseMod.addEvent(LouseAbuseEvent.ID, LouseAbuseEvent.class, Exordium.ID);
         BaseMod.addEvent(BlackMarketTraderEvent.ID, BlackMarketTraderEvent.class, Exordium.ID);
         BaseMod.addEvent(MasqueradeEvent.ID, MasqueradeEvent.class, TheCity.ID);
-        
+
         logger.info("Done Adding Events!");
-        
+
         if (Loader.isModLoaded("archetypeapi")) {
             setCharacterDefaultNumOfCards(TheThiefEnum.THE_THIEF, 72);
             loadArchetypes("theThiefAssets/localization/eng/ArchetypeAPI/");
         }
     }
-    
+
     // =============== /LOAD THE MOD BADGE AND MENU/ =================
-    
-    
+
+
     // ================ ADD RELICS ===================
-    
+
     @Override
     public void receiveEditRelics() {
         logger.info("Add relics");
-        
+
         // Thief-Specific:
         BaseMod.addRelicToCustomPool(new ThievesMask(), AbstractCardEnum.THIEF_GRAY);
         BaseMod.addRelicToCustomPool(new ShadowMask(), AbstractCardEnum.THIEF_GRAY);
@@ -303,21 +303,21 @@ public class ThiefMod implements EditCardsSubscriber,
         BaseMod.addRelicToCustomPool(new StickyGloves(), AbstractCardEnum.THIEF_GRAY);
         BaseMod.addRelicToCustomPool(new LoadedDice(), AbstractCardEnum.THIEF_GRAY);
         BaseMod.addRelicToCustomPool(new StolenBag(), AbstractCardEnum.THIEF_GRAY);
-        
+
         // All-Classes:
         BaseMod.addRelic(new PocketChange(), RelicType.SHARED);
         BaseMod.addRelic(new ShadowBoots(), RelicType.SHARED);
         BaseMod.addRelic(new LouseBounty(), RelicType.SHARED);
         BaseMod.addRelic(new BottledHand(), RelicType.SHARED);
-        
+
         logger.info("done adding relics!");
     }
-    
+
     // ================ /ADD RELICS/ ===================
-    
-    
+
+
     // ================ ADD CARDS ===================
-    
+
     @Override
     public void receiveEditCards() {
         logger.info("Add variables");
@@ -331,20 +331,20 @@ public class ThiefMod implements EditCardsSubscriber,
         } catch (URISyntaxException | IllegalAccessException | InstantiationException | NotFoundException | CannotCompileException | ClassNotFoundException e) {
             e.printStackTrace();
         }
-        
+
         //  BaseMod.addCard(new ());
         if (hasDisciple) BaseMod.addCard(new StolenClock());
         if (hasHalation) BaseMod.addCard(new StolenMail());
         if (hasMysticMod) {
             BaseMod.addCard(new stolenMagicalWeapon());
             BaseMod.addCard(new stolenBoxOfWeapons());
-            
+
             BaseMod.addCard(new stolenMagicCantrip());
             BaseMod.addCard(new stolenBagOfMagicCantrips());
-            
+
             BaseMod.addCard(new stolenSpellScroll());
             BaseMod.addCard(new stolenMysticalSpellbook());
-            
+
             BaseMod.addCard(new stolenMysticalOrb());
         }
         if (hasServant) {
@@ -352,12 +352,12 @@ public class ThiefMod implements EditCardsSubscriber,
         }
         logger.info("Cards - added!");
     }
-    
+
     private static void autoAddCards() throws URISyntaxException, IllegalAccessException, InstantiationException, NotFoundException, CannotCompileException, ClassNotFoundException {
         ClassFinder finder = new ClassFinder();
         URL url = ThiefMod.class.getProtectionDomain().getCodeSource().getLocation();
         finder.add(new File(url.toURI()));
-        
+
         ClassFilter filter = new AndClassFilter(
                 new NotClassFilter(new InterfaceOnlyClassFilter()),
                 new NotClassFilter(new AbstractClassFilter()),
@@ -368,7 +368,7 @@ public class ThiefMod implements EditCardsSubscriber,
         // Cards outside of the filter will not be loaded.
         Collection<ClassInfo> foundClasses = new ArrayList<>();
         finder.findClasses(foundClasses, filter);
-        
+
         for (ClassInfo classInfo : foundClasses) {
             CtClass cls = Loader.getClassPool().get(classInfo.getClassName());
             if (cls.hasAnnotation(CardIgnore.class)) { // Add @CardIgnore to cards you want to ignore from being loaded (super special cards, options, etc).
@@ -389,6 +389,7 @@ public class ThiefMod implements EditCardsSubscriber,
             if (!isCard) {
                 continue;
             }
+
             System.out.println(classInfo.getClassName());
             AbstractCard card = (AbstractCard) Loader.getClassPool().getClassLoader().loadClass(cls.getName()).newInstance();
             BaseMod.addCard(card);
@@ -399,51 +400,51 @@ public class ThiefMod implements EditCardsSubscriber,
             }
         }
     }
-    
+
     // ================ /ADD CARDS/ ===================
-    
-    
+
+
     // ================ LOAD THE TEXT ===================
-    
+
     @Override
     public void receiveEditStrings() {
         logger.info("Begin Editing Strings");
-        
+
         // Regular Cards CardStrings
         BaseMod.loadCustomStringsFile(CardStrings.class, getModID() + "Assets/localization/eng/cards/ThiefMod-Card-Strings.json");
-        
+
         // Stolen Cards CardStrings
         BaseMod.loadCustomStringsFile(CardStrings.class, getModID() + "Assets/localization/eng/cards/ThiefMod-Stolen-Card-Strings.json");
-        
+
         // Backstab Cards CardStrings
         BaseMod.loadCustomStringsFile(CardStrings.class, getModID() + "Assets/localization/eng/cards/ThiefMod-Backstab-Card-Strings.json");
-        
+
         // Curse Cards CardStrings
         BaseMod.loadCustomStringsFile(CardStrings.class, getModID() + "Assets/localization/eng/cards/ThiefMod-Curse-Card-Strings.json");
-        
+
         // character Strings
         BaseMod.loadCustomStringsFile(CharacterStrings.class, getModID() + "Assets/localization/eng/ThiefMod-Character-Strings.json");
-        
+
         // Power Strings
         BaseMod.loadCustomStringsFile(PowerStrings.class, getModID() + "Assets/localization/eng/ThiefMod-Power-Strings.json");
-        
+
         // Relic Strings
         BaseMod.loadCustomStringsFile(RelicStrings.class, getModID() + "Assets/localization/eng/ThiefMod-Relic-Strings.json");
-        
+
         // Event Strings
         BaseMod.loadCustomStringsFile(EventStrings.class, getModID() + "Assets/localization/eng/ThiefMod-Event-Strings.json");
-        
+
         // UI Strings
         BaseMod.loadCustomStringsFile(UIStrings.class, getModID() + "Assets/localization/eng/ThiefMod-UI-Strings.json");
-        
+
         logger.info("Done Edtting Strings");
     }
-    
+
     // ================ /LOAD THE TEXT/ ===================
-    
-    
+
+
     // ================ LOAD THE KEYWORDS ===================
-    
+
     @Override
     public void receiveEditKeywords() {
         // Keywords on cards are supposed to be Capitalized, while in Keyword-String.json they're lowercase
@@ -453,11 +454,11 @@ public class ThiefMod implements EditCardsSubscriber,
         // If you're using multiword keywords, the first element in your NAMES array in your keywords-strings.json has to be the same as the PROPER_NAME.
         // That is, in Card-Strings.json you would have #yA_Long_Keyword (#y highlights the keyword in yellow).
         // In Keyword-Strings.json you would have PROPER_NAME as A Long Keyword and the first element in NAMES be a long keyword, and the second element be a_long_keyword
-        
+
         Gson gson = new Gson();
         String json = Gdx.files.internal("theThiefAssets/localization/eng/ThiefMod-Keyword-Strings.json").readString(String.valueOf(StandardCharsets.UTF_8));
         com.evacipated.cardcrawl.mod.stslib.Keyword[] keywords = gson.fromJson(json, com.evacipated.cardcrawl.mod.stslib.Keyword[].class);
-        
+
         if (keywords != null) {
             for (Keyword keyword : keywords) {
                 BaseMod.addKeyword(getModID().toLowerCase(), keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);
@@ -466,7 +467,7 @@ public class ThiefMod implements EditCardsSubscriber,
         }
     }
     // ================ /LOAD THE KEYWORDS/ ===================
-    
+
     private static final String rollBGImage() {
         Random rand = new Random();
         int i = rand.nextInt(99);
@@ -477,14 +478,14 @@ public class ThiefMod implements EditCardsSubscriber,
             return "theThiefAssets/images/charSelect/thiefCharacterPortraitEvilBG.png";
         }
     }
-    
+
     // ====== NO EDIT AREA ======
     public static void setModID(String ID) { // DON'T EDIT
         Gson coolG = new Gson(); // EY DON'T EDIT THIS
         //   String IDjson = Gdx.files.internal("IDCheckStrings.json").readString(String.valueOf(StandardCharsets.UTF_8)); // i hate u Gdx.files
         InputStream in = ThiefMod.class.getResourceAsStream("/IDCheckStrings.json"); // DON'T EDIT THIS ETHER
         IDCheckDontTouchPls EXCEPTION_STRINGS = coolG.fromJson(new InputStreamReader(in, StandardCharsets.UTF_8), IDCheckDontTouchPls.class); // OR THIS, DON'T EDIT IT
-        
+
         if (ID.equals(EXCEPTION_STRINGS.DEFAULTID)) { // DO *NOT* CHANGE THIS ESPECIALLY, TO EDIT YOUR MOD ID, SCROLL UP JUST A LITTLE, IT'S JUST ABOVE
             throw new RuntimeException(EXCEPTION_STRINGS.EXCEPTION); // THIS ALSO DON'T EDIT
         } else if (ID.equals(EXCEPTION_STRINGS.DEVID)) { // NO
@@ -493,17 +494,17 @@ public class ThiefMod implements EditCardsSubscriber,
             modID = ID; // DON'T WRITE OR CHANGE THINGS HERE NOT EVEN A LITTLE
         } // NO
     } // NO
-    
+
     public static String getModID() { // NO
         return modID; // DOUBLE NO
     } // NU-UH
-    
+
     private static void pathCheck() { // ALSO NO
         Gson coolG = new Gson(); // NNOPE DON'T EDIT THIS
         //   String IDjson = Gdx.files.internal("IDCheckStrings.json").readString(String.valueOf(StandardCharsets.UTF_8)); // i still hate u btw Gdx.files
         InputStream in = ThiefMod.class.getResourceAsStream("/IDCheckStrings.json"); // DON'T EDIT THISSSSS
         IDCheckDontTouchPls EXCEPTION_STRINGS = coolG.fromJson(new InputStreamReader(in, StandardCharsets.UTF_8), IDCheckDontTouchPls.class); // NAH, NO EDIT
-        
+
         String packageName = ThiefMod.class.getPackage().getName(); // STILL NOT EDIT ZONE
         FileHandle resourcePathExists = Gdx.files.internal(getModID() + "Resources"); // PLEASE DON'T EDIT THINGS HERE, THANKS
         if (!modID.equals(EXCEPTION_STRINGS.DEVID)) { // LEAVE THIS EDIT-LESS
@@ -516,21 +517,21 @@ public class ThiefMod implements EditCardsSubscriber,
         }// NO
     }// NO
     // ====== YOU CAN EDIT AGAIN ======
-    
+
     public static String makeID(String idText) {
         return getModID() + ":" + idText;
     }
-    
+
     public static boolean isCustomModActive(String ID) {
         return (CardCrawlGame.trial != null && CardCrawlGame.trial.dailyModIDs().contains(ID)) || ModHelper.isModEnabled(ID);
     }
-    
+
     @Override
     public void receiveOnBattleStart(AbstractRoom abstractRoom) {
         if (isCustomModActive("theThief:EnterTheVoidChallenge")) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new EnterTheVoidChallengePower(), 1));
         }
-        
+
         StealCardAction.cardsStolenThisCombat = 0;
         DiscoverCardAction.cardsDiscoveredThisCombat.clear();
     }

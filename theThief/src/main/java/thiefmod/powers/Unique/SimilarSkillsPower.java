@@ -13,6 +13,8 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import thiefmod.actions.util.MakeSuperCopyAction;
 import thiefmod.util.TextureLoader;
 
+import static thiefmod.util.CardHelper.getRandomColorSpecificCard;
+
 // Empty Base
 
 public class SimilarSkillsPower extends AbstractPower {
@@ -46,7 +48,7 @@ public class SimilarSkillsPower extends AbstractPower {
         AbstractCard c;
 
         for (int i = 0; i < amount; i++) {
-            c = CardLibrary.getRandomColorSpecificCard(CardColor.GREEN, AbstractDungeon.miscRng);
+            c = getRandomColorSpecificCard(CardColor.GREEN, AbstractDungeon.miscRng);
             c.modifyCostForCombat(-99);
             AbstractDungeon.actionManager.addToBottom(new MakeSuperCopyAction(c, AbstractDungeon.player.hand));
         }
