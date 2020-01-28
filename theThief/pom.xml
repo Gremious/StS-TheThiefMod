@@ -14,8 +14,8 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <SlayTheSpire.version>01-03-2019</SlayTheSpire.version>
         <ModTheSpire.version>3.6.3</ModTheSpire.version>
-        <Steam.path>C:/My Stuff/Games/Steam/steamapps</Steam.path>
-        <alt.build.dir>C:/My Stuff/Games/Steam/steamapps/common/SlayTheSpire/mods</alt.build.dir>
+        <Steam.path>D:/Games/Steam/steamapps</Steam.path>
+        <alt.build.dir>D:/Games/Steam/steamapps/common/SlayTheSpire/mods</alt.build.dir>
     </properties>
 
     <dependencies>
@@ -53,7 +53,7 @@
             <artifactId>ArchetypeAPI</artifactId>
             <version>2.0.0</version>
             <scope>system</scope>
-            <systemPath>C:/My Stuff/Games/Steam/steamapps/common/SlayTheSpire/mods/ArchetypeAPI.jar</systemPath>
+            <systemPath>${Steam.path}/common/SlayTheSpire/mods/ArchetypeAPI.jar</systemPath>
         </dependency>
         <!--mods-->
         <!--character-->
